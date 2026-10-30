@@ -48,7 +48,7 @@
       "If your verified figure had been 2.600 t per tonne: 1,000 x 2.600 = 2,600 t CO2e",
       "Embedded emissions the buyer carries because of the negative result: 4,708 minus 2,600 = 2,108 t CO2e"
     ],
-    "note": "The 2.600 t figure is illustrative. The certificates the buyer surrenders also depend on the free allocation adjustment, which this example leaves out."
+    "note": "The 2.600 t figure is an example. The certificates the buyer surrenders also depend on the free allocation adjustment, which this example leaves out."
   },
   "senseible": "Senseible's CBAM Suite builds the operator emissions report from your plant records and exports a verifier pack with an evidence index and a check of misstatements against the 5% materiality level, so gaps show up before the verifier finds them. Senseible is not an accredited CBAM verifier and cannot change a verifier's statement.",
   "links": [

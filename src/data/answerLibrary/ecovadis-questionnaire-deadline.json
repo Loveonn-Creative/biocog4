@@ -17,7 +17,7 @@
       "h": "What eats the time",
       "ul": [
         "Policies that exist only in someone's head. EcoVadis treats a missing document as a missing system, so an unwritten safety or ethics rule scores like no rule.",
-        "Scanned files. Documents must be machine-readable, dated, clearly your company's, and in PDF, DOCX, XLSX, JPG or PNG under 30 MB.",
+        "Scanned files. A photo of a signed policy earns nothing; EcoVadis wants files with real text, dated and clearly yours.",
         "The 55-file cap. You cannot upload every certificate you own, so combine and choose.",
         "Linking. A document only counts when it is attached to the answer it supports."
       ]
@@ -27,7 +27,7 @@
       "ol": [
         "Day 1: Log in, read the questionnaire set-up (sites, size, industry) and confirm both deadlines with your buyer.",
         "Days 2 to 3: Collect what already exists: ISO certificates, factory licence, safety records, HR policies, the code of conduct you signed for this buyer.",
-        "Days 3 to 4: Pull 12 months of electricity bills and fuel invoices for every site and turn them into Scope 1 and 2 totals.",
+        "Day 4: Pull 12 months of electricity bills and fuel invoices for every site and turn them into Scope 1 and 2 totals.",
         "Days 5 to 6: Write the short policies you lack: environment and energy, health and safety, anti-bribery, supplier conduct. Date and sign each one.",
         "Days 7 to 8: Fill the answers and attach each document to the right question.",
         "Day 9: Re-read every answer that says yes and check a document backs it.",
@@ -41,7 +41,7 @@
       ]
     }
   ],
-  "senseible": "Day 3 to 4 is where Senseible helps: upload the bills and fuel invoices and get Scope 1 and 2 totals with the source document behind each line, ready to attach. Senseible does not fill or submit the EcoVadis questionnaire.",
+  "senseible": "Day 4 is where Senseible saves time: upload the bills and fuel invoices and get Scope 1 and 2 totals with the source document behind each line, ready to attach. Senseible does not fill or submit the EcoVadis questionnaire.",
   "links": [
     {
       "label": "Turn bills into Scope 1 and 2",

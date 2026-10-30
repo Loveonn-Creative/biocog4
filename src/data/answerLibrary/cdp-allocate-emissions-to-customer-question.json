@@ -2,7 +2,7 @@
   "slug": "cdp-allocate-emissions-to-customer-question",
   "q": "How do I answer CDP's question asking me to allocate emissions to my customer?",
   "title": "CDP 7.26: giving a customer its emissions",
-  "short": "In CDP's corporate questionnaire (2025 numbering), question 7.26 asks you to give each customer who requested your response a share of your emissions for what you sold them that year. You fill one row per scope: the method, the quantity supplied, the tonnes, and how sure you are. Questions 7.27 and 7.28 then ask what made it hard.",
+  "short": "In CDP's corporate questionnaire (2025 numbering), question 7.26 asks you to give each customer who requested your response a share of your emissions for what you sold them that year. You fill one row per scope: method, quantity supplied, tonnes and how sure you are. 7.27 and 7.28 ask what made it hard and how you will improve.",
   "topic": "regulation",
   "intent": "how-to",
   "audience": "Indian suppliers answering a CDP Supply Chain request from a customer",
@@ -14,7 +14,7 @@
         "Scope of emissions: Scope 1, Scope 2 location-based, Scope 2 market-based, or Scope 3. One scope per row, so most suppliers fill two rows per customer. You only need to allocate one Scope 2 figure.",
         "Allocation level: company wide, business unit, facility or commodity. If you pick facility, name it.",
         "Allocation method: mass, volume, energy content, chemical content, number of units, area or another physical factor, or the market value of what they bought.",
-        "Unit and quantity supplied: the tonnes, kilograms, pieces or rupees you sold this customer. If your goods share no common unit, CDP asks for market value, in the currency you chose in question 1.7.",
+        "Unit and quantity supplied: the tonnes, kilograms, rupees or other unit you name for what you sold this customer. If your goods share no common unit, CDP asks for market value, in the currency you chose in question 1.7.",
         "Emissions in tonnes CO2e, then uncertainty in plus or minus per cent, your major emission sources, and whether a third party checked the allocation.",
         "Two text boxes: how you identified the emission sources and what you assumed, and a reference for any published or industry average data you used."
       ]

@@ -30,7 +30,7 @@
         "Aluminium smelter casting ingots: VII. Extruder making profiles from bought billet: VIII.",
         "Cement or clinker plant: I, which always comes with LII, because indirect emissions count for cement.",
         "Urea or NPK plant: IV with LII; an ammonia unit adds II.",
-        "Sinter plant: V with LII. Steel goods other than sintered ore do not count indirect emissions, so LII is not needed for them."
+        "Sinter plant: V with LII. Other iron, steel and aluminium goods do not count indirect emissions, so a plant needing only VI, VII or VIII does not need LII."
       ]
     },
     {

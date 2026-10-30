@@ -59,7 +59,7 @@
       "Calendar 2026: 3,150 + 9,450 = 12,600 t CO2 for 5,000 + 15,000 = 20,000 t",
       "Specific embedded emissions: 12,600 / 20,000 = 0.63 t CO2 per tonne"
     ],
-    "note": "Illustrative figures for direct emissions only."
+    "note": "Example figures, direct emissions only."
   },
   "senseible": "Senseible stores each record against its billing period, so emissions can be totalled for any 12-month window, calendar or fiscal, and its CBAM Suite builds the calendar-year operator report by production process. You still enter production tonnes from your own books.",
   "links": [

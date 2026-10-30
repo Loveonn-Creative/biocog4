@@ -37,7 +37,7 @@
       "ul": [
         "Blank answers. CDP reads a blank as not disclosed. Enter zero only when you measured zero; if you did not measure, leave it blank and explain why in the text box.",
         "Answers in Hindi or another unsupported language. CDP scores only English, Latin American Spanish, Brazilian Portuguese, Japanese and Chinese.",
-        "No target. The module asks for reduction targets, and CDP reads an empty answer as not disclosed.",
+        "No target. Targets sit in the climate module, and a measured baseline with a dated intensity target, like the one below, is within reach of a small unit.",
         "Scope 3 left as \"not calculated\". Estimates are allowed if you say how uncertain they are."
       ]
     },

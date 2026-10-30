@@ -19,7 +19,7 @@
       "ul": [
         "Any theme below 30: Environment, Labor and Human Rights, Ethics or Sustainable Procurement. A strong environment score cannot carry a weak ethics score.",
         "Bad press: a 360 Watch score of 0 in one theme, or 25 in two, unless you have had no negative finding in the past 3 years (5 years for Ethics).",
-        "Excluded businesses: tobacco, weapons, coal or lignite mining, and companies with more than 20% of revenue from coal.",
+        "Excluded businesses: tobacco, weapons, coal or lignite mining, and companies with more than 20% of revenue from coal, among others.",
         "The medal belongs to the rated company only. Your parent, sister company or another plant cannot use it."
       ]
     },
@@ -55,7 +55,7 @@
     ],
     "note": "Scores are invented to show how the rules combine; EcoVadis applies them at publication."
   },
-  "senseible": "Senseible cannot raise your EcoVadis score or fill the questionnaire. It turns your electricity bills and fuel invoices into Scope 1 and 2 figures with the bill behind every line, so the environment evidence you upload holds up.",
+  "senseible": "Senseible cannot raise your EcoVadis score or fill the questionnaire. What it can do is make the energy and emissions figures in your Environment theme hold up: each one calculated from a bill you can attach.",
   "links": [
     {
       "label": "Share figures your buyer can trace",

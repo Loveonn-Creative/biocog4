@@ -25,7 +25,7 @@
       "h": "Work back from the expiry date",
       "ol": [
         "Note the publication date on your current scorecard. Expiry is 12 months later.",
-        "Leave time for EcoVadis's review after you submit; analysts spend more than 15 hours reviewing each questionnaire and its documents.",
+        "Leave room for EcoVadis's own review, which happens after you submit and before the new scorecard is published.",
         "Three months before expiry, close your latest financial year's electricity and fuel data and convert it to Scope 1 and 2.",
         "Open last year's improvement areas on the scorecard and gather proof of what you did about each.",
         "Check which documents carry over. Some plans re-use documents and your corrective action plan from the last assessment, where eligible."
@@ -36,14 +36,14 @@
     "title": "A Tiruppur knitwear exporter",
     "lines": [
       "Scorecard published 10 December 2025. Valid until 10 December 2026.",
-      "Energy figures used: FY 2023-24. These are near the two-year limit, so treat them as stale for the reassessment.",
+      "Energy figures used: FY 2023-24. By the reassessment they are more than two years old, so expect them not to count.",
       "September 2026: FY 2025-26 bills and diesel invoices turned into new Scope 1 and 2 totals.",
       "October 2026: proof uploaded for last year's improvement areas, such as an LED retrofit with before and after units.",
-      "Submit early November 2026, leaving weeks for review before 10 December."
+      "Submit early November 2026, so the review can finish before 10 December."
     ],
     "note": "Dates are an example; your own validity date is on your scorecard."
   },
-  "senseible": "Senseible turns a fresh year of electricity bills and fuel invoices into Scope 1 and 2 totals, with each line tied to its bill, so the figures you re-upload are current. It does not handle the EcoVadis renewal itself.",
+  "senseible": "When renewal comes round, upload the latest year's bills to Senseible and get new Scope 1 and 2 totals to replace figures about to pass EcoVadis's two-year limit. Senseible does not handle the renewal itself.",
   "links": [
     {
       "label": "Refresh your carbon figure",

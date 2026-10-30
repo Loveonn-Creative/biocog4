@@ -18,7 +18,7 @@
       "h": "How to decide whether to respond",
       "ul": [
         "Respond if the customer is a large share of your revenue, if the request comes with a supplier code or contract clause on climate data, or if they have said non-response affects supplier ratings.",
-        "Ask first if you are unsure: some buyers accept a short emissions summary by email in the first year and expect CDP from the next cycle.",
+        "Ask first if you are unsure: ask whether a short emissions summary by email would do for this cycle, and from when they expect a full CDP response.",
         "Decline only after telling the customer why and what you can send instead. Silence is the worst option."
       ]
     },
@@ -33,7 +33,7 @@
     {
       "h": "Full questionnaire or SME questionnaire",
       "p": [
-        "Since 2024 CDP uses one integrated corporate questionnaire, covering climate, forests, water and other themes, and a shorter SME questionnaire. Revenue and employee numbers decide which one you are eligible for. The SME version asks for the basics: governance, Scope 1 and Scope 2 emissions, and targets if you have them.",
+        "Since 2024 CDP uses one integrated corporate questionnaire, covering climate, forests, water and other themes, and a shorter SME questionnaire. Revenue and employee numbers decide which one you are eligible for. The SME version asks for the basics: your emissions method, Scope 1, 2 and 3 emissions, energy use, and targets and reduction actions if you have them.",
         "Confirm with your customer which version they expect. If they accept the SME version, it is usually the right start for an MSME."
       ]
     },

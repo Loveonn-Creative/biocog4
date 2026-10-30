@@ -18,7 +18,7 @@
     {
       "h": "In the melt shop and rolling mill",
       "ul": [
-        "Your route, which sets the benchmark for the free allocation figure: BF-BOF, DRI-EAF or scrap-EAF, each for carbon, low alloy or high alloy steel. The benchmark table names only these routes, so if you melt in an induction furnace, agree in writing with your verifier which route indicator applies.",
+        "Your route, which sets the benchmark for the free allocation figure: BF-BOF, DRI-EAF or scrap-EAF for carbon and low alloy steel, and EAF for high alloy steel. The benchmark table names only these routes, so if you melt in an induction furnace, agree in writing with your verifier which route indicator applies.",
         "Steel grade by the EU definitions: stainless means at least 10.5% chromium and at most 1.2% carbon; high alloy means at least 8% alloying elements; low alloy is other alloy steel; carbon steel is the rest.",
         "Products grouped into one production process only where they differ just in size or shape and use the same precursors in the same types and proportions. Bars of different diameters rolled from the same billets are the typical case. A stainless line does not share a process with carbon steel, because the composition differs.",
         "Waste gases, where you have them, attributed correctly between the process that makes them and the one that burns them.",
@@ -47,9 +47,9 @@
       "In: purchased 30,000 t + produced on site 0 t + stock from 2026 of 1,200 t = 31,200 t",
       "Out: consumed in the furnace 29,800 t + sold on 400 t + closing stock 1,000 t = 31,200 t",
       "Both sides match, so no sponge iron is missing or counted twice",
-      "The 1,200 t opening stock carries the figure per tonne from the 2026 emissions report, not the 2027 one"
+      "The 1,200 t opening stock keeps its 2026 figure per tonne (the supplier's 2026 verified value or the 2026 default), not a 2027 one"
     ],
-    "note": "Illustrative tonnages. A gap between the two sides is a finding the verifier will ask you to explain."
+    "note": "Example tonnages. A gap between the two sides is a finding the verifier will ask you to explain."
   },
   "senseible": "Senseible reads coal, power, fuel and freight invoices into dated, fingerprinted records, and its CBAM Suite carries them into production processes by CN code with your precursors, so the mass balance and the sector figures sit in one export for the verifier. Senseible is not a CBAM verifier.",
   "links": [

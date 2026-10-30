@@ -24,7 +24,7 @@
       "h": "What separates the lower levels",
       "ul": [
         "Beginner: 81% of companies at this level have taken first actions on Scope 1 and 2, but only 9% have a target or plan.",
-        "Intermediate: 68% have a carbon target or plan. Having a target or plan is the biggest difference these figures show.",
+        "Intermediate: 68% have a carbon target or plan. In these figures, a written target is what most separates Beginner from Intermediate.",
         "Advanced and above: companies that broke through often tied management pay to emission cuts, worked with their own suppliers on reductions, collected Scope 3 data from suppliers, adopted a dated transition plan and set a budget for it."
       ]
     },
@@ -38,7 +38,7 @@
       ]
     }
   ],
-  "senseible": "Senseible covers the measure step: it turns your electricity bills and fuel invoices into Scope 1 and 2 figures by site and period, each tied to its document, so you can share a traceable figure with your buyer. The carbon level itself is set by EcoVadis.",
+  "senseible": "Senseible covers the Measure step: a year of Scope 1 and 2 by site and billing period, each figure tied to the bill it came from, ready to share with your buyer. Your carbon level is set by EcoVadis alone.",
   "links": [
     {
       "label": "Share figures your buyer can trace",
