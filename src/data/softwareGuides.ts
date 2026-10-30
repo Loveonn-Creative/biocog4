@@ -161,7 +161,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'supplier-emissions',
     ...GUIDE_META['supplier-emissions'],
-    lede: 'Your Scope 3 sits with suppliers, and many of them will never fill in a carbon questionnaire. These tools differ on what they ask suppliers for, who pays, and how clearly they label estimates.',
+    lede: 'Your Scope 3 sits with suppliers, and many of them will not fill in a carbon questionnaire. These tools differ on what they ask suppliers for, who pays, and how clearly they label estimates.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'supplier_request_portal', short: 'Request portal', label: 'Sends data requests to suppliers through a portal or campaign, with reminders', ask: 'How does a supplier with no login respond, and who chases them?' },
@@ -195,7 +195,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'carbon-compliance',
     ...GUIDE_META['carbon-compliance'],
-    lede: 'CSRD, ISSB, BRSR, India’s carbon market and California’s SB 253 ask for overlapping numbers in different formats. The right tool covers the rules you actually face, with an audit trail that holds up.',
+    lede: 'CSRD, ISSB, BRSR, India’s carbon market and California’s SB 253 ask for overlapping numbers in different formats. The tools differ on which rules they cover and whether an auditor can trace each number.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'csrd', short: 'CSRD', label: 'CSRD and ESRS reporting', ask: 'Does it run double materiality on the current CSRD scope?' },
@@ -223,7 +223,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'cbam',
     ...GUIDE_META['cbam'],
-    lede: 'CBAM certificates go on sale in February 2027, yet several tools below still describe the quarterly reports that ended in 2025. Exporters need an operator report their EU buyer will accept. Importers need a declaration and a certificate budget.',
+    lede: 'CBAM certificates go on sale in February 2027, yet several tools below still describe the quarterly reports that ended in 2025. Exporters must give their EU buyer emissions data it can use. Importers must file a declaration and budget for certificates.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'goods', short: 'All six sectors', label: 'Covers all six CBAM sectors by CN code', ask: 'Which of our CN codes does it cover today?' },
@@ -309,7 +309,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'carbon-credits',
     ...GUIDE_META['carbon-credits'],
-    lede: 'Registries record credits, exchanges and marketplaces sell them, developers create them, and India’s own scheme is new. Mixing these up is how buyers pay for the wrong thing.',
+    lede: 'Registries record credits, exchanges and marketplaces sell them, developers create them, and India’s own scheme, the CCTS, is new. Buyers who mix these up can pay for the wrong thing.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'registry_issuance', short: 'Registry', label: 'Issues or tracks credits with unique serial numbers, so a tonne cannot be sold twice', ask: 'Where is the serial number kept, and who can see it retired?' },
@@ -345,8 +345,8 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'green-loans',
     ...GUIDE_META['green-loans'],
-    lede: 'SIDBI, IREDA and NBFC green lenders each fund different green projects, with different limits and paperwork, and most do not publish a rate.',
-    disclosure: `${DISCLOSURE} Senseible does not lend, arrange or approve loans.`,
+    lede: 'SIDBI, IREDA and NBFC green lenders each fund different green projects, with different limits and paperwork, and many do not publish a rate.',
+    disclosure: 'Senseible’s loan-readiness check is listed here. Senseible does not lend, arrange or approve loans.',
     criteria: [
       { id: 'what_it_funds', short: 'What it funds', label: 'Which green projects it pays for', ask: 'Is our exact equipment or project on the eligible list?' },
       { id: 'ticket_size', short: 'Loan limits', label: 'Published loan or cover limits', ask: 'What is the minimum and maximum, and does our project fit?' },

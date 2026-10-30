@@ -60,7 +60,7 @@ describe('software guides', () => {
         expect(g.disclosure).toContain('not a tender platform');
       } else {
         expect(ours.length).toBe(1);
-        expect(g.disclosure.startsWith('Senseible makes one of the tools on this list.')).toBe(true);
+        expect(g.disclosure).toMatch(g.id === 'green-loans' ? /^Senseible’s loan-readiness check is listed here\./ : /^Senseible makes one of the tools on this list\./);
       }
     }
     const credits = productsFor('carbon-credits').find(p => p.isSenseible)!;
