@@ -13,7 +13,7 @@ import {
 import "./brsrReporting.css";
 
 // /brsr-reporting. A hub for BRSR and BRSR Core. Each section carries one device:
-// a jump bar that follows the reader, a market-cap ladder, a nine-part wheel,
+// a hero where the reader picks their side and the value chain asks light up, a jump bar that follows the reader, a market-cap ladder, a nine-part wheel,
 // a then-and-now flip, a bill board whose totals recount, and a live answer filter.
 // Facts and their sources live in src/data/brsrHub.ts.
 
@@ -297,6 +297,57 @@ function AnswerFinder() {
   );
 }
 
+/* ---------- Hero: pick your side, the value chain asks light up ---------- */
+
+type Side = "supplier" | "listed";
+// Asks: SUPPLIER_LINES[2]. Records: ATTRIBUTES 1 to 4. Only Scope 1 and 2 and
+// energy are built from bills (ATTRIBUTES fromBills). Rules: RULE_ROWS and RUNGS.
+const CHAIN_ASKS = [
+  { ask: "Scope 1 and Scope 2", record: "Fuel invoices and electricity bills", bills: true },
+  { ask: "Total energy", record: "Electricity bills and fuel invoices", bills: true },
+  { ask: "Water", record: "Supply bills, borewell meter readings, tanker invoices", bills: false },
+  { ask: "Waste", record: "Weighbridge slips, waste manifests, recycler receipts", bills: false },
+];
+const SIDE_COPY: Record<Side, { head: string; rule: string }> = {
+  supplier: {
+    head: "What your customer will ask you for",
+    rule: "You count if you alone are 2% or more of its purchases or sales. No law makes you send figures. A contract or supplier code can.",
+  },
+  listed: {
+    head: "What you ask each partner for",
+    rule: "Any partner at 2% or more of your purchases or sales counts. Coverage may stop at 75%. Voluntary from FY 2025-26.",
+  },
+};
+
+function ChainAsks() {
+  const [side, setSide] = useState<Side>("supplier");
+  const c = SIDE_COPY[side];
+  return (
+    <div className="brh-chain" data-side={side}>
+      <div className="brh-chain-pick" role="radiogroup" aria-label="Your side of the value chain">
+        <button type="button" role="radio" aria-checked={side === "supplier"} onClick={() => setSide("supplier")}>We're a supplier</button>
+        <button type="button" role="radio" aria-checked={side === "listed"} onClick={() => setSide("listed")}>We're listed</button>
+      </div>
+      <div className="brh-chain-path" aria-hidden="true">
+        <span className="brh-node" data-you={side === "supplier"}>Supplier{side === "supplier" && <em>You</em>}</span>
+        <span className="brh-wire"><i key={side} /><b>{side === "supplier" ? "Your figures, April to March" : "Your request, April to March"}</b></span>
+        <span className="brh-node" data-you={side === "listed"}>Listed company<small>top 250</small>{side === "listed" && <em>You</em>}</span>
+      </div>
+      <p className="brh-chain-head">{c.head}</p>
+      <ol className="brh-asks" key={side} aria-live="polite">
+        {CHAIN_ASKS.map((a, i) => (
+          <li key={a.ask} style={{ "--i": i } as CSSProperties} data-bills={a.bills}>
+            <span className="brh-ask">{a.ask}</span>
+            <span className="brh-ask-rec">{a.record}</span>
+            {a.bills && <span className="brh-ask-tag">{side === "supplier" ? "Read from your bills" : "Read from their bills"}</span>}
+          </li>
+        ))}
+      </ol>
+      <p className="brh-chain-rule" key={`r-${side}`}>{c.rule}</p>
+    </div>
+  );
+}
+
 /* ---------- Page ---------- */
 
 export default function BrsrReporting() {
@@ -308,13 +359,16 @@ export default function BrsrReporting() {
       <MinimalNav />
       <main className="brh">
         <header className="brh-hero">
-          <p className="brh-eyebrow">BRSR and BRSR Core</p>
-          <h1 className="brh-title">BRSR in plain words, <span>and the bills behind your energy and emissions figures.</span></h1>
-          <p className="brh-lede">Who has to file, what BRSR Core checks, what changed for the value chain in 2025, and where each environment figure comes from.</p>
-          <div className="brh-hero-cta">
-            <Link to="/" className="brh-cta">Turn a bill into BRSR figures <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
-            <span className="brh-cta-note">Free. No sign-up to read a bill.</span>
+          <div className="brh-hero-copy">
+            <p className="brh-eyebrow">BRSR and BRSR Core</p>
+            <h1 className="brh-title">BRSR in plain words, <span>and the bills behind your figures.</span></h1>
+            <p className="brh-lede">From FY 2025-26 a top 250 listed company may report its value chain, so the questions land on its suppliers. See what gets asked, and the record that answers each line.</p>
+            <div className="brh-hero-cta">
+              <Link to="/" className="brh-cta">Turn a bill into BRSR figures <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+              <span className="brh-cta-note">Free. No sign-up to read a bill.</span>
+            </div>
           </div>
+          <ChainAsks />
         </header>
 
         <JumpBar />
