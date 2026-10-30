@@ -154,3 +154,28 @@ describe('copy gate: verified emissions certificate', () => {
     expect(r.contentBottom).toBeLessThan(r.footerTop - 4);
   });
 });
+
+describe('copy gate: buyer answer pack', async () => {
+  const { buildBuyerAnswerPack, generateBuyerPackPDF } = await import('../src/lib/buyerAnswerPack');
+  const scope2 = {
+    enabled: true, warnings: [], needsData: [],
+    years: [{ year: 'FY2025-26', location: { kwh: 40000, kg: 28400, unresolvedKwh: 0, instrumentKwh: 0 }, market: { kwh: 40000, kg: 17040, unresolvedKwh: 0, instrumentKwh: 16000 } }],
+    instruments: [{ id: 'i1', type: 'eac', scheme: 'I-REC', certificateRef: null, mwh: 16, generationCountry: 'IN', vintageStart: '2025-04-01', vintageEnd: '2026-03-31', kgPerKwh: 0, retired: true, beneficiaryConfirmed: true, hasEvidence: true, allocatedKwh: 16000 }],
+  };
+  const scope3 = { enabled: true, categories: [{ category: 1, kg: 2500, lines: 3 }, { category: 4, kg: 1700, lines: 2 }] };
+  const cases: Array<[string, any, any]> = [
+    ['verified, no renewable records', ds, {}],
+    ['with renewable records and invoice lines', ds, { scope2, scope3 }],
+    ['pre-verification, no target, no GSTIN', { ...ds, draft: true, verification: null, target: null, gstin: null, sector: null }, {}],
+    ['no Scope 3', { ...ds, scope3Kg: 0, categories: ds.categories.filter((c: any) => c.scope !== 3) }, {}],
+  ];
+  for (const [name, data, extras] of cases) {
+    it(name, async () => {
+      captured.length = 0;
+      await generateBuyerPackPDF(buildBuyerAnswerPack(data, extras));
+      const text = captured.join(' ').replace(/\s+/g, ' ');
+      expect(text).toContain('Buyer answer pack');
+      check(`buyer answer pack: ${name}`, [...captured]);
+    });
+  }
+});
