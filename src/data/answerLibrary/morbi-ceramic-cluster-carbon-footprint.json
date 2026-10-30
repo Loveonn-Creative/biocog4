@@ -1,0 +1,92 @@
+{
+  "slug": "morbi-ceramic-cluster-carbon-footprint",
+  "q": "What is the Morbi ceramic cluster's total energy use and carbon footprint, and where does one tile unit sit in it?",
+  "title": "Morbi ceramic cluster carbon footprint",
+  "short": "BEE's 2010 study of Morbi counted about 479 units burning 660 million scm of natural gas, 1.32 million tonnes of lignite and 1.2 billion kWh a year. That works out to roughly 4.1 million tonnes of CO2, an estimate. A medium wall tile unit came to about 0.2% of it.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Owners of wall, floor, vitrified and sanitary ware units in Morbi, Gujarat",
+  "sections": [
+    {
+      "h": "The cluster as BEE measured it",
+      "ul": [
+        "About 479 units in 2009 to 2010, with around 50 more being built: 178 wall tile, 52 floor tile, 36 vitrified, 43 sanitary ware, 40 spray dryer mud units and 120 seasonal roofing tile units.",
+        "Output of about 4,749 thousand tonnes a year and about 67,750 jobs. Morbi made over 70% of India's ceramic tiles.",
+        "Energy: 1,200 million kWh of electricity, 660 million scm of natural gas, 1,320 million kg of lignite, 165 million kg of charcoal and 800,000 litres of diesel a year.",
+        "Energy was 25% to 30% of production cost, and the cluster used about 1% of India's energy."
+      ]
+    },
+    {
+      "h": "What that means in CO2",
+      "p": [
+        "Gas went mostly to kilns. Spray dryers ran mainly on coal gasifiers or fluidised bed hot gas generators burning lignite or Indonesian coal, with briquettes, saw dust or gas in some units. On today's factors the 2010 mix gives about 4.1 million tonnes of CO2 a year, or about 0.87 tonnes per tonne of product. Lignite was the biggest line, larger than gas. Charcoal and other biomass are left out as biogenic CO2.",
+        "The fuel mix has changed since that study, so use these numbers as a baseline. They are not a picture of Morbi today."
+      ]
+    },
+    {
+      "h": "Where your unit sits",
+      "p": [
+        "BEE's typical medium wall tile unit used 5,000 kWh, 3,500 scm of gas and solid fuel equal to 9,600 kg of lignite a day. Work out the same three lines from your own bills. If the solid fuel line is the largest, your spray dryer is where the CO2 is. That matches the cluster as a whole."
+      ]
+    },
+    {
+      "h": "Who asks, and what moves the number",
+      "ul": [
+        "Tiles are not CBAM goods, so no EU declaration is needed. Distributors, project specifiers and EPD requests ask for kg CO2 per square metre instead.",
+        "Banks lending for kiln or dryer upgrades want a before and after figure from bills.",
+        "Running the spray dryer on gas instead of lignite cuts its CO2 by about 45%, if the dryer stays as efficient. Kiln insulation and kiln exhaust heat sent to the dryer cut gas.",
+        "Keep gas for kilns and dryers on separate meters if you can, solid fuel purchase invoices with the supplier's calorific value, monthly kWh, and square metres packed by product."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: BEE's medium wall tile unit, one day",
+    "lines": [
+      "Electricity: 5,000 kWh x 0.675 = 3,375 kg CO2",
+      "Natural gas: 3,500 scm x 2.05 = 7,175 kg CO2",
+      "Lignite: 9,600 kg x 1.48 = 14,208 kg CO2",
+      "Day total: 24,758 kg; over 350 working days about 8,665 t CO2, about 0.21% of the cluster's 4.1 million t",
+      "Same dryer heat from gas: 140.7 GJ / 36.8 MJ per scm = about 3,818 scm x 2.05 = 7,827 kg CO2, about 6.4 t a day less"
+    ],
+    "note": "Estimates. Lignite at 1.48 t CO2 per tonne uses the IPCC 2006 default of 101 t CO2 per TJ at the 3,500 kcal per kg BEE recorded. Gas at 8,800 kcal per scm as recorded. Grid factor for FY 2025-26. Use your own bills and calorific values."
+  },
+  "senseible": "Senseible reads your gas, electricity and fuel invoices into a monthly Scope 1 and 2 record for the unit, with each line traced to its bill, so you can show a buyer or bank your own figure instead of a cluster average.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Morbi tile gas and power per square metre",
+      "to": "/answers/morbi-tile-kiln-gas-carbon-per-square-metre"
+    },
+    {
+      "label": "Coal gasifier vs piped gas kiln",
+      "to": "/answers/morbi-coal-gasifier-vs-piped-gas-kiln-co2"
+    },
+    {
+      "label": "Are ceramic tiles covered by CBAM?",
+      "to": "/answers/are-ceramic-tiles-covered-by-cbam"
+    },
+    {
+      "label": "Green loan for a Morbi tile factory",
+      "to": "/climate-intelligence/green-loan-ceramic-factory-morbi"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Manual on energy conservation measures, Morbi ceramic cluster (2010)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Morbi_Ceramic_Cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Cluster figures are from BEE's 2009 to 2010 audits. Replace them if BEE or SAMEEEKSHA publishes a newer Morbi energy profile."
+}

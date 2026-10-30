@@ -1,0 +1,83 @@
+{
+  "slug": "ireda-loan-for-proprietorship-or-partnership",
+  "q": "Can a proprietorship, partnership or loss-making firm borrow from IREDA?",
+  "title": "IREDA loans for proprietors and partnerships",
+  "short": "Yes, but only against a bank guarantee or a pledged fixed deposit from a scheduled commercial bank covering the entire loan. IREDA's norms, updated to 1 October 2026, apply this to proprietorships, partnerships other than LLPs, and firms showing losses in last year's audited accounts. Private companies and LLPs apply on normal terms.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Owners of proprietorship and partnership units planning a solar, biomass or efficiency project, and their advisers",
+  "sections": [
+    {
+      "h": "Who IREDA lends to on normal terms",
+      "ul": [
+        "Private sector companies and LLPs.",
+        "Central public sector undertakings, state utilities and joint sector companies.",
+        "All of them registered in India, with borrowing powers and the power to take up renewable energy or energy efficiency projects."
+      ]
+    },
+    {
+      "h": "Who needs a bank behind the whole loan",
+      "ul": [
+        "Proprietary concerns, partnership firms other than LLPs, trusts, societies and individuals.",
+        "Applicants that made a loss, or carry accumulated losses, in the audited accounts of the last financial year.",
+        "For both, the security must be a bank guarantee or a pledged fixed deposit receipt from a scheduled commercial bank, for the entire loan."
+      ]
+    },
+    {
+      "h": "Losses that do not count against you",
+      "p": [
+        "IREDA sets aside some losses: preliminary and pre-operative expenses of a project company, a one-time expense in an otherwise profitable firm, losses from a merger or acquisition, and mark-to-market losses on currency hedging. If last year's loss came from one of these, say so in the application with the figures."
+      ]
+    },
+    {
+      "h": "Who is shut out",
+      "p": [
+        "Applicants in default to banks, NBFCs, financial institutions or IREDA and named as defaulters in CIBIL or CRILC reports, and accounts classified as NPA or SMA-2 with another lender when you apply. A narrow exception exists for projects under an approved NCLT or asset reconstruction resolution plan, once the account is upgraded to standard."
+      ]
+    },
+    {
+      "h": "Is the guarantee route worth it?",
+      "p": [
+        "It is not all cost. When the loan is backed by a bank guarantee or fixed deposit equal to the amount sanctioned, IREDA charges the Grade I rate, its best risk grade, on projects under its credit risk rating, and cuts 1 percent off the rate on other projects. The catch is that your bank must be willing to stand behind the full amount, and a bank prepared to do that may simply lend to you itself. Compare both offers side by side. If you plan more than one project, converting to an LLP or private company moves you into IREDA's normal category; take your accountant's advice on the tax and liability side first.",
+        "Two more rules matter for small units: IREDA's minimum loan is Rs 50 lakh unless a scheme says otherwise, and a micro or small enterprise is exempt from the external credit rating IREDA otherwise asks for while a project is being built."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A proprietor adds a briquette line",
+    "lines": [
+      "Project cost from quotes: Rs 1.2 crore",
+      "IREDA loan at its usual 70 percent: Rs 84 lakh, which clears the Rs 50 lakh minimum",
+      "Security as a proprietorship: a bank guarantee or pledged fixed deposit for the full Rs 84 lakh",
+      "Same project as an LLP: normal IREDA security terms instead"
+    ],
+    "note": "The bank sets its own margin and fee for issuing an Rs 84 lakh guarantee; get that figure before comparing with a direct bank loan."
+  },
+  "senseible": "Senseible does not lend, stand behind a loan or decide eligibility. It reads your electricity bills and fuel invoices into the energy and carbon figures a lender looks for in a renewable or efficiency project, whichever lender you choose, and its green loan check shows what else is missing.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "IREDA biomass pellet plant loan terms",
+      "to": "/answers/ireda-biomass-pellet-plant-loan-terms"
+    },
+    {
+      "label": "What IREDA's energy efficiency loans fund",
+      "to": "/answers/ireda-energy-efficiency-loan-what-it-funds"
+    },
+    {
+      "label": "Udyam registration for bank loans",
+      "to": "/answers/udyam-registration-needed-for-bank-loan"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026: chapter 3 general eligibility conditions, chapter 4 minimum loan Rs 50 lakh, chapter 5 loan quantum, external rating exemption for MSE borrowers, Grade I rate or 1% rebate against bank guarantee or FDR",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Scheme terms change; re-check IREDA's latest Financing Norms on ireda.in every quarter."
+}

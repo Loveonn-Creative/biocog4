@@ -1,0 +1,89 @@
+{
+  "slug": "coimbatore-foundry-cluster-energy-per-tonne-castings",
+  "q": "What do Coimbatore foundries use per tonne of castings, and how does one unit compare with the cluster?",
+  "title": "Coimbatore foundries: energy per tonne",
+  "short": "Between 1,000 and 1,200 kWh per tonne of good castings, 600 to 700 of it in melting, is what TERI measured in Coimbatore's induction foundries. A 1,000 tonne a year unit uses about 1.1 million kWh, about 743 t CO2. Above 1,200, look at your furnace and your rejections first.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Foundry owners in Coimbatore, including Arasur, Kanuvai, Manikkampalayam and SIDCO estates",
+  "sections": [
+    {
+      "h": "The cluster you are measured against",
+      "ul": [
+        "About 535 foundries: about 15 large, 70 medium, the rest small and micro, making about 2,000 tonnes a day (about 0.6 million tonnes a year).",
+        "Half make pump-set castings. The rest serve automotive (15%), wet grinders (10%), textile machinery (10%) and jobbing work (15%).",
+        "In 2014 to 15 the cluster used 460 million kWh and 32,000 tonnes of coke, 58,640 tonnes of oil equivalent. That is about 407,000 tonnes of CO2 on today's factors.",
+        "Power comes from the state utility or from wind farms in Tamil Nadu."
+      ]
+    },
+    {
+      "h": "Check your own number",
+      "ol": [
+        "Add 12 months of kWh from your bills and divide by tonnes of good castings despatched.",
+        "Compare with 1,000 to 1,200 kWh a tonne. If you have a sub-meter, compare melting alone with 600 to 700 kWh per tonne of molten metal.",
+        "For a cupola, coke should be 10% to 15% of metal melted, or 15% to 20% of good castings.",
+        "If you are high, check rejections (many units run at 6% to 9%), furnace age and whether the furnace has a lid."
+      ]
+    },
+    {
+      "h": "Where the savings are",
+      "ul": [
+        "An old induction furnace at 750 kWh or more per tonne of molten metal can be replaced with one near 550. TERI puts the payback under a year.",
+        "A lid cuts radiation and convection loss, 4% to 6% of input energy.",
+        "Bringing rejections below 5%, and shot blasting the sand off runners and risers before remelting, saves melting energy for little or no cost.",
+        "Wind power bought under contract cuts market-based Scope 2, if you keep the supply records."
+      ]
+    },
+    {
+      "h": "Why pump makers will ask you",
+      "p": [
+        "Pump and motor makers who export are starting to ask their foundries for kg CO2 per tonne, because their own buyers want a product footprint. A green loan for a new furnace is easier to get with kWh per tonne before and after from bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 1,000 tonne a year induction foundry",
+    "lines": [
+      "Electricity: 1,100,000 kWh x 0.675 = 742.5 t CO2, about 0.18% of the cluster's 407,000 t",
+      "Per tonne of good castings: 742.5 / 1,000 = 0.74 t CO2",
+      "New furnace, 750 down to 550 kWh per tonne of molten metal, on 1,400 t melted: 200 x 1,400 = 280,000 kWh saved",
+      "CO2 saved: 280,000 x 0.675 = 189 t a year"
+    ],
+    "note": "Unit energy is from TERI's Coimbatore profile. 1,400 t melted assumes about 70% yield; use your own melt log. Grid factor for FY 2025-26; coke in the cluster total at 3.02 t CO2 per tonne (IPCC default)."
+  },
+  "senseible": "Senseible reads your electricity bills and coke invoices into a monthly record, and the green loan check shows what a lender will look for before you apply for a furnace upgrade.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Coimbatore induction foundry: CBAM vs footprint",
+      "to": "/answers/coimbatore-induction-foundry-cbam-vs-footprint"
+    },
+    {
+      "label": "Coimbatore pump exporter EPD for buyers",
+      "to": "/answers/coimbatore-pump-exporter-epd-for-buyers"
+    },
+    {
+      "label": "Foundry footprint per good casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Coimbatore foundries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/coimbatore-foundry-cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Cluster energy is for 2014 to 15. Update if a newer Coimbatore profile is published."
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "ludhiana-forging-cluster-furnace-oil-per-tonne",
+  "q": "How much furnace oil do Ludhiana forging units burn per tonne, and what does induction heating save?",
+  "title": "Ludhiana forging: furnace oil per tonne",
+  "short": "If your forging furnace burns more than about 102 litres of furnace oil a tonne, an induction billet heater at 450 kWh a tonne cuts your CO2 on today's grid. TERI found Ludhiana micro forges at 150 to 170 litres a tonne and medium units at 100 to 130, so most micro units clear that bar easily.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Closed die and open die forging unit owners in Ludhiana: Daba Road, Focal Point and Industrial Areas A, B and C",
+  "sections": [
+    {
+      "h": "The cluster TERI profiled",
+      "ul": [
+        "About 500 forging units making about 1,640 tonnes a day, a quarter of it from about 10 large forges. Of the rest, about 150 are micro (20 t a month), 300 small (60 t) and 50 medium (200 t).",
+        "Products: crankshafts, connecting rods, brake drums, spanners and special tools, from bar and billet bought mostly from Mandi Gobindgarh mills.",
+        "Heating is 70% to 80% of a unit's energy. Most furnaces are oil-fired box, L or pusher types at 50 to 400 kg an hour.",
+        "In 2016 the cluster used 190 million kWh, 40,200 tonnes of furnace oil and 525 kL of diesel: 59,080 toe and, by TERI's estimate, 314,190 tonnes of CO2."
+      ]
+    },
+    {
+      "h": "Where your furnace stands",
+      "p": [
+        "Divide a month's furnace oil litres by tonnes heated. Micro units in Ludhiana run at 150 to 170 litres a tonne and medium units at 100 to 130. TERI's target with induction is 0.04 toe a tonne (450 kWh), down from 0.15 toe (150 litres). Each litre of oil is 2.97 kg CO2 and each kWh 0.675 kg, so a litre a tonne is matched by about 4.4 kWh a tonne."
+      ]
+    },
+    {
+      "h": "Induction or a better oil furnace",
+      "ul": [
+        "Induction billet heater: about 35% less energy and less scale loss. TERI put the cost at Rs 15 to 50 lakh with a 1 to 3 year payback.",
+        "Recuperator on an oil furnace with flue gas at 450 to 700 °C: 10% to 15% saving, paid back in 8 months to 2 years.",
+        "Ceramic insulation in box furnaces: 4% to 6% saving.",
+        "Only medium units run three shifts. A heater sized for your real tonnage beats one sized for capacity."
+      ]
+    },
+    {
+      "h": "Tractor makers, EU importers and banks",
+      "p": [
+        "Tractor and two wheeler makers ask for kg CO2 per tonne, and most of their parts sit outside CBAM. Flanges and fittings under CN 7307 and forged articles under 7326 are inside it, and there the bar you buy dominates the figure. Banks lending for an induction heater want oil litres per tonne for the past year and kWh per tonne after."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: oil furnace vs induction heater",
+    "lines": [
+      "Micro unit, 20 t a month at 160 L a tonne: 3,200 L x 2.97 = 9,504 kg CO2",
+      "Same unit on induction at 450 kWh a tonne: 9,000 kWh x 0.675 = 6,075 kg CO2",
+      "Saving: 3,429 kg a month, about 41 t a year",
+      "Medium unit, 200 t a month at 115 L a tonne: 68,310 kg on oil against 60,750 kg on induction, about 91 t a year saved",
+      "Break-even at 450 kWh a tonne: 450 x 0.675 / 2.97 = about 102 L a tonne"
+    ],
+    "note": "Litres and kWh per tonne are within the ranges in TERI's Ludhiana profile; use your own oil invoices and a meter on the heater. Grid factor for FY 2025-26. Excludes steel saved through lower scale loss."
+  },
+  "senseible": "Senseible reads furnace oil invoices and electricity bills into a monthly record, and the green loan check shows what a lender will want to see before you finance an induction heater.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Induction heater vs oil-fired furnace",
+      "to": "/answers/induction-billet-heater-vs-oil-fired-forging-furnace"
+    },
+    {
+      "label": "Ludhiana forging CBAM: the steel bar share",
+      "to": "/answers/ludhiana-forging-cbam-figure-steel-bar-share"
+    },
+    {
+      "label": "Are steel forgings covered by CBAM?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Ludhiana forging industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Ludhiana-Forging-Punjab.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Cluster figures are for 2016; investment figures are TERI's at that time."
+}

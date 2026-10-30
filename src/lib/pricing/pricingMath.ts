@@ -102,3 +102,17 @@ export function addonTotals(plan: PlanTier, cycle: BillingCycle, qty: Record<str
 }
 
 export const inr = (n: number) => '₹' + Math.round(n).toLocaleString('en-IN');
+
+// Scale estimate by team size (restored, owner, 30 October 2026): a base fee
+// plus a per-person fee, for teams that need no extra integrations. Sales
+// still issue the binding quote; integrations are quoted separately.
+export const SCALE_TEAM = { min: 10, max: 500, step: 10, start: 50 } as const;
+export const SCALE_RATES = {
+  yearly: { base: 15000, perPerson: 99 },
+  monthly: { base: 30000, perPerson: 198 },
+} as const;
+export function scaleEstimate(teamSize: number, cycle: 'yearly' | 'monthly'): number {
+  const size = Math.min(SCALE_TEAM.max, Math.max(SCALE_TEAM.min, Math.round(teamSize)));
+  const r = SCALE_RATES[cycle];
+  return r.base + size * r.perPerson;
+}

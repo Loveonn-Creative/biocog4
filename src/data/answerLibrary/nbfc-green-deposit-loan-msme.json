@@ -1,0 +1,83 @@
+{
+  "slug": "nbfc-green-deposit-loan-msme",
+  "q": "Can an NBFC lend me green deposit money for a solar or efficiency project?",
+  "title": "NBFC green deposit loans for MSME projects",
+  "short": "Yes, if the NBFC takes deposits and your project is on RBI's green list, such as solar, LED lighting, building efficiency retrofits or electric vehicles. RBI's 2025 directions for deposit-taking NBFCs and housing finance companies send green deposit money only to listed green activities, and an NBFC may also fund green projects without green deposits.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners borrowing from an NBFC for a green project, and NBFC credit officers",
+  "sections": [
+    {
+      "h": "Which NBFCs this covers",
+      "p": [
+        "The Reserve Bank of India (Non-Banking Financial Companies: Climate Finance and Management of Climate Change Risks) Directions, 2025, dated 28 November 2025, apply to deposit-taking NBFCs and deposit-taking housing finance companies. Raising green deposits is optional. An NBFC that does not take deposits is outside these directions, though it can still lend for your solar plant on its own terms."
+      ]
+    },
+    {
+      "h": "Projects green deposit money can fund",
+      "ul": [
+        "Renewable energy: solar, wind, biomass and hydropower projects that pair generation with storage, and support for adopting renewable energy.",
+        "Energy efficiency: efficient systems in buildings, LED lighting replacements, efficiency retrofits to existing buildings and new low-carbon buildings. A machine or process upgrade in a factory is not named, so ask whether the NBFC's framework counts it.",
+        "Clean transport: electric vehicles and charging infrastructure.",
+        "Water and waste: wastewater treatment, water conservation, waste recycling and reduction, and pollution control.",
+        "Not eligible: projects whose core energy source is fossil fuel, biomass from protected areas, landfills, direct waste incineration and hydro plants above 25 MW, among others."
+      ]
+    },
+    {
+      "h": "Timing matters",
+      "p": [
+        "An NBFC may not finance a project first and then raise green deposits for it afterwards. So if you want your loan to sit in the NBFC's green deposit book, raise it before sanction. A loan already disbursed cannot be funded from green deposits raised afterwards."
+      ]
+    },
+    {
+      "h": "What the NBFC has to check, and will ask you for",
+      "ul": [
+        "Its Board-approved Financing Framework covers how it evaluates and selects projects and how it validates the information the borrower provides. The framework, with an external reviewer's opinion, must be on its website, so you can read the eligibility rules yourself.",
+        "An independent third party checks every year that green deposit money went to eligible projects.",
+        "The NBFC must assess the impact of its green lending yearly, with indicators such as MWh of energy saved or generated and tonnes of CO2e avoided a year. Expect to be asked for those numbers.",
+        "RBI defines greenwashing as marketing something as green when it does not meet these requirements. A loan with no evidence behind its green label is a risk for the lender, not just for you."
+      ]
+    }
+  ],
+  "example": {
+    "title": "LED retrofit plus 100 kW of rooftop solar",
+    "lines": [
+      "LED saving from your bills and the supplier's figures: 40,000 kWh a year (assumed)",
+      "Solar output: 100 kW x 1,400 kWh per kW (assumed yield) = 1,40,000 kWh a year",
+      "Figures the NBFC reports: 40 MWh saved and 140 MWh generated a year, 180 MWh in all",
+      "CO2e avoided: 1,80,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 1,21,500 kg, about 121.5 tonnes a year"
+    ],
+    "note": "Energy saved, energy generated and CO2e avoided are impact indicators the directions give as examples. Give them as estimates at sanction, then replace them with figures from your bills after a year of running."
+  },
+  "senseible": "Senseible reads your electricity bills before and after the project into kWh and CO2 per month, the impact figures an NBFC's yearly assessment asks for. The green loan readiness check shows which ones you still lack. Senseible does not lend, and its records are not a third-party review.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Impact data lenders report on green deposits",
+      "to": "/answers/green-deposit-impact-data-banks-ask"
+    },
+    {
+      "label": "Projects green deposits cannot fund",
+      "to": "/answers/green-deposit-excluded-projects"
+    },
+    {
+      "label": "NBFC loans and priority sector",
+      "to": "/answers/nbfc-msme-loan-priority-sector-on-lending"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Reserve Bank of India (Non-Banking Financial Companies: Climate Finance and Management of Climate Change Risks) Directions, 2025, 28 November 2025: applicability, paragraphs 8 to 17",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12940&Mode=0"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Terms change. RBI says green deposit allocation will move to the official Indian green taxonomy once finalised; re-check the eligible list on rbi.org.in every quarter."
+}
