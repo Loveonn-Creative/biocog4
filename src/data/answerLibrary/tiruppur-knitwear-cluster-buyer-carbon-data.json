@@ -1,0 +1,85 @@
+{
+  "slug": "tiruppur-knitwear-cluster-buyer-carbon-data",
+  "q": "What fuels does the Tiruppur knitwear cluster run on, and what carbon data do export brands ask a unit for?",
+  "title": "Tiruppur knitwear: fuels and buyer carbon data",
+  "short": "Tiruppur's dyeing houses run boilers and thermic fluid heaters on firewood, coconut husk, furnace oil and diesel, and dyeing is about 87% of the cluster's energy in BEE's study. Brands want each unit's electricity and fuel per kg, sent up through the exporter, with wood shown separately.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Dyeing, compacting, knitting and embroidery job-work units in Tiruppur, and the exporters who collect their data",
+  "sections": [
+    {
+      "h": "Why the request lands on your desk, not just the exporter's",
+      "p": [
+        "Most of Tiruppur's 3,200 units do job work for export houses, which sell to overseas brands. A brand counting its supply chain emissions needs a figure for every step a garment passes through, so the exporter asks each knitter, dyer and compactor for its share. If you cannot give one, the brand fills the gap with an industry average that you cannot check and cannot improve on."
+      ]
+    },
+    {
+      "h": "The cluster in BEE's numbers (2010-11 study)",
+      "ul": [
+        "Dyeing: 570 units, about 713,640 toe a year. Typical unit: 0.71 kWh and 4.0 kg of fuel per kg of fabric.",
+        "Compacting: 250 units, about 73,875 toe. 0.05 kWh and 0.38 kg of fuel per kg.",
+        "Knitting: 750 units, electricity only, 0.26 kWh per kg.",
+        "Computer embroidery: 1,000 units, electricity only, 0.12 kWh per kg.",
+        "Bleaching (150) and stitching and finishing (500) use little energy and were left out of the 817,965 toe total."
+      ]
+    },
+    {
+      "h": "What brands typically ask a unit for",
+      "ul": [
+        "Grid electricity and diesel generator fuel for the year, in kWh and litres.",
+        "Boiler and thermic fluid heater fuel by type and weight.",
+        "Kg of fabric processed in the same period, so the figure can be divided per kg.",
+        "Evidence behind each number, usually bills and purchase invoices, not a filled-in total."
+      ]
+    },
+    {
+      "h": "The wood question",
+      "p": [
+        "BEE's manual counted the cluster's wood as non-renewable, at 1.50 t CO2 a tonne. Under the GHG Protocol, CO2 from burning biomass is reported separately from the scopes, while its methane and nitrous oxide stay in Scope 1. Send both lines and say which you used. A buyer who sees wood folded into Scope 1 without a note will ask, and one who sees it left out with no biogenic line will ask harder."
+      ]
+    },
+    {
+      "h": "Cleaner moves that show up in the numbers",
+      "ul": [
+        "Low liquor ratio soft flow machines: old machines run at a material to liquor ratio of 8, so less water means less steam.",
+        "Heat recovery from hot drained dye liquor, and condensate return to the boiler.",
+        "Replacing diesel-fired thermic fluid heaters with wood gasifiers, which BEE costed for heat-setting units.",
+        "Rooftop solar on knitting and embroidery units, where electricity is the whole footprint."
+      ]
+    },
+    {
+      "h": "What to keep for your exporter",
+      "ul": [
+        "Electricity bills and generator diesel invoices, month by month.",
+        "Wood and husk purchases by weight, with how you converted loads or carts if bought that way.",
+        "Kg processed per month from the job-work register, matched to the same months."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: 1 kg of fabric through knitting, dyeing and compacting",
+    "lines": [
+      "Electricity: 0.26 + 0.71 + 0.05 = 1.02 kWh x 0.675 = 0.689 kg CO2",
+      "Wood and husk: 4.0 + 0.38 = 4.38 kg",
+      "Scope 1 methane and nitrous oxide from the wood: 4.38 kg x 0.0297 = 0.130 kg CO2e",
+      "Scope 1 and 2 together: 0.689 + 0.130 = 0.82 kg CO2e per kg of fabric",
+      "Biogenic CO2, reported on its own line: 4.38 x 1.75 = 7.7 kg"
+    ],
+    "note": "Uses BEE's 2010-11 averages, IPCC defaults for wood and the FY 2025-26 grid factor. A unit burning furnace oil or diesel instead of wood would show a much larger Scope 1 line."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel invoices into a per-unit record your exporter can pass up to the brand, with wood kept on its own line and every figure traced to the document behind it.",
+  "links": [
+    { "label": "Supplier evidence for buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Tiruppur dyeing unit: firewood boiler", "to": "/answers/tiruppur-dyeing-unit-firewood-boiler-emissions" },
+    { "label": "Tiruppur knitwear carbon per garment", "to": "/answers/tiruppur-knitwear-carbon-per-garment" },
+    { "label": "Low liquor ratio dyeing saving", "to": "/answers/low-liquor-ratio-dyeing-steam-co2-saving" }
+  ],
+  "sources": [
+    { "label": "BEE, Manual on Energy Conservation Measures in Textile Cluster, Tirupur (BEE SME programme, SAMEEEKSHA copy)", "url": "https://sameeeksha.org/pdf/clusterprofile/Tirupur_Textile_Industries.pdf" },
+    { "label": "SAMEEEKSHA, Tirupur textiles cluster summary (2010-11 data)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=150&Itemid=499" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-29"
+}

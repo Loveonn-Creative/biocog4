@@ -1,0 +1,66 @@
+{
+  "slug": "cbam-negative-verification-statement-what-next",
+  "q": "Our CBAM verification came back negative. What happens to our EU buyers?",
+  "title": "Negative CBAM verification: what next",
+  "short": "Your EU buyers cannot use your figures for that year. They, and any plant that uses your goods as a precursor, must switch to the Commission's default values plus the mark-up, 10% for 2026 production. Fix the findings, update the monitoring plan and set up next year's verification early.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian CBAM goods producers whose verifier issued, or may issue, a negative statement",
+  "sections": [
+    {
+      "h": "The three ways a statement turns negative",
+      "ul": [
+        "Material misstatements you did not correct before the report was issued. The verifier lists them in the report.",
+        "Scope too limited: primary data missing and only totals available, a monitoring plan that no accredited verifier has assessed as satisfactory, a plan too vague to verify against, or information you did not hand over.",
+        "Non-conformities that leave too much doubt for reasonable assurance, for example meters never calibrated and the gap left uncorrected year after year."
+      ]
+    },
+    {
+      "h": "What changes for your buyers",
+      "p": [
+        "The Commission's guidance is blunt: a report with a negative statement cannot supply actual specific embedded emissions or actual free allocation figures. Every importer of those goods, and every operator using them as a precursor, has to use the default values. Defaults are set so they do not understate emissions, so your buyer's CBAM bill usually rises.",
+        "The importer files the annual declaration by 30 September for the previous year's imports, and the guidance suggests they want verification reports by mid-August at the latest. That is why a late negative result hurts: there is no time left to fix anything for that declaration."
+      ]
+    },
+    {
+      "h": "What to do this week",
+      "ol": [
+        "Tell each EU buyer in writing which goods and which year are affected, so they plan on default values instead of waiting.",
+        "Tell any customer who uses your goods as a precursor. Their verifier will check your report and will not accept a negative one.",
+        "Sit with the verifier's findings list and sort each item: data you can recover, a meter or lab gap you must fix, or a plan section to rewrite.",
+        "Update the monitoring plan and record what changed. Non-conformities left uncorrected can be escalated to material in later years.",
+        "Agree next year's timeline with the verifier now, with a plan assessment early in the year rather than after 31 December."
+      ]
+    },
+    {
+      "h": "Avoid it next time",
+      "p": [
+        "Most negatives can be avoided before the report is issued. Materiality is not a tolerance band: the verifier asks you to correct every misstatement it finds during the engagement. Answer findings fast, keep primary documents for every figure, and do not let a verification finish with corrections still open."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 t of hot-rolled coil, CN 7208, made in India in 2026",
+    "lines": [
+      "Commission default for India, CN 7208: 4.280 t CO2e per tonne",
+      "Plus the 2026 mark-up of 10%: 4.280 x 1.10 = 4.708 t CO2e per tonne",
+      "With a negative statement the buyer declares: 1,000 x 4.708 = 4,708 t CO2e",
+      "If your verified figure had been 2.600 t per tonne: 1,000 x 2.600 = 2,600 t CO2e",
+      "Embedded emissions the buyer carries because of the negative result: 4,708 minus 2,600 = 2,108 t CO2e"
+    ],
+    "note": "The 2.600 t figure is an example. The certificates the buyer surrenders also depend on the free allocation adjustment, which this example leaves out."
+  },
+  "senseible": "Senseible's CBAM Suite builds the operator emissions report from your plant records and exports a verifier pack with an evidence index and a check of misstatements against the 5% materiality level, so gaps show up before the verifier finds them. That in-house check is not the CBAM verification: the statement comes from an accredited verifier, whether Senseible's partner or one you appoint, and Senseible cannot change it.",
+  "links": [
+    { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
+    { "label": "The 5% materiality level", "to": "/answers/cbam-verification-materiality-5-percent" },
+    { "label": "Default value mark-up by year", "to": "/answers/cbam-default-value-mark-up-by-year" },
+    { "label": "India default values for hot-rolled steel", "to": "/answers/cbam-default-value-india-hot-rolled-steel" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 3.5, 4.1, 4.15 (Table 6) and 4.16 (Table 7)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 4.25 on default values and mark-ups", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "European Commission, default values file (version of 6 August 2026), India sheet", "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx" }
+  ],
+  "reviewed": "2026-10-29"
+}

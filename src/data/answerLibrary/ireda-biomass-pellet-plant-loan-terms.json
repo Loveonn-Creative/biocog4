@@ -1,0 +1,94 @@
+{
+  "slug": "ireda-biomass-pellet-plant-loan-terms",
+  "q": "What are IREDA's loan terms for a biomass pellet or briquette plant?",
+  "title": "IREDA loan for a biomass pellet plant",
+  "short": "IREDA lends up to 70 percent of the cost of a pellet, briquette, torrefied pellet or RDF plant, minimum ₹50 lakh, repaid over up to 10 years after a moratorium of up to 12 months. Before money is released you need firm raw material and offtake contracts for the plant's full capacity, running longer than the loan.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Entrepreneurs setting up a biomass pellet, briquette or RDF plant, and the lenders appraising them",
+  "sections": [
+    {
+      "h": "The terms, from IREDA's current norms",
+      "ul": [
+        "Eligible: any commercially viable plant making biomass pellets, torrefied pellets, briquettes or refuse derived fuel.",
+        "Loan: 70 percent of project cost, with at least 30 percent from the promoter.",
+        "Minimum loan: ₹50 lakh.",
+        "Repayment: up to 10 years, not counting a moratorium of up to 12 months.",
+        "Rate: set by the project's grade under IREDA's credit risk rating, as for biomass power, and the rate on the day of each disbursement applies."
+      ]
+    },
+    {
+      "h": "Two IREDA documents disagree",
+      "p": [
+        "IREDA's standalone scheme sheet for pellet plants, created in 2022, gives a sliding loan share (70 percent up to ₹5 crore of project cost, 60 percent up to ₹10 crore, 50 percent above) and a maximum of 6 years' repayment. The Financing Norms and Schemes updated to 1 October 2026 give a flat 70 percent and up to 10 years. The 2026 norms are the newer official document, so this page follows them. Ask IREDA which applies to your application in writing."
+      ]
+    },
+    {
+      "h": "What must be signed before disbursement",
+      "ol": [
+        "Firm raw material contracts for the entire quantity the plant needs, for longer than the loan tenure including moratorium.",
+        "An offtake agreement for the plant's full production capacity, for the same length.",
+        "A techno-economic viability study and a raw material assessment from an independent agency.",
+        "A sales account set up as a trust and retention or escrow account, so pellet revenue flows through it."
+      ]
+    },
+    {
+      "h": "The numbers IREDA tests",
+      "ul": [
+        "Average debt service coverage above 1.20, and above 1.10 in every year.",
+        "Asset cover above 1.0.",
+        "Post-tax project return above the interest rate.",
+        "Two or more extra securities from a list: a bank guarantee or deposit of at least 10 percent of the loan, collateral worth 10 percent, or corporate or personal guarantees.",
+        "Any central or state subsidy or grant is adjusted against the IREDA loan; any interest subvention is passed on to the project."
+      ]
+    },
+    {
+      "h": "Getting the offtake contract signed",
+      "p": [
+        "Your buyers are boilers and kilns switching from coal, and they will sign a contract longer than your loan only if the switch works for them on cost and on their own carbon reporting. A buyer that can show its coal purchases falling month by month, from its own invoices, has a reason to renew. Show the lender that evidence alongside the offtake contract."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A ₹3 crore pellet plant under each document",
+    "lines": [
+      "Project cost: ₹3 crore (assumed)",
+      "2026 norms: loan 70 percent = ₹2.1 crore; your share ₹90 lakh; up to 10 years after moratorium",
+      "2022 sheet: also 70 percent at this size, but only 6 years to repay",
+      "Coverage test: if yearly loan payments are ₹40 lakh, cash available to pay them must average above 1.20 x ₹40 lakh = ₹48 lakh",
+      "Contracts needed: raw material and offtake for full capacity, each longer than the loan plus moratorium"
+    ],
+    "note": "Stretching the same ₹2.1 crore over 10 years instead of 6 lowers each year's payment, which is what makes the 1.20 coverage test easier to pass."
+  },
+  "senseible": "Senseible does not lend or appraise plants. It reads your buyers' fuel invoices and electricity bills into monthly energy and carbon records, so they can show the coal your pellets replaced. Its green loan check shows what a credit team will look for.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "How much briquette replaces a tonne of coal",
+      "to": "/answers/how-much-briquette-replaces-a-tonne-of-coal"
+    },
+    {
+      "label": "IREDA loans for proprietors and partnerships",
+      "to": "/answers/ireda-loan-for-proprietorship-or-partnership"
+    },
+    {
+      "label": "Carbon credits for MSMEs",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026, scheme XXI Manufacturing of Biomass Pellets / Briquettes / Torrefied Pellets / RDF (70% loan, ₹50 lakh minimum, 10 years plus 12 months moratorium, DSCR, contracts, securities)",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    },
+    {
+      "label": "IREDA, standalone scheme sheet 10 for biomass pellet, briquette and RDF plants (created November 2022): sliding 70, 60 and 50% loan share, 6 years repayment",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/schemes/scheme-10.pdf"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Scheme terms change; re-check IREDA's latest Financing Norms on ireda.in every quarter, and whether the standalone scheme sheet has been updated to match."
+}

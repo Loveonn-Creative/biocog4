@@ -2,67 +2,97 @@
   "slug": "sidbi-4e-loan-terms-and-eligibility",
   "q": "How much does SIDBI's 4E energy efficiency loan cover, and who qualifies?",
   "title": "SIDBI 4E loan: cover and eligibility",
-  "short": "SIDBI's 4E scheme lends up to 90 percent of an energy efficiency project, with a minimum loan of ₹10 lakh, or up to 100 percent if you place 20 percent cash collateral as a SIDBI fixed deposit. The detailed route needs a year of operation and a detailed energy audit by BEE-certified auditors.",
+  "short": "SIDBI's 4E loan funds energy efficiency projects up to ₹15 crore: 100 percent of the cost if you keep 25 percent as a fixed deposit, or up to 75 percent if you put in your own share. You need three years of operations with cash profit, and you must show the project cuts energy use or emissions.",
   "topic": "markets",
   "intent": "check",
-  "audience": "MSMEs planning efficiency retrofits after an energy audit",
+  "audience": "MSME owners planning an efficiency retrofit, and SIDBI or bank officers appraising one",
   "sections": [
     {
-      "h": "What 4E finances",
+      "h": "If you read the older terms",
       "p": [
-        "4E finances energy efficiency measures end to end: buying the equipment and machinery, installation, civil works and commissioning. Typical projects are the ones an audit recommends, such as efficient motors and pumps, compressors, furnace upgrades and waste heat recovery."
+        "Many guides still describe 4E as 90 percent funding with a ₹10 lakh minimum after one year of operation and a detailed audit, or 100 percent against a 20 percent deposit. SIDBI's green finance page no longer shows those terms. Plan on the current ones below, and confirm them in your sanction letter."
       ]
     },
     {
-      "h": "Two ways to apply",
+      "h": "Two ways SIDBI funds it",
       "ul": [
-        "Detailed Appraisal Mode: the unit has been operating for at least one year and has had a Detailed Energy Audit by a technical agency or consultant with BEE-certified Energy Auditors. Funding up to 90 percent of project cost, minimum loan ₹10 lakh.",
-        "Quick Dispensation Mode: up to 100 percent funding against a SIDBI fixed deposit of at least 20 percent as cash collateral. The unit needs at least three years of operations and cash profit in the past two years, based on audited balance sheets."
+        "Fixed deposit route: 100 percent of the project, for loans up to ₹15 crore, with security of 25 percent kept as a fixed deposit.",
+        "Promoter contribution route: up to ₹15 crore, capped at 75 percent of project cost, so you pay at least a quarter yourself.",
+        "Either way: repayment over up to 84 months, with a moratorium of up to 12 months.",
+        "What it pays for: equipment and machinery, installation, minor civil works and commissioning of the efficiency measures."
       ]
     },
     {
-      "h": "Conditions in both modes",
+      "h": "Who qualifies",
       "ul": [
-        "Udyam registration, a satisfactory credit history and no defaults to any bank or financial institution.",
-        "Compliance with SIDBI's Environment and Social Management Framework.",
-        "Repayment period, including any moratorium, is set in the sanction terms rather than fixed in the scheme."
+        "An MSME in manufacturing or services that has run for at least three years, with cash profit in each of the last three financial years.",
+        "A project that establishes an energy efficiency gain or a cut in greenhouse gas emissions.",
+        "Compliance with SIDBI's Environment and Social Management Framework, so expect questions on pollution consents and worker safety."
       ]
     },
     {
-      "h": "Getting the audit right",
+      "h": "The condition that decides the file",
       "p": [
-        "Because the detailed route depends on the audit, the audit report is the core of your application. It should give the baseline energy use, each measure's cost, expected saving and payback. An audit by someone who is not a BEE-certified energy auditor will not meet the stated condition, so check the auditor's certificate number before you pay for the study."
+        "The three-year record is a yes or no. The energy condition is where applications are won or lost. SIDBI needs to see a believable before and after: what the unit uses today, measured from bills, and what it will use once the new equipment runs. An auditor's report gives the expected saving; twelve months of bills and production records give the baseline that saving is measured against. If you make different products across the year, show energy per tonne or per piece, not just total units, so a busy month does not look like a failed project."
+      ]
+    },
+    {
+      "h": "What to put together before you apply",
+      "ol": [
+        "Udyam registration and a clean repayment record with every lender.",
+        "Twelve months of electricity bills and fuel invoices, with production for the same months.",
+        "Supplier quotes for each machine, and the rated energy use of the old and new equipment.",
+        "An energy audit or technical note giving the expected yearly saving in kWh or fuel.",
+        "Your pollution control consents and safety records, for the environmental and social check.",
+        "A decision on which route you want: cash locked in a deposit, or cash spent on the project."
       ]
     }
   ],
-  "senseible": "Senseible reads twelve months of bills into energy per month and per unit of output, which gives the auditor and SIDBI the same baseline and makes the saving after commissioning easy to show.",
+  "example": {
+    "title": "A ₹2 crore compressor and furnace retrofit",
+    "lines": [
+      "Project cost: ₹2 crore, from supplier quotes",
+      "Fixed deposit route: loan ₹2 crore, with ₹50 lakh kept as a fixed deposit (25 percent)",
+      "Promoter route: loan up to ₹1.5 crore (75 percent), you pay ₹50 lakh into the project",
+      "Expected saving from the audit: 3,00,000 kWh a year",
+      "CO2 avoided: 3,00,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 2,02,500 kg, about 202 tonnes a year",
+      "Repayment: up to 84 months, with a moratorium of up to 12 months"
+    ],
+    "note": "Both routes ask for about ₹50 lakh of your own money here; the difference is whether it sits in a deposit you get back or goes into the machines. SIDBI's page does not say whether the 25 percent is measured on the loan or the project; at 100 percent funding the two are the same. The saving is the auditor's estimate until the bills after commissioning confirm it."
+  },
+  "senseible": "Senseible reads your last twelve months of electricity bills and fuel invoices into a monthly energy and CO2 baseline, the starting point for showing SIDBI the reduction 4E asks for, then compares the bills after commissioning against it. SIDBI decides the loan.",
   "links": [
     {
       "label": "Green loan schemes for MSMEs, compared",
       "to": "/msme-green-loan-schemes"
     },
     {
-      "label": "SIDBI energy efficiency loans overview",
-      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
-    },
-    {
       "label": "SIDBI Green Finance Scheme terms",
       "to": "/answers/sidbi-green-finance-scheme-loan-terms"
+    },
+    {
+      "label": "SIDBI machinery loans compared",
+      "to": "/answers/sidbi-machinery-loan-replace-old-machines"
     },
     {
       "label": "How an MSME hires an energy auditor",
       "to": "/answers/how-to-hire-an-energy-auditor-msme"
     },
     {
-      "label": "ADEETIE interest subvention",
-      "to": "/answers/adeetie-interest-subvention-rate-msme"
+      "label": "Carbon baseline before a green loan",
+      "to": "/answers/carbon-baseline-before-green-loan-application"
     }
   ],
   "sources": [
     {
-      "label": "SIDBI, Green Finance FAQs: 4E scope, 90% and 100% funding, ₹10 lakh minimum, Detailed Appraisal and Quick Dispensation modes",
+      "label": "SIDBI, Green Finance page, End to End Energy Efficiency (4E) Scheme key features, eligibility and FAQs: ₹15 crore, 100% with 25% fixed deposit or 75% under promoter contribution, 84 months with up to 12 months moratorium, three years with cash profit (page last updated 07-10-2026)",
       "url": "https://www.sidbi.in/en/green-finance"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     }
   ],
-  "reviewed": "2026-10-23"
+  "reviewed": "2026-10-29",
+  "reviewNote": "Scheme terms change; re-check on sidbi.in every quarter. SIDBI's page does not say whether the 12-month moratorium sits inside the 84 months."
 }

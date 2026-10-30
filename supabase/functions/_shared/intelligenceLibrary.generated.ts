@@ -318,6 +318,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint of Ahmedabad's chemical units in Vatva, Naroda and Odhav, and how does one unit compare?",
+  "text": "A typical dyes and pigments unit in Vatva uses about 532 toe a year, close to 1,540 t CO2, nearly three-quarters of it from natural gas. Across Ahmedabad's 750 chemical units, TERI's BEE study counted 144,624 toe in 2020-21, roughly 488,000 t CO2 at today's factors (estimate).",
+  "url": "https://senseible.earth/answers/ahmedabad-chemical-cluster-gas-carbon-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "How do I estimate the emissions of our AI model training and LLM API usage?",
   "text": "For GPU training, multiply GPU-hours by each board's power draw, then by the data centre's PUE, then by the grid factor of the region. For third-party LLM APIs, most providers publish no per-token factor, so use the provider's figure if one exists, otherwise a spend-based estimate labelled as such.",
   "url": "https://senseible.earth/answers/ai-api-and-gpu-usage-emissions"
@@ -2778,6 +2784,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can our ISO 14064 verification statement be used for CBAM?",
+  "text": "No. CBAM accepts only a verification by a verifier accredited for CBAM by an EU national accreditation body, at reasonable assurance, checked against the EU Methodology Act. The Commission says ISO 14064-3 is not specific enough for CBAM. Your ISO work still helps: the meters, invoices and controls behind it are the evidence a CBAM verifier samples.",
+  "url": "https://senseible.earth/answers/can-iso-14064-verification-be-used-for-cbam"
+ },
+ {
+  "kind": "answer",
   "title": "Can I call lab-grown diamonds sustainable or eco-friendly when selling to the US or EU?",
   "text": "Not on its own. In the EU, generic words like eco-friendly or sustainable are banned from 27 September 2026 unless backed by recognised excellent environmental performance. In the US, the FTC treats unqualified environmental claims as hard to substantiate. Make a specific, measured claim instead, and always call the stones laboratory-grown.",
   "url": "https://senseible.earth/answers/can-lab-grown-diamonds-be-called-sustainable"
@@ -3672,6 +3684,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is a CBAM installation ID, and which Indian company number goes in it?",
+  "text": "It is the permanent code that ties your plant to its emissions and verification reports, in the form IN-12345678-0001: country code, operator ID, then a sequence number the CBAM Registry assigns. For an Indian company the operator ID rests on its CIN; for an LLP, its LLPIN. Never invent the sequence yourself.",
+  "url": "https://senseible.earth/answers/cbam-installation-id-format-india-cin"
+ },
+ {
+  "kind": "answer",
   "title": "How do I split my plant into production processes for CBAM?",
   "text": "Draw one production process for each group of CBAM goods you make, such as crude steel, iron or steel products, or cement clinker. Assign each fuel, material and meter to the process that uses it. Shared items, like a boiler, are split by measured use, never by sales value.",
   "url": "https://senseible.earth/answers/cbam-installation-split-into-production-processes"
@@ -3738,6 +3756,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our CBAM verification came back negative. What happens to our EU buyers?",
+  "text": "Your EU buyers cannot use your figures for that year. They, and any plant that uses your goods as a precursor, must switch to the Commission's default values plus the mark-up, 10% for 2026 production. Fix the findings, update the monitoring plan and set up next year's verification early.",
+  "url": "https://senseible.earth/answers/cbam-negative-verification-statement-what-next"
+ },
+ {
+  "kind": "answer",
   "title": "One export shipment has goods under several CN codes. How do we give CBAM figures?",
   "text": "Give a figure for each CN code and each installation that made it, not one figure for the container. The importer declares embedded emissions line by line against the customs declaration, so a mixed shipment needs one figure per product, with tonnes per line that match the invoice and packing list.",
   "url": "https://senseible.earth/answers/cbam-one-shipment-several-cn-codes"
@@ -3789,6 +3813,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I track bought precursors and old stock for CBAM?",
   "text": "Group each precursor by CN code and use a weighted average across suppliers and years. Your figures must pass one balance: bought plus made plus last year's stock equals used plus exported plus new stock. FIFO is allowed but optional, and not in 2026, when all earlier stock is treated as made in 2026.",
   "url": "https://senseible.earth/answers/cbam-precursor-mass-balance-fifo-stocks"
+ },
+ {
+  "kind": "answer",
+  "title": "What evidence proves a precursor was made in an earlier year for CBAM?",
+  "text": "By default a precursor counts as made in the same year as your finished good. To claim an earlier year, give your verifier evidence it can check: a dated delivery note or invoice, the producer's written confirmation, a trader's FIFO confirmation, or a steel mill certificate or aluminium certificate of analysis linked to the material by a physical marker.",
+  "url": "https://senseible.earth/answers/cbam-precursor-production-year-evidence"
  },
  {
   "kind": "answer",
@@ -3885,6 +3915,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "When should an Indian exporter start CBAM verification in the year?",
   "text": "Early in the reporting year. There is no fixed verification deadline, but a calendar-year report cannot be finished before January, importers file by 30 September, and the verification guidance says declarants need reports by mid-August at the latest. Suppliers of precursors should verify first, so their customers can use the results.",
   "url": "https://senseible.earth/answers/cbam-verification-when-to-start-timeline"
+ },
+ {
+  "kind": "answer",
+  "title": "Can any CBAM verifier verify our plant, or does it need our sector?",
+  "text": "It needs your sector. CBAM verifiers are accredited for numbered activity groups, such as I for cement or VIII for iron, steel and aluminium products. A verifier without the group covering your goods may not verify your plant, and other verifiers check this scope before relying on its report.",
+  "url": "https://senseible.earth/answers/cbam-verifier-accreditation-scopes-by-sector"
  },
  {
   "kind": "answer",
@@ -4272,6 +4308,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I answer CDP's question asking me to allocate emissions to my customer?",
+  "text": "Your customer requested you through CDP, and question 7.26 of the corporate questionnaire (2025 numbering) asks you to give it a share of your emissions for what you sold it that year. You fill one row per scope: method, quantity supplied, tonnes and how sure you are. 7.27 and 7.28 ask what made it hard and how you will improve.",
+  "url": "https://senseible.earth/answers/cdp-allocate-emissions-to-customer-question"
+ },
+ {
+  "kind": "answer",
   "title": "How do I fill in CDP's emissions reduction initiatives questions with my own project savings?",
   "text": "List each project that cut emissions in the reporting year and, for each, give the estimated annual saving in tonnes CO2e and the scope it falls in. Work the saving out from billed or metered use before and after the change, and check CDP's current guidance for the other details it asks for.",
   "url": "https://senseible.earth/answers/cdp-emissions-reduction-initiatives-how-to-fill"
@@ -4284,14 +4326,26 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can a small supplier get an A on CDP's SME questionnaire?",
+  "text": "Yes, from 2026: CDP added an A score for climate change to the SME questionnaire, though CDP says an SME A is not equivalent to a full questionnaire A. Only climate is scored in 2026. The scoring deadline was 16 September, and scores reach disclosers the week of 30 November.",
+  "url": "https://senseible.earth/answers/cdp-sme-questionnaire-a-score"
+ },
+ {
+  "kind": "answer",
   "title": "Should a small supplier answer CDP's SME questionnaire or the full corporate questionnaire?",
   "text": "Answer the SME questionnaire if CDP's size test says you are eligible and your customer accepts it. Choose the full corporate questionnaire when a customer asks for it by name, when you are above CDP's size limits, or when your group already reports Scope 3, targets and verified data.",
   "url": "https://senseible.earth/answers/cdp-sme-questionnaire-vs-full"
  },
  {
   "kind": "answer",
+  "title": "When is the deadline to answer a customer's CDP supply chain request?",
+  "text": "Your customer's request runs on CDP's yearly cycle. In 2026 it opened in June, the scoring deadline was 16 September and the questionnaire closed on 28 October. Submit by the scoring deadline or you may get no score. The next cycle's dates are set in CDP's terms of disclosure for that year.",
+  "url": "https://senseible.earth/answers/cdp-supply-chain-deadline-dates"
+ },
+ {
+  "kind": "answer",
   "title": "A customer sent me a CDP supply chain request. Do I have to respond, and what does it cost?",
-  "text": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. CDP charges responders an annual administration fee that depends on company size and region; check the current fee on cdp.net before you register.",
+  "text": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. If only customers requested you, CDP generally charges you no admin fee. The fee applies if an investor group also requested you or you disclose on your own.",
   "url": "https://senseible.earth/answers/cdp-supply-chain-request-what-to-do"
  },
  {
@@ -5016,6 +5070,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What do Coimbatore foundries use per tonne of castings, and how does one unit compare with the cluster?",
+  "text": "Between 1,000 and 1,200 kWh per tonne of good castings, 600 to 700 of it in melting, is what TERI measured in Coimbatore's induction foundries. A 1,000 tonne a year unit uses about 1.1 million kWh, about 743 t CO2. Above 1,200, look at your furnace and your rejections first.",
+  "url": "https://senseible.earth/answers/coimbatore-foundry-cluster-energy-per-tonne-castings"
+ },
+ {
+  "kind": "answer",
   "title": "Why is a Coimbatore induction foundry's CBAM figure much lower than its carbon footprint?",
   "text": "Because CBAM counts only direct emissions for iron and steel goods, and an induction furnace's energy is electricity, which is left out. The CBAM figure is mostly the pig iron or other covered precursors charged; the full footprint adds the electricity, often about as much again.",
   "url": "https://senseible.earth/answers/coimbatore-induction-foundry-cbam-vs-footprint"
@@ -5586,6 +5646,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "We only cut, slit or weld bought steel. Do we still need CBAM verification?",
+  "text": "Only if you want your EU buyer to use actual figures instead of defaults. Cutting, welding, plating and finishing emissions are left out of CBAM, but the verifier still checks that you do nothing else, that precursor tonnes are counted before cutting, and where your coil came from. Your monitoring plan can be very short.",
+  "url": "https://senseible.earth/answers/cutting-only-unit-cbam-verification"
+ },
+ {
+  "kind": "answer",
   "title": "What does a Czech importer's CBAM authority mean for an Indian supplier?",
   "text": "Czechia lists two CBAM authorities: the Customs Administration and the Ministry of the Environment, each with its own contact address. A Czech importer above 50 tonnes a year needs authorised declarant status and will ask Indian suppliers for verified emissions per installation.",
   "url": "https://senseible.earth/answers/czech-importer-cbam-indian-supplier"
@@ -5739,6 +5805,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the difference between a declared unit and a functional unit, and which should my footprint use?",
   "text": "A declared unit is a plain quantity of product, such as 1 kg of yarn. A functional unit is the job the product does, such as painting 1 m2 of wall for ten years. Use a declared unit for materials and parts reported cradle to gate, and a functional unit to compare finished products by use.",
   "url": "https://senseible.earth/answers/declared-unit-vs-functional-unit"
+ },
+ {
+  "kind": "answer",
+  "title": "Can I say no to my buyer's EcoVadis request, and what happens if I do?",
+  "text": "Yes. EcoVadis says a rating is never done without the company's consent, and any company can refuse to be assessed. What happens next is your buyer's call, not EcoVadis's. Ask what their policy is for suppliers who decline, and offer the carbon and policy evidence they actually need.",
+  "url": "https://senseible.earth/answers/decline-ecovadis-assessment-request"
  },
  {
   "kind": "answer",
@@ -6009,6 +6081,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Will lowering my carbon footprint win orders or better terms from big buyers?",
   "text": "Sometimes, but do not plan on a price premium. The reliable gains are staying on approved supplier lists as buyers chase their own Scope 3 targets, lower CBAM cost for EU importers of covered goods, and better loan terms. Fund reductions that pay back on energy savings alone, and treat any buyer reward as extra.",
   "url": "https://senseible.earth/answers/do-buyers-pay-more-for-low-carbon-suppliers"
+ },
+ {
+  "kind": "answer",
+  "title": "Do I have to pay EcoVadis to answer my buyer's assessment?",
+  "text": "Usually yes. EcoVadis says companies its customers invite must buy their own subscription, priced by company size and country, so your buyer's invite does not cover it. Check the plans page for your size band, and ask your buyer which plan or scorecard they need before you pick one.",
+  "url": "https://senseible.earth/answers/do-i-have-to-pay-for-ecovadis"
  },
  {
   "kind": "answer",
@@ -6585,6 +6663,36 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What carbon evidence does EcoVadis ask an Indian supplier for?",
   "text": "EcoVadis wants documents, not answers alone: a climate or energy policy, Scope 1 and 2 totals with the method used, Scope 3 where you have it, a reduction target, and records of actions taken. Each claim needs a supporting document, and claims without one score little.",
   "url": "https://senseible.earth/answers/ecovadis-carbon-questions-what-evidence"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the EcoVadis carbon scorecard, and what do its levels mean?",
+  "text": "The carbon scorecard rates how well you manage emissions on five levels: Insufficient, Beginner, Intermediate, Advanced and Leader. The level is based on your carbon governance, actions and reporting. Companies with 25 or fewer employees cannot get one.",
+  "url": "https://senseible.earth/answers/ecovadis-carbon-scorecard-levels"
+ },
+ {
+  "kind": "answer",
+  "title": "Why did EcoVadis not credit our energy and emissions figures?",
+  "text": "EcoVadis credits energy consumption and greenhouse gas figures only if they cover at least 95% of the scope you are assessed on. Other reported figures need 80%. Numbers for your main plant alone, or a figure typed into the questionnaire with no supporting document, earn nothing.",
+  "url": "https://senseible.earth/answers/ecovadis-energy-ghg-95-percent-coverage"
+ },
+ {
+  "kind": "answer",
+  "title": "What EcoVadis score do I need for a bronze, silver or gold medal?",
+  "text": "There is no fixed score. Medals go by percentile against every company EcoVadis rated in the previous 12 months, across all industries: Bronze is the top 35%, Silver top 15%, Gold top 5%, Platinum top 1%. Any one of the four theme scores below 30 rules out a medal, whatever your total.",
+  "url": "https://senseible.earth/answers/ecovadis-medal-score-needed"
+ },
+ {
+  "kind": "answer",
+  "title": "How long do I get to complete the EcoVadis questionnaire?",
+  "text": "Your submission deadline is shown on the questionnaire in your EcoVadis account, and your buyer may give you an earlier date of its own. Work to the earlier one. Most of the time goes on finding dated, readable documents, not typing answers, so start with the paperwork.",
+  "url": "https://senseible.earth/answers/ecovadis-questionnaire-deadline"
+ },
+ {
+  "kind": "answer",
+  "title": "When does an EcoVadis scorecard expire, and when should I start the reassessment?",
+  "text": "An EcoVadis scorecard, and any medal or badge on it, is valid for 12 months from its publication date. A reassessment happens only if you choose to renew, and it creates a new scorecard with a new date. Start early enough that the new one is published before the old one lapses.",
+  "url": "https://senseible.earth/answers/ecovadis-scorecard-expiry-reassessment"
  },
  {
   "kind": "answer",
@@ -7719,6 +7827,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Firozabad glass unit count CO2 from soda ash and limestone in the batch?",
   "text": "Carbonates in the batch release CO2 when they melt: about 0.415 t per tonne of soda ash, 0.440 t per tonne of limestone and 0.477 t per tonne of dolomite, by IPCC 2006. This process CO2 is Scope 1, added to the furnace gas.",
   "url": "https://senseible.earth/answers/firozabad-glass-batch-carbonates-process-co2"
+ },
+ {
+  "kind": "answer",
+  "title": "How much gas does the Firozabad glass cluster burn, and what does that mean for pot, tank and muffle furnace units?",
+  "text": "A Firozabad tank furnace burns about 52,000 scm of gas a day, roughly 107 t CO2. A pot furnace, open or closed, burns 3,500 scm, about 7 t. Across the cluster TERI counted about 879,000 scm a day, roughly 658,000 tonnes of CO2 a year. Most muffles still burn coal.",
+  "url": "https://senseible.earth/answers/firozabad-glass-cluster-gas-use-and-carbon"
  },
  {
   "kind": "answer",
@@ -9487,7 +9601,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "How long can a bank take to decide on my MSME loan application?",
-  "text": "There is no single legal deadline. RBI tells banks to set timelines for deciding MSME loan applications, disclose them and monitor applications pending beyond them. Many banks publish two weeks for limits up to Rs 5 lakh, three weeks up to Rs 25 lakh and six weeks above, counted from a complete application.",
+  "text": "For a micro or small enterprise asking for up to Rs 25 lakh, RBI says the credit decision shall not take more than 14 working days. For larger loans the bank's own Board-approved sanction time norms apply, and every bank must publish its timelines on a separate MSME tab on its website.",
   "url": "https://senseible.earth/answers/how-long-should-bank-take-msme-loan"
  },
  {
@@ -9505,7 +9619,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "How long do importers and non-EU producers have to keep CBAM emissions records?",
-  "text": "The CBAM Regulation asks authorised declarants to keep their records until the end of the fourth year after the year the declaration was or should have been submitted, and non-EU operators to keep verified emissions records for four years. For 2026 imports declared in 2027, plan on keeping evidence to at least the end of 2031.",
+  "text": "Non-EU operators, including Indian plants, keep monitoring records and supporting documents for at least six years after the reporting period, says the Commission's Guidance No. 1. The EU declarant keeps its records until the end of the fourth year after the declaration year: for 2026 imports declared in 2027, to the end of 2031.",
   "url": "https://senseible.earth/answers/how-long-to-keep-cbam-records"
  },
  {
@@ -9864,6 +9978,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Howrah foundries ship over a million tonnes of castings a year: what carbon data does a unit there need?",
+  "text": "Coke per tonne melted, electricity, and tonnes of good castings by product, month by month. TERI's 2025 profile puts Howrah's roughly 320 foundries at 356,512 tonnes of CO2 a year, 77% from coke. If you export cast iron pipes or fittings to the EU, CBAM makes this data a customs matter.",
+  "url": "https://senseible.earth/answers/howrah-foundry-cluster-castings-carbon-data"
+ },
+ {
+  "kind": "answer",
   "title": "Will switching our Howrah foundry from cupola to induction furnace cut CO2?",
   "text": "Not automatically on grid power. An induction furnace replaces coke with electricity, and at India's grid factor of 0.710 kg CO2 per kWh the CO2 per tonne can land close to a well-run cupola. It falls clearly when the power comes from solar or other renewable supply, and local smoke drops either way.",
   "url": "https://senseible.earth/answers/howrah-foundry-cupola-to-induction-co2"
@@ -10213,7 +10333,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "My plant keeps accounts April to March. Which reporting period do I use for CBAM embedded emissions data?",
-  "text": "Your EU importer declares by calendar year, January to December, so plan to give calendar-year figures. The safest route is to keep fuel, power and production data month by month, then total January to December. Use your April to March year for installation data only if the current CBAM rules and your verifier accept it, and say so.",
+  "text": "The calendar year, 1 January to 31 December. In the definitive period the Commission's guidance for operators and verifiers says an installation's CBAM reporting period is always the calendar year in which the goods were made. Keep fuel, power and production month by month, and read meters and count stock on both 1 January and 1 April.",
   "url": "https://senseible.earth/answers/indian-fiscal-year-vs-cbam-reporting-period"
  },
  {
@@ -10485,6 +10605,30 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "My report says IPCC Tier 1 default factors. Will a buyer or verifier accept that?",
   "text": "Usually yes for diesel, petrol, LPG and natural gas, because their carbon content barely varies, so a named IPCC default is hard to fault. Expect questions for coal, biomass and other fuels whose quality varies, and for large process emissions. There, a factor from your own fuel analysis (Tier 2) is safer.",
   "url": "https://senseible.earth/answers/ipcc-tier-1-default-factor-good-enough"
+ },
+ {
+  "kind": "answer",
+  "title": "What are IREDA's loan terms for a biomass pellet or briquette plant?",
+  "text": "IREDA lends up to 70 percent of the cost of a pellet, briquette, torrefied pellet or RDF plant, minimum ₹50 lakh, repaid over up to 10 years after a moratorium of up to 12 months. Before money is released you need firm raw material and offtake contracts for the plant's full capacity, running longer than the loan.",
+  "url": "https://senseible.earth/answers/ireda-biomass-pellet-plant-loan-terms"
+ },
+ {
+  "kind": "answer",
+  "title": "What energy efficiency projects will IREDA finance?",
+  "text": "IREDA finances energy efficiency retrofits, whole-process changes, waste heat recovery for power, ESCO projects and turnkey efficient equipment, in sectors from steel and textiles to glass, ceramics and buildings. The minimum loan is ₹50 lakh, and a private project normally gets up to 70 percent of its cost.",
+  "url": "https://senseible.earth/answers/ireda-energy-efficiency-loan-what-it-funds"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a proprietorship, partnership or loss-making firm borrow from IREDA?",
+  "text": "Yes, but only against a bank guarantee or a pledged fixed deposit from a scheduled commercial bank covering the entire loan. IREDA's norms, updated to 1 October 2026, apply this to proprietorships, partnerships other than LLPs, and firms showing losses in last year's audited accounts. Private companies and LLPs apply on normal terms.",
+  "url": "https://senseible.earth/answers/ireda-loan-for-proprietorship-or-partnership"
+ },
+ {
+  "kind": "answer",
+  "title": "Can my factory get an IREDA loan for rooftop solar?",
+  "text": "Rarely on its own. IREDA's rooftop solar scheme, in its financing norms updated to 1 October 2026, needs at least 5,000 kWp in one application, whether a single roof owner applies directly or an aggregator bundles many roofs. A factory roof is usually far smaller, so the realistic route is through an aggregator or installer.",
+  "url": "https://senseible.earth/answers/ireda-rooftop-solar-loan-minimum-size"
  },
  {
   "kind": "answer",
@@ -10884,6 +11028,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much energy per tonne do Jalandhar hand tool makers use, and what does it mean for EU buyers?",
+  "text": "Making a tonne of hand tools in Jalandhar takes about 0.399 toe, roughly 2.2 t CO2 at today's factors (estimate), most of it from grid power and before the steel itself. That is TERI's average across 950 units making about 50,000 t of tools a year.",
+  "url": "https://senseible.earth/answers/jalandhar-hand-tools-cluster-energy-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "How does a Jalandhar sports goods maker work out carbon per ball?",
   "text": "Divide the unit's electricity and fuel emissions for the month by balls made, for the making stage. Synthetic leather, bladders, thread and packaging bought in are Scope 3 and should come from supplier figures or a named database, labelled with their source.",
   "url": "https://senseible.earth/answers/jalandhar-sports-goods-carbon-per-ball"
@@ -10893,6 +11043,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What drives the CBAM figure for TMT bars from a Jalna induction furnace mill?",
   "text": "Mostly the metal you charge. Induction furnace electricity is indirect and not counted for steel under CBAM, so the figure is driven by the embedded emissions of sponge iron or pig iron charged, plus reheating fuel and any direct emissions. Scrap carries zero, so the scrap share decides the number.",
   "url": "https://senseible.earth/answers/jalna-induction-furnace-tmt-cbam-figure"
+ },
+ {
+  "kind": "answer",
+  "title": "How much energy does the Jamnagar brass cluster use, and which step in the chain emits most?",
+  "text": "BEE counted about 3,500 brass units in Jamnagar using about 50,770 tonnes of oil equivalent a year, with foundries using the most. Per kg of brass, though, extrusion and electroplating emit more than coal-fired melting: about 0.66 and 0.67 kg CO2, against about 0.28 to 0.39 kg.",
+  "url": "https://senseible.earth/answers/jamnagar-brass-cluster-energy-and-carbon-footprint"
  },
  {
   "kind": "answer",
@@ -11289,6 +11445,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What carbon data do tractor, pump and engine makers ask Kolhapur foundries for?",
   "text": "Mostly kg CO2e per tonne of good castings, the melting route, and your electricity and fuel totals for the year. Some ask for the pig iron and scrap mix. Work from melting kWh or coke, add moulding and fettling power, and divide by good castings, not liquid metal.",
   "url": "https://senseible.earth/answers/kolhapur-foundry-castings-buyer-carbon-data"
+ },
+ {
+  "kind": "answer",
+  "title": "How big is the Kolhapur foundry cluster's carbon footprint, and how many units already melt on induction?",
+  "text": "About 1.2 million tonnes of CO2 a year, an estimate from the 1,185 million kWh and 128,111 tonnes of coke TERI recorded for Kolhapur. About 70% of its roughly 300 foundries melt on induction. On grid power, induction melting is not lower carbon than a cupola yet.",
+  "url": "https://senseible.earth/answers/kolhapur-foundry-cluster-coke-and-electricity-footprint"
  },
  {
   "kind": "answer",
@@ -11844,6 +12006,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much furnace oil do Ludhiana forging units burn per tonne, and what does induction heating save?",
+  "text": "If your forging furnace burns more than about 102 litres of furnace oil a tonne, an induction billet heater at 450 kWh a tonne cuts your CO2 on today's grid. TERI found Ludhiana micro forges at 150 to 170 litres a tonne and medium units at 100 to 130, so most micro units clear that bar easily.",
+  "url": "https://senseible.earth/answers/ludhiana-forging-cluster-furnace-oil-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "How does a Ludhiana hosiery unit work out carbon per garment?",
   "text": "Add electricity and fuel emissions for the month and divide by pieces made, for the making stage. Woollen and acrylic yarn bought in usually carries more and sits in Scope 3; add it from supplier figures per kg, labelled with their source.",
   "url": "https://senseible.earth/answers/ludhiana-hosiery-unit-carbon-per-garment"
@@ -11979,6 +12147,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What are the emissions from a malt house?",
   "text": "Barley is steeped, germinated and then kilned with hot air, and the kiln fuel is the largest share. Add electricity for fans and germination boxes. The barley itself is Scope 3. Count fuel per tonne of malt from the kiln's fuel records.",
   "url": "https://senseible.earth/answers/malt-house-kilning-emissions-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How much coal and power do Mandi Gobindgarh's re-rolling mills use, and what does a typical mill emit?",
+  "text": "A typical Mandi Gobindgarh rolling mill uses about 345 toe a year, roughly 440 t of coal and 680,000 kWh. That comes to about 1,240 t CO2 a year (estimate), nearly two-thirds of it from coal in the reheating furnace. Together the town's mills burnt 70,909 t of coal and 110 million kWh in 2014-15.",
+  "url": "https://senseible.earth/answers/mandi-gobindgarh-rerolling-cluster-coal-and-power"
  },
  {
   "kind": "answer",
@@ -12378,6 +12552,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the Morbi ceramic cluster's total energy use and carbon footprint, and where does one tile unit sit in it?",
+  "text": "BEE's 2010 study of Morbi counted about 479 units burning 660 million scm of natural gas, 1.32 million tonnes of lignite and 1.2 billion kWh a year. That works out to roughly 4.1 million tonnes of CO2, an estimate. A medium wall tile unit came to about 0.2% of it.",
+  "url": "https://senseible.earth/answers/morbi-ceramic-cluster-carbon-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "How much CO2 did ceramic units save by moving from coal gasifiers to natural gas?",
   "text": "Roughly 55 to 60 percent of fuel CO2 for the same kiln heat. Coal fed through a gasifier gives about 126 to 135 kg CO2 per GJ of fuel gas reaching the kiln, assuming 70 to 75 percent gasifier efficiency, against 56 kg for natural gas. Confirm with your own fuel per square metre before and after.",
   "url": "https://senseible.earth/answers/morbi-coal-gasifier-vs-natural-gas-emissions"
@@ -12735,6 +12915,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Navi Mumbai data centre calculate Scope 2 emissions per kW of IT load?",
   "text": "Multiply total facility electricity, which is IT load times PUE, by 0.710 kg CO2 per kWh for the location-based figure, then divide by average IT load in kW. Report a market-based figure separately for renewable power bought under open access or certificates.",
   "url": "https://senseible.earth/answers/navi-mumbai-data-centre-scope-2-per-kw"
+ },
+ {
+  "kind": "answer",
+  "title": "Can an NBFC lend me green deposit money for a solar or efficiency project?",
+  "text": "Yes, if the NBFC takes deposits and your project is on RBI's green list, such as solar, LED lighting, building efficiency retrofits or electric vehicles. RBI's 2025 directions for deposit-taking NBFCs and housing finance companies send green deposit money only to listed green activities, and an NBFC may also fund green projects without green deposits.",
+  "url": "https://senseible.earth/answers/nbfc-green-deposit-loan-msme"
  },
  {
   "kind": "answer",
@@ -13311,6 +13497,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Panipat recycled yarn mill work out electricity per kg?",
   "text": "Multiply billed kWh by 0.710 kg CO2 per kWh and divide by kilograms of yarn spun in the same month. Mechanical recycling of waste into shoddy yarn runs mainly on electricity, so this is the mill's main own-energy line.",
   "url": "https://senseible.earth/answers/panipat-shoddy-yarn-mill-electricity-per-kg"
+ },
+ {
+  "kind": "answer",
+  "title": "Panipat's textile units burn biomass and pet coke: what is the cluster's carbon picture?",
+  "text": "Pet coke was only a fifth of Panipat's textile energy in TERI's 2014-15 survey, yet it made most of the fossil CO2, about 250,000 t a year by estimate. Biomass was 77% of the 305,950 toe used by 3,095 MSMEs. Which fuel feeds your boiler or heater decides your number.",
+  "url": "https://senseible.earth/answers/panipat-textile-cluster-fuels-and-carbon"
  },
  {
   "kind": "answer",
@@ -14472,6 +14664,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Raipur's 316 MSME steel units: how coal-heavy is the cluster, and what CBAM data will EU buyers need?",
+  "text": "TERI counts 316 operating secondary steel units around Raipur using 3.65 million toe a year, 3.06 of it coal, and emitting about 17.75 million t CO2 (2023-24). Sponge iron, billets, bars and wire are CBAM goods, so a Raipur figure travels down the chain to every EU-bound tonne.",
+  "url": "https://senseible.earth/answers/raipur-secondary-steel-cluster-cbam-exposure"
+ },
+ {
+  "kind": "answer",
   "title": "Which emissions go into the CBAM figure for Raipur sponge iron?",
   "text": "Sponge iron (DRI, heading 7203) is a CBAM good. Its figure covers direct emissions of the kiln: coal and other carbon inputs used for reduction and heating, worked out by mass balance where carbon leaves in the product or char, plus any precursor such as pellets. Electricity is not charged.",
   "url": "https://senseible.earth/answers/raipur-sponge-iron-cbam-embedded-emissions"
@@ -14487,6 +14685,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Do engine parts exported from Rajkot fall under EU CBAM?",
   "text": "Usually not. CBAM covers iron and steel goods in chapters 72 and 73 of the EU tariff, plus aluminium, cement, fertilisers, hydrogen and electricity. Finished engine parts classed in chapter 84 are outside it, but a plain casting or forging in chapter 73 may be in.",
   "url": "https://senseible.earth/answers/rajkot-engine-parts-exporter-cbam-check"
+ },
+ {
+  "kind": "answer",
+  "title": "How much coke, power and oil do Rajkot's grey iron foundries use, and what is one unit's share?",
+  "text": "Two thirds of Rajkot's foundry CO2 now comes from induction power bills, not cupola coke. TERI recorded 297 million kWh, 31,500 tonnes of coke and 1,296 kL of furnace oil for about 700 grey iron foundries in 2014 to 15, roughly 300,000 tonnes of CO2 (estimate).",
+  "url": "https://senseible.earth/answers/rajkot-foundry-cluster-carbon-footprint"
  },
  {
   "kind": "answer",
@@ -15540,6 +15744,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does the Sedex environment self-assessment questionnaire ask about emissions?",
+  "text": "Sedex's Environment Self-Assessment Questionnaire, launched in August 2024, asks for your environmental commitments, legal compliance, permits, management systems, Scope 1, 2 and 3 greenhouse gas emissions, and how you manage energy, waste, chemicals, air, water, biodiversity and deforestation. Answer the carbon part from twelve months of fuel and electricity bills.",
+  "url": "https://senseible.earth/answers/sedex-environment-saq-ghg-questions"
+ },
+ {
+  "kind": "answer",
   "title": "What carbon and energy evidence does a SMETA audit ask for under the environment pillar?",
   "text": "In a 4-pillar SMETA audit, the auditor checks that you hold your environmental permits, have an environmental policy and someone responsible for it, and track energy, water, waste and emissions with records. For carbon, that means a year of electricity bills and fuel invoices, a Scope 1 and 2 total, and any targets or actions you claim.",
   "url": "https://senseible.earth/answers/sedex-smeta-environment-carbon-questions"
@@ -15865,7 +16075,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "How much does SIDBI's 4E energy efficiency loan cover, and who qualifies?",
-  "text": "SIDBI's 4E scheme lends up to 90 percent of an energy efficiency project, with a minimum loan of ₹10 lakh, or up to 100 percent if you place 20 percent cash collateral as a SIDBI fixed deposit. The detailed route needs a year of operation and a detailed energy audit by BEE-certified auditors.",
+  "text": "SIDBI's 4E loan funds energy efficiency projects up to ₹15 crore: 100 percent of the cost if you keep 25 percent as a fixed deposit, or up to 75 percent if you put in your own share. You need three years of operations with cash profit, and you must show the project cuts energy use or emissions.",
   "url": "https://senseible.earth/answers/sidbi-4e-loan-terms-and-eligibility"
  },
  {
@@ -15900,8 +16110,14 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can a solar installer or aggregator get SIDBI green finance for MSME projects?",
+  "text": "Yes. SIDBI's Green Finance Scheme names service providers such as RESCOs, ESCOs, EPC contractors and vendors, and aggregators with an established MSME linkage, as eligible borrowers. It funds up to 75 percent of project cost, up to ₹100 crore, with repayment set to the project and SIDBI's environmental and social rules applying.",
+  "url": "https://senseible.earth/answers/sidbi-green-finance-for-solar-installers-aggregators"
+ },
+ {
+  "kind": "answer",
   "title": "What are the terms of SIDBI's Green Finance Scheme loan for MSMEs?",
-  "text": "SIDBI's Green Finance Scheme is a term loan for green projects: renewable energy, energy-efficient buildings, waste management, resource and energy efficiency, wastewater treatment and cleaner production. It can fund up to 100 percent of the project, up to ₹20 crore for an MSME, repayable over up to 10 years.",
+  "text": "SIDBI's Green Finance Scheme is a term loan, in rupees or foreign currency, for solar, energy efficiency, compressed biogas, water, waste and e-mobility projects. It funds up to 75 percent of project cost, capped at ₹100 crore, with repayment set to the project. New and existing Udyam-registered MSMEs can apply.",
   "url": "https://senseible.earth/answers/sidbi-green-finance-scheme-loan-terms"
  },
  {
@@ -15919,7 +16135,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "Can I use a SIDBI machinery loan to replace old, energy-hungry machines?",
-  "text": "Yes, if the new machine belongs to your existing line of business. SIDBI's machinery loans fund new equipment for modernisation and technology upgrades: EXPRESS up to ₹3 crore and 100 percent of cost; SPEED up to 100 percent, capped at ₹1 crore for new customers and ₹2 crore for existing ones. Second-hand machines are not eligible.",
+  "text": "Yes. SIDBI's machinery loans fund equipment for new units, expansion and modernisation through three schemes: EXPRESS up to ₹3 crore and UDAY up to ₹50 lakh, both repaid over up to 60 months, and SPEED up to ₹15 crore over up to 84 months. How long you have been running decides which one you can use.",
   "url": "https://senseible.earth/answers/sidbi-machinery-loan-replace-old-machines"
  },
  {
@@ -15927,6 +16143,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What environmental risks does SIDBI look for in textile, foundry and steel re-rolling loans?",
   "text": "SIDBI's sector assessments for its GCF-backed FMAP programme name the risks it screens for. Textile wet processing: water use, dye and chemical effluent, sludge. Foundries: furnace energy, dust and fumes, waste sand and slag. Steel re-rolling: reheating furnace fuel and emissions, mill scale and oily wastewater. Worker heat and safety recur in all three.",
   "url": "https://senseible.earth/answers/sidbi-sector-checks-textile-foundry-steel"
+ },
+ {
+  "kind": "answer",
+  "title": "A customer asked us to share product carbon footprints through SiGREEN, now Mattermaps. What is it, and what do we enter?",
+  "text": "SiGREEN, the product carbon footprint exchange Siemens launched in 2021, was sold to Makersite and renamed Mattermaps on 4 June 2026. The request is the same: your customer wants the CO2e of one unit of the part you sell, built from your own measured data. Prepare materials per unit, energy per unit and the factor behind each.",
+  "url": "https://senseible.earth/answers/siemens-sigreen-supplier-pcf-request"
  },
  {
   "kind": "answer",
@@ -16908,6 +17130,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What carbon data do brands ask Surat dyeing and printing houses for?",
+  "text": "Brands and garment makers want your boiler coal or lignite, stenter gas and electricity for a year, divided by metres or kg processed, with the invoices behind each line. In BEE's study of Surat's processing houses, boiler coal was most of the carbon, so that is the line to get right.",
+  "url": "https://senseible.earth/answers/surat-textile-processing-units-buyer-carbon-data"
+ },
+ {
+  "kind": "answer",
   "title": "How does a Surat water-jet weaving unit count electricity per metre of fabric?",
   "text": "Divide the month's electricity emissions by the metres woven that month: kWh times 0.710 kg CO2 per kWh, over metres from the production register. Include the pumps and compressors on the same bill, since they serve the looms.",
   "url": "https://senseible.earth/answers/surat-water-jet-loom-electricity-per-metre"
@@ -17313,6 +17541,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Tiruppur knitwear unit work out carbon per garment?",
   "text": "Add the unit's electricity and fuel emissions for the month and divide by pieces packed. That gives the making-stage figure per garment. Fabric, yarn and dyeing bought in sit in Scope 3 and should be added from supplier figures, not guessed.",
   "url": "https://senseible.earth/answers/tiruppur-knitwear-carbon-per-garment"
+ },
+ {
+  "kind": "answer",
+  "title": "What fuels does the Tiruppur knitwear cluster run on, and what carbon data do export brands ask a unit for?",
+  "text": "Tiruppur's dyeing houses run boilers and thermic fluid heaters on firewood, coconut husk, furnace oil and diesel, and dyeing is about 87% of the cluster's energy in BEE's study. Brands want each unit's electricity and fuel per kg, sent up through the exporter, with wood shown separately.",
+  "url": "https://senseible.earth/answers/tiruppur-knitwear-cluster-buyer-carbon-data"
  },
  {
   "kind": "answer",
@@ -18492,6 +18726,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does a CBAM verifier check at an Indian steel plant?",
+  "text": "Beyond fuel and meter data, a CBAM verifier at a steel plant checks your production route and steel grade, how products are grouped into processes, the alloy and scrap figures sent to importers, the precursor mass balance with heat numbers, waste gases and the year-end cut-off. It must hold scope V, VIII or both.",
+  "url": "https://senseible.earth/answers/what-cbam-verifier-checks-steel-plant-india"
+ },
+ {
+  "kind": "answer",
   "title": "What does a '1-in-100-year flood' zone mean for my plant, and how does climate change shift it?",
   "text": "A 1-in-100-year flood zone is land that a flood of that size has a 1% chance of reaching in any single year. It does not mean once a century: over a 20-year loan the chance of at least one such flood is about 18%, and climate change can make that flood more frequent.",
   "url": "https://senseible.earth/answers/what-does-1-in-100-year-flood-mean-for-site"
@@ -18732,6 +18972,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Which EU accreditation bodies accept CBAM verifiers based outside the EU?",
+  "text": "As of the Commission's 21 October 2026 update, seven of the 24 national accreditation bodies offering CBAM accreditation accept verifiers based outside the EU: COFRAC (France), ESYD (Greece), Accredia (Italy), RvA (Netherlands), PCA (Poland), SNAS (Slovakia) and Swedac (Sweden). An Indian verifier's CBAM certificate should come from one of them.",
+  "url": "https://senseible.earth/answers/which-eu-bodies-accredit-cbam-verifiers-from-india"
+ },
+ {
+  "kind": "answer",
   "title": "Which NGFS climate scenario should I use for scenario analysis?",
   "text": "Use at least three, one from each NGFS family: an orderly scenario such as Net Zero 2050 or Below 2°C, a disorderly one such as Delayed Transition, and a hot house world such as Current Policies. The first two test transition risk, the last tests physical risk. IFRS S2 also asks whether one scenario is aligned with the Paris Agreement.",
   "url": "https://senseible.earth/answers/which-ngfs-scenario-should-i-use"
@@ -18807,6 +19053,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "We sell products made for us under our brand by another factory. Who reports their emissions?",
   "text": "Both, in different places. The maker reports its fuel and electricity in its own Scope 1 and 2. You, as the brand owner, report the products you buy in Scope 3 Category 1, and their use and disposal in Categories 11 and 12 where relevant. Ask the maker for its per-unit footprint.",
   "url": "https://senseible.earth/answers/white-label-products-who-reports-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Who approves a CBAM monitoring plan for an Indian plant?",
+  "text": "Nobody approves it in advance. No EU or Indian authority signs off a CBAM plan. Your accredited CBAM verifier assesses the plan against the EU Methodology Act, usually as the first step of verification, and records the result in the verification report or a separate assessment report you can show later verifiers.",
+  "url": "https://senseible.earth/answers/who-approves-cbam-monitoring-plan"
  },
  {
   "kind": "answer",

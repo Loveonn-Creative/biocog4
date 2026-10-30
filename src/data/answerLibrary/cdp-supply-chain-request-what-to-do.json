@@ -2,7 +2,7 @@
   "slug": "cdp-supply-chain-request-what-to-do",
   "q": "A customer sent me a CDP supply chain request. Do I have to respond, and what does it cost?",
   "title": "CDP supply chain request: respond or not?",
-  "short": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. CDP charges responders an annual administration fee that depends on company size and region; check the current fee on cdp.net before you register.",
+  "short": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. If only customers requested you, CDP generally charges you no admin fee. The fee applies if an investor group also requested you or you disclose on your own.",
   "topic": "regulation",
   "intent": "decision",
   "audience": "Indian MSME suppliers to multinationals",
@@ -18,21 +18,22 @@
       "h": "How to decide whether to respond",
       "ul": [
         "Respond if the customer is a large share of your revenue, if the request comes with a supplier code or contract clause on climate data, or if they have said non-response affects supplier ratings.",
-        "Ask first if you are unsure: some buyers accept a short emissions summary by email in the first year and expect CDP from the next cycle.",
+        "Ask first if you are unsure: ask whether a short emissions summary by email would do for this cycle, and from when they expect a full CDP response.",
         "Decline only after telling the customer why and what you can send instead. Silence is the worst option."
       ]
     },
     {
-      "h": "What the fee covers and how to check it",
+      "h": "When CDP charges a fee, and when it does not",
       "p": [
-        "CDP's responder fee is an administration charge for using the platform and receiving your score and feedback. It is set per reporting cycle, and the amount differs by organisation size and region, with lower or waived fees for some smaller companies.",
-        "The fee is listed in CDP's fee policy on cdp.net and is shown when you register for the cycle. Some customers pay or reimburse it for priority suppliers, so ask before you pay."
+        "CDP's admin fee is generally waived if you were requested only by Supply Chain members (your customers), Banks Program members, Private Markets members or the RE100 initiative. A supplier asked only by its customers usually discloses without paying CDP.",
+        "The fee applies if CDP's Capital Markets signatories, its investor group, also requested you, or if you choose to disclose without being asked. It is the same for the SME and full questionnaires, it is not refundable, and companies headquartered in India can choose CDP's lower Essential tier, aimed at SMEs.",
+        "The CDP Portal shows who requested you. Check that list before you register, and ask CDP's Help Center if you are unsure whether a fee applies."
       ]
     },
     {
       "h": "Full questionnaire or SME questionnaire",
       "p": [
-        "Since 2024 CDP uses one integrated corporate questionnaire, covering climate, forests, water and other themes, and a shorter SME questionnaire. Revenue and employee numbers decide which one you are eligible for. The SME version asks for the basics: governance, Scope 1 and Scope 2 emissions, and targets if you have them.",
+        "Since 2024 CDP uses one integrated corporate questionnaire, covering climate, forests, water and other themes, and a shorter SME questionnaire. Revenue and employee numbers decide which one you are eligible for. The SME version asks for the basics: your emissions method, Scope 1, 2 and 3 emissions, energy use, and targets and reduction actions if you have them.",
         "Confirm with your customer which version they expect. If they accept the SME version, it is usually the right start for an MSME."
       ]
     },
@@ -47,7 +48,7 @@
       ]
     }
   ],
-  "senseible": "Senseible gives you Scope 1 and Scope 2 figures calculated from your invoices and electricity bills, with the factor and source document behind each line, to fill the emissions questions. Questionnaire support is described on the ESG ratings page. The figures are self-declared; Senseible does not submit to CDP or score your response.",
+  "senseible": "Senseible calculates Scope 1 and 2 from your invoices and electricity bills, with the factor and source document behind each line. Its team can draft the response from your verified records and policies, you review and submit it, and it cannot promise a score or act as a third-party verifier.",
   "links": [
     {
       "label": "CDP and ESG ratings support",
@@ -72,10 +73,14 @@
       "url": "https://www.cdp.net"
     },
     {
+      "label": "CDP, disclosure FAQs: admin fee and exemptions",
+      "url": "https://www.cdp.net/en/faqs"
+    },
+    {
       "label": "GHG Protocol Corporate Standard",
       "url": "https://ghgprotocol.org/corporate-standard"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "CDP sets its responder fees and questionnaire each cycle; check cdp.net for the current year."
+  "reviewed": "2026-10-29",
+  "reviewNote": "CDP sets its admin fee rules, exemptions and questionnaire each cycle; re-check the fee section of CDP's FAQs for the current year."
 }

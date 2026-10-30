@@ -2,48 +2,62 @@
   "slug": "sidbi-green-finance-scheme-loan-terms",
   "q": "MSMEs के लिए SIDBI की Green Finance Scheme loan की शर्तें क्या हैं?",
   "title": "SIDBI Green Finance Scheme loan की शर्तें",
-  "short": "SIDBI की Green Finance Scheme green projects के लिए term loan है: renewable energy, energy-efficient buildings, waste management, resource और energy efficiency, wastewater treatment और cleaner production। यह project का 100 percent तक पैसा दे सकती है, MSME के लिए ₹20 crore तक, 10 साल तक में चुकाना।",
+  "short": "SIDBI की Green Finance Scheme solar, energy efficiency, biogas, पानी, waste और e-mobility projects के लिए rupee या foreign currency term loan है। Project का 75 percent तक, अधिकतम ₹100 crore, भुगतान project के हिसाब से।",
   "sections": [
     {
       "h": "Scheme किसके लिए पैसा देती है",
       "ul": [
-        "Renewable energy, जैसे अपने इस्तेमाल के लिए rooftop या ज़मीन पर लगा solar।",
-        "Energy-efficient buildings।",
-        "Waste management और resource efficiency के उपाय।",
-        "Energy efficiency के उपाय।",
-        "Wastewater treatment।",
-        "Cleaner production।"
+        "Renewable energy, जैसे rooftop या ज़मीन पर लगा solar।",
+        "Energy efficiency और energy-efficient buildings।",
+        "Compressed biogas।",
+        "पानी और wastewater management, effluent treatment सहित।",
+        "Solid waste management, resource efficiency और cleaner production।",
+        "E-mobility।"
       ]
     },
     {
       "h": "कितना और कितने समय के लिए",
       "ul": [
-        "Project का 100 percent तक financing।",
-        "MSME के लिए अधिकतम loan ₹20 crore।",
-        "पक्के MSME जुड़ाव वाले service provider या aggregator के लिए अधिकतम ₹50 crore, जैसे कोई कंपनी जो कई छोटी units के लिए solar लगाती है।",
-        "10 साल तक में भुगतान।"
+        "कुल project लागत का 75 percent तक, इसलिए कम से कम एक चौथाई खुद लगाने का plan रखें।",
+        "अधिकतम loan ₹100 crore, MSME के लिए या पक्के MSME जुड़ाव वाले service provider या aggregator के लिए।",
+        "भुगतान की अवधि तय सालों की नहीं, project की ज़रूरत के हिसाब से तय होती है।",
+        "Rupee या foreign currency term loan, fixed या floating rate के विकल्प के साथ।",
+        "Loan CGTMSE या PRSF जैसी risk sharing सुविधाओं में cover हो सकता है।"
+      ]
+    },
+    {
+      "h": "अगर आप 100 percent मानकर चल रहे थे",
+      "p": [
+        "इस scheme के बारे में पुराने लेख 100 percent financing, MSME के लिए ₹20 crore की सीमा और दस साल का भुगतान बताते हैं। SIDBI का page अब 75 percent, ₹100 crore और project के हिसाब से अवधि दिखाता है। छोटी unit के लिए असली बदलाव 25 percent है: solar या effluent का contract sign करने से पहले वह पैसा, reserves से या अलग facility से, तैयार रखें।"
       ]
     },
     {
       "h": "कौन आवेदन कर सकता है",
       "p": [
-        "SIDBI तीन शर्तें बताता है: manufacturing या services में Udyam registration, संतोषजनक credit history, और किसी bank या financial institution का कोई default नहीं। हर unit को SIDBI के Environment and Social Management Framework का पालन भी करना होता है, इसलिए आम financial जाँच के साथ आपके pollution control consents और कामगारों की सुरक्षा पर सवालों की उम्मीद रखें।"
+        "नई और चल रही MSMEs जिनके पास valid Udyam registration हो, संतोषजनक credit history हो और किसी bank या financial institution का कोई default न हो। Supply की तरफ़ के installers और service companies, जैसे RESCOs, ESCOs, EPC contractors और vendors, भी आवेदन कर सकते हैं। हर borrower को SIDBI के Environment and Social Management Framework का पालन करना होता है।"
       ]
     },
     {
-      "h": "GFS या 4E scheme",
-      "p": [
-        "दोनों SIDBI के direct loans हैं। 4E scheme का दायरा छोटा है: यह energy audit से निकले energy efficiency उपायों के लिए, उपकरण से commissioning तक, पूरा पैसा देती है। GFS green projects का बड़ा दायरा ढकती है, solar और effluent treatment सहित, और बड़ा loan देती है। अगर आपका project audit पर आधारित एक ही efficiency retrofit है, तो चुनने से पहले दोनों की तुलना करें।"
-      ]
-    },
-    {
-      "h": "SIDBI क्या नहीं छापता",
-      "p": [
-        "Green finance page पर GFS की ब्याज दर या collateral का नियम नहीं लिखा है। उपकरण का order देने से पहले branch से पूछें या SIDBI के online portal से आवेदन करके दर और security वाला sanction letter लें।"
+      "h": "GFS या 4E",
+      "ul": [
+        "Solar, effluent, biogas, waste या e-mobility projects के लिए, नई unit के लिए, या ₹15 crore से ऊपर के लिए GFS लें।",
+        "तीन साल के cash profit वाली unit में सिर्फ़ efficiency retrofit हो तो 4E देखें: यह 25 percent fixed deposit पर 100 percent तक पैसा दे सकता है, 84 महीने तक में चुकाना।",
+        "किसी भी page पर ब्याज दर नहीं लिखी है। उपकरण का order देने से पहले sanction letter में दर और security ले लें।"
       ]
     }
   ],
-  "senseible": "Senseible आपके बिजली bills और fuel invoices को तारीख वाली baseline और project के पहले-बाद के record में बदलता है, वही सबूत जो green loan appraisal और बाद की reporting माँगती है।",
+  "example": {
+    "title": "Dyeing unit 300 kW solar और water recycling लगाती है",
+    "lines": [
+      "Quotes से project लागत: ₹3.2 crore",
+      "GFS का अधिकतम loan: 75 percent = ₹2.4 crore",
+      "आपका हिस्सा: ₹80 lakh",
+      "Solar output: 300 kW x 1,400 kWh प्रति kW साल में (माना गया yield) = 4,20,000 kWh",
+      "बचा CO2: 4,20,000 kWh x 0.675 kg प्रति kWh (CEA grid factor, FY 2025-26) = 2,83,500 kg, यानी साल में लगभग 283 tonne"
+    ],
+    "note": "Yield के लिए अपने installer का site estimate लें। CO2 का आँकड़ा तभी सही है जब solar units उन grid units की जगह लें जो आप खरीद रहे थे, जो पहले और बाद के bills दिखाएँगे।"
+  },
+  "senseible": "Senseible आपके बिजली bills और fuel invoices को तारीख वाली baseline और project के पहले-बाद के record में बदलता है, वही सबूत जो green loan appraisal और बाद की reporting माँगती है। Loan का फ़ैसला SIDBI करता है।",
   "links": [
     {
       "label": "MSME के लिए green loan schemes की तुलना",
@@ -54,8 +68,8 @@
       "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
     },
     {
-      "label": "Green loan readiness check",
-      "to": "/green-loan-check"
+      "label": "Solar installers के लिए SIDBI green finance",
+      "to": "/answers/sidbi-green-finance-for-solar-installers-aggregators"
     },
     {
       "label": "Green loan से पहले carbon baseline",
@@ -65,5 +79,6 @@
       "label": "SIDBI किसके लिए पैसा नहीं देगा",
       "to": "/answers/what-sidbi-will-not-finance-exclusion-list"
     }
-  ]
+  ],
+  "reviewNote": "Scheme की शर्तें बदलती रहती हैं; हर तिमाही sidbi.in पर दोबारा जाँचें।"
 }

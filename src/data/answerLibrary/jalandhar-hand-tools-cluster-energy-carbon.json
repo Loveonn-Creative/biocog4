@@ -1,0 +1,82 @@
+{
+  "slug": "jalandhar-hand-tools-cluster-energy-carbon",
+  "q": "How much energy per tonne do Jalandhar hand tool makers use, and what does it mean for EU buyers?",
+  "title": "Jalandhar hand tools: energy and CO2 per tonne",
+  "short": "Making a tonne of hand tools in Jalandhar takes about 0.399 toe, roughly 2.2 t CO2 at today's factors (estimate), most of it from grid power and before the steel itself. That is TERI's average across 950 units making about 50,000 t of tools a year.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Spanner, plier, vice and hammer makers in Jalandhar's Focal Point and industrial estates, and their export buyers",
+  "sections": [
+    {
+      "h": "Where the energy goes",
+      "ul": [
+        "Electricity: 113.5 million kWh a year, 49% of energy. It runs presses, drop hammers, shot blasting, grinding and the tempering furnaces.",
+        "Forging furnace oil: 81.6 lakh litres, 35%. Furnace oil and LDO heat bars before the hammer.",
+        "Heat treatment oil: 31.2 lakh litres, 13%, for hardening at about 835 °C.",
+        "Firewood: 1,500 t, 3%, mostly for hot water in electroplating."
+      ]
+    },
+    {
+      "h": "Your unit against the cluster",
+      "ul": [
+        "Electricity: 1,900 to 2,225 kWh per tonne of tools.",
+        "Forging furnace oil: 139 to 179 litres per tonne.",
+        "Heat treatment oil, where done in-house: about 120 litres per tonne.",
+        "A vendor that only forges, or only plates, will sit well below the average; say which operations your figure covers."
+      ]
+    },
+    {
+      "h": "What it means for an EU buyer",
+      "p": [
+        "Hand tools sit in Chapter 82, outside CBAM, so your buyer pays no border charge on them. What they ask for instead is a figure per tool for their own supply chain reporting. The making stage comes from your bills. The steel bar comes from your steel supplier and can weigh as much as your own making stage or more, so ask the mill or stockist for its figure per tonne."
+      ]
+    },
+    {
+      "h": "Where the carbon actually sits",
+      "p": [
+        "Power is half the energy but about 70% of the CO2, because grid electricity carries more carbon per unit of energy than oil. That makes efficient motors and rooftop solar count for more here than they would in an oil-heavy forge. Many motors in the cluster have been rewound several times, losing 3 to 5% efficiency each time."
+      ]
+    },
+    {
+      "h": "Fixes TERI found in the cluster",
+      "ul": [
+        "Redesigned forging furnaces on natural gas: up to 30% energy saving. The forging furnace takes about 80% of a unit's oil.",
+        "Better insulation and working temperature controllers on heat treatment furnaces: about 10%.",
+        "Energy efficient motors with drives on grinders, lathes and cutters: about 10% of electricity.",
+        "Solar water heaters for electroplating in place of wood-fired boilers."
+      ]
+    },
+    {
+      "h": "Papers that back your figure",
+      "ul": [
+        "PSPCL bills and generator diesel invoices.",
+        "Furnace oil and LDO invoices, split between forging and heat treatment if you can.",
+        "Tonnes despatched each month, and tool weights by catalogue item."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: the cluster's making-stage CO2 per tonne",
+    "lines": [
+      "Electricity: 113.5 million kWh x 0.675 = 76,613 t CO2",
+      "Oil: (81.6 + 31.2) lakh litres = 112.8 lakh litres x 2.97 = 33,502 t CO2",
+      "Total: 76,613 + 33,502 = 110,115 t CO2 for about 50,000 t of tools",
+      "Per tonne: 110,115 / 50,000 = 2.2 t CO2; TERI's own figure was 2.3",
+      "A 250 g spanner: 0.25 kg x 2.2 kg CO2 per kg = 0.55 kg CO2 from making, plus its steel"
+    ],
+    "note": "Cluster totals from TERI's 2010-11 visits, Senseible's furnace oil factor applied to all oil, and the FY 2025-26 grid factor. Wood is left out as biogenic. Your bills and despatch register give your figure."
+  },
+  "senseible": "Upload your PSPCL bills and oil invoices and Senseible turns them into a dated Scope 1 and 2 record; add tonnes despatched and you have a per-tonne making-stage figure to send your buyer alongside the steel supplier's number.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "Jalandhar hand tools and CBAM", "to": "/answers/jalandhar-hand-tool-exporter-cbam-check" },
+    { "label": "Spanner carbon footprint per piece", "to": "/answers/spanner-hand-tool-carbon-footprint-per-piece" }
+  ],
+  "sources": [
+    { "label": "TERI for UNIDO, Cluster Profile: Jalandhar Hand Tools Industries (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/JalandharHandToolsClusterBrief.pdf" },
+    { "label": "Regulation (EU) 2023/956 (CBAM), Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-29"
+}
