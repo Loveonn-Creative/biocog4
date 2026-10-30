@@ -24,7 +24,8 @@ import { useOrganization } from '@/hooks/useOrganization';
 import { toast } from 'sonner';
 import { SubscriptionStatusBanner } from '@/components/SubscriptionStatusBanner';
 import { PlanMeter } from '@/components/pricing/PlanMeter';
-import { LAUNCH_ENDS_LABEL, MAX_SAVING_PERCENT, TIER_PRICES, yearlySaving } from '@/lib/pricing/pricingMath';
+import { LAUNCH_ENDS_LABEL, MAX_SAVING_PERCENT, SCALE_RATES, SCALE_TEAM, TIER_PRICES, scaleEstimate, yearlySaving } from '@/lib/pricing/pricingMath';
+import { Slider } from '@/components/ui/slider';
 import { launchWindowOpen } from '@/lib/pricing/launchWindow';
 import type { PlanTier } from '../../supabase/functions/_shared/planLimits';
 import type { PaymentMethod } from '../../supabase/functions/_shared/checkoutTotals';
@@ -93,6 +94,8 @@ const Pricing = () => {
   
   const [processingTier, setProcessingTier] = useState<string | null>(null);
   const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly');
+  const [teamSize, setTeamSize] = useState<number>(SCALE_TEAM.start);
+  const scalePrice = scaleEstimate(teamSize, billingCycle);
   const [pendingMonthlyTier, setPendingMonthlyTier] = useState<string | null>(null);
   // Plan waiting for the payment-method choice (UPI vs card) before checkout.
   const [checkout, setCheckout] = useState<{ plan: CheckoutPlan; cycle: 'yearly' | 'monthly' } | null>(null);
@@ -186,9 +189,10 @@ const Pricing = () => {
       return;
     }
 
-    // Scale tier - contact sales
+    // Scale: sales confirm the estimate as a quote; checkout runs only on that quote.
     if (tierId === 'scale') {
-      navigate('/contact');
+      const msg = `Scale plan for ${teamSize} people, ${billingCycle} billing. Estimate shown: ${formatCurrency(scalePrice)} a month, no extra integrations.`;
+      navigate(`/contact?topic=sales&msg=${encodeURIComponent(msg)}`);
       return;
     }
 
@@ -376,10 +380,10 @@ const Pricing = () => {
       name: 'Biocog Scale',
       icon: Building2,
       tagline: 'For larger teams',
-      price: null,
-      period: '',
-      subtext: 'Custom workflows and larger teams. Contact us for a quote.',
-      cta: 'Talk to Sales',
+      price: scalePrice,
+      period: '/month',
+      subtext: `For ${teamSize} people, without extra integrations. Integrations are quoted separately.`,
+      cta: 'Get this price',
       ctaVariant: 'secondary',
       features: [
         'Everything in Pro',
@@ -729,6 +733,18 @@ const Pricing = () => {
                           </>
                         )}
                       </div>
+                      {tier.id === 'scale' && (
+                        <div className="mt-3 rounded-lg bg-muted/50 p-3">
+                          <div className="mb-2 flex items-center justify-between">
+                            <label htmlFor="scale-team" className="text-xs font-medium">Team size</label>
+                            <span className="text-sm font-bold">{teamSize} people</span>
+                          </div>
+                          <Slider id="scale-team" aria-label="Team size" value={[teamSize]} onValueChange={(v) => setTeamSize(v[0])} min={SCALE_TEAM.min} max={SCALE_TEAM.max} step={SCALE_TEAM.step} />
+                          <p className="mt-2 text-xs text-muted-foreground">
+                            {formatCurrency(SCALE_RATES[billingCycle].base)} base + {formatCurrency(SCALE_RATES[billingCycle].perPerson)} per person, a month
+                          </p>
+                        </div>
+                      )}
                       {billingCycle === 'yearly' && (tier.id === 'essential' || tier.id === 'pro') && (
                         <p className="pr-save mt-2 inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-1 text-xs font-medium text-success">
                           <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" aria-hidden="true"><path pathLength={1} d="M2 11 C 5 4, 9 4, 13 8 M10 4 l3 4 -4 1" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
