@@ -9,38 +9,13 @@
 //
 // Attributes translated: placeholder, title, aria-label, alt.
 
+// Skip rules live in domRules.ts, shared with the static-pack collector.
+// Long text is split into sentences inside translateSync (textRules.ts).
+
 import { subscribe as subscribeCache, translateSync } from "./autoTranslate";
+import { ATTRS, hasLetters, shouldSkip } from "./domRules";
 
-const SKIP_TAGS = new Set([
-  "SCRIPT", "STYLE", "CODE", "PRE", "TEXTAREA", "INPUT",
-  "SVG", "PATH", "NOSCRIPT",
-]);
-const ATTRS = ["placeholder", "title", "aria-label", "alt"] as const;
 const ORIG_ATTR = "data-i18n-orig";
-
-function hasLetters(s: string): boolean {
-  return /\p{L}/u.test(s);
-}
-
-function shouldSkip(el: Element | null): boolean {
-  let node: Element | null = el;
-  while (node) {
-    if (SKIP_TAGS.has(node.tagName)) return true;
-    if (node.getAttribute) {
-      if (node.getAttribute("data-no-translate") !== null) return true;
-      if (node.getAttribute("contenteditable") === "true") return true;
-      // Never touch code-shaped or identifier content: hashes, GSTIN, HSN, etc.
-      const cls = node.getAttribute("class") || "";
-      if (/\bfont-mono\b/.test(cls)) return true;
-      if (/\b(hash|sha|gstin|hsn|code|identifier)\b/i.test(cls)) return true;
-      // Never translate <time>, <kbd>, <samp>, <var> content
-      const tag = node.tagName;
-      if (tag === "TIME" || tag === "KBD" || tag === "SAMP" || tag === "VAR") return true;
-    }
-    node = node.parentElement;
-  }
-  return false;
-}
 
 // Text already rendered from a reviewed static bundle (useT keys). The DOM
 // translator must never machine-translate it again.
@@ -124,9 +99,11 @@ function walk(locale: string, root: Node) {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, {
     acceptNode(node) {
       if (node.nodeType === Node.ELEMENT_NODE) {
+        // Visit the element as well, so its own attributes (alt, aria-label,
+        // title, placeholder) are translated, not only a mutation root's.
         return shouldSkip(node as Element)
           ? NodeFilter.FILTER_REJECT
-          : NodeFilter.FILTER_SKIP; // descend but don't visit as text
+          : NodeFilter.FILTER_ACCEPT;
       }
       return NodeFilter.FILTER_ACCEPT;
     },
@@ -162,6 +139,12 @@ function scheduleWalk(root: Node) {
 }
 
 export function startDomTranslator(locale: string) {
+  // Already running for this locale: re-walk only, so a second caller does
+  // not flash English by restoring originals and translating again.
+  if (observer && currentLocale === locale) {
+    scheduleWalk(document.body);
+    return;
+  }
   stopDomTranslator();
   currentLocale = locale;
   if (locale === "en") return;

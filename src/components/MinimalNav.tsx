@@ -100,6 +100,7 @@ export const MinimalNav = () => {
               {Object.entries(LOCALE_LABELS).map(([code, label]) => (
                 <button
                   key={code}
+                  data-prefetch-locale={code}
                   onClick={() => handlePickLocale(code)}
                   className={`w-full text-left px-3 py-1.5 text-sm rounded hover:bg-secondary transition-colors flex items-center justify-between gap-3 ${locale === code ? 'text-primary font-medium' : 'text-muted-foreground'}`}
                 >

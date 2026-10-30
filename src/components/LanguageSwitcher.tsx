@@ -72,6 +72,7 @@ export const LanguageSwitcher = ({ className = "" }: { className?: string }) => 
                 type="button"
                 role="option"
                 aria-selected={locale === code}
+                data-prefetch-locale={code}
                 onClick={() => pick(code)}
                 className={`w-full text-left px-3 py-2 text-sm rounded hover:bg-secondary transition-colors flex items-center justify-between gap-3 ${locale === code ? 'text-primary font-medium' : 'text-muted-foreground'}`}
               >
