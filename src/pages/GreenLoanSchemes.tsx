@@ -6,15 +6,90 @@ import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 import { GreenLoanEntry } from "@/components/climate-finance/GreenLoanEntry";
-import { CHECK_TERMS, EVIDENCE, GLS_FAQS, GLS_PATH, NEEDS, arrange, evidenceTally, type Need } from "@/data/greenLoanSchemes";
+import { CHECK_TERMS, EVIDENCE, GLS_FAQS, GLS_PATH, NEEDS, SCHEMES, arrange, evidenceTally, type Need, type Scheme } from "@/data/greenLoanSchemes";
 import "./greenLoanSchemes.css";
 
-// /msme-green-loan-schemes. One question reshapes the page: what is the money
+// /msme-green-loan-schemes. The hero sieves the ten routes with three taps
+// (purpose, size, cluster). Its purpose question reshapes the page: what is the money
 // for? The comparison re-sorts to the routes built for that need, the evidence
 // tally below re-counts what those lenders ask for, and the closing strip draws
 // how Senseible turns bills into that evidence. Facts: src/data/greenLoanSchemes.ts.
 
 const EVIDENCE_LABEL = Object.fromEntries(EVIDENCE.map(e => [e.id, e.label]));
+
+/* Hero: three taps sieve the ten routes down to the ones built for this project. */
+type Size = "small" | "medium";
+type Cluster = "yes" | "no" | "unsure";
+// Size and cluster rules come from SCHEMES text: CGTMSE "Medium enterprises are
+// outside it"; ADEETIE suits units "inside one of 60 named clusters" and cuts
+// "5 points for micro and small, 3 for medium".
+function sieve(s: Scheme, need: Need | null, size: Size | null, cluster: Cluster | null): string | null {
+  if (need && !s.needs.includes(need)) return `Not built for ${NEEDS.find(n => n.id === need)!.label.toLowerCase()}`;
+  if (s.id === "cgtmse" && size === "medium") return "Medium enterprises are outside it";
+  if (s.id === "adeetie" && cluster === "no") return "Only for units in the 60 named clusters";
+  return null;
+}
+function hint(s: Scheme, size: Size | null, cluster: Cluster | null): string {
+  if (s.id === "adeetie") {
+    const cut = size === "medium" ? "BEE cuts 3 points off your bank's interest" : size === "small" ? "BEE cuts 5 points off your bank's interest" : s.kind;
+    return cluster === "unsure" ? `${cut}, if your unit is in one of the 60 named clusters` : cut;
+  }
+  if (s.id === "cgtmse") return "Loans up to ₹10 crore without collateral, if the bank opts in";
+  return s.kind;
+}
+
+function Tap<T extends string>({ q, value, options, onChange }: { q: string; value: T | null; options: { v: T; l: string }[]; onChange: (v: T | null) => void }) {
+  return (
+    <fieldset className="gls-sieve-q">
+      <legend>{q}</legend>
+      <div>
+        {options.map(o => (
+          <button key={o.v} type="button" aria-pressed={value === o.v} onClick={() => onChange(value === o.v ? null : o.v)}>{o.l}</button>
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+
+function RouteSieve({ need, setNeed }: { need: Need | null; setNeed: (n: Need | null) => void }) {
+  const [size, setSize] = useState<Size | null>(null);
+  const [cluster, setCluster] = useState<Cluster | null>(null);
+  const askCluster = need === "efficiency" || need === "machinery";
+  const c = askCluster ? cluster : null;
+  const rows = SCHEMES.map(s => ({ s, out: sieve(s, need, size, c) }));
+  const fits = rows.filter(r => !r.out).length;
+  const setAside = Object.entries(rows.reduce<Record<string, string[]>>((acc, r) => {
+    if (r.out) (acc[r.out] ??= []).push(r.s.name);
+    return acc;
+  }, {}));
+  return (
+    <div className="gls-sieve">
+      <Tap<Need> q="What is the money for?" value={need} onChange={setNeed} options={NEEDS.map(n => ({ v: n.id, l: n.label }))} />
+      <Tap<Size> q="Your size" value={size} onChange={setSize} options={[{ v: "small", l: "Micro or small" }, { v: "medium", l: "Medium" }]} />
+      {askCluster && (
+        <Tap<Cluster> q="Is your unit in a BEE cluster, like Morbi, Firozabad or Ludhiana?" value={cluster} onChange={setCluster}
+          options={[{ v: "yes", l: "Yes" }, { v: "no", l: "No" }, { v: "unsure", l: "Not sure" }]} />
+      )}
+      <p className="gls-sieve-count" aria-live="polite"><b>{fits}</b> of {SCHEMES.length} routes fit</p>
+      <ol className="gls-sieve-list">
+        {rows.map(({ s, out }) => (
+          <li key={s.id} data-out={Boolean(out)} aria-hidden={out ? true : undefined}>
+            <div>
+              <span className="gls-sieve-name">{s.name}</span>
+              <span className="gls-sieve-why">{hint(s, size, c)}</span>
+            </div>
+          </li>
+        ))}
+      </ol>
+      {setAside.length > 0 && (
+        <ul className="gls-sieve-out">
+          {setAside.map(([why, names]) => <li key={why}><b>{why}:</b> {names.join(", ")}</li>)}
+        </ul>
+      )}
+      <a href="#compare" className="gls-sieve-go">Papers and terms for these <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+    </div>
+  );
+}
 
 function NeedSwitch({ need, setNeed, fitCount }: { need: Need | null; setNeed: (n: Need | null) => void; fitCount: number }) {
   const opts: { id: Need | null; label: string }[] = [{ id: null, label: "Show all" }, ...NEEDS];
@@ -149,13 +224,16 @@ export default function GreenLoanSchemes() {
       <MinimalNav />
       <main className="gls">
         <header className="gls-hero">
-          <p className="gls-eyebrow">Green finance in India</p>
-          <h1 className="gls-title">Green loan schemes for MSMEs. <span>Find the one built for your project.</span></h1>
-          <p className="gls-lede">SIDBI and your bank lend for different projects, BEE cuts the interest on some, and RBI and CGTMSE rules change what a bank will do. Pick what the money is for, and see who each route suits, what it pays for and the papers the lender will want.</p>
-          <p className="gls-note">Senseible does not lend, arrange or approve loans.</p>
+          <div className="gls-hero-copy">
+            <p className="gls-eyebrow">Green finance in India</p>
+            <h1 className="gls-title">Green loan schemes for MSMEs. <span>Find the one built for your project.</span></h1>
+            <p className="gls-lede">Ten routes: SIDBI loans, BEE's interest cut, your bank's loans and the RBI and CGTMSE rules behind them. Each is built for different projects. Three taps set aside the ones that do not fit yours.</p>
+            <p className="gls-note">Senseible does not lend, arrange or approve loans.</p>
+          </div>
+          <RouteSieve need={need} setNeed={setNeed} />
         </header>
 
-        <section className="gls-compare" aria-label="Compare green loan routes">
+        <section id="compare" className="gls-compare" aria-label="Compare green loan routes">
           <NeedSwitch need={need} setNeed={setNeed} fitCount={fitCount} />
           <Comparison need={need} />
         </section>
