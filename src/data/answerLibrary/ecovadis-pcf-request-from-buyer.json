@@ -1,0 +1,97 @@
+{
+  "slug": "ecovadis-pcf-request-from-buyer",
+  "q": "My buyer asked for product carbon footprints through EcoVadis. What do I send?",
+  "title": "Buyer wants your PCF through EcoVadis",
+  "short": "A footprint for the named product, in kg CO2e per unit, shared through EcoVadis's Carbon Product Data exchange, which follows the PACT framework. Sharing costs rated companies nothing extra. With no footprint yet, the EcoVadis PCF Calculator is free for invited or subscribed suppliers and gives a cradle-to-gate figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian MSME suppliers who received a product carbon footprint request on EcoVadis",
+  "sections": [
+    {
+      "h": "What the request means",
+      "p": [
+        "Your buyer uses EcoVadis's Carbon Action Manager and has sent a Carbon Product Data request, usually with a message naming the product and saying whether it wants a product carbon footprint (PCF) or CBAM data. It will use your figure in its Scope 3 instead of an industry average.",
+        "EcoVadis files products under the UN Central Product Classification, five levels deep. Find your product's code before you start; detergents, for example, sit in subclass 35322."
+      ]
+    },
+    {
+      "h": "Who pays for what",
+      "ul": [
+        "The PCF Data Exchange is included in every subscription at no extra cost for rated companies.",
+        "The PCF Calculator is free for eligible suppliers invited by a buyer to a Carbon Rating, and comes with any Sustainability Ratings subscription. It runs in 13 languages.",
+        "At launch it covered 12 industrial sectors, including plastics, metals, electronics and machinery. If your product sits outside them, you will need a footprint calculated another way."
+      ]
+    },
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Materials: the weight of each input per unit, with your supplier's footprint for it or a database factor.",
+        "Energy: your plant's electricity and fuel, shared out across what you produced.",
+        "Transport of inputs to your gate.",
+        "Method: the calculator is aligned with the GHG Protocol and produces a cradle-to-gate figure, from raw materials up to your factory gate."
+      ]
+    },
+    {
+      "h": "Check before you share",
+      "ol": [
+        "The unit matches what the buyer buys: per piece, per kg or per metre.",
+        "The year is stated, and the energy figures come from that year's bills.",
+        "Your share-out rule for plant energy (by weight, by machine hours) is written down, so you can repeat it next year.",
+        "Decide who else sees it. The buyer can ask for exclusive access, but sharing stays your decision."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The plant-energy part for a 1.5 kg machined flange",
+    "lines": [
+      "One month: 1,20,000 kWh grid electricity x 0.675 kg CO2/kWh (CEA, FY 2025-26) = 81,000 kg CO2.",
+      "Diesel for generators: 3,000 L x 2.645 kg/L = 7,935 kg CO2. Plant total: 88,935 kg CO2.",
+      "Output: 80,000 flanges x 1.5 kg = 1,20,000 kg. Shared by weight: 88,935 / 1,20,000 = 0.741 kg CO2 per kg.",
+      "Per flange: 1.5 x 0.741 = 1.11 kg CO2, before adding the steel bar's own footprint and inbound freight."
+    ],
+    "note": "Quantities are invented; factors are the ones Senseible applies. Material footprints come from your steel supplier or a database."
+  },
+  "senseible": "Senseible covers the plant-energy part of a product footprint: it reads your power bills and fuel invoices and turns them into monthly kg CO2, each line traceable to its bill, ready to share out across your output. Footprints for bought-in materials still have to come from your suppliers or a database.",
+  "links": [
+    {
+      "label": "Product evidence your buyer can trace",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "What a buyer expects in a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "PACT Pathfinder Framework explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    },
+    {
+      "label": "Mass or value allocation",
+      "to": "/answers/buyer-asks-mass-or-value-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis Help Center, What is the Product Carbon Footprint? (PCF Data Exchange access)",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/11791529431314-What-is-the-Product-Carbon-Footprint"
+    },
+    {
+      "label": "EcoVadis Help Center, What is Partnership for Carbon Transparency (PACT)?",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/11791802471314-What-is-Partnership-for-Carbon-Transparency-PACT"
+    },
+    {
+      "label": "EcoVadis, PCF Calculator",
+      "url": "https://ecovadis.com/solutions/pcf-calculator/"
+    },
+    {
+      "label": "EcoVadis Help Center, How to request a trading partner's PCF or CBAM data",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/18407036146834-How-to-request-a-new-trading-partner-s-PCF-or-CBAM-data"
+    },
+    {
+      "label": "EcoVadis Help Center, What is the Central Product Classification (UN CPC)?",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/11791852928530-What-is-the-Central-Product-Classification-UN-CPC"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Check the PCF Calculator's sector list and eligibility on EcoVadis every six months."
+}

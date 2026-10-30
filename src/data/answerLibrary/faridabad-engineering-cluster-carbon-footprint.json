@@ -1,0 +1,66 @@
+{
+  "slug": "faridabad-engineering-cluster-carbon-footprint",
+  "q": "What does Faridabad's engineering cluster use in energy, and what do auto OEMs ask its suppliers for?",
+  "title": "Faridabad engineering: energy and OEM asks",
+  "short": "About 12,015 MSMEs, 35% making auto parts, run on grid power with DG sets as backup, plus diesel, furnace oil, LPG, pet coke, wood and gas. The 5,347 units surveyed used 426,167 toe a year. Auto and tractor OEMs ask each vendor for monthly fuel and power, Scope 1 and 2, and a figure per part.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Auto parts, sheet metal, fabrication, forging and heat treatment MSMEs in Faridabad supplying vehicle and tractor OEMs",
+  "sections": [
+    {
+      "h": "The cluster, from the last full survey (2011 to 12)",
+      "ul": [
+        "About 12,015 MSMEs: 4,612 micro, 7,039 small and 364 medium.",
+        "Auto parts make up 35% of units, sheet metal components 14% and fabrication 11%. Castings, forging, heat treatment, electroplating, fasteners, rubber and plastics make up most of the rest.",
+        "A large share work as vendors to car, two-wheeler and tractor OEMs.",
+        "Energy is just over 2% of manufacturing cost in fabrication units and over 44% in foundries, so the same OEM form means very different work for different vendors."
+      ]
+    },
+    {
+      "h": "Where the energy goes",
+      "ul": [
+        "Grid power from DHBVN runs presses, machine shops and welding. Power cuts mean almost every unit has a DG set, so diesel turns up in nearly every Scope 1 figure.",
+        "Furnace oil, LPG, pet coke, wood and piped gas fire furnaces in forging, heat treatment and foundries.",
+        "The 5,347 units in the survey used 426,167 toe a year: on average about 80 toe a unit, a rough figure that hides a spread from tiny fabricators to large foundries.",
+        "The survey's biggest saving options: switching furnaces from furnace oil to PNG or electric, excess air control, furnace temperature control and inverter welding machines."
+      ]
+    },
+    {
+      "h": "What the OEM supplier form asks, and where each answer comes from",
+      "ol": [
+        "Electricity in kWh by month: your DHBVN bills.",
+        "Diesel for the DG set in litres: fuel purchase slips, less stock in the tank at year end.",
+        "Furnace fuels by month: furnace oil, LPG, PNG or pet coke invoices.",
+        "Scope 1 and Scope 2 in tonnes CO2e, with the factors named.",
+        "Output: parts or tonnes shipped to that OEM, so it can work out a figure per part.",
+        "Plans to cut emissions: a fuel switch or furnace upgrade, with dates."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a sheet metal press shop with a paint oven, one month",
+    "lines": [
+      "Grid power: 40,000 kWh x 0.675 kg = 27.0 t CO2 (Scope 2)",
+      "DG set: 1,500 L diesel x 2.645 kg = 3.97 t CO2 (Scope 1)",
+      "Paint oven: 1,200 kg LPG x 2.98 kg = 3.58 t CO2 (Scope 1)",
+      "Total: 34.5 t CO2 for 180 t of pressings shipped, about 0.19 t CO2 per tonne from the plant's own energy",
+      "The steel sheet comes on top. At 1.15 t of sheet per tonne of pressings, the mill's figure per tonne of sheet matters far more than your power bill"
+    ],
+    "note": "Quantities are an example. Factors: CEA grid factor for FY 2025-26 and IPCC 2006 fuel defaults. Use your mill's figure for the sheet; the 1.15 yield is illustrative."
+  },
+  "senseible": "Upload a year of DHBVN bills, DG diesel slips and furnace fuel invoices, and Senseible returns the monthly Scope 1 and 2 figures an OEM form asks for, each line linked to the bill it came from.",
+  "links": [
+    { "label": "Supplier evidence for your OEMs", "to": "/scope-3-supplier-evidence" },
+    { "label": "Faridabad forging: furnace oil to PNG", "to": "/answers/faridabad-forging-unit-furnace-oil-to-png" },
+    { "label": "Splitting emissions by machine hours", "to": "/answers/allocate-plant-emissions-by-machine-hours" },
+    { "label": "DG set diesel in Scope 1", "to": "/answers/brsr-dg-set-diesel-energy-and-scope-1" }
+  ],
+  "sources": [
+    { "label": "TERI and DESL, Cluster profile: Faridabad mixed engineering cluster (SAMEEEKSHA; data 2011 to 12, World Bank, GEF and SIDBI project)", "url": "https://sameeeksha.org/pdf/clusterprofile/Faridabad_mixed_engineering_cluster.pdf" },
+    { "label": "SAMEEEKSHA, Faridabad mixed engineering cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=128&Itemid=502" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Cluster data is from 2011 to 12. Update if a newer Faridabad profile is published."
+}

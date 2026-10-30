@@ -1,0 +1,69 @@
+{
+  "slug": "coimbatore-pump-cluster-carbon-footprint",
+  "q": "Coimbatore makes about 10.5 million pump sets a year: what is the cluster's carbon footprint?",
+  "title": "Coimbatore pump cluster carbon footprint",
+  "short": "About 28,000 t CO2 a year from the pump makers' own energy, on today's grid factor: 40 million kWh of power and 500 kL of DG diesel across roughly 600 units. That is only 2 to 3 kg per pump set. The castings, stampings and copper inside each pump carry far more.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Pump set makers and ancillary units in Coimbatore, from SIDCO and Ganapathy to Kanuvai and Arasur, and the brands that buy from them",
+  "sections": [
+    {
+      "h": "The cluster in TERI's 2016 energy profile",
+      "ul": [
+        "About 600 pump set makers and 400 ancillary units making impellers, diffusers and shafts.",
+        "500 small and micro units make 5 to 10 pump sets a day, 85 medium units 100 to 200, and 15 large units 1,500 to 2,000.",
+        "About 35,000 pump sets a day, roughly 10.5 million a year, close to 40% of India's output. Submersibles are about 65%.",
+        "Exports are only 1 to 2% of turnover, so most carbon questions come from Indian brands, tenders and large industrial buyers."
+      ]
+    },
+    {
+      "h": "The footprint, worked from TERI's 2014 to 15 figures",
+      "ul": [
+        "Electricity: 40 million kWh x 0.675 kg = 27,000 t CO2.",
+        "DG diesel: 500 kL x 2.645 kg per litre = 1,320 t CO2.",
+        "Total: about 28,300 t, or about 2.7 kg per pump set on average. TERI's own estimate at the time was 30,700 t, on an older grid factor.",
+        "Machining is about 50% of a unit's power and hydraulic presses about 20%. A typical pump set takes 2 to 4 kWh to make."
+      ]
+    },
+    {
+      "h": "Why your per-pump figure is mostly what you buy",
+      "p": [
+        "Your plant adds a couple of kilograms per pump. The iron castings alone usually carry several times that: a 15 kg set of castings at about 0.65 t CO2 per tonne, an estimate of grey iron foundry energy per tonne of good castings, is already about 10 kg, before stampings, copper winding wire and the motor's electrical steel. If a buyer asks for a product figure, ask your foundry for its kWh or coke per tonne first."
+      ]
+    },
+    {
+      "h": "Three sizes of unit, three figures a year",
+      "ul": [
+        "Small (5 to 10 a day): 6,000 kWh and 240 L diesel, about 4.7 t CO2.",
+        "Medium (100 to 200 a day): 80,000 kWh and 2,640 L diesel, about 61 t.",
+        "Large (1,500 to 2,000 a day): 1.2 million kWh and 10,000 L diesel, about 836 t."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a medium unit making 150 pump sets a day",
+    "lines": [
+      "Power: 80,000 kWh x 0.675 = 54.0 t CO2",
+      "DG diesel: 2,640 L x 2.645 = 6.98 t CO2",
+      "Plant total: 61.0 t a year",
+      "Output: 150 a day x 300 working days = 45,000 pump sets",
+      "Plant energy per pump set: 61,000 kg / 45,000 = about 1.4 kg CO2"
+    ],
+    "note": "Energy use is TERI's typical medium unit; 300 working days is an assumption. Factors: CEA grid factor for FY 2025-26 and Senseible's diesel factor from IPCC defaults."
+  },
+  "senseible": "Senseible reads your TANGEDCO bills and diesel slips into a monthly carbon number for the plant, the figure you then divide by pump sets made; castings and copper come from your suppliers.",
+  "links": [
+    { "label": "Your MSME carbon number", "to": "/msme-carbon-number" },
+    { "label": "Does a pump exporter need an EPD", "to": "/answers/coimbatore-pump-exporter-epd-for-buyers" },
+    { "label": "Coimbatore foundry energy per tonne", "to": "/answers/coimbatore-foundry-cluster-energy-per-tonne-castings" },
+    { "label": "Electric motor manufacturing footprint", "to": "/answers/electric-motor-carbon-footprint-per-unit" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Coimbatore pump set cluster (SAMEEEKSHA, 2016; data 2014 to 15)", "url": "https://sameeeksha.org/pdf/clusterprofile/CoimbatorePumpsetReport.pdf" },
+    { "label": "SAMEEEKSHA, Coimbatore pump set cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=189&Itemid=502" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2014 to 15. Update the grid factor each financial year and the cluster figures if a newer profile is published."
+}

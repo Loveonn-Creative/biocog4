@@ -1,0 +1,92 @@
+{
+  "slug": "ecovadis-or-cdp-which-first",
+  "q": "Two buyers want EcoVadis and CDP. Which should a small supplier do first?",
+  "title": "EcoVadis and CDP both asked: which first",
+  "short": "Let the calendar decide. CDP opens once a year, from June to October in 2026, while EcoVadis takes submissions any time and publishes about 6 to 8 weeks later. Build your Scope 1 and 2 figures first: they serve both, and EcoVadis accepts a CDP response as evidence for them.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian MSME suppliers asked by different customers for EcoVadis and CDP",
+  "sections": [
+    {
+      "h": "How the two differ for you",
+      "ul": [
+        "Timing: CDP runs a yearly window, June to October in 2026, and only responses in by its scoring deadline in September get a score. EcoVadis has no window; your scorecard is usually published 6 to 8 weeks after you submit.",
+        "Money: CDP charges you no admin fee if you were requested only by Supply Chain members (customers), Banks Program members, Private Markets members or RE100. If CDP's Capital Markets Signatories also requested you, the fee applies. EcoVadis may give a newly invited company up to six weeks free to work on its questionnaire, but a paid subscription is needed to submit.",
+        "Scope: CDP asks about environmental issues only: climate change, and forests or water where they apply. EcoVadis rates 21 criteria across Environment, Labor and Human Rights, Ethics and Sustainable Procurement, so it also needs your labour, ethics and purchasing policies.",
+        "Result: CDP gives a score if you submit by the scoring deadline. EcoVadis gives a 0 to 100 score, and a medal or badge if you qualify, valid for 12 months."
+      ]
+    },
+    {
+      "h": "A simple rule",
+      "ol": [
+        "Whichever buyer has the earlier hard date goes first. A date written into a contract or a tender beats a general request.",
+        "If CDP's window is closed when the requests land, do EcoVadis now and CDP when the next window opens.",
+        "If both are open, do CDP first when it costs you no fee and the deadline is close; the work then feeds EcoVadis.",
+        "Either way, close last financial year's electricity bills and fuel invoices first. Both ask for your Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "Reusing the work",
+      "p": [
+        "EcoVadis checks submitted carbon figures against supporting documents, and names a CDP or CSR report as an example. So once your CDP response is in, upload it as evidence for the same figures on EcoVadis. Keep the numbers identical in both: a buyer that sees two different totals for the same year will ask which one is wrong."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Pune forging unit, requests received in November",
+    "lines": [
+      "Buyer A wants an EcoVadis scorecard by 31 March 2027. Buyer B, a CDP Supply Chain member, will request CDP in the 2027 cycle.",
+      "EcoVadis: 31 March minus 8 weeks = 3 February 2027. Submit by the end of January to be safe.",
+      "CDP: the 2026 window has closed. Answer in the 2027 cycle (2026's opened in June) with your latest full financial year, built the same way as the EcoVadis figures.",
+      "Fees: nothing to CDP if only customers requested the unit; the EcoVadis subscription is the only cost."
+    ],
+    "note": "The unit and dates of the buyers' requests are invented; CDP's 2027 dates are not yet published."
+  },
+  "senseible": "Start with the numbers both buyers need: Senseible reads your electricity bills and fuel invoices and gives you Scope 1 and 2 for the year, with the factor and bill behind every line, to enter in CDP and EcoVadis alike.",
+  "links": [
+    {
+      "label": "Get your Scope 1 and 2 for the year",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "CDP supply chain request: what to do",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "CDP SME or full questionnaire",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    },
+    {
+      "label": "Do I have to pay for EcoVadis?",
+      "to": "/answers/do-i-have-to-pay-for-ecovadis"
+    },
+    {
+      "label": "CDP deadlines",
+      "to": "/answers/cdp-supply-chain-deadline-dates"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP, FAQs (admin fee and exemptions)",
+      "url": "https://www.cdp.net/en/faqs"
+    },
+    {
+      "label": "EcoVadis Help Center, EcoVadis subscription costs (free questionnaire period)",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/360011788959-EcoVadis-Subscription-Costs"
+    },
+    {
+      "label": "EcoVadis Help Center, What is the EcoVadis assessment process?",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/115002653188-What-is-the-EcoVadis-assessment-process"
+    },
+    {
+      "label": "EcoVadis, Sustainability Rating methodology disclosure (April 2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/04/EcoVadis-Sustainability-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
+    },
+    {
+      "label": "EcoVadis, Carbon Data Reliability Levels",
+      "url": "https://ecovadis.com/solutions/ecovadis-carbon-data-reliability-levels/"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Update CDP dates and fee rules when CDP publishes its 2027 terms of disclosure."
+}

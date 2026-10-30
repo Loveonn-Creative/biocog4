@@ -1,0 +1,72 @@
+{
+  "slug": "ecovadis-document-upload-limit",
+  "q": "How many documents can I upload to EcoVadis, and which ones count?",
+  "title": "EcoVadis 55-document limit: what counts",
+  "short": "Each assessment takes up to 55 new documents, whatever your size, and files from earlier assessments do not count toward it. Only evidence linked to the right answer earns credit. EcoVadis rejects files merged just to fit the limit and documents written only for the questionnaire.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME suppliers preparing evidence for an EcoVadis assessment",
+  "sections": [
+    {
+      "h": "How the limit works",
+      "ul": [
+        "55 new documents per assessment or reassessment, the same for every company size.",
+        "Earlier uploads do not count: you can hold up to 110 documents by your second assessment and 165 by your third.",
+        "Documents expire: policies and actions after 8 years, KPI reporting after 2 years. Expired files are removed automatically, along with the answer options linked to them.",
+        "Each file must be under 30 MB. Documents in a language other than English, French, Spanish, German, Chinese or Japanese must be text, not a scanned image, so a Hindi or Tamil policy should be a typed file."
+      ]
+    },
+    {
+      "h": "What earns no credit",
+      "ul": [
+        "Documents created only to satisfy the EcoVadis questionnaire.",
+        "Policies, targets or reports copied from another organisation or the internet without proof you apply them.",
+        "Informal files: no company name or logo, no issue or review date, loose photos.",
+        "Evidence hidden behind links or embedded files. Analysts will not download from them.",
+        "Combined files: unrelated policies, receipts or photos merged into one PDF to cover several questions.",
+        "Anything outside EcoVadis's 21 sustainability criteria."
+      ]
+    },
+    {
+      "h": "Combined files EcoVadis does accept",
+      "ul": [
+        "Certificates for several sites in one file.",
+        "One KPI report covering several sites, such as an internal spreadsheet with site-by-site figures.",
+        "A training plan with its materials and attendance records.",
+        "Sections of one management manual, such as an EHS manual."
+      ]
+    },
+    {
+      "h": "Spending the 55 well on carbon",
+      "ol": [
+        "Upload one dated energy and emissions report with your company name: monthly electricity and fuel by site, the factors used, and the Scope 1 and 2 totals.",
+        "Keep the bills behind it on file in case an analyst asks, rather than uploading each one.",
+        "Add your energy or climate policy and evidence of actions taken, such as a VFD retrofit or a solar purchase.",
+        "Link each document to every answer it supports. One good report can back several answers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Two sites, 24 power bills",
+    "lines": [
+      "Uploading every monthly bill: 2 sites x 12 months = 24 documents, leaving 55 minus 24 = 31 for policies, certificates and everything else.",
+      "One site-by-site energy and emissions report instead: 1 document, leaving 54.",
+      "The bills still exist and back every figure in the report if anyone asks."
+    ],
+    "note": "The site count is invented; the limit and the multi-site KPI exception are EcoVadis's."
+  },
+  "senseible": "Senseible reads each bill and fuel invoice into a monthly record of energy and emissions, every figure linked to the document it came from, so your carbon evidence can go in as one report while the bills stay on file behind it.",
+  "links": [
+    { "label": "How each figure is checked", "to": "/trust" },
+    { "label": "Carbon evidence EcoVadis asks for", "to": "/answers/ecovadis-carbon-questions-what-evidence" },
+    { "label": "How EcoVadis grades your carbon figures", "to": "/answers/ecovadis-carbon-data-reliability-levels" },
+    { "label": "When an EcoVadis scorecard expires", "to": "/answers/ecovadis-scorecard-expiry-reassessment" }
+  ],
+  "sources": [
+    { "label": "EcoVadis Help Center, Why is there a limit to the number of documents?", "url": "https://support.ecovadis.com/hc/en-us/articles/115002646148-Why-is-there-a-limit-to-the-number-of-documents-that-can-be-provided" },
+    { "label": "EcoVadis Help Center, Understanding supporting documents", "url": "https://support.ecovadis.com/hc/en-us/articles/210460307-Understanding-supporting-documents" },
+    { "label": "EcoVadis Help Center, Getting ready to start a reassessment", "url": "https://support.ecovadis.com/hc/en-us/articles/360031507871-Getting-ready-to-start-a-reassessment" },
+    { "label": "EcoVadis Help Center, What is the EcoVadis assessment process?", "url": "https://support.ecovadis.com/hc/en-us/articles/115002653188-What-is-the-EcoVadis-assessment-process" }
+  ],
+  "reviewed": "2026-10-30"
+}

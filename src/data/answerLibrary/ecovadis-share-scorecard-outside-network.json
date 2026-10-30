@@ -1,0 +1,54 @@
+{
+  "slug": "ecovadis-share-scorecard-outside-network",
+  "q": "Can I show my EcoVadis scorecard to a buyer that does not use EcoVadis?",
+  "title": "Show an EcoVadis scorecard to a non-member",
+  "short": "Only on a Premium, Corporate or Select plan. Those plans let you email a secure link to any address or download the scorecard as a PDF. On Basic or the Carbon Rating, you can share only with companies already on EcoVadis, found through its network search.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME suppliers with an EcoVadis scorecard and a buyer outside EcoVadis",
+  "sections": [
+    {
+      "h": "What your plan allows",
+      "ul": [
+        "Premium, Corporate or Select: share with any number of trading partners, inside or outside the EcoVadis network. You can email an invitation with a secure link, or download a PDF of the scorecard and send it yourself.",
+        "Basic or Carbon Rating: no email invitations and no PDF download. You can still share with a company that already uses EcoVadis by finding it in the network search, by name or DUNS number.",
+        "Any plan: sharing needs an active subscription. The scorecard stays valid for 12 months from publication, but if your subscription ends first you cannot share it or accept new requests until you renew."
+      ]
+    },
+    {
+      "h": "Before you upgrade for one buyer",
+      "ol": [
+        "Ask the buyer what they will do with it. A buyer outside EcoVadis usually wants proof on a few topics, most often your emissions and your policies, not the scorecard itself.",
+        "If it is the emissions, send them directly: Scope 1 and 2 for your last financial year, the method and the factors used.",
+        "If they want the scorecard as a document, check its date first. Upgrading to share a scorecard that expires next month buys you very little."
+      ]
+    },
+    {
+      "h": "What a company sees once you share",
+      "p": [
+        "When you share proactively, the company gets your scorecard only, and can then ask for your full profile. When you accept its request, it sees the full profile: scorecard, strengths and improvement areas, 360 Watch findings, comments, your carbon scorecard if you have one, your corrective action plan and metrics.",
+        "Your documents are shared only if you chose to share each one when you uploaded it. The score details by theme and indicator are never shared."
+      ]
+    },
+    {
+      "h": "Requests you do not answer are accepted",
+      "p": [
+        "A sharing request from a trading partner is accepted automatically unless you decline it within seven calendar days. After accepting, you have 30 days to revoke it, and you do that by contacting EcoVadis. Check Sharing Activity in your account so a request does not go through by default."
+      ]
+    }
+  ],
+  "senseible": "When the buyer outside EcoVadis really wants your carbon numbers, Senseible turns your fuel and electricity bills into Scope 1 and 2 figures with the factor and bill behind each line, as a report you send them directly.",
+  "links": [
+    { "label": "Get your Scope 1 and 2 figures", "to": "/msme-carbon-number" },
+    { "label": "Do I have to pay for EcoVadis?", "to": "/answers/do-i-have-to-pay-for-ecovadis" },
+    { "label": "When an EcoVadis scorecard expires", "to": "/answers/ecovadis-scorecard-expiry-reassessment" },
+    { "label": "One set of figures for many buyers", "to": "/answers/supplier-with-many-buyers-share-data-once" }
+  ],
+  "sources": [
+    { "label": "EcoVadis Help Center, How can I share my EcoVadis Scorecard?", "url": "https://support.ecovadis.com/hc/en-us/articles/360029040751-How-can-I-share-my-EcoVadis-Scorecard" },
+    { "label": "EcoVadis Help Center, subscription period and scorecard validity", "url": "https://support.ecovadis.com/hc/en-us/articles/24892578979218-What-s-the-difference-between-subscription-period-and-scorecard-validity" },
+    { "label": "EcoVadis, plans and pricing", "url": "https://ecovadis.com/plans-pricing/" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Plan features change; recheck the sharing article and plans page every six months."
+}
