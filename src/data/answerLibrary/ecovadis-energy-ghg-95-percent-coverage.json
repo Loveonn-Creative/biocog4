@@ -41,12 +41,12 @@
       "Plant 1 diesel genset: 6,000 L x 2.645 kg CO2/L = 15.9 t CO2.",
       "Plant 2 grid power: 150,000 kWh x 0.675 = 101.3 t CO2.",
       "Plant 2 LPG furnace: 4,000 kg x 2.98 kg CO2/kg = 11.9 t CO2.",
-      "Company total: 372.1 t CO2. Plant 1 alone: 258.9 t, which is 69.6% of the total.",
+      "Company total: 372.0 t CO2. Plant 1 alone: 258.9 t, which is 69.6% of the total.",
       "Reporting Plant 1 only falls well short of 95%, so the figure scores nothing. Both plants together cover 100%."
     ],
     "note": "Grid factor: CEA CO2 Baseline Database version 22.0 for FY 2025-26. Fuel factors: IPCC 2006 defaults. EcoVadis does not publish how it measures the 95%; share of emissions is a self-check, not its formula."
   },
-  "senseible": "Upload a year of electricity bills and fuel invoices for every site and Senseible gives Scope 1 and 2 totals by site, with the bill behind each line, so you can see a missing plant before EcoVadis does. It does not fill or submit your EcoVadis answers.",
+  "senseible": "Upload a year of bills for every site and Senseible gives Scope 1 and 2 by site with the bill behind each line, so a missing plant shows up before EcoVadis finds it. Its team can then draft the energy and emissions answers from that record for you to review and submit.",
   "links": [
     {
       "label": "Get Scope 1 and 2 from your bills",
@@ -59,7 +59,8 @@
     {
       "label": "EcoVadis deadline: what to do first",
       "to": "/answers/ecovadis-questionnaire-deadline"
-    }
+    },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
   ],
   "sources": [
     {

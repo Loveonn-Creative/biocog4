@@ -17,7 +17,7 @@
       "h": "What eats the time",
       "ul": [
         "Policies that exist only in someone's head. EcoVadis treats a missing document as a missing system, so an unwritten safety or ethics rule scores like no rule.",
-        "Scanned files. A photo of a signed policy earns nothing; EcoVadis wants files with real text, dated and clearly yours.",
+        "Scanned files. A photo of a signed policy is not readable text, so it earns nothing. Save policies from the original file as PDF.",
         "The 55-file cap. You cannot upload every certificate you own, so combine and choose.",
         "Linking. A document only counts when it is attached to the answer it supports."
       ]
@@ -28,7 +28,7 @@
         "Day 1: Log in, read the questionnaire set-up (sites, size, industry) and confirm both deadlines with your buyer.",
         "Days 2 to 3: Collect what already exists: ISO certificates, factory licence, safety records, HR policies, the code of conduct you signed for this buyer.",
         "Day 4: Pull 12 months of electricity bills and fuel invoices for every site and turn them into Scope 1 and 2 totals.",
-        "Days 5 to 6: Write the short policies you lack: environment and energy, health and safety, anti-bribery, supplier conduct. Date and sign each one.",
+        "Days 5 to 6: Put on paper the rules you already follow but never wrote down: environment and energy, health and safety, anti-bribery, supplier conduct. Date and sign each one. Write what you really do; EcoVadis analysts screen out documents made only for the rating.",
         "Days 7 to 8: Fill the answers and attach each document to the right question.",
         "Day 9: Re-read every answer that says yes and check a document backs it.",
         "Day 10: Submit, and tell your buyer the date you submitted."
@@ -41,7 +41,7 @@
       ]
     }
   ],
-  "senseible": "Day 4 is where Senseible saves time: upload the bills and fuel invoices and get Scope 1 and 2 totals with the source document behind each line, ready to attach. Senseible does not fill or submit the EcoVadis questionnaire.",
+  "senseible": "Day 4 is where Senseible saves time: bills and fuel invoices become Scope 1 and 2 totals with the source behind each line, ready to attach. Its team can draft the energy and emissions answers from them, and you review and submit before the date.",
   "links": [
     {
       "label": "Turn bills into Scope 1 and 2",
@@ -58,7 +58,8 @@
     {
       "label": "Carbon evidence EcoVadis asks for",
       "to": "/answers/ecovadis-carbon-questions-what-evidence"
-    }
+    },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
   ],
   "sources": [
     {

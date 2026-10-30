@@ -19,7 +19,7 @@
         "The buyer is a small share of your sales and the plan fee is large against that business.",
         "Your company has 25 or fewer employees and the request is about carbon. The EcoVadis carbon scorecard is not available at that size, so ask what else they will accept.",
         "You were rated last year and the scorecard is still valid. Ask whether sharing it is enough.",
-        "The request arrived with a deadline you cannot meet honestly. A rushed first attempt stays on your scorecard for 12 months."
+        "The request arrived with a deadline you cannot meet honestly. A rushed first attempt becomes the scorecard your buyer sees, valid for 12 months."
       ]
     },
     {
@@ -38,7 +38,7 @@
       ]
     }
   ],
-  "senseible": "Senseible builds the one-page Scope 1 and 2 summary above from your electricity bills and fuel invoices, each line traceable to its bill, so a no still arrives with real evidence. It does not answer EcoVadis for you.",
+  "senseible": "Senseible builds the Scope 1 and 2 summary above from your bills, each line traceable to its source, so a no still arrives with evidence. If you decide to take the assessment instead, its team can draft your answers from your verified records for you to review and submit.",
   "links": [
     {
       "label": "Build a carbon figure to send instead",
@@ -55,7 +55,8 @@
     {
       "label": "One carbon record for several buyers",
       "to": "/answers/one-carbon-dataset-for-several-buyers"
-    }
+    },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
   ],
   "sources": [
     {

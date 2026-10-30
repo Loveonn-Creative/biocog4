@@ -1,19 +1,20 @@
 {
   "slug": "siemens-sigreen-supplier-pcf-request",
-  "q": "Siemens asked us to share product carbon footprints through SiGREEN. What is it, and what do we enter?",
-  "title": "A SiGREEN request: what footprint to send",
-  "short": "SiGREEN is Siemens' tool for requesting and exchanging product carbon footprints along a supply chain. A customer using it wants the CO2e of one unit of the part you sell them, built from your own measured data rather than industry averages. Prepare the materials per unit, your energy per unit and the factor behind each.",
+  "q": "A customer asked us to share product carbon footprints through SiGREEN, now Mattermaps. What is it, and what do we enter?",
+  "title": "SiGREEN, now Mattermaps: what to send",
+  "short": "SiGREEN, the product carbon footprint exchange Siemens launched in 2021, was sold to Makersite and renamed Mattermaps on 4 June 2026. The request is the same: your customer wants the CO2e of one unit of the part you sell, built from your own measured data. Prepare materials per unit, energy per unit and the factor behind each.",
   "topic": "product",
   "intent": "how-to",
-  "audience": "Indian component and material suppliers asked to enter product footprints in SiGREEN",
+  "audience": "Indian component and material suppliers asked to enter product footprints in SiGREEN or Mattermaps",
   "sections": [
     {
-      "h": "What SiGREEN is, in Siemens' words",
+      "h": "What SiGREEN is, and who runs it now",
       "ul": [
-        "Launched by Siemens in November 2021 to query, calculate and pass on the actual carbon footprint of a product.",
+        "Makersite bought SiGREEN from Siemens and renamed it Mattermaps on 4 June 2026. Makersite says the service and your data carry on as before, so a request may arrive under either name.",
+        "Siemens launched it in November 2021 to query, calculate and pass on the actual carbon footprint of a product.",
         "Built to use real data from where emissions happen in the supply chain, rather than industry average values.",
         "Your footprint is combined with your customer's own production emissions to give their product's footprint.",
-        "Data is exchanged directly between customer and supplier, not stored centrally, so you do not have to reveal your own suppliers or other sensitive details."
+        "At launch, Siemens said data moved directly between customer and supplier, not through a central store, so you did not have to reveal your own suppliers or other sensitive details. Check the current terms in the request before you share."
       ]
     },
     {
@@ -50,11 +51,11 @@
       "Material: 3.2 x 2.0 = 6.40 kg CO2e",
       "Line sub-meter: 18,000 kWh for 6,000 enclosures = 3 kWh each; 3 x 0.675 = 2.03 kg CO2e",
       "Coating oven LPG: 1,200 kg x 2.98 = 3,576 kg CO2 for 6,000 enclosures = 0.60 kg CO2e each",
-      "Footprint to your gate: 6.40 + 2.03 + 0.60 = 9.03 kg CO2e per enclosure, of which material is 71%"
+      "Footprint to your gate: 6.40 + 2.03 + 0.60 = 9.02 kg CO2e per enclosure (unrounded parts), of which material is 71%"
     ],
-    "note": "Example figures, except the factors: grid electricity from the CEA CO2 Baseline Database version 22.0 for FY 2025-26, LPG from IPCC 2006 defaults."
+    "note": "Example figures, including the steel factor. Grid electricity from the CEA CO2 Baseline Database version 22.0 for FY 2025-26; LPG from IPCC 2006 defaults."
   },
-  "senseible": "Senseible's product carbon footprint calculator takes your materials, energy bills and units made and shows the per-unit figure with each factor and source, ready to copy into the customer's form.",
+  "senseible": "Senseible's product carbon footprint calculator takes your materials, energy and units made and gives a cradle-to-gate figure per unit, by stage, ready to enter in your customer's request. You submit it in Mattermaps yourself.",
   "links": [
     { "label": "Product carbon footprint calculator", "to": "/calculators" },
     { "label": "What to send for a footprint request", "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send" },
@@ -67,5 +68,6 @@
     { "label": "ISO 14067:2018 Carbon footprint of products (iso.org)", "url": "https://www.iso.org" },
     { "label": "CEA CO2 Baseline Database for the Indian power sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
-  "reviewed": "2026-10-29"
+  "reviewed": "2026-10-30",
+  "reviewNote": "SiGREEN was renamed Mattermaps after Makersite completed its purchase from Siemens (Makersite press release, 4 June 2026). Add the Makersite release as a source once approved, and re-check how Mattermaps handles supplier data."
 }

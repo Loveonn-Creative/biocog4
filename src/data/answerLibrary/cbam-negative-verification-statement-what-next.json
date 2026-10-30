@@ -50,7 +50,7 @@
     ],
     "note": "The 2.600 t figure is an example. The certificates the buyer surrenders also depend on the free allocation adjustment, which this example leaves out."
   },
-  "senseible": "Senseible's CBAM Suite builds the operator emissions report from your plant records and exports a verifier pack with an evidence index and a check of misstatements against the 5% materiality level, so gaps show up before the verifier finds them. Senseible is not an accredited CBAM verifier and cannot change a verifier's statement.",
+  "senseible": "Senseible's CBAM Suite builds the operator emissions report from your plant records and exports a verifier pack with an evidence index and a check of misstatements against the 5% materiality level, so gaps show up before the verifier finds them. That in-house check is not the CBAM verification: the statement comes from an accredited verifier, whether Senseible's partner or one you appoint, and Senseible cannot change it.",
   "links": [
     { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
     { "label": "The 5% materiality level", "to": "/answers/cbam-verification-materiality-5-percent" },

@@ -2,7 +2,7 @@
   "slug": "how-long-to-keep-cbam-records",
   "q": "How long do importers and non-EU producers have to keep CBAM emissions records?",
   "title": "How long to keep CBAM records",
-  "short": "Non-EU operators, including Indian plants, keep monitoring records and supporting documents for at least six years, says the Commission's Guidance No. 1. The EU declarant keeps its records until the end of the fourth year after the declaration year: for 2026 imports declared in 2027, to the end of 2031.",
+  "short": "Non-EU operators, including Indian plants, keep monitoring records and supporting documents for at least six years after the reporting period, says the Commission's Guidance No. 1. The EU declarant keeps its records until the end of the fourth year after the declaration year: for 2026 imports declared in 2027, to the end of 2031.",
   "topic": "regulation",
   "intent": "check",
   "audience": "EU importers, Indian exporters",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "h": "What the Indian producer keeps, for at least six years",
+      "h": "What the Indian producer keeps, for six years after the reporting period",
       "ul": [
         "Fuel invoices, electricity bills and meter readings used for the reported period.",
         "Production records by product (CN code) and records of precursors bought in.",

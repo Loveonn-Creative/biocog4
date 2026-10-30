@@ -44,7 +44,7 @@
       ]
     }
   ],
-  "senseible": "Senseible's CBAM Suite starts from the same fuel and electricity records your ISO inventory uses and turns them into the CBAM operator emissions report by production process and CN code. Senseible does not issue ISO or CBAM verification statements.",
+  "senseible": "Senseible's CBAM Suite starts from the same fuel and electricity records your ISO inventory uses and turns them into the CBAM operator emissions report by production process and CN code. Senseible checks it in-house first, but that is not the CBAM verification: an accredited verifier, one Senseible partners with or your own, signs it off. Senseible does not issue ISO or CBAM verification statements.",
   "links": [
     { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
     { "label": "Is an ISO 14064-1 inventory worth it?", "to": "/answers/iso-14064-1-verified-inventory-worth-it-msme" },

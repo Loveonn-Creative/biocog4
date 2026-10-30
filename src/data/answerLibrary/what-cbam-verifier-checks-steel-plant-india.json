@@ -19,10 +19,10 @@
       "h": "In the melt shop and rolling mill",
       "ul": [
         "Your route, which sets the benchmark for the free allocation figure: BF-BOF, DRI-EAF or scrap-EAF for carbon and low alloy steel, and EAF for high alloy steel. The benchmark table names only these routes, so if you melt in an induction furnace, agree in writing with your verifier which route indicator applies.",
-        "Steel grade by the EU definitions: stainless means at least 10.5% chromium and at most 1.2% carbon; high alloy means at least 8% alloying elements; low alloy is other alloy steel; carbon steel is the rest.",
+        "Steel grade by the EU definitions: stainless means at least 10.5% chromium and at most 1.2% carbon; high alloy means at least 8% metallic alloying elements, or steel made for high surface quality and processability; low alloy is other alloy steel; carbon steel is the rest.",
         "Products grouped into one production process only where they differ just in size or shape and use the same precursors in the same types and proportions. Bars of different diameters rolled from the same billets are the typical case. A stainless line does not share a process with carbon steel, because the composition differs.",
         "Waste gases, where you have them, attributed correctly between the process that makes them and the one that burns them.",
-        "Only goods that meet sale specifications counted as production. Off-spec material, scrap and packaging are excluded."
+        "Only goods that meet sale specifications, or go on to another process, counted as production. Off-spec material, scrap and packaging are excluded."
       ]
     },
     {
@@ -51,7 +51,7 @@
     ],
     "note": "Example tonnages. A gap between the two sides is a finding the verifier will ask you to explain."
   },
-  "senseible": "Senseible reads coal, power, fuel and freight invoices into dated, fingerprinted records, and its CBAM Suite carries them into production processes by CN code with your precursors, so the mass balance and the sector figures sit in one export for the verifier. Senseible is not a CBAM verifier.",
+  "senseible": "Senseible reads coal, power, fuel and freight invoices into dated, fingerprinted records, and its CBAM Suite carries them into production processes by CN code with your precursors, so the mass balance and the sector figures sit in one export for the verifier. Senseible checks that export in-house; the CBAM verification itself is done by an accredited verifier, either Senseible's partner or your own.",
   "links": [
     { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
     { "label": "Proving a precursor's production year", "to": "/answers/cbam-precursor-production-year-evidence" },

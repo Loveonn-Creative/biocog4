@@ -26,7 +26,7 @@
       "h": "When CDP charges a fee, and when it does not",
       "p": [
         "CDP's admin fee is generally waived if you were requested only by Supply Chain members (your customers), Banks Program members, Private Markets members or the RE100 initiative. A supplier asked only by its customers usually discloses without paying CDP.",
-        "The fee applies if CDP's Capital Markets signatories, its investor group, also requested you, or if you choose to disclose without being asked. It is the same for the SME and full questionnaires, it is not refundable, and CDP offers a lower Essential tier for organisations headquartered outside the regions it lists, India included.",
+        "The fee applies if CDP's Capital Markets signatories, its investor group, also requested you, or if you choose to disclose without being asked. It is the same for the SME and full questionnaires, it is not refundable, and companies headquartered in India can choose CDP's lower Essential tier, aimed at SMEs.",
         "The CDP Portal shows who requested you. Check that list before you register, and ask CDP's Help Center if you are unsure whether a fee applies."
       ]
     },
@@ -48,7 +48,7 @@
       ]
     }
   ],
-  "senseible": "Senseible gives you Scope 1 and Scope 2 figures calculated from your invoices and electricity bills, with the factor and source document behind each line, to fill the emissions questions. Questionnaire support is described on the ESG ratings page. The figures are self-declared; Senseible does not submit to CDP or score your response.",
+  "senseible": "Senseible calculates Scope 1 and 2 from your invoices and electricity bills, with the factor and source document behind each line. Its team can draft the response from your verified records and policies, you review and submit it, and it cannot promise a score or act as a third-party verifier.",
   "links": [
     {
       "label": "CDP and ESG ratings support",

@@ -46,11 +46,12 @@
     ],
     "note": "Example figures. Electricity is 90% of this unit's total, so twelve clean months of power bills matter most. Grid factor from the CEA CO2 Baseline Database version 22.0; fuel factors from IPCC 2006 defaults."
   },
-  "senseible": "Upload your electricity bills and fuel invoices and Senseible returns Scope 1 and 2 with each factor and source shown, so the figures you type into the ESAQ are the ones an auditor can trace back to paper.",
+  "senseible": "Senseible returns Scope 1 and 2 from your electricity bills and fuel invoices with each factor and source shown, so ESAQ figures trace back to paper. Its team can draft the ESAQ answers from your verified records, you review and submit, and its checks are not an audit.",
   "links": [
     { "label": "Get your carbon number", "to": "/msme-carbon-number" },
     { "label": "What a SMETA auditor checks", "to": "/answers/sedex-smeta-environment-carbon-questions" },
-    { "label": "Questions a customer audit asks", "to": "/answers/customer-audit-climate-questions-to-prepare" }
+    { "label": "Questions a customer audit asks", "to": "/answers/customer-audit-climate-questions-to-prepare" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
   ],
   "sources": [
     { "label": "Sedex, Environment Self-Assessment Questionnaire announcement (August 2024, updated March 2025)", "url": "https://www.sedex.com/blog/elevate-your-environmental-performance-with-sedexs-environment-self-assessment-questionnaire/" },

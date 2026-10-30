@@ -54,7 +54,7 @@
       ]
     }
   ],
-  "senseible": "Senseible's CBAM Suite records your production processes and goods by CN code, which makes it clear which activity groups your verifier must hold before you ask for quotes. Senseible is not a CBAM verifier and does not issue verification reports.",
+  "senseible": "Senseible's CBAM Suite records your production processes and goods by CN code, which makes it clear which activity groups your verifier must hold before you ask for quotes. Senseible checks your report in-house; the CBAM verification and report come from an accredited verifier holding the right groups: a Senseible partner, or a firm you choose.",
   "links": [
     { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
     { "label": "Checks on a precursor supplier's report", "to": "/answers/cbam-verifier-checks-precursor-supplier-report" },

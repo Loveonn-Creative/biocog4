@@ -43,7 +43,7 @@
     ],
     "note": "Dates are an example; your own validity date is on your scorecard."
   },
-  "senseible": "When renewal comes round, upload the latest year's bills to Senseible and get new Scope 1 and 2 totals to replace figures about to pass EcoVadis's two-year limit. Senseible does not handle the renewal itself.",
+  "senseible": "At renewal, upload the latest year's bills and Senseible gives fresh Scope 1 and 2 totals to replace figures nearing EcoVadis's two-year limit. Its team can redraft your answers from those verified records, and you review and submit the reassessment.",
   "links": [
     {
       "label": "Refresh your carbon figure",
@@ -56,7 +56,8 @@
     {
       "label": "What score wins a medal",
       "to": "/answers/ecovadis-medal-score-needed"
-    }
+    },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
   ],
   "sources": [
     {

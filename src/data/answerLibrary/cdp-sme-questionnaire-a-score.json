@@ -2,7 +2,7 @@
   "slug": "cdp-sme-questionnaire-a-score",
   "q": "Can a small supplier get an A on CDP's SME questionnaire?",
   "title": "Can an SME get an A on CDP?",
-  "short": "Yes, from 2026. CDP added an A score for climate change to the SME questionnaire this year. Only climate is scored: the new forests and water questions are not scored in 2026. The 2026 scoring deadline was 16 September, and scores reach disclosers the week of 30 November.",
+  "short": "Yes, from 2026: CDP added an A score for climate change to the SME questionnaire, though CDP says an SME A is not equivalent to a full questionnaire A. Only climate is scored in 2026. The scoring deadline was 16 September, and scores reach disclosers the week of 30 November.",
   "topic": "regulation",
   "intent": "explain",
   "audience": "Indian MSME suppliers who answer, or plan to answer, CDP's SME questionnaire",
@@ -13,6 +13,12 @@
         "More than 1,000 employees or more than US$250 million annual revenue: full corporate questionnaire only.",
         "Below both limits: you may answer the SME questionnaire, or choose the full one.",
         "Asked to disclose by the RE100 initiative: not eligible for the SME questionnaire."
+      ]
+    },
+    {
+      "h": "An SME A is not a full A",
+      "p": [
+        "CDP's own FAQ says the SME A is not equivalent to an A on the full corporate questionnaire, and it strongly encourages the full questionnaire if you are responding to customers or want leadership recognition. Before you aim for an SME A, ask the customer who requested you which one it reads."
       ]
     },
     {
@@ -50,6 +56,12 @@
         "Week of 30 November 2026: scores released to disclosers, with public scores later that week.",
         "If you missed it, build next year's file now: twelve months of bills, a Scope 3 screen, and a target signed by the owner."
       ]
+    },
+    {
+      "h": "One rule for companies based in India",
+      "p": [
+        "CDP's 2026 terms of disclosure say a discloser based in India must not use its score for ESG investment, compliance or research decisions, or share it with any Indian resident or entity that would use it that way. Before you put the score in a loan file or show it to an Indian investor, check with CDP."
+      ]
     }
   ],
   "example": {
@@ -64,18 +76,20 @@
     ],
     "note": "Example figures. Grid factor from the CEA CO2 Baseline Database version 22.0 for FY 2025-26; LPG factor from IPCC 2006 defaults."
   },
-  "senseible": "Senseible turns your fuel and electricity bills into Scope 1 and 2 figures with the factor and source behind each line, which is the inventory and baseline a CDP response and its target are built on.",
+  "senseible": "Senseible turns your bills into Scope 1 and 2 figures with the source behind each line, the baseline a CDP response and its target rest on. Its team can draft your answers from those records and your policies, you review and submit, and no score is promised.",
   "links": [
     { "label": "Get your carbon number", "to": "/msme-carbon-number" },
     { "label": "SME or full questionnaire", "to": "/answers/cdp-sme-questionnaire-vs-full" },
     { "label": "How CDP scores are calculated", "to": "/answers/how-is-cdp-score-calculated" },
-    { "label": "Answering CDP with no target yet", "to": "/answers/cdp-no-emissions-target-how-to-answer" }
+    { "label": "Answering CDP with no target yet", "to": "/answers/cdp-no-emissions-target-how-to-answer" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
   ],
   "sources": [
-    { "label": "CDP, 2026 disclosure hub: A score added to the SME questionnaire", "url": "https://www.cdp.net/en/disclosure-2026" },
+    { "label": "CDP, disclosure FAQs: the SME A score and how it compares with the full questionnaire (2026)", "url": "https://www.cdp.net/en/faqs" },
     { "label": "CDP Help Center, Understand your score as a disclosing company (KA-01160, 2026)", "url": "https://help.cdp.net/en-us/knowledgebase/article/KA-01160" },
     { "label": "CDP, SME Questionnaire Overview 2026 (April 2026)", "url": "https://cdn.cdp.net/cdp-production/cms/guidance_docs/pdfs/000/005/684/original/CDP_SME_Questionnaire_Overview_2025.pdf" },
-    { "label": "CEA CO2 Baseline Database for the Indian power sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+    { "label": "CEA CO2 Baseline Database for the Indian power sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "CDP, terms of disclosure 2026, section 13.4 on companies based in India", "url": "https://www.cdp.net/en/terms-of-disclosure" }
   ],
   "reviewed": "2026-10-29",
   "reviewNote": "Re-check eligibility limits, scored themes and dates when CDP publishes the 2027 SME guidance."

@@ -2,7 +2,7 @@
   "slug": "cdp-supply-chain-deadline-dates",
   "q": "When is the deadline to answer a customer's CDP supply chain request?",
   "title": "CDP supply chain deadlines by date",
-  "short": "CDP runs one cycle a year. In 2026 it opened in June, the scoring deadline was 16 September and the questionnaire closed on 28 October. Submit by the scoring deadline or you may get no score. The next cycle's dates are set in CDP's terms of disclosure for that year.",
+  "short": "Your customer's request runs on CDP's yearly cycle. In 2026 it opened in June, the scoring deadline was 16 September and the questionnaire closed on 28 October. Submit by the scoring deadline or you may get no score. The next cycle's dates are set in CDP's terms of disclosure for that year.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Indian MSME suppliers asked to disclose through CDP by a customer",
@@ -39,7 +39,7 @@
       ]
     }
   ],
-  "senseible": "For the April to May step, Senseible turns your financial year's electricity bills and fuel invoices into Scope 1 and 2 totals, each tied to its bill, ready for the emissions questions. It does not submit to CDP or affect your score.",
+  "senseible": "For the April to May step, Senseible turns a financial year of electricity bills and fuel invoices into Scope 1 and 2 totals, each tied to its bill. Its team can then draft the CDP answers from them for you to review and submit before the window closes.",
   "links": [
     {
       "label": "Get your Scope 1 and 2 ready",
@@ -56,7 +56,8 @@
     {
       "label": "Who sees my CDP response",
       "to": "/answers/cdp-supply-chain-who-sees-my-response"
-    }
+    },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
   ],
   "sources": [
     {

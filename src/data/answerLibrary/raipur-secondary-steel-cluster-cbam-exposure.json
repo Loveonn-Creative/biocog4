@@ -68,7 +68,7 @@
     ],
     "note": "Cluster averages from TERI (2023-24 data). A plant's coal analysis and output records set its real figure; the gap between the two lines shows why a lab report on your coal is worth having."
   },
-  "senseible": "Senseible reads coal, gas and power invoices into dated installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator shows certificate cost from 2026 to 2034. It does not verify emissions or file CBAM declarations.",
+  "senseible": "Senseible reads coal, gas and power invoices into dated installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator shows certificate cost from 2026 to 2034. It is not an accredited CBAM verifier and does not file CBAM declarations.",
   "links": [
     { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
     { "label": "Raipur sponge iron in CBAM", "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions" },

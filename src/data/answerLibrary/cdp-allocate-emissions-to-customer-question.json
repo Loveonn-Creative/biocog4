@@ -2,7 +2,7 @@
   "slug": "cdp-allocate-emissions-to-customer-question",
   "q": "How do I answer CDP's question asking me to allocate emissions to my customer?",
   "title": "CDP 7.26: giving a customer its emissions",
-  "short": "In CDP's corporate questionnaire (2025 numbering), question 7.26 asks you to give each customer who requested your response a share of your emissions for what you sold them that year. You fill one row per scope: method, quantity supplied, tonnes and how sure you are. 7.27 and 7.28 ask what made it hard and how you will improve.",
+  "short": "Your customer requested you through CDP, and question 7.26 of the corporate questionnaire (2025 numbering) asks you to give it a share of your emissions for what you sold it that year. You fill one row per scope: method, quantity supplied, tonnes and how sure you are. 7.27 and 7.28 ask what made it hard and how you will improve.",
   "topic": "regulation",
   "intent": "how-to",
   "audience": "Indian suppliers answering a CDP Supply Chain request from a customer",
@@ -15,7 +15,7 @@
         "Allocation level: company wide, business unit, facility or commodity. If you pick facility, name it.",
         "Allocation method: mass, volume, energy content, chemical content, number of units, area or another physical factor, or the market value of what they bought.",
         "Unit and quantity supplied: the tonnes, kilograms, rupees or other unit you name for what you sold this customer. If your goods share no common unit, CDP asks for market value, in the currency you chose in question 1.7.",
-        "Emissions in tonnes CO2e, then uncertainty in plus or minus per cent, your major emission sources, and whether a third party checked the allocation.",
+        "Emissions in tonnes CO2e, then uncertainty in plus or minus per cent, your major emission sources, and whether a third party verified the allocation. Answer Yes only if an independent verifier checked it.",
         "Two text boxes: how you identified the emission sources and what you assumed, and a reference for any published or industry average data you used."
       ]
     },
@@ -54,12 +54,13 @@
     ],
     "note": "Example figures. Grid factor from the CEA CO2 Baseline Database version 22.0; fuel factors from IPCC 2006 defaults. State both in the explanation box."
   },
-  "senseible": "Upload a year of fuel invoices and electricity bills and Senseible works out your Scope 1 and Scope 2 with every factor and source shown, so the total you split in 7.26 matches the bills behind it.",
+  "senseible": "Senseible turns a year of fuel invoices and electricity bills into Scope 1 and 2 figures with the source behind each line, so the total you split in 7.26 matches the bills. Its team can draft the 7.26 to 7.28 answers from your verified records, you review and submit, and its checks are not third-party verification.",
   "links": [
     { "label": "Check your supplier evidence", "to": "/scope-3-supplier-evidence" },
     { "label": "Choosing a key for one customer", "to": "/answers/allocate-my-emissions-to-one-customer" },
     { "label": "A CDP supply chain request arrived", "to": "/answers/cdp-supply-chain-request-what-to-do" },
-    { "label": "Mass or value allocation", "to": "/answers/buyer-asks-mass-or-value-allocation" }
+    { "label": "Mass or value allocation", "to": "/answers/buyer-asks-mass-or-value-allocation" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
   ],
   "sources": [
     { "label": "CDP, Full Corporate Questionnaire guidance, Module 7, questions 7.26 to 7.28 (April 2025)", "url": "https://cdn.cdp.net/cdp-production/cms/guidance_docs/pdfs/000/005/688/original/Full_Corporate_Questionnaire_Module_7.pdf" },
