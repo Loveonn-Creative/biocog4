@@ -51,7 +51,7 @@
     ],
     "note": "Findings and scores are invented to show how the rule works; EcoVadis sets the severity."
   },
-  "senseible": "Senseible cannot change what 360 Watch finds; it reads outside sources. It can put your energy and emissions figures in order, each tied to its bill, for the Environment answers that make up most of that theme's score.",
+  "senseible": "Senseible cannot change what 360 Watch finds; it reads outside sources. For the energy and emissions questions in the Environment theme, it can put your figures in order, each tied to its bill.",
   "links": [
     { "label": "Get your carbon number from bills", "to": "/msme-carbon-number" },
     { "label": "What score wins a medal", "to": "/answers/ecovadis-medal-score-needed" },

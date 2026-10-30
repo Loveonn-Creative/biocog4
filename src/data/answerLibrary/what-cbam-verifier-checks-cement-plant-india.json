@@ -55,7 +55,7 @@
     ],
     "note": "Example tonnages. Clinker received from your own kiln or another plant also needs its own verified figure or the default."
   },
-  "senseible": "Senseible reads coal, pet coke, alternative fuel and power invoices into dated records, and its CBAM Suite builds the clinker balance and per-cement figures into a verifier-ready file, checked in-house line by line. The verification is done by an accredited verifier, Senseible's partner or one you appoint.",
+  "senseible": "Senseible reads coal, pet coke, alternative fuel and power invoices into dated records, and its CBAM Suite builds them into a verifier-ready file, checked in-house line by line. The verification is done by an accredited verifier, Senseible's partner or one you appoint.",
   "links": [
     { "label": "Build your cement CBAM file", "to": "/cbam-suite" },
     { "label": "White or grey clinker benchmark", "to": "/answers/cbam-white-or-grey-clinker-benchmark" },

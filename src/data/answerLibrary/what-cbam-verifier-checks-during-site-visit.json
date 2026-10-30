@@ -58,7 +58,7 @@
     ],
     "note": "Example quantities. The same check runs for coal, gas and every precursor you buy."
   },
-  "senseible": "Senseible keeps every fuel invoice, delivery note and power bill as a dated, fingerprinted record tied to the figure it supports, and checks those figures in-house, so a verifier's trace ends in one click. The site visit and the verification are done by an accredited verifier, Senseible's partner or yours.",
+  "senseible": "Senseible keeps every fuel invoice, delivery note and power bill as a dated, fingerprinted record tied to the figure it supports, and checks those figures in-house, so a verifier tracing a figure can open the document behind it. The site visit and the verification are done by an accredited verifier, Senseible's partner or yours.",
   "links": [
     { "label": "Get your plant file ready", "to": "/cbam-suite" },
     { "label": "When a virtual visit is allowed", "to": "/answers/cbam-virtual-site-visit-when-allowed" },

@@ -5099,6 +5099,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "cbam-verification-report-what-it-contains",
+  "q": "What does a CBAM verification report contain?",
+  "title": "What a CBAM verification report contains",
+  "short": "One central verification statement, positive or negative, followed by the findings behind it: misstatements, non-conformities and recommendations still open when the report was signed. It must be issued in English, created in the CBAM Registry, and reaches unregistered plants as an electronically signed PDF that your EU buyer uploads.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "cbam-verification-when-to-start-timeline",
   "q": "When should an Indian exporter start CBAM verification in the year?",
   "title": "When to start CBAM verification",
@@ -5129,6 +5137,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Four things: the supplier's report is for the right production year, it contains a positive verification statement, its verifier was accredited at the time of issue with all relevant sectors covered, and your figures match the report exactly. If any check fails, you must replace the data with the right default value.",
   "topic": "regulation",
   "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "cbam-verifier-language-hindi-records-english-report",
+  "q": "Our records are in Hindi or Gujarati. Can a CBAM verifier work with them, and in what language is the report?",
+  "title": "CBAM verifier language and your records",
+  "short": "Yes. Every CBAM verification team must include at least one auditor who can communicate in your language, or use an interpreter at the verifier's own risk. The lead auditor and the independent reviewer work in English, and the verification report is issued in English. Only the English version counts for your EU buyer.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "cbam-verifier-pre-contract-checks-before-accepting",
@@ -5635,6 +5651,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-29"
  },
  {
+  "slug": "cdp-customer-supplier-engagement-assessment",
+  "q": "Why does my customer care so much about my CDP response?",
+  "title": "Why your customer chases your CDP response",
+  "short": "Because CDP grades your customer on how it works with suppliers. In CDP's 2024 Supplier Engagement Assessment, supplier engagement carried 35% and Scope 3 emissions, including verification, 20%. Your response shows that engagement and gives the customer real figures for its purchased goods line.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "cdp-emissions-reduction-initiatives-how-to-fill",
   "q": "How do I fill in CDP's emissions reduction initiatives questions with my own project savings?",
   "title": "Filling CDP's reduction initiatives section",
@@ -5649,6 +5673,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Answer that you have no active emissions target, then give the true reason and your plan, for example that you are building a baseline this year and expect to set a target within two years. Do not invent one. You lose the target points, but the rest of your response is still scored.",
   "topic": "regulation",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "cdp-sme-forests-module-commodities",
+  "q": "CDP's SME questionnaire now has a forests module. Does it apply to a leather or food exporter?",
+  "title": "CDP SME forests module: does it apply to you?",
+  "short": "Only if you produce or source one of CDP's seven commodities: timber products, palm oil, cattle products, soy, rubber, cocoa or coffee. A tannery buying cattle hides or a snack maker using palm oil qualifies. You opt in at questionnaire setup, and SME forests answers are not scored in 2026.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "cdp-sme-questionnaire-a-score",
@@ -8763,6 +8795,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "ecovadis-360-watch-medal-ineligible",
+  "q": "Can negative news stop us getting an EcoVadis medal?",
+  "title": "Can bad news block an EcoVadis medal?",
+  "short": "Yes. If EcoVadis's 360 Watch scores you 0 in any theme, or 25 in two themes, you cannot get a medal whatever your total, unless you have had no negative finding in the past 3 years (5 for Ethics). EcoVadis writes to you before publication, and you can reply with context.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "ecovadis-carbon-advanced-leader-requirements",
+  "q": "What does it take to reach Advanced or Leader on the EcoVadis carbon rating?",
+  "title": "EcoVadis carbon: reaching Advanced or Leader",
+  "short": "Advanced, scores 51 to 75, means a comprehensive GHG system that includes publicly reported, third-party verified emissions. Leader, 76 to 100, adds formal absolute Scope 1 and 2 reduction targets and evidence of a science-aligned target, such as SBTi validation. EcoVadis calls third-party verified documents indispensable for the higher levels.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "ecovadis-carbon-data-reliability-levels",
+  "q": "How does EcoVadis grade how reliable my carbon figures are?",
+  "title": "How EcoVadis grades your carbon figures",
+  "short": "Each carbon figure you report gets one of four levels: Low, Medium, High or Third-Party Verified. EcoVadis checks evidence first, then accounting rigor, then plausibility against industry benchmarks. High needs documented, GHG Protocol-aligned figures; only figures checked by an independent auditor reach the top level.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "ecovadis-carbon-questions-what-evidence",
   "q": "What carbon evidence does EcoVadis ask an Indian supplier for?",
   "title": "EcoVadis carbon evidence for suppliers",
@@ -8779,12 +8835,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-29"
  },
  {
+  "slug": "ecovadis-carbon-supply-chain-monitoring-small",
+  "q": "Does EcoVadis mark a small supplier down for not collecting its own suppliers' carbon data?",
+  "title": "EcoVadis carbon: is your supplier data scored?",
+  "short": "Not if you are a small or medium manufacturer. In EcoVadis's carbon rating, Supply Chain Monitoring, gathering primary carbon data from your own suppliers, is scored only for companies with 1,000 or more employees. For 26 to 999 employee firms outside office work, Scope 3 actions are not in the formula either.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "ecovadis-corrective-action-plan-score",
+  "q": "Will an EcoVadis corrective action plan improve our score?",
+  "title": "Does an EcoVadis action plan lift your score?",
+  "short": "Not by itself. EcoVadis does not review your Corrective Action Plan, and it does not change your current scorecard. Only a reassessment, which is a completely new analysis, can raise the score. The plan still matters: buyers watch it, and the documents you add carry into your next questionnaire.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "ecovadis-energy-ghg-95-percent-coverage",
   "q": "Why did EcoVadis not credit our energy and emissions figures?",
   "title": "EcoVadis: why energy figures got no credit",
   "short": "EcoVadis credits energy consumption and greenhouse gas figures only if they cover at least 95% of the scope you are assessed on. Other reported figures need 80%. Numbers for your main plant alone, or a figure typed into the questionnaire with no supporting document, earn nothing.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
+ },
+ {
+  "slug": "ecovadis-iq-plus-risk-level",
+  "q": "Our buyer has an EcoVadis risk level for us though we never filled anything. How?",
+  "title": "EcoVadis risk level without a questionnaire",
+  "short": "That is EcoVadis IQ Plus. It rates suppliers without contacting them, from your industry and country plus your buyer's own spend and criticality data, on six levels from Very Low to Very High. Policies and certificates on your website can only lower it. Results refresh twice a year.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "ecovadis-medal-score-needed",
@@ -8803,12 +8883,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-29"
  },
  {
+  "slug": "ecovadis-scope-2-market-location-2026",
+  "q": "EcoVadis now asks for Scope 2 location-based and market-based. What changed?",
+  "title": "EcoVadis now wants two Scope 2 figures",
+  "short": "From 7 May 2026, EcoVadis replaced its single Scope 2 field with two: total location-based and total market-based Scope 2. The scoring weight did not change, but strengths, improvement areas and data reliability now follow the evidence behind each figure, so report both, with documents.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "ecovadis-scorecard-expiry-reassessment",
   "q": "When does an EcoVadis scorecard expire, and when should I start the reassessment?",
   "title": "EcoVadis scorecard expiry and reassessment",
   "short": "An EcoVadis scorecard, and any medal or badge on it, is valid for 12 months from its publication date. A reassessment happens only if you choose to renew, and it creates a new scorecard with a new date. Start early enough that the new one is published before the old one lapses.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
+ },
+ {
+  "slug": "ecovadis-vitals-questionnaire",
+  "q": "My buyer sent an EcoVadis Vitals questionnaire, not a full rating. What is it?",
+  "title": "EcoVadis Vitals questionnaire explained",
+  "short": "Vitals is EcoVadis's free, short risk questionnaire. It covers Environment, Labor and Human Rights, Ethics and Sustainable Procurement, takes about 30 minutes, and gives your buyer a risk level, not a score or a medal. Your answers stay confidential; the buyer sees the risk level and the documents you attach.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "ecsbc-2024-vs-ecbc-2017",
@@ -14035,12 +14131,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-29"
  },
  {
+  "slug": "ireda-compressed-biogas-loan-satat-conditions",
+  "q": "What does IREDA need to fund a compressed biogas plant under SATAT?",
+  "title": "IREDA loan for a CBG plant under SATAT",
+  "short": "Two signed contracts come first: a CBG sale agreement with an oil marketing company carrying a 100 percent offtake guarantee, and a registered feedstock supply agreement, each running longer than the loan. IREDA then lends up to 70 percent of project cost, repaid over up to 10 years or 80 percent of the sale contract's life, whichever is shorter.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "ireda-energy-efficiency-loan-what-it-funds",
   "q": "What energy efficiency projects will IREDA finance?",
   "title": "What IREDA's energy efficiency loans fund",
   "short": "IREDA finances energy efficiency retrofits, whole-process changes, waste heat recovery for power, ESCO projects and turnkey efficient equipment, in sectors from steel and textiles to glass, ceramics and buildings. The minimum loan is ₹50 lakh, and a private project normally gets up to 70 percent of its cost.",
   "topic": "markets",
   "reviewed": "2026-10-29"
+ },
+ {
+  "slug": "ireda-in-principle-loan-sanction",
+  "q": "What is an IREDA in-principle loan sanction and what does it cost?",
+  "title": "IREDA in-principle sanction: cost and use",
+  "short": "It is a conditional letter IREDA gives when a government approval, or a co-lender in a consortium, needs IREDA's backing before final appraisal. It does not bind IREDA to lend. It costs an extra ₹1 lakh plus taxes, non-refundable, on top of the registration fee, and lapses 120 days after issue.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "ireda-loan-for-proprietorship-or-partnership",
@@ -14057,6 +14169,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Rarely on its own. IREDA's rooftop solar scheme, in its financing norms updated to 1 October 2026, needs at least 5,000 kWp in one application, whether a single roof owner applies directly or an aggregator bundles many roofs. A factory roof is usually far smaller, so the realistic route is through an aggregator or installer.",
   "topic": "markets",
   "reviewed": "2026-10-29"
+ },
+ {
+  "slug": "ireda-rooftop-solar-third-party-ppa-conditions",
+  "q": "What does IREDA require for a rooftop solar project selling power under a private PPA?",
+  "title": "IREDA rooftop solar under a private PPA",
+  "short": "When a developer finances solar on your roof through IREDA and sells you the power, IREDA's norms reach you too: a bank guarantee or revolving letter of credit covering two billing cycles, a roof lease that cannot end mid-loan without paying off the loan, and, as the buyer, a profitable record for the last two financial years.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "irish-importer-cbam-indian-supplier",
@@ -15905,6 +16025,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add electricity and fuel emissions for the month and divide by pieces made, for the making stage. Woollen and acrylic yarn bought in usually carries more and sits in Scope 3; add it from supplier figures per kg, labelled with their source.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "ludhiana-knitwear-cluster-boiler-fuels-buyer-data",
+  "q": "Ludhiana's knitwear MSMEs: what do their boilers burn, and what will export buyers ask for?",
+  "title": "Ludhiana knitwear boilers and buyer data",
+  "short": "Wood, rice husk, pet coke and diesel, raising steam for dyeing yarn and fabric, across a cluster of about 14,000 MSMEs, 70% of them micro. Export buyers ask for fuel and power use by month, Scope 1 and 2 totals, and output, so pet coke against husk is the choice that moves your number most.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "ludhiana-tractor-parts-exporter-cbam-check",
@@ -19211,6 +19339,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "pune-forging-cluster-fuel-mix-carbon",
+  "q": "Pune forging and heat treatment units burn oil, gas and power: what is the cluster's footprint?",
+  "title": "Pune forging cluster fuel mix and CO2",
+  "short": "TERI counted about 70 MSME units in Pune, 50 forging and 20 heat treatment, using 24,252 toe in 2011 to 12. Furnace oil was half of it at 11,995 toe, electricity 6,794. On IPCC factors and today's grid that is roughly 108,000 t CO2 a year, about half from power (estimate).",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "purchase-order-or-invoice-for-scope-3",
   "q": "Should I calculate Scope 3 purchased goods from purchase orders, goods receipt notes or invoices?",
   "title": "PO, GRN or invoice for Scope 3?",
@@ -19459,12 +19595,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "rajkot-aluminium-foundry-furnace-oil-cbam",
+  "q": "Rajkot aluminium foundries run mostly on furnace oil: does CBAM reach their castings and extrusions?",
+  "title": "Rajkot aluminium units: oil and CBAM",
+  "short": "Extrusions and window frames, yes: CN 7604 and 7610 are covered. Castings only when declared under 7616, not as machine or vehicle parts. Rajkot's about 60 aluminium units use about 2,775 toe a year, 64% of it furnace oil, and its 20 extruders alone burn 1,974 toe. That oil is your CBAM figure.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "rajkot-engine-parts-exporter-cbam-check",
   "q": "Do engine parts exported from Rajkot fall under EU CBAM?",
   "title": "Rajkot engine parts and CBAM",
   "short": "Usually not. CBAM covers iron and steel goods in chapters 72 and 73 of the EU tariff, plus aluminium, cement, fertilisers, hydrogen and electricity. Finished engine parts classed in chapter 84 are outside it, but a plain casting or forging in chapter 73 may be in.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "rajkot-forging-cluster-closed-die-energy-cbam",
+  "q": "Where does Rajkot's forging energy go, and what does CBAM need from a forging exporter?",
+  "title": "Rajkot forging energy and CBAM",
+  "short": "Mostly into closed die forging: 47,342 of the cluster's 62,365 toe a year, about 76%, largely furnace oil in box furnaces. For CBAM, only forgings under covered codes such as flanges (7307) or forged articles (7326) count, and the figure is your bought bar plus your furnace fuel. Electricity is left out.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "rajkot-foundry-cluster-carbon-footprint",
@@ -21323,6 +21475,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-29"
  },
  {
+  "slug": "sidbi-climate-adaptation-loan-agri-processing",
+  "q": "Can an agri-processing MSME get a climate adaptation loan from SIDBI?",
+  "title": "SIDBI climate adaptation loan: agri units",
+  "short": "Yes. SIDBI's agriculture adaptation assessment for its Green Climate Fund programme covers agro-processors, cold stores and storage operators. A rice mill, pulse mill or oil unit with boilers or wastewater is Category B and needs a site-specific plan; small dry grading and packing is Category C. Either way, the project must show a direct link to a climate risk.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "sidbi-energy-efficiency-loan-for-msme",
   "q": "What energy efficiency loans does SIDBI offer MSMEs?",
   "title": "SIDBI energy efficiency loans for MSMEs",
@@ -21361,6 +21521,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "FMAP, Financing Mitigation and Adaptation Projects in Indian MSMEs, is SIDBI's programme for lending Green Climate Fund concessional money to MSMEs, directly and through partner lenders. It funds energy efficiency, rooftop solar and new technology, plus adaptation such as effluent treatment, zero liquid discharge and water recycling. Only low and medium risk projects qualify.",
   "topic": "markets",
   "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "sidbi-gcf-loan-fly-ash-brick-unit",
+  "q": "Can a brick or fly ash block unit get SIDBI's Green Climate Fund loan?",
+  "title": "SIDBI GCF loan for brick and fly ash units",
+  "short": "Yes, both can. SIDBI's September 2026 assessment for brick units lists 70 technologies. Fly ash brick machines, hydraulic and vibro-hydraulic presses, vacuum extruders and steam curing chambers are low-risk Category C. Kiln projects, including zig-zag, Hoffmann and tunnel kilns, are Category B, which brings a site-specific environmental plan and closer checks.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "sidbi-gcf-loan-paper-mill-equipment",
+  "q": "Which paper mill upgrades qualify for SIDBI's Green Climate Fund loan?",
+  "title": "SIDBI GCF loan: paper mill upgrades",
+  "short": "SIDBI's September 2026 assessment for pulp and paper lists 43 technologies its Green Climate Fund programme can finance, from high-efficiency refiners, shoe presses and drum pulpers to fluidised bed boiler conversions and condensate recovery. Mill equipment is Category B and needs a site-specific plan; effluent treatment, ZLD and captive solar are low-risk Category C.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "sidbi-gcf-loan-plastic-processing-machines",
+  "q": "Which plastic processing machines can get SIDBI's Green Climate Fund loan?",
+  "title": "SIDBI GCF loan: plastic processing machines",
+  "short": "SIDBI's July 2026 assessment for plastic units lists 49 technologies its Green Climate Fund programme can finance. Machines such as servo motor injection moulders, slow speed granulators, heater mixers with VFDs and blown film plants with VFDs are Category B, which brings a site-specific environmental plan. Captive rooftop solar, EVs and effluent treatment are Category C.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "sidbi-green-finance-for-solar-installers-aggregators",
@@ -21425,6 +21609,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Count fuel burnt in the reheating furnace, coal, furnace oil or gas, times its factor, and electricity for the rolling stands, divided by tonnes of bars or sections. Ship plate feed carries little or no embedded emissions under the CBAM transitional rules; check the definitive-period act before quoting that.",
   "topic": "regulation",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "sihor-rerolling-mills-low-utilisation-carbon",
+  "q": "Sihor's re-rolling mills run at about 28% of capacity: what does that do to carbon per tonne?",
+  "title": "Sihor mills: low utilisation and CO2",
+  "short": "It raises it. A coal-fired pusher furnace burns fuel to reach and hold temperature whether or not steel is moving, so idle hours land on fewer tonnes. TERI put Sihor at 1.33 million t from 5.2 million t of capacity in 2015 to 16, on 114,304 t of coal and 162 million kWh: about 416,304 t CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "silage-making-emissions-per-tonne",
@@ -24099,6 +24291,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "vapi-chemical-units-gas-use-per-unit",
+  "q": "How much gas does a normal Vapi dye, API or chemical unit burn a year?",
+  "title": "Gas use per unit in Vapi chemicals",
+  "short": "A typical Vapi dyes and pigments unit uses about 334 toe of heat a year, roughly 380,000 scm of gas if it all comes from gas. API units average 126 toe, about 145,000 scm, and other chemical units 218 toe, about 250,000 scm. Natural gas is about 76% of the cluster's energy (estimate).",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "vapi-dye-unit-sludge-to-cement-kiln-scope-3",
   "q": "Which scope covers ETP sludge a Vapi dye unit sends to a cement kiln?",
   "title": "Vapi dye units: sludge sent to kilns",
@@ -24849,6 +25049,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Three more items: the free allocation data used to cut the certificate count, any carbon price paid in India, certified by an independent person, and qualifying parameters such as clinker content for cement or nitrogen forms for fertilisers. Each verified figure also needs its installation and year.",
   "topic": "regulation",
   "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "what-cbam-verifier-checks-aluminium-plant-india",
+  "q": "What does a CBAM verifier check at an Indian aluminium smelter or extruder?",
+  "title": "CBAM verifier checks at an aluminium plant",
+  "short": "At a smelter: anode carbon, fuels and PFCs from anode effects, using one of the two PFC methods with documented measurement. At a remelter or extruder: furnace fuel, scrap tonnes and the pre-consumer share, alloy content and proof of where bought billet came from. Power is not counted. The verifier needs scope VII, VIII or both.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "what-cbam-verifier-checks-cement-plant-india",
+  "q": "What does a CBAM verifier check at an Indian cement or clinker plant?",
+  "title": "CBAM verifier checks at a cement plant",
+  "short": "Kiln fuels and raw meal calcination, discarded bypass or kiln dust, grey versus white clinker, the clinker content of each cement checked against your customers' orders, proof behind any zero-rated biomass, and electricity, which counts for cement. The verifier must be accredited for scope I together with LII, indirect emissions.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "what-cbam-verifier-checks-during-site-visit",
+  "q": "What does a CBAM verifier check during the site visit?",
+  "title": "What a CBAM verifier checks on site",
+  "short": "That your plant matches your monitoring plan: the installation boundary, each production process, every fuel, material and emission source, and the links between them. The verifier watches meters and weighbridges working, interviews the people who record data, and traces sample figures from a reading or lab result through to the report.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "what-cbam-verifier-checks-steel-plant-india",

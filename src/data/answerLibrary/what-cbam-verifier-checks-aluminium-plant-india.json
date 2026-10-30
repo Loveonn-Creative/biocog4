@@ -57,7 +57,7 @@
     ],
     "note": "285 L per tonne is an estimate from the TERI profile of Rajkot's extrusion units, with all their fuel taken as furnace oil. Use your own logs. Certificates surrendered also depend on the free allocation adjustment, left out here."
   },
-  "senseible": "Senseible reads furnace oil, gas and scrap invoices into dated records and its CBAM Suite builds the verifier-ready file by CN code, with the scrap and alloy figures your importer needs, every number checked in-house first. An accredited verifier signs it off, Senseible's partner or yours.",
+  "senseible": "Senseible reads furnace oil, gas and scrap invoices into dated records and its CBAM Suite builds the verifier-ready file by CN code, every number checked in-house first. An accredited verifier signs it off, Senseible's partner or yours.",
   "links": [
     { "label": "Build your aluminium CBAM file", "to": "/cbam-suite" },
     { "label": "Does aluminium CBAM count electricity", "to": "/answers/does-aluminium-cbam-count-electricity" },

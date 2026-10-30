@@ -10,7 +10,7 @@
     {
       "h": "Read the statement first",
       "p": [
-        "The statement is chosen from a fixed list in the accreditation and verification rules. Only the first one lets your buyer use your figures."
+        "The statement is chosen from a fixed list in the accreditation and verification rules. Only a positive statement, the first two below, lets your buyer use your figures."
       ],
       "ul": [
         "Verified as satisfactory, without comments: nothing open.",
@@ -50,7 +50,7 @@
       ]
     }
   ],
-  "senseible": "Senseible builds the verifier-ready file behind your emissions report, with every figure traced to its invoice or log and checked in-house before the verifier sees it, so fewer findings reach the report. The statement itself comes only from an accredited verifier, Senseible's partner or one you choose.",
+  "senseible": "Senseible builds the verifier-ready file behind your emissions report, with every figure traced to its invoice or log and checked in-house before the verifier sees it. The statement itself comes only from an accredited verifier, Senseible's partner or one you choose.",
   "links": [
     { "label": "Build the file for your verifier", "to": "/cbam-suite" },
     { "label": "If the statement is negative", "to": "/answers/cbam-negative-verification-statement-what-next" },
