@@ -4,7 +4,26 @@
 
 .gls-eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: hsl(var(--primary)); }
 .gls-hero { display: grid; gap: 2.25rem; align-items: start; }
-@media (min-width: 1000px) { .gls-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 32rem); gap: 3.5rem; } .gls-hero-copy { padding-top: 2rem; } }
+@media (min-width: 1000px) {
+  .gls-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 32rem); grid-template-rows: auto 1fr; column-gap: 3.5rem; row-gap: 2rem; }
+  .gls-hero-copy { padding-top: 2rem; grid-column: 1; grid-row: 1; }
+  .gls-hero > .gls-sieve { grid-column: 2; grid-row: 1 / span 2; }
+  .gls-hero > .gls-file { grid-column: 1; grid-row: 2; }
+}
+/* Loan file: the download sits beside the taps on desktop, after them on phones */
+.gls-file { min-width: 0; max-width: 34rem; display: grid; gap: .8rem; padding: 1.25rem; border-radius: 1.25rem; border: 1px dashed hsl(var(--primary) / .45); background: hsl(var(--primary) / .04); }
+.gls-file-k { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: hsl(var(--primary)); }
+.gls-file-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; font-size: .95rem; }
+.gls-file-list li { position: relative; padding-left: 1.4rem; }
+.gls-file-list li::before { content: ""; position: absolute; left: .2rem; top: .55em; width: .5rem; height: .5rem; border-radius: 999px; background: hsl(var(--primary)); }
+.gls-file-list b { font-variant-numeric: tabular-nums; }
+.gls-file-name { display: grid; gap: .3rem; font-size: .85rem; font-weight: 600; }
+.gls-file-name small { font-weight: 400; color: hsl(var(--muted-foreground)); }
+.gls-file-name input { min-height: 2.75rem; padding: 0 .8rem; border-radius: .7rem; border: 1px solid hsl(var(--input)); background: hsl(var(--card)); font-size: 1rem; font-weight: 400; width: 100%; }
+.gls-file-name input:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 1px; }
+.gls-file-btn { justify-self: start; }
+.gls-file-btn:disabled { opacity: .5; cursor: not-allowed; }
+.gls-file-note { font-size: .85rem; color: hsl(var(--muted-foreground)); }
 .gls-hero-copy { min-width: 0; max-width: 42rem; }
 /* Hero sieve: routes that do not fit fold down to a single muted line */
 .gls-sieve { min-width: 0; border-radius: 1.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); padding: 1.1rem; display: grid; gap: .9rem; }

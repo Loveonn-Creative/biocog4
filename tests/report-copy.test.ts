@@ -154,3 +154,36 @@ describe('copy gate: verified emissions certificate', () => {
     expect(r.contentBottom).toBeLessThan(r.footerTop - 4);
   });
 });
+
+// Free-tool files: each renders on one page, carries the data file's terms
+// and passes the same copy gate as the reports.
+describe('copy gate: green loan file (/msme-green-loan-schemes)', async () => {
+  const { drawSendable } = await import('../src/lib/leadMagnets/sendableFile');
+  const { greenLoanFile, fittingSchemes, toBank } = await import('../src/lib/leadMagnets/greenLoanFile');
+  const { NEEDS, SIZES, CLUSTERS } = await import('../src/data/greenLoanSchemes');
+  for (const need of NEEDS) for (const size of [null, ...SIZES]) for (const cluster of [null, ...CLUSTERS]) {
+    const label = `${need.id} / ${size?.id ?? 'any size'} / ${cluster?.id ?? 'no cluster answer'}`;
+    it(label, () => {
+      const file = greenLoanFile({ need: need.id, size: size?.id ?? null, cluster: cluster?.id ?? null, company: 'Shree Ganesh Castings', date: new Date('2026-10-30') });
+      captured.length = 0;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      const r = drawSendable(doc, file);
+      expect(doc.getNumberOfPages()).toBe(1);
+      expect(r.fontSize).toBeGreaterThanOrEqual(7.5);
+      const text = captured.join(' ').replace(/\s+/g, ' ');
+      for (const s of fittingSchemes(need.id, size?.id ?? null, cluster?.id ?? null)) {
+        expect(text).toContain(s.name);
+        for (const t of s.terms) {
+          const line = toBank(t).replace(/₹\s?/g, 'Rs ');
+          expect(text).toContain(line.split(' ').slice(0, 4).join(' '));
+          for (const n of t.match(/\d[\d,.]*/g) ?? []) expect(line).toContain(n); // figures pass through untouched
+        }
+      }
+      expect(text).toContain('Senseible does not lend, arrange or approve loans.');
+      expect(text).toContain('senseible.earth/green-loan-check');
+      expect(text).toContain('30 October 2026');
+      expect(text).not.toMatch(/\b(you|your|yourself)\b/i); // read by the bank, not the owner
+      check(`green loan file ${label}`, [...captured]);
+    });
+  }
+});
