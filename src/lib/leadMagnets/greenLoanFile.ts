@@ -97,7 +97,7 @@ export function greenLoanFile({ need, size, cluster, company, date }: LoanFileIn
           ...(energy.length ? energy : [`[ ] ${label('bills')}`]),
           ...(need === 'solar' ? [] : [`[ ] Fuel invoices for the same 12 months, if the unit burns fuel${billsBy.length ? ` (${billsBy.join(', ')})` : ''}`]),
           { text: 'Bills from before the project set the baseline; bills after it show the saving.', muted: true },
-          { text: 'Senseible can turn these bills into figures verified against each bill: senseible.earth/green-loan-check', muted: true },
+          { text: 'Senseible turns these bills into figures, each traced to its bill: senseible.earth/green-loan-check', muted: true },
         ],
       },
       { heading: 'Papers to attach', lines: papers },
