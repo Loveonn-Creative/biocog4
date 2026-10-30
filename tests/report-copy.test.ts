@@ -212,3 +212,58 @@ describe('copy gate: green loan file (/msme-green-loan-schemes)', async () => {
     });
   }
 });
+
+describe('copy gate: BRSR reply sheet (/brsr-reporting)', async () => {
+  const { drawSendable } = await import('../src/lib/leadMagnets/sendableFile');
+  const { brsrReplyFile, brsrReplyCsv } = await import('../src/lib/leadMagnets/brsrReplySheet');
+  const { REPLY_ROWS } = await import('../src/data/brsrHub');
+  for (const company of [undefined, 'Shree Ganesh Castings']) {
+    it(`PDF ${company ? 'with' : 'without'} a company name`, () => {
+      captured.length = 0;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      drawSendable(doc, brsrReplyFile({ company, customer: company && 'Bharat Forge', date: new Date('2026-10-30') }));
+      expect(doc.getNumberOfPages()).toBe(1);
+      const text = captured.join(' ').replace(/\s+/g, ' ');
+      expect(text).toContain('The sustainability team');
+      for (const r of REPLY_ROWS) { expect(text).toContain(r.ask); expect(text).toContain(r.proof.split(' ').slice(0, 3).join(' ')); }
+      if (company) expect(text).toContain(company); else expect(text).not.toContain('From:');
+      check('BRSR reply sheet PDF', [...captured]);
+    });
+  }
+  it('CSV', () => {
+    const csv = brsrReplyCsv({ company: '=HYPERLINK("x")' });
+    expect(csv).toContain(`"'=HYPERLINK(""x"")"`); // a typed name never runs as a formula
+    const lines = csv.trim().split('\r\n');
+    expect(lines).toContain('What you asked for,Value,Unit,Paper that proves it');
+    expect(lines.length).toBe(13 + REPLY_ROWS.length);
+    check('BRSR reply sheet CSV', brsrReplyCsv({ company: 'Shree Ganesh Castings' }).split('\r\n'));
+  });
+});
+
+describe('copy gate: CBAM message and data checklist (/cbam-authorised-declarant)', async () => {
+  const { drawSendable } = await import('../src/lib/leadMagnets/sendableFile');
+  const { buyerMessage, cbamChecklistFile, inOurWords } = await import('../src/lib/leadMagnets/cbamBuyerKit');
+  const { PACK_ROWS, MARKUP_SCHEDULE } = await import('../src/data/cbamDeclarant');
+  for (const clears of ['buyer', 'seller'] as const) {
+    it(`message, ${clears} clears`, () => {
+      const msg = buyerMessage({ clears, company: 'Shree Ganesh Castings' });
+      expect(msg).toContain('CBAM account number');
+      expect(msg).toMatch(/EU country that authorised/);
+      for (const r of PACK_ROWS) expect(msg).toContain(inOurWords(r, clears === 'buyer'));
+      expect(msg).toContain(MARKUP_SCHEDULE);
+      expect(msg).not.toMatch(/\byour buyer\b|you bought|^- Your /im); // the exporter speaks as "we"
+      expect(msg.trim().endsWith('Shree Ganesh Castings')).toBe(true);
+      check(`CBAM message ${clears}`, msg.split('\n').filter(Boolean));
+    });
+    it(`checklist PDF, ${clears} clears`, () => {
+      captured.length = 0;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      drawSendable(doc, cbamChecklistFile({ clears, date: new Date('2026-10-30') }));
+      expect(doc.getNumberOfPages()).toBe(1);
+      const text = captured.join(' ').replace(/\s+/g, ' ');
+      expect(text).toContain('accredited verifier');
+      expect(text).toContain('Senseible is not a declarant');
+      check(`CBAM checklist ${clears}`, [...captured]);
+    });
+  }
+});

@@ -49,6 +49,26 @@ const PROTECTED_TERMS = [
 // Abuse limits: a visitor's browsing makes a handful of calls a day; cache hits are free.
 const MAX_STRING_CHARS = 600;
 const AI_CALLS_PER_ADDRESS_PER_DAY = 400;
+// Our own page text (public/i18n/site-strings.json, written by
+// scripts/i18n/build-packs.mjs) has one shared daily allowance instead of the
+// per-address one, so the language packs can be built in a night. Only text
+// already on the live site qualifies, so it cannot be used to translate
+// anything else, and the total is still capped.
+const SITE_ORIGIN = "https://senseible.earth";
+const SITE_AI_CALLS_PER_DAY = 1500;
+const SITE_STRINGS_TTL_MS = 60 * 60 * 1000;
+let siteStrings: { set: Set<string>; at: number } | null = null;
+async function loadSiteStrings(): Promise<Set<string>> {
+  if (siteStrings && Date.now() - siteStrings.at < SITE_STRINGS_TTL_MS) return siteStrings.set;
+  try {
+    const res = await fetch(`${SITE_ORIGIN}/i18n/site-strings.json`);
+    const list = res.ok ? await res.json() : [];
+    siteStrings = { set: new Set(Array.isArray(list) ? list.filter((x: unknown) => typeof x === "string") : []), at: Date.now() };
+  } catch {
+    siteStrings = { set: new Set(), at: Date.now() };
+  }
+  return siteStrings.set;
+}
 // Text that may be personal (an email, a phone or account number) is never sent or cached.
 const PERSONAL = /[^\s@]+@[^\s@]+\.[a-z]{2,}|\d[\d\s-]{8,}\d/i;
 const LINK = /https?:\/\/|www\.|@/i;
@@ -118,11 +138,14 @@ Deno.serve(async (req) => {
     // 2. Translate misses via Lovable AI Gateway
     if (missing.length > 0) {
       const ip = platformIp(req.headers);
+      const site = await loadSiteStrings();
+      const siteOnly = site.size > 0 && missing.every((m) => site.has(m.source));
       // Callers with no known address share one daily count instead of
       // skipping it, so the AI cost of new strings stays capped.
       const allowed = await takeUse(
-        supabase, await guestSubject(`translate|${ip}`, dayIst(), Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!),
-        "guest_scan", AI_CALLS_PER_ADDRESS_PER_DAY,
+        supabase,
+        await guestSubject(siteOnly ? "translate-site" : `translate|${ip}`, dayIst(), Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!),
+        "guest_scan", siteOnly ? SITE_AI_CALLS_PER_DAY : AI_CALLS_PER_ADDRESS_PER_DAY,
       ).catch(() => ({ allowed: true }));
       if (!aiConfigured() || !allowed.allowed) {
         // Fallback: return English for misses

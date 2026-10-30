@@ -1,19 +1,21 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Search } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, Search } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 import { prefersReducedMotion } from "@/components/services/motion/kit";
 import {
-  ATTRIBUTES, BILL_DOCS, BRSR_FAQS, BRSR_HUB_PATH, FIELDS, NEEDS, RULE_ROWS, RUNGS, SUPPLIER_LINES,
+  ATTRIBUTES, BILL_DOCS, BRSR_FAQS, BRSR_HUB_PATH, CHAIN_ASKS, FIELDS, NEEDS, RULE_ROWS, RUNGS, SUPPLIER_LINES,
   principle6, type FieldId, type RungId,
 } from "@/data/brsrHub";
+import { REPLY_FILE_NAME, brsrReplyCsv, brsrReplyFile } from "@/lib/leadMagnets/brsrReplySheet";
+import { downloadSendablePdf, downloadText } from "@/lib/leadMagnets/sendableFile";
 import "./brsrReporting.css";
 
 // /brsr-reporting. A hub for BRSR and BRSR Core. Each section carries one device:
-// a jump bar that follows the reader, a market-cap ladder, a nine-part wheel,
+// a hero where the reader picks their side and the value chain asks light up, a jump bar that follows the reader, a market-cap ladder, a nine-part wheel,
 // a then-and-now flip, a bill board whose totals recount, and a live answer filter.
 // Facts and their sources live in src/data/brsrHub.ts.
 
@@ -297,6 +299,88 @@ function AnswerFinder() {
   );
 }
 
+/* ---------- Hero: pick your side, the value chain asks light up ---------- */
+
+type Side = "supplier" | "listed";
+// Asks and records: CHAIN_ASKS in src/data/brsrHub.ts. Rules: RULE_ROWS and RUNGS.
+const SIDE_COPY: Record<Side, { head: string; rule: string }> = {
+  supplier: {
+    head: "What your customer will ask you for",
+    rule: "Your customer counts you only if you alone are 2% or more of its purchases or sales. No law makes you send figures. Your contract or its supplier code can.",
+  },
+  listed: {
+    head: "What you ask each partner for",
+    rule: "Include any partner that alone is 2% or more of your purchases or sales. You can stop once they cover 75%. Voluntary from FY 2025-26.",
+  },
+};
+
+/* The supplier's reply sheet: the four asks above, a blank value column, the unit and the paper behind each. */
+function ReplySheet() {
+  const [company, setCompany] = useState("");
+  const [customer, setCustomer] = useState("");
+  const [failed, setFailed] = useState(false);
+  const pdf = async () => {
+    setFailed(false);
+    try { await downloadSendablePdf(brsrReplyFile({ company, customer }), `${REPLY_FILE_NAME}.pdf`); } catch { setFailed(true); }
+  };
+  const csv = () => {
+    setFailed(false);
+    try { downloadText(brsrReplyCsv({ company, customer }), `${REPLY_FILE_NAME}.csv`, "text/csv;charset=utf-8"); } catch { setFailed(true); }
+  };
+  return (
+    <div className="brh-reply">
+      <div className="brh-reply-names">
+        <label className="brh-reply-name">
+          <span>Your company <small>(optional)</small></span>
+          <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} maxLength={80} autoComplete="organization" />
+        </label>
+        <label className="brh-reply-name">
+          <span>Your customer <small>(optional)</small></span>
+          <input type="text" value={customer} onChange={(e) => setCustomer(e.target.value)} maxLength={80} autoComplete="off" />
+        </label>
+      </div>
+      <div className="brh-reply-btns">
+        <button type="button" className="brh-cta" onClick={pdf}><Download className="h-4 w-4" aria-hidden="true" /> Download the reply sheet</button>
+        <button type="button" className="brh-reply-csv" onClick={csv}>Or as CSV</button>
+      </div>
+      <p className="brh-reply-note" aria-live="polite">
+        {failed ? "The file did not download. Try again." : "Addressed to your customer's sustainability team, with a blank column for each figure."}
+      </p>
+      <p className="brh-reply-fill">Senseible fills Scope 1, Scope 2 and energy from your bills. <Link to="/auth">Sign in and upload them</Link></p>
+    </div>
+  );
+}
+
+function ChainAsks() {
+  const [side, setSide] = useState<Side>("supplier");
+  const c = SIDE_COPY[side];
+  return (
+    <div className="brh-chain" data-side={side}>
+      <div className="brh-chain-pick" role="radiogroup" aria-label="Your side of the value chain">
+        <button type="button" role="radio" aria-checked={side === "supplier"} onClick={() => setSide("supplier")}>We're a supplier</button>
+        <button type="button" role="radio" aria-checked={side === "listed"} onClick={() => setSide("listed")}>We're listed</button>
+      </div>
+      <div className="brh-chain-path" aria-hidden="true">
+        <span className="brh-node" data-you={side === "supplier"}>Supplier{side === "supplier" && <em>You</em>}</span>
+        <span className="brh-wire"><i key={side} /><b>{side === "supplier" ? "Your figures, April to March" : "You ask for April to March"}</b></span>
+        <span className="brh-node" data-you={side === "listed"}>Listed company<small>top 250</small>{side === "listed" && <em>You</em>}</span>
+      </div>
+      <p className="brh-chain-head">{c.head}</p>
+      <ol className="brh-asks" key={side} aria-live="polite">
+        {CHAIN_ASKS.map((a, i) => (
+          <li key={a.ask} style={{ "--i": i } as CSSProperties} data-bills={a.bills}>
+            <span className="brh-ask">{a.ask}</span>
+            <span className="brh-ask-rec">{a.record}</span>
+            <span className="brh-ask-tag">{a.bills ? (side === "supplier" ? "Read from your bills" : "Read from their bills") : (side === "supplier" ? "Your own records" : "Their own records")}</span>
+          </li>
+        ))}
+      </ol>
+      {side === "supplier" && <ReplySheet />}
+      <p className="brh-chain-rule" key={`r-${side}`}>{c.rule}</p>
+    </div>
+  );
+}
+
 /* ---------- Page ---------- */
 
 export default function BrsrReporting() {
@@ -308,13 +392,16 @@ export default function BrsrReporting() {
       <MinimalNav />
       <main className="brh">
         <header className="brh-hero">
-          <p className="brh-eyebrow">BRSR and BRSR Core</p>
-          <h1 className="brh-title">BRSR in plain words, <span>and the bills behind your energy and emissions figures.</span></h1>
-          <p className="brh-lede">Who has to file, what BRSR Core checks, what changed for the value chain in 2025, and where each environment figure comes from.</p>
-          <div className="brh-hero-cta">
-            <Link to="/" className="brh-cta">Turn a bill into BRSR figures <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
-            <span className="brh-cta-note">Free. No sign-up to read a bill.</span>
+          <div className="brh-hero-copy">
+            <p className="brh-eyebrow">BRSR and BRSR Core</p>
+            <h1 className="brh-title">BRSR in plain words. <span>Your bills already hold the energy and emissions figures.</span></h1>
+            <p className="brh-lede">From FY 2025-26, India's top 250 listed companies can choose to report on their suppliers. Here is what they ask for, and the paper that answers each question.</p>
+            <div className="brh-hero-cta">
+              <Link to="/" className="brh-cta">Turn a bill into BRSR figures <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+              <span className="brh-cta-note">Free. No sign-up to read a bill.</span>
+            </div>
           </div>
+          <ChainAsks />
         </header>
 
         <JumpBar />

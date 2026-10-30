@@ -1,4 +1,4 @@
-/* /cbam-authorised-declarant: a who-files finder, a 50-tonne fill line, a dated clock, a default-or-actual swap, a pack that fills in. Tokens only. */
+/* /cbam-authorised-declarant: a shipment path, a 50-tonne fill line, a dated clock, a default-or-actual swap, a pack that fills in. Tokens only. */
 .cbd { max-width: 74rem; margin: 0 auto; padding: 6.5rem 1rem 4rem; overflow-x: clip; }
 @media (min-width: 640px) { .cbd { padding-left: 1.5rem; padding-right: 1.5rem; } }
 .cbd-eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: hsl(var(--primary)); }
@@ -7,29 +7,64 @@
 .cbd-btn { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.9rem; padding: .6rem 1.2rem; border-radius: 999px; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); color: hsl(var(--foreground)); font-weight: 600; font-size: .95rem; transition: border-color .2s, transform .2s; }
 .cbd-btn-primary { background: hsl(var(--primary)); border-color: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
 .cbd-btn-primary:hover { transform: translateY(-1px); }
-.cbd-btn:focus-visible, .cbd-opt:focus-visible, .cbd-chip:focus-visible, .cbd-toggle button:focus-visible, .cbd-text-link:focus-visible, .cbd-links a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
+.cbd-btn:focus-visible, .cbd-chip:focus-visible, .cbd-toggle button:focus-visible, .cbd-text-link:focus-visible, .cbd-links a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
 .cbd-hero-cta { margin-top: 1.5rem; }
 .cbd-cta-note { margin-top: .6rem; font-size: .88rem; color: hsl(var(--muted-foreground)); max-width: 30rem; }
 .cbd-sec { margin-top: 5rem; }
 .cbd-h2 { font-size: clamp(1.5rem, 3.2vw, 2.25rem); font-weight: 700; letter-spacing: -.01em; line-height: 1.15; text-wrap: balance; max-width: 40rem; }
 .cbd-sub { margin-top: .6rem; max-width: 42rem; color: hsl(var(--muted-foreground)); }
 
-/* 1. Finder */
+/* 1. Shipment path: plant, EU customs, declarant. The ship moves to the stop you tap. */
+/* Message to the EU buyer: the text the exporter sends, with copy and checklist actions */
+.cbd-msg { margin-top: 0; max-width: 34rem; display: grid; gap: .7rem; padding: 1.1rem; border-radius: 1.1rem; border: 1px dashed hsl(var(--primary) / .45); background: hsl(var(--primary) / .04); }
+.cbd-msg-k { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: hsl(var(--primary)); }
+.cbd-msg-name { display: grid; gap: .3rem; font-size: .85rem; font-weight: 600; }
+.cbd-msg-name small { font-weight: 400; color: hsl(var(--muted-foreground)); }
+.cbd-msg-name input { width: 100%; min-height: 2.75rem; padding: 0 .8rem; border-radius: .7rem; border: 1px solid hsl(var(--input)); background: hsl(var(--card)); font-size: 1rem; font-weight: 400; }
+.cbd-msg-text { width: 100%; min-height: 11rem; padding: .75rem .85rem; border-radius: .7rem; border: 1px solid hsl(var(--input)); background: hsl(var(--card)); font-size: .85rem; line-height: 1.5; resize: vertical; color: hsl(var(--foreground)); }
+.cbd-msg-name input:focus-visible, .cbd-msg-text:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 1px; }
+.cbd-msg-btns { display: flex; flex-wrap: wrap; gap: .4rem 1rem; align-items: center; }
+.cbd-msg-copy { background: hsl(var(--foreground)); border-color: hsl(var(--foreground)); color: hsl(var(--background)); text-align: left; }
+.cbd-msg-copy:hover { transform: translateY(-1px); }
+.cbd-msg-note { font-size: .82rem; color: hsl(var(--muted-foreground)); }
 .cbd-hero { display: grid; gap: 2rem; align-items: start; }
-@media (min-width: 960px) { .cbd-hero { grid-template-columns: 1fr 1fr; gap: 3rem; } }
-.cbd-finder { min-width: 0; border-radius: 1.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); padding: 1.25rem; display: grid; gap: 1rem; }
-@media (min-width: 640px) { .cbd-finder { padding: 1.6rem; } }
-.cbd-finder-head { font: 600 .78rem/1 ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: hsl(var(--muted-foreground)); }
-.cbd-q { border: 0; padding: 0; margin: 0; min-width: 0; }
-.cbd-q legend { font-size: .92rem; font-weight: 600; margin-bottom: .45rem; }
-.cbd-opts { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; }
-.cbd-opt { min-height: 2.75rem; padding: .5rem .75rem; border-radius: .8rem; border: 1px solid hsl(var(--border)); background: hsl(var(--background)); font-size: .9rem; text-align: left; transition: background .2s, border-color .2s, color .2s; }
-.cbd-opt:hover { border-color: hsl(var(--primary) / .6); }
-.cbd-opt[aria-pressed="true"] { background: hsl(var(--foreground)); border-color: hsl(var(--foreground)); color: hsl(var(--background)); }
-.cbd-answer { border-radius: 1rem; padding: 1rem 1.1rem; background: hsl(var(--primary) / .08); border-left: 3px solid hsl(var(--primary)); display: grid; gap: .35rem; animation: cbd-in .35s ease-out; }
-.cbd-answer-k { font: 600 .72rem/1 ui-monospace, monospace; letter-spacing: .05em; text-transform: uppercase; color: hsl(var(--primary)); }
-.cbd-answer-who { font-size: 1.2rem; font-weight: 700; line-height: 1.25; }
-.cbd-answer-ask { font-size: .9rem; color: hsl(var(--muted-foreground)); }
+@media (min-width: 960px) {
+  .cbd-msg { margin-top: 1.75rem; }
+  .cbd-hero { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; column-gap: 3rem; row-gap: 0; }
+  .cbd-hero > :first-child { grid-column: 1; grid-row: 1; }
+  .cbd-hero > .cbd-route { grid-column: 2; grid-row: 1 / span 2; }
+  .cbd-hero > .cbd-msg { grid-column: 1; grid-row: 2; align-self: start; }
+}
+.cbd-route { min-width: 0; border-radius: 1.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); padding: 1.1rem; display: grid; gap: 1.1rem; }
+@media (min-width: 640px) { .cbd-route { padding: 1.6rem; } }
+.cbd-route-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem; }
+.cbd-route-head { font: 600 .78rem/1.2 ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: hsl(var(--muted-foreground)); }
+.cbd-clears { display: inline-grid; grid-template-columns: 1fr 1fr; gap: .2rem; padding: .2rem; border-radius: 999px; background: hsl(var(--secondary)); }
+.cbd-clears button { min-height: 2.5rem; padding: 0 .8rem; border-radius: 999px; font-size: .82rem; font-weight: 600; color: hsl(var(--muted-foreground)); transition: background .2s, color .2s; }
+.cbd-clears button[aria-pressed="true"] { background: hsl(var(--card)); color: hsl(var(--foreground)); box-shadow: 0 1px 3px hsl(var(--foreground) / .12); }
+.cbd-clears button:focus-visible, .cbd-stop-btn:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
+.cbd-path { position: relative; padding-top: 2.1rem; }
+.cbd-path ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; }
+.cbd-path-line { position: absolute; top: 2.85rem; left: 16.67%; right: 16.67%; height: 2px; background: repeating-linear-gradient(90deg, hsl(var(--foreground) / .25) 0 6px, transparent 6px 11px); }
+.cbd-path-line i { position: absolute; inset: 0 auto 0 0; width: calc(var(--at) * 50%); background: hsl(var(--primary)); transition: width .7s cubic-bezier(.3,.7,.2,1); }
+.cbd-ship { position: absolute; top: 0; left: calc(16.67% + var(--at) * 33.33%); transform: translateX(-50%); display: grid; place-items: center; width: 2rem; height: 1.6rem; border-radius: .5rem; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); transition: left .7s cubic-bezier(.3,.7,.2,1); animation: cbd-sail .9s cubic-bezier(.3,.7,.2,1) backwards; z-index: 1; }
+.cbd-stop-btn { width: 100%; min-height: 6.5rem; display: grid; justify-items: center; align-content: start; gap: .15rem; padding: .4rem .25rem .6rem; border-radius: 1rem; text-align: center; transition: background .2s; }
+.cbd-stop-btn:hover { background: hsl(var(--secondary)); }
+.cbd-stop-btn[aria-pressed="true"] { background: hsl(var(--primary) / .08); }
+.cbd-dot { position: relative; z-index: 1; width: 1rem; height: 1rem; margin-bottom: .45rem; border-radius: 999px; border: 2px solid hsl(var(--foreground) / .35); background: hsl(var(--card)); transition: border-color .2s, background .2s; }
+.cbd-stop-btn[aria-pressed="true"] .cbd-dot { border-color: hsl(var(--primary)); background: hsl(var(--primary)); }
+.cbd-stop-name { font-size: .92rem; font-weight: 700; line-height: 1.15; }
+.cbd-stop-sub { font-size: .75rem; color: hsl(var(--muted-foreground)); }
+.cbd-stop-tag { margin-top: .3rem; padding: .1rem .5rem; border-radius: 999px; font: 600 .66rem/1.4 ui-monospace, monospace; letter-spacing: .03em; text-transform: uppercase; border: 1px solid hsl(var(--border)); color: hsl(var(--muted-foreground)); }
+.cbd-stop-tag[data-data="true"] { border-color: hsl(var(--primary) / .5); color: hsl(var(--primary)); background: hsl(var(--primary) / .06); }
+.cbd-here { border-radius: 1rem; padding: 1rem 1.1rem; background: hsl(var(--background)); border-left: 3px solid hsl(var(--primary)); display: grid; gap: .3rem; animation: cbd-in .35s ease-out; }
+.cbd-here-k { font: 600 .72rem/1 ui-monospace, monospace; letter-spacing: .05em; text-transform: uppercase; color: hsl(var(--primary)); }
+.cbd-here-k:not(:first-child) { margin-top: .5rem; }
+.cbd-here-v { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.cbd-here-send { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; font-size: .9rem; }
+.cbd-here-send li { position: relative; padding-left: 1rem; }
+.cbd-here-send li::before { content: ""; position: absolute; left: 0; top: .55em; width: .4rem; height: .4rem; border-radius: 999px; background: hsl(var(--primary)); }
+@keyframes cbd-sail { from { left: 16.67%; } }
 @keyframes cbd-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
 /* 2. Fill line */
@@ -112,6 +147,7 @@
 .cbd-close h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; line-height: 1.2; max-width: 40rem; text-wrap: balance; }
 
 @media (prefers-reduced-motion: reduce) {
+  .cbd-msg-copy:hover { transform: none; }
   .cbd *, .cbd *::before, .cbd *::after { animation: none !important; transition: none !important; }
   .cbd-sheet li { opacity: 1; transform: none; }
 }
