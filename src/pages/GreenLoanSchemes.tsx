@@ -175,7 +175,7 @@ export default function GreenLoanSchemes() {
           <p className="gls-sub">You already keep the bills. Senseible reads them and keeps each one as proof.</p>
           <BillToLender />
           <GreenLoanEntry className="mt-8" />
-          <p className="gls-aside">Want the lender's side? See <Link to="/climate-finance">how credit teams use verified records</Link>.</p>
+          <p className="gls-aside">Want the lender's side? See <Link to="/climate-finance">how credit teams use verified records</Link>. Comparing lenders on limits, your share and repayment? See <Link to="/green-loans-msme-india">green loans for MSMEs, compared</Link>.</p>
         </section>
 
         <section className="gls-section">

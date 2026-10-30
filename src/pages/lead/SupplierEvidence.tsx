@@ -347,7 +347,7 @@ const SupplierEvidence = () => {
               </details>
             ))}
           </div>
-          <p className="mt-8 text-sm text-muted-foreground">How we handle data and calculations: <Link to="/trust" className="underline underline-offset-2">Trust and methodology</Link>. Enterprise capabilities and their status: <Link to="/enterprise" className="underline underline-offset-2">Enterprise</Link>.</p>
+          <p className="mt-8 text-sm text-muted-foreground">How we handle data and calculations: <Link to="/trust" className="underline underline-offset-2">Trust and methodology</Link>. Enterprise capabilities and their status: <Link to="/enterprise" className="underline underline-offset-2">Enterprise</Link>. Comparing tools: <Link to="/best-supplier-emissions-software" className="underline underline-offset-2">supplier emissions software, side by side</Link>.</p>
         </section>
       </main>
 

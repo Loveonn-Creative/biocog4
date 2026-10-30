@@ -352,6 +352,7 @@ export default function BrsrReporting() {
           <p className="brh-trap"><b>The usual slip:</b> units from your own diesel generator are not electricity. Count the diesel once, under Scope 1, and leave its units out of Scope 2.</p>
           <p className="brh-body">Senseible reads the units, litres and kilograms off each bill, keeps the factor and its source on every line, and drafts the BRSR energy and emissions fields from them. You review the draft; the BRSR Core check comes from an independent provider.</p>
           <Link to="/esg-report-sample" className="brh-link">See a sample report with its BRSR Core map <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></Link>
+          <Link to="/best-brsr-software" className="brh-link">Compare BRSR software, full report to BRSR Core <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></Link>
         </section>
 
         <section id="answers" className="brh-section" aria-labelledby="answers-h">

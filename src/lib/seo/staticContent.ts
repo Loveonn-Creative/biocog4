@@ -15,6 +15,7 @@ import * as cbd from '@/data/cbamDeclarant';
 import * as sc from '@/data/softwareChooser';
 import * as gls from '@/data/greenLoanSchemes';
 import * as brsr from '@/data/brsrHub';
+import * as sg from '@/data/softwareGuides';
 import * as icd from '@/data/indiaClimateData';
 import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
@@ -310,6 +311,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: SUPPLIER_REQUEST.replace(/\n+/g, ' ') },
       { h2: 'Questions' },
       ...SUPPLIER_EVIDENCE_FAQS.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
+      { p: 'Comparing tools: [supplier emissions software, side by side](/best-supplier-emissions-software).' },
     ] as Block[],
   },
   [MSME_CARBON_META.path]: {
@@ -384,6 +386,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       ] },
       { h2: 'Straight answers' },
       ...cci.CCI_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
+      { p: 'Comparing where to buy, sell or register? [Carbon credit platforms, compared](/carbon-credit-platforms). Running a project? [Digital MRV platforms, compared](/best-digital-mrv-platforms).' },
     ],
   },
   '/cbam': {
@@ -398,7 +401,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { ul: cbi.VERIFIER_CHECKS },
       { h2: 'Straight answers' },
       ...cbi.CBAM_INDIA_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
-      { p: 'Start your CBAM data in the CBAM suite, estimate your cost with the CBAM calculator, or see CBAM cost by sector. Not sure who files for your buyer? [Who must be the authorised CBAM declarant](/cbam-authorised-declarant).' },
+      { p: 'Start your CBAM data in the CBAM suite, estimate your cost with the CBAM calculator, or see CBAM cost by sector. Not sure who files for your buyer? [Who must be the authorised CBAM declarant](/cbam-authorised-declarant). Weighing other CBAM tools too? [See CBAM software side by side](/best-cbam-software), ours included.' },
     ],
   },
   '/cbam-authorised-declarant': {
@@ -444,7 +447,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { h2: "From last year's bills to four BRSR figures" },
       { ul: brsr.BILL_DOCS.map(d => `${d.name}: ${d.qty.toLocaleString('en-IN')} ${d.unit}, feeding Scope ${d.scope} and total energy.`) },
       { p: 'Units from your own diesel generator are not electricity. Count the diesel once, under Scope 1, and leave its units out of Scope 2.' },
-      { p: 'Senseible reads the units, litres and kilograms off each bill, keeps the factor and its source on every line, and drafts the BRSR energy and emissions fields from them. [See a sample report with its BRSR Core map](/esg-report-sample).' },
+      { p: 'Senseible reads the units, litres and kilograms off each bill, keeps the factor and its source on every line, and drafts the BRSR energy and emissions fields from them. [See a sample report with its BRSR Core map](/esg-report-sample). [Compare BRSR software](/best-brsr-software).' },
       { h2: 'Find the answer for your exact line' },
       ...brsr.NEEDS.flatMap(g => [{ h3: g.label } as Block, { ul: g.items.map(i => `[${i.q}](/answers/${i.slug})`) } as Block]),
       { h2: 'Short answers' },
@@ -471,7 +474,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
         'Each bill is checked and kept as a record: each line shows the units used and how the emissions were worked out. The same bill is never counted twice.',
         'Finance evidence on your dashboard counts verified records only, ready to show your bank.',
       ] },
-      { p: 'Start with the free [green loan readiness check](/green-loan-check): a few one-tap questions and a checklist of what a credit team will ask for. It is not a loan decision. Signed in, you can prepare a [green loan application](/green-loan). See also [how credit teams use verified records](/climate-finance).' },
+      { p: 'Start with the free [green loan readiness check](/green-loan-check): a few one-tap questions and a checklist of what a credit team will ask for. It is not a loan decision. Signed in, you can prepare a [green loan application](/green-loan). See also [how credit teams use verified records](/climate-finance). Comparing lenders on limits, your share and repayment? [Green loans for MSMEs, compared](/green-loans-msme-india).' },
       { h2: 'Questions owners ask' },
       ...gls.GLS_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
     ],
@@ -484,6 +487,39 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       ...sc.CRITERIA.flatMap(c => [{ h3: c.label } as Block, { p: `${c.why} Ask: ${c.ask} Red flag: ${c.redFlag}` } as Block]),
       { h2: 'How Senseible answers the same questions' },
       { ul: sc.CRITERIA.map(c => `${c.label}: ${c.senseible ?? 'No claim made yet; ask us, as you would ask anyone.'}`) },
+      { h2: 'Named tools, compared' },
+      { ul: sg.GUIDES.filter(g => sg.SOFTWARE_GUIDE_IDS.includes(g.id)).map(g => `[${g.h1}](${g.path})`) },
     ],
   },
+  ...Object.fromEntries(sg.GUIDES.map(g => [g.path, { h1: g.h1, blocks: guideBlocks(g) }])),
 };
+
+/** Prerendered copy of a software guide: the same list, marks and questions the page shows, in default order. */
+function guideBlocks(g: sg.Guide): Block[] {
+  const list = sg.defaultOrder(g);
+  const mark = (p: sg.Product, id: string) => sg.MARK_LABEL[p.caps[id]?.v ?? 'unknown'];
+  return [
+    { p: g.lede },
+    { p: `${g.disclosure} Checked ${sg.formatDay(sg.lastChecked(g.id))}.` },
+    { h2: 'The list' },
+    ...list.flatMap((p, i) => [
+      { h3: `${i + 1}. ${p.name}` } as Block,
+      { ul: [
+        p.who ? `Who it is for: ${p.who}` : '',
+        p.bestFor ? `Best for: ${p.bestFor}` : '',
+        p.pricing ? `${g.priceLabel ?? 'Pricing'}: ${p.pricing}` : '',
+        p.strengths.length ? `Strengths: ${p.strengths.join(' ')}` : '',
+        p.limits.length ? `Limits: ${p.limits.join(' ')}` : '',
+      ].filter(Boolean) } as Block,
+    ]),
+    ...(g.context ? [{ h2: g.context.title } as Block, { ul: g.context.points } as Block] : []),
+    { h2: 'Side by side' },
+    { table: { head: ['Tool', ...g.criteria.map(c => c.short)], rows: list.map(p => [p.name, ...g.criteria.map(c => mark(p, c.id))]) } },
+    { h2: 'Which tools fit which situation' },
+    { ul: g.situations.map(s => `${s.label}: ${sg.rankFor(g, s.id).slice(0, 3).map(f => f.product.name).join(', ')}`) },
+    { h2: 'How to choose' },
+    { ol: g.criteria.map(c => `${c.label}. Ask: "${c.ask}"`) },
+    ...(g.next ? [{ p: `${g.next.lead} [${g.next.label}](${g.next.to}).` } as Block] : []),
+    { p: `Related guides: ${g.related.map(id => `[${sg.GUIDE_BY_ID[id].h1}](${sg.GUIDE_BY_ID[id].path})`).join(', ')}.` },
+  ];
+}
