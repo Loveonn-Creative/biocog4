@@ -210,7 +210,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: 'EU importers need embedded emissions per CN code from each installation they buy from. The pack gives them the numbers, the basis for each (actual or default), the reporting period and the verification status, in one file.' },
       { ul: [
         'Per CN code: SEE direct and indirect, tonnes, and the default value it replaces.',
-        'Marked draft until verified by Senseible or by an external verifier.',
+        'Draft until checked by Senseible and signed off by an accredited verifier.',
         'Built from your CBAM Suite workbook or entered per good.',
       ] },
       { p: '[CBAM Suite](/cbam-suite) · [Quick CBAM estimate](/cbam-calculator)' },
