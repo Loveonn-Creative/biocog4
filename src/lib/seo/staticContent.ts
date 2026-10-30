@@ -386,7 +386,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       ] },
       { h2: 'Straight answers' },
       ...cci.CCI_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
-      { p: 'Comparing where to buy, sell or register? [Carbon credit platforms, compared](/carbon-credit-platforms). Running a project? [Digital MRV platforms, compared](/best-digital-mrv-platforms).' },
+      { p: 'Comparing where to buy, sell or register? [Carbon credit platforms, compared](/carbon-credit-platforms).' },
     ],
   },
   '/cbam': {

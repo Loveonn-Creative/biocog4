@@ -2,7 +2,7 @@ import { serviceNav } from '@/data/services/nav';
 import { OG_VERSION } from './ogVersion';
 import { MSME_CARBON_META, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
 import { ESG_SAMPLE_META } from '@/data/esgReportSample';
-import { GUIDE_META } from '@/data/softwareGuideMeta';
+import { PUBLISHED_GUIDE_META } from '@/data/softwareGuideMeta';
 import { isUnreviewedGermanPath, hreflangFor as germanHreflangFor, type Alternate } from './dePages';
 import { isUnreviewedHindiPath, hindiHreflangFor } from './hiPages';
 export * from './dePages';
@@ -69,14 +69,12 @@ const OG_IMAGES: Record<string, { slug: string; alt: string }> = {
   '/carbon-accounting-software-india': { slug: 'calculators', alt: 'Choose carbon accounting software in India with your own scorecard' },
   // Software comparison guides
   '/best-carbon-accounting-software': { slug: 'carbon-accounting', alt: 'Carbon accounting software compared on the checks buyers ask' },
-  '/best-digital-mrv-platforms': { slug: 'carbon-credits', alt: 'Digital MRV platforms for carbon projects, compared' },
   '/best-supplier-emissions-software': { slug: 'enterprise', alt: 'Scope 3 supplier emissions software, compared' },
   '/best-carbon-compliance-software': { slug: 'guides', alt: 'Carbon compliance software for CSRD, ISSB, BRSR and SB 253, compared' },
   '/best-cbam-software': { slug: 'cbam', alt: 'CBAM software for EU importers and non-EU exporters, compared' },
   '/best-brsr-software': { slug: 'guides', alt: 'BRSR and BRSR Core software, compared' },
   '/carbon-credit-platforms': { slug: 'carbon-credits', alt: 'Carbon credit registries, marketplaces and exchanges, compared' },
   '/green-loans-msme-india': { slug: 'green-finance', alt: 'Green loans for Indian MSMEs: SIDBI, IREDA and other routes compared' },
-  '/sustainability-tender-platforms': { slug: 'guides', alt: 'Where to find public tenders that score carbon' },
   '/marketplace': { slug: 'marketplace', alt: 'Carbon credit marketplace: MSME credit listings with provenance and verification status' },
   '/white-paper': { slug: 'white-paper', alt: 'Senseible white paper: how an invoice becomes an emission figure' },
 };
@@ -275,7 +273,7 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     description: 'Weigh what matters, get a checklist of questions for every vendor demo, and score your shortlist: Indian bills, GST invoices, BRSR, CBAM and audit trail.',
   },
   // Software comparison guides (src/data/softwareGuides.ts)
-  ...Object.fromEntries(Object.values(GUIDE_META).map(m => [m.path, { title: m.title, description: m.description }])),
+  ...Object.fromEntries(Object.values(PUBLISHED_GUIDE_META).map(m => [m.path, { title: m.title, description: m.description }])),
   '/net-zero': {
     title: 'Net-Zero Roadmap Builder for MSMEs',
     description: 'Turn an emissions baseline into a sector-specific net-zero roadmap with reduction tasks you can track. Free five-step planner for MSMEs.',

@@ -9,7 +9,7 @@
 // the same criteria with the same marks. Senseible is never in the tender list.
 
 import { TIER_PRICES } from '@/lib/pricing/pricingMath';
-import { GUIDE_META, type GuideId } from './softwareGuideMeta';
+import { GUIDE_META, HELD_GUIDES, type GuideId } from './softwareGuideMeta';
 
 export type { GuideId };
 
@@ -88,7 +88,7 @@ const SENSEIBLE_PRICE = `Free Snapshot plan. Paid plans from ${inr(TIER_PRICES.e
 const SENSEIBLE_CBAM_PRICE = `CBAM calculator and CBAM suite free on every plan. Paid plans from ${inr(TIER_PRICES.essential.yearly)} a month billed yearly, plus GST.`;
 const SENSEIBLE_LOAN_PRICE = `The check is free. Application prep on Essential and higher, from ${inr(TIER_PRICES.essential.yearly)} a month billed yearly, plus GST.`;
 
-export const GUIDES: Guide[] = [
+const ALL_GUIDES: Guide[] = [
   {
     id: 'carbon-accounting',
     ...GUIDE_META['carbon-accounting'],
@@ -6189,11 +6189,15 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
 };
 // </products generated>
 
+/** Live guides only; related links to held guides are dropped. */
+export const GUIDES: Guide[] = ALL_GUIDES
+  .filter(g => !HELD_GUIDES.includes(g.id))
+  .map(g => ({ ...g, related: g.related.filter(id => !HELD_GUIDES.includes(id)) }));
 export const GUIDE_BY_PATH: Record<string, Guide> = Object.fromEntries(GUIDES.map(g => [g.path, g]));
-export const GUIDE_BY_ID = Object.fromEntries(GUIDES.map(g => [g.id, g])) as Record<GuideId, Guide>;
+export const GUIDE_BY_ID = Object.fromEntries(ALL_GUIDES.map(g => [g.id, g])) as Record<GuideId, Guide>;
 export const GUIDE_PATHS = GUIDES.map(g => g.path);
 /** The guides that compare software, linked from the carbon accounting chooser. */
-export const SOFTWARE_GUIDE_IDS: GuideId[] = ['carbon-accounting', 'supplier-emissions', 'carbon-compliance', 'cbam', 'brsr', 'dmrv'];
+export const SOFTWARE_GUIDE_IDS: GuideId[] = ['carbon-accounting', 'supplier-emissions', 'carbon-compliance', 'cbam', 'brsr'];
 
 export function productsFor(id: GuideId): Product[] {
   const g = GUIDE_BY_ID[id];

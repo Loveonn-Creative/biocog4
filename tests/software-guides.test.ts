@@ -5,13 +5,13 @@ import { STATIC_PAGE_META, fitTitle } from '../src/lib/seo/seoMeta';
 import { TIER_PRICES } from '../src/lib/pricing/pricingMath';
 
 const PATHS = [
-  '/best-carbon-accounting-software', '/best-digital-mrv-platforms', '/best-supplier-emissions-software',
+  '/best-carbon-accounting-software', '/best-supplier-emissions-software',
   '/best-carbon-compliance-software', '/best-cbam-software', '/best-brsr-software',
-  '/carbon-credit-platforms', '/green-loans-msme-india', '/sustainability-tender-platforms',
+  '/carbon-credit-platforms', '/green-loans-msme-india',
 ];
 
 describe('software guides', () => {
-  test('nine guides at the agreed evergreen URLs', () => {
+  test('seven live guides at the agreed evergreen URLs', () => {
     expect(GUIDES.map(g => g.path).sort()).toEqual([...PATHS].sort());
   });
 
@@ -89,6 +89,18 @@ describe('software guides', () => {
     const exporter = rankFor(cbam, 'ex-steel');
     expect(exporter[0].product.tags).toContain('exporter');
     expect(importer.map(f => f.product.id)).not.toEqual(exporter.map(f => f.product.id));
+  });
+
+  // Owner rule: first where Senseible fits best, lower where it does not.
+  test('Senseible ranks first for Indian exporters, bill-based suppliers and MSME loan papers, lower for EU importers and multinationals', () => {
+    const pos = (id: string, s: string) => rankFor(GUIDE_BY_ID[id as keyof typeof GUIDE_BY_ID], s).findIndex(f => f.product.isSenseible);
+    expect(pos('cbam', 'ex-steel')).toBe(0);
+    expect(pos('cbam', 'ex-cement')).toBe(0);
+    expect(pos('supplier-emissions', 'bills')).toBe(0);
+    expect(pos('green-loans', 'papers')).toBe(0);
+    expect(pos('cbam', 'importer')).toBeGreaterThan(2);
+    expect(pos('supplier-emissions', 'global')).toBeGreaterThan(2);
+    expect(pos('carbon-accounting', 'multinational')).toBeGreaterThan(2);
   });
 
   test('ItemList lists exactly the products on the page', () => {

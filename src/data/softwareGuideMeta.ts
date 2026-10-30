@@ -5,6 +5,9 @@ export type GuideId =
   | 'carbon-accounting' | 'dmrv' | 'supplier-emissions' | 'carbon-compliance'
   | 'cbam' | 'brsr' | 'carbon-credits' | 'green-loans' | 'tenders';
 
+/** Written but held back until more products are verified: no route, link or SEO entry. */
+export const HELD_GUIDES: readonly GuideId[] = ['dmrv', 'tenders'];
+
 export const GUIDE_META: Record<GuideId, { path: string; title: string; description: string; h1: string }> = {
   'carbon-accounting': {
     path: '/best-carbon-accounting-software',
@@ -61,3 +64,8 @@ export const GUIDE_META: Record<GuideId, { path: string; title: string; descript
     h1: 'Sustainability tender platforms, compared',
   },
 };
+
+/** Metadata for the guides that are live. */
+export const PUBLISHED_GUIDE_META = Object.fromEntries(
+  Object.entries(GUIDE_META).filter(([id]) => !HELD_GUIDES.includes(id as GuideId)),
+) as Partial<typeof GUIDE_META>;

@@ -254,14 +254,12 @@ const App = () => (
               <Route path="/carbon-credits-india" element={<CarbonCreditsIndia />} />
               <Route path="/carbon-accounting-software-india" element={<SoftwareChooser />} />
               <Route path="/best-carbon-accounting-software" element={<SoftwareGuide path="/best-carbon-accounting-software" />} />
-              <Route path="/best-digital-mrv-platforms" element={<SoftwareGuide path="/best-digital-mrv-platforms" />} />
               <Route path="/best-supplier-emissions-software" element={<SoftwareGuide path="/best-supplier-emissions-software" />} />
               <Route path="/best-carbon-compliance-software" element={<SoftwareGuide path="/best-carbon-compliance-software" />} />
               <Route path="/best-cbam-software" element={<SoftwareGuide path="/best-cbam-software" />} />
               <Route path="/best-brsr-software" element={<SoftwareGuide path="/best-brsr-software" />} />
               <Route path="/carbon-credit-platforms" element={<SoftwareGuide path="/carbon-credit-platforms" />} />
               <Route path="/green-loans-msme-india" element={<SoftwareGuide path="/green-loans-msme-india" />} />
-              <Route path="/sustainability-tender-platforms" element={<SoftwareGuide path="/sustainability-tender-platforms" />} />
               <Route path="/brsr-reporting" element={<BrsrReporting />} />
               <Route path="/climate-finance" element={<ClimateFinance />} />
               <Route path="/green-loan" element={<GreenLoan />} />

@@ -178,7 +178,7 @@ export default function SoftwareChooser() {
             ))}
           </ul>
           <p className="sc-more">Comparing with a tool you already know? <Link to="/vs/sweep">Sweep</Link>, <Link to="/vs/persefoni">Persefoni</Link>, <Link to="/vs/watershed">Watershed</Link>, <Link to="/vs/updapt-esg">Updapt</Link>.</p>
-          <p className="sc-more">Want named tools compared first? <Link to="/best-carbon-accounting-software">Carbon accounting</Link>, <Link to="/best-supplier-emissions-software">supplier emissions</Link>, <Link to="/best-carbon-compliance-software">compliance</Link>, <Link to="/best-cbam-software">CBAM</Link>, <Link to="/best-brsr-software">BRSR</Link>, <Link to="/best-digital-mrv-platforms">digital MRV</Link>.</p>
+          <p className="sc-more">Want named tools compared first? <Link to="/best-carbon-accounting-software">Carbon accounting</Link>, <Link to="/best-supplier-emissions-software">supplier emissions</Link>, <Link to="/best-carbon-compliance-software">compliance</Link>, <Link to="/best-cbam-software">CBAM</Link> and <Link to="/best-brsr-software">BRSR</Link>.</p>
         </section>
 
         <section className="sc-close">
