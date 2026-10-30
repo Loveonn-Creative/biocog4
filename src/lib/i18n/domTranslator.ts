@@ -22,23 +22,23 @@ function hasLetters(s: string): boolean {
   return /\p{L}/u.test(s);
 }
 
+/** Whether this element itself (ignoring its ancestors) is excluded. */
+function skipsSelf(node: Element): boolean {
+  if (SKIP_TAGS.has(node.tagName)) return true;
+  if (!node.getAttribute) return false;
+  if (node.getAttribute("data-no-translate") !== null) return true;
+  if (node.getAttribute("contenteditable") === "true") return true;
+  // Never touch code-shaped or identifier content: hashes, GSTIN, HSN, etc.
+  const cls = node.getAttribute("class") || "";
+  if (/\bfont-mono\b/.test(cls)) return true;
+  if (/\b(hash|sha|gstin|hsn|code|identifier)\b/i.test(cls)) return true;
+  // Never translate <time>, <kbd>, <samp>, <var> content
+  const tag = node.tagName;
+  return tag === "TIME" || tag === "KBD" || tag === "SAMP" || tag === "VAR";
+}
+
 function shouldSkip(el: Element | null): boolean {
-  let node: Element | null = el;
-  while (node) {
-    if (SKIP_TAGS.has(node.tagName)) return true;
-    if (node.getAttribute) {
-      if (node.getAttribute("data-no-translate") !== null) return true;
-      if (node.getAttribute("contenteditable") === "true") return true;
-      // Never touch code-shaped or identifier content: hashes, GSTIN, HSN, etc.
-      const cls = node.getAttribute("class") || "";
-      if (/\bfont-mono\b/.test(cls)) return true;
-      if (/\b(hash|sha|gstin|hsn|code|identifier)\b/i.test(cls)) return true;
-      // Never translate <time>, <kbd>, <samp>, <var> content
-      const tag = node.tagName;
-      if (tag === "TIME" || tag === "KBD" || tag === "SAMP" || tag === "VAR") return true;
-    }
-    node = node.parentElement;
-  }
+  for (let node = el; node; node = node.parentElement) if (skipsSelf(node)) return true;
   return false;
 }
 
@@ -50,9 +50,9 @@ export function setStaticTranslations(values: Iterable<string>) {
   staticValues = new Set(Array.from(values, v => v.trim()));
 }
 
-function processTextNode(locale: string, node: Text) {
+function processTextNode(locale: string, node: Text, checked = false) {
   const parent = node.parentElement;
-  if (!parent || shouldSkip(parent)) return;
+  if (!parent || (!checked && shouldSkip(parent))) return;
   const raw = node.nodeValue ?? "";
   const trimmed = raw.trim();
   if (!trimmed || !hasLetters(trimmed)) return;
@@ -89,8 +89,10 @@ function remember(el: Element, attr: string, value: string) {
   lastWritten.set(el, seen);
 }
 
-function processAttr(locale: string, el: Element, attr: string) {
-  if (shouldSkip(el)) return;
+// `checked`: the caller (the tree walker) has already ruled out skipped
+// ancestors, so the per-attribute ancestor walk is not repeated.
+function processAttr(locale: string, el: Element, attr: string, checked = false) {
+  if (!checked && shouldSkip(el)) return;
   const cur = el.getAttribute(attr);
   if (!cur || !hasLetters(cur)) return;
   const stashKey = `${ORIG_ATTR}-${attr}`;
@@ -126,7 +128,9 @@ function walk(locale: string, root: Node) {
       if (node.nodeType === Node.ELEMENT_NODE) {
         // Accept (and descend into) elements so their placeholder, title,
         // aria-label and alt are translated too, not only the root's.
-        return shouldSkip(node as Element)
+        // Ancestors up to the root were checked on the way down (a skipped
+        // one is rejected with its subtree), so only the element itself.
+        return skipsSelf(node as Element)
           ? NodeFilter.FILTER_REJECT
           : NodeFilter.FILTER_ACCEPT;
       }
@@ -135,9 +139,9 @@ function walk(locale: string, root: Node) {
   });
   let n: Node | null = walker.nextNode();
   while (n) {
-    if (n.nodeType === Node.TEXT_NODE) processTextNode(locale, n as Text);
+    if (n.nodeType === Node.TEXT_NODE) processTextNode(locale, n as Text, true);
     else if (n.nodeType === Node.ELEMENT_NODE) {
-      for (const a of ATTRS) processAttr(locale, n as Element, a);
+      for (const a of ATTRS) processAttr(locale, n as Element, a, true);
     }
     n = walker.nextNode();
   }
