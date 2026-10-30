@@ -303,19 +303,19 @@ type Side = "supplier" | "listed";
 // Asks: SUPPLIER_LINES[2]. Records: ATTRIBUTES 1 to 4. Only Scope 1 and 2 and
 // energy are built from bills (ATTRIBUTES fromBills). Rules: RULE_ROWS and RUNGS.
 const CHAIN_ASKS = [
-  { ask: "Scope 1 and Scope 2", record: "Fuel invoices and electricity bills", bills: true },
-  { ask: "Total energy", record: "Electricity bills and fuel invoices", bills: true },
-  { ask: "Water", record: "Supply bills, borewell meter readings, tanker invoices", bills: false },
-  { ask: "Waste", record: "Weighbridge slips, waste manifests, recycler receipts", bills: false },
+  { ask: "Scope 1 and 2 emissions", record: "From fuel invoices and electricity bills", bills: true },
+  { ask: "Total energy", record: "From electricity bills and fuel invoices", bills: true },
+  { ask: "Water", record: "From water supply bills, borewell meter readings, tanker invoices", bills: false },
+  { ask: "Waste", record: "From weighbridge slips, waste manifests, recycler receipts", bills: false },
 ];
 const SIDE_COPY: Record<Side, { head: string; rule: string }> = {
   supplier: {
     head: "What your customer will ask you for",
-    rule: "You count if you alone are 2% or more of its purchases or sales. No law makes you send figures. A contract or supplier code can.",
+    rule: "Your customer counts you only if you alone are 2% or more of its purchases or sales. No law makes you send figures. Your contract or its supplier code can.",
   },
   listed: {
     head: "What you ask each partner for",
-    rule: "Any partner at 2% or more of your purchases or sales counts. Coverage may stop at 75%. Voluntary from FY 2025-26.",
+    rule: "Include any partner that alone is 2% or more of your purchases or sales. You can stop once they cover 75%. Voluntary from FY 2025-26.",
   },
 };
 
@@ -330,7 +330,7 @@ function ChainAsks() {
       </div>
       <div className="brh-chain-path" aria-hidden="true">
         <span className="brh-node" data-you={side === "supplier"}>Supplier{side === "supplier" && <em>You</em>}</span>
-        <span className="brh-wire"><i key={side} /><b>{side === "supplier" ? "Your figures, April to March" : "Your request, April to March"}</b></span>
+        <span className="brh-wire"><i key={side} /><b>{side === "supplier" ? "Your figures, April to March" : "You ask for April to March"}</b></span>
         <span className="brh-node" data-you={side === "listed"}>Listed company<small>top 250</small>{side === "listed" && <em>You</em>}</span>
       </div>
       <p className="brh-chain-head">{c.head}</p>
@@ -339,7 +339,7 @@ function ChainAsks() {
           <li key={a.ask} style={{ "--i": i } as CSSProperties} data-bills={a.bills}>
             <span className="brh-ask">{a.ask}</span>
             <span className="brh-ask-rec">{a.record}</span>
-            {a.bills && <span className="brh-ask-tag">{side === "supplier" ? "Read from your bills" : "Read from their bills"}</span>}
+            <span className="brh-ask-tag">{a.bills ? (side === "supplier" ? "Read from your bills" : "Read from their bills") : (side === "supplier" ? "Your own records" : "Their own records")}</span>
           </li>
         ))}
       </ol>
@@ -361,8 +361,8 @@ export default function BrsrReporting() {
         <header className="brh-hero">
           <div className="brh-hero-copy">
             <p className="brh-eyebrow">BRSR and BRSR Core</p>
-            <h1 className="brh-title">BRSR in plain words, <span>and the bills behind your figures.</span></h1>
-            <p className="brh-lede">From FY 2025-26 a top 250 listed company may report its value chain, so the questions land on its suppliers. See what gets asked, and the record that answers each line.</p>
+            <h1 className="brh-title">BRSR in plain words. <span>Your bills already hold the energy and emissions figures.</span></h1>
+            <p className="brh-lede">From FY 2025-26, India's top 250 listed companies can choose to report on their suppliers. Here is what they ask for, and the paper that answers each question.</p>
             <div className="brh-hero-cta">
               <Link to="/" className="brh-cta">Turn a bill into BRSR figures <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
               <span className="brh-cta-note">Free. No sign-up to read a bill.</span>

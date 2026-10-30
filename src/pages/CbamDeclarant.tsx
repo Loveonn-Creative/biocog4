@@ -9,7 +9,7 @@ import { CBAM_SECTORS } from "@/lib/cbamEngine";
 import { markupFor, type CbamSector } from "@/lib/cbam/official";
 import {
   CBAM_DECLARANT_FAQS, CBAM_DECLARANT_PATH, DECLARANT_MILESTONES, FERT_PCT, FIRST_DECLARATION_ISO, MARKUP_SCHEDULE, PACK_ROWS, THRESHOLD_TONNES,
-  findDeclarant, type Clears,
+  type Clears,
 } from "@/data/cbamDeclarant";
 import "./cbamDeclarant.css";
 
@@ -72,18 +72,22 @@ type StopId = "plant" | "customs" | "declarant";
 function Hero() {
   const [clears, setClears] = useState<Clears>("buyer");
   const [at, setAt] = useState<StopId>("declarant");
-  const a = findDeclarant(clears, "over", false);
-  // Pack lines by stop: PACK_ROWS 0, 1 and 3 are made at the plant; 4 and 5 go with the figures to the declarant.
+  const ddp = clears === "seller";
+  // Lines follow PACK_ROWS (plant, goods, emissions; free allocation and verifier) and
+  // findDeclarant(clears, "over"): who holds the status, and the account-number check.
+  const files = ddp ? "An EU customs representative, or an EU company of your own, files the declaration. Your Indian company cannot." : "Your buyer, or its customs representative, files the declaration.";
   const stops: { id: StopId; name: string; sub: string; data: boolean; happens: string; send: string[] }[] = [
     { id: "plant", name: "Your plant", sub: "India", data: true,
       happens: "The goods are made, and their emissions are counted by product and period.",
-      send: [PACK_ROWS[0], PACK_ROWS[1], PACK_ROWS[3]] },
+      send: [PACK_ROWS[0], "Your goods by CN code (the EU's 8\u2011digit product code), with how each is made", "Emissions per tonne of each good, from fuel (direct) and electricity (indirect)"] },
     { id: "customs", name: "EU customs", sub: "Port of entry", data: false,
       happens: `Above ${THRESHOLD_TONNES} tonnes a year, customs releases the goods only to an authorised CBAM declarant.`,
-      send: [clears === "buyer" ? a.ask : a.body] },
+      send: [ddp
+        ? "Only a company based in the EU can be a declarant. Under DDP that is an indirect customs representative who agrees to take the role, or an EU company of your own."
+        : "Ask your buyer for its CBAM account number and the EU country that authorised it. There is no public register to check."] },
     { id: "declarant", name: "Declarant", sub: "Files CBAM", data: true,
-      happens: `${a.who} It declares the emissions in your goods: your verified figure, or the EU default with a mark-up if you send nothing.`,
-      send: [PACK_ROWS[4], PACK_ROWS[5]] },
+      happens: `${files} It reports the emissions from making your goods: your verified figure, or the EU default with a mark-up if you send nothing.`,
+      send: ["Your verifier's name and their report", "Free allocation per tonne, which cuts the certificates your buyer owes"] },
   ];
   const idx = stops.findIndex((s) => s.id === at);
   const stop = stops[idx];
@@ -92,7 +96,7 @@ function Hero() {
       <div>
         <p className="cbd-eyebrow">Authorised CBAM declarant</p>
         <h1 className="cbd-title">Who files CBAM for your shipment, and what they need from you</h1>
-        <p className="cbd-lede">Since 1 January 2026, steel, aluminium, cement and fertilisers above {THRESHOLD_TONNES} tonnes a year enter the EU only through an authorised CBAM declarant. That is a company in the EU, never you. It still needs your plant's figures.</p>
+        <p className="cbd-lede">Since 1 January 2026, once your EU buyer imports more than {THRESHOLD_TONNES} tonnes a year of steel, aluminium, cement and fertilisers combined, the goods clear only through an authorised CBAM declarant. That is a company in the EU, never you. It still needs your plant's figures.</p>
         <Link to="/cbam-suite" className="cbd-btn cbd-btn-primary cbd-hero-cta">Build my CBAM data <ArrowRight className="h-4 w-4" /></Link>
         <p className="cbd-cta-note">Free. Builds your emissions report, the file a verifier checks and the pack for your buyer.</p>
       </div>
@@ -115,7 +119,7 @@ function Hero() {
                   <span className="cbd-dot" aria-hidden="true" />
                   <span className="cbd-stop-name">{s.name}</span>
                   <span className="cbd-stop-sub">{s.sub}</span>
-                  <span className="cbd-stop-tag" data-data={s.data}>{s.data ? "Your data" : "No data"}</span>
+                  <span className="cbd-stop-tag" data-data={s.data}>{s.data ? "You send" : "Nothing from you"}</span>
                 </button>
               </li>
             ))}
@@ -124,7 +128,7 @@ function Hero() {
         <div className="cbd-here" aria-live="polite" key={at + clears}>
           <p className="cbd-here-k">What happens here</p>
           <p className="cbd-here-v">{stop.happens}</p>
-          <p className="cbd-here-k">{stop.data ? "What you send" : "Your part"}</p>
+          <p className="cbd-here-k">Your part</p>
           <ul className="cbd-here-send">{stop.send.map((x) => <li key={x}>{x}</li>)}</ul>
         </div>
       </div>

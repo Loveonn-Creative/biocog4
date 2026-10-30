@@ -25,17 +25,29 @@ type Cluster = "yes" | "no" | "unsure";
 // "5 points for micro and small, 3 for medium".
 function sieve(s: Scheme, need: Need | null, size: Size | null, cluster: Cluster | null): string | null {
   if (need && !s.needs.includes(need)) return `Not built for ${NEEDS.find(n => n.id === need)!.label.toLowerCase()}`;
-  if (s.id === "cgtmse" && size === "medium") return "Medium enterprises are outside it";
+  if (s.id === "cgtmse" && size === "medium") return "Only for micro and small";
   if (s.id === "adeetie" && cluster === "no") return "Only for units in the 60 named clusters";
   return null;
 }
+// One plain line per route, shortened from its kind, funds and terms in SCHEMES.
+const LINE: Record<string, string> = {
+  adeetie: "BEE pays part of the interest on your bank loan",
+  "4e": "SIDBI loan for the measures your energy audit recommends",
+  gfs: "SIDBI loan for solar, efficiency and cleaner production",
+  fmap: "Loan through SIDBI or a partner bank for listed technologies, solar and water",
+  gift: "Helps bring a green loan down to a concessional rate",
+  solar: "Term loan from your bank for the plant",
+  machinery: "SIDBI loan to replace or add machines",
+  working: "Working capital from your bank, for green work or tied to targets",
+  psl: "Not a loan. The RBI category your bank files your loan under",
+  cgtmse: "Not a loan. A guarantee so your bank can lend up to ₹10 crore without collateral, if it opts in",
+};
 function hint(s: Scheme, size: Size | null, cluster: Cluster | null): string {
   if (s.id === "adeetie") {
-    const cut = size === "medium" ? "BEE cuts 3 points off your bank's interest" : size === "small" ? "BEE cuts 5 points off your bank's interest" : s.kind;
+    const cut = size === "medium" ? "BEE cuts your interest by 3 percentage points" : size === "small" ? "BEE cuts your interest by 5 percentage points" : LINE.adeetie;
     return cluster === "unsure" ? `${cut}, if your unit is in one of the 60 named clusters` : cut;
   }
-  if (s.id === "cgtmse") return "Loans up to ₹10 crore without collateral, if the bank opts in";
-  return s.kind;
+  return LINE[s.id] ?? s.kind;
 }
 
 function Tap<T extends string>({ q, value, options, onChange }: { q: string; value: T | null; options: { v: T; l: string }[]; onChange: (v: T | null) => void }) {
@@ -67,10 +79,10 @@ function RouteSieve({ need, setNeed }: { need: Need | null; setNeed: (n: Need | 
       <Tap<Need> q="What is the money for?" value={need} onChange={setNeed} options={NEEDS.map(n => ({ v: n.id, l: n.label }))} />
       <Tap<Size> q="Your size" value={size} onChange={setSize} options={[{ v: "small", l: "Micro or small" }, { v: "medium", l: "Medium" }]} />
       {askCluster && (
-        <Tap<Cluster> q="Is your unit in a BEE cluster, like Morbi, Firozabad or Ludhiana?" value={cluster} onChange={setCluster}
+        <Tap<Cluster> q="Is your unit in one of BEE's 60 named clusters, like Morbi, Firozabad or Ludhiana?" value={cluster} onChange={setCluster}
           options={[{ v: "yes", l: "Yes" }, { v: "no", l: "No" }, { v: "unsure", l: "Not sure" }]} />
       )}
-      <p className="gls-sieve-count" aria-live="polite"><b>{fits}</b> of {SCHEMES.length} routes fit</p>
+      <p className="gls-sieve-count" aria-live="polite">{need || size ? <><b>{fits}</b> of {SCHEMES.length} fit your project</> : <><b>{SCHEMES.length}</b> options. Tap above to narrow them.</>}</p>
       <ol className="gls-sieve-list">
         {rows.map(({ s, out }) => (
           <li key={s.id} data-out={Boolean(out)} aria-hidden={out ? true : undefined}>
@@ -86,7 +98,7 @@ function RouteSieve({ need, setNeed }: { need: Need | null; setNeed: (n: Need | 
           {setAside.map(([why, names]) => <li key={why}><b>{why}:</b> {names.join(", ")}</li>)}
         </ul>
       )}
-      <a href="#compare" className="gls-sieve-go">Papers and terms for these <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+      <a href="#compare" className="gls-sieve-go">Documents and terms for each <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
     </div>
   );
 }
@@ -227,7 +239,7 @@ export default function GreenLoanSchemes() {
           <div className="gls-hero-copy">
             <p className="gls-eyebrow">Green finance in India</p>
             <h1 className="gls-title">Green loan schemes for MSMEs. <span>Find the one built for your project.</span></h1>
-            <p className="gls-lede">Ten routes: SIDBI loans, BEE's interest cut, your bank's loans and the RBI and CGTMSE rules behind them. Each is built for different projects. Three taps set aside the ones that do not fit yours.</p>
+            <p className="gls-lede">Ten options: SIDBI loans, BEE's interest cut, your bank's loans, and the RBI and CGTMSE rules that shape them. A few taps set aside the ones that do not fit your project.</p>
             <p className="gls-note">Senseible does not lend, arrange or approve loans.</p>
           </div>
           <RouteSieve need={need} setNeed={setNeed} />

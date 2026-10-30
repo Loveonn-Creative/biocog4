@@ -43,6 +43,7 @@
 .brh-ask { font-weight: 700; }
 .brh-ask-rec { grid-column: 1 / -1; font-size: .88rem; color: hsl(var(--muted-foreground)); }
 .brh-ask-tag { grid-row: 1; grid-column: 2; align-self: center; font-size: .72rem; font-weight: 700; color: hsl(var(--primary)); white-space: nowrap; }
+.brh-asks li[data-bills="false"] .brh-ask-tag { font-weight: 600; color: hsl(var(--muted-foreground)); }
 .brh-chain-rule { font-size: .9rem; padding: .8rem .9rem; border-radius: .9rem; background: hsl(var(--secondary)); animation: brh-swap .35s ease both; }
 @keyframes brh-carry { from { left: 0; opacity: 1; } 85% { opacity: 1; } to { left: calc(100% - 10px); opacity: 0; } }
 @keyframes brh-ask { from { left: calc(100% - 10px); opacity: 1; } 85% { opacity: 1; } to { left: 0; opacity: 0; } }
