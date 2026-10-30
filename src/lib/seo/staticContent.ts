@@ -500,7 +500,7 @@ function guideBlocks(g: sg.Guide): Block[] {
   const mark = (p: sg.Product, id: string) => sg.MARK_LABEL[p.caps[id]?.v ?? 'unknown'];
   return [
     { p: g.lede },
-    { p: `${g.disclosure} Checked ${sg.formatDay(sg.lastChecked(g.id))}.` },
+    { p: g.disclosure },
     { h2: 'The list' },
     ...list.flatMap((p, i) => [
       { h3: `${i + 1}. ${p.name}` } as Block,
