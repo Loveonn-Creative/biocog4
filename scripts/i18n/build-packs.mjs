@@ -3,7 +3,7 @@
 // (src/lib/i18n/packs.ts), so switching language does not wait on the
 // translate-batch function.
 //
-//   node scripts/i18n/build-packs.mjs collect            render the live site, save its strings
+//   node scripts/i18n/build-packs.mjs collect [--paths /a,/b]  render the live site, save its strings
 //   node scripts/i18n/build-packs.mjs translate [--commit] [--locales hi,bn]
 //   node scripts/i18n/build-packs.mjs write              rebuild pack files from what exists
 //   node scripts/i18n/build-packs.mjs report             coverage per locale
@@ -126,7 +126,10 @@ async function loadPlaywright() {
 }
 
 async function collect() {
-  const routes = packRoutes(await sitemapPaths());
+  // --paths /a,/b collects only those sitemap routes (new pages without a full run).
+  const only = opt('paths')?.split(',').map(x => x.trim()).filter(Boolean);
+  const all = packRoutes(await sitemapPaths());
+  const routes = only ? all.filter(p => only.includes(p)) : all;
   const data = readJson(SOURCES, { site: SITE, routes: {} });
   const todo = flag('recollect') ? routes : routes.filter(p => !data.routes[routeKey(p)]);
   console.log(`routes: ${routes.length}, to collect: ${todo.length}`);
