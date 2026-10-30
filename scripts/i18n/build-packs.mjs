@@ -86,6 +86,7 @@ function readPage() {
   const skip = (el) => {
     for (let n = el; n; n = n.parentElement) {
       if (SKIP_TAGS.has(n.tagName)) return true;
+      if (n.tagName === 'style' || n.tagName === 'script') return true;
       if (n.getAttribute('data-no-translate') !== null) return true;
       if (n.getAttribute('contenteditable') === 'true') return true;
       const cls = n.getAttribute('class') || '';

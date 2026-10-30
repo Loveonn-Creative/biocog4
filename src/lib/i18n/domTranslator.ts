@@ -15,6 +15,7 @@ const SKIP_TAGS = new Set([
   "SCRIPT", "STYLE", "CODE", "PRE", "TEXTAREA", "INPUT",
   "SVG", "PATH", "NOSCRIPT",
 ]);
+const EMBEDDED_CODE = new Set(["style", "script"]);
 const ATTRS = ["placeholder", "title", "aria-label", "alt"] as const;
 const ORIG_ATTR = "data-i18n-orig";
 
@@ -25,6 +26,8 @@ function hasLetters(s: string): boolean {
 /** Whether this element itself (ignoring its ancestors) is excluded. */
 function skipsSelf(node: Element): boolean {
   if (SKIP_TAGS.has(node.tagName)) return true;
+  // Inside SVG, tag names are lowercase: never send <style> or <script> there.
+  if (EMBEDDED_CODE.has(node.tagName)) return true;
   if (!node.getAttribute) return false;
   if (node.getAttribute("data-no-translate") !== null) return true;
   if (node.getAttribute("contenteditable") === "true") return true;
