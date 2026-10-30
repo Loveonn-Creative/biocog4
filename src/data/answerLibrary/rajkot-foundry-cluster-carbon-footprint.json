@@ -2,7 +2,7 @@
   "slug": "rajkot-foundry-cluster-carbon-footprint",
   "q": "How much coke, power and oil do Rajkot's grey iron foundries use, and what is one unit's share?",
   "title": "Rajkot foundry cluster carbon footprint",
-  "short": "TERI recorded 297 million kWh, 31,500 tonnes of coke and 1,296 kL of furnace oil for Rajkot's roughly 700 grey iron foundries in 2014 to 15. That is about 300,000 tonnes of CO2, an estimate. A 1,000 tonne a year induction unit is about a quarter of one percent of it.",
+  "short": "Two thirds of Rajkot's foundry CO2 now comes from induction power bills, not cupola coke. TERI recorded 297 million kWh, 31,500 tonnes of coke and 1,296 kL of furnace oil for about 700 grey iron foundries in 2014 to 15, roughly 300,000 tonnes of CO2 (estimate).",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Grey and SG iron foundry owners in Rajkot, Aji, Shapar, Metoda and Kuvadwa",
@@ -28,11 +28,11 @@
         "Induction: 650 to 850 kWh per tonne of iron melted. That is 439 to 574 kg CO2 on today's grid factor.",
         "Cupola: coke at 10% to 15% of metal melted, 302 to 453 kg CO2 per tonne. A divided blast cupola pays back in about a year on coke alone.",
         "Oil-fired: about 200 litres a tonne, about 594 kg CO2, the highest of the three. These units are moving to induction.",
-        "Yield of 50% to 80% and rejections of 3% to 10% move the per tonne figure more than the furnace choice. TERI puts good castings at 1,100 to 1,350 kWh a tonne for many units."
+        "Yield of 50% to 80% and rejections of 3% to 10% move the figure per good tonne as much as the furnace choice does. TERI puts good castings at 1,100 to 1,350 kWh a tonne for many units."
       ]
     },
     {
-      "h": "Who asks, and what to keep",
+      "h": "Answering an OEM",
       "p": [
         "OEM buyers that export pumps and engines ask for kg CO2 per tonne of good castings. EU CBAM reaches only castings declared under covered codes such as pipe fittings. Keep monthly power bills, coke and oil invoices, a melt log, and despatch records in tonnes of good castings."
       ]
@@ -49,7 +49,7 @@
     ],
     "note": "Estimates. Coke at 3.02 t CO2 per tonne is the IPCC 2006 default for coke oven coke; grid factor for FY 2025-26. Use your own bills."
   },
-  "senseible": "Senseible reads your power bills and coke and oil invoices into a monthly record for the foundry, so you can answer an OEM with your own kg CO2 per tonne, traced to the bills.",
+  "senseible": "Senseible reads your power bills and coke and oil invoices into a monthly record for the foundry, so the kg CO2 per tonne you send an OEM is your own and traced to the bills.",
   "links": [
     {
       "label": "Your carbon number for buyers and banks",

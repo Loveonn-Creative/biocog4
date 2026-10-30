@@ -19,7 +19,7 @@
     {
       "h": "What that means in CO2",
       "p": [
-        "Gas went mostly to kilns. Spray dryers ran mainly on lignite burnt in fluidised bed hot gas generators, with coal, briquettes, saw dust or gas in some units. On today's factors the 2010 mix gives about 4.1 million tonnes of CO2 a year, or about 0.87 tonnes per tonne of product. Lignite was the biggest line, larger than gas. Charcoal and other biomass are left out as biogenic CO2.",
+        "Gas went mostly to kilns. Spray dryers ran mainly on coal gasifiers or fluidised bed hot gas generators burning lignite or Indonesian coal, with briquettes, saw dust or gas in some units. On today's factors the 2010 mix gives about 4.1 million tonnes of CO2 a year, or about 0.87 tonnes per tonne of product. Lignite was the biggest line, larger than gas. Charcoal and other biomass are left out as biogenic CO2.",
         "The fuel mix has changed since that study, so use these numbers as a baseline. They are not a picture of Morbi today."
       ]
     },
@@ -34,7 +34,7 @@
       "ul": [
         "Tiles are not CBAM goods, so no EU declaration is needed. Distributors, project specifiers and EPD requests ask for kg CO2 per square metre instead.",
         "Banks lending for kiln or dryer upgrades want a before and after figure from bills.",
-        "Running the spray dryer on gas instead of lignite roughly halves its CO2, if the dryer stays as efficient. Kiln insulation and kiln exhaust heat sent to the dryer cut gas.",
+        "Running the spray dryer on gas instead of lignite cuts its CO2 by about 45%, if the dryer stays as efficient. Kiln insulation and kiln exhaust heat sent to the dryer cut gas.",
         "Keep gas for kilns and dryers on separate meters if you can, solid fuel purchase invoices with the supplier's calorific value, monthly kWh, and square metres packed by product."
       ]
     }

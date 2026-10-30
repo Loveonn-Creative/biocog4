@@ -2,7 +2,7 @@
   "slug": "coimbatore-foundry-cluster-energy-per-tonne-castings",
   "q": "What do Coimbatore foundries use per tonne of castings, and how does one unit compare with the cluster?",
   "title": "Coimbatore foundries: energy per tonne",
-  "short": "TERI found Coimbatore induction foundries use about 1,000 to 1,200 kWh per tonne of good castings, 600 to 700 of it in melting. A 1,000 tonne a year unit uses about 1.1 million kWh, about 743 t CO2. If you are above 1,200 kWh a tonne, look at your furnace and your rejections first.",
+  "short": "Between 1,000 and 1,200 kWh per tonne of good castings, 600 to 700 of it in melting, is what TERI measured in Coimbatore's induction foundries. A 1,000 tonne a year unit uses about 1.1 million kWh, about 743 t CO2. Above 1,200, look at your furnace and your rejections first.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Foundry owners in Coimbatore, including Arasur, Kanuvai, Manikkampalayam and SIDCO estates",
@@ -35,9 +35,9 @@
       ]
     },
     {
-      "h": "Who asks",
+      "h": "Why pump makers will ask you",
       "p": [
-        "Pump and motor makers who export ask their foundries for kg CO2 per tonne, because their own buyers want a product footprint. A green loan for a new furnace is easier to get with kWh per tonne before and after from bills."
+        "Pump and motor makers who export are starting to ask their foundries for kg CO2 per tonne, because their own buyers want a product footprint. A green loan for a new furnace is easier to get with kWh per tonne before and after from bills."
       ]
     }
   ],

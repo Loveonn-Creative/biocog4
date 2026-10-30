@@ -2,7 +2,7 @@
   "slug": "surat-textile-processing-units-buyer-carbon-data",
   "q": "What carbon data do brands ask Surat dyeing and printing houses for?",
   "title": "Surat processing houses: buyer carbon data",
-  "short": "Brands and garment makers want your boiler coal or lignite, stenter gas and electricity for a year, divided by metres or kg processed, with the invoices behind each line. In BEE's study of Surat's processing houses, boiler coal was most of the carbon, so that line gets checked first.",
+  "short": "Brands and garment makers want your boiler coal or lignite, stenter gas and electricity for a year, divided by metres or kg processed, with the invoices behind each line. In BEE's study of Surat's processing houses, boiler coal was most of the carbon, so that is the line to get right.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Dyeing, printing and finishing houses in the Surat textile cluster and the garment makers who buy from them",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "h": "Who is asking, honestly",
+      "h": "Who actually asks",
       "p": [
         "If your fabric goes only to traders, you may never get a request. When one comes, it is usually from a garment exporter whose overseas brand counts supply chain emissions, or from a listed Indian retailer. Since SEBI's March 2025 circular, value chain disclosure is voluntary even for the top 250 listed companies, so a retailer may ask but cannot cite SEBI to make you answer."
       ]
@@ -51,9 +51,9 @@
       "Unit 1: 7,200 t imported coal x 2.44 = 17,568 t; 12.86 lakh scm gas x 2.05 = 2,636 t; 10.78 lakh kWh x 0.675 = 728 t; total 20,932 t for 153 lakh m = 1.37 kg CO2 per metre",
       "Unit 2: 8,822 t coal = 21,526 t; 13.79 lakh scm = 2,827 t; 6.33 lakh kWh = 427 t; total 24,780 t for 150 lakh m = 1.65 kg per metre",
       "Unit 3: 2,727 t coal = 6,654 t; 6.12 lakh scm = 1,255 t; 22.25 lakh kWh = 1,502 t; total 9,410 t for 115 lakh m = 0.82 kg per metre",
-      "Coal per metre runs from 0.24 to 0.59 kg across the three, which is where the spread comes from"
+      "Coal burnt per metre runs from 0.24 to 0.59 kg across the three, which is where the spread comes from"
     ],
-    "note": "Annual figures from BEE's Surat manual with Senseible's default factors and the FY 2025-26 grid factor. Your own invoices and production register give your number; heavier fabrics will always look worse per metre than per kg."
+    "note": "Annual figures from BEE's Surat manual with Senseible's default factors and the FY 2025-26 grid factor. Your own invoices and production register give your number; heavier fabrics carry more per metre, so quote per kg as well if your mix varies."
   },
   "senseible": "Senseible reads coal, gas and electricity invoices into a fingerprinted record with the factor behind each line and keeps it ready to share as supplier evidence, so the figure you send a garment maker can be traced back to the bill.",
   "links": [

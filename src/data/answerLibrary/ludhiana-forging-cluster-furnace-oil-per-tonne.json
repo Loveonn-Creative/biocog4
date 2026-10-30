@@ -2,7 +2,7 @@
   "slug": "ludhiana-forging-cluster-furnace-oil-per-tonne",
   "q": "How much furnace oil do Ludhiana forging units burn per tonne, and what does induction heating save?",
   "title": "Ludhiana forging: furnace oil per tonne",
-  "short": "TERI found Ludhiana micro forges burn 150 to 170 litres of furnace oil a tonne, and medium units 100 to 130. An induction billet heater uses 400 to 500 kWh a tonne. On today's grid factor that cuts CO2 whenever your oil furnace uses more than about 102 litres a tonne.",
+  "short": "If your forging furnace burns more than about 102 litres of furnace oil a tonne, an induction billet heater at 450 kWh a tonne cuts your CO2 on today's grid. TERI found Ludhiana micro forges at 150 to 170 litres a tonne and medium units at 100 to 130, so most micro units clear that bar easily.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "Closed die and open die forging unit owners in Ludhiana: Daba Road, Focal Point and Industrial Areas A, B and C",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "h": "Who asks",
+      "h": "Tractor makers, EU importers and banks",
       "p": [
         "Tractor and two wheeler makers ask for kg CO2 per tonne, and most of their parts sit outside CBAM. Flanges and fittings under CN 7307 and forged articles under 7326 are inside it, and there the bar you buy dominates the figure. Banks lending for an induction heater want oil litres per tonne for the past year and kWh per tonne after."
       ]

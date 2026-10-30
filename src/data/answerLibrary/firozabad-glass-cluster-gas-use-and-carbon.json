@@ -2,7 +2,7 @@
   "slug": "firozabad-glass-cluster-gas-use-and-carbon",
   "q": "How much gas does the Firozabad glass cluster burn, and what does that mean for pot, tank and muffle furnace units?",
   "title": "Firozabad glass cluster: gas and CO2",
-  "short": "TERI's cluster profile puts Firozabad's gas use at about 879,000 scm a day, roughly 658,000 tonnes of CO2 a year. A typical tank furnace burns 52,000 scm a day (about 107 t CO2). An open or closed pot furnace burns 3,500 scm (about 7 t). Most muffles still burn coal.",
+  "short": "A Firozabad tank furnace burns about 52,000 scm of gas a day, roughly 107 t CO2. A pot furnace, open or closed, burns 3,500 scm, about 7 t. Across the cluster TERI counted about 879,000 scm a day, roughly 658,000 tonnes of CO2 a year. Most muffles still burn coal.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Tank furnace, pot furnace and muffle furnace owners in the Firozabad glass cluster, Uttar Pradesh",
@@ -12,7 +12,7 @@
       "ul": [
         "About 55 tank furnaces at 25 to 40 tonnes a day make container glass, tableware, bulb shells and tubes, and about 80% of the cluster's glass.",
         "About 115 pot furnaces, 90 open and 25 closed, at 4 to 7 tonnes a day make bangles, rods, beads and mouth blown ware.",
-        "An estimated 400 muffle furnaces anneal bangles. Most burn coal and firewood, because piped gas does not reach many of them.",
+        "An estimated 400 muffle furnaces anneal bangles. Most burn coal and firewood: piped gas does not reach many of them, and coal costs less.",
         "Total glass melt was about 3,100 tonnes a day, about 70% of glass made by small and medium firms in India."
       ]
     },
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "h": "Who asks, and what to keep",
+      "h": "What buyers and lenders want from a glass unit",
       "p": [
         "Glass is not a CBAM product, so EU buyers ask for a footprint per kg or per piece rather than a declaration. Lenders for furnace rebuilds want gas per tonne before and after. Keep monthly gas bills with quota and above-quota quantities, tonnes of good glass drawn, batch recipes, and for muffles, coal and firewood purchases."
       ]

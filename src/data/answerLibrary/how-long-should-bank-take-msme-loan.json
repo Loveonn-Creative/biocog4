@@ -38,7 +38,7 @@
     {
       "h": "What the deadline does and does not give you",
       "p": [
-        "It gives you a decision, not a yes. If the bank rejects the loan, it must tell you the main reasons in writing within its sanction time norms. Use those reasons: a rejection for missing evidence can be fixed and resubmitted, which is common with green and energy loans where the bank wants proof of the saving."
+        "It gives you a decision, not a yes. If the bank rejects the loan, it must tell you the main reasons in writing within its sanction time norms. Use those reasons: a rejection for missing evidence can be fixed and resubmitted, for example on a green or energy loan where the bank wants proof of the saving."
       ]
     }
   ],
@@ -51,7 +51,7 @@
       "14 working days in calendar terms: roughly three weeks once Sundays and the second and fourth Saturdays are taken out, longer if bank holidays fall in between"
     ]
   },
-  "senseible": "For a green or energy loan, the usual cause of a slow file is evidence the bank asks for late. Senseible's green loan readiness check puts your energy use and carbon figures from bills into the form a lender asks for, so you can hand them over with the application. The decision and its timing stay with the bank.",
+  "senseible": "On a green or energy loan, a file can stall while the bank waits for proof of your energy use. Senseible reads your electricity bills and fuel invoices into monthly energy and carbon figures you can hand over with the application, and its green loan check shows what else a credit team will look for. The decision and its timing stay with the bank.",
   "links": [
     {
       "label": "Green loan readiness check",
@@ -81,5 +81,5 @@
     }
   ],
   "reviewed": "2026-10-29",
-  "reviewNote": "Check the current RBI Master Direction on MSME lending every quarter; the 14-day limit and the Rs 25 lakh threshold may be revised."
+  "reviewNote": "Terms change. Check the current RBI Master Direction on MSME lending every quarter; the 14-day limit and the Rs 25 lakh threshold may be revised."
 }

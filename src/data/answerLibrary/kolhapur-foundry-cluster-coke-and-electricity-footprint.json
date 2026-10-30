@@ -25,11 +25,11 @@
     {
       "h": "Why the induction shift has not cut CO2 yet",
       "p": [
-        "Kolhapur induction units use 600 to 700 kWh a tonne to melt. A cupola runs at a coke to metal ratio of 1:8 to 1:9. On today's grid factor, induction melting emits slightly more per tonne of metal than a cupola. It wins on smoke, start-up and SG iron quality. It wins on carbon only when the power is renewable, or when the furnace's temperature and frequency control and harmonic losses are fixed."
+        "Kolhapur induction units use 600 to 700 kWh a tonne to melt. A cupola runs at a coke to metal ratio of 1:8 to 1:9. On today's grid factor, induction melting emits slightly more per tonne of metal than a cupola. Units switch for SG iron quality. To win on carbon, induction needs cleaner power: even the temperature, frequency and harmonic-loss fixes TERI points to would have to bring melting near 500 kWh a tonne (about 338 kg CO2) just to match a cupola at 1:9."
       ]
     },
     {
-      "h": "Who asks, and what to keep",
+      "h": "Buyers, CBAM and the melt log",
       "ul": [
         "Tractor, engine and auto buyers, in India and abroad, ask for kg CO2 per tonne of good castings.",
         "CBAM covers cast pipe fittings under CN 7307, but most machine castings sit outside it. Check each export code.",
@@ -49,7 +49,7 @@
     ],
     "note": "Estimates. Coke at 3.02 t CO2 per tonne is the IPCC 2006 default for coke oven coke; Kolhapur coke at 5,500 to 6,500 kcal per kg may differ. Grid factor for FY 2025-26."
   },
-  "senseible": "Senseible reads power bills and coke invoices into a monthly Scope 1 and 2 record for the foundry. Add your good castings and it gives the kg CO2 per tonne buyers ask for, traced to the bills.",
+  "senseible": "Senseible reads power bills and coke invoices into a dated monthly record for the foundry, each line traced to its bill. Add your good castings despatched and you have the evidence behind the kg CO2 per tonne buyers ask for.",
   "links": [
     {
       "label": "Your carbon number for buyers and banks",

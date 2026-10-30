@@ -18,7 +18,7 @@
       "ul": [
         "Fixed deposit route: 100 percent of the project, for loans up to ₹15 crore, with security of 25 percent kept as a fixed deposit.",
         "Promoter contribution route: up to ₹15 crore, capped at 75 percent of project cost, so you pay at least a quarter yourself.",
-        "Either way: repayment over up to 84 months, including a moratorium of up to 12 months.",
+        "Either way: repayment over up to 84 months, with a moratorium of up to 12 months.",
         "What it pays for: equipment and machinery, installation, minor civil works and commissioning of the efficiency measures."
       ]
     },
@@ -56,7 +56,7 @@
       "Promoter route: loan up to ₹1.5 crore (75 percent), you pay ₹50 lakh into the project",
       "Expected saving from the audit: 3,00,000 kWh a year",
       "CO2 avoided: 3,00,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 2,02,500 kg, about 202 tonnes a year",
-      "Repayment: up to 84 months, the first 12 of which can be moratorium"
+      "Repayment: up to 84 months, with a moratorium of up to 12 months"
     ],
     "note": "Both routes ask for about ₹50 lakh of your own money here; the difference is whether it sits in a deposit you get back or goes into the machines. SIDBI's page does not say whether the 25 percent is measured on the loan or the project; at 100 percent funding the two are the same. The saving is the auditor's estimate until the bills after commissioning confirm it."
   },
@@ -94,5 +94,5 @@
     }
   ],
   "reviewed": "2026-10-29",
-  "reviewNote": "Scheme terms change; re-check on sidbi.in every quarter."
+  "reviewNote": "Scheme terms change; re-check on sidbi.in every quarter. SIDBI's page does not say whether the 12-month moratorium sits inside the 84 months."
 }

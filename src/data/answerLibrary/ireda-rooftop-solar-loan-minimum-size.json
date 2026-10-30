@@ -35,7 +35,7 @@
       "h": "The loan the aggregator gets",
       "ul": [
         "70 percent of project cost with at least 30 percent from the promoter; IREDA may go to 75 percent based on creditworthiness and track record.",
-        "Repayment up to 10 years, after a 12-month moratorium from commissioning, with construction finished within 12 months of first disbursement.",
+        "Repayment up to 10 years, with a 12-month moratorium from commissioning and construction finished within 12 months of first disbursement. Up to 15 years is possible where at least 80 percent of private offtakers are rated A- or above.",
         "A lender's engineer reviews the project before sanction, during construction and at commissioning, and compares actual performance with what was promised.",
         "IREDA is a lender and does not give subsidy; ask MNRE about government support."
       ]
@@ -52,7 +52,7 @@
     ],
     "note": "Use the installer's site estimate for yield. On its own, a roof this size is a bank, SIDBI or installer-financed project; inside an aggregator's portfolio it can be IREDA-financed."
   },
-  "senseible": "Whoever finances the plant, the sizing and the lender's performance check start from your bills. Senseible's green loan readiness check reads them into monthly units and CO2, the figures an installer and lender use to size the plant and confirm the saving. Senseible does not lend.",
+  "senseible": "Whoever finances the plant, the sizing and the lender's performance check start from your bills. Senseible reads them into monthly units and CO2, the figures an installer and lender use to size the plant and confirm the saving, and its green loan check shows what else they will ask for. Senseible does not lend.",
   "links": [
     {
       "label": "Green loan readiness check",

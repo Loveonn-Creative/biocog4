@@ -43,16 +43,16 @@
       ]
     },
     {
-      "h": "Why the offtake contract is the hard part",
+      "h": "Getting the offtake contract signed",
       "p": [
-        "Supply is usually easier than sales. Your buyers are boilers and kilns switching from coal, and they will sign a multi-year contract only if the switch works for them on cost and on their own carbon reporting. A buyer that can show its coal use falling month by month, from its own invoices, is a buyer that renews. Bring that story to the lender with the offtake contract."
+        "Your buyers are boilers and kilns switching from coal, and they will sign a contract longer than your loan only if the switch works for them on cost and on their own carbon reporting. A buyer that can show its coal purchases falling month by month, from its own invoices, has a reason to renew. Show the lender that evidence alongside the offtake contract."
       ]
     }
   ],
   "example": {
     "title": "A ₹3 crore pellet plant under each document",
     "lines": [
-      "Project cost: ₹3 crore (illustrative)",
+      "Project cost: ₹3 crore (assumed)",
       "2026 norms: loan 70 percent = ₹2.1 crore; your share ₹90 lakh; up to 10 years after moratorium",
       "2022 sheet: also 70 percent at this size, but only 6 years to repay",
       "Coverage test: if yearly loan payments are ₹40 lakh, cash available to pay them must average above 1.20 x ₹40 lakh = ₹48 lakh",
@@ -60,7 +60,7 @@
     ],
     "note": "Stretching the same ₹2.1 crore over 10 years instead of 6 lowers each year's payment, which is what makes the 1.20 coverage test easier to pass."
   },
-  "senseible": "Senseible does not lend or appraise plants. Its green loan readiness check turns electricity bills and fuel invoices into monthly energy and carbon records, which your buyers can use to show the coal they replaced with your pellets.",
+  "senseible": "Senseible does not lend or appraise plants. It reads your buyers' fuel invoices and electricity bills into monthly energy and carbon records, so they can show the coal your pellets replaced. Its green loan check shows what a credit team will look for.",
   "links": [
     {
       "label": "Green loan readiness check",

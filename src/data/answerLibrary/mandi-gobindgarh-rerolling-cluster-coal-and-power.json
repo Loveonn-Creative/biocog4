@@ -2,7 +2,7 @@
   "slug": "mandi-gobindgarh-rerolling-cluster-coal-and-power",
   "q": "How much coal and power do Mandi Gobindgarh's re-rolling mills use, and what does a typical mill emit?",
   "title": "Mandi Gobindgarh mills: coal, power and CO2",
-  "short": "TERI's cluster profile puts Mandi Gobindgarh's rolling mills at 70,909 tonnes of coal and 110 million kWh a year (2014-15). A typical mill uses about 345 toe a year, roughly 440 t of coal and 680,000 kWh, which works out to about 1,240 t CO2 a year (estimate).",
+  "short": "A typical Mandi Gobindgarh rolling mill uses about 345 toe a year, roughly 440 t of coal and 680,000 kWh. That comes to about 1,240 t CO2 a year (estimate), nearly two-thirds of it from coal in the reheating furnace. Together the town's mills burnt 70,909 t of coal and 110 million kWh in 2014-15.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Owners and managers of steel re-rolling mills in Mandi Gobindgarh, Punjab",
@@ -39,7 +39,7 @@
       "ul": [
         "Redesign the reheating furnace: the profile puts the saving at 15 to 20%, because zone temperatures are not monitored and insulation is poor.",
         "Fix the recuperator: as a thumb rule, every 20 °C more preheat on combustion air saves about 1% of fuel. Most local recuperators are under-designed.",
-        "Gas in the furnace: the profile records GAIL's offer to supply gas from the Dadri to Nangal pipeline. If gas reaches your gate, it removes the coal line, which carries most of your CO2."
+        "Gas in the furnace: the profile records GAIL's offer to supply gas from its Dadri to Nangal line. If gas reaches your gate, it replaces coal, your biggest CO2 line, with a fuel that carries less carbon for the same heat."
       ]
     },
     {

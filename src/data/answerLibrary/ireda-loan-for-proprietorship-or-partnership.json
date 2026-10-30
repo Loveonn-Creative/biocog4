@@ -10,7 +10,7 @@
     {
       "h": "Who IREDA lends to on normal terms",
       "ul": [
-        "Private sector companies, firms and LLPs.",
+        "Private sector companies and LLPs.",
         "Central public sector undertakings, state utilities and joint sector companies.",
         "All of them registered in India, with borrowing powers and the power to take up renewable energy or energy efficiency projects."
       ]
@@ -38,7 +38,7 @@
     {
       "h": "Is the guarantee route worth it?",
       "p": [
-        "It is not all cost. When the loan is backed by a bank guarantee or fixed deposit equal to the amount sanctioned, IREDA charges the rate for its best risk grade, Grade I. The catch is that your bank must be willing to stand behind the full amount, and a bank prepared to do that may simply lend to you itself. Compare both offers side by side. If you plan more than one project, converting to an LLP or private company moves you into IREDA's normal category; take your accountant's advice on the tax and liability side first.",
+        "It is not all cost. When the loan is backed by a bank guarantee or fixed deposit equal to the amount sanctioned, IREDA charges the Grade I rate, its best risk grade, on projects under its credit risk rating, and cuts 1 percent off the rate on other projects. The catch is that your bank must be willing to stand behind the full amount, and a bank prepared to do that may simply lend to you itself. Compare both offers side by side. If you plan more than one project, converting to an LLP or private company moves you into IREDA's normal category; take your accountant's advice on the tax and liability side first.",
         "Two more rules matter for small units: IREDA's minimum loan is Rs 50 lakh unless a scheme says otherwise, and a micro or small enterprise is exempt from the external credit rating IREDA otherwise asks for while a project is being built."
       ]
     }
@@ -53,7 +53,7 @@
     ],
     "note": "The bank sets its own margin and fee for issuing an Rs 84 lakh guarantee; get that figure before comparing with a direct bank loan."
   },
-  "senseible": "Senseible does not lend, stand behind a loan or decide eligibility. Its green loan readiness check turns your electricity bills and fuel invoices into the energy and carbon figures a lender looks for in a renewable or efficiency project, whichever lender you choose.",
+  "senseible": "Senseible does not lend, stand behind a loan or decide eligibility. It reads your electricity bills and fuel invoices into the energy and carbon figures a lender looks for in a renewable or efficiency project, whichever lender you choose, and its green loan check shows what else is missing.",
   "links": [
     {
       "label": "Green loan readiness check",
@@ -74,7 +74,7 @@
   ],
   "sources": [
     {
-      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026: chapter 3 general eligibility conditions, chapter 4 minimum loan Rs 50 lakh, chapter 5 loan quantum, external rating exemption for MSE borrowers, Grade I rate against bank guarantee or FDR",
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026: chapter 3 general eligibility conditions, chapter 4 minimum loan Rs 50 lakh, chapter 5 loan quantum, external rating exemption for MSE borrowers, Grade I rate or 1% rebate against bank guarantee or FDR",
       "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
     }
   ],

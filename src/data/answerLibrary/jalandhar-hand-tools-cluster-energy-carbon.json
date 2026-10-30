@@ -2,7 +2,7 @@
   "slug": "jalandhar-hand-tools-cluster-energy-carbon",
   "q": "How much energy per tonne do Jalandhar hand tool makers use, and what does it mean for EU buyers?",
   "title": "Jalandhar hand tools: energy and CO2 per tonne",
-  "short": "TERI's cluster brief puts Jalandhar's 950 hand tool units at 19,829 toe a year for about 50,000 t of tools, 0.399 toe per tonne. That is about 2.2 t CO2 per tonne of tools at today's factors (estimate), mostly from grid power, before the steel itself.",
+  "short": "Making a tonne of hand tools in Jalandhar takes about 0.399 toe, roughly 2.2 t CO2 at today's factors (estimate), most of it from grid power and before the steel itself. That is TERI's average across 950 units making about 50,000 t of tools a year.",
   "topic": "product",
   "intent": "explain",
   "audience": "Spanner, plier, vice and hammer makers in Jalandhar's Focal Point and industrial estates, and their export buyers",
@@ -28,7 +28,7 @@
     {
       "h": "What it means for an EU buyer",
       "p": [
-        "Hand tools sit in Chapter 82, outside CBAM, so your buyer pays no border charge on them. What they ask for instead is a figure per tool for their own supply chain reporting. The making stage comes from your bills; the steel bar comes from your steel supplier, and for most tools it is the bigger part, so ask the mill or stockist for its figure per tonne."
+        "Hand tools sit in Chapter 82, outside CBAM, so your buyer pays no border charge on them. What they ask for instead is a figure per tool for their own supply chain reporting. The making stage comes from your bills. The steel bar comes from your steel supplier and can weigh as much as your own making stage or more, so ask the mill or stockist for its figure per tonne."
       ]
     },
     {
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "h": "Moves TERI found",
+      "h": "Fixes TERI found in the cluster",
       "ul": [
         "Redesigned forging furnaces on natural gas: up to 30% energy saving. The forging furnace takes about 80% of a unit's oil.",
         "Better insulation and working temperature controllers on heat treatment furnaces: about 10%.",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "h": "Records to keep",
+      "h": "Papers that back your figure",
       "ul": [
         "PSPCL bills and generator diesel invoices.",
         "Furnace oil and LDO invoices, split between forging and heat treatment if you can.",
@@ -62,7 +62,7 @@
       "Oil: (81.6 + 31.2) lakh litres = 112.8 lakh litres x 2.97 = 33,502 t CO2",
       "Total: 76,613 + 33,502 = 110,115 t CO2 for about 50,000 t of tools",
       "Per tonne: 110,115 / 50,000 = 2.2 t CO2; TERI's own figure was 2.3",
-      "A 250 g spanner: 0.25 kg x 2.2 kg = 0.55 kg CO2 from making, plus its steel"
+      "A 250 g spanner: 0.25 kg x 2.2 kg CO2 per kg = 0.55 kg CO2 from making, plus its steel"
     ],
     "note": "Cluster totals from TERI's 2010-11 visits, Senseible's furnace oil factor applied to all oil, and the FY 2025-26 grid factor. Wood is left out as biogenic. Your bills and despatch register give your figure."
   },

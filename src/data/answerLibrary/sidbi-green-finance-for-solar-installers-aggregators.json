@@ -44,7 +44,7 @@
     {
       "h": "Evidence for each roof",
       "p": [
-        "Lenders financing a portfolio want to know each plant is sized to real demand and performs as promised. For every customer, keep twelve months of grid bills before installation and the bills and generation after. That shows the plant is not oversized, supports the payments under a power purchase agreement, and gives the CO2 avoided per site that lenders increasingly report."
+        "Lenders financing a portfolio want to know each plant is sized to real demand and performs as promised. For every customer, keep twelve months of grid bills before installation and the bills and generation after. That shows the plant is not oversized, supports the payments under a power purchase agreement, and gives the CO2 avoided per site, which green lenders report on."
       ]
     }
   ],
@@ -52,7 +52,7 @@
     "title": "An installer funds 30 factory roofs of 200 kW",
     "lines": [
       "Portfolio: 30 x 200 kW = 6,000 kW",
-      "Portfolio cost from your EPC estimates: ₹24 crore (illustrative)",
+      "Portfolio cost from your EPC estimates: ₹24 crore (assumed, about ₹4 crore per MW)",
       "Maximum GFS loan: 75 percent = ₹18 crore; your equity ₹6 crore",
       "Yearly output: 6,000 kW x 1,400 kWh per kW (assumed yield) = 84,00,000 kWh",
       "CO2 avoided: 84,00,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 56,70,000 kg, about 5,670 tonnes a year",

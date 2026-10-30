@@ -2,7 +2,7 @@
   "slug": "panipat-textile-cluster-fuels-and-carbon",
   "q": "Panipat's textile units burn biomass and pet coke: what is the cluster's carbon picture?",
   "title": "Panipat textile cluster: fuels and carbon",
-  "short": "In TERI's 2014-15 survey, Panipat's 3,095 textile MSMEs used 305,950 toe a year, 97% of it heat. Biomass was 77% of energy and pet coke 20%, yet pet coke made most of the fossil CO2, about 250,000 t a year by estimate. Which fuel feeds your heater decides your number.",
+  "short": "Pet coke was only a fifth of Panipat's textile energy in TERI's 2014-15 survey, yet it made most of the fossil CO2, about 250,000 t a year by estimate. Biomass was 77% of the 305,950 toe used by 3,095 MSMEs. Which fuel feeds your boiler or heater decides your number.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Home furnishing, blanket, floor covering, dyeing and yarn units in Panipat's Sector 25, Sector 29 and the industrial area",
@@ -33,12 +33,11 @@
       "h": "Who asks for this",
       "ul": [
         "Overseas buyers of blankets, rugs and furnishings who count their supply chain emissions.",
-        "Lenders financing a boiler, heater or stenter upgrade, who want the fuel saving in numbers.",
-        "Buyers checking recycled-fibre claims, who also look at energy per kg."
+        "Lenders financing a boiler, heater or stenter upgrade, who want the fuel saving in numbers."
       ]
     },
     {
-      "h": "Moves TERI's profile points to",
+      "h": "Boiler and heater fixes from the profile",
       "ul": [
         "Three-pass boilers in place of single-pass ones, with economisers on the flue gas.",
         "Air preheaters and control on thermic fluid heaters, and VFDs on circulation pumps that run at full speed after the stenter reaches temperature.",
@@ -46,7 +45,7 @@
       ]
     },
     {
-      "h": "Records to keep",
+      "h": "Keep wood and pet coke apart in your books",
       "ul": [
         "Fuel purchases by weight and type, with wood and pet coke on separate lines.",
         "Electricity bills and generator diesel invoices.",
@@ -65,7 +64,7 @@
     ],
     "note": "Built from TERI's 2014-15 shares with IPCC default values for pet coke (32.5 GJ per tonne, 97.5 kg CO2 per GJ) and the FY 2025-26 grid factor. TERI's total used its own factor set. Your invoices give your figure."
   },
-  "senseible": "Upload your fuel invoices and electricity bills and Senseible gives your Scope 1 and 2 figure with each fuel on its own line, fossil and biomass kept apart, so the number you show a buyer or bank matches the fuel you actually burn.",
+  "senseible": "Upload your fuel invoices and electricity bills and Senseible builds a dated record with each fuel on its own line and biomass kept apart from fossil fuel, so the number you show a buyer or bank matches the fuel you actually burn.",
   "links": [
     { "label": "Get your carbon number", "to": "/msme-carbon-number" },
     { "label": "Panipat exporters: EU buyer data", "to": "/answers/panipat-home-furnishing-exporter-eu-buyer-data" },
