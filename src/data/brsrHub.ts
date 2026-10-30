@@ -118,6 +118,30 @@ export const SUPPLIER_LINES: string[] = [
   'Expect to be asked for Scope 1 and 2, energy, water and waste for April to March, with the bills behind them.',
 ];
 
+/* ---------- Value chain asks: hero list and the supplier's reply sheet ---------- */
+
+// Asks: SUPPLIER_LINES[2]. Records: ATTRIBUTES 1 to 4. Only Scope 1 and 2 and
+// energy are built from bills (ATTRIBUTES fromBills).
+export const CHAIN_ASKS = [
+  { ask: 'Scope 1 and 2 emissions', record: 'From fuel invoices and electricity bills', bills: true },
+  { ask: 'Total energy', record: 'From electricity bills and fuel invoices', bills: true },
+  { ask: 'Water', record: 'From water supply bills, borewell meter readings, tanker invoices', bills: false },
+  { ask: 'Waste', record: 'From weighbridge slips, waste manifests, recycler receipts', bills: false },
+];
+
+// Units follow the BRSR format: emissions in tonnes of CO2 equivalent, energy in
+// GJ (brsr-energy-intensity-calculation), water in kilolitres
+// (water-intensity-calculation-for-brsr), waste in tonnes by category
+// (brsr-waste-categories-how-to-fill). Papers are ATTRIBUTES[0..3].records.
+export interface ReplyRow { ask: string; unit: string; proof: string; fromBills: boolean }
+export const REPLY_ROWS: ReplyRow[] = [
+  { ask: 'Scope 1 emissions', unit: 't CO2e', proof: 'Fuel invoices', fromBills: true },
+  { ask: 'Scope 2 emissions', unit: 't CO2e', proof: 'Electricity bills', fromBills: true },
+  { ask: 'Total energy consumed', unit: 'GJ', proof: ATTRIBUTES[2].records, fromBills: true },
+  { ask: 'Total water consumption', unit: 'kL', proof: ATTRIBUTES[1].records, fromBills: false },
+  { ask: 'Total waste generated', unit: 't', proof: ATTRIBUTES[3].records, fromBills: false },
+];
+
 /* ---------- From bills to Principle 6 figures ---------- */
 
 export type FieldId = 'scope1' | 'scope2' | 'energy' | 'renewable';
