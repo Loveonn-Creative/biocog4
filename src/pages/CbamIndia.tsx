@@ -203,7 +203,7 @@ function VerifierCheck() {
     <section className="cbi-sec cbi-verify">
       <div>
         <h2 className="cbi-h2">A verifier checks how you got the number, not just the number</h2>
-        <p className="cbi-sub">This is the file they open. Senseible builds it as your data comes in, then it is verified by our in-house verifier or an external verifier you choose.</p>
+        <p className="cbi-sub">This is the file they open. We build it from your records, check every figure in-house, and an accredited verifier we partner with signs it off. Have your own verifier? Send it to them.</p>
         <button type="button" className="cbi-btn" onClick={run}>{n >= VERIFIER_CHECKS.length ? "Run it again" : "Run the check"}</button>
       </div>
       <ul className="cbi-checks">

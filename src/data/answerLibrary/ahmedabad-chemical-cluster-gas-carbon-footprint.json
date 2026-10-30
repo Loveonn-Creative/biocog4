@@ -1,0 +1,81 @@
+{
+  "slug": "ahmedabad-chemical-cluster-gas-carbon-footprint",
+  "q": "What is the carbon footprint of Ahmedabad's chemical units in Vatva, Naroda and Odhav, and how does one unit compare?",
+  "title": "Ahmedabad chemical units: carbon footprint",
+  "short": "A typical dyes and pigments unit in Vatva uses about 532 toe a year, close to 1,540 t CO2, nearly three-quarters of it from natural gas. Across Ahmedabad's 750 chemical units, TERI's BEE study counted 144,624 toe in 2020-21, roughly 488,000 t CO2 at today's factors (estimate).",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Dye, dye intermediate and chemical units in GIDC Vatva, Naroda and Odhav",
+  "sections": [
+    {
+      "h": "The cluster, by estate and fuel",
+      "p": [
+        "About 600 units in Vatva, 100 in Naroda and 50 in Odhav. Around 80% make dyes and dye intermediates, and about 76% are small units producing 200 to 600 tonnes a year.",
+        "In 2020-21 the cluster burnt 121 million scm of natural gas, 18,000 t of coal and 10,800 t of biomass, and bought 308 million kWh. Gas fires the boilers, thermic fluid heaters and hot air generators for dryers; some micro and small units still burn wood or coal."
+      ]
+    },
+    {
+      "h": "Where your unit sits",
+      "ul": [
+        "Unit sizes in the study run from 15.1 to 2,080.6 toe a year.",
+        "Typical dyes and pigments unit: 478.2 toe of heat and 53.6 toe of electricity, 531.8 toe in all.",
+        "Typical other-chemicals unit: 129 toe of heat and 52.8 toe of electricity, 181.8 toe.",
+        "Heat is 89.2% of energy across the units studied, so the dryer and the boiler set your number."
+      ]
+    },
+    {
+      "h": "What a tonne of dye carries",
+      "p": [
+        "Divide your year's CO2 by tonnes produced. A small unit at 400 t a year with the typical dyes profile would carry close to 3.9 t CO2 per tonne from its own energy, before the raw materials it buys. Drying in tray and spin flash dryers takes 20 to 36 hours a batch, the longest and one of the most heat-hungry steps, so start looking there."
+      ]
+    },
+    {
+      "h": "Who asks, and why CBAM is not it",
+      "p": [
+        "Dyes, pigments and most organic chemicals are not CBAM goods. The requests come from customers: textile and leather processors counting their purchased chemicals, multinational buyers asking for a product carbon footprint per kg, and lenders financing a boiler or dryer upgrade."
+      ]
+    },
+    {
+      "h": "Where the study says to cut",
+      "ul": [
+        "Feed-water preheating from boiler flue gas, and air-to-fuel control on thermic fluid heaters.",
+        "Temperature-based control on spray dryer fans and feed pumps.",
+        "Timers on reactors and ball mills to stop idle running, IE3 motors in place of rewound ones, and rooftop solar."
+      ]
+    },
+    {
+      "h": "What to file each month",
+      "ul": [
+        "Monthly gas bills in scm and electricity bills in kWh.",
+        "Coal or wood invoices by weight if you use any.",
+        "Batch register with kg produced per product, so shared steam can be split by batch."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: one typical dyes and pigments unit for a year",
+    "lines": [
+      "Heat: 478.2 toe x 10 million kcal / 8,750 kcal per scm = 546,500 scm of gas",
+      "Gas CO2: 546,500 scm x 2.05 = 1,120 t CO2",
+      "Electricity: 53.6 toe at the study's 860 kcal per kWh = 623,300 kWh x 0.675 = 421 t CO2",
+      "Total: 1,120 + 421 = 1,541 t CO2 a year",
+      "Cluster: gas 121 million scm x 2.05 = 248,050 t; coal 18,000 t x 1.76 = 31,680 t; power 308 million kWh x 0.675 = 207,900 t; about 487,630 t"
+    ],
+    "note": "Assumes all heat is gas, using the study's 8,750 kcal per scm and Senseible's default factors with the FY 2025-26 grid factor. Biomass CO2 is reported separately and left out. Your bills give your figure."
+  },
+  "senseible": "Senseible reads your gas and electricity bills into a dated Scope 1 and 2 record with the factor behind each line; add tonnes produced and you have the per-tonne figure a customer or lender asks for.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "Vatva dye intermediate boiler CO2", "to": "/answers/vatva-dye-intermediate-unit-boiler-co2" },
+    { "label": "Answering a TfS PCF request", "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier" },
+    { "label": "Green loans for Gujarat chemical plants", "to": "/climate-intelligence/green-loan-chemical-plant-gujarat" }
+  ],
+  "sources": [
+    { "label": "TERI for BEE, Cluster Profile Report: Ahmedabad Chemical Cluster (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/Ahmedabad%20chemical%20cluster.pdf" },
+    { "label": "SAMEEEKSHA, Ahmedabad chemicals cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=148&Itemid=502" },
+    { "label": "Regulation (EU) 2023/956 (CBAM), Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-29"
+}

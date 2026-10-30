@@ -101,7 +101,7 @@ const CalculatorsHub = () => {
         <div className="container max-w-6xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-10">
             <Badge variant="outline" className="mb-3 border-primary/30 text-primary">
-              <Calculator className="w-3 h-3 mr-1" /> Free tools
+              <Calculator className="w-3 h-3 mr-1" /> No sign-up
             </Badge>
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 font-display">Climate Calculators</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">

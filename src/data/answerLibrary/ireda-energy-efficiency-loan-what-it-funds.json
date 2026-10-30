@@ -1,0 +1,93 @@
+{
+  "slug": "ireda-energy-efficiency-loan-what-it-funds",
+  "q": "What energy efficiency projects will IREDA finance?",
+  "title": "What IREDA's energy efficiency loans fund",
+  "short": "IREDA finances energy efficiency retrofits, whole-process changes, waste heat recovery for power, ESCO projects and turnkey efficient equipment, in sectors from steel and textiles to glass, ceramics and buildings. The minimum loan is ₹50 lakh, and a private project normally gets up to 70 percent of its cost.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Plant heads and finance managers in energy-intensive MSMEs, and ESCOs looking for project debt",
+  "sections": [
+    {
+      "h": "Project types IREDA lists",
+      "ul": [
+        "Replacing or retrofitting selected equipment with energy-efficient equipment.",
+        "Changing an entire manufacturing process.",
+        "Recovering waste heat to generate power.",
+        "ESCO projects, where an energy service company invests and is paid from the saving.",
+        "Turnkey projects to make, supply, erect and commission energy-efficient equipment."
+      ]
+    },
+    {
+      "h": "Sectors it names",
+      "p": [
+        "Iron and steel, fertilisers, textiles, cement, pulp and paper, aluminium, sugar, petrochemicals, glass and ceramics, refineries, domestic and commercial users, street lighting, demand side management schemes and buildings. A foundry, forging shop, ceramic kiln or textile processor sits inside this list."
+      ]
+    },
+    {
+      "h": "How much of the project IREDA will fund",
+      "ul": [
+        "Normally up to 70 percent of project cost, with 30 percent from the promoter.",
+        "The higher shares, 75 percent and up to 80 percent with 4:1 debt to equity, are open to energy efficiency projects only where the underlying contract is with a government or government-owned entity. A private factory retrofit should plan on 70 percent.",
+        "Minimum loan ₹50 lakh, unless a specific scheme says otherwise.",
+        "Procurement must follow established market practice, and you must show the equipment was bought at reasonable, competitive prices."
+      ]
+    },
+    {
+      "h": "Help around the loan",
+      "p": [
+        "IREDA points borrowers to BEE's grading of energy efficiency projects, with reimbursement of the grading fee, and lists securitisation under BEE's Partial Risk Guarantee Fund and SIDBI's Partial Risk Sharing Facility. Ask IREDA whether a facility is open for new projects before you count on it."
+      ]
+    },
+    {
+      "h": "What makes the saving believable",
+      "p": [
+        "An efficiency loan is repaid from the saving, so the appraisal turns on it. Give the lender the baseline from at least twelve months of bills and production, the saving the auditor or equipment supplier expects, and how you will measure it after commissioning: the same meter, the same units, energy per tonne. A grading from BEE adds an outside view of the same numbers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Why the ₹50 lakh minimum decides the lender",
+    "lines": [
+      "Project 1: compressor and drive retrofit, ₹60 lakh. IREDA share at 70 percent = ₹42 lakh, below the ₹50 lakh minimum, so IREDA is not the lender",
+      "Project 2: waste heat recovery for power at a rolling mill, ₹1.5 crore. IREDA share at 70 percent = ₹1.05 crore; your share ₹45 lakh",
+      "Project 2 output: 8,00,000 kWh a year (assumed; take it from the feasibility study)",
+      "CO2 avoided if it displaces grid power: 8,00,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 5,40,000 kg, about 540 tonnes a year"
+    ],
+    "note": "To use IREDA, a project needs a cost of at least ₹71.4 lakh (₹50 lakh / 0.70). Smaller projects fit SIDBI's 4E loan or a bank loan better."
+  },
+  "senseible": "Senseible reads twelve months of electricity bills and fuel invoices into monthly energy and CO2 records, the baseline an efficiency appraisal starts from, then compares later bills against it. The green loan readiness check shows what is still missing. Senseible does not lend or grade projects.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "BEE grading of efficiency projects",
+      "to": "/answers/bee-energy-efficiency-project-grading"
+    },
+    {
+      "label": "SIDBI 4E loan terms",
+      "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
+    },
+    {
+      "label": "Project report for an efficiency loan",
+      "to": "/answers/energy-efficiency-loan-detailed-project-report"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IREDA, Energy Efficiency and Conservation sector page: project types, sectors covered, BEE grading, PRGF and PRSF securitisation, procurement",
+      "url": "https://www.ireda.in/IredaWebPortal/loan-products/sectors/energy-efficiency"
+    },
+    {
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026, chapters 4 and 5: ₹50 lakh minimum loan, 70% normal loan share, 75% and 80% for energy efficiency only with a government counterparty",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Scheme terms change; re-check IREDA's latest Financing Norms on ireda.in every quarter."
+}

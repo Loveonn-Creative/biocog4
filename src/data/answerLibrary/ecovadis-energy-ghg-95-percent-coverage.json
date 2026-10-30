@@ -1,0 +1,81 @@
+{
+  "slug": "ecovadis-energy-ghg-95-percent-coverage",
+  "q": "Why did EcoVadis not credit our energy and emissions figures?",
+  "title": "EcoVadis: why energy figures got no credit",
+  "short": "EcoVadis credits energy consumption and greenhouse gas figures only if they cover at least 95% of the scope you are assessed on. Other reported figures need 80%. Numbers for your main plant alone, or a figure typed into the questionnaire with no supporting document, earn nothing.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME suppliers with more than one plant or site in their EcoVadis scope",
+  "sections": [
+    {
+      "h": "The rule in EcoVadis's own methodology",
+      "p": [
+        "Reporting counts only if it covers at least 80% of the scope of assessment, except energy consumption and greenhouse gas emissions, which must cover 95%. A separate rule says only questionnaire answers backed by a document are credited, and the document has to be linked to the right answer."
+      ]
+    },
+    {
+      "h": "Five reasons a figure gets thrown out",
+      "ul": [
+        "It covers one plant, and your scope includes a second plant, a warehouse or a head office.",
+        "It leaves out a fuel: the diesel genset, the LPG furnace or the company vehicles.",
+        "The document is a scanned photo. EcoVadis needs machine-readable files with real text, in PDF, DOCX, XLSX, JPG or PNG, under 30 MB.",
+        "The document has no date, or does not show it belongs to your company.",
+        "The figure is more than two years old. EcoVadis treats reported indicators as valid for two years."
+      ]
+    },
+    {
+      "h": "Check your coverage before you submit",
+      "ol": [
+        "List every site and entity in your EcoVadis scope, exactly as the questionnaire set-up shows it.",
+        "For each site, collect 12 months of electricity bills and every fuel purchase: diesel, LPG, PNG, furnace oil, coal.",
+        "Convert them: kWh times the CEA grid factor gives Scope 2; litres or kilograms of fuel times its factor gives Scope 1.",
+        "Add up by site and see what share your figure covers. If any site is missing, get its bills before you submit; a partial figure is treated like no figure.",
+        "Upload one dated summary that shows the total, the method and the sites covered, and link it to the energy and emissions answers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Rajkot pump-parts maker with two plants, FY 2025-26",
+    "lines": [
+      "Plant 1 grid power: 360,000 kWh x 0.675 kg CO2/kWh = 243.0 t CO2.",
+      "Plant 1 diesel genset: 6,000 L x 2.645 kg CO2/L = 15.9 t CO2.",
+      "Plant 2 grid power: 150,000 kWh x 0.675 = 101.3 t CO2.",
+      "Plant 2 LPG furnace: 4,000 kg x 2.98 kg CO2/kg = 11.9 t CO2.",
+      "Company total: 372.0 t CO2. Plant 1 alone: 258.9 t, which is 69.6% of the total.",
+      "Reporting Plant 1 only falls well short of 95%, so the figure scores nothing. Both plants together cover 100%."
+    ],
+    "note": "Grid factor: CEA CO2 Baseline Database version 22.0 for FY 2025-26. Fuel factors: IPCC 2006 defaults. EcoVadis does not publish how it measures the 95%; share of emissions is a self-check, not its formula."
+  },
+  "senseible": "Upload a year of bills for every site and Senseible gives Scope 1 and 2 by site with the bill behind each line, so a missing plant shows up before EcoVadis finds it. Its team can then draft the energy and emissions answers from that record for you to review and submit.",
+  "links": [
+    {
+      "label": "Get Scope 1 and 2 from your bills",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Carbon evidence EcoVadis asks for",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    },
+    {
+      "label": "EcoVadis deadline: what to do first",
+      "to": "/answers/ecovadis-questionnaire-deadline"
+    },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Sustainability Rating methodology disclosure document (2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/04/EcoVadis-Sustainability-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian power sector",
+      "url": "https://cea.nic.in"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Re-check the 95% and 80% coverage thresholds, document rules and two-year data validity in each new EcoVadis methodology edition; update the CEA grid factor when a new version is published."
+}

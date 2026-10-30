@@ -124,7 +124,7 @@ export function QuestionRadar({ slug }: { slug: string }) {
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">{i + 1}</span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-[15px] font-medium leading-snug group-hover:text-primary">{h.title}</span>
-                      <span className="mt-1 block text-xs text-muted-foreground">{h.kind === 'answer' ? 'Answer' : h.kind === 'tool' ? 'Free tool' : 'Guide'} · {STRENGTH[h.strength]}</span>
+                      <span className="mt-1 block text-xs text-muted-foreground">{h.kind === 'answer' ? 'Answer' : h.kind === 'tool' ? 'Tool, no sign-up' : 'Guide'} · {STRENGTH[h.strength]}</span>
                     </span>
                     <ArrowRight className="mt-1 h-4 w-4 shrink-0 opacity-40 group-hover:opacity-100" aria-hidden="true" />
                   </Link>
