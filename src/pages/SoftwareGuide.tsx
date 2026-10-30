@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { STATIC_PAGE_META, canonicalUrl } from "@/lib/seo/seoMeta";
 import {
-  GUIDE_BY_ID, GUIDE_BY_PATH, MARK_LABEL, itemListLd, lastChecked, rankFor,
+  GUIDE_BY_ID, GUIDE_BY_PATH, MARK_LABEL, itemListLd, lastChecked, quickAnswers, rankFor,
   type Fit, type Guide, type Mark, type Situation,
 } from "@/data/softwareGuides";
 import "./softwareGuides.css";
@@ -178,10 +178,16 @@ export default function SoftwareGuide({ path }: { path: string }) {
     return [...g.criteria].sort((a, b) => (sit.weights[b.id] ?? 0) - (sit.weights[a.id] ?? 0));
   }, [g, sit]);
   const ld = useMemo(() => JSON.stringify(itemListLd(g, canonicalUrl)), [g]);
+  const answers = useMemo(() => quickAnswers(g), [g]);
+  const listRef = useRef<HTMLOListElement>(null);
+  const showRanking = (id: string) => {
+    setSitId(id);
+    listRef.current?.scrollIntoView({ behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  };
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title={meta.title} description={meta.description} canonical={path} type="article" keywords={g.keywords}
+      <SEOHead title={meta.title} description={meta.description} canonical={path} type="article" keywords={g.keywords} faqSchema={answers}
         article={{ publishedTime: lastChecked(g.id), modifiedTime: lastChecked(g.id) }}
         breadcrumbs={[{ name: "Home", url: "/" }, { name: g.h1, url: path }]} />
       <Helmet><script type="application/ld+json">{ld}</script></Helmet>
@@ -208,11 +214,24 @@ export default function SoftwareGuide({ path }: { path: string }) {
           </p>
         </section>
 
-        <ol className="sg-list" aria-label={sit ? `Ranked for: ${sit.label}` : "All entries"}>
+        <ol ref={listRef} className="sg-list" aria-label={sit ? `Ranked for: ${sit.label}` : "All entries"}>
           {ranked.map((f, i) => (
             <Item key={f.product.id} g={g} f={f} rank={i + 1} chosen={!!sit} refFn={flipRef(f.product.id)} />
           ))}
         </ol>
+
+        <section className="sg-section" aria-labelledby="sg-qa-h">
+          <h2 className="sg-h2" id="sg-qa-h">Quick answers</h2>
+          <div className="sg-qa">
+            {g.situations.filter(s => s.q).map((s, i) => (
+              <details key={s.id} className="sg-qa-item">
+                <summary>{s.q}</summary>
+                <p>{answers[i].answer}</p>
+                <button type="button" className="sg-clear" onClick={() => showRanking(s.id)}>See the full ranking</button>
+              </details>
+            ))}
+          </div>
+        </section>
 
         {g.context && (
           <section className="sg-section sg-context">

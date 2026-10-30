@@ -108,6 +108,16 @@
 .sg-choose-l { font-weight: 600; line-height: 1.4; }
 .sg-choose-tag { margin-left: .5rem; font-size: .72rem; font-weight: 700; color: hsl(var(--primary)); white-space: nowrap; }
 .sg-choose-a { margin-top: .25rem; font-size: .925rem; color: hsl(var(--muted-foreground)); }
+.sg-qa { margin-top: 1.25rem; max-width: 50rem; border-top: 1px solid hsl(var(--border)); }
+.sg-qa-item { border-bottom: 1px solid hsl(var(--border)); }
+.sg-qa-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 1rem; padding: .95rem 0; font-weight: 600; line-height: 1.4; }
+.sg-qa-item summary::-webkit-details-marker { display: none; }
+.sg-qa-item summary::after { content: "+"; flex: none; font-weight: 500; color: hsl(var(--primary)); transition: transform .2s; }
+.sg-qa-item[open] summary::after { transform: rotate(45deg); }
+.sg-qa-item summary:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
+.sg-qa-item p { padding-bottom: .4rem; color: hsl(var(--muted-foreground)); line-height: 1.55; }
+.sg-qa-item .sg-clear { margin: 0 0 .9rem; }
+@media (prefers-reduced-motion: reduce) { .sg-qa-item summary::after { transition: none; } }
 .sg-next { margin-top: 1.5rem; font-size: .95rem; }
 .sg-next a, .sg-related a { font-weight: 650; color: hsl(var(--primary)); text-underline-offset: 4px; }
 .sg-next a:hover, .sg-related a:hover { text-decoration: underline; }

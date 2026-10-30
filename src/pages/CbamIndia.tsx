@@ -135,7 +135,7 @@ export default function CbamIndia() {
             <Link to="/answers/cbam-default-value-india-cement-clinker">Cement and clinker</Link>
             <Link to="/answers/cbam-default-value-india-dap-npk">Fertilisers</Link>
           </div>
-          <p className="cbi-sub">Weighing other CBAM tools too? <Link to="/best-cbam-software" className="font-semibold text-foreground underline decoration-primary/50 underline-offset-4 hover:decoration-primary">See CBAM software for exporters and importers side by side</Link>, ours included.</p>
+          <p className="cbi-sub">Weighing other CBAM tools too? <Link to="/best-cbam-software" className="font-semibold text-foreground underline decoration-primary/50 underline-offset-4 hover:decoration-primary">See CBAM software for 2027, exporters and importers side by side</Link>, ours included.</p>
         </section>
 
         {/* 6. Answers */}

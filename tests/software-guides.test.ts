@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { readFileSync } from 'fs';
-import { GUIDES, GUIDE_BY_ID, defaultOrder, itemListLd, lastChecked, productsFor, rankFor } from '../src/data/softwareGuides';
+import { GUIDES, GUIDE_BY_ID, defaultOrder, itemListLd, lastChecked, productsFor, quickAnswers, rankFor } from '../src/data/softwareGuides';
 import { STATIC_PAGE_META, fitTitle } from '../src/lib/seo/seoMeta';
 import { TIER_PRICES } from '../src/lib/pricing/pricingMath';
 
@@ -145,5 +145,20 @@ describe('software guides', () => {
     expect(readFileSync('src/pages/BrsrReporting.tsx', 'utf8')).toContain('/best-brsr-software');
     expect(readFileSync('src/pages/CarbonCreditsIndia.tsx', 'utf8')).toContain('/carbon-credit-platforms');
     expect(readFileSync('src/pages/GreenLoanSchemes.tsx', 'utf8')).toContain('/green-loans-msme-india');
+  });
+});
+
+describe('quick answers', () => {
+  test('every live situation has a 2027 search question, answered from the same ranking', () => {
+    for (const g of GUIDES) {
+      const qa = quickAnswers(g);
+      expect(qa.length).toBe(g.situations.length);
+      g.situations.forEach((s, i) => {
+        const top = rankFor(g, s.id)[0].product.name;
+        expect(qa[i].answer).toContain(`the best fit is ${top}`);
+        expect(qa[i].question.endsWith('?')).toBe(true);
+        expect(qa[i].answer).not.toMatch(/[—–]|\.\.|: [a-z]{1,2}[A-Z]/);
+      });
+    }
   });
 });
