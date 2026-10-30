@@ -1,20 +1,136 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 import { GreenLoanEntry } from "@/components/climate-finance/GreenLoanEntry";
-import { CHECK_TERMS, EVIDENCE, GLS_FAQS, GLS_PATH, NEEDS, arrange, evidenceTally, type Need } from "@/data/greenLoanSchemes";
+import {
+  CHECK_TERMS, CLUSTERS, EVIDENCE, GLS_FAQS, GLS_PATH, NEEDS, SCHEMES, SIZES, arrange, asksCluster, evidenceTally, sieve,
+  type Cluster, type Need, type Scheme, type Size,
+} from "@/data/greenLoanSchemes";
+import { fittingSchemes, greenLoanFile, loanFileName } from "@/lib/leadMagnets/greenLoanFile";
+import { downloadSendablePdf } from "@/lib/leadMagnets/sendableFile";
 import "./greenLoanSchemes.css";
 
-// /msme-green-loan-schemes. One question reshapes the page: what is the money
+// /msme-green-loan-schemes. The hero sieves the ten routes with three taps
+// (purpose, size, cluster). Its purpose question reshapes the page: what is the money
 // for? The comparison re-sorts to the routes built for that need, the evidence
 // tally below re-counts what those lenders ask for, and the closing strip draws
 // how Senseible turns bills into that evidence. Facts: src/data/greenLoanSchemes.ts.
 
 const EVIDENCE_LABEL = Object.fromEntries(EVIDENCE.map(e => [e.id, e.label]));
+
+/* Hero: three taps sieve the ten routes down to the ones built for this project. */
+// One plain line per route, shortened from its kind, funds and terms in SCHEMES.
+const LINE: Record<string, string> = {
+  adeetie: "BEE pays part of the interest on your bank loan",
+  "4e": "SIDBI loan for the measures your energy audit recommends",
+  gfs: "SIDBI loan for solar, efficiency and cleaner production",
+  fmap: "Loan through SIDBI or a partner bank for listed technologies, solar and water",
+  gift: "Helps bring a green loan down to a concessional rate",
+  solar: "Term loan from your bank for the plant",
+  machinery: "SIDBI loan to replace or add machines",
+  working: "Working capital from your bank, for green work or tied to targets",
+  psl: "Not a loan. The RBI category your bank files your loan under",
+  cgtmse: "Not a loan. A guarantee so your bank can lend up to ₹10 crore without collateral, if it opts in",
+};
+function hint(s: Scheme, size: Size | null, cluster: Cluster | null): string {
+  if (s.id === "adeetie") {
+    const cut = size === "medium" ? "BEE cuts your interest by 3 percentage points" : size === "small" ? "BEE cuts your interest by 5 percentage points" : LINE.adeetie;
+    return cluster === "unsure" ? `${cut}, if your unit is in one of the 60 named clusters` : cut;
+  }
+  return LINE[s.id] ?? s.kind;
+}
+
+function Tap<T extends string>({ q, value, options, onChange }: { q: string; value: T | null; options: { v: T; l: string }[]; onChange: (v: T | null) => void }) {
+  return (
+    <fieldset className="gls-sieve-q">
+      <legend>{q}</legend>
+      <div>
+        {options.map(o => (
+          <button key={o.v} type="button" aria-pressed={value === o.v} onClick={() => onChange(value === o.v ? null : o.v)}>{o.l}</button>
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+
+interface SieveState { need: Need | null; setNeed: (n: Need | null) => void; size: Size | null; setSize: (s: Size | null) => void; cluster: Cluster | null; setCluster: (c: Cluster | null) => void }
+
+function RouteSieve({ need, setNeed, size, setSize, cluster, setCluster }: SieveState) {
+  const askCluster = asksCluster(need);
+  const c = askCluster ? cluster : null;
+  const rows = SCHEMES.map(s => ({ s, out: sieve(s, need, size, c) }));
+  const fits = rows.filter(r => !r.out).length;
+  const setAside = Object.entries(rows.reduce<Record<string, string[]>>((acc, r) => {
+    if (r.out) (acc[r.out] ??= []).push(r.s.name);
+    return acc;
+  }, {}));
+  return (
+    <div className="gls-sieve">
+      <Tap<Need> q="What is the money for?" value={need} onChange={setNeed} options={NEEDS.map(n => ({ v: n.id, l: n.label }))} />
+      <Tap<Size> q="Your size" value={size} onChange={setSize} options={SIZES.map(x => ({ v: x.id, l: x.label }))} />
+      {askCluster && (
+        <Tap<Cluster> q="Is your unit in one of BEE's 60 named clusters, like Morbi, Firozabad or Ludhiana?" value={cluster} onChange={setCluster}
+          options={CLUSTERS.map(x => ({ v: x.id, l: x.label }))} />
+      )}
+      <p className="gls-sieve-count" aria-live="polite">{need || size ? <><b>{fits}</b> of {SCHEMES.length} fit your project</> : <><b>{SCHEMES.length}</b> options. Tap above to narrow them.</>}</p>
+      <ol className="gls-sieve-list">
+        {rows.map(({ s, out }) => (
+          <li key={s.id} data-out={Boolean(out)} aria-hidden={out ? true : undefined}>
+            <div>
+              <span className="gls-sieve-name">{s.name}</span>
+              <span className="gls-sieve-why">{hint(s, size, c)}</span>
+            </div>
+          </li>
+        ))}
+      </ol>
+      {setAside.length > 0 && (
+        <ul className="gls-sieve-out">
+          {setAside.map(([why, names]) => <li key={why}><b>{why}:</b> {names.join(", ")}</li>)}
+        </ul>
+      )}
+      <a href="#compare" className="gls-sieve-go">Documents and terms for each <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+    </div>
+  );
+}
+
+/* The loan file: one page for the bank's credit officer, built from the taps above. */
+function LoanFile({ need, size, cluster }: { need: Need | null; size: Size | null; cluster: Cluster | null }) {
+  const [company, setCompany] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const count = need ? fittingSchemes(need, size, cluster).length : 0;
+  const download = async () => {
+    if (!need) return;
+    setBusy(true); setFailed(false);
+    try { await downloadSendablePdf(greenLoanFile({ need, size, cluster, company }), loanFileName()); }
+    catch { setFailed(true); }
+    finally { setBusy(false); }
+  };
+  return (
+    <div className="gls-file">
+      <p className="gls-file-k">Your loan file, for the bank</p>
+      <ul className="gls-file-list">
+        <li>{need ? <><b>{count}</b> {count === 1 ? "scheme" : "schemes"} that fit, with their terms</> : "The schemes that fit, with their terms"}</li>
+        <li>The papers each one asks for</li>
+        <li>The bills that prove your energy saving</li>
+      </ul>
+      <label className="gls-file-name">
+        <span>Company name <small>(optional)</small></span>
+        <input type="text" value={company} onChange={e => setCompany(e.target.value)} maxLength={80} autoComplete="organization" />
+      </label>
+      <button type="button" className="gls-cta gls-file-btn" onClick={download} disabled={!need || busy}>
+        <Download className="h-4 w-4" aria-hidden="true" /> {busy ? "Making your file" : "Download my loan file"}
+      </button>
+      <p className="gls-file-note" aria-live="polite">
+        {failed ? "The file did not download. Try again." : need ? "One page, addressed to the credit officer. No sign-up." : "Tap what the money is for to build it."}
+      </p>
+    </div>
+  );
+}
 
 function NeedSwitch({ need, setNeed, fitCount }: { need: Need | null; setNeed: (n: Need | null) => void; fitCount: number }) {
   const opts: { id: Need | null; label: string }[] = [{ id: null, label: "Show all" }, ...NEEDS];
@@ -139,6 +255,8 @@ function BillToLender() {
 export default function GreenLoanSchemes() {
   const meta = STATIC_PAGE_META[GLS_PATH];
   const [need, setNeed] = useState<Need | null>(null);
+  const [size, setSize] = useState<Size | null>(null);
+  const [cluster, setCluster] = useState<Cluster | null>(null);
   const fitCount = arrange(need).fit.length;
 
   return (
@@ -149,13 +267,17 @@ export default function GreenLoanSchemes() {
       <MinimalNav />
       <main className="gls">
         <header className="gls-hero">
-          <p className="gls-eyebrow">Green finance in India</p>
-          <h1 className="gls-title">Green loan schemes for MSMEs. <span>Find the one built for your project.</span></h1>
-          <p className="gls-lede">SIDBI and your bank lend for different projects, BEE cuts the interest on some, and RBI and CGTMSE rules change what a bank will do. Pick what the money is for, and see who each route suits, what it pays for and the papers the lender will want.</p>
-          <p className="gls-note">Senseible does not lend, arrange or approve loans.</p>
+          <div className="gls-hero-copy">
+            <p className="gls-eyebrow">Green finance in India</p>
+            <h1 className="gls-title">Green loan schemes for MSMEs. <span>Find the one built for your project.</span></h1>
+            <p className="gls-lede">Ten options: SIDBI loans, BEE's interest cut, your bank's loans, and the RBI and CGTMSE rules that shape them. A few taps set aside the ones that do not fit your project.</p>
+            <p className="gls-note">Senseible does not lend, arrange or approve loans.</p>
+          </div>
+          <RouteSieve need={need} setNeed={setNeed} size={size} setSize={setSize} cluster={cluster} setCluster={setCluster} />
+          <LoanFile need={need} size={size} cluster={cluster} />
         </header>
 
-        <section className="gls-compare" aria-label="Compare green loan routes">
+        <section id="compare" className="gls-compare" aria-label="Compare green loan routes">
           <NeedSwitch need={need} setNeed={setNeed} fitCount={fitCount} />
           <Comparison need={need} />
         </section>

@@ -182,6 +182,64 @@ describe('copy gate: buyer answer pack', async () => {
 
 // Free-tool files: each renders on one page, carries the data file's terms
 // and passes the same copy gate as the reports.
+describe('copy gate: green loan file (/msme-green-loan-schemes)', async () => {
+  const { drawSendable } = await import('../src/lib/leadMagnets/sendableFile');
+  const { greenLoanFile, fittingSchemes, toBank } = await import('../src/lib/leadMagnets/greenLoanFile');
+  const { NEEDS, SIZES, CLUSTERS } = await import('../src/data/greenLoanSchemes');
+  for (const need of NEEDS) for (const size of [null, ...SIZES]) for (const cluster of [null, ...CLUSTERS]) {
+    const label = `${need.id} / ${size?.id ?? 'any size'} / ${cluster?.id ?? 'no cluster answer'}`;
+    it(label, () => {
+      const file = greenLoanFile({ need: need.id, size: size?.id ?? null, cluster: cluster?.id ?? null, company: 'Shree Ganesh Castings', date: new Date('2026-10-30') });
+      captured.length = 0;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      const r = drawSendable(doc, file);
+      expect(doc.getNumberOfPages()).toBe(1);
+      expect(r.fontSize).toBeGreaterThanOrEqual(7.5);
+      const text = captured.join(' ').replace(/\s+/g, ' ');
+      for (const s of fittingSchemes(need.id, size?.id ?? null, cluster?.id ?? null)) {
+        expect(text).toContain(s.name);
+        for (const t of s.terms) {
+          const line = toBank(t).replace(/₹\s?/g, 'Rs ');
+          expect(text).toContain(line.split(' ').slice(0, 4).join(' '));
+          for (const n of t.match(/\d[\d,.]*/g) ?? []) expect(line).toContain(n); // figures pass through untouched
+        }
+      }
+      expect(text).toContain('Senseible does not lend, arrange or approve loans.');
+      expect(text).toContain('senseible.earth/green-loan-check');
+      expect(text).toContain('30 October 2026');
+      expect(text).not.toMatch(/\b(you|your|yourself)\b/i); // read by the bank, not the owner
+      check(`green loan file ${label}`, [...captured]);
+    });
+  }
+});
+
+describe('copy gate: BRSR reply sheet (/brsr-reporting)', async () => {
+  const { drawSendable } = await import('../src/lib/leadMagnets/sendableFile');
+  const { brsrReplyFile, brsrReplyCsv } = await import('../src/lib/leadMagnets/brsrReplySheet');
+  const { REPLY_ROWS } = await import('../src/data/brsrHub');
+  for (const company of [undefined, 'Shree Ganesh Castings']) {
+    it(`PDF ${company ? 'with' : 'without'} a company name`, () => {
+      captured.length = 0;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      drawSendable(doc, brsrReplyFile({ company, customer: company && 'Bharat Forge', date: new Date('2026-10-30') }));
+      expect(doc.getNumberOfPages()).toBe(1);
+      const text = captured.join(' ').replace(/\s+/g, ' ');
+      expect(text).toContain('The sustainability team');
+      for (const r of REPLY_ROWS) { expect(text).toContain(r.ask); expect(text).toContain(r.proof.split(' ').slice(0, 3).join(' ')); }
+      if (company) expect(text).toContain(company); else expect(text).not.toContain('From:');
+      check('BRSR reply sheet PDF', [...captured]);
+    });
+  }
+  it('CSV', () => {
+    const csv = brsrReplyCsv({ company: '=HYPERLINK("x")' });
+    expect(csv).toContain(`"'=HYPERLINK(""x"")"`); // a typed name never runs as a formula
+    const lines = csv.trim().split('\r\n');
+    expect(lines).toContain('What you asked for,Value,Unit,Paper that proves it');
+    expect(lines.length).toBe(13 + REPLY_ROWS.length);
+    check('BRSR reply sheet CSV', brsrReplyCsv({ company: 'Shree Ganesh Castings' }).split('\r\n'));
+  });
+});
+
 describe('copy gate: CBAM message and data checklist (/cbam-authorised-declarant)', async () => {
   const { drawSendable } = await import('../src/lib/leadMagnets/sendableFile');
   const { buyerMessage, cbamChecklistFile, inOurWords } = await import('../src/lib/leadMagnets/cbamBuyerKit');
