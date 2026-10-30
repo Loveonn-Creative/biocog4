@@ -10,7 +10,9 @@ import { TwoVoices } from '@/components/doodles/Doodles';
 import { answerFromPage, loadAnswer, loadAnswerIndex, type AnswerIndexRow, type AnswerPageData } from '@/lib/answerData';
 import { LIBRARY_TOPICS, type LibraryTopic } from '@/data/answerLibraryTypes';
 
-const LibraryArticle = lazy(() => import('@/components/answers/LibraryArticle'));
+// Loaded with the page (about 2 kB): as a separate chunk the article arrived after
+// the page, so the footer showed first and then jumped (layout shift 0.24 on 4G).
+import LibraryArticle from '@/components/answers/LibraryArticle';
 
 // Hub groups: the product answers first, then the answer library by topic.
 type GroupKey = AnswerTopic | `lib-${LibraryTopic}`;
@@ -233,7 +235,7 @@ const Answers = () => {
   useEffect(() => { window.scrollTo({ top: 0 }); }, [slug]);
   const meta: { title: string; description: string } = page ? answerMeta(page) : STATIC_PAGE_META['/answers'];
   const content: ReactNode = libData ? (
-    <Suspense fallback={<div className="min-h-[60vh]" />}><LibraryArticle key={libData.page.slug} data={libData} /></Suspense>
+    <LibraryArticle key={libData.page.slug} data={libData} />
   ) : slug && !a && libData === undefined ? (
     <div className="min-h-[60vh]" aria-busy="true" />
   ) : slug && !a ? (
