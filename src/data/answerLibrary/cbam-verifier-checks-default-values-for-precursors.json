@@ -1,0 +1,83 @@
+{
+  "slug": "cbam-verifier-checks-default-values-for-precursors",
+  "q": "We use default values for bought precursors. Does the CBAM verifier still check them?",
+  "title": "Does the verifier check precursor defaults?",
+  "short": "Yes. Choosing defaults does not take a precursor out of the verification. The verifier checks you used the value for the right CN code, country of origin and production year, that your precursor quantities balance, and that precursors counted as zero are still listed. A default for the wrong country is a non-conformity.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian re-rollers, tube and wire makers, aluminium extruders and fertiliser plants that buy precursors such as billets, slabs, ingots or ammonia",
+  "sections": [
+    {
+      "h": "What the verifier checks on a default",
+      "ul": [
+        "The CN code of the precursor, since defaults are set per CN code.",
+        "The country where it was produced, not the country it was shipped from.",
+        "The production year, because default values change by year.",
+        "That your monitoring plan has a written procedure for collecting supplier reports and falling back to the correct default when none arrives.",
+        "The Commission says this check applies whenever actual supplier data fails, and also when you chose defaults from the start."
+      ]
+    },
+    {
+      "h": "The precursor mass balance",
+      "p": [
+        "For each precursor CN code the verifier tests one equation: mass purchased plus mass produced plus stock from the previous year equals mass consumed plus mass sent out of the plant plus stock left at the year end. It also checks every delivery in the year is listed. In 2026 there is one simplification: all stock carried over from earlier years is treated as made in 2026."
+      ]
+    },
+    {
+      "h": "Wrong country, wrong figure",
+      "p": [
+        "The verification guidance lists using a default for the wrong country of origin as an example of a non-conformity. If it changes your reported figures it is also a misstatement, and you must correct it before the verifier can issue its statement. Billets bought from an Indian mill take India's default, even if a trader in another country invoiced them."
+      ]
+    },
+    {
+      "h": "Precursors counted as zero still need records",
+      "p": [
+        "Precursors made in the EU, Iceland, Liechtenstein, Norway or Switzerland, or in the exempt territories, count as zero embedded emissions. You need no proof of their production year, but you must still identify them and record the quantity used, and they still sit in the mass balance."
+      ]
+    },
+    {
+      "h": "The year rule behind it",
+      "p": [
+        "By default a precursor is treated as made in the same year as your finished good. An earlier year needs evidence the verifier can check, such as a dated delivery note or the producer's confirmation. Evidence of production before 2026 is disregarded, because no CBAM default values exist for earlier years."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A re-roller's billet balance for 2026",
+    "lines": [
+      "Stock on 1 January 2026: 1,500 t (treated as made in 2026)",
+      "Billets bought in 2026 from two Indian mills: 12,000 t",
+      "Available: 1,500 + 12,000 = 13,500 t",
+      "Rolled into bars: 12,400 t; stock on 31 December: 1,100 t; total accounted for = 13,500 t, so the balance closes",
+      "Neither mill has a verification report, so all 13,500 t carry India's 2026 default for the billet CN code, with that year's mark-up",
+      "If the year-end count had shown 900 t, the 200 t gap would be the first thing the verifier asks about"
+    ],
+    "note": "Tonnages are illustrative. Look up the default for your precursor's exact CN code in the Commission's default values act."
+  },
+  "senseible": "Senseible's CBAM Suite reconciles precursor quantities and applies the year's default with its mark-up wherever no verified supplier report exists. Senseible checks each choice in-house, and an accredited verifier, your own or Senseible's partner, signs off.",
+  "links": [
+    {
+      "label": "Prepare your CBAM file",
+      "to": "/cbam-suite"
+    },
+    {
+      "label": "Supplier gives no verification report",
+      "to": "/answers/cbam-precursor-supplier-no-verification-report-defaults"
+    },
+    {
+      "label": "Proving a precursor's production year",
+      "to": "/answers/cbam-precursor-production-year-evidence"
+    },
+    {
+      "label": "Checks on a supplier's report",
+      "to": "/answers/cbam-verifier-checks-precursor-supplier-report"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.3 (precursors from the EU and exempt countries), 4.4 (Table 5), 5.3, 6.1, 7.2, 7.3 and 7.4.1",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30"
+}

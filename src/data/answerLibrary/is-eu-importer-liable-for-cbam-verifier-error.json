@@ -1,0 +1,87 @@
+{
+  "slug": "is-eu-importer-liable-for-cbam-verifier-error",
+  "q": "Is the EU importer liable if the CBAM verification report is wrong?",
+  "title": "Is the importer liable for a verifier's error?",
+  "short": "Yes. The Commission says the declarant is the only person legally responsible for the CBAM declaration, and the verification report is part of it. If an error changes the number of certificates to surrender, the declarant may have to pay a penalty. Where a third party such as the verifier caused the error, the authority may reduce it.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers of Indian steel, aluminium, cement, fertilisers and hydrogen, and the Indian plants whose verified figures they declare",
+  "sections": [
+    {
+      "h": "What the Commission says",
+      "ul": [
+        "The declarant alone answers for the declaration, including the verification report attached to it (Questions and Answers 5.13).",
+        "An error in the report that changes the certificates owed can lead to a penalty for the declarant.",
+        "If the error came from incorrect information supplied by a third party, such as the verifier, the national competent authority may lower the penalty. May, not must.",
+        "The Commission and national authorities review declarations, and national authorities may impose penalties when a declaration contains errors (5.9)."
+      ]
+    },
+    {
+      "h": "Checks the importer can make on arrival",
+      "ul": [
+        "The report came from the plant that made the goods. The Commission warns that anyone else offering a verification report is likely running a scam.",
+        "It carries a positive verification statement.",
+        "The verifier's accreditation was valid when the final report was issued and covers the plant's sector.",
+        "The report was created in the CBAM Registry, which the Commission uses to guarantee authenticity. A plant not registered there sends the verifier's downloadable PDF with its full emissions report, and the importer uploads both.",
+        "The per-tonne figures you declare match the report exactly, for the right production year and CN codes."
+      ]
+    },
+    {
+      "h": "What this means for the Indian supplier",
+      "p": [
+        "Because the importer carries the penalty risk, expect it to ask for more than a PDF: the right to rely on the report, prompt notice of any correction, and a share of the cost if your figures turn out wrong. Agree those terms before the first report, not after a dispute. A plant whose figures were corrected and cleared by the verifier before sign-off gives the buyer the least to worry about."
+      ]
+    },
+    {
+      "h": "Errors the verifier should catch first",
+      "p": [
+        "The verifier asks the plant to correct the misstatements and non-conformities it finds, then judges whether anything left is material: above 5% of the specific embedded emissions per tonne of a good, or smaller if its nature makes it matter. A positive report can still list non-material misstatements in its findings. Read that list; it shows the importer where the remaining risk sits."
+      ]
+    }
+  ],
+  "example": {
+    "title": "How a small per-tonne error becomes a certificate gap",
+    "lines": [
+      "Importer brings in 1,000 t of hot-rolled steel in 2026",
+      "Verified report says 2.00 t CO2e per tonne; the correct figure is 2.20",
+      "Embedded emissions declared: 1,000 x 2.00 = 2,000 t; correct: 1,000 x 2.20 = 2,200 t",
+      "200 t CO2e were left out, so the declaration understates the certificates owed and the declarant faces the penalty risk",
+      "The gap is 10% of the figure, twice the 5% materiality level, so a sound verification should not have passed it"
+    ],
+    "note": "Figures are illustrative. The certificates finally owed also depend on the free allocation adjustment and any carbon price paid."
+  },
+  "senseible": "Senseible links every figure in the CBAM file back to the original invoice, bill or production log and rechecks the arithmetic in-house before an accredited verifier, Senseible's partner or the plant's own, reviews it, so a buyer can trace any line it is asked about.",
+  "links": [
+    {
+      "label": "CBAM for EU declarants",
+      "to": "/cbam-authorised-declarant"
+    },
+    {
+      "label": "What a verification report contains",
+      "to": "/answers/cbam-verification-report-what-it-contains"
+    },
+    {
+      "label": "Who reviews CBAM declarations",
+      "to": "/answers/who-reviews-cbam-declarations"
+    },
+    {
+      "label": "CBAM materiality: 5%",
+      "to": "/answers/cbam-verification-materiality-5-percent"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Questions and Answers (updated 15 October 2026), questions 5.9, 5.11 and 5.13",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, Introduction to CBAM concepts (14 August 2026), section 2.4.4",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    },
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.10 and 6",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30"
+}

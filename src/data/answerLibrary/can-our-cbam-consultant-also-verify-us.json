@@ -1,0 +1,89 @@
+{
+  "slug": "can-our-cbam-consultant-also-verify-us",
+  "q": "Can the firm that built our CBAM monitoring plan also verify it?",
+  "title": "Can our CBAM consultant also verify us?",
+  "short": "No. If the verifier, or any organisation linked to it, helped develop your monitoring plan or emissions report, the EU rules treat that as a conflict of interest. Linked means shared owners, management, staff, money, contracts or marketing. People who advised you are kept off your verification team for at least two years.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian steel, aluminium, cement, fertiliser and hydrogen exporters choosing a CBAM verifier after using consultants for their monitoring plan",
+  "sections": [
+    {
+      "h": "What counts as a conflict",
+      "p": [
+        "Section 1.7.3 of Annex II to the CBAM accreditation and verification act sets the minimum. A conflict of interest exists at least when the verifier and your company share ownership, governance, management or personnel, resources, finances, or contracts and marketing. It also exists when you received consultancy or technical help on monitoring and reporting from an organisation connected to the verifier. The Commission's guidance is blunt: the verifier must not have supported the development of the monitoring plan or the emissions report."
+      ]
+    },
+    {
+      "h": "Ownership rules for groups",
+      "ul": [
+        "No part of the verifier's legal entity may be a plant operator or own one.",
+        "No operator may own the verifier. The Commission's example: an operator holding 30% of a verifier does not legally own it, but the stake is still an unacceptable risk and is not allowed.",
+        "So a steel or cement group cannot have its own verification arm sign off the group's plants."
+      ]
+    },
+    {
+      "h": "People, not just firms",
+      "ul": [
+        "A team member holding shares in your company.",
+        "A team member who used to work at your plant.",
+        "A lead auditor who earlier worked for the consultancy that set up your monitoring system.",
+        "New verifier staff with a monitoring and reporting consultancy history stay off engagements for at least two years, and anyone who advised you within a set period of at least two years is excluded from your team."
+      ]
+    },
+    {
+      "h": "The verifier will not fix your file either",
+      "p": [
+        "A verifier may list findings and recommend improvements, but it may not tell you in detail how to make them or write parts of your monitoring process. Doing so is consulting, and it can cost the verifier its accreditation. If you want the monitoring plan checked separately, the guidance even allows a different verifier for the plan assessment and for the annual verification."
+      ]
+    },
+    {
+      "h": "Before you sign a verifier",
+      "ol": [
+        "List every adviser who touched your monitoring plan, emissions report, meters or data flow, with dates.",
+        "Send that list to the shortlisted verifier. It must confirm at the pre-contract stage that it is independent of you.",
+        "Ask whether it has any ownership, staff or marketing link with your consultants.",
+        "Get the independence confirmation in writing and keep it with your CBAM records."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Lead auditor rotation, the other independence rule",
+    "lines": [
+      "A lead auditor verifies your 2026 report in 2027, then 2027, 2028, 2029 and 2030: five consecutive years",
+      "Your 2031 report, verified in 2032, must go to a different lead auditor",
+      "The first auditor sits out three consecutive years: the 2031, 2032 and 2033 reports",
+      "They may return from the 2034 report, verified in 2035"
+    ],
+    "note": "This is the Commission's own timeline under section 1.7.6 of Annex II. The verifier firm can stay; the lead auditor changes."
+  },
+  "senseible": "Senseible builds your CBAM file and checks every figure in-house, but it does not sign your verification. That is done by an accredited verifier, Senseible's partner or one you appoint, which runs its own independence check on everyone who helped prepare your data.",
+  "links": [
+    {
+      "label": "Prepare your CBAM file",
+      "to": "/cbam-suite"
+    },
+    {
+      "label": "Find an accredited CBAM verifier",
+      "to": "/answers/how-to-find-cbam-accredited-verifier"
+    },
+    {
+      "label": "Why verifiers cannot quote a fixed fee",
+      "to": "/answers/why-cbam-verifier-wont-quote-fixed-fee"
+    },
+    {
+      "label": "Who arranges CBAM verification",
+      "to": "/answers/who-arranges-cbam-verification-exporter-or-importer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 3.2, 4.12, 5.2 (Option B), 8.2 (Tables 8 and 9) and 8.3",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, Introduction to CBAM concepts (14 August 2026), section 2.4.4",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30"
+}
