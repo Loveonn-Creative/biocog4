@@ -190,6 +190,23 @@ export function arrange(need: Need | null): { fit: Scheme[]; rest: Scheme[] } {
   return { fit: SCHEMES.filter(s => s.needs.includes(need)), rest: SCHEMES.filter(s => !s.needs.includes(need)) };
 }
 
+export type Size = 'small' | 'medium';
+export type Cluster = 'yes' | 'no' | 'unsure';
+export const SIZES: { id: Size; label: string }[] = [{ id: 'small', label: 'Micro or small' }, { id: 'medium', label: 'Medium' }];
+export const CLUSTERS: { id: Cluster; label: string }[] = [{ id: 'yes', label: 'Yes' }, { id: 'no', label: 'No' }, { id: 'unsure', label: 'Not sure' }];
+/** The cluster question only matters for efficiency and machinery (ADEETIE). */
+export const asksCluster = (need: Need | null) => need === 'efficiency' || need === 'machinery';
+
+/** Why a route does not fit, or null when it does. Size and cluster rules come
+ * from the scheme text above: CGTMSE "Medium enterprises are outside it";
+ * ADEETIE suits units "inside one of 60 named clusters". */
+export function sieve(s: Scheme, need: Need | null, size: Size | null, cluster: Cluster | null): string | null {
+  if (need && !s.needs.includes(need)) return `Not built for ${NEEDS.find(n => n.id === need)!.label.toLowerCase()}`;
+  if (s.id === 'cgtmse' && size === 'medium') return 'Only for micro and small';
+  if (s.id === 'adeetie' && cluster === 'no') return 'Only for units in the 60 named clusters';
+  return null;
+}
+
 /** How many of the given routes ask for each evidence item, most asked first. */
 export function evidenceTally(schemes: Scheme[]): { item: Evidence; count: number }[] {
   return EVIDENCE
