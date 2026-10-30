@@ -1,0 +1,73 @@
+{
+  "slug": "rajkot-investment-casting-units-lpg-and-power",
+  "q": "How much LPG and power do Rajkot investment casting units use, and what goes in a buyer's carbon figure?",
+  "title": "Rajkot investment casting: LPG and power",
+  "short": "Rajkot's 110 or so investment casting units used 184 million kWh, 2,610 t of LPG and 8.9 million scm of gas in 2014 to 15 for about 48,000 t of castings. That is about 3 t CO2 per tonne from energy alone, mostly power. A buyer's figure adds the alloy you melt.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Lost wax casting units in Metoda, Bhunava, Kuwadva, Aji and Hadamtala supplying pump, valve and auto makers",
+  "sections": [
+    {
+      "h": "The cluster in TERI's 2015 profile",
+      "ul": [
+        "About 110 units: about 10 making 70 tonnes a month, most around 40, and about 25 around 10.",
+        "About 160 tonnes of castings a day, roughly 48,000 tonnes a year, in stainless steel, carbon steel and brass, mainly for pumps, valves, auto and textile machinery.",
+        "About 70% of units bake shells and heat treat on PNG; the rest on LPG.",
+        "Melting and shell baking take about 30% of a unit's energy each; cold room air conditioning, compressors and heat treatment take most of the rest."
+      ]
+    },
+    {
+      "h": "Why the per-tonne figure is so high",
+      "ul": [
+        "Yield is only 40 to 50%: gates, runners and rejects get melted again, so melting takes about 2,000 kWh per tonne of good castings although molten metal needs only 600 to 850.",
+        "Ladles are tapped in small lots as shells come ready, so furnaces hold metal hot for 45 to 100 minutes.",
+        "Wax rooms run at 22 to 24 degrees C all day: a typical unit has 3 or 4 chillers of about 50 TR.",
+        "Units on PNG average about 0.55 toe per tonne of good castings; units on LPG about 0.72."
+      ]
+    },
+    {
+      "h": "The cluster's CO2 on today's factors",
+      "ul": [
+        "Electricity: 184 million kWh x 0.675 kg = 124,200 t.",
+        "Gas: 8.9 million scm x 2.05 kg = 18,250 t.",
+        "LPG: 2,610 t x 2.98 = 7,780 t.",
+        "Total about 150,200 t on 48,000 t of castings: about 3.1 t CO2 per tonne, 83% of it from power. This is energy only, before the alloy."
+      ]
+    },
+    {
+      "h": "What a pump or valve buyer's figure needs",
+      "ol": [
+        "Your energy per tonne of good castings, as above, from twelve months of bills and dispatch weights.",
+        "The metal: kg of alloy melted per kg shipped, with a figure per kg for each grade, such as 304 or 316 stainless, from your bar or scrap supplier.",
+        "Wax, ceramic slurry and stucco if the buyer asks for a full product footprint.",
+        "Most investment castings ship as pump, valve or machine parts or under 7325, outside CBAM today, so this is a buyer request, not a customs filing. Confirm the CN code."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: TERI's typical 500 t a year unit on PNG",
+    "lines": [
+      "Power: 1,900,000 kWh x 0.675 = 1,283 t CO2",
+      "Shell baking and heat treatment: 100 toe x 41.868 GJ = 4,187 GJ x 56.1 kg = 235 t",
+      "Total: 1,518 t for 500 t of good castings",
+      "Energy per tonne: about 3.0 t CO2, before the alloy",
+      "Raise yield from 45% to 55% and melting power per good tonne falls by about a fifth"
+    ],
+    "note": "Energy use is TERI's typical unit. Gas uses the IPCC natural gas default per GJ. The yield line assumes melting power scales with metal melted per good tonne: 45 / 55 = 0.82."
+  },
+  "senseible": "Send Senseible your PGVCL bills and gas or LPG invoices, and it builds the energy per tonne of castings a buyer asks for; the alloy figures come from your metal suppliers and sit beside it.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Investment casting footprint per kg", "to": "/answers/investment-casting-carbon-footprint-per-kg" },
+    { "label": "Are pumps and valves covered by CBAM", "to": "/answers/are-pumps-valves-and-bearings-covered-by-cbam" },
+    { "label": "Emission factor for purchased stainless", "to": "/answers/emission-factor-for-purchased-stainless-steel" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Rajkot investment castings foundries (SAMEEEKSHA, 2015; data 2014 to 15)", "url": "https://sameeeksha.org/pdf/clusterprofile/Rajkot_Investment_Castings.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated, Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2014 to 15. Update if a newer Rajkot investment casting profile is published."
+}

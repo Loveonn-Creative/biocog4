@@ -1,0 +1,69 @@
+{
+  "slug": "thangadh-sanitaryware-cluster-energy-and-carbon",
+  "q": "How much energy does the Thangadh sanitaryware cluster use, and what is CO2 per tonne of ware?",
+  "title": "Thangadh sanitaryware: energy and CO2 a tonne",
+  "short": "In 2009 the cluster used 33,644 toe a year, 83% of it natural gas, and averaged 0.091 toe and 0.27 t CO2 per tonne of product. Sanitaryware units ranged from 0.074 to 0.105 toe per tonne. Recalculated on today's factors, the cluster's fossil CO2 comes to about 0.22 t per tonne.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Sanitaryware, refractory and tile units in Thangadh, Surendranagar district, and the brands and distributors they supply",
+  "sections": [
+    {
+      "h": "The cluster, from its 2009 profile",
+      "ul": [
+        "About 225 ceramic units: 161 sanitaryware, 45 refractories, 11 art ware and 8 wall tile.",
+        "By size: 50 small (1 to 4 tonnes a day), 100 medium (4 to 8) and 75 large (above 8).",
+        "Energy is 30 to 35% of production cost. Most wall and floor tile units have closed; sanitaryware and refractories carry the cluster."
+      ]
+    },
+    {
+      "h": "Energy by fuel, per year",
+      "ul": [
+        "Natural gas: 33 million scm, 28,050 toe, 83%.",
+        "Charcoal: 5,500 t, 3,740 toe, 11%.",
+        "Electricity: 18 million kWh, 1,548 toe, 5%.",
+        "Diesel: 360,000 L, 306 toe, 1%.",
+        "Kilns fire ware at about 1,200 degrees C. Many tunnel kilns still used kerosene burners, and units had been moving to gas since it arrived about two years before the study."
+      ]
+    },
+    {
+      "h": "The cluster's CO2 on today's factors",
+      "ul": [
+        "Gas: 33 million scm x 2.05 kg = 67,650 t.",
+        "Electricity: 18 million kWh x 0.675 kg = 12,150 t.",
+        "Diesel: 360,000 L x 2.645 kg = 950 t.",
+        "Fossil total: about 80,750 t on about 370,000 t of product (33,644 toe at 0.091 toe per tonne), roughly 0.22 t per tonne. Charcoal CO2 is biogenic and reported separately."
+      ]
+    },
+    {
+      "h": "Where the savings were",
+      "p": [
+        "The study put the cluster's saving potential at 8,800 toe a year: kiln heat recovery, better insulation and gas burners in place of kerosene burners (about 15%), lighter kiln cars (about 10% of tunnel kiln energy), and efficient motors and controls in slip preparation (about 15% of power)."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a medium unit's month, against the cluster",
+    "lines": [
+      "Kiln gas: 13,500 scm x 2.05 = 27.7 t CO2",
+      "Power: 7,500 kWh x 0.675 = 5.06 t",
+      "DG diesel: 300 L x 2.645 = 0.79 t",
+      "Total 33.5 t for 150 t of good ware fired: 0.22 t CO2 per tonne",
+      "Cluster 2009: 0.27 t per tonne as reported; about 0.22 recalculated on today's factors. This unit sits at the cluster average"
+    ],
+    "note": "The month's quantities are an example. Count gas for rejected pieces in the total, but only good ware in the tonnes."
+  },
+  "senseible": "Senseible reads your gas, power and diesel bills each month and gives CO2 per tonne of ware you can set against the cluster figure here, without a spreadsheet.",
+  "links": [
+    { "label": "Your MSME carbon number", "to": "/msme-carbon-number" },
+    { "label": "Kiln gas CO2 per piece", "to": "/answers/thangadh-sanitaryware-kiln-gas-per-piece" },
+    { "label": "Are ceramic tiles covered by CBAM", "to": "/answers/are-ceramic-tiles-covered-by-cbam" }
+  ],
+  "sources": [
+    { "label": "Cluster profile: Thangadh ceramic industries, prepared for UNIDO (SAMEEEKSHA; energy data 2009)", "url": "https://sameeeksha.org/pdf/clusterprofile/ThangadhCeramicClusterBrief.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Cluster data is from 2009. Update if a newer Thangadh profile is published."
+}

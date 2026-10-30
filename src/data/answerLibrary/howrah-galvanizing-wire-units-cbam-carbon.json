@@ -1,0 +1,70 @@
+{
+  "slug": "howrah-galvanizing-wire-units-cbam-carbon",
+  "q": "Howrah galvanizers and wire drawers: what do they burn, and does CBAM cover galvanized wire?",
+  "title": "Howrah galvanizing and wire: fuel and CBAM",
+  "short": "Galvanizers fire zinc kettles on furnace oil, coal or wood; wire drawers run on electricity, with LPG for annealing. Galvanized wire in coils (7217 20), bolts and nuts (7318) and tower parts (7308) are CBAM goods. Galvanized nails (7317) are not.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Galvanizing and wire drawing units in Howrah, members of HCCI and FOSMI, and their EU buyers",
+  "sections": [
+    {
+      "h": "The cluster in BEE's energy conservation manual (data 2010 to 11)",
+      "ul": [
+        "About 100 units, 50 galvanizing and 50 wire drawing, most of them 25 to 30 years old.",
+        "Galvanizers coat nails, nuts and bolts, MS wire and transmission tower parts; capacities run from 890 to 7,500 tonnes a year.",
+        "Wire drawers reduce MS, copper and aluminium wire; most make under 100 tonnes a year, the largest 3,500.",
+        "The cluster uses about 3,455 toe a year. Energy is 14 to 30% of production cost in a galvanizing unit, about 24% in a typical one, and only about 3% in a wire drawing unit.",
+        "In 15 audited units, the measures proposed would cut about 2,525 of 9,597 t CO2 a year."
+      ]
+    },
+    {
+      "h": "Two typical units, side by side",
+      "ul": [
+        "Galvanizing: 85,195 L of furnace oil and 59,346 kWh a year. Oil is about 88% of the energy bill.",
+        "Wire drawing: 295,310 kWh and 135 t of LPG a year. Electricity drives every drawing machine, so a power cut stops production.",
+        "Average energy per tonne: galvanizing 46 kWh plus about 386,000 kcal of fuel; wire drawing 308 kWh."
+      ]
+    },
+    {
+      "h": "Which Howrah products CBAM covers",
+      "ul": [
+        "Covered: galvanized wire in coils, 7217 20; screws, bolts and nuts, 7318; transmission tower parts and other structures, 7308.",
+        "Not covered today: nails, 7317; barbed wire, 7313; wire mesh and fencing, 7314.",
+        "Copper and aluminium wire: copper is outside CBAM; aluminium wire, 7605, is covered as an aluminium good."
+      ]
+    },
+    {
+      "h": "What goes in the CBAM figure, and what does not",
+      "p": [
+        "For a steel good: the wire or rod you started from, at the steel maker's figure or its default, plus the fuel burnt in your kettle and pickling heaters. Electricity is left out for steel. Zinc is not a CBAM precursor, so it stays out of the CBAM figure, but it sits in any product footprint a buyer asks for. If you galvanize on job work, your client needs your fuel per tonne, not a full figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: galvanized wire in coils, CN 7217 20, imported in 2026",
+    "lines": [
+      "Typical unit's oil: 85,195 L x 2.97 kg = 253 t CO2 a year",
+      "Tonnes galvanized, estimated: 85,195 L x 0.95 kg x 10,500 kcal / 386,000 kcal per tonne = about 2,200 t",
+      "Kettle fuel per tonne: 253 / 2,200 = 0.115 t CO2",
+      "Wire at the default: 1.03 t per tonne x 4.270 = 4.40 t; total 4.51 t CO2e per tonne",
+      "Default for 7217 20 with the 2026 mark-up: 4.270 x 1.10 = 4.697 t, only 0.19 t above your figure"
+    ],
+    "note": "Tonnes are estimated from the manual's average heat per tonne; the 1.03 yield is illustrative. With the wire at its default, your own data barely beats the default; a steel maker's actual figure is what makes the gap worth having."
+  },
+  "senseible": "Senseible reads furnace oil, coal, LPG and power bills into monthly records per unit, and its CBAM tools turn them, with the wire supplier's figure, into a per-tonne number for each CN code you ship.",
+  "links": [
+    { "label": "CBAM for Indian exporters", "to": "/cbam" },
+    { "label": "Are steel wire and nails covered", "to": "/answers/are-steel-nails-wire-and-springs-covered-by-cbam" },
+    { "label": "Galvanizing footprint per tonne", "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne" },
+    { "label": "Galvanizing energy benchmark", "to": "/answers/galvanizing-plant-energy-per-tonne-benchmark" }
+  ],
+  "sources": [
+    { "label": "BEE and IISWBM, Manual on energy conservation measures in galvanizing and wire drawing sector, Howrah cluster (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/Howrah_Galvanizing_&_Wire_Drawing.pdf" },
+    { "label": "SAMEEEKSHA, Howrah galvanizing and wire drawing cluster summary (data 2010 to 11)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=137&Itemid=502" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated, Annexes I and II", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "European Commission, default values file (version of 6 August 2026), India sheet", "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 4.25 on mark-ups", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Cluster data is from 2010 to 11. Recheck default values and coverage before each contract season."
+}

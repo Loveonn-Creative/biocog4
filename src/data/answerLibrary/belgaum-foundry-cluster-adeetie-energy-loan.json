@@ -1,0 +1,65 @@
+{
+  "slug": "belgaum-foundry-cluster-adeetie-energy-loan",
+  "q": "Belgaum foundries are on the ADEETIE list: what saving and records does an energy loan need?",
+  "title": "Belgaum foundries: ADEETIE loan records",
+  "short": "The project must save at least 10% energy, proven by an investment grade audit from an empanelled auditor, and you need a bank loan for it. In Belgaum, where 90% of castings come from induction furnaces, replacing a furnace using 750 kWh a tonne or more with one near 550 usually clears 10% on its own.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME foundries in Udyambag, BEMCIEL, Macche and Honga, Belagavi, planning a furnace or plant upgrade",
+  "sections": [
+    {
+      "h": "The cluster in TERI's 2016 profile",
+      "ul": [
+        "About 160 MSME foundries, plus one large foundry, casting about 1,250 tonnes a day, roughly 360,000 tonnes a year.",
+        "Mostly grey iron for auto parts, pumps, valves, gears and machine tools; about 25 units pour SG iron and about 30 steel.",
+        "By size: 10 units at 600 to 700 tonnes a month, 20 at 300 to 400, 60 at 100 to 150 and 70 below 100.",
+        "Energy in 2014 to 15: 356 million kWh and 6,300 t of coke, 34,436 toe. Electricity alone is about 240,000 t CO2 a year on today's grid factor."
+      ]
+    },
+    {
+      "h": "Upgrades with the saving to qualify",
+      "ul": [
+        "New induction furnace: from 750 kWh or more per tonne of molten metal down to about 550, a cut of over 25% in melting power.",
+        "Divided blast cupola in place of a conventional cupola: pays back in about a year on coke alone.",
+        "Smaller fixes, such as a furnace lid (4 to 6% of heat input), compressor VFDs and IE3 motors, rarely reach 10% alone. Bundle them with a bigger item."
+      ]
+    },
+    {
+      "h": "Records to have ready before the auditor comes",
+      "ol": [
+        "Twelve months of HESCOM bills, with the furnace on its own meter if you can fit one.",
+        "Coke purchase invoices by month, if you run a cupola.",
+        "Tonnes melted and tonnes of good castings each month, from your melting log and dispatch register.",
+        "Rejection rate by month. Belgaum units run 6 to 9% against an achievable figure under 5%, and rejects inflate kWh per good tonne.",
+        "Furnace nameplate, age and the quotation for the new one with its guaranteed kWh per tonne.",
+        "Udyam registration and the bank's in-principle sanction."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 100 tonne a month foundry replacing an old induction furnace",
+    "lines": [
+      "Good castings 1,200 t a year; metal melted 1,440 t (1.2 t per good tonne)",
+      "Old furnace: 1,440 t x 800 kWh = 1,152,000 kWh; other plant load 300,000 kWh; total 1,452,000 kWh",
+      "New furnace: 1,440 t x 550 kWh = 792,000 kWh",
+      "Saving: 360,000 kWh, about 25% of the unit's power, well over the 10% bar",
+      "CO2 saved: 360,000 x 0.675 kg = 243 t a year; at the profile's Rs 7 per kWh, about Rs 25 lakh a year"
+    ],
+    "note": "Melt ratio, old furnace figure and other load are illustrative; use your own meter readings. Rs 7 per kWh is the 2015 to 16 price in TERI's profile; use your current tariff."
+  },
+  "senseible": "Senseible reads your HESCOM bills and coke invoices into kWh and coke per tonne by month, the baseline an energy auditor and the bank ask for first.",
+  "links": [
+    { "label": "MSME green loan schemes", "to": "/msme-green-loan-schemes" },
+    { "label": "ADEETIE application steps", "to": "/answers/adeetie-application-steps" },
+    { "label": "Finance readiness for a furnace upgrade", "to": "/answers/green-loan-induction-furnace-upgrade-readiness" },
+    { "label": "Belagavi castings: buyer data", "to": "/answers/belagavi-foundry-export-castings-buyer-data" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Belgaum foundries (SAMEEEKSHA, 2016; data 2014 to 15)", "url": "https://sameeeksha.org/pdf/clusterprofile/Belgaum_Foundries_Karnataka.pdf" },
+    { "label": "SAMEEEKSHA, Belgaum foundry cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=172&Itemid=502" },
+    { "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)", "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2014 to 15. Recheck ADEETIE terms and the cluster list before each application season."
+}

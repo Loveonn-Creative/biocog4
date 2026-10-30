@@ -1,0 +1,62 @@
+{
+  "slug": "khurja-pottery-cluster-fuels-and-green-loan-route",
+  "q": "Khurja potteries fire on LDO, RPO and piped gas: what does the cluster use, and which loan pays for a better kiln?",
+  "title": "Khurja potteries: fuels and a kiln loan",
+  "short": "About 400 units fire 156 kilns mostly on LDO and rubber process oil, burning about 19,000 kL a year, with about 10 units on piped gas. Khurja is on BEE's ADEETIE ceramic cluster list, which cuts interest on an energy loan if the project saves at least 10%. A shuttle kiln upgrade clears that easily.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Crockery, insulator, bone china and art ware potteries in Khurja, members of KPMA, weighing a kiln upgrade",
+  "sections": [
+    {
+      "h": "The cluster in TERI's 2015 profile",
+      "ul": [
+        "About 400 units: 150 stoneware crockery, 80 electrical kit-kat fuse parts, 60 art ware, 15 insulators, 15 bone china, and smaller groups plus about 50 dependent potters.",
+        "156 kilns: 91 tunnel kilns of 2 to 9 tonnes a day, 60 shuttle kilns and 5 old downdraft kilns. Coal has gone with the downdraft kilns.",
+        "A year's energy: 19,032 kL of LDO and RPO, 1.5 million scm of gas and 27.7 million kWh. Heat is 80 to 85% of a unit's energy, and energy 25 to 40% of its cost.",
+        "RPO is cheaper than LDO, but burns with more unburnt fuel in existing burners and needs more burner maintenance."
+      ]
+    },
+    {
+      "h": "Tunnel against shuttle: the number that matters",
+      "ul": [
+        "A tunnel kiln uses about 4.3 MJ of fuel per kg of ware.",
+        "A shuttle kiln uses about 15.7 MJ per kg, about 3.6 times as much, because it heats and cools the whole load and kiln each batch with no heat recovery.",
+        "On oil, at IPCC's 74.1 kg CO2 per GJ for gas oil, that is about 0.32 kg CO2 per kg of ware in a tunnel kiln and 1.16 kg in a shuttle kiln."
+      ]
+    },
+    {
+      "h": "Which measures clear ADEETIE's 10% bar",
+      "ul": [
+        "Heat recovery on a shuttle kiln: about 7% saving. Short of 10% on its own.",
+        "Lighter kiln cars in a tunnel kiln: about 3% of heat input. Kiln automation: about 3%. Each falls short alone.",
+        "Replacing shuttle firing with a tunnel kiln, clears 10% by a wide margin. Combining heat recovery, lighter kiln furniture and controls in one project may clear it; the energy auditor's figure decides.",
+        "ADEETIE needs Udyam registration, a loan from a bank or financial institution, and an investment grade energy audit by an empanelled auditor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a typical shuttle kiln unit moving its firing to a tunnel kiln",
+    "lines": [
+      "Shuttle kiln fuel: 64 toe a year x 41.868 GJ = 2,680 GJ",
+      "Ware fired: 2,680 GJ / 15.7 MJ per kg = about 171 t a year",
+      "Same ware in a tunnel kiln: 171 t x 4.3 MJ per kg = 734 GJ",
+      "Saving: 1,946 GJ, about 73% of kiln fuel, or about 54,500 L of oil",
+      "CO2 saved: 1,946 GJ x 74.1 kg = about 144 t a year"
+    ],
+    "note": "The 64 toe is TERI's typical shuttle kiln unit. Litres use diesel's IPCC calorific value at 0.83 kg per litre; LDO is a little denser, and RPO has no IPCC default of its own, so treat both as estimates."
+  },
+  "senseible": "Before the energy audit, Senseible can turn a year of LDO, RPO, gas and power bills into the monthly baseline per tonne fired that the auditor and the bank will start from.",
+  "links": [
+    { "label": "MSME green loan schemes", "to": "/msme-green-loan-schemes" },
+    { "label": "ADEETIE eligible clusters", "to": "/answers/adeetie-eligible-clusters-list" },
+    { "label": "ADEETIE interest rates", "to": "/answers/adeetie-interest-subvention-rate-msme" },
+    { "label": "Khurja kiln: coal to gas saving", "to": "/answers/khurja-pottery-coal-to-gas-saving" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Khurja potteries (SAMEEEKSHA, 2015)", "url": "https://sameeeksha.org/pdf/clusterprofile/Khurja_Potteries_Uttar_Pradesh.pdf" },
+    { "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)", "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2015. Recheck ADEETIE's cluster list and terms; a second phase is planned."
+}
