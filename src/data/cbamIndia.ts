@@ -26,7 +26,8 @@
 // Capabilities (owner-confirmed, 24 Oct 2026): bill and invoice reading with anomaly
 // checks, trust layer against greenwashing, custom-installed metering (sub-meters,
 // flow, heat and steam meters, IoT loggers and gateways), SCADA and ERP links,
-// monitoring plan, verifier-ready output, in-house verifier or external verifier.
+// monitoring plan, verifier-ready output, in-house checks, then sign-off by an
+// accredited partner verifier or the client's own (owner, 30 October 2026).
 
 export const CBAM_INDIA_PATH = '/cbam';
 
@@ -75,6 +76,6 @@ export const CBAM_INDIA_FAQS = [
   { question: 'Which Indian goods are covered?', answer: 'Iron and steel, aluminium, cement, fertilisers, hydrogen and electricity, by CN code. That includes many downstream steel goods such as wire, pipes, fasteners and structures, and aluminium bars, profiles and wire.' },
   { question: 'What happens if we send no data?', answer: 'Your buyer uses the Commission\'s default value for India, raised by 10% in 2026, 20% in 2027 and 30% from 2028. For hot-rolled steel that default is 4.28 t CO2e per tonne, well above most plants\' actual figure.' },
   { question: 'When is the first deadline?', answer: 'The first annual declaration, covering 2026 imports, is due by 30 September 2027. Certificates go on sale in February 2027. Your buyer will ask for your data well before that.' },
-  { question: 'Will the EU accept data from Senseible?', answer: 'Actual emissions in a declaration must be verified by an accredited CBAM verifier. Senseible builds the monitoring plan, the data trail and the report they check, verified by our in-house verifier or by an external verifier you choose.' },
+  { question: 'Will the EU accept data from Senseible?', answer: 'Yes, once an accredited verifier signs it off. We build the plan, the data trail and the report, check it in-house, then an accredited verifier we partner with signs. Or use your own.' },
   { question: 'Do indirect emissions count?', answer: 'For cement and fertilisers, yes. For iron, steel and aluminium only direct emissions are charged, though you still record electricity.' },
 ];
