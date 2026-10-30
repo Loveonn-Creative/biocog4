@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Ship } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -9,7 +9,7 @@ import { CBAM_SECTORS } from "@/lib/cbamEngine";
 import { markupFor, type CbamSector } from "@/lib/cbam/official";
 import {
   CBAM_DECLARANT_FAQS, CBAM_DECLARANT_PATH, DECLARANT_MILESTONES, FERT_PCT, FIRST_DECLARATION_ISO, MARKUP_SCHEDULE, PACK_ROWS, THRESHOLD_TONNES,
-  findDeclarant, type Clears, type Volume,
+  findDeclarant, type Clears,
 } from "@/data/cbamDeclarant";
 import "./cbamDeclarant.css";
 
@@ -17,7 +17,7 @@ import "./cbamDeclarant.css";
 // who the authorised CBAM declarant is and what it needs from the supplier.
 // Sources live in src/data/cbamDeclarant.ts. Default values and mark-ups come
 // from src/lib/cbam/official.ts through the CBAM engine.
-// Sections: a who-files finder, a 50-tonne fill line, a dated clock with a
+// Sections: a shipment path from plant to declarant, a 50-tonne fill line, a dated clock with a
 // today marker, a default-or-actual swap, and a supplier pack that fills in.
 
 const prefersReduced = () => typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
@@ -32,19 +32,6 @@ function useInView<T extends Element>(): [React.RefObject<T>, boolean] {
     return () => io.disconnect();
   }, [seen]);
   return [ref, seen];
-}
-
-function Choice<T extends string>({ label, value, options, onChange }: { label: string; value: T; options: { v: T; l: string }[]; onChange: (v: T) => void }) {
-  return (
-    <fieldset className="cbd-q">
-      <legend>{label}</legend>
-      <div className="cbd-opts">
-        {options.map((o) => (
-          <button key={o.v} type="button" className="cbd-opt" aria-pressed={o.v === value} onClick={() => onChange(o.v)}>{o.l}</button>
-        ))}
-      </div>
-    </fieldset>
-  );
 }
 
 export default function CbamDeclarant() {
@@ -80,35 +67,65 @@ export default function CbamDeclarant() {
   );
 }
 
-/* 1. Who files for this shipment: three answers, one result. */
+/* 1. One shipment, India to the EU: tap a stop to see what happens there and what you send. */
+type StopId = "plant" | "customs" | "declarant";
 function Hero() {
   const [clears, setClears] = useState<Clears>("buyer");
-  const [volume, setVolume] = useState<Volume>("over");
-  const [h2, setH2] = useState<"no" | "yes">("no");
-  const a = findDeclarant(clears, volume, h2 === "yes");
+  const [at, setAt] = useState<StopId>("declarant");
+  const a = findDeclarant(clears, "over", false);
+  // Pack lines by stop: PACK_ROWS 0, 1 and 3 are made at the plant; 4 and 5 go with the figures to the declarant.
+  const stops: { id: StopId; name: string; sub: string; data: boolean; happens: string; send: string[] }[] = [
+    { id: "plant", name: "Your plant", sub: "India", data: true,
+      happens: "The goods are made, and their emissions are counted by product and period.",
+      send: [PACK_ROWS[0], PACK_ROWS[1], PACK_ROWS[3]] },
+    { id: "customs", name: "EU customs", sub: "Port of entry", data: false,
+      happens: `Above ${THRESHOLD_TONNES} tonnes a year, customs releases the goods only to an authorised CBAM declarant.`,
+      send: [clears === "buyer" ? a.ask : a.body] },
+    { id: "declarant", name: "Declarant", sub: "Files CBAM", data: true,
+      happens: `${a.who} It declares the emissions in your goods: your verified figure, or the EU default with a mark-up if you send nothing.`,
+      send: [PACK_ROWS[4], PACK_ROWS[5]] },
+  ];
+  const idx = stops.findIndex((s) => s.id === at);
+  const stop = stops[idx];
   return (
     <section className="cbd-hero">
       <div>
         <p className="cbd-eyebrow">Authorised CBAM declarant</p>
         <h1 className="cbd-title">Who files CBAM for your shipment, and what they need from you</h1>
-        <p className="cbd-lede">Since 1 January 2026, if your EU buyer imports more than 50 tonnes a year of steel, aluminium, cement and fertilisers combined, the goods enter only through an authorised CBAM declarant. That is always a company in the EU, never the Indian exporter. It declares the emissions in your goods: your plant's verified figure, or an EU default if you send nothing.</p>
+        <p className="cbd-lede">Since 1 January 2026, steel, aluminium, cement and fertilisers above {THRESHOLD_TONNES} tonnes a year enter the EU only through an authorised CBAM declarant. That is a company in the EU, never you. It still needs your plant's figures.</p>
         <Link to="/cbam-suite" className="cbd-btn cbd-btn-primary cbd-hero-cta">Build my CBAM data <ArrowRight className="h-4 w-4" /></Link>
         <p className="cbd-cta-note">Free. Builds your emissions report, the file a verifier checks and the pack for your buyer.</p>
       </div>
 
-      <div className="cbd-finder" aria-label="Find who files for your shipment">
-        <p className="cbd-finder-head">Your shipment</p>
-        <Choice<Clears> label="Who clears the goods into the EU?" value={clears} onChange={setClears}
-          options={[{ v: "buyer", l: "My buyer (most terms)" }, { v: "seller", l: "We do (DDP)" }]} />
-        <Choice<Volume> label={clears === "seller" ? "Your total into the EU this year" : "Your buyer's total this year, from all suppliers"} value={volume} onChange={setVolume}
-          options={[{ v: "under", l: "50 t or less" }, { v: "over", l: "Over 50 t" }]} />
-        <Choice<"no" | "yes"> label={clears === "seller" ? "Do you import any hydrogen or electricity?" : "Does your buyer import any hydrogen or electricity?"} value={h2} onChange={setH2}
-          options={[{ v: "no", l: "No" }, { v: "yes", l: "Yes" }]} />
-        <div className="cbd-answer" aria-live="polite" key={a.who + a.body}>
-          <span className="cbd-answer-k">Holds the status</span>
-          <p className="cbd-answer-who">{a.who}</p>
-          <p>{a.body}</p>
-          <p className="cbd-answer-ask">{a.ask}</p>
+      <div className="cbd-route" aria-label="One shipment, India to the EU">
+        <div className="cbd-route-top">
+          <p className="cbd-route-head">One shipment, India to the EU</p>
+          <div className="cbd-clears" role="group" aria-label="Who clears the goods into the EU?">
+            <button type="button" aria-pressed={clears === "buyer"} onClick={() => setClears("buyer")}>Buyer clears</button>
+            <button type="button" aria-pressed={clears === "seller"} onClick={() => setClears("seller")}>We ship DDP</button>
+          </div>
+        </div>
+        <div className="cbd-path" style={{ "--at": idx } as React.CSSProperties}>
+          <span className="cbd-path-line" aria-hidden="true"><i /></span>
+          <span className="cbd-ship" aria-hidden="true"><Ship className="h-4 w-4" /></span>
+          <ol>
+            {stops.map((s) => (
+              <li key={s.id}>
+                <button type="button" className="cbd-stop-btn" aria-pressed={s.id === at} onClick={() => setAt(s.id)}>
+                  <span className="cbd-dot" aria-hidden="true" />
+                  <span className="cbd-stop-name">{s.name}</span>
+                  <span className="cbd-stop-sub">{s.sub}</span>
+                  <span className="cbd-stop-tag" data-data={s.data}>{s.data ? "Your data" : "No data"}</span>
+                </button>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="cbd-here" aria-live="polite" key={at + clears}>
+          <p className="cbd-here-k">What happens here</p>
+          <p className="cbd-here-v">{stop.happens}</p>
+          <p className="cbd-here-k">{stop.data ? "What you send" : "Your part"}</p>
+          <ul className="cbd-here-send">{stop.send.map((x) => <li key={x}>{x}</li>)}</ul>
         </div>
       </div>
     </section>
