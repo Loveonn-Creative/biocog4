@@ -189,3 +189,24 @@ describe('pack files', () => {
     expect(got).toEqual(['Contact', ...Array.from({ length: 12 }, (_, i) => sentence(i)), 'Search answers']);
   });
 });
+
+describe('embedded code is never translated', () => {
+  const { readFileSync, readdirSync } = require('fs');
+  const looksLikeCss = (k: string) => k.includes('{') && k.includes(';') && k.includes(':');
+
+  test('shipped packs and collected strings carry no stylesheet text', () => {
+    const root = 'public/i18n/packs';
+    for (const locale of readdirSync(root)) {
+      for (const file of readdirSync(`${root}/${locale}`)) {
+        const keys = Object.keys(JSON.parse(readFileSync(`${root}/${locale}/${file}`, 'utf8')));
+        expect(keys.filter(looksLikeCss)).toEqual([]);
+      }
+    }
+    expect(readFileSync('scripts/i18n/data/sources.json', 'utf8')).not.toContain('drop-shadow(');
+  });
+
+  test('lowercase SVG <style> and <script> are skipped in the page and the pack builder', () => {
+    expect(readFileSync('src/lib/i18n/domTranslator.ts', 'utf8')).toContain('EMBEDDED_CODE.has(node.tagName)');
+    expect(readFileSync('scripts/i18n/build-packs.mjs', 'utf8')).toContain("n.tagName === 'style' || n.tagName === 'script'");
+  });
+});
