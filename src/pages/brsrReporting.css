@@ -19,6 +19,22 @@
 /* Hero: value chain asks */
 .brh-chain { min-width: 0; border-radius: 1.5rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); padding: 1rem; display: grid; gap: 1rem; }
 @media (min-width: 640px) { .brh-chain { padding: 1.5rem; } }
+/* Reply sheet: the supplier's download, under the asks */
+.brh-reply { display: grid; gap: .7rem; padding: 1rem; border-radius: 1rem; border: 1px dashed hsl(var(--primary) / .45); background: hsl(var(--primary) / .04); animation: brh-reply-in .3s ease both; }
+.brh-reply-names { display: grid; gap: .6rem; }
+@media (min-width: 480px) { .brh-reply-names { grid-template-columns: 1fr 1fr; } }
+.brh-reply-name { min-width: 0; display: grid; gap: .3rem; font-size: .85rem; font-weight: 600; }
+.brh-reply-name small { font-weight: 400; color: hsl(var(--muted-foreground)); }
+.brh-reply-name input { width: 100%; min-height: 2.75rem; padding: 0 .8rem; border-radius: .7rem; border: 1px solid hsl(var(--input)); background: hsl(var(--card)); font-size: 1rem; font-weight: 400; }
+.brh-reply-name input:focus-visible, .brh-reply-csv:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 1px; }
+.brh-reply-btns { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.brh-reply-btns .brh-cta { min-height: 2.75rem; font-size: .95rem; }
+.brh-reply-csv { min-height: 2.75rem; padding: 0 .4rem; font-weight: 700; font-size: .9rem; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; }
+.brh-reply-note { font-size: .82rem; color: hsl(var(--muted-foreground)); }
+.brh-reply-fill { font-size: .85rem; }
+.brh-reply-fill a { font-weight: 700; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; }
+@keyframes brh-reply-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .brh-reply { animation: none; } }
 .brh-chain-pick { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem; padding: .25rem; border-radius: 999px; background: hsl(var(--secondary)); }
 .brh-chain-pick button { min-height: 2.75rem; padding: 0 .6rem; border-radius: 999px; font-size: .88rem; font-weight: 600; color: hsl(var(--muted-foreground)); transition: background .2s, color .2s, box-shadow .2s; }
 .brh-chain-pick button:hover { color: hsl(var(--foreground)); }

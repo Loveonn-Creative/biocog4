@@ -1,15 +1,17 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Search } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, Search } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 import { prefersReducedMotion } from "@/components/services/motion/kit";
 import {
-  ATTRIBUTES, BILL_DOCS, BRSR_FAQS, BRSR_HUB_PATH, FIELDS, NEEDS, RULE_ROWS, RUNGS, SUPPLIER_LINES,
+  ATTRIBUTES, BILL_DOCS, BRSR_FAQS, BRSR_HUB_PATH, CHAIN_ASKS, FIELDS, NEEDS, RULE_ROWS, RUNGS, SUPPLIER_LINES,
   principle6, type FieldId, type RungId,
 } from "@/data/brsrHub";
+import { REPLY_FILE_NAME, brsrReplyCsv, brsrReplyFile } from "@/lib/leadMagnets/brsrReplySheet";
+import { downloadSendablePdf, downloadText } from "@/lib/leadMagnets/sendableFile";
 import "./brsrReporting.css";
 
 // /brsr-reporting. A hub for BRSR and BRSR Core. Each section carries one device:
@@ -300,14 +302,7 @@ function AnswerFinder() {
 /* ---------- Hero: pick your side, the value chain asks light up ---------- */
 
 type Side = "supplier" | "listed";
-// Asks: SUPPLIER_LINES[2]. Records: ATTRIBUTES 1 to 4. Only Scope 1 and 2 and
-// energy are built from bills (ATTRIBUTES fromBills). Rules: RULE_ROWS and RUNGS.
-const CHAIN_ASKS = [
-  { ask: "Scope 1 and 2 emissions", record: "From fuel invoices and electricity bills", bills: true },
-  { ask: "Total energy", record: "From electricity bills and fuel invoices", bills: true },
-  { ask: "Water", record: "From water supply bills, borewell meter readings, tanker invoices", bills: false },
-  { ask: "Waste", record: "From weighbridge slips, waste manifests, recycler receipts", bills: false },
-];
+// Asks and records: CHAIN_ASKS in src/data/brsrHub.ts. Rules: RULE_ROWS and RUNGS.
 const SIDE_COPY: Record<Side, { head: string; rule: string }> = {
   supplier: {
     head: "What your customer will ask you for",
@@ -318,6 +313,43 @@ const SIDE_COPY: Record<Side, { head: string; rule: string }> = {
     rule: "Include any partner that alone is 2% or more of your purchases or sales. You can stop once they cover 75%. Voluntary from FY 2025-26.",
   },
 };
+
+/* The supplier's reply sheet: the four asks above, a blank value column, the unit and the paper behind each. */
+function ReplySheet() {
+  const [company, setCompany] = useState("");
+  const [customer, setCustomer] = useState("");
+  const [failed, setFailed] = useState(false);
+  const pdf = async () => {
+    setFailed(false);
+    try { await downloadSendablePdf(brsrReplyFile({ company, customer }), `${REPLY_FILE_NAME}.pdf`); } catch { setFailed(true); }
+  };
+  const csv = () => {
+    setFailed(false);
+    try { downloadText(brsrReplyCsv({ company, customer }), `${REPLY_FILE_NAME}.csv`, "text/csv;charset=utf-8"); } catch { setFailed(true); }
+  };
+  return (
+    <div className="brh-reply">
+      <div className="brh-reply-names">
+        <label className="brh-reply-name">
+          <span>Your company <small>(optional)</small></span>
+          <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} maxLength={80} autoComplete="organization" />
+        </label>
+        <label className="brh-reply-name">
+          <span>Your customer <small>(optional)</small></span>
+          <input type="text" value={customer} onChange={(e) => setCustomer(e.target.value)} maxLength={80} autoComplete="off" />
+        </label>
+      </div>
+      <div className="brh-reply-btns">
+        <button type="button" className="brh-cta" onClick={pdf}><Download className="h-4 w-4" aria-hidden="true" /> Download the reply sheet</button>
+        <button type="button" className="brh-reply-csv" onClick={csv}>Or as CSV</button>
+      </div>
+      <p className="brh-reply-note" aria-live="polite">
+        {failed ? "The file did not download. Try again." : "Addressed to your customer's sustainability team, with a blank column for each figure."}
+      </p>
+      <p className="brh-reply-fill">Senseible fills Scope 1, Scope 2 and energy from your bills. <Link to="/auth">Sign in and upload them</Link></p>
+    </div>
+  );
+}
 
 function ChainAsks() {
   const [side, setSide] = useState<Side>("supplier");
@@ -343,6 +375,7 @@ function ChainAsks() {
           </li>
         ))}
       </ol>
+      {side === "supplier" && <ReplySheet />}
       <p className="brh-chain-rule" key={`r-${side}`}>{c.rule}</p>
     </div>
   );
