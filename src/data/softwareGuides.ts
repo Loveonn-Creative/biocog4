@@ -6303,7 +6303,7 @@ function keepCase(t: string): string {
 
 /** Latest date any source in the guide was seen, as YYYY-MM-DD. */
 export function lastChecked(id: GuideId): string {
-  return RAW_PRODUCTS[id].flatMap(p => p.sources.map(s => s.seen)).sort().at(-1) ?? '';
+  return RAW_PRODUCTS[id].flatMap(p => p.sources.map(s => s.seen)).sort().slice(-1)[0] ?? '';
 }
 
 export function formatDay(iso: string): string {

@@ -134,7 +134,7 @@ export async function handleImportRecords(req: Request, deps: ImportDeps): Promi
     businessSector = !organizationId && typeof profile?.sector === 'string' ? profile.sector : null;
     const { data: activeRows } = await db.from('subscriptions').select('tier, expires_at, billing_cycle').eq('user_id', userId).eq('status', 'active');
     const activeSub = strongestRow(activeRows ?? []);
-    planCycle = activeSub ? (activeSub.billing_cycle === 'monthly' ? 'monthly' : 'yearly') : null;
+    planCycle = activeSub ? ((activeSub as { billing_cycle?: string }).billing_cycle === 'monthly' ? 'monthly' : 'yearly') : null;
     planExpiresAt = activeSub?.expires_at ?? null;
     const plan = canonicalPlan({ tier: profile?.subscription_tier, expiresAt: profile?.subscription_expires_at }, activeRows ?? []);
     scanLimit = invoiceScanLimit(plan.tier, plan.expiresAt);
