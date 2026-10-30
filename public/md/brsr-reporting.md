@@ -79,7 +79,7 @@ Asks for: Purchases and sales concentrated with trading houses, dealers and rela
 
 Units from your own diesel generator are not electricity. Count the diesel once, under Scope 1, and leave its units out of Scope 2.
 
-Senseible reads the units, litres and kilograms off each bill, keeps the factor and its source on every line, and drafts the BRSR energy and emissions fields from them. [See a sample report with its BRSR Core map](https://senseible.earth/esg-report-sample).
+Senseible reads the units, litres and kilograms off each bill, keeps the factor and its source on every line, and drafts the BRSR energy and emissions fields from them. [See a sample report with its BRSR Core map](https://senseible.earth/esg-report-sample). [Compare BRSR software](https://senseible.earth/best-brsr-software).
 
 ## Find the answer for your exact line
 

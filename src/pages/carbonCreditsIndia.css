@@ -112,3 +112,6 @@
   .cci-rail-ink, .cci-stop, .cci-node, .cci-bar i, .cci-chip { transition: none; }
   .cci-card, .cci-lens-panel { animation: none; }
 }
+.cci-more { margin-top: 3rem; max-width: 46rem; font-size: .95rem; color: hsl(var(--muted-foreground)); }
+.cci-more a { font-weight: 600; color: hsl(var(--primary)); text-underline-offset: 4px; }
+.cci-more a:hover { text-decoration: underline; }

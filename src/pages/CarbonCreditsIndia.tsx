@@ -179,6 +179,8 @@ export default function CarbonCreditsIndia() {
           </div>
         </section>
 
+        <p className="cci-more">Comparing where to buy, sell or register? <Link to="/carbon-credit-platforms">Carbon credit platforms, compared</Link>.</p>
+
         <section className="cci-close">
           <h2>Every route starts with a year of numbers you can prove.</h2>
           <p>Upload an electricity bill or fuel invoice and see its emissions, with the factor behind every line. That record is what a verifier, a buyer or a lender will ask for first.</p>

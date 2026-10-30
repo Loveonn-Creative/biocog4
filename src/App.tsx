@@ -66,6 +66,7 @@ const Principles = lazyPage(() => import("./pages/Principles"));
 const CarbonCredits = lazyPage(() => import("./pages/CarbonCredits"));
 const CarbonCreditsIndia = lazyPage(() => import("./pages/CarbonCreditsIndia"));
 const SoftwareChooser = lazyPage(() => import("./pages/SoftwareChooser"));
+const SoftwareGuide = lazyPage(() => import("./pages/SoftwareGuide"));
 const BrsrReporting = lazyPage(() => import("./pages/BrsrReporting"));
 const ClimateFinance = lazyPage(() => import("./pages/ClimateFinance"));
 const GreenLoan = lazyPage(() => import("./pages/GreenLoan"));
@@ -252,6 +253,13 @@ const App = () => (
               <Route path="/carbon-credits" element={<CarbonCredits />} />
               <Route path="/carbon-credits-india" element={<CarbonCreditsIndia />} />
               <Route path="/carbon-accounting-software-india" element={<SoftwareChooser />} />
+              <Route path="/best-carbon-accounting-software" element={<SoftwareGuide path="/best-carbon-accounting-software" />} />
+              <Route path="/best-supplier-emissions-software" element={<SoftwareGuide path="/best-supplier-emissions-software" />} />
+              <Route path="/best-carbon-compliance-software" element={<SoftwareGuide path="/best-carbon-compliance-software" />} />
+              <Route path="/best-cbam-software" element={<SoftwareGuide path="/best-cbam-software" />} />
+              <Route path="/best-brsr-software" element={<SoftwareGuide path="/best-brsr-software" />} />
+              <Route path="/carbon-credit-platforms" element={<SoftwareGuide path="/carbon-credit-platforms" />} />
+              <Route path="/green-loans-msme-india" element={<SoftwareGuide path="/green-loans-msme-india" />} />
               <Route path="/brsr-reporting" element={<BrsrReporting />} />
               <Route path="/climate-finance" element={<ClimateFinance />} />
               <Route path="/green-loan" element={<GreenLoan />} />
