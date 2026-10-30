@@ -85,11 +85,10 @@ export function supplierEmissions(input: SupplierFileInput): FileResult {
 
   if (valid(input.kwh)) {
     const qty = input.kwh * times;
-    const sameYear = grid.billYear === grid.factorYear;
     rows.push({
       key: 'electricity', source: 'Grid electricity', scope: 2, qty, unit: 'kWh',
       factor: grid.value, factorUnit: 'kWh',
-      factorSource: sameYear ? grid.source : `${grid.source}, the latest year CEA has published, applied to ${grid.billYear}`,
+      factorSource: grid.source,
       kg: qty * grid.value, billsHeld: input.billsHeld.electricity,
     });
   }
@@ -124,7 +123,7 @@ const EVIDENCED = 'Bills held for every month';
 const DECLARED = 'Self-declared';
 const evidence = (r: FileRow) => (r.billsHeld ? EVIDENCED : DECLARED);
 const to = (buyer?: string) => ['The sustainability and procurement team', cleanName(buyer)].filter(Boolean).join(', ');
-const total = (kg: number | null, none: string) => (kg === null ? none : `${n0(kg)} kg (${tonnes(kg)} tCO2e)`);
+const total = (kg: number | null, none: string) => (kg === null ? none : `${tonnes(kg)} tCO2e (${n0(kg)} kg)`);
 
 function methodLines(r: FileResult, basis: Basis): string[] {
   const fuels = r.rows.filter((x) => x.scope === 1);
@@ -154,7 +153,7 @@ export function supplierEmissionsFile(input: SupplierFileInput): SendableFile {
         lines: [
           { text: `Scope 1: ${total(r.scope1Kg, 'no fuel figures given')}`, bold: true },
           { text: `Scope 2, location-based: ${total(r.scope2Kg, 'no electricity figure given')}`, bold: true },
-          { text: `Scope 1 and 2: ${n0(r.totalKg)} kg (${tonnes(r.totalKg)} tCO2e)`, bold: true },
+          { text: `Scope 1 and 2: ${total(r.totalKg, '')}`, bold: true },
         ],
       },
       {
