@@ -54,7 +54,7 @@ import { GLS_FAQS, GLS_PATH } from '@/data/greenLoanSchemes';
 import { CBAM_INDIA_FAQS, CBAM_INDIA_PATH } from '@/data/cbamIndia';
 import { CBAM_DECLARANT_FAQS, CBAM_DECLARANT_PATH } from '@/data/cbamDeclarant';
 import { BRSR_FAQS, BRSR_HUB_PATH } from '@/data/brsrHub';
-import { GUIDES, itemListLd, lastChecked } from '@/data/softwareGuides';
+import { GUIDES, itemListLd, lastChecked, quickAnswers } from '@/data/softwareGuides';
 
 export * from './seoMeta';
 export { blocksToHtml, blocksToMarkdown, escapeHtml } from './render';
@@ -362,7 +362,7 @@ function coreRoutes(): SeoRoute[] {
   // Software comparison guides: ItemList lists only the products on the page.
   const softwareGuides = GUIDES.map(g => {
     const crumbs = [{ name: 'Home', path: '/' }, { name: g.h1, path: g.path }];
-    return staticRoute(g.path, 'compare', 0.7, { ogType: 'article', lastmod: lastChecked(g.id), breadcrumbs: crumbs, jsonLd: [breadcrumbLd(crumbs), itemListLd(g, canonicalUrl)] });
+    return staticRoute(g.path, 'compare', 0.7, { ogType: 'article', lastmod: lastChecked(g.id), breadcrumbs: crumbs, jsonLd: [breadcrumbLd(crumbs), itemListLd(g, canonicalUrl), faqLd(quickAnswers(g))] });
   });
 
   const brsrCrumbs = [{ name: 'Home', path: '/' }, { name: 'BRSR reporting', path: BRSR_HUB_PATH }];

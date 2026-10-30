@@ -49,6 +49,8 @@ export interface Criterion {
 export interface Situation {
   id: string;
   label: string;
+  /** The search question this situation answers, shown under Quick answers. */
+  q?: string;
   /** Criterion id, or `tag:<tag>`, to how much it matters (1 to 4). */
   weights: Record<string, number>;
 }
@@ -105,11 +107,11 @@ const ALL_GUIDES: Guide[] = [
       { id: 'targets_scenarios', short: 'Targets and scenarios', label: 'Target setting and reduction scenarios', ask: 'What does a solar install or a fuel switch do to next year’s total?' },
     ],
     situations: [
-      { id: 'msme-bills', label: 'Indian MSME or exporter working from bills', weights: { source_data_ingestion: 3, factor_transparency: 2, audit_trail: 2, s12_location_market: 1, 'tag:india': 3, 'tag:free-plan': 2 } },
-      { id: 'multinational', label: 'Multinational filing CSRD or ISSB', weights: { framework_outputs: 3, s3_all_15: 3, audit_trail: 2, security_cert: 2, s12_location_market: 2 } },
-      { id: 'assurance', label: 'Getting ready for assurance', weights: { audit_trail: 3, factor_transparency: 3, security_cert: 2, s12_location_market: 1 } },
-      { id: 'suite', label: 'Already on SAP, Microsoft, Salesforce or IBM', weights: { 'tag:suite': 4, source_data_ingestion: 2, framework_outputs: 1 } },
-      { id: 'targets', label: 'Setting targets and a reduction plan', weights: { targets_scenarios: 3, s3_all_15: 1, factor_transparency: 1 } },
+      { id: 'msme-bills', label: 'Indian MSME or exporter working from bills', q: 'What is the best carbon accounting software for an Indian MSME working from bills in 2027?', weights: { source_data_ingestion: 3, factor_transparency: 2, audit_trail: 2, s12_location_market: 1, 'tag:india': 3, 'tag:free-plan': 2 } },
+      { id: 'multinational', label: 'Multinational filing CSRD or ISSB', q: 'What is the best carbon accounting software for a multinational filing CSRD or ISSB in 2027?', weights: { framework_outputs: 3, s3_all_15: 3, audit_trail: 2, security_cert: 2, s12_location_market: 2 } },
+      { id: 'assurance', label: 'Getting ready for assurance', q: 'Which carbon accounting software is best for getting ready for assurance in 2027?', weights: { audit_trail: 3, factor_transparency: 3, security_cert: 2, s12_location_market: 1 } },
+      { id: 'suite', label: 'Already on SAP, Microsoft, Salesforce or IBM', q: 'Which carbon accounting software works best if you already use SAP, Microsoft, Salesforce or IBM?', weights: { 'tag:suite': 4, source_data_ingestion: 2, framework_outputs: 1 } },
+      { id: 'targets', label: 'Setting targets and a reduction plan', q: 'Which carbon accounting software is best for setting targets and a reduction plan in 2027?', weights: { targets_scenarios: 3, s3_all_15: 1, factor_transparency: 1 } },
     ],
     tags: {
       'the-sustainability-cloud': ['india', 'free-plan'],
@@ -124,7 +126,7 @@ const ALL_GUIDES: Guide[] = [
     tagLabels: { india: 'Built for Indian companies', 'free-plan': 'Has a free plan', suite: 'Runs inside a business suite you may already use' },
     related: ['supplier-emissions', 'carbon-compliance', 'brsr'],
     next: { lead: 'Talking to two or three of these?', label: 'Score them with your own weights', to: '/carbon-accounting-software-india' },
-    keywords: ['best carbon accounting software', 'carbon accounting software comparison', 'GHG accounting software', 'Scope 3 software', 'carbon accounting tools India'],
+    keywords: ['best carbon accounting software 2027', 'best carbon accounting software', 'carbon accounting software India 2027', 'carbon accounting software comparison', 'GHG accounting software', 'Scope 3 software', 'carbon accounting tools India'],
   },
   {
     id: 'dmrv',
@@ -174,11 +176,11 @@ const ALL_GUIDES: Guide[] = [
       { id: 'free_for_suppliers', short: 'Free for suppliers', label: 'Suppliers can respond without paying', ask: 'Does any supplier pay anything to respond?' },
     ],
     situations: [
-      { id: 'india-msme', label: 'Buyer with Indian MSME suppliers', weights: { supplier_primary_data: 3, free_for_suppliers: 3, spend_fallback_labelled: 2, 'tag:india': 3, 'tag:documents': 2 } },
-      { id: 'bills', label: 'Suppliers who send bills, not questionnaires', weights: { 'tag:documents': 4, supplier_primary_data: 3, free_for_suppliers: 2, supplier_data_quality: 1 } },
-      { id: 'global', label: 'Large multi-country supplier programme', weights: { supplier_request_portal: 3, hotspot_prioritisation: 2, supplier_data_quality: 2, supplier_reduction_engagement: 2, procurement_erp_integration: 2 } },
-      { id: 'pcf', label: 'Product footprints from suppliers', weights: { 'tag:pcf': 4, supplier_primary_data: 2, procurement_erp_integration: 2 } },
-      { id: 'reduce', label: 'Cutting supplier emissions, not only counting', weights: { supplier_reduction_engagement: 3, hotspot_prioritisation: 2, supplier_data_quality: 1 } },
+      { id: 'india-msme', label: 'Buyer with Indian MSME suppliers', q: 'What is the best Scope 3 supplier emissions software for buyers with Indian MSME suppliers in 2027?', weights: { supplier_primary_data: 3, free_for_suppliers: 3, spend_fallback_labelled: 2, 'tag:india': 3, 'tag:documents': 2 } },
+      { id: 'bills', label: 'Suppliers who send bills, not questionnaires', q: 'Which supplier emissions software works when suppliers send bills instead of questionnaires?', weights: { 'tag:documents': 4, supplier_primary_data: 3, free_for_suppliers: 2, supplier_data_quality: 1 } },
+      { id: 'global', label: 'Large multi-country supplier programme', q: 'What is the best supplier emissions software for a large multi-country supplier programme in 2027?', weights: { supplier_request_portal: 3, hotspot_prioritisation: 2, supplier_data_quality: 2, supplier_reduction_engagement: 2, procurement_erp_integration: 2 } },
+      { id: 'pcf', label: 'Product footprints from suppliers', q: 'Which supplier emissions software is best for collecting product carbon footprints from suppliers?', weights: { 'tag:pcf': 4, supplier_primary_data: 2, procurement_erp_integration: 2 } },
+      { id: 'reduce', label: 'Cutting supplier emissions, not only counting', q: 'Which supplier emissions software helps cut supplier emissions, not only count them?', weights: { supplier_reduction_engagement: 3, hotspot_prioritisation: 2, supplier_data_quality: 1 } },
     ],
     tags: {
       'the-sustainability-cloud': ['india', 'pcf'],
@@ -190,7 +192,7 @@ const ALL_GUIDES: Guide[] = [
     tagLabels: { india: 'Built with Indian suppliers in mind', documents: 'Reads the documents suppliers already have', pcf: 'Handles product-level footprints' },
     related: ['carbon-accounting', 'cbam', 'brsr'],
     next: { lead: 'Not sure how much of your Scope 3 is guesswork?', label: 'Check your supplier evidence', to: '/scope-3-supplier-evidence' },
-    keywords: ['supplier emissions software', 'Scope 3 software', 'supplier engagement carbon', 'Scope 3 supplier data', 'supply chain emissions tools'],
+    keywords: ['best supplier emissions software 2027', 'best Scope 3 software 2027', 'supplier emissions software', 'Scope 3 software', 'supplier engagement carbon', 'Scope 3 supplier data', 'supply chain emissions tools'],
   },
   {
     id: 'carbon-compliance',
@@ -208,17 +210,17 @@ const ALL_GUIDES: Guide[] = [
       { id: 'tagging', short: 'XBRL tagging', label: 'Digital tagging (XBRL or iXBRL) for filing', ask: 'Does it produce the tagged file, or do we tag it elsewhere?' },
     ],
     situations: [
-      { id: 'india-listed', label: 'Indian listed company (BRSR, CCTS)', weights: { brsr: 3, ccts: 3, audit: 2, tagging: 1, ghg: 1 } },
-      { id: 'eu', label: 'EU group under CSRD', weights: { csrd: 3, tagging: 3, audit: 2, issb: 1 } },
-      { id: 'us', label: 'US-linked: California SB 253', weights: { sb253: 3, issb: 2, ghg: 2, audit: 1 } },
-      { id: 'both', label: 'Indian group facing EU and Indian rules', weights: { brsr: 2, ccts: 2, csrd: 2, issb: 1, ghg: 1, audit: 1 } },
-      { id: 'supplier', label: 'Supplier answering a listed customer', weights: { ghg: 3, audit: 3, brsr: 1, 'tag:sme': 2 } },
+      { id: 'india-listed', label: 'Indian listed company (BRSR, CCTS)', q: 'What is the best carbon compliance software for an Indian listed company under BRSR and CCTS in 2027?', weights: { brsr: 3, ccts: 3, audit: 2, tagging: 1, ghg: 1 } },
+      { id: 'eu', label: 'EU group under CSRD', q: 'What is the best carbon compliance software for an EU group reporting under CSRD in 2027?', weights: { csrd: 3, tagging: 3, audit: 2, issb: 1 } },
+      { id: 'us', label: 'US-linked: California SB 253', q: 'Which carbon compliance software covers California SB 253 in 2027?', weights: { sb253: 3, issb: 2, ghg: 2, audit: 1 } },
+      { id: 'both', label: 'Indian group facing EU and Indian rules', q: 'Which carbon compliance software covers both EU and Indian rules for an Indian group?', weights: { brsr: 2, ccts: 2, csrd: 2, issb: 1, ghg: 1, audit: 1 } },
+      { id: 'supplier', label: 'Supplier answering a listed customer', q: 'Which carbon compliance software suits a supplier answering a listed customer’s request?', weights: { ghg: 3, audit: 3, brsr: 1, 'tag:sme': 2 } },
     ],
     tags: { intellocarbon: ['sme'], senseible: ['sme'] },
     tagLabels: { sme: 'Built for MSMEs' },
     related: ['brsr', 'cbam', 'carbon-accounting'],
     next: { lead: 'Talking to two or three of these?', label: 'Score them with your own weights', to: '/carbon-accounting-software-india' },
-    keywords: ['carbon compliance software', 'CSRD software', 'ISSB reporting software', 'BRSR compliance software', 'CCTS compliance software'],
+    keywords: ['best carbon compliance software 2027', 'CSRD software 2027', 'carbon compliance software', 'CSRD software', 'ISSB reporting software', 'BRSR compliance software', 'CCTS compliance software'],
   },
   {
     id: 'cbam',
@@ -236,10 +238,10 @@ const ALL_GUIDES: Guide[] = [
       { id: 'declarant_definitive', short: 'Declaration, current rules', label: 'Annual declaration and the 50% quarterly holding, on current rules rather than the old quarterly reports', ask: 'Show us the annual declaration, not a quarterly report.' },
     ],
     situations: [
-      { id: 'ex-steel', label: 'Indian exporter: steel or aluminium', weights: { 'tag:exporter': 4, actuals: 3, operator_template: 3, verification: 2, goods: 1, defaults: 1, 'tag:steel': 1 } },
-      { id: 'ex-cement', label: 'Indian exporter: cement or fertiliser', weights: { 'tag:exporter': 4, actuals: 3, operator_template: 3, goods: 2, verification: 1, defaults: 1, 'tag:cement': 1 } },
-      { id: 'importer', label: 'EU importer with non-EU suppliers', weights: { 'tag:importer': 4, supplier_collection: 3, declarant_definitive: 3, certificates: 2, defaults: 1 } },
-      { id: 'budget', label: 'Budgeting certificate cost for 2027', weights: { certificates: 3, defaults: 2, declarant_definitive: 1, actuals: 1 } },
+      { id: 'ex-steel', label: 'Indian exporter: steel or aluminium', q: 'What is the best CBAM software for Indian steel and aluminium exporters in 2027?', weights: { 'tag:exporter': 4, actuals: 3, operator_template: 3, verification: 2, goods: 1, defaults: 1, 'tag:steel': 1 } },
+      { id: 'ex-cement', label: 'Indian exporter: cement or fertiliser', q: 'What is the best CBAM software for Indian cement and fertiliser exporters in 2027?', weights: { 'tag:exporter': 4, actuals: 3, operator_template: 3, goods: 2, verification: 1, defaults: 1, 'tag:cement': 1 } },
+      { id: 'importer', label: 'EU importer with non-EU suppliers', q: 'What is the best CBAM software for EU importers with non-EU suppliers in 2027?', weights: { 'tag:importer': 4, supplier_collection: 3, declarant_definitive: 3, certificates: 2, defaults: 1 } },
+      { id: 'budget', label: 'Budgeting certificate cost for 2027', q: 'Which CBAM software helps budget certificate costs for 2027?', weights: { certificates: 3, defaults: 2, declarant_definitive: 1, actuals: 1 } },
     ],
     tags: {
       senseible: ['exporter', 'steel', 'cement'],
@@ -269,7 +271,7 @@ const ALL_GUIDES: Guide[] = [
         'They hold and share data. They do not collect plant data, split it across processes or chase suppliers. That gap is what the tools below sell.',
       ],
     },
-    keywords: ['best CBAM software', 'CBAM software 2027', 'CBAM reporting software', 'CBAM software India', 'CBAM declarant software'],
+    keywords: ['best CBAM software 2027', 'best CBAM software', 'CBAM software 2027', 'CBAM software for Indian exporters', 'CBAM reporting software', 'CBAM software India', 'CBAM declarant software'],
   },
   {
     id: 'brsr',
@@ -287,10 +289,10 @@ const ALL_GUIDES: Guide[] = [
       { id: 'pricing', short: 'Published price', label: 'Price published on its site', ask: 'What will year one cost, all in?' },
     ],
     situations: [
-      { id: 'top250', label: 'Top 250 listed company', weights: { full_brsr: 3, brsr_core: 3, value_chain: 3, xbrl: 2, current_rules: 2 } },
-      { id: 'core-first', label: 'Listed 251 to 1,000, first BRSR Core check', weights: { brsr_core: 3, evidence: 3, current_rules: 2, ghg_india: 2, full_brsr: 2 } },
-      { id: 'supplier', label: 'Supplier asked for figures by a listed customer', weights: { ghg_india: 3, evidence: 3, pricing: 2, current_rules: 1, 'tag:free': 2 } },
-      { id: 'plant', label: 'Manufacturer working from plant bills', weights: { ghg_india: 3, evidence: 3, brsr_core: 2, 'tag:bills': 2 } },
+      { id: 'top250', label: 'Top 250 listed company', q: 'What is the best BRSR Core software for a top 250 listed company in 2027?', weights: { full_brsr: 3, brsr_core: 3, value_chain: 3, xbrl: 2, current_rules: 2 } },
+      { id: 'core-first', label: 'Listed 251 to 1,000, first BRSR Core check', q: 'Which BRSR software is best for a first BRSR Core check (listed 251 to 1,000)?', weights: { brsr_core: 3, evidence: 3, current_rules: 2, ghg_india: 2, full_brsr: 2 } },
+      { id: 'supplier', label: 'Supplier asked for figures by a listed customer', q: 'Which BRSR software suits a supplier asked for figures by a listed customer?', weights: { ghg_india: 3, evidence: 3, pricing: 2, current_rules: 1, 'tag:free': 2 } },
+      { id: 'plant', label: 'Manufacturer working from plant bills', q: 'Which BRSR software works best for a manufacturer reporting from plant bills?', weights: { ghg_india: 3, evidence: 3, brsr_core: 2, 'tag:bills': 2 } },
     ],
     tags: {
       carbonneeti: ['free', 'bills'],
@@ -304,7 +306,7 @@ const ALL_GUIDES: Guide[] = [
     tagLabels: { free: 'Free plan or trial', bills: 'Reads utility bills or invoices' },
     related: ['carbon-compliance', 'supplier-emissions', 'carbon-accounting'],
     next: { lead: 'New to BRSR Core?', label: 'BRSR and BRSR Core, explained', to: '/brsr-reporting' },
-    keywords: ['best BRSR software', 'BRSR Core software', 'BRSR reporting software India', 'SEBI BRSR tool', 'BRSR XBRL software'],
+    keywords: ['best BRSR software 2027', 'BRSR Core software 2027', 'best BRSR software', 'BRSR Core software', 'BRSR reporting software India', 'SEBI BRSR tool', 'BRSR XBRL software'],
   },
   {
     id: 'carbon-credits',
@@ -322,11 +324,11 @@ const ALL_GUIDES: Guide[] = [
       { id: 'small_business_access', short: 'Small buyers', label: 'Usable by a small company without large minimums', ask: 'What is the smallest purchase, and what fixed fees apply?' },
     ],
     situations: [
-      { id: 'small-buyer', label: 'Small company buying credits to retire', weights: { small_business_access: 3, buy_or_trade: 3, published_fees: 2, quality_labels: 2 } },
-      { id: 'developer', label: 'Indian project owner seeking issuance', weights: { india_relevance: 3, registry_issuance: 3, 'tag:developer': 2 } },
-      { id: 'ccts', label: 'Indian company under CCTS', weights: { 'tag:ccts': 4, india_relevance: 2, registry_issuance: 1 } },
-      { id: 'trader', label: 'Trading desk or large buyer', weights: { buy_or_trade: 3, quality_labels: 2, api_access: 2, 'tag:trading': 2 } },
-      { id: 'msme-ready', label: 'MSME checking if its savings could count later', weights: { 'tag:readiness': 4, india_relevance: 2, small_business_access: 2 } },
+      { id: 'small-buyer', label: 'Small company buying credits to retire', q: 'Where can a small company buy and retire carbon credits in 2027?', weights: { small_business_access: 3, buy_or_trade: 3, published_fees: 2, quality_labels: 2 } },
+      { id: 'developer', label: 'Indian project owner seeking issuance', q: 'Which carbon credit registry should an Indian project owner use for issuance in 2027?', weights: { india_relevance: 3, registry_issuance: 3, 'tag:developer': 2 } },
+      { id: 'ccts', label: 'Indian company under CCTS', q: 'Which carbon credit platform does an Indian company under CCTS use in 2027?', weights: { 'tag:ccts': 4, india_relevance: 2, registry_issuance: 1 } },
+      { id: 'trader', label: 'Trading desk or large buyer', q: 'Which carbon credit exchange suits a trading desk or large buyer in 2027?', weights: { buy_or_trade: 3, quality_labels: 2, api_access: 2, 'tag:trading': 2 } },
+      { id: 'msme-ready', label: 'MSME checking if its savings could count later', q: 'Which tool helps an MSME check if its energy savings could earn carbon credits later?', weights: { 'tag:readiness': 4, india_relevance: 2, small_business_access: 2 } },
     ],
     tags: {
       'verra-registry': ['developer'],
@@ -340,7 +342,7 @@ const ALL_GUIDES: Guide[] = [
     related: ['dmrv', 'green-loans'],
     pinLast: ['senseible'],
     next: { lead: 'Four different things are called carbon credits in India.', label: 'See which one fits you', to: '/carbon-credits-india' },
-    keywords: ['carbon credit platforms', 'carbon credit registry', 'carbon credit exchange', 'buy carbon credits India', 'Indian Carbon Market'],
+    keywords: ['best carbon credit platforms 2027', 'carbon credit platforms', 'carbon credit registry', 'carbon credit exchange', 'buy carbon credits India', 'Indian Carbon Market'],
   },
   {
     id: 'green-loans',
@@ -358,12 +360,12 @@ const ALL_GUIDES: Guide[] = [
       { id: 'evidence_asked', short: 'Evidence asked', label: 'Energy, emission or environmental evidence the lender asks for', ask: 'Which bills, audits or reports do you want with the application?' },
     ],
     situations: [
-      { id: 'efficiency', label: 'Energy-efficiency upgrade', weights: { 'tag:efficiency': 4, financing_share: 1, ticket_size: 1, apply_route: 1 } },
-      { id: 'solar', label: 'Rooftop solar', weights: { 'tag:solar': 4, ticket_size: 1, tenure: 1 } },
-      { id: 'machinery', label: 'New or replacement machinery', weights: { 'tag:machinery': 4, ticket_size: 1, tenure: 1 } },
-      { id: 'new-unit', label: 'Unit under three years old', weights: { 'tag:new-unit': 4, apply_route: 1 } },
-      { id: 'small-loan', label: 'Small loan, no property to pledge', weights: { 'tag:small-loan': 4, eligibility: 1 } },
-      { id: 'papers', label: 'Getting papers ready first', weights: { evidence_asked: 3, 'tag:readiness': 3 } },
+      { id: 'efficiency', label: 'Energy-efficiency upgrade', q: 'Which green loan is best for an MSME energy-efficiency upgrade in India in 2027?', weights: { 'tag:efficiency': 4, financing_share: 1, ticket_size: 1, apply_route: 1 } },
+      { id: 'solar', label: 'Rooftop solar', q: 'Which green loan is best for MSME rooftop solar in India in 2027?', weights: { 'tag:solar': 4, ticket_size: 1, tenure: 1 } },
+      { id: 'machinery', label: 'New or replacement machinery', q: 'Which green loan funds new or replacement machinery for Indian MSMEs in 2027?', weights: { 'tag:machinery': 4, ticket_size: 1, tenure: 1 } },
+      { id: 'new-unit', label: 'Unit under three years old', q: 'Which green loans can an MSME unit under three years old get in India?', weights: { 'tag:new-unit': 4, apply_route: 1 } },
+      { id: 'small-loan', label: 'Small loan, no property to pledge', q: 'Which green loans can an Indian MSME get without pledging property?', weights: { 'tag:small-loan': 4, eligibility: 1 } },
+      { id: 'papers', label: 'Getting papers ready first', q: 'Where can an Indian MSME get its green loan papers ready before applying?', weights: { evidence_asked: 3, 'tag:readiness': 3 } },
     ],
     tags: {
       'sidbi-green-finance-scheme': ['efficiency', 'solar', 'new-unit'],
@@ -381,7 +383,7 @@ const ALL_GUIDES: Guide[] = [
     pinLast: ['senseible-green-loan-check'],
     priceLabel: 'Rate or cost',
     next: { lead: 'Know what the money is for?', label: 'Compare schemes by need', to: '/msme-green-loan-schemes' },
-    keywords: ['green loans for MSME India', 'SIDBI green loan', 'IREDA energy efficiency loan', 'MSME green finance', 'green loan India'],
+    keywords: ['best green loans for MSME India 2027', 'green loans for MSME India', 'SIDBI green loan', 'IREDA energy efficiency loan', 'MSME green finance', 'green loan India'],
   },
   {
     id: 'tenders',
@@ -6270,6 +6272,33 @@ export function rankFor(g: Guide, situationId: string | null): Fit[] {
   return fits
     .sort((a, b) => (a.sink - b.sink) || (b.fit - a.fit) || (a.i - b.i))
     .map(({ i: _i, sink: _s, ...f }) => f);
+}
+
+/** One answer per situation question, worked out from the same ranking the page shows. */
+export function quickAnswers(g: Guide): { question: string; answer: string }[] {
+  return g.situations.filter(s => s.q).map(s => {
+    const [first, ...rest] = rankFor(g, s.id).slice(0, 3);
+    const then = rest.length ? `, then ${rest.map(f => f.product.name).join(' and ')}` : '';
+    const why = first.reasons[0] ? ` Why ${first.product.name}: ${reasonText(first.reasons[0])}.` : '';
+    return { question: s.q!, answer: `On this guide’s checks, the best fit is ${first.product.name}${then}.${why}` };
+  });
+}
+
+/** "BRSR Core: yes" reads as "covers BRSR Core"; a note keeps its first sentence. */
+function reasonText(r: string): string {
+  const m = r.match(/^(.+?): (yes|partly)$/i);
+  if (m) return `${m[2].toLowerCase() === 'yes' ? 'covers' : 'partly covers'} ${keepCase(m[1])}`;
+  const note = r.includes(': ') ? r.slice(r.indexOf(': ') + 2) : r;
+  const first = note.split(/(?<=[a-z0-9)])\. |; /)[0].replace(/\.$/, '');
+  return keepCase(first);
+}
+
+/** Lower-cases a leading word unless it is an acronym or a name. */
+function keepCase(t: string): string {
+  const w = t.split(/[\s:]/)[0];
+  if (w.length > 1 && w.slice(0, 2) === w.slice(0, 2).toUpperCase()) return t;
+  if (/^(Indian|India|Scope|Senseible|EU|SBTi)\b/.test(t)) return t;
+  return t.charAt(0).toLowerCase() + t.slice(1);
 }
 
 /** Latest date any source in the guide was seen, as YYYY-MM-DD. */
