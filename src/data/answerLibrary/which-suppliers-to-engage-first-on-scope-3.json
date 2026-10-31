@@ -38,7 +38,8 @@
     {
       "h": "A decision rule for the first round",
       "p": [
-        "Ask the top five to ten suppliers by estimated emissions, plus any CBAM-goods supplier, for activity data or a product footprint. Use averages for everyone else this year, and redo the ranking each year as supplier data replaces estimates."
+        "Ask the top five to ten suppliers by estimated emissions, plus any CBAM-goods supplier, for activity data or a product footprint. Use averages for everyone else this year, and redo the ranking each year as supplier data replaces estimates.",
+        "For those priority purchases, the GHG Protocol guidance names the kinds of supplier to approach: contract manufacturers, materials and parts suppliers, capital equipment suppliers, fuel suppliers, third-party logistics providers, waste management companies and other providers of goods and services."
       ]
     }
   ],

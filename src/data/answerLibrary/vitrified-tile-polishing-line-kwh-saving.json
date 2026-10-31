@@ -1,0 +1,87 @@
+{
+  "slug": "vitrified-tile-polishing-line-kwh-saving",
+  "q": "How much electricity can a vitrified tile polishing line save?",
+  "title": "Tile polishing line: kWh saved by new motors",
+  "short": "About a quarter, in BEE's Morbi report. Replacing the motors on one plant's grinding, calibration, polishing and sizing machines cut the line from 2,108,808 to 1,605,900 kWh a year: 502,908 kWh, roughly 340 t CO2 on today's grid. Cost Rs 25.79 lakh, payback 1.26 years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Morbi and other vitrified tile plant owners whose polishing line takes 40 to 45% of the plant's electricity",
+  "sections": [
+    {
+      "h": "What the auditors found on the line",
+      "ul": [
+        "Seven machines with 971 kW connected drew only 501 kW on average, so most motors ran below half load.",
+        "Average motor efficiency was about 70%; the replacement motors were rated at 86.4%.",
+        "The line ran 24 hours a day, 250 days a year, and used 1.37 to 2.28 kWh per square metre of tile across the units audited.",
+        "Motors cost Rs 20.21 lakh of the Rs 25.79 lakh total. Procurement and fitting: 4 weeks, done on days the line is idle."
+      ]
+    },
+    {
+      "h": "Where the saving comes from, machine by machine",
+      "ul": [
+        "Polishing 2 (100 kW measured on 174 kW): 117,387 kWh a year.",
+        "Polishing 1 (51 kW on 174 kW): 94,932 kWh.",
+        "Rough grinding (46 kW on 97 kW): 70,042 kWh.",
+        "Polishing 3 (130 kW on 174 kW): 70,581 kWh.",
+        "Calibration 1 and 2: 61,177 and 38,986 kWh.",
+        "Sizing (93 kW on 115 kW, the best loaded): 49,803 kWh."
+      ]
+    },
+    {
+      "h": "Why the report's 402 t CO2 is high",
+      "p": [
+        "The report used an older grid factor of about 0.8 kg per kWh. On CEA's FY 2025-26 factor of 0.675, the same 502,908 kWh is about 339 t of CO2 a year. The kWh saving is the solid number; the CO2 follows the grid year you report."
+      ]
+    },
+    {
+      "h": "Before you order motors",
+      "ul": [
+        "Log each machine's actual kW for a full shift with a clamp meter. Lightly loaded motors gain most; a well loaded one may not pay back.",
+        "Check whether a smaller motor, not only a more efficient one, fits each machine.",
+        "Fit a sub-meter on the polishing line first, so the before and after kWh come from the same meter.",
+        "Report kWh per square metre polished each month, not just total kWh, so a change in output does not hide the saving."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One plant's polishing line for a year",
+    "lines": [
+      "Before: 2,108,808 kWh x 0.675 = 1,423 t CO2",
+      "After: 1,605,900 kWh x 0.675 = 1,084 t CO2",
+      "Saved: 502,908 kWh, about 339 t CO2",
+      "At about 5,929 m2 a day for 250 days: roughly 1.42 kWh per m2 down to 1.08 (estimate)"
+    ],
+    "note": "Grid factor from CEA's database for FY 2025-26, an estimate. The square metre figures assume the report's suitable plant size; use your own output."
+  },
+  "senseible": "Senseible reads each electricity bill and gives monthly kWh and CO2 with the grid factor for that bill's year, so a drop after the motor change shows up in your records. The green loan check shows what a lender will ask for before funding it.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Polishing line share of a tile's footprint",
+      "to": "/answers/vitrified-tile-polishing-line-electricity"
+    },
+    {
+      "label": "BEE star rated induction motors",
+      "to": "/answers/bee-star-rating-induction-motor"
+    },
+    {
+      "label": "Measuring savings from an efficiency project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: energy conservation in polishing section, Morbi ceramic cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/MRV_CRM3.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

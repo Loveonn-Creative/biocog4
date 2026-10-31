@@ -1,0 +1,83 @@
+{
+  "slug": "balasore-rice-mills-diesel-backup-co2",
+  "q": "How much of a Balasore rice mill's carbon footprint comes from diesel backup?",
+  "title": "Balasore rice mills: the diesel backup share",
+  "short": "About a quarter of the fossil CO2 on today's grid factor. TERI counted 1,044 kL of generator diesel across Balasore's 25 working mills in 2015, against 13 million kWh from the grid. Husk supplies 82% of the energy, but its CO2 is biogenic and sits outside the fossil total.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Parboiled rice millers around Balasore and the lenders and buyers who ask them for a footprint",
+  "sections": [
+    {
+      "h": "The 25 mills and what they burn",
+      "p": [
+        "About 35 mills sit within 50 km of Balasore town; about 25 run, 21 of them at 3 t of paddy an hour and 4 at 6 t, at roughly half capacity. Together they make about 122,400 t of parboiled rice a year from 0.18 million t of government paddy. Husk is 23% of the paddy and about 75% of it goes straight into the mills' 3 t an hour boilers for soaking, steaming and drying. The grid runs the motors. Diesel runs only when the grid fails."
+      ]
+    },
+    {
+      "h": "Why a backup fuel ends up a quarter of the total",
+      "ul": [
+        "Energy: husk 9,315 toe, grid power 1,115 toe, diesel 897 toe. Diesel is under 8% of the energy.",
+        "Fossil CO2: husk drops out as biogenic, so only grid and diesel remain. Diesel at 2,645 kg per kL gives about 2,760 t; grid power at 0.675 kg per kWh about 8,780 t.",
+        "That puts generators at about 24% of the fossil figure, roughly 110 t a year for an average mill, or 8.5 litres for every tonne of rice."
+      ]
+    },
+    {
+      "h": "Cutting the generator line",
+      "ul": [
+        "Burn surplus husk in a gasifier and run the engine on producer gas. TERI lists this for Balasore as a partial or full replacement for diesel; it only works once the boiler stops wasting husk.",
+        "Free that husk first. An economiser plus better condensate return, taking feed water to about 90 C, saves about 10% of boiler fuel: 3,105 t of husk a year across the cluster.",
+        "Solar water heating for the 60 to 70 C soaking water saves a further 2,450 t of husk a year, by TERI's estimate."
+      ]
+    },
+    {
+      "h": "Records that make your own figure stand up",
+      "ol": [
+        "Generator diesel slips kept apart from vehicle diesel, with outage hours from the log book.",
+        "Monthly grid bills with kWh.",
+        "Husk burnt, in tonnes, on its own line as biogenic.",
+        "Tonnes of rice milled, so the buyer gets kg CO2 per tonne. The cluster's power use is about 72 kWh per tonne of rice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Balasore cluster, fossil CO2 (estimate)",
+    "lines": [
+      "Diesel: 1,044 kL x 2,645 kg = 2,761 t CO2",
+      "Grid: 13 million kWh x 0.675 kg = 8,775 t CO2",
+      "Fossil total: 11,536 t, of which diesel 24%",
+      "Per tonne of rice: 11,536 / 122,400 = 94 kg CO2, diesel 23 kg of it",
+      "Husk, reported separately: 9,315 toe x 41.868 GJ x 100 kg = about 39,000 t biogenic CO2"
+    ],
+    "note": "Fuel and output from TERI's Balasore rice mill profile (2015 data). TERI printed 12,740 t for electricity on an older grid factor; this uses CEA's FY 2025-26 factor. Husk at the IPCC 2006 default for other solid biomass."
+  },
+  "senseible": "Upload a month of grid bills and generator diesel slips and Senseible returns the mill's Scope 1 and Scope 2 split in minutes, diesel at 2.645 kg CO2 per litre and grid power at 0.675 kg per kWh, each line traced to its bill.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Bargarh rice mills: husk and CO2",
+      "to": "/answers/bargarh-rice-mills-husk-energy-and-co2"
+    },
+    {
+      "label": "Biomass fuel in a boiler and Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Balasore rice mills (SAMEEEKSHA, 2015 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/balasore-ricemills-odisha.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

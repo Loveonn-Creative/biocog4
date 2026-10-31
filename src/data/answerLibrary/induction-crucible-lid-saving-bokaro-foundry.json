@@ -1,0 +1,77 @@
+{
+  "slug": "induction-crucible-lid-saving-bokaro-foundry",
+  "q": "How much power does a lid on an induction furnace crucible save?",
+  "title": "Induction crucible lid: power saved",
+  "short": "About 20 kWh per tonne melted. An open crucible loses about 40 kWh per tonne as radiation, and a swing lid stops about half of it, by TERI's costing for Bokaro foundries. At 600 to 1,000 kWh per tonne that is 2 to 3% of the melt's power.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Induction furnace foundries melting scrap in 300 kg to 1 t crucibles, in Bokaro and elsewhere",
+  "sections": [
+    {
+      "h": "Why the open mouth costs you",
+      "p": [
+        "Bokaro's foundries melt in crucibles of 300 to 1,000 kg and keep the mouth open through the heat. TERI puts the radiation loss at 5 to 8% of the energy. Large scrap pieces make it worse: the crucible fills poorly, the heat runs longer and the mouth stays open longer."
+      ]
+    },
+    {
+      "h": "Two fixes, two figures",
+      "ul": [
+        "Swing lid on the crucible: 20 kWh per tonne, half the 40 kWh radiation loss.",
+        "Metal cutter to size the scrap: fuller charges and shorter heats.",
+        "Together: 30 to 50 kWh per tonne in TERI's table, against 600 to 1,000 kWh per tonne melted.",
+        "The profile's text says a lid alone saves 3 to 5%; its table gives the 20 kWh figure, which we use."
+      ]
+    },
+    {
+      "h": "Measure it on your own furnace",
+      "ol": [
+        "Log kWh from the furnace panel meter and tonnes tapped for every heat for two weeks with the lid open as usual.",
+        "Fit the lid and log two more weeks on the same grades of scrap.",
+        "Compare kWh per tonne, not monthly bills, so a busy month does not look like a saving.",
+        "Keep both logs: a lender or buyer asking what the change saved will want the before figure."
+      ]
+    },
+    {
+      "h": "Payback",
+      "p": [
+        "TERI priced the lid and cutter at Rs 5,00,000 and the saving at Rs 3,30,000 a year at 100 t a month, payback 1.5 years by its table, though its text says within a year. A foundry melting less, or saving only the lid's 20 kWh, should expect longer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 100 t a month foundry (estimate)",
+    "lines": [
+      "Lid alone: 20 kWh x 1,200 t = 24,000 kWh a year x 0.675 kg = 16.2 t CO2",
+      "Lid and cutter at 50 kWh per tonne: 60,000 kWh = 40.5 t CO2, TERI's annual figure",
+      "At Rs 7.5 per kWh, the HT rate in the profile: lid alone about Rs 1.8 lakh a year",
+      "Whole melt at 800 kWh per tonne: 960,000 kWh = 648 t CO2, so the lid trims about 2.5%"
+    ],
+    "note": "Crucible sizes, losses, savings and costs from TERI's Bokaro Industrial Area profile (2021). TERI's 60,000 kWh a year matches 50 kWh per tonne on 1,200 t, the top of the combined range. CO2 at the CEA FY 2025-26 grid factor."
+  },
+  "senseible": "The green loan check shows what a lender asks before funding furnace upgrades; Senseible reads your electricity bills into monthly kWh and CO2, so the before and after sit on record.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Induction furnace kWh per tonne",
+      "to": "/answers/induction-furnace-kwh-per-tonne-benchmark"
+    },
+    {
+      "label": "Bokaro industrial area energy",
+      "to": "/answers/bokaro-industrial-area-msme-energy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Bokaro Industrial Area cluster profile (2021)",
+      "url": "https://sameeeksha.org/pdf/BOKARO%20INDUSTRIAL%20AREA%20CLUSTER%20PROFILE%20(1).docx"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

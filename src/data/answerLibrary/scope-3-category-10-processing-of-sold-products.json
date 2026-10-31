@@ -18,7 +18,8 @@
     {
       "h": "When to exclude",
       "p": [
-        "The Scope 3 Standard allows excluding category 10 when uses are many and unknowable. Say so in the report and explain why."
+        "The Scope 3 Standard allows excluding category 10 when uses are many and unknowable. Say so in the report and explain why.",
+        "The standard adds that the exclusion covers Categories 9, 10, 11 and 12 together, not one of them on its own. If you do estimate, what you are counting is your customers' own Scope 1 and 2 from processing your product."
       ]
     }
   ],
@@ -45,6 +46,10 @@
     {
       "label": "GHG Protocol Corporate Standard",
       "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 10",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter10.pdf"
     }
   ],
   "reviewed": "2026-10-22"

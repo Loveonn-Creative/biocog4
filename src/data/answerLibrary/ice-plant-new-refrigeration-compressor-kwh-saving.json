@@ -1,0 +1,84 @@
+{
+  "slug": "ice-plant-new-refrigeration-compressor-kwh-saving",
+  "q": "How many kWh does a new 60 HP refrigeration compressor save in a block ice plant?",
+  "title": "Ice plant compressor swap: kWh per tonne",
+  "short": "Thirteen kWh per tonne of ice, or 52,707 kWh a year at 4,200 t, in BEE's Bhimavaram report: roughly 36 t CO2 on today's grid. Cost Rs 3.52 lakh, payback 1.78 years (2010). If you make more ice with the bigger capacity, total kWh rises, not falls.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Block ice plant owners in Bhimavaram and other fishing harbour clusters running old ammonia compressors",
+  "sections": [
+    {
+      "h": "The worn compressor BEE measured",
+      "ul": [
+        "Rated 96.2 TR with a 60 HP motor, it was delivering only 34.92 TR.",
+        "It drew 38.89 kW, about 1.11 kW per TR, and made 12 t of ice a day against a design 19.5 t.",
+        "It ran 24 hours a day, 350 days a year: 326,676 kWh for 4,200 t, about 78 kWh per tonne."
+      ]
+    },
+    {
+      "h": "What the new compressor promises",
+      "ul": [
+        "Same 60 HP motor, same 265 m3 an hour swept volume, still ammonia.",
+        "76.96 TR at 42.4 kW, about 0.55 kW per TR, and 15.6 t of ice a day. These are the maker's figures at 80% load, not a measurement.",
+        "About 65 kWh per tonne, so 13 kWh less on every tonne.",
+        "Cost Rs 3.37 lakh for the compressor plus Rs 0.15 lakh for panel and cabling."
+      ]
+    },
+    {
+      "h": "Total kWh can go up",
+      "p": [
+        "The report's 52,707 kWh saving holds only if you keep making 4,200 t. Run the faster compressor to 5,460 t and the plant uses 356,160 kWh, about 29,500 kWh more than before. Your CO2 per tonne falls; your total rises with output. Report both figures so a buyer or lender sees why."
+      ]
+    },
+    {
+      "h": "Checks before and after",
+      "ul": [
+        "Ask the supplier to commit to kW and TR at your brine temperature, in writing.",
+        "Meter the compressor separately for a month before and a month after.",
+        "Count blocks pulled each day so kWh per tonne can be worked out, not guessed.",
+        "Fix ammonia leaks and brine tank insulation at the same time; a new compressor cannot make up for them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Same 4,200 t of ice, old and new compressor",
+    "lines": [
+      "Old: 326,676 kWh / 4,200 t = 77.8 kWh per t; x 0.675 = 52.5 kg CO2 per t",
+      "New: 356,160 kWh / 5,460 t = 65.2 kWh per t; x 0.675 = 44.0 kg CO2 per t",
+      "Saved at 4,200 t: 12.55 kWh x 4,200 = 52,707 kWh, about 35.6 t CO2",
+      "Report says 42 t; it used an older, higher grid factor"
+    ],
+    "note": "Grid factor 0.675 kg CO2 per kWh, CEA FY 2025-26, an estimate. Payback at the report's tariff of Rs 3.75 per kWh."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 records; divide by tonnes of ice to track kWh per tonne after the change. The green loan check shows what a lender will want for the new compressor.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Bhimavaram ice plants: power per tonne",
+      "to": "/answers/bhimavaram-ice-plants-electricity-per-tonne"
+    },
+    {
+      "label": "Ice plant kWh per tonne benchmark",
+      "to": "/answers/ice-plant-kwh-per-tonne-benchmark"
+    },
+    {
+      "label": "Tube ice plant or block ice",
+      "to": "/answers/tube-ice-plant-vs-block-ice-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: new refrigeration compressor 60 HP, Bhimavaram ice making cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Bhimavaram_ice_making_cluster/New_Refrigiration_compressor_60_HP_Bhimavrm_IMC.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "induction-furnace-kwh-meter-integrator-saving",
+  "q": "Does a kWh indicator on an induction furnace actually save power?",
+  "title": "kWh integrator on an induction furnace",
+  "short": "Only if operators use it. BEE's Punjab foundry report expects 20 kWh less per tonne, 580 down to 560, by setting a kWh target for each melt and tapping on time: 7,200 kWh a year on 360 t, about 4.9 t CO2. It costs about Rs 38,000 and paid back in 1.05 years (2011).",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Foundry owners in Batala, Jalandhar, Ludhiana and similar clusters melting cast iron in medium frequency induction furnaces",
+  "sections": [
+    {
+      "h": "What the device does",
+      "p": [
+        "An integrator reads the inverter's output power and adds it up through the melt. You set the kWh a melt should take, based on your best past melts, and it shows how many units are left. The operator taps when the metal is ready, instead of holding it while moulds or samples catch up."
+      ]
+    },
+    {
+      "h": "What the audit saw",
+      "ul": [
+        "Power was changed often because of empty crucible space, excess charge and waiting for sample analysis.",
+        "For 35 to 40% of the heat time the furnace ran at 70 to 80% of rated power.",
+        "Charges were made up by experience rather than weighed to a recipe.",
+        "Units per tonne varied by 50 to 80 from melt to melt."
+      ]
+    },
+    {
+      "h": "A number in the report to question",
+      "p": [
+        "The report says the lowest consumption achieved was 650 units per tonne, yet it sets the baseline at 580 and the target at 560. Both cannot describe the same furnace. Use your own meter: take the lowest kWh per tonne of your last 30 melts as the target, not the report's figure."
+      ]
+    },
+    {
+      "h": "Making the saving stick",
+      "ul": [
+        "Write each melt's kWh and tapped weight in a log; the integrator's reading alone is lost at the next melt.",
+        "Weigh the charge every time.",
+        "Plan moulding so metal is not held in the furnace waiting for boxes.",
+        "Review the month's kWh per tonne with the melting supervisor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "360 t a year, before and after",
+    "lines": [
+      "Before: 580 kWh x 360 t = 208,800 kWh x 0.675 = 140.9 t CO2",
+      "After: 560 kWh x 360 t = 201,600 kWh x 0.675 = 136.1 t CO2",
+      "Saved: 7,200 kWh, about 4.9 t CO2; 13.5 kg CO2 on every tonne",
+      "Money at the report's Rs 5 per kWh: Rs 36,000 a year against Rs 37,752 spent"
+    ],
+    "note": "Grid factor 0.675 kg CO2 per kWh (CEA, FY 2025-26), an estimate. The report's 5.83 t used an older factor."
+  },
+  "senseible": "Senseible reads your power bills into monthly kWh and CO2. Divide by tonnes tapped and you can see whether the integrator target is holding month to month. The calculators turn your own kWh per tonne into CO2 per tonne.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Induction furnace kWh per tonne benchmark",
+      "to": "/answers/induction-furnace-kwh-per-tonne-benchmark"
+    },
+    {
+      "label": "Superheat and kWh per tonne",
+      "to": "/answers/induction-furnace-superheat-kwh-per-tonne"
+    },
+    {
+      "label": "Medium or mains frequency furnace",
+      "to": "/answers/medium-vs-mains-frequency-induction-furnace"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: kWh indicator cum integrator for induction furnace, Batala, Jalandhar and Ludhiana foundry cluster (2011, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Batala_Jalandhar_Ludhiana_foundry_cluster/En_cost_reductn_with_kwh_indicator_cum_integrator_for_inductn_furnace_Batala_Jlndr_Ludh_Fdry_Cluster.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

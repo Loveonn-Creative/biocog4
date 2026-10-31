@@ -1,0 +1,81 @@
+{
+  "slug": "ramgarh-refractory-cluster-downdraft-kiln-energy",
+  "q": "What is the energy use of the Ramgarh refractory cluster in Jharkhand?",
+  "title": "Ramgarh refractory cluster: kiln energy",
+  "short": "5,218 toe a year for 34,920 t of refractories across 20 MSMEs firing downdraft kilns, by TERI's 2020-21 study for BEE. Kiln heat is 5,186 toe, over 99%; electricity for raw material processing is just 32 toe. That is about 6.3 GJ for every tonne fired.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Refractory brick, well block, ladle nozzle, castable and mortar makers in Ramgarh district, Jharkhand",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "20 MSMEs, all firing downdraft kilns.",
+        "Refractory bricks, well blocks, ladle nozzles, castables, mortar and cement.",
+        "34,920 t of product a year.",
+        "Heat 5,186 toe, electricity 32 toe, about 372,000 kWh."
+      ]
+    },
+    {
+      "h": "Which fuel: check your own invoices",
+      "p": [
+        "The summary's text says these kilns mainly burn coal, while its table lists LDO, furnace oil, HSD and electricity; we follow the table and show both. The difference matters: the same heat from coal carries about a fifth more CO2 than from furnace oil. Your purchase invoices settle it for your kiln."
+      ]
+    },
+    {
+      "h": "What this means for your numbers",
+      "p": [
+        "With heat at over 99% of the energy, your power bill tells a buyer almost nothing. Kiln fuel per tonne fired is the figure that decides your footprint, and the one any saving will show up in."
+      ]
+    },
+    {
+      "h": "The firing log a buyer can trust",
+      "ol": [
+        "Fuel per firing: tonnes of coal by weighbridge slip, or litres of oil by dip and invoice.",
+        "Tonnes set in the kiln and tonnes passed after firing, by product.",
+        "Firing hours and peak temperature for each cycle.",
+        "The month's electricity bill for crushers and mixers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster CO2 at FY 2025-26 factors (estimate)",
+    "lines": [
+      "Heat as coal: 5,186 toe x 41.868 GJ = 217,130 GJ x 94.6 kg = about 20,540 t CO2",
+      "Heat as furnace oil: 217,130 GJ x 77.4 kg = about 16,810 t CO2",
+      "Electricity: 372,160 kWh x 0.675 kg = about 250 t CO2",
+      "Total 17,060 to 20,790 t on 34,920 t = 0.49 to 0.60 t CO2 per tonne fired"
+    ],
+    "note": "Unit count, products, output and energy from SAMEEEKSHA's summary of TERI's 2020-21 study for BEE. Coal at the IPCC 2006 default for bituminous coal and oil at the default for residual fuel oil; CEA FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible reads coal and furnace oil invoices and electricity bills into Scope 1 and 2 lines with CO2, at 1.76 kg per kg of Indian coal and 2.97 kg per litre of furnace oil; divide by tonnes fired for your per tonne figure.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Ranchi refractory cluster CO2",
+      "to": "/answers/ranchi-refractory-cluster-coal-petcoke-co2"
+    },
+    {
+      "label": "Refractory brick footprint per tonne",
+      "to": "/answers/refractory-brick-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Ramgarh refractory cluster summary (TERI for BEE, 2020-21 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=317&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

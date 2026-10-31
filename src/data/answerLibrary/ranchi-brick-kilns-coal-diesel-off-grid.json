@@ -1,0 +1,81 @@
+{
+  "slug": "ranchi-brick-kilns-coal-diesel-off-grid",
+  "q": "What do off-grid Ranchi brick kilns burn, and what is the cluster's CO2?",
+  "title": "Ranchi brick kilns: coal, diesel, no grid",
+  "short": "Grade B coal, plus a little generator diesel, because Ranchi's 200 or so kilns are not on the grid. A 15,000 brick a day kiln fires 31.5 lakh bricks on 788 t of coal and 1.1 kL of diesel. At India's coal factor the cluster's 157,600 t is about 277,000 t CO2 (estimate).",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Bull’s trench kiln owners around Ranchi and the Ranchi Brick Fields Owners Association",
+  "sections": [
+    {
+      "h": "The Ranchi kiln",
+      "p": [
+        "Almost every kiln is a fixed chimney Bull's trench kiln, firing hand moulded solid bricks from December to June, about 210 days. Bricks are 9½ x 4½ x 3 inch and about 3.6 kg, heavier than most north Indian clusters. A season's output sells as about 50% Class 1, 22% meeta, 22% Class 2, with 6% rejected."
+      ]
+    },
+    {
+      "h": "No electricity bill, one Scope 2 line fewer",
+      "p": [
+        "With no grid connection, a generator pumps the moulding water and powers whatever else the kiln needs. That makes the kiln's footprint all Scope 1: coal and diesel. It also means there is no meter reading to lean on, so the diesel slips and the coal weighbridge slips are the whole record."
+      ]
+    },
+    {
+      "h": "Why 25 t per lakh, against 17 in Lucknow",
+      "ul": [
+        "Heavier bricks: 3.6 kg here against about 3.0 kg there.",
+        "Poorer firing: TERI measured 1.69 MJ per kg of fired brick, against 1.38 in Lucknow and 1.1 to 1.2 for a well run kiln.",
+        "Closing that gap is worth roughly a third of the coal."
+      ]
+    },
+    {
+      "h": "Your coal, your factor",
+      "p": [
+        "TERI printed 166,000 t CO2 for the cluster's coal, about 1.05 t per tonne. The 1.76 used here is India's national average for domestic coal. If your coal supplier gives a GCV test, use it: a lower grade coal burns more tonnes for the same heat, but each tonne carries less carbon."
+      ]
+    },
+    {
+      "h": "What TERI says to change first",
+      "ul": [
+        "Feeding practice, about 10%: crushed coal, small charges every 20 minutes, one fireman.",
+        "Zigzag firing, a further 10% or so: 15,760 t of coal a year across the cluster."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One Ranchi kiln, a season (estimate)",
+    "lines": [
+      "Coal: 788 t x 1.76 t CO2 = 1,387 t",
+      "Diesel: 1.1 kL x 2,645 kg = 3 t",
+      "Total: 1,390 t, all Scope 1",
+      "Per lakh bricks: 1,390 / 31.5 = 44 t, or about 440 kg per 1,000 bricks",
+      "Cluster: 157,600 t coal x 1.76 = 277,380 t, plus 210 kL diesel = 555 t: about 277,900 t"
+    ],
+    "note": "Coal, diesel and output from TERI's Ranchi brick kiln profile. Coal at India's domestic average of 1.76 kg CO2 per kg; diesel at the IPCC 2006 default."
+  },
+  "senseible": "Senseible reads coal invoices by the kilogram and diesel slips by the litre into a season's Scope 1 total, coal at 1.76 kg CO2 per kg; dividing by bricks fired needs your own production count.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Lucknow kilns: coal per lakh bricks",
+      "to": "/answers/lucknow-brick-kilns-coal-per-lakh-bricks"
+    },
+    {
+      "label": "Zigzag conversion and credits",
+      "to": "/answers/zigzag-kiln-conversion-carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Ranchi brick kilns (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Ranchi-Brick-Kilns.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "scope-3-six-gases-and-biogenic-separate",
+  "q": "Which gases must Scope 3 cover, and what happens to biogenic CO2 from a supplier's biomass boiler?",
+  "title": "Scope 3 gases and a supplier's biomass boiler",
+  "short": "Scope 3 covers six gases where they are emitted in the value chain: CO2, methane, nitrous oxide, HFCs, PFCs and SF6. CO2 from a supplier burning biomass stays out of your Scope 3 total but must appear separately in your public report. The boiler's methane and nitrous oxide stay in.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Buyers sourcing from suppliers with husk, briquette or wood-fired boilers, and those suppliers",
+  "sections": [
+    {
+      "h": "The six gases",
+      "p": [
+        "The Scope 3 Standard requires CO2, methane, nitrous oxide, HFCs, PFCs and SF6 wherever they occur in the value chain. Other gases with IPCC 100-year GWP values, such as NF3, are optional and listed if you include them. If you also file in India, check BRSR's own gas list rather than assuming it matches."
+      ]
+    },
+    {
+      "h": "What \"separately\" means for biomass CO2",
+      "ul": [
+        "CO2 from burning or decomposing biomass is not counted in any scope.",
+        "It must still be reported, per category, as its own line in the public report.",
+        "The rule covers that CO2 only. Methane and nitrous oxide from the same boiler count in the category total.",
+        "Other emissions in the biomass chain also count: diesel to haul briquettes, power to make them."
+      ]
+    },
+    {
+      "h": "Removals are not netted",
+      "p": [
+        "Carbon taken up by trees or crops in your value chain is not subtracted from Scope 3. You may report it on a separate line. The standard's own example: a transporter running on diesel and biodiesel puts the diesel in Category 4, the biodiesel CO2 on the separate line, and no removal from growing the biodiesel crop in Scope 3."
+      ]
+    },
+    {
+      "h": "What to ask a supplier with a biomass boiler",
+      "ul": [
+        "Fuel tonnes by type, fossil and biomass kept apart.",
+        "Methane and nitrous oxide from the boiler, in CO2e.",
+        "Biogenic CO2 as a separate figure, split to your purchases on the same basis as the rest.",
+        "Fuel invoices or a fuel register that back the tonnes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a supplier's share for your orders",
+    "lines": [
+      "Boiler on rice husk briquettes: methane and nitrous oxide 1.9 t CO2e; biogenic CO2 72 t",
+      "Diesel to haul the briquettes: 4.0 t CO2",
+      "Into your Category 1 total: 1.9 + 4.0 = 5.9 t CO2e",
+      "Separate line in your report: 72 t biogenic CO2, not added to any scope"
+    ],
+    "note": "Example figures for the supplier's share. The point is where each number goes, not its size."
+  },
+  "senseible": "Senseible reads a supplier's fuel invoices line by line, so fossil fuel and biomass purchases show as separate lines with their quantities. Where it has no published factor for a fuel, it shows no figure rather than a guess.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Biomass boiler methane and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Evidence for biomass fuel",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "Which gases BRSR asks for",
+      "to": "/answers/brsr-which-greenhouse-gases-to-include"
+    },
+    {
+      "label": "What a Scope 3 report must show",
+      "to": "/answers/scope-3-required-public-report-items"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard, sections 6.2 (boundary requirements), 6.5 (biogenic emissions and removals, example 6.1) and 11.1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

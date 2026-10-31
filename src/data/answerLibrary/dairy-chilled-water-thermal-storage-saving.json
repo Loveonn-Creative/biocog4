@@ -1,0 +1,88 @@
+{
+  "slug": "dairy-chilled-water-thermal-storage-saving",
+  "q": "How much electricity does a 300 TRH thermal storage system save in milk chilling?",
+  "title": "Dairy thermal storage: real kWh saved",
+  "short": "Roughly 71,640 kWh a year, 199 a day, in BEE's Gujarat dairy report: roughly 48 t CO2 on today's grid. The saving comes from a tighter store and warmer charging, not from moving load to night. Cost Rs 14.87 lakh, payback 3.48 years before any time-of-day benefit (2010).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Milk chilling centre and dairy managers in Gujarat and elsewhere running ice bank tanks on ammonia refrigeration",
+  "sections": [
+    {
+      "h": "The chilling plant in the report",
+      "ul": [
+        "Refrigeration rated 90 TR, delivering 72.9 TR at 96.3 kW, about 1.32 kW per TR, for 20 hours a day.",
+        "The existing concrete ice bank tank, with wooden plank cover and agitators, lost about 8% of its cold.",
+        "The proposed store, sized for 4 hours of peak milk intake, loses about 1.5% a day.",
+        "Investment Rs 14.87 lakh, at the report's tariff of Rs 5.98 per kWh."
+      ]
+    },
+    {
+      "h": "Where the 199 kWh a day come from",
+      "ul": [
+        "Lower losses: 7.65 kW less for 20 hours, about 153 kWh a day.",
+        "Charging at minus 7 C instead of minus 9 C, about 6% less energy over 8 night hours: 46.22 kWh a day.",
+        "Over 360 days: 71,640 kWh a year and Rs 4.28 lakh."
+      ]
+    },
+    {
+      "h": "What it does not do for CO2",
+      "p": [
+        "Charging at night cuts your bill under a time-of-day tariff, which the report leaves out of the payback. It does not cut CO2 on the location-based method, because India's grid factor is one annual average. Only the 71,640 kWh actually not used counts. The report's 61 t CO2 used an older, higher factor and cites off-peak use; on CEA's FY 2025-26 factor the saving is about 48 t."
+      ]
+    },
+    {
+      "h": "Before you buy",
+      "ul": [
+        "Measure your own tank's losses: log the compressor kWh on a day with no milk intake.",
+        "Check whether your refrigeration can charge the store at minus 7 C and still meet the morning peak.",
+        "Ask the supplier for daily loss in writing, as a percentage of stored cold.",
+        "Meter the refrigeration separately so the saving can be shown, not assumed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One chilling centre, one year",
+    "lines": [
+      "Loss saving: 7.65 kW x 20 h = 153 kWh a day",
+      "Warmer charging: 46.22 kWh a day",
+      "Total: 199 kWh x 360 days = 71,640 kWh",
+      "CO2: 71,640 x 0.675 = 48.4 t a year"
+    ],
+    "note": "Grid factor from CEA's database for FY 2025-26, an estimate. Time-of-day savings change the money, not the CO2."
+  },
+  "senseible": "Senseible reads electricity bills for the billing period, tariff and units, and gives monthly CO2 at the grid factor for that bill's year, so the kWh actually saved shows up in your records. The green loan check shows what a lender will want for a storage project.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Does an ice bank cut Scope 2?",
+      "to": "/answers/ice-bank-thermal-storage-scope-2"
+    },
+    {
+      "label": "Gujarat chilling centres: energy and carbon",
+      "to": "/answers/gujarat-dairy-chilling-centres-energy-carbon"
+    },
+    {
+      "label": "Desuperheater on dairy refrigeration",
+      "to": "/answers/dairy-refrigeration-desuperheater-fuel-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: low loss and compact thermal storage technology 300 TRH, Gujarat dairy cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/Gujarat_dairy_cluster/DPR_on_Energy_Efficient_Thermal_Storage_System_300_TRH.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

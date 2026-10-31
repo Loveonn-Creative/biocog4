@@ -1,0 +1,80 @@
+{
+  "slug": "galvanizing-furnace-air-preheater-oil-saving",
+  "q": "How much furnace oil does an air preheater save on a galvanizing or annealing furnace?",
+  "title": "Air preheater on a galvanizing furnace",
+  "short": "Close to one litre in twenty, 4.8%, in BEE's Howrah report: 5,647 litres a year out of 118,080, by cooling flue gas from 490 C to 380 C and heating combustion air with it. That is about 17 t CO2. Cost Rs 2.49 lakh, payback 1.47 years (2010), but the report gives the unit only a 3 year life.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Howrah galvanizers and wire annealers running furnace oil fired zinc kettles and annealing furnaces with hot flue gas going straight up the stack",
+  "sections": [
+    {
+      "h": "What BEE measured",
+      "ul": [
+        "Furnaces in the cluster dump flue gas at 490 to 600 C; the audited furnace at about 470 to 490 C, with 4.5% oxygen.",
+        "A typical unit burns 118,080 litres of furnace oil a year at Rs 30 a litre.",
+        "The air preheater takes flue gas in at 490 C and lets it out at 380 C, a 110 C drop.",
+        "Installation needs about 4 days of downtime to change the flue line."
+      ]
+    },
+    {
+      "h": "How the 4.78% was worked out",
+      "p": [
+        "The report uses a rule of thumb: each 23 C taken out of the flue gas improves efficiency by 1%. 110 / 23 = 4.78%, applied to the oil bill. It is an estimate, not a measured trial. Your saving depends on how much air the preheater actually warms and how airtight it stays."
+      ]
+    },
+    {
+      "h": "The 3 year life changes the sums",
+      "ul": [
+        "Cost: Rs 1.80 lakh for the unit, Rs 0.40 lakh to install, Rs 0.29 lakh taxes and freight.",
+        "Saving: about Rs 1.69 lakh a year at 2010 oil prices.",
+        "Over the 3 year life the report assumes: about Rs 5.1 lakh saved for Rs 2.49 lakh spent.",
+        "Ask the supplier why the life is 3 years and what a replacement costs."
+      ]
+    },
+    {
+      "h": "Keep it working",
+      "ul": [
+        "Check for leaks between the flue side and the air side; leaking flue gas into the burner air cancels the saving.",
+        "Log flue temperature after the preheater weekly. If it creeps up, the surfaces are fouling.",
+        "Keep oil litres and tonnes galvanized in the same monthly log, so oil per tonne can be compared."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One furnace, one year",
+    "lines": [
+      "Oil before: 118,080 L x 2.97 = 350.7 t CO2",
+      "Oil saved: 118,080 x 4.78% = 5,647 L",
+      "CO2 saved: 5,647 x 2.97 = 16.8 t a year",
+      "Report says 18 t; the difference is the oil factor used"
+    ],
+    "note": "Furnace oil at our factor of 2.97 kg CO2 per litre, an estimate."
+  },
+  "senseible": "Senseible reads furnace oil invoices into monthly records with CO2 at 2.97 kg per litre, so a 5% drop in oil per month is visible once the preheater is in. The green loan check shows what a lender will want to see.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Galvanizing energy per tonne benchmark",
+      "to": "/answers/galvanizing-plant-energy-per-tonne-benchmark"
+    },
+    {
+      "label": "Howrah galvanizers and CBAM",
+      "to": "/answers/howrah-galvanizing-wire-units-cbam-carbon"
+    },
+    {
+      "label": "Coal galvanizing furnace to biomass gasifier",
+      "to": "/answers/galvanizing-coal-furnace-to-biomass-gasifier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: air pre-heater for galvanizing and annealing furnaces, Howrah cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/Howrah_galvinising/DPR_on_Air_Pre_Heater_for_galvanizing_and_annealing_furnace.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

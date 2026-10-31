@@ -1,0 +1,82 @@
+{
+  "slug": "ludhiana-bakery-lpg-vs-diesel-oven-saving",
+  "q": "Is an LPG rotary oven more efficient than a diesel or electric oven per kg of bread?",
+  "title": "LPG, diesel or electric oven: per kg baked",
+  "short": "On oven energy, yes. TERI measured Ludhiana's LPG ovens at 740 kcal per kg baked, against 860 to 1,060 for diesel and electric ovens, and puts the saving from a diesel to LPG rotary oven at 15 to 30%. On CO2 per kg, count the electricity bill too.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Ludhiana bakers weighing a move from a diesel oven to an LPG rotary oven, and lenders reviewing that loan",
+  "sections": [
+    {
+      "h": "Five bakeries, per kg",
+      "ul": [
+        "Micro electric, 36 t a year: 34,100 kWh, about 0.64 kg CO2 per kg baked.",
+        "Micro diesel, 36 t: 3.6 kL and 6,000 kWh, about 0.38 kg.",
+        "Medium LPG, 1,200 t: 42.9 t of LPG and 389,610 kWh, about 0.33 kg.",
+        "Small LPG, 300 t: 12.9 t of LPG and 77,500 kWh, about 0.30 kg.",
+        "Small diesel, 750 t: 63 kL and 65,350 kWh, about 0.28 kg."
+      ]
+    },
+    {
+      "h": "Why the LPG bakeries do not win outright",
+      "p": [
+        "On fuel alone the LPG units are far ahead: about 0.11 to 0.13 kg CO2 per kg from the oven, against 0.22 for the small diesel bakery. But the LPG units in TERI's table use 258 to 325 kWh per tonne baked, against 87 for the diesel one, for rotary drives, mixers and everything else. At 0.675 kg per kWh, that electricity cancels the fuel gain. Electric ovens on today's grid come out highest of all."
+      ]
+    },
+    {
+      "h": "What a like-for-like switch saves",
+      "p": [
+        "Change only the oven on the small diesel bakery and keep everything else. Its 63 kL of diesel is about 54.7 toe. At TERI's 15 to 30% saving, the LPG oven needs 38 to 47 toe, about 33 to 40 t of LPG. Oven CO2 falls from 167 t to 97 to 118 t a year."
+      ]
+    },
+    {
+      "h": "Before you ask a lender",
+      "ol": [
+        "Three months of diesel slips and kg baked, for your current figure.",
+        "A sub-meter or a note of the new oven's motor rating, so added electricity is counted.",
+        "The supplier's rated fuel use for the rotary oven.",
+        "After the switch, the same three months again."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Small diesel bakery, oven switch (estimate)",
+    "lines": [
+      "Today: 63 kL x 2,645 kg = 167 t CO2 from the oven",
+      "LPG at 20% less energy: 54.7 toe x 0.8 = 43.8 toe = 37.4 t LPG",
+      "37.4 t x 2.98 = 111 t CO2",
+      "Saving: about 55 t CO2 a year, a third of oven CO2, if electricity stays the same"
+    ],
+    "note": "Unit fuel, power and output from TERI's Ludhiana bakery profile (2017); LPG at TERI's ratio of about 1.17 toe per tonne. Diesel 2.645 kg CO2 per litre, LPG 2.98 kg per kg, grid factor CEA FY 2025-26."
+  },
+  "senseible": "The green loan check sets out what a lender asks before an oven switch; Senseible reads your diesel and LPG invoices into before and after figures from the bills themselves.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Ludhiana bakery cluster diesel and CO2",
+      "to": "/answers/ludhiana-bakery-cluster-diesel-ovens-co2"
+    },
+    {
+      "label": "Bakery oven CO2 per kg of bread",
+      "to": "/answers/bakery-oven-emissions-per-kg-bread"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Ludhiana bakeries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/ludhiana-bakeries-Punjab.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

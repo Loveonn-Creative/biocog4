@@ -1,0 +1,79 @@
+{
+  "slug": "bikaner-pop-furnace-flue-gas-air-preheat",
+  "q": "How much fuel can a Bikaner POP furnace save by preheating combustion air from its flue gas?",
+  "title": "Bikaner POP furnace: air preheat saving",
+  "short": "Roughly a tenth of the pet coke. Flue gas leaves Bikaner's plaster of Paris furnaces at 700 to 800 C and could heat combustion air to 250 to 300 C. TERI's rule: every 20 C of air preheat saves 1% of fuel, and it puts the cluster's saving potential at 10 to 15%.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plaster of Paris makers in Khara and other RIICO industrial areas of Bikaner, Rajasthan",
+  "sections": [
+    {
+      "h": "Why the chimney is where the money goes",
+      "ul": [
+        "Gypsum in the drum only needs about 150 to 200 C to turn into plaster of Paris; the furnace is run at around 1,000 C.",
+        "The flue gas leaves through a small chimney above 700 C, and nothing recovers it.",
+        "Walls are clay brick with no insulation, the drum has no fins, and firing is judged by eye.",
+        "Pet coke feed is held constant while air is changed by hand, so unburnt coke clogs the burner orifices and shows as black smoke."
+      ]
+    },
+    {
+      "h": "The two rules of thumb",
+      "p": [
+        "Every 22 C drop in flue gas temperature, or every 20 C rise in combustion air temperature, saves about 1% of fuel. They describe the same heat, so count one, not both. Air heated from about 35 C to 250 C is a rise of 215 C, about 10.7%."
+      ]
+    },
+    {
+      "h": "The rest of TERI's list",
+      "ul": [
+        "Temperature probes at the crown in at least three places, and on the drum, so firing is not done by eye.",
+        "Coke feed matched to airflow and furnace temperature, so less coke falls unburnt.",
+        "Insulating brick and ceramic fibre in walls, floor and crown.",
+        "Fins on the drum to pass more heat to the gypsum.",
+        "A redesigned furnace with all of these and the recuperator: about 20% less energy, in TERI's estimate."
+      ]
+    },
+    {
+      "h": "Your before figure",
+      "p": [
+        "Bikaner units burn 50 to 60 kg of pet coke per tonne of gypsum charged. Weigh coke per batch and POP bagged for a month before the change and a month after; that kilogram per tonne is the figure a lender will look for."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A three shift unit making 6,000 t a year (estimate)",
+    "lines": [
+      "Pet coke: 330 t a year, 55 kg per tonne of POP",
+      "10% saved by air preheat: 33 t of coke",
+      "At Rs 10,000 per tonne, the profile's 2016 price: Rs 3.3 lakh a year",
+      "CO2 at the IPCC pet coke default, about 3.17 t per tonne: 33 t x 3.17 = about 105 t a year",
+      "Whole unit: 330 t x 3.17 = 1,046 t + 175,000 kWh x 0.675 = 118 t; about 194 kg CO2 per tonne of POP"
+    ],
+    "note": "Temperatures, rules of thumb, coke use and unit sizes from TERI's Bikaner plaster of Paris cluster profile (2016). The 35 C starting air temperature is an assumption. Pet coke CO2 is our estimate from the IPCC 2006 default (97.5 kg per GJ at 32.5 GJ per tonne); grid factor CEA FY 2025-26."
+  },
+  "senseible": "The green loan check shows what a lender asks before funding a furnace upgrade; Senseible reads your electricity bills into monthly kWh and CO2, so the electrical side of the before and after is on record.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Plaster of Paris CO2 per tonne",
+      "to": "/answers/plaster-of-paris-calcination-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Bikaner plaster of Paris industries (2016)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Bikaner-POP-Industries-Rajasthan.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

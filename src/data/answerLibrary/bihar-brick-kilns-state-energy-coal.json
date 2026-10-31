@@ -1,0 +1,81 @@
+{
+  "slug": "bihar-brick-kilns-state-energy-coal",
+  "q": "How many brick kilns does Bihar have, what fuels do they burn and how much energy do they use?",
+  "title": "Bihar brick kilns: coal, output and energy",
+  "short": "About 6,600 kilns, mostly Bull's trench kilns with a few zigzag and vertical shaft kilns, firing coal first and biomass second. TERI's SAMEEEKSHA page puts them at 19.7 billion bricks and 2.6 million toe a year, fired from December to June.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Brick kiln owners in Bihar and the Bihar Brick Manufacturers Association",
+  "sections": [
+    {
+      "h": "A Bihar kiln on average",
+      "ul": [
+        "Output: 19.7 billion bricks across 6,600 kilns, about 29.8 lakh bricks each.",
+        "Energy: 2.6 million toe, about 394 toe per kiln.",
+        "Per 1,000 bricks: about 5.5 GJ, against about 3.4 GJ for Haryana on the same pages.",
+        "Moulding: mostly by hand; a few units have extruders."
+      ]
+    },
+    {
+      "h": "The season as a record",
+      "p": [
+        "Firing runs December to June. Coal arrives in the months before and during firing, so a season's coal can sit across two financial years. Tie each delivery to the season it was fired in, or your CO2 per brick will swing between years for no real reason."
+      ]
+    },
+    {
+      "h": "Zigzag and vertical shaft kilns",
+      "p": [
+        "Bihar already has kilns on both. A zigzag kiln lengthens the fire's path through the brick setting for better mixing of air and coal; a vertical shaft kiln fires bricks in a shaft and loses less heat. Either change is measured the same way: coal per lakh bricks for a full season before, and a full season after."
+      ]
+    },
+    {
+      "h": "What a buyer or lender asks for",
+      "ol": [
+        "Coal invoices with tonnes and grade, and weighbridge slips.",
+        "Biomass, by tonne, on a separate line.",
+        "Bricks fired, by class, and green bricks lost to rain.",
+        "For a conversion loan, the before and after coal per lakh bricks."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Bihar, a ceiling on fossil CO2 (estimate)",
+    "lines": [
+      "If all 2.6 million toe were coal: 2.6 million x 41.868 GJ = 108.9 million GJ",
+      "x 94.6 kg CO2 per GJ = about 10.3 million t CO2",
+      "Per kiln: about 1,560 t; per 1,000 bricks about 520 kg",
+      "Every toe that is biomass instead comes off this as biogenic"
+    ],
+    "note": "State totals from SAMEEEKSHA's Bihar brick page. Every other figure in this answer comes from the same SAMEEEKSHA state pages for Andhra Pradesh, Bihar, Maharashtra and Haryana. The ceiling uses the IPCC 2006 default for bituminous coal because the coal and biomass split is not published."
+  },
+  "senseible": "Senseible reads a season's coal invoices by the kilogram, at 1.76 kg CO2 per kg for Indian coal, so the before and after a lender wants come straight from the bills.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Zigzag conversion and credits",
+      "to": "/answers/zigzag-kiln-conversion-carbon-credits"
+    },
+    {
+      "label": "Brick kiln CO2 per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA (TERI), Bihar: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=213&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA (TERI), Haryana: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=215&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

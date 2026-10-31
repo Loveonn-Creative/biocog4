@@ -1,0 +1,90 @@
+{
+  "slug": "dairy-refrigeration-desuperheater-fuel-saving",
+  "q": "What does a desuperheater on a 100 TR dairy refrigeration plant save?",
+  "title": "Dairy desuperheater: fuel and CO2 saved",
+  "short": "It saves 19,047 kg of furnace oil a year in BEE's Gujarat dairy report, by heating 18.5 kL a day of water to 60 C with heat the ammonia compressors now throw away. That is about 58 t CO2 net of 2,686 kWh for pumps. Cost Rs 20.81 lakh, payback 3.88 years (2010).",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Milk chilling centre and dairy managers who heat water for CIP, pasteurisation or boiler feed on oil, gas or biomass while their refrigeration rejects heat",
+  "sections": [
+    {
+      "h": "The plant in the report",
+      "ul": [
+        "A chilling centre receiving 200,000 litres of milk a day, using 808,956 kWh and 105,972 kg of furnace oil a year, mostly for hot water.",
+        "Reciprocating ammonia compressors at 72.9 TR actual load, 20 hours a day, 360 days a year. Hot gas leaves them at about 93 C.",
+        "Two 50 TR desuperheaters on the discharge line recover about 14% of the heat: 30,863 kcal an hour.",
+        "That makes 926 litres an hour of water at 60 C, 18.5 kL a day."
+      ]
+    },
+    {
+      "h": "The saving, line by line",
+      "ul": [
+        "Furnace oil not burned: 2.65 kg an hour, 19,047 kg a year.",
+        "At Rs 29 per kg: Rs 5.52 lakh. Less 2,686 kWh for a 0.5 HP circulation pump at Rs 5.98: Rs 0.16 lakh.",
+        "Net Rs 5.36 lakh a year against Rs 20.81 lakh, a 3.88 year payback.",
+        "The oil saved is about 18% of the centre's oil use."
+      ]
+    },
+    {
+      "h": "Two things in the report to correct",
+      "p": [
+        "The report puts the CO2 cut at 65 t and credits peak demand and off-peak power, which this project does not touch. The cut comes from oil not burned. At the IPCC default of about 3.13 kg CO2 per kg of furnace oil, 19,047 kg is 59.6 t, less 1.8 t for the pump power: about 58 t.",
+        "The report also costs every unit's saving as furnace oil. If your hot water comes from PNG, briquettes or wood, redo both the money and the CO2 with your fuel; on wood, the fossil CO2 saving is close to nil."
+      ]
+    },
+    {
+      "h": "Before you fit one",
+      "ul": [
+        "Check you can use 18 kL of 60 C water every day; heat with nowhere to go saves nothing.",
+        "Ask for the compressor discharge temperature at your load. Screw compressors run cooler than reciprocating ones.",
+        "Add a 5 kL insulated hot water tank, and a water softener so the exchanger does not scale.",
+        "Meter the oil to the hot water generator for a month before and after."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One chilling centre, one year",
+    "lines": [
+      "Oil saved: 2.65 kg x 20 h x 360 days, about 19,050 kg (the report gives 19,047)",
+      "CO2 avoided: 19,047 kg x 3.13 = 59.6 t",
+      "Pump power: 2,686 kWh x 0.675 = 1.8 t CO2 added",
+      "Net: about 57.8 t CO2 a year"
+    ],
+    "note": "Furnace oil at the IPCC 2006 default for residual fuel oil, 77,400 kg CO2 per TJ at 40.4 GJ per tonne; this matches our 2.97 kg per litre at 0.95 kg per litre. Grid factor CEA FY 2025-26. Estimates."
+  },
+  "senseible": "Senseible reads furnace oil invoices and power bills into monthly CO2 records, with furnace oil at 2.97 kg CO2 per litre, so the drop in oil after fitting shows up against the small rise in power. The green loan check shows what a lender will ask for.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Gujarat chilling centres: energy and carbon",
+      "to": "/answers/gujarat-dairy-chilling-centres-energy-carbon"
+    },
+    {
+      "label": "Dairy thermal storage: kWh saved",
+      "to": "/answers/dairy-chilled-water-thermal-storage-saving"
+    },
+    {
+      "label": "Furnace oil litres to kilograms",
+      "to": "/answers/furnace-oil-litres-to-kg-density"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: waste heat recovery in refrigeration by desuperheater, Gujarat dairy cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/Gujarat_dairy_cluster/DPR_on_De-Super_Heater_System_100_TR.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Table 1.2 (net calorific values) and Chapter 2 tables",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

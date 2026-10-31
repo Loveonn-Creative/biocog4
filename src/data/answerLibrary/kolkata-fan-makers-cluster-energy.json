@@ -1,0 +1,84 @@
+{
+  "slug": "kolkata-fan-makers-cluster-energy",
+  "q": "How much energy does the Greater Kolkata fan-making cluster use per year?",
+  "title": "Kolkata fan makers: energy per year",
+  "short": "836 toe a year to make about 9 million ceiling, table and exhaust fans across 70 MSMEs, by TERI's 2024-25 study: 6.51 million kWh of electricity and LPG for paint and curing ovens. A micro unit spends about five times the energy per fan of a medium one.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Fan assemblers, motor winders and paint shops in Kolkata and its suburbs",
+  "sections": [
+    {
+      "h": "Who makes the 9 million fans",
+      "ul": [
+        "5 medium units: 4.1 million fans a year.",
+        "20 small units: 3.3 million.",
+        "45 micro units: 1.5 million.",
+        "Units run 10 to 12 hours a day; parts come from Bansdroni and elsewhere in India."
+      ]
+    },
+    {
+      "h": "A typical unit's year",
+      "ul": [
+        "Medium: 271,122 kWh and 13.9 t of LPG.",
+        "Small: 135,561 kWh and 4.9 t of LPG.",
+        "Micro: 54,224 kWh and 2.4 t of LPG.",
+        "Electricity is about two thirds of the energy, LPG one third."
+      ]
+    },
+    {
+      "h": "Where TERI found savings",
+      "ul": [
+        "Power factor: units run at 0.87 to 0.94 and miss WBSEDCL rebates; an APFC panel with sized capacitors closes the gap.",
+        "Compressors for painting: set at 8 to 10 kg/cm2 for a 5.5 to 6 kg/cm2 need. Each bar lower saves about 7 to 10%; leaks often exceed 20% and can be brought below 5%.",
+        "LPG curing ovens to electric: 20 to 30% lower energy cost in TERI's audits.",
+        "Rewound motors lose 5 to 10%; IE3 or IE4 motors win most of it back."
+      ]
+    },
+    {
+      "h": "When a brand asks for a per fan figure",
+      "p": [
+        "Divide your year's CO2 by fans assembled, and say what it covers: assembly energy only, or bought motors, blades and covers too. Your own energy is a small part of a fan's life; the electricity it uses in a home is far larger. Keep the boundary on the page so the figure is not mistaken for a full footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per fan by unit size at FY 2025-26 factors (estimate)",
+    "lines": [
+      "Medium: 271,122 kWh x 0.675 = 183.0 t + 13.9 t LPG x 2.98 = 41.4 t; 224 t over 820,000 fans = 0.27 kg per fan",
+      "Small: 91.5 t + 14.6 t = 106 t over 165,000 fans = 0.64 kg per fan",
+      "Micro: 36.6 t + 7.2 t = 44 t over 33,000 fans = 1.31 kg per fan",
+      "Cluster: 6.51 million kWh x 0.675 = 4,394 t + 245 t LPG x 2.98 = 730 t; about 5,120 t a year"
+    ],
+    "note": "Unit counts, output and energy from TERI's 2024-25 energy profile of the Greater Kolkata fan cluster and SAMEEEKSHA's summary. The profile's text mentions about 20 assembly units, its table 70; we use the table. Its unit figures add to about 275 t of LPG against 245 t in its cluster table, which we use. CEA FY 2025-26 grid factor; LPG at 2.98 kg CO2 per kg."
+  },
+  "senseible": "Senseible reads WBSEDCL bills and LPG invoices into monthly CO2 and keeps them as supplier evidence you can hand to a fan brand asking for your assembly figure.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Ceiling fan footprint per unit",
+      "to": "/answers/ceiling-fan-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Exhaust fan footprint per unit",
+      "to": "/answers/exhaust-fan-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Greater Kolkata fan cluster summary (TERI, 2024-25 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=321&Itemid=502"
+    },
+    {
+      "label": "TERI, Energy profile: Greater Kolkata fan cluster (2025)",
+      "url": "https://sameeeksha.org/pdf/Greater_kolkata_fan_cluster.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

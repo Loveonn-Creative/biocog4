@@ -1,0 +1,81 @@
+{
+  "slug": "ernakulam-paint-makers-energy",
+  "q": "How much energy does Ernakulam's paint-making cluster use?",
+  "title": "Ernakulam paint makers: energy use",
+  "short": "Very little per tonne. TERI's 2020-21 study for BEE counts 100 MSMEs, 40 small and 60 micro, making 89,640 t of paint a year on 967 toe: 540 toe of electricity and 427 toe of LDO, furnace oil and diesel. That is about 0.45 GJ per tonne.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Paint makers in Ernakulam district, Kerala, and the buyers asking them for carbon data",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "100 MSMEs: 40 small, 60 micro. Mainly paints.",
+        "89,640 t of product a year.",
+        "Electricity: 540 toe, about 6.3 million kWh, 56% of the energy.",
+        "Heat: 427 toe from LDO, furnace oil and HSD."
+      ]
+    },
+    {
+      "h": "Why your plant is the small part of your footprint",
+      "p": [
+        "At about 62 kg of CO2 per tonne from energy, a paint plant's own Scope 1 and 2 are light. The weight usually sits in what you buy: titanium dioxide, resins and binders, solvents and cans. A buyer asking for a product footprint will see that straight away, so the useful work is getting figures from your pigment and resin suppliers, not only trimming your mixers."
+      ]
+    },
+    {
+      "h": "What to send when a buyer asks",
+      "ol": [
+        "Electricity in kWh by month, from the bill.",
+        "LDO, furnace oil and diesel in litres by month, from invoices, each on its own line.",
+        "Tonnes or litres of paint filled in the same months.",
+        "Purchased titanium dioxide, resin and solvent quantities, ready for the supplier side."
+      ]
+    },
+    {
+      "h": "Mind the units",
+      "p": [
+        "TERI counts output in tonnes; many buyers want litres. Convert with each product's density from its data sheet, not one figure for all, as a water based emulsion and a solvent enamel differ."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster energy CO2 at FY 2025-26 factors (estimate)",
+    "lines": [
+      "Electricity: 540 toe x 11,630 kWh = 6.28 million kWh x 0.675 kg = about 4,240 t CO2",
+      "Heat: 427 toe x 41.868 GJ = 17,880 GJ x 74.1 to 77.4 kg = about 1,320 to 1,380 t CO2",
+      "Total about 5,560 to 5,620 t on 89,640 t = about 62 kg CO2 per tonne of paint",
+      "A micro unit filling 600 t on 45,000 kWh and 6,000 litres of diesel: 30.4 t + 15.9 t = 46.3 t, 77 kg per tonne"
+    ],
+    "note": "Unit counts, output and energy from SAMEEEKSHA's summary of TERI's 2020-21 study for BEE, which does not split the three oils, hence the range between the IPCC 2006 defaults for diesel and residual fuel oil. The micro unit is an assumed example, diesel at 2.645 kg per litre."
+  },
+  "senseible": "Senseible reads electricity bills and diesel and furnace oil invoices into Scope 1 and 2 lines with CO2, and keeps resin, pigment and solvent purchases on a separate supplier evidence trail for the product side.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Paint footprint per litre",
+      "to": "/answers/paint-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Powder coating or liquid paint",
+      "to": "/answers/powder-coating-vs-liquid-paint-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Ernakulam chemical cluster summary (TERI for BEE, 2020-21 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=316&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

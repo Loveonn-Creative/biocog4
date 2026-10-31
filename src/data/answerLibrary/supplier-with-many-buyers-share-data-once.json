@@ -24,7 +24,8 @@
     {
       "h": "Sharing",
       "p": [
-        "Some buyers accept a standard product footprint file; others insist on their portal."
+        "Some buyers accept a standard product footprint file; others insist on their portal.",
+        "The GHG Protocol's supplier engagement guidance makes the same point to buyers: separate spreadsheets are simple but inefficient for a supplier filling several surveys, and a common system lets data be collected once and used many times."
       ]
     }
   ],
@@ -55,6 +56,10 @@
     {
       "label": "WBCSD, Partnership for Carbon Transparency",
       "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "GHG Protocol, Supplier Engagement Guidance (data management)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Supplier%20Engagement%20Guidance.pdf"
     }
   ],
   "reviewed": "2026-10-22"

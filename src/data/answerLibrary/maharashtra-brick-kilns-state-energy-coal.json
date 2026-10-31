@@ -1,0 +1,83 @@
+{
+  "slug": "maharashtra-brick-kilns-state-energy-coal",
+  "q": "How many brick kilns does Maharashtra have, what fuels do they burn and how much energy do they use?",
+  "title": "Maharashtra brick kilns: fuel and energy",
+  "short": "About 17,000 kilns, the most of the four states SAMEEEKSHA profiles this way, firing coal and biomass in clamps and Bull's trench kilns. They make about 28 billion bricks a year on 2.1 million toe, from December to June: the least energy per brick of the four.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Brick kiln owners in Maharashtra and the Maharashtra Brick Kiln Manufacturers Association",
+  "sections": [
+    {
+      "h": "Four states side by side",
+      "ul": [
+        "Maharashtra: 17,000 kilns, 28 billion bricks, 2.1 million toe; about 3.1 GJ per 1,000 bricks.",
+        "Haryana: 2,800 kilns, 14 billion bricks, 1.12 million toe; about 3.4 GJ.",
+        "Bihar: 6,600 kilns, 19.7 billion bricks, 2.6 million toe; about 5.5 GJ.",
+        "Andhra Pradesh: 8,000 kilns, 9.3 billion bricks, 1.37 million toe; about 6.2 GJ."
+      ]
+    },
+    {
+      "h": "Many small kilns",
+      "p": [
+        "The average Maharashtra kiln makes about 16.5 lakh bricks a year on about 124 toe, a third of Haryana's output per kiln. Most green bricks are hand moulded; a few units use extruders. State averages hide a wide spread: a clamp and a well run trench kiln in the same district can differ by a large margin."
+      ]
+    },
+    {
+      "h": "Turning the average into your figure",
+      "ol": [
+        "Add up a season's coal from invoices and biomass from purchase slips, by tonne.",
+        "Count bricks fired, not bricks sold.",
+        "Divide fuel by bricks for tonnes per lakh, and compare with your neighbours, not with the state.",
+        "Keep biomass on its own line as biogenic."
+      ]
+    }
+  ],
+  "example": {
+    "title": "An average Maharashtra kiln (estimate)",
+    "lines": [
+      "Energy: 2.1 million toe / 17,000 = 124 toe a year",
+      "Output: 28 billion / 17,000 = 16.5 lakh bricks",
+      "Per 1,000 bricks: 124 x 41.868 GJ / 1,647 = 3.1 GJ",
+      "Ceiling if all coal: 124 x 41.868 GJ x 94.6 kg = about 490 t CO2 a year, or about 300 kg per 1,000 bricks"
+    ],
+    "note": "Totals from SAMEEEKSHA's state brick pages for Maharashtra, Haryana, Bihar and Andhra Pradesh. The ceiling uses the IPCC 2006 default for bituminous coal; biomass comes off it as biogenic."
+  },
+  "senseible": "Upload a season's coal invoices and Senseible gives the kiln's fossil Scope 1 total in minutes, coal at 1.76 kg CO2 per kg; dividing by bricks fired needs your own count.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Brick kiln CO2 per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Fly ash brick footprint per 1,000",
+      "to": "/answers/fly-ash-brick-carbon-footprint-per-1000"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA (TERI), Maharashtra: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=214&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA (TERI), Haryana: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=215&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA (TERI), Bihar: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=213&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA (TERI), Andhra Pradesh: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=212&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

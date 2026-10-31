@@ -1,0 +1,96 @@
+{
+  "slug": "hybrid-solar-tray-dryer-wood-saving",
+  "q": "Can a hybrid solar tray dryer cut wood use in a chemical drying room, and by how much?",
+  "title": "Hybrid solar tray dryer: wood saved",
+  "short": "Yes. BEE's Ahmedabad report has a 96-tray hybrid run 14 hours on solar-heated air and 16 on an efficient wood heater per 30 hour batch, saving 658 kg of wood a batch, 108.5 t a year. Cost Rs 8.01 lakh, payback 2.77 years (2010). Reported fossil CO2 barely changes.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Chemical and dye units in Ahmedabad choosing between an efficient wood-heated tray dryer and a solar hybrid for the same 96-tray load",
+  "sections": [
+    {
+      "h": "How the hybrid runs",
+      "p": [
+        "A solar panel heats air that is drawn into an insulated 96-tray cabinet. The report assumes 7 to 10 hours of usable sun a day. When the sun goes, digital controls switch the dryer to an efficient wood-fired hot air generator.",
+        "Per batch: 14 hours on solar, 16 hours on wood at 10.73 kg an hour, about 172 kg of wood, against 829 kg in the old 96-tray dryer."
+      ]
+    },
+    {
+      "h": "Hybrid or efficient dryer: same report series, side by side",
+      "ul": [
+        "Efficient dryer: Rs 3.86 lakh, 507 kg wood saved a batch, 130 batches, Rs 1.69 lakh a year, 2.28 years.",
+        "Hybrid solar: Rs 8.01 lakh, 658 kg wood saved a batch, 165 batches, Rs 2.89 lakh a year, 2.77 years.",
+        "The two reports assume different batch counts. At the same 130 batches, the hybrid saves about 85.5 t of wood, about Rs 2.27 lakh net, and pays back in about 3.5 years.",
+        "Per batch, the hybrid's extra Rs 4.15 lakh buys about 150 kg more wood saved."
+      ]
+    },
+    {
+      "h": "What it does to your footprint",
+      "p": [
+        "The report claims 76 t of CO2 saved. That is wood CO2, which is biogenic and reported separately. In Scope 1 the methane and nitrous oxide from 108.5 t of wood are about 3.2 t CO2e; the dryer's 7,385 kWh are about 5.0 t in Scope 2. Reported fossil CO2 rises by about 2 t. The gain is wood and money, not Scope 1."
+      ]
+    },
+    {
+      "h": "Before you buy",
+      "ul": [
+        "Count your real batches a year; the payback depends on it.",
+        "Check roof or yard space facing south for the panel, free of shade most of the day.",
+        "Expect less solar hours in the monsoon months, and plan the wood heater for full load then.",
+        "Ask the supplier for the solar panel's area and its air temperature at your batch's moisture."
+      ]
+    }
+  ],
+  "example": {
+    "title": "165 batches a year, per the report (estimate)",
+    "lines": [
+      "Wood saved: 657.7 kg x 165 = 108.5 t",
+      "Money: 108.5 t x Rs 3,000 = Rs 3.26 lakh, less 7,385 kWh x Rs 5 = Rs 0.37 lakh: Rs 2.89 lakh",
+      "Scope 1 methane and nitrous oxide avoided: 108.5 x 0.030 = 3.2 t CO2e",
+      "Scope 2 added: 7,385 x 0.675 = 5.0 t CO2",
+      "Biogenic CO2 avoided, reported separately: about 190 t"
+    ],
+    "note": "Wood at IPCC 2006 defaults with AR6 warming potentials; grid CEA FY 2025-26. The 130-batch comparison applies the report's per batch saving and costs to fewer batches."
+  },
+  "senseible": "Senseible reads your power bills into monthly CO2 records, so the dryer's extra kWh are counted. It has no built-in wood factor; weigh wood bought and use the figures worked out here. The green loan check covers what a lender wants for solar thermal equipment.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Efficient 96-tray dryer",
+      "to": "/answers/efficient-tray-dryer-wood-saving-chemical-unit"
+    },
+    {
+      "label": "Solar dryers in agro processing",
+      "to": "/answers/solar-dryer-agro-processing-co2"
+    },
+    {
+      "label": "Efficient wood hot air generator",
+      "to": "/answers/efficient-wood-hot-air-generator-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: hybrid solar tray dryer, 96 trays, Ahmedabad chemical cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Ah_96.pdf"
+    },
+    {
+      "label": "BEE, Detailed project report: energy efficient tray dryer, 96 trays, Ahmedabad chemical cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Ahmedabad_96.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Table 1.2 (net calorific values) and Chapter 2 tables",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately from the scopes)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

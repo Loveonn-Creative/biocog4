@@ -1,0 +1,82 @@
+{
+  "slug": "bikaner-plaster-of-paris-cluster-petcoke",
+  "q": "How much energy do Bikaner plaster of Paris units use, and how much is petcoke?",
+  "title": "Bikaner plaster of Paris: petcoke and power",
+  "short": "TERI's Bikaner profile puts the cluster at 20,050 toe a year: petcoke 18,830 toe, about 96%, and 14.2 million kWh of grid power. About 75 of the 150 units run, making some 470,000 t of plaster. That comes to roughly 86,000 t CO2 a year (estimate).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Plaster of Paris makers in Khara and the other RIICO estates around Bikaner",
+  "sections": [
+    {
+      "h": "Khara, on India’s gypsum",
+      "p": [
+        "Rajasthan mines nearly all of India's gypsum, 98.8% of 2.93 million t in 2013-14, and Bikaner has beds up to 30 m thick. Most working units sit in RIICO's Khara estate, about 15 km from the city, many doing job work under other brands. More than 95% of the plaster leaves the state, and 10 to 15% is exported, mainly to Nepal."
+      ]
+    },
+    {
+      "h": "Where the heat goes",
+      "p": [
+        "Gypsum is loaded into a mild steel drum, 3 ft across and 6 ft long, holding 1 or 2 t, and turned at 5 to 10 rpm over a fluidised bed of pulverised petcoke. At 150 to 200 C it gives up three quarters of its water and becomes plaster; about 20 to 25% of the weight leaves as steam. The flue gas leaves at 700 C or more with nothing recovering it, and petcoke runs at 50 to 60 kg per tonne of gypsum."
+      ]
+    },
+    {
+      "h": "Petcoke is the footprint",
+      "ul": [
+        "Heating gypsum releases water, not process CO2, so all the CO2 comes from fuel and power.",
+        "Petcoke: about 77,000 t CO2 a year across the cluster, close to 90% of the total.",
+        "Electricity for crushers, pulverisers and drum drives: about 9,600 t.",
+        "Energy is 24 to 26% of production cost, so the same changes cut the bill.",
+        "We work from toe because the cluster table's petcoke tonnage, 269,000 t, does not square with its own 18,830 toe."
+      ]
+    },
+    {
+      "h": "What TERI expects a better furnace to save",
+      "ul": [
+        "Recover flue heat to preheat combustion air to 250 to 300 C: every 22 C off the flue saves about 1% of fuel, 10 to 15% in all.",
+        "Insulating brick and ceramic fibre in walls, floor and crown, which are now plain red brick.",
+        "Temperature probes at three points on the crown, so firing is not judged by eye.",
+        "A redesigned furnace with all of these: about 20%, some 4,000 toe a year for the cluster."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Bikaner cluster, CO2 a year (estimate)",
+    "lines": [
+      "Petcoke: 18,830 toe x 41.868 GJ = 788,400 GJ x 97.5 kg = 76,870 t CO2",
+      "Electricity: 14.2 million kWh x 0.675 kg = 9,585 t CO2",
+      "Total: about 86,450 t",
+      "Per tonne of plaster: 86,450 / 470,000 = about 184 kg CO2"
+    ],
+    "note": "Energy and output from TERI's Bikaner plaster of Paris profile (2016). Petcoke at the IPCC 2006 default for petroleum coke; grid factor CEA FY 2025-26."
+  },
+  "senseible": "Senseible reads your grid bills into Scope 2 at the CEA factor in minutes. It carries no petcoke factor, so the calciner fuel, most of your footprint, needs an outside factor such as the IPCC default used here.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "POP calciner energy by shift",
+      "to": "/answers/bikaner-pop-calciner-energy-by-shift"
+    },
+    {
+      "label": "Plaster of Paris CO2 per tonne",
+      "to": "/answers/plaster-of-paris-calcination-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Bikaner plaster of Paris industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Bikaner-POP-Industries-Rajasthan.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

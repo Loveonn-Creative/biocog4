@@ -1,0 +1,89 @@
+{
+  "slug": "andhra-pradesh-brick-kilns-state-energy-coal",
+  "q": "How many brick kilns does Andhra Pradesh have, what fuels do they burn and how much energy do they use?",
+  "title": "Andhra Pradesh brick kilns: fuel and energy",
+  "short": "About 8,000 kilns, by TERI's count on SAMEEEKSHA, burning biomass first and coal second in clamps and Bull's trench kilns. They make about 9.3 billion solid bricks a year on 1.37 million toe: the most energy per brick of the four states SAMEEEKSHA profiles this way.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Brick kiln owners in Andhra Pradesh and builders asking them for brick carbon figures",
+  "sections": [
+    {
+      "h": "The state in four numbers",
+      "ul": [
+        "Kilns: 8,000, making solid bricks.",
+        "Fuels: biomass, then coal.",
+        "Output: 9.3 billion bricks a year, about 11.6 lakh per kiln.",
+        "Energy: 1.37 million toe a year, about 171 toe per kiln."
+      ]
+    },
+    {
+      "h": "Why the energy per brick is high",
+      "p": [
+        "Spread across output, that is about 0.15 toe, or 6.2 GJ, per 1,000 bricks. Bihar comes to about 5.5 GJ, Haryana 3.4 and Maharashtra 3.1 on the same pages. Clamp kilns, where green bricks and fuel are stacked in the open and burnt once, lose more heat than a continuous Bull's trench kiln, and both are in use here. Brick weight and fuel quality also move the number, so read it as a state average, not a kiln benchmark."
+      ]
+    },
+    {
+      "h": "Clay from far away",
+      "p": [
+        "SAMEEEKSHA notes that clay is often hauled from far off and mixed at the kiln. If your own trucks or tractors carry it, their diesel is your Scope 1; if a contractor carries it, it is Scope 3 and worth a line in what you send a builder."
+      ]
+    },
+    {
+      "h": "What to keep this season",
+      "ol": [
+        "Biomass by tonne and type: husk, wood, agricultural residue. Its CO2 is biogenic and reported separately.",
+        "Coal invoices and weighbridge slips.",
+        "Diesel for clay haulage, pumps and moulding machines.",
+        "Bricks fired and sold, by class."
+      ]
+    }
+  ],
+  "example": {
+    "title": "An average Andhra Pradesh kiln (estimate)",
+    "lines": [
+      "Energy: 1.37 million toe / 8,000 kilns = 171 toe a year",
+      "Output: 9.3 billion / 8,000 = 11.6 lakh bricks",
+      "Per 1,000 bricks: 171 toe x 41.868 GJ / 1,163 = 6.2 GJ",
+      "Ceiling if every toe were coal: 171 x 41.868 GJ x 94.6 kg = about 677 t CO2; the biomass share comes off that as biogenic"
+    ],
+    "note": "State totals from SAMEEEKSHA's Andhra Pradesh brick page. Every other figure in this answer comes from the same SAMEEEKSHA state pages for Andhra Pradesh, Bihar, Maharashtra and Haryana. The ceiling uses the IPCC 2006 default for bituminous coal; the real fossil figure depends on how much of the fuel is biomass."
+  },
+  "senseible": "Senseible reads coal invoices and diesel slips into a kiln's fossil Scope 1 total in minutes; it applies no factor to biomass, so husk and wood stay a separate biogenic line you report yourself.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Brick kiln CO2 per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Biomass fuel in a boiler and Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA (TERI), Andhra Pradesh: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=212&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA (TERI), Bihar: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=213&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA (TERI), Maharashtra: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=214&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA (TERI), Haryana: clay fired brick making clusters",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=215&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

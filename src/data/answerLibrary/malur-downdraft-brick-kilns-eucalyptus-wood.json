@@ -1,0 +1,81 @@
+{
+  "slug": "malur-downdraft-brick-kilns-eucalyptus-wood",
+  "q": "How much wood does a Malur downdraft brick kiln burn, and is it counted as CO2?",
+  "title": "Malur downdraft kilns: wood and its CO2",
+  "short": "TERI's Malur profile gives about 287 t of eucalyptus twigs and firewood a year for a downdraft kiln firing 16 lakh bricks. Its CO2 is biogenic: reported beside the footprint, not in the fossil total. That is why the cluster's 177,542 t of wood shows zero GHG in TERI's table.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Downdraft and Hoffman kiln owners around Malur, and Bengaluru builders asking them for brick carbon figures",
+  "sections": [
+    {
+      "h": "How a Malur kiln fires",
+      "p": [
+        "Malur, near Bengaluru, is the country's largest hub of downdraft kilns: about 600 small units, plus about 20 Hoffman kilns run by larger firms. A downdraft kiln takes about 35,000 hand moulded solid bricks a batch, 9 x 4 x 3 inch and about 3.1 kg each. Firing runs 36 to 40 hours through 12 fireboxes, six a side, then the bricks cool for 4 to 6 days; a batch takes about 8 days and kilns work all year. Most units run two kilns on one chimney, firing them in turn."
+      ]
+    },
+    {
+      "h": "Two wood figures in one report",
+      "p": [
+        "The profile's table gives 287 t of wood a year for 16 lakh bricks in a downdraft kiln, about 18 t per lakh, and 501 t for a 26 lakh Hoffman kiln. Its text says 51 and 48 t per lakh bricks and 2.76 and 2.59 MJ per kg of brick, which the table figures do not match. We use the table. Your own wood purchase slips and batch count settle which is closer for your kiln."
+      ]
+    },
+    {
+      "h": "What counts, and where",
+      "ul": [
+        "Wood CO2: biogenic. Report the tonnes and the CO2 beside your Scope 1 and 2, not inside them.",
+        "Methane and nitrous oxide from burning wood: these do count in Scope 1, though they are small next to the CO2.",
+        "Diesel for the moulding water pump: fossil Scope 1.",
+        "A buyer wanting brick embodied carbon will want both lines, fossil and biogenic, per 1,000 bricks."
+      ]
+    },
+    {
+      "h": "Using less wood per brick",
+      "ul": [
+        "Interlink paired downdraft kilns so hot flue gas from the kiln on fire preheats the green bricks next door, instead of leaving the chimney hot.",
+        "Move to a continuous kiln; the Hoffman kilns already burn less per brick.",
+        "Perforated bricks and hollow blocks need less clay and fuel per wall."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One downdraft kiln, a year (estimate)",
+    "lines": [
+      "Wood energy, at TERI's cluster ratio of 70,606 toe for 177,542 t: 287 t x 16.7 GJ = about 4,780 GJ",
+      "Biogenic CO2: 4,780 GJ x 112 kg = about 535 t, reported separately",
+      "Methane: 4.78 TJ x 30 kg = 143 kg; nitrous oxide: 4.78 TJ x 4 kg = 19 kg",
+      "In CO2e (AR5): 143 x 28 + 19 x 265 = about 9 t, counted in Scope 1",
+      "Cluster wood: 70,606 toe x 41.868 GJ x 112 kg = about 331,000 t biogenic CO2"
+    ],
+    "note": "Wood quantities and batch details from TERI's Malur brick kiln profile (2016-17 data). Factors are IPCC 2006 defaults for wood in stationary combustion; global warming potentials from IPCC AR5."
+  },
+  "senseible": "Senseible applies no factor to wood, so it gives no CO2 figure for it; it reads the diesel and electricity bills, the fossil part, into Scope 1 and 2 records in minutes.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Biomass fuel in a boiler and Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Brick kiln CO2 per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Malur brick kilns (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Malur-brick-kilns.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Malur brick kilns cluster page (2016-17 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=235&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

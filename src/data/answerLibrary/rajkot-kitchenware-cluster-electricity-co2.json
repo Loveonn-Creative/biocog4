@@ -1,0 +1,84 @@
+{
+  "slug": "rajkot-kitchenware-cluster-electricity-co2",
+  "q": "What is the carbon footprint of Rajkot's kitchenware and cutlery makers?",
+  "title": "Rajkot kitchenware makers: the cluster's CO2",
+  "short": "About 22,700 t CO2 a year on today's grid factor, nearly all of it electricity. TERI's Rajkot profile counts about 350 units making over 110 million pieces on 33.5 million kWh and 29.8 kL of diesel. Knife and cutlery units use about two thirds of the energy.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Kitchenware, cutlery, stove and cookware makers in Rajkot answering hotel, airline, hospital and canteen buyers",
+  "sections": [
+    {
+      "h": "A cluster that runs on presses",
+      "p": [
+        "Rajkot's kitchenware units shear SS 202 sheet, rod and pipe, deep draw aluminium circles and CRC sheet on hydraulic presses, mould PP and ABS handles, and buff everything to a shine. Power comes from PGVCL, mostly on LT connections; supply is steady enough that generators barely run. That is why diesel is 28 of the cluster's 2,910 toe."
+      ]
+    },
+    {
+      "h": "Where the 2,910 toe go",
+      "ul": [
+        "Kitchenware, knife and cutlery: 196 units, 864 lakh pieces, 1,990 toe.",
+        "Gas lighters: 53 units, 110 lakh pieces, 330 toe.",
+        "Cooker and non-stick cookware: 36 units, 92 lakh pieces, 227 toe.",
+        "Stoves: 10 units, 48 lakh pieces, 213 toe.",
+        "Kitchen baskets and others: 55 units, 47 lakh pieces, 150 toe.",
+        "The profile's text calls the total 32,927 toe; its table shows 2,910 toe and 32,927 t CO2, and the table adds up, so we use it."
+      ]
+    },
+    {
+      "h": "What a buyer will actually weigh",
+      "p": [
+        "Your factory electricity is the part you control and can prove from bills. A buyer filling its own Scope 3 will also want what each piece is made of: grams of SS 202, aluminium or plastic per item. Metal made at a steel or aluminium plant usually carries more CO2 than the pressing and buffing, so send the weights even if you do not calculate that part yourself."
+      ]
+    },
+    {
+      "h": "Savings TERI costed for these units",
+      "ul": [
+        "Variable speed drives on press motors: 8 to 20%.",
+        "Thyristor control on the electric ovens that cure non-stick coating at 400 to 450 C: 7 to 15%.",
+        "Inverter spot welders, about 87% efficient against 67% for transformer sets: 10 to 15%.",
+        "All-electric injection moulding in place of hydraulic machines: 30 to 50% of that machine's power.",
+        "Compressed air: fix leaks above 20%, drop pressure by a bar for about 6%."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Rajkot kitchenware cluster, CO2 a year (estimate)",
+    "lines": [
+      "Electricity: 33.5 million kWh x 0.675 kg = 22,613 t CO2",
+      "Diesel: 29.8 kL x 2,645 kg = 79 t CO2",
+      "Total: about 22,690 t",
+      "Per piece, across 1,161 lakh pieces: about 195 g CO2 from factory energy alone"
+    ],
+    "note": "Energy and piece counts from TERI's Rajkot kitchenware profile. TERI's 32,927 t used an older grid factor; this uses CEA's FY 2025-26 factor. Material carbon is not included."
+  },
+  "senseible": "Senseible reads your monthly power bills and any diesel slips into an evidence trail a buyer can check line by line, so the factory figure you send for Scope 3 comes with its bills attached.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Kitchenware power use by product",
+      "to": "/answers/rajkot-kitchenware-unit-electricity-by-product"
+    },
+    {
+      "label": "Are kitchen utensils covered by CBAM?",
+      "to": "/answers/are-kitchen-utensils-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Rajkot kitchenware manufacturing industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/rajkot-kitchenware.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}
