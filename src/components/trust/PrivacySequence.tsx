@@ -6,17 +6,18 @@ import { useSeen } from "@/components/privacy/parts";
  * view. Reduced motion shows every tick at once.
  *
  * Sources: src/lib/guestResults.ts and supabase/functions/_shared/guestScan.ts
- * (guests: browser only, 24 hours); extract-document (SHA-256 per bill,
- * private Storage, no document contents in logs); request links stored as
- * hashes (supplier requests); src/pages/SupplierShare.tsx (totals only, after
- * Share, stop any time); Privacy Policy (encrypted in transit and at rest).
+ * (guests: no file or result kept on the server, results in the browser for
+ * 24 hours); extract-document (SHA-256 per bill, private Storage);
+ * drizzle/migrations/0034_enterprise_pilot.sql (request links stored only as
+ * token_hash); src/pages/SupplierShare.tsx (totals only, after Share, stop any
+ * time); managed Supabase infrastructure (TLS in transit, encrypted at rest;
+ * /enterprise/pricing already says "Encrypted storage and transfer").
  */
 const STEPS: { label: string; detail?: string }[] = [
-  { label: "Guest uploads stay in your browser", detail: "Cleared after 24 hours" },
+  { label: "We never keep guest uploads", detail: "Results stay in your browser for 24 hours" },
   { label: "Every bill gets a fingerprint", detail: "SHA-256" },
   { label: "Bills stay in your account", detail: "Private storage, no public links" },
   { label: "Encrypted in transit and at rest" },
-  { label: "Logs never record document contents" },
   { label: "Supplier request links stored as hashes" },
   { label: "Suppliers share totals, never bills", detail: "Only after they press Share" },
   { label: "Suppliers can stop sharing any time" },
@@ -30,8 +31,7 @@ export const PrivacySequence = () => {
   return (
     <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-start">
       <div className="md:sticky md:top-24">
-        <span className="text-xs uppercase tracking-wider text-muted-foreground">From upload to share</span>
-        <h2 className="mt-3 text-3xl md:text-4xl font-semibold">Privacy by design</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold">Privacy by design</h2>
       </div>
 
       <ol ref={ref} className="relative">
