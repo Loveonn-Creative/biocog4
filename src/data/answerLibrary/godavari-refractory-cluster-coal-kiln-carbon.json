@@ -1,0 +1,89 @@
+{
+  "slug": "godavari-refractory-cluster-coal-kiln-carbon",
+  "q": "How coal-heavy are East and West Godavari refractory units, and is there a loan route?",
+  "title": "Godavari refractories: coal and ADEETIE",
+  "short": "Coal is 9,882 of the cluster's 9,940 toe, burned in downdraft kilns: roughly 40,000 t CO2 a year, about 0.64 t per tonne of refractory. Both districts are on BEE's ADEETIE list, so a loan for a kiln upgrade that saves at least 10% energy can earn interest subvention.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Refractory units in Rajahmundry, Morampudi, Dhavaleswaram, Chebrolu, Bhimdole and Dwarka Tirumala",
+  "sections": [
+    {
+      "h": "26 units, one kind of kiln",
+      "ul": [
+        "19 units in East Godavari and 7 in West Godavari make about 62,530 t a year, worth about Rs 36 crore.",
+        "Almost all fire in downdraft kilns of 40 to 250 t a batch. Green ware dries in the open, so most kilns stop in the monsoon.",
+        "Coal of 4,000 to 4,800 kcal per kg comes largely through a state quota from Singareni. Units say quota coal is poor and they burn more of it; open market coal is better but dearer.",
+        "Energy is 40 to 45% of the cost of a tonne."
+      ]
+    },
+    {
+      "h": "What a unit uses",
+      "p": [
+        "The average unit burns 380 toe of coal and 26,145 kWh a year; the range runs from 164 to 977 toe. Firing takes 6.66 GJ per tonne of product."
+      ]
+    },
+    {
+      "h": "The loan route, step by step",
+      "ol": [
+        "Check you qualify: Udyam registration and manufacturing inside the named cluster.",
+        "Pick the upgrade: the cluster profile points to dampers, coal sizing and feeding, kiln temperature indicators, flue gas preheating, and in time a tunnel kiln. BEE's technology list is open, so these can be proposed.",
+        "Build a baseline from 12 months of coal bills, electricity bills and tonnes fired, so the empanelled auditor can size a saving of 10% or more.",
+        "Borrow Rs 10 lakh to Rs 15 crore; micro and small units get 5 points off the interest rate, medium units 3, with the net rate floored at 2%."
+      ]
+    },
+    {
+      "h": "Keep the saving visible",
+      "p": [
+        "Subvention is paid each year the saving holds, so log coal per tonne fired every month. A wet season with fewer firings should not look like a lost saving."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One unit's baseline (estimate)",
+    "lines": [
+      "Coal: 380 toe x 10 million kcal / 4,400 kcal per kg = about 864 t",
+      "CO2: 864 t x 1.76 = 1,520 t; 26,145 kWh x 0.675 = 18 t; total 1,538 t",
+      "Output: 62,530 t / 26 units = about 2,405 t, so 0.64 t CO2 per tonne",
+      "A 10% coal saving: 86 t of coal, about 152 t CO2 a year"
+    ],
+    "note": "Energy and output from the 2019-20 cluster profile; coal tonnes assume the middle of the reported heat value range. Use your own coal bills."
+  },
+  "senseible": "Senseible reads twelve months of coal invoices and electricity bills into a dated baseline with CO2, the starting point an auditor needs before sizing the 10% saving.",
+  "links": [
+    {
+      "label": "MSME green loan schemes",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
+      "label": "ADEETIE interest rates",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    },
+    {
+      "label": "Refractory brick CO2 per tonne",
+      "to": "/answers/refractory-brick-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI for BEE, Cluster profile report: East and West Godavari refractory cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/East%20&%20West%20Godavari%20Cluster%20Profile.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, East and West Godavari refractory cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=146&Itemid=502"
+    },
+    {
+      "label": "BEE, ADEETIE scheme booklet (eligible clusters and technologies)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

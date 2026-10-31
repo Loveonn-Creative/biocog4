@@ -1,0 +1,86 @@
+{
+  "slug": "saharanpur-foundry-hand-pump-castings-carbon",
+  "q": "Saharanpur foundries cast hand pumps on coke: what is the cluster's footprint?",
+  "title": "Saharanpur foundries: hand pump castings CO2",
+  "short": "Roughly 0.9 t CO2 per tonne of castings, about 18,700 t a year in all. Saharanpur's 50 working foundries made about 21,000 t from 4,100 t of coke and 9.3 million kWh. Coke gives two thirds of the CO2, and the smallest cupola units run far higher per tonne.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cupola foundries on Delhi Road, Mandi Samiti Road and Gagalheri in Saharanpur",
+  "sections": [
+    {
+      "h": "Who casts what",
+      "ul": [
+        "About 100 foundries exist; about 50 were working when TERI surveyed them.",
+        "Hand pump castings are 60% of output, sewing machine parts 25%, paper mill machinery 10%. Hand pumps also go to Nepal and Bhutan.",
+        "Nearly all melt in conventional cupolas of 2 to 4 t an hour, most over ten years old; only two use induction furnaces.",
+        "Coke is a mix of Dhanbad coke (about 24% ash) and Gujarat coke (about 12%), usually 60 to 70% Dhanbad."
+      ]
+    },
+    {
+      "h": "Why size matters",
+      "p": [
+        "A unit making 60 t of saleable castings a year uses a third of a tonne of coke per tonne, against about a fifth at 500 to 1,000 t. Coke runs at 20 to 25% of metal melted and 30 to 35% of good castings, so rejects and returns cost you twice."
+      ]
+    },
+    {
+      "h": "The cheapest cuts first",
+      "ol": [
+        "Bring rejects from 10 to 15% down below 5% with tighter process control.",
+        "Knock sand off runners and risers before remelting; it is 4 to 5% of their weight.",
+        "Size the blower to the cupola's inner diameter: about 5% less coke.",
+        "Fix charging and operating practice: 5 to 10%.",
+        "Then a divided blast cupola: about 100 kg of coke per tonne of liquid metal against 150 to 200 kg now, with payback inside a year on coke alone."
+      ]
+    },
+    {
+      "h": "What to send a pump buyer",
+      "p": [
+        "Give CO2 per tonne of good castings, naming coke tonnes, kWh and factors, then per pump from the casting weight of each model."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Three unit sizes and the cluster (estimate)",
+    "lines": [
+      "60 t castings: 20 t coke x 3.02 = 60 t; 50,000 kWh x 0.675 = 34 t; 1.57 t CO2 per tonne",
+      "500 t: 110 t coke = 332 t; 200,000 kWh = 135 t; 0.93 t per tonne",
+      "1,000 t: 200 t coke = 604 t; 500,000 kWh = 338 t; 0.94 t per tonne",
+      "Cluster: 4,100 t coke = 12,382 t; 9.3 million kWh = 6,278 t; 18,660 t / 21,000 t = 0.89 t per tonne"
+    ],
+    "note": "Coke, power and output from TERI's cluster profile (2014-15). Coke at the IPCC default for coke oven coke; high ash coke carries less carbon per tonne, so a lab carbon result would refine this."
+  },
+  "senseible": "Put your coke tonnes and kWh into the calculators for a first figure per tonne; Senseible can then read each month's power bill and coke invoice into records you can show a buyer.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Hand pump CO2 per pump",
+      "to": "/answers/hand-pump-carbon-footprint-per-pump"
+    },
+    {
+      "label": "Cupola coke CO2 per tonne",
+      "to": "/answers/cupola-furnace-coke-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Saharanpur foundries",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Saharanpur-Foundries-Uttar-Pradesh.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Saharanpur foundry cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=180&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

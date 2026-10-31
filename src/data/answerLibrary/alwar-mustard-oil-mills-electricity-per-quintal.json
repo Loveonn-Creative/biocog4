@@ -1,0 +1,87 @@
+{
+  "slug": "alwar-mustard-oil-mills-electricity-per-quintal",
+  "q": "How much electricity per quintal of seed do Alwar mustard oil mills use?",
+  "title": "Alwar mustard oil mills: kWh per quintal",
+  "short": "10 to 15 kWh per quintal of mustard seed, BEE's study found: about 186 lakh kWh for 12.4 lakh quintals across roughly 50 mills in Alwar and Sawai Madhopur. At 15 kWh that is about 10 kg CO2 per quintal crushed, or roughly 0.29 kg per kg of kolhu and expeller oil.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Kachchi and pakki ghani mustard oil mills in Alwar, Khairthal, Tijara, Sawai Madhopur and Gangapur",
+  "sections": [
+    {
+      "h": "How the mills crush",
+      "ul": [
+        "About 30 mills in Alwar and 20 in Sawai Madhopur. Most are mid sized; the smallest run one or two expellers.",
+        "Seed goes to the kolhu first for kachchi ghani oil, about 15% of the seed's weight. The cake then goes through an expeller for pakki ghani oil, about 20% more.",
+        "The remaining cake goes to a solvent plant for about 5% more, or is sold.",
+        "Seed holds about 40% oil."
+      ]
+    },
+    {
+      "h": "Where the kWh go",
+      "ul": [
+        "Kolhus driven in rows by one motor through belts on a common shaft.",
+        "Double and single pass expellers on old, many times rewound motors.",
+        "Exhaust fans to clear oil fumes, heaviest in the kolhu section.",
+        "In winter some mills fire a small boiler on wood or husk to soften cake; DG sets cover power cuts."
+      ]
+    },
+    {
+      "h": "What cuts it",
+      "ul": [
+        "An efficient expeller of the same 48 by 8 inch size runs on a 50 hp motor instead of 60 hp: about 15% less.",
+        "Energy efficient motors on kolhus and expellers.",
+        "Wind driven ventilators in place of many exhaust fans."
+      ]
+    },
+    {
+      "h": "Records a buyer will ask for",
+      "ol": [
+        "Monthly kWh from the bill, and DG diesel litres.",
+        "Quintals of seed crushed, and oil and cake out by weight.",
+        "Wood or husk for the boiler, kept as biogenic.",
+        "How you split the energy between oil and cake: by weight or by value, stated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per quintal and per kg of oil (estimate)",
+    "lines": [
+      "15 kWh x 0.675 = 10.1 kg CO2 per quintal of seed",
+      "Oil from kolhu and expeller: 15 + 20 = 35 kg per quintal",
+      "All of it on the oil: 10.1 / 35 = 0.29 kg CO2 per kg of oil",
+      "Average mill: 12.4 lakh quintals / 50 = about 24,800 quintals, 372,000 kWh, 251 t CO2 a year",
+      "Cluster: 186 lakh kWh x 0.675 = about 12,600 t CO2"
+    ],
+    "note": "Power, seed and extraction shares from BEE's energy conservation manual for the Alwar oil mill cluster. Mill energy only; growing the mustard is a separate, larger figure."
+  },
+  "senseible": "The calculators turn kWh per quintal into CO2 per kg of oil; Senseible can read your electricity bills and diesel slips into monthly records to back the figure.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Edible oil CO2 per litre",
+      "to": "/answers/edible-oil-mill-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Motor size to kWh",
+      "to": "/answers/motor-horsepower-to-kwh-estimate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, Manual on energy conservation measures in oil mill cluster, Alwar",
+      "url": "https://sameeeksha.org/pdf/dpr/Alwar_Oil%20Mill.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Alwar oil mills cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=157&Itemid=502"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "jamshedpur-chemical-units-biomass-carbon",
+  "q": "Jamshedpur's chemical units get 76% of their energy from biomass: how is that reported?",
+  "title": "Jamshedpur chemicals: reporting biomass",
+  "short": "About 14 kg of fossil CO2 per tonne of product, once the biomass is set aside on its own biogenic line. The cluster emits about 1,400 t fossil CO2 a year for 99,950 t, and grid power carries over 60% of it, though biomass is three quarters of the energy.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Inorganic chemical, paint and varnish units in Adityapur, Gamharia, Sonari and Bistupur",
+  "sections": [
+    {
+      "h": "The cluster in 2019-20",
+      "ul": [
+        "80 MSMEs, about 72 working. A fifth make under 200 t a year, two fifths 200 to 1,000 t, two fifths more.",
+        "Sulphuric acid, sodium hypochlorite, hydrochloric acid, bleaching powder and alum; cement paints, thinners and varnishes.",
+        "Tata Steel is a major buyer of the inorganic chemicals.",
+        "Most units run on electricity alone; a few raise steam for heating in boilers of 1 to 5 t an hour."
+      ]
+    },
+    {
+      "h": "The fuel behind the 76%",
+      "ul": [
+        "Biomass: 2,160 t a year, 805 toe, at 3,200 to 3,700 kcal per kg.",
+        "Coal: 259 t, 117 toe. Oil (LDO, furnace oil, diesel): 28 kL, 24 toe.",
+        "Electricity: 1.3 million kWh, 110 toe, from Tata Steel Utilities or JBVNL."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "ol": [
+        "Take biomass tonnes from purchase bills, by type: wood, briquettes or husk.",
+        "Work out its CO2 with an IPCC factor and show it as biogenic, beside the scopes, not in them.",
+        "Keep the methane and nitrous oxide from burning it in Scope 1; they are small but real.",
+        "Coal, oil and diesel go fully in Scope 1; electricity in Scope 2 at 0.675 kg per kWh.",
+        "Divide fossil CO2 by tonnes dispatched, per product where meters allow."
+      ]
+    },
+    {
+      "h": "Where savings sit",
+      "p": [
+        "Condensate recovery, air to fuel ratio and insulation on boilers; screw compressors in place of reciprocating ones; IE3 motors and VFDs on centrifuges and ball mills. Jamshedpur is on BEE's ADEETIE list for chemicals, so a loan for listed upgrades can carry interest subvention."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The cluster's carbon, two lines (estimate)",
+    "lines": [
+      "Electricity: 1.3 million kWh x 0.675 = 878 t CO2",
+      "Coal: 259 t x 1.76 = 456 t; oil: 28 kL x 2.645 = 74 t",
+      "Fossil total: 1,408 t / 99,950 t = 14 kg CO2 per tonne",
+      "Biogenic: 2,160 t biomass x about 1.75 = about 3,780 t CO2, reported separately"
+    ],
+    "note": "Fuel and output from the 2019-20 cluster profile. Oil at the diesel factor (furnace oil is higher); biomass at the IPCC default for wood at the profile's heat value."
+  },
+  "senseible": "Senseible reads your electricity bills and coal and oil invoices into dated records with their CO2, the fossil part of your figure; the biomass tonnes go beside it on the biogenic line.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Biomass boilers: CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "ADEETIE cluster list",
+      "to": "/answers/adeetie-eligible-clusters-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI for BEE, Cluster profile report: Jamshedpur chemical cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Jamshedpur%20chemical%20cluster.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Jamshedpur chemical cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=305&Itemid=502"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}
