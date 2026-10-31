@@ -49,7 +49,7 @@
     ],
     "note": "Energy lines are CO2; food is CO2e. The meal factor and floor split are assumptions for illustration."
   },
-  "senseible": "Senseible reads the hotel's electricity bills (billing period, tariff, sanctioned load and units, at 0.710 kg CO2 per kWh, CEA version 21.0) and fuel invoices such as diesel and LPG (IPCC 2006 defaults) into Scope 1 and 2, the annual total these event factors start from. Floor areas, room nights and meals come from your records.",
+  "senseible": "Senseible reads the hotel's electricity bills (billing period, tariff, sanctioned load and units, at 0.710 kg CO2 per kWh for FY 2024-25, CEA version 21.0) and fuel invoices such as diesel and LPG (IPCC 2006 defaults) into Scope 1 and 2, the annual total these event factors start from. Floor areas, room nights and meals come from your records.",
   "links": [
     {
       "label": "Hotel stay emissions per night",

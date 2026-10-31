@@ -41,7 +41,7 @@
   "example": {
     "title": "Worked example: heat treatment at a cluster CFC (illustrative figures)",
     "lines": [
-      "CFC month: 1,20,000 kWh x 0.710 = 85,200 kg CO2",
+      "CFC month: 1,20,000 kWh x 0.710 (FY 2024-25 grid factor) = 85,200 kg CO2",
       "CFC month: 8,000 scm PNG x 2.05 = 16,400 kg CO2",
       "CFC total: 85,200 + 16,400 = 1,01,600 kg CO2 for 400 tonnes treated",
       "Per tonne: 1,01,600 / 400 = 254 kg CO2",

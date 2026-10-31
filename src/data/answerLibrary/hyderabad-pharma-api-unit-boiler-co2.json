@@ -2,7 +2,7 @@
   "slug": "hyderabad-pharma-api-unit-boiler-co2",
   "q": "How does a Hyderabad pharma API unit count CO2 from boilers and solvent incineration?",
   "title": "Hyderabad API unit boiler and solvent CO2",
-  "short": "Count boiler fuel in Scope 1: coal in full, biomass with biogenic CO2 separate. Solvents burnt in an incinerator or used as fuel also emit fossil CO2 from their carbon. Add electricity at 0.710 and divide by kilograms of API.",
+  "short": "Count boiler fuel in Scope 1: coal in full, biomass with biogenic CO2 separate. Solvents burnt in an incinerator or used as fuel also emit fossil CO2 from their carbon. Add electricity at 0.710 (FY 2024-25 grid factor) and divide by kilograms of API.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Bulk drug and API units in Jeedimetla, Patancheru and the Hyderabad pharma belt",

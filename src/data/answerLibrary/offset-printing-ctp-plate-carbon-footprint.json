@@ -2,7 +2,7 @@
   "slug": "offset-printing-ctp-plate-carbon-footprint",
   "q": "How do I calculate the carbon footprint of an offset printing CTP plate?",
   "title": "CTP plate carbon footprint",
-  "short": "Work out the plate weight from size, thickness and the density of aluminium, and multiply by the supplier's aluminium factor. Add the platesetter and processor electricity per plate at 0.710 kg CO2 per kWh, and chemistry where it is used.",
+  "short": "Work out the plate weight from size, thickness and the density of aluminium, and multiply by the supplier's aluminium factor. Add the platesetter and processor electricity per plate at 0.710 kg CO2 per kWh for FY 2024-25, and chemistry where it is used.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Offset printers and print buyers",

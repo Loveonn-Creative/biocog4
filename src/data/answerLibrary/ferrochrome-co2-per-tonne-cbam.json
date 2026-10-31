@@ -42,7 +42,7 @@
       "Carbon in the alloy: 1,000 kg x 7% = 70 kg C; carbon in slag assumed negligible",
       "Net carbon: 467.5 + 21.25 minus 70 = 418.75 kg C",
       "Direct CO2: 418.75 x 44/12 = 1,535 kg, about 1.54 t CO2 per tonne of alloy",
-      "Not counted for CBAM: 3,800 kWh x 0.710 = 2,698 kg CO2 from grid electricity"
+      "Not counted for CBAM: 3,800 kWh x 0.710 (FY 2024-25 grid factor) = 2,698 kg CO2 from grid electricity"
     ],
     "note": "Inputs and carbon contents are assumed for illustration. Use measured consumption and analyses for your furnace, and add any fuel combustion inside the installation."
   },

@@ -26,7 +26,7 @@
     "title": "Adding them",
     "lines": [
       "HT connection: 42,000 kWh; LT connection: 3,500 kWh",
-      "45,500 kWh x 0.710 kg = 32,305 kg CO2"
+      "45,500 kWh x 0.710 kg (FY 2024-25) = 32,305 kg CO2"
     ]
   },
   "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",

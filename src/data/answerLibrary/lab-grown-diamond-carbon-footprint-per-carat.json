@@ -2,7 +2,7 @@
   "slug": "lab-grown-diamond-carbon-footprint-per-carat",
   "q": "How do I calculate the carbon footprint of a lab-grown diamond per carat?",
   "title": "Lab-grown diamond footprint per carat",
-  "short": "Divide the metered electricity used by your growth reactors in a period by the rough carats grown, multiply by 0.710 kg CO2 per kWh, then divide by your rough-to-polished yield and add cutting and polishing energy. Reactor electricity drives the result, so use metered data, not published averages.",
+  "short": "Divide the metered electricity used by your growth reactors in a period by the rough carats grown, multiply by 0.710 kg CO2 per kWh for FY 2024-25, then divide by your rough-to-polished yield and add cutting and polishing energy. Reactor electricity drives the result, so use metered data, not published averages.",
   "topic": "product",
   "intent": "how-to",
   "audience": "CVD and HPHT growers and polishers in Surat and Mumbai",
@@ -49,7 +49,7 @@
     ],
     "note": "kWh per carat and yield are illustrative and vary by process and stone size. Use your own meter readings and yield records."
   },
-  "senseible": "Senseible reads the grower's electricity bills and reports location-based Scope 2 at 0.710 kg CO2 per kWh, plus market-based Scope 2 where you provide the contract or certificate data. Splitting the plant meter between growth and polishing uses your own sub-meter readings.",
+  "senseible": "Senseible reads the grower's electricity bills and reports location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, plus market-based Scope 2 where you provide the contract or certificate data. Splitting the plant meter between growth and polishing uses your own sub-meter readings.",
   "links": [
     {
       "label": "Allocating factory electricity to products",

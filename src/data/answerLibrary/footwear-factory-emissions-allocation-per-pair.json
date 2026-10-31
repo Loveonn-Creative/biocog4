@@ -2,7 +2,7 @@
   "slug": "footwear-factory-emissions-allocation-per-pair",
   "q": "How do I split a footwear factory's emissions across different styles?",
   "title": "Footwear factory emissions per pair",
-  "short": "Total the factory electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then split by standard minutes per style rather than pairs, since a boot takes much longer to make than a sandal. State the rule beside each per-pair figure.",
+  "short": "Total the factory electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then split by standard minutes per style rather than pairs, since a boot takes much longer to make than a sandal. State the rule beside each per-pair figure.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Footwear exporters with mixed styles in one factory",

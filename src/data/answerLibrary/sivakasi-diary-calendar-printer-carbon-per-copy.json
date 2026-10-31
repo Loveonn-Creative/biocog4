@@ -10,7 +10,7 @@
     {
       "h": "Steps",
       "p": [
-        "Press, binding and finishing kWh for the job, x 0.710.",
+        "Press, binding and finishing kWh for the job, x 0.710 (FY 2024-25 grid factor).",
         "Paper and board tonnes, with the mill's figure or a named factor.",
         "Ink and plates by kg.",
         "Divide the total by copies delivered."

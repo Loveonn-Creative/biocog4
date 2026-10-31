@@ -2,7 +2,7 @@
   "slug": "textile-auxiliary-chemicals-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of textile auxiliary chemicals per kg?",
   "title": "Textile auxiliaries carbon per kg",
-  "short": "Add each raw material, such as surfactants, polymers or solvents, from supplier data. Then add the blending plant energy, electricity at 0.710 kg CO2 per kWh and gas at its default factor, divided by kilograms produced.",
+  "short": "Add each raw material, such as surfactants, polymers or solvents, from supplier data. Then add the blending plant energy, electricity at 0.710 kg CO2 per kWh for FY 2024-25 and gas at its default factor, divided by kilograms produced.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Makers of softeners, wetting agents, binders and other textile auxiliaries",

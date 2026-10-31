@@ -35,7 +35,7 @@
       ]
     }
   ],
-  "senseible": "Senseible drafts BRSR from the bills and invoices you upload, as a self-declared draft. It reads electricity bills and fuel invoices for each company-run outlet, applying 0.710 kg CO2 per kWh and IPCC 2006 fuel defaults such as 2.68 kg CO2 per litre of diesel, and keeps the fingerprinted source file behind every Scope 1 and 2 line.",
+  "senseible": "Senseible drafts BRSR from the bills and invoices you upload, as a self-declared draft. It reads electricity bills and fuel invoices for each company-run outlet, applying 0.710 kg CO2 per kWh for FY 2024-25 and IPCC 2006 fuel defaults such as 2.68 kg CO2 per litre of diesel, and keeps the fingerprinted source file behind every Scope 1 and 2 line.",
   "links": [
     {
       "label": "Franchisor data collection for Category 14",

@@ -25,7 +25,7 @@
     {
       "h": "प्रति kWh DG बिजली बनाम grid बिजली",
       "p": [
-        "ठीक हालत का DG set अच्छे load पर आम तौर पर लगभग 3 से 3.5 kWh प्रति litre देता है, जो BEE guidance की specific fuel consumption range है। इससे लगभग 0.77 से 0.89 kg CO2 प्रति kWh बनता है (2.68 को 3.5 और 3.0 से भाग देकर), जो भारत के grid आँकड़े 0.710 kg CO2 प्रति kWh से ज़्यादा है। हल्के load पर set सिर्फ़ 2.5 kWh प्रति litre दे सकता है, जो लगभग 1.07 kg CO2 प्रति kWh है। ये अनुमान हैं; असली आँकड़ा आपके अपने litre और meter reading से निकलता है।"
+        "ठीक हालत का DG set अच्छे load पर आम तौर पर लगभग 3 से 3.5 kWh प्रति litre देता है, जो BEE guidance की specific fuel consumption range है। इससे लगभग 0.77 से 0.89 kg CO2 प्रति kWh बनता है (2.68 को 3.5 और 3.0 से भाग देकर), जो भारत के grid आँकड़े 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh से ज़्यादा है। हल्के load पर set सिर्फ़ 2.5 kWh प्रति litre दे सकता है, जो लगभग 1.07 kg CO2 प्रति kWh है। ये अनुमान हैं; असली आँकड़ा आपके अपने litre और meter reading से निकलता है।"
       ]
     },
     {
@@ -45,7 +45,7 @@
       "Scope 1: 1,200 x 2.68 = 3,216 kg CO2",
       "DG meter reading: 3,900 kWh, यानी 3,900 / 1,200 = 3.25 kWh प्रति litre",
       "प्रति kWh: 3,216 / 3,900 = लगभग 0.825 kg CO2 प्रति kWh",
-      "Grid से उतनी ही units: 3,900 x 0.710 = 2,769 kg CO2, लगभग 447 kg कम"
+      "Grid से उतनी ही units: 3,900 x 0.710 (वित्त वर्ष 2024-25) = 2,769 kg CO2, लगभग 447 kg कम"
     ],
     "note": "2.68 का factor सिर्फ़ CO2 का है; अगर आपका framework माँगे तो diesel से methane और nitrous oxide थोड़ा और जोड़ते हैं।"
   },

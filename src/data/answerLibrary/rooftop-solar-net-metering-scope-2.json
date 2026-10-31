@@ -47,7 +47,7 @@
       "Wrong method on net units: 22,000 x 0.710 = 15,620 kg CO2, understated by 5,680 kg"
     ]
   },
-  "senseible": "Senseible reads the import units on an electricity bill and applies the India grid factor of 0.710 kg CO2 per kWh. Net-metered units are not treated as consumption, and kVAh lines get no factor until kWh is available. It does not read inverter or solar meter data.",
+  "senseible": "Senseible reads the import units on an electricity bill and applies the India grid factor of 0.710 kg CO2 per kWh for FY 2024-25. Net-metered units are not treated as consumption, and kVAh lines get no factor until kWh is available. It does not read inverter or solar meter data.",
   "links": [
     { "label": "Footprint from an electricity bill", "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills" },
     { "label": "Rooftop solar economics in Pakistan", "to": "/climate-intelligence/rooftop-solar-net-metering-pakistan-factories" },

@@ -2,7 +2,7 @@
   "slug": "fume-hood-energy-use-lab-emissions",
   "q": "How do I estimate the energy and emissions of a laboratory fume hood?",
   "title": "Fume hood energy and emissions",
-  "short": "Work out the air the hood exhausts (sash opening area x face velocity), then add the fan power to move it and the cooling energy to condition the replacement air. Multiply the electrical kW by operating hours and by 0.710 kg CO2 per kWh. In a hot, humid climate, cooling the make-up air is usually the biggest part.",
+  "short": "Work out the air the hood exhausts (sash opening area x face velocity), then add the fan power to move it and the cooling energy to condition the replacement air. Multiply the electrical kW by operating hours and by 0.710 kg CO2/kWh (FY 2024-25). In a hot, humid climate, cooling the make-up air is usually the biggest part.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Pharma QC, CRO and university lab facility teams",
@@ -47,7 +47,7 @@
     ],
     "note": "Face velocity, enthalpy drop, COP, pressure, fan efficiency and 24 hour running are assumptions; take real values from your HVAC design and BMS. Hood energy is already inside your electricity bill, so do not add it to Scope 2."
   },
-  "senseible": "Senseible reports the building's electricity and DG emissions from your bills, at the CEA factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, and keeps each bill as evidence for the totals your hood estimates sit within.",
+  "senseible": "Senseible reports the building's electricity and DG emissions from your bills, at the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0, and keeps each bill as evidence for the totals your hood estimates sit within.",
   "links": [
     {
       "label": "ULT freezer energy and CO2",

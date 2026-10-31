@@ -58,7 +58,7 @@
       "Using only the billed 60,000 kWh would give 42,600 kg CO2 and understate the month by 21,300 kg",
       "Market-based, if you hold the attributes for the 30,000 green units: 60,000 x 0.710 = 42,600 kg CO2, with the discom units at the grid factor where no supplier-specific factor is available"
     ],
-    "note": "Readings and units are illustrative. 0.710 kg CO2 per kWh is the CEA CO2 Baseline Database version 21.0 grid factor."
+    "note": "Readings and units are illustrative. 0.710 kg CO2 per kWh for FY 2024-25 is the CEA CO2 Baseline Database version 21.0 grid factor."
   },
   "senseible": "Senseible reads the billing period, tariff category, sanctioned load and units from an electricity bill, and reads PDFs over 10 pages in parts. On a kVAh bill it uses the printed kWh, otherwise kVAh times the printed power factor labelled as an estimate, and it does not treat net-metered units as consumption.",
   "links": [

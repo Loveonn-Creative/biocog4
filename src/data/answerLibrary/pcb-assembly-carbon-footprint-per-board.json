@@ -48,7 +48,7 @@
     ],
     "note": "All figures are illustrative. Component and bare board figures depend on the parts used and the database; take boards, kWh and diesel from your own records."
   },
-  "senseible": "Senseible reads the plant's electricity, DG fuel and freight invoices for the assembly share, at the CEA grid factor of 0.710 kg CO2 per kWh and IPCC 2006 fuel factors. Component-level factors come from your suppliers or a licensed database.",
+  "senseible": "Senseible reads the plant's electricity, DG fuel and freight invoices for the assembly share, at the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 and IPCC 2006 fuel factors. Component-level factors come from your suppliers or a licensed database.",
   "links": [
     {
       "label": "What to send a buyer who asks for a PCF",

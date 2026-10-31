@@ -41,7 +41,7 @@
     "title": "Worked example: one remote day against one office day (assumptions labelled)",
     "lines": [
       "Office day by car, 20 km round trip at 0.154 kg CO2 per km (petrol car at 15 km per litre): 20 x 0.154 = 3.08 kg CO2",
-      "Home day without AC, about 1.16 kWh: 1.16 x 0.710 = 0.82 kg CO2",
+      "Home day without AC, about 1.16 kWh: 1.16 x 0.710 (FY 2024-25 grid factor) = 0.82 kg CO2",
       "Home day with a 1.2 kW AC for 6 hours, 1.16 + 7.2 = 8.36 kWh: 8.36 x 0.710 = 5.94 kg CO2",
       "Without AC the remote day saves about 2.3 kg; with AC it emits about 2.9 kg more than the drive"
     ],

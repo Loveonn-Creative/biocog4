@@ -51,7 +51,7 @@
       "Good castings: 20,000 kg; zinc alloy bought: 20,600 kg (600 kg lost as dross and melt loss)",
       "Alloy at an illustrative 3.0 kg CO2e per kg: 20,600 x 3.0 = 61,800 kg CO2e",
       "Holding furnace LPG: 1,800 kg x 2.98 = 5,364 kg CO2",
-      "Presses, trimming and compressors: 36,000 kWh x 0.710 = 25,560 kg CO2",
+      "Presses, trimming and compressors: 36,000 kWh x 0.710 (FY 2024-25 grid factor) = 25,560 kg CO2",
       "Total: 61,800 + 5,364 + 25,560 = 92,724 kg; per kg good casting: 92,724 / 20,000 = 4.64 kg CO2e",
       "A 350 g lock body: 0.35 x 4.64 = 1.62 kg CO2e before plating and bought-in parts"
     ],

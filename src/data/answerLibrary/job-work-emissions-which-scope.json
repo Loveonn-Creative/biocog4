@@ -27,7 +27,7 @@
       "h": "Getting a quantity based figure",
       "ol": [
         "Ask the job worker for its monthly fuel and kWh, and its total output in tonnes, metres or pieces.",
-        "Work out its emissions per unit: (kWh x 0.710 + fuel x factor) / total output.",
+        "Work out its emissions per unit: (kWh x 0.710 (FY 2024-25 grid factor) + fuel x factor) / total output.",
         "Multiply by the quantity processed for you, from your challans or its invoices.",
         "If it will not share data, use a spend-based estimate on the job work value, label it, and replace it later."
       ]

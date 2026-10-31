@@ -2,7 +2,7 @@
   "slug": "howrah-foundry-cupola-to-induction-co2",
   "q": "Will switching our Howrah foundry from cupola to induction furnace cut CO2?",
   "title": "Howrah foundry: cupola to induction",
-  "short": "Not automatically on grid power. An induction furnace replaces coke with electricity, and at India's grid factor of 0.710 kg CO2 per kWh the CO2 per tonne can land close to a well-run cupola. It falls clearly when the power comes from solar or other renewable supply, and local smoke drops either way.",
+  "short": "Not automatically on grid power. An induction furnace replaces coke with electricity, and at India's grid factor of 0.710 kg CO2 per kWh for FY 2024-25 the CO2 per tonne can land close to a well-run cupola. It falls clearly when the power comes from solar or other renewable supply, and local smoke drops either way.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "Cast iron foundries in Howrah considering induction melting",

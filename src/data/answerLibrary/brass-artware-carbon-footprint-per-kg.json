@@ -2,7 +2,7 @@
   "slug": "brass-artware-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of brass artware and handicrafts per kg?",
   "title": "Brass artware carbon per kg",
-  "short": "Add the furnace fuel for melting at its default factor, and electricity for polishing and lacquering at 0.710 kg CO2 per kWh, then divide by kilograms finished. Add the brass itself from the supplier, noting how much is scrap, with its own supplier figure.",
+  "short": "Add the furnace fuel for melting at its default factor, and electricity for polishing and lacquering at 0.710 kg CO2 per kWh for FY 2024-25, then divide by kilograms finished. Add the brass itself from the supplier, noting how much is scrap, with its own supplier figure.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Brass and metal handicraft exporters and artisan clusters",

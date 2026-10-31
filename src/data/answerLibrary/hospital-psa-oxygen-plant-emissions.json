@@ -2,7 +2,7 @@
   "slug": "hospital-psa-oxygen-plant-emissions",
   "q": "How do I calculate the emissions of a hospital PSA oxygen plant?",
   "title": "Hospital PSA oxygen plant emissions",
-  "short": "A PSA oxygen plant runs on electricity, mainly its air compressor. Multiply the plant's kWh from a sub-meter by 0.710 kg CO2 per kWh, add generator diesel during outages, and divide by cubic metres of oxygen produced. Bought liquid oxygen is Scope 3 instead.",
+  "short": "A PSA oxygen plant runs on electricity, mainly its air compressor. Multiply the plant's kWh from a sub-meter by 0.710 kg CO2 per kWh for FY 2024-25, add generator diesel during outages, and divide by cubic metres of oxygen produced. Bought liquid oxygen is Scope 3 instead.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Hospital engineering and biomedical teams",
@@ -37,7 +37,7 @@
     ],
     "note": "Inputs are illustrative; use the plant sub-meter and flow meter readings."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Industrial gases in Scope 3",

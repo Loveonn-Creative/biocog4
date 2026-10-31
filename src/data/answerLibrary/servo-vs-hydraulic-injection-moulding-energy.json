@@ -2,7 +2,7 @@
   "slug": "servo-vs-hydraulic-injection-moulding-energy",
   "q": "How much electricity and CO2 does a servo injection moulding machine save over a fixed-pump hydraulic one?",
   "title": "Servo vs hydraulic moulding machine energy",
-  "short": "There is no fixed figure; it depends on your cycle. Measure kWh per kg of good parts on the same mould for a week on each machine, take the difference, multiply by annual output, then by 0.710 kg CO2 per kWh. Savings are biggest on long cycles with long cooling or holding times.",
+  "short": "There is no fixed figure; it depends on your cycle. Measure kWh per kg of good parts on the same mould for a week on each machine, take the difference, multiply by annual output, then by 0.710 kg CO2 per kWh for FY 2024-25. Savings are biggest on long cycles with long cooling or holding times.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Plastics processors and MSME owners",

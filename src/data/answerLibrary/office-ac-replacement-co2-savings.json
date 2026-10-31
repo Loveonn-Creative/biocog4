@@ -2,7 +2,7 @@
   "slug": "office-ac-replacement-co2-savings",
   "q": "How much electricity and CO2 does replacing old office ACs with 5-star inverter ACs save?",
   "title": "CO2 saved by replacing old office ACs",
-  "short": "Work it out as cooling delivered divided by the old unit's efficiency, minus cooling divided by the new unit's ISEER, then multiply the kWh saved by 0.710 kg CO2 per kWh. The saving depends on the old unit's real efficiency and the ISEER on the new unit's label; in the worked example below it is about 44 percent.",
+  "short": "Work it out as cooling delivered divided by the old unit's efficiency, minus cooling divided by the new unit's ISEER, then multiply the kWh saved by 0.710 kg CO2/kWh (FY 2024-25). The saving depends on the old unit's real efficiency and the ISEER on the new unit's label; in the worked example below it is about 44 percent.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Office managers, IT and BPO firms, retailers",
@@ -13,7 +13,7 @@
         "Cooling delivered per AC = rated capacity in kW x hours used a year x average load share. One ton of refrigeration is 3.517 kW.",
         "Old kWh = cooling / the old unit's real efficiency (its EER, reduced for age if it has not been serviced).",
         "New kWh = cooling / the new unit's ISEER, printed on the BEE star label.",
-        "CO2 saved = (old kWh minus new kWh) x 0.710 kg CO2 per kWh."
+        "CO2 saved = (old kWh minus new kWh) x 0.710 kg CO2 per kWh for FY 2024-25."
       ]
     },
     {
@@ -50,7 +50,7 @@
     ],
     "note": "The old EER, hours, load share and ISEER are assumptions; use the label on the unit you buy and your own hours."
   },
-  "senseible": "Senseible reads electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh, so before and after periods can be compared from your documents. Savings claims stay your own.",
+  "senseible": "Senseible reads electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, so before and after periods can be compared from your documents. Savings claims stay your own.",
   "links": [
     {
       "label": "Energy transition savings calculator",

@@ -49,7 +49,7 @@
     ],
     "note": "All inputs are illustrative. Fertiliser manufacture, indirect N2O and freight are left out here and belong in a full cradle to gate figure. The result includes methane and N2O, so it is in CO2e."
   },
-  "senseible": "Senseible reads the fuel, electricity and freight invoices behind the processing share (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps fertiliser and other supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind the processing share (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25) and keeps fertiliser and other supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
   "links": [
     { "label": "EUDR data for coffee and rubber exporters", "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide" },
     { "label": "Wastewater methane from an ETP", "to": "/answers/etp-wastewater-methane-emissions" },

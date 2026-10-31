@@ -27,7 +27,7 @@
     "lines": [
       "Bar bought: 20 kg per crankshaft.",
       "Supplier figure: 2.2 kg CO2 per kg of steel; 20 × 2.2 = 44 kg.",
-      "Forging, heat treatment and machining: 6 kWh × 0.710 = 4.3 kg, plus 1.5 kg from furnace gas.",
+      "Forging, heat treatment and machining: 6 kWh × 0.710 (FY 2024-25 grid factor) = 4.3 kg, plus 1.5 kg from furnace gas.",
       "Total: about 50 kg CO2 per piece."
     ]
   },

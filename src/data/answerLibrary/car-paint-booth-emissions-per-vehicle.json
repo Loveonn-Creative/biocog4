@@ -2,7 +2,7 @@
   "slug": "car-paint-booth-emissions-per-vehicle",
   "q": "How do I calculate the emissions of a car paint booth per vehicle painted?",
   "title": "Car paint booth emissions per job",
-  "short": "Add the burner fuel for the bake cycle, LPG at 2.98 kg CO2 per kilogram or diesel at 2.68 per litre, and the fan and lighting electricity at 0.710 kg CO2 per kWh. Divide by paint jobs, and count panels as well if job sizes vary.",
+  "short": "Add the burner fuel for the bake cycle, LPG at 2.98 kg CO2 per kilogram or diesel at 2.68 per litre, and the fan and lighting electricity at 0.710 kg CO2 per kWh for FY 2024-25. Divide by paint jobs, and count panels as well if job sizes vary.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Body shops, dealer workshops and refinish centres",
@@ -38,7 +38,7 @@
     ],
     "note": "Fuel and power are illustrative; use LPG invoices, a booth sub-meter and the job register."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Powder coating line per m2",

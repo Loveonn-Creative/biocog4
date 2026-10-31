@@ -48,7 +48,7 @@
     "title": "Worked example: transition exposure from a carbon price",
     "lines": [
       "Diesel: 40,000 L x 2.68 kg CO2/L = 107,200 kg, 107.2 t CO2",
-      "Grid electricity: 300,000 kWh x 0.710 kg CO2/kWh = 213,000 kg, 213 t CO2",
+      "Grid electricity: 300,000 kWh x 0.710 kg CO2/kWh for FY 2024-25 = 213,000 kg, 213 t CO2",
       "Total: 107.2 + 213 = 320.2 t CO2",
       "At an illustrative carbon price of Rs 2,000 per tonne: 320.2 x 2,000 = Rs 6,40,400, about Rs 6.4 lakh a year"
     ],

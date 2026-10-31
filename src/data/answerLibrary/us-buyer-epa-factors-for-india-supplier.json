@@ -2,7 +2,7 @@
   "slug": "us-buyer-epa-factors-for-india-supplier",
   "q": "Our US buyer's template uses EPA emission factors. Should we use them for our Indian plant?",
   "title": "US EPA factors for an Indian plant?",
-  "short": "Use them for fuels, where the chemistry is the same, but not for grid electricity. For power, use India's grid factor of 0.710 kg CO2 per kWh from the CEA database. Say which factors you used next to each figure.",
+  "short": "Use them for fuels, where the chemistry is the same, but not for grid electricity. For power, use India's grid factor of 0.710 kg CO2 per kWh for FY 2024-25 from the CEA database. Say which factors you used next to each figure.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Indian suppliers filling in emissions templates from US buyers",

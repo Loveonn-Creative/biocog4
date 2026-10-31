@@ -42,7 +42,7 @@
   "example": {
     "title": "Illustrative example: one machined part, Indian plant",
     "lines": [
-      "Plant electricity for the period: 300,000 kWh x 0.710 = 213,000 kg CO2",
+      "Plant electricity for the period: 300,000 kWh x 0.710 (FY 2024-25 grid factor) = 213,000 kg CO2",
       "Piped natural gas: 20,000 scm x 2.05 = 41,000 kg CO2",
       "Plant energy total: 254,000 kg CO2 over 100,000 parts = 2.54 kg CO2 per part",
       "Steel: 1.2 kg per part x 2.0 kg CO2e per kg (assumed database value) = 2.40 kg CO2e",

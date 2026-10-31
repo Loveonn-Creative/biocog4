@@ -2,7 +2,7 @@
   "slug": "stone-crusher-aggregate-co2-per-tonne",
   "q": "What is the carbon footprint of crushed stone aggregate per tonne from a crusher?",
   "title": "CO2 per tonne of crushed stone aggregate",
-  "short": "Add the crusher's electricity times 0.710 kg CO2 per kWh to the diesel burnt by loaders, excavators, dumpers and any DG set times 2.68 kg per litre, then divide by tonnes dispatched. Take power from the discom bill and diesel from invoices and issue slips.",
+  "short": "Add the crusher's electricity times 0.710 kg CO2 per kWh for FY 2024-25 to the diesel burnt by loaders, excavators, dumpers and any DG set times 2.68 kg per litre, then divide by tonnes dispatched. Take power from the discom bill and diesel from invoices and issue slips.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Stone crusher and quarry owners, RMC and road contractors",
@@ -47,7 +47,7 @@
     ],
     "note": "Inputs are illustrative. Add DG diesel and explosives if you use them."
   },
-  "senseible": "Senseible reads your diesel invoices and electricity bills into a monthly record, applying 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh, which gives the crusher's own emissions for the per tonne figure.",
+  "senseible": "Senseible reads your diesel invoices and electricity bills into a monthly record, applying 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh for FY 2024-25, which gives the crusher's own emissions for the per tonne figure.",
   "links": [
     {
       "label": "Diesel emission factor",

@@ -47,7 +47,7 @@
     ],
     "note": "Premium as listed in GERC's 2026 to 27 tariff schedule. Taxes and duty on the premium are extra if your bill applies them."
   },
-  "senseible": "Senseible reads your electricity bill for the billing period, tariff category and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh. It records market-based Scope 2 when you add the discom's green power evidence for those units.",
+  "senseible": "Senseible reads your electricity bill for the billing period, tariff category and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. It records market-based Scope 2 when you add the discom's green power evidence for those units.",
   "links": [
     {
       "label": "Green tariff and zero Scope 2",

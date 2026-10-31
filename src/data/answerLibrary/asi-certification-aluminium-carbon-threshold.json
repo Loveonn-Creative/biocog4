@@ -38,7 +38,7 @@
     "title": "Worked example: own emissions vs purchased metal (illustrative)",
     "lines": [
       "Extruder output: 1,000 t; billet consumed: 1,050 t (process scrap returned to the supplier)",
-      "Electricity: 6,00,000 kWh x 0.710 = 426 t CO2; PNG for billet heating: 1,50,000 scm x 2.05 = 307.5 t CO2",
+      "Electricity: 6,00,000 kWh x 0.710 (FY 2024-25 grid factor) = 426 t CO2; PNG for billet heating: 1,50,000 scm x 2.05 = 307.5 t CO2",
       "Own Scope 1 and 2: 426 + 307.5 = 733.5 t, 0.73 t per tonne extruded",
       "Billet at 7.5 t CO2e per t (assumed low-carbon supplier): 1,050 x 7.5 = 7,875 t, 7.9 t per tonne",
       "Billet at 16 t CO2e per t (assumed coal-powered supplier): 1,050 x 16 = 16,800 t, 16.8 t per tonne"

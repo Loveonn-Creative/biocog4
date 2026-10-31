@@ -44,7 +44,7 @@
       "Furnace oil factor: 77,400 kg CO2 per TJ (IPCC 2006 default for residual fuel oil)",
       "CO2 avoided: 12.7059 x 77,400 = 983,435 kg, about 983.4 t CO2",
       "Furnace oil avoided: 12,705.9 GJ / 40.4 GJ per t (IPCC default net calorific value) = 314.5 t",
-      "Extra power for pumps and fans: 15 kW x 6,000 h = 90,000 kWh x 0.710 kg CO2 per kWh = 63.9 t CO2",
+      "Extra power for pumps and fans: 15 kW x 6,000 h = 90,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 63.9 t CO2",
       "Net saving: 983.4 minus 63.9 = 919.5 t CO2 a year"
     ],
     "note": "Use your heat meter reading, your measured efficiency and your own fuel analysis where you have them."

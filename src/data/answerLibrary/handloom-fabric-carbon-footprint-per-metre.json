@@ -45,7 +45,7 @@
     ],
     "note": "Inputs are illustrative; use your own bills and production records."
   },
-  "senseible": "Senseible reads the electricity and LPG bills of the dye house or cooperative (CEA grid factor 0.710 kg CO2 per kWh, IPCC 2006 fuel defaults) into a fingerprinted record. Yarn bought goes to the supplier evidence trail; product reports are self-declared drafts.",
+  "senseible": "Senseible reads the electricity and LPG bills of the dye house or cooperative (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, IPCC 2006 fuel defaults) into a fingerprinted record. Yarn bought goes to the supplier evidence trail; product reports are self-declared drafts.",
   "links": [
     {
       "label": "Silk fabric footprint per kg",

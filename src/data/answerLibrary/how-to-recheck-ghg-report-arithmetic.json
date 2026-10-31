@@ -26,7 +26,7 @@
     {
       "h": "Check the factors themselves",
       "ul": [
-        "Grid electricity in India: the CEA CO2 Baseline Database weighted average, 0.710 kg CO2 per kWh in version 21.0.",
+        "Grid electricity in India: the CEA CO2 Baseline Database weighted average, 0.710 kg CO2 per kWh for FY 2024-25 in version 21.0.",
         "Fuels: IPCC 2006 defaults such as diesel 2.68 kg CO2 per litre and LPG 2.98 kg CO2 per kg, or a stated alternative.",
         "The factor version should match the reporting year, or the report should say why not."
       ]
@@ -44,7 +44,7 @@
       "Diesel: 12,000 L x 2.68 kg CO2/L = 32,160 kg = 32.16 t CO2",
       "LPG: 1,500 kg x 2.98 kg CO2/kg = 4,470 kg = 4.47 t CO2",
       "Scope 1 total: 32.16 + 4.47 = 36.63 t CO2",
-      "Grid electricity: 250,000 kWh x 0.710 kg CO2/kWh = 177,500 kg = 177.5 t CO2",
+      "Grid electricity: 250,000 kWh x 0.710 kg CO2/kWh for FY 2024-25 = 177,500 kg = 177.5 t CO2",
       "Scope 1 and 2: 36.63 + 177.5 = 214.13 t CO2",
       "If the report shows Scope 2 as 177,500 t, kg were written as tonnes"
     ]

@@ -45,7 +45,7 @@
     ],
     "note": "Illustrative inputs. Add the allocated farm milk footprint, in kg CO2e, before quoting a cradle-to-gate figure."
   },
-  "senseible": "Senseible reads coal, furnace oil and gas invoices and electricity bills, applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh, and shows the factor on each line. The split by plant section and the farm milk allocation use your meters and production records.",
+  "senseible": "Senseible reads coal, furnace oil and gas invoices and electricity bills, applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh for FY 2024-25, and shows the factor on each line. The split by plant section and the farm milk allocation use your meters and production records.",
   "links": [
     {
       "label": "Dairy plant emissions per litre",

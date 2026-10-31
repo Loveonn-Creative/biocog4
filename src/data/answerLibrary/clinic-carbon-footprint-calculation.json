@@ -2,7 +2,7 @@
   "slug": "clinic-carbon-footprint-calculation",
   "q": "How do I calculate the carbon footprint of a clinic or small hospital?",
   "title": "Clinic carbon footprint calculation",
-  "short": "Start with the clinic electricity bill at 0.710 kg CO2 per kWh, add generator diesel at 2.68 kg per litre, AC refrigerant top-ups and any anaesthetic gases, then divide by patient visits. Medicines and supplies go in Scope 3 once the basics are in place.",
+  "short": "Start with the clinic electricity bill at 0.710 kg CO2 per kWh for FY 2024-25, add generator diesel at 2.68 kg per litre, AC refrigerant top-ups and any anaesthetic gases, then divide by patient visits. Medicines and supplies go in Scope 3 once the basics are in place.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Clinics, diagnostic centres and nursing homes",
@@ -40,7 +40,7 @@
     ],
     "note": "Inputs are illustrative; use your own bills and visit count."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Anaesthetic gases in Scope 1",

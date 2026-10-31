@@ -2,7 +2,7 @@
   "slug": "fruit-ripening-chamber-electricity-per-tonne",
   "q": "How do I calculate the emissions of a fruit ripening chamber per tonne?",
   "title": "Ripening chamber emissions per tonne",
-  "short": "Multiply the chamber's electricity for cooling, air circulation and controls by 0.710 kg CO2 per kWh and divide by tonnes ripened. Ethylene used to trigger ripening is not one of the greenhouse gases the GHG Protocol counts, so only energy and refrigerant leaks matter.",
+  "short": "Multiply the chamber's electricity for cooling, air circulation and controls by 0.710 kg CO2 per kWh for FY 2024-25 and divide by tonnes ripened. Ethylene used to trigger ripening is not one of the greenhouse gases the GHG Protocol counts, so only energy and refrigerant leaks matter.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Ripening chamber operators, banana and mango traders",
@@ -37,7 +37,7 @@
     ],
     "note": "Inputs are illustrative; use the chamber meter and throughput."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Cold storage energy per tonne",

@@ -53,11 +53,11 @@
       "Input power 190 kW: 190 / 297.6 = 0.638 kW per TR, COP 3.517 / 0.638 = 5.51",
       "After tube cleaning, 0.580 kW per TR at the same load: saving 0.058 x 297.6 = 17.26 kW",
       "Over 4,000 hours: 17.26 x 4,000 = 69,040 kWh",
-      "Emissions saved: 69,040 x 0.710 kg CO2 per kWh = 49,018 kg, about 49 t CO2"
+      "Emissions saved: 69,040 x 0.710 kg CO2 per kWh for FY 2024-25 = 49,018 kg, about 49 t CO2"
     ],
     "note": "Running hours and the post-cleaning figure are illustrative."
   },
-  "senseible": "Senseible reads electricity bills (period, tariff category, sanctioned load, units) and applies 0.710 kg CO2 per kWh, so a chiller saving shows up in your Scope 2 figure month by month. It does not measure chiller efficiency itself; meter and sub-meter feeds are not self-serve and are set up with the Senseible team for each customer.",
+  "senseible": "Senseible reads electricity bills (period, tariff category, sanctioned load, units) and applies 0.710 kg CO2 per kWh for FY 2024-25, so a chiller saving shows up in your Scope 2 figure month by month. It does not measure chiller efficiency itself; meter and sub-meter feeds are not self-serve and are set up with the Senseible team for each customer.",
   "links": [
     {
       "label": "Low GWP refrigerant for a new chiller",

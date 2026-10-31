@@ -2,7 +2,7 @@
   "slug": "pottery-kiln-emissions-per-firing",
   "q": "How do I calculate the emissions of a pottery kiln firing?",
   "title": "Pottery kiln emissions per firing",
-  "short": "For an electric kiln, multiply the kWh per firing, from a meter or the controller log, by 0.710 kg CO2 per kWh. For a gas kiln, multiply the LPG or PNG used by its default factor. Divide by the pieces in the load for a per-piece figure.",
+  "short": "For an electric kiln, multiply the kWh per firing, from a meter or the controller log, by 0.710 kg CO2 per kWh for FY 2024-25. For a gas kiln, multiply the LPG or PNG used by its default factor. Divide by the pieces in the load for a per-piece figure.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Studio potters, craft units and small terracotta and stoneware makers",
@@ -38,7 +38,7 @@
     ],
     "note": "Energy per firing is illustrative; read your meter or weigh your cylinder."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Terracotta planter per piece",

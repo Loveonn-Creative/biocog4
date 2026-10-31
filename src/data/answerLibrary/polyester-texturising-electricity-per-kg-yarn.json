@@ -2,7 +2,7 @@
   "slug": "polyester-texturising-electricity-per-kg-yarn",
   "q": "How much electricity does texturising POY into DTY polyester yarn use per kg, and what is the CO2?",
   "title": "Texturising power and CO2 per kg of DTY",
-  "short": "Measure it on your own machines: divide the texturising section's kWh for a month by kg of DTY packed, then multiply by 0.710 kg CO2 per kWh. For the yarn's full footprint, add the POY supplier's footprint per kg, scaled up for your waste. kWh per kg varies a lot with denier and machine speed.",
+  "short": "Measure it on your own machines: divide the texturising section's kWh for a month by kg of DTY packed, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. For the yarn's full footprint, add the POY supplier's footprint per kg, scaled up for your waste. kWh per kg varies a lot with denier and machine speed.",
   "topic": "product",
   "intent": "check",
   "audience": "Surat texturisers and polyester yarn buyers",
@@ -49,7 +49,7 @@
     ],
     "note": "The kWh, waste and POY figures are illustrative, not sector values. Measure your own."
   },
-  "senseible": "Senseible reads your HT electricity bills and DG diesel invoices and applies 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre, giving the energy side of the calculation. Output in kg and the POY supplier's footprint come from your own records.",
+  "senseible": "Senseible reads your HT electricity bills and DG diesel invoices and applies 0.710 kg CO2 per kWh for FY 2024-25 and 2.68 kg CO2 per litre, giving the energy side of the calculation. Output in kg and the POY supplier's footprint come from your own records.",
   "links": [
     {
       "label": "Cotton vs polyester fabric footprint",

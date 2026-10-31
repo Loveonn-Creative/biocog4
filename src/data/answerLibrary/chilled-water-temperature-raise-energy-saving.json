@@ -27,7 +27,7 @@
       "ol": [
         "Find the chiller's annual kWh: from a submeter, or kW per TR times TR times running hours.",
         "Multiply by 3% per degree raised to get kWh saved.",
-        "Multiply kWh saved by the grid factor, 0.710 kg CO2 per kWh, for location-based Scope 2.",
+        "Multiply kWh saved by the grid factor, 0.710 kg CO2 per kWh for FY 2024-25, for location-based Scope 2.",
         "Compare the next year's chiller kWh at similar load and weather to confirm the saving."
       ]
     },
@@ -49,7 +49,7 @@
     ],
     "note": "The 3% per degree is BEE's rule of thumb; confirm with before and after submeter readings."
   },
-  "senseible": "Senseible reads kWh from your electricity bills and converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh, so a lower chiller load shows up in your monthly Scope 2 records.",
+  "senseible": "Senseible reads kWh from your electricity bills and converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, so a lower chiller load shows up in your monthly Scope 2 records.",
   "links": [
     {
       "label": "Chiller efficiency in kW per TR",

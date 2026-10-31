@@ -2,7 +2,7 @@
   "slug": "vehicle-scrapping-rvsf-emissions-per-vehicle",
   "q": "How do I calculate the emissions of a vehicle scrapping facility per vehicle?",
   "title": "Vehicle scrapping emissions per vehicle",
-  "short": "Add the facility electricity at 0.710 kg CO2 per kWh, LPG for cutting at 2.98 kg per kilogram and machine diesel at 2.68 kg per litre, then divide by vehicles scrapped. Record refrigerant recovered from vehicle AC, and any released, separately.",
+  "short": "Add the facility electricity at 0.710 kg CO2 per kWh for FY 2024-25, LPG for cutting at 2.98 kg per kilogram and machine diesel at 2.68 kg per litre, then divide by vehicles scrapped. Record refrigerant recovered from vehicle AC, and any released, separately.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Registered vehicle scrapping facilities and recyclers",
@@ -40,7 +40,7 @@
     ],
     "note": "Inputs are illustrative; use bills, fuel invoices and the scrapping register."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Lead acid battery recycling",

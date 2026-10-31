@@ -20,7 +20,7 @@
     {
       "h": "Why grid power matters so much",
       "p": [
-        "Hydrogen at 1.8 kg CO2e per kg, inside India's 2 kg green hydrogen limit, already gives 0.320 kg CO2e per kg of ammonia. That leaves 0.060 kg under a 0.38 limit. At 0.710 kg CO2 per kWh from the grid, the headroom is only about 0.085 kWh of grid power per kg of ammonia, so the synthesis and air separation plant must run almost entirely on renewable power."
+        "Hydrogen at 1.8 kg CO2e per kg, inside India's 2 kg green hydrogen limit, already gives 0.320 kg CO2e per kg of ammonia. That leaves 0.060 kg under a 0.38 limit. At 0.710 kg CO2 per kWh for FY 2024-25 from the grid, the headroom is only about 0.085 kWh of grid power per kg of ammonia, so the synthesis and air separation plant must run almost entirely on renewable power."
       ]
     },
     {
@@ -49,7 +49,7 @@
     ],
     "note": "The 0.5 kWh per kg is an assumption for illustration. Plant figures vary by technology and size."
   },
-  "senseible": "Senseible reads electricity bills and fuel invoices and applies 0.710 kg CO2 per kWh and the IPCC fuel factors, which can feed the power and fuel part of this calculation, and its CBAM cost calculator covers fertilisers. It does not certify ammonia against India's standard.",
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies 0.710 kg CO2 per kWh for FY 2024-25 and the IPCC fuel factors, which can feed the power and fuel part of this calculation, and its CBAM cost calculator covers fertilisers. It does not certify ammonia against India's standard.",
   "links": [
     {
       "label": "CBAM cost for fertilisers",

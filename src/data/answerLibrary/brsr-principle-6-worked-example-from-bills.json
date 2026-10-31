@@ -12,7 +12,7 @@
       "ol": [
         "Add up kWh from twelve electricity bills.",
         "Add up litres and kilograms from fuel invoices.",
-        "Emissions: grid kWh x 0.710 kg CO2 per kWh (CEA); diesel litres x 2.68; LPG kg x 2.98.",
+        "Emissions: grid kWh x 0.710 kg CO2 per kWh for FY 2024-25 (CEA); diesel litres x 2.68; LPG kg x 2.98.",
         "Energy: kWh x 0.0036 GJ; diesel litres x about 0.0359 GJ; LPG kg x 0.0473 GJ.",
         "Report Scope 1, Scope 2, total energy and the renewable share separately."
       ]

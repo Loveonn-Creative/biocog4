@@ -16,7 +16,7 @@
     {
       "h": "Electricity",
       "p": [
-        "Furnace kWh from the meter times the grid factor, 0.710 kg CO2 per kWh from the CEA database, or your captive plant's own factor if you generate."
+        "Furnace kWh from the meter times the grid factor, 0.710 kg CO2 per kWh for FY 2024-25 from the CEA database, or your captive plant's own factor if you generate."
       ]
     },
     {
@@ -36,7 +36,7 @@
     ],
     "note": "Inputs are illustrative. Use your own furnace data, slag carbon and electricity meter readings."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Is silico-manganese covered by CBAM?",

@@ -10,7 +10,7 @@
     {
       "h": "Compare per unit of heat delivered",
       "ul": [
-        "Electric resistance boiler: 0.710 / 0.98 efficiency = 0.72 kg CO2 per kWh of heat.",
+        "Electric resistance boiler: 0.710 (FY 2024-25 grid factor) / 0.98 efficiency = 0.72 kg CO2 per kWh of heat.",
         "PNG boiler: 2.05 kg per scm / (about 10.15 kWh per scm x 0.90 efficiency) = 0.22 kg CO2 per kWh of heat.",
         "Diesel boiler: 2.68 kg per litre / (about 10.0 kWh per litre x 0.85 efficiency) = 0.32 kg CO2 per kWh of heat."
       ],

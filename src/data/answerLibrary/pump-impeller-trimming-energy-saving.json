@@ -20,7 +20,7 @@
       "ol": [
         "Measure kW, flow and head.",
         "Size the trim with the pump maker's curve.",
-        "Saving kWh × 0.710 = kg CO2 saved."
+        "Saving kWh × 0.710 (FY 2024-25 grid factor) = kg CO2 saved."
       ]
     }
   ],

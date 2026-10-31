@@ -2,7 +2,7 @@
   "slug": "electric-irrigation-pump-emissions-per-acre",
   "q": "How do I calculate emissions from an electric irrigation pump per acre?",
   "title": "Electric irrigation pump emissions",
-  "short": "Take the pump's kWh from a meter or the electricity bill, or estimate it from rated power and run hours, and multiply by 0.710 kg CO2 per kWh. Divide by acres irrigated. Unmetered farm connections need the estimate, labelled as one.",
+  "short": "Take the pump's kWh from a meter or the electricity bill, or estimate it from rated power and run hours, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Divide by acres irrigated. Unmetered farm connections need the estimate, labelled as one.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Farmers, FPOs and agri buyers building crop footprints",

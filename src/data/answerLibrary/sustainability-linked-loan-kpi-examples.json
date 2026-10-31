@@ -49,7 +49,7 @@
     "title": "Worked example: an emission intensity KPI for a casting unit",
     "lines": [
       "Baseline year: 400 t coal x 2.42 kg CO2 per kg = 968 t CO2 (Scope 1)",
-      "Baseline year: 2,000,000 kWh x 0.710 kg CO2 per kWh = 1,420 t CO2 (Scope 2, location-based)",
+      "Baseline year: 2,000,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 1,420 t CO2 (Scope 2, location-based)",
       "Baseline intensity: 2,388 t CO2 / 8,000 t castings = 0.2985 t CO2 per t",
       "SPT for year 3: 10% lower, so 0.2985 x 0.90 = 0.2687 t CO2 per t",
       "Year 2 actual: 919.6 t + 1,455.5 t = 2,375.1 t CO2 for 8,600 t = 0.2762 t CO2 per t, 7.5% below baseline and on track"

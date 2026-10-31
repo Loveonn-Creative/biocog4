@@ -43,12 +43,12 @@
     "lines": [
       "Eight mall stores with bills: 1,120,000 kWh a year over 16,000 sq ft = 70 kWh per sq ft",
       "Three mall stores without bills: 5,400 sq ft x 70 = 378,000 kWh, estimated",
-      "378,000 x 0.710 kg CO2 per kWh = 268,380 kg CO2, about 268 tonnes",
+      "378,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 268,380 kg CO2, about 268 tonnes",
       "Report these three stores as estimated, with the share of total Scope 2 they represent"
     ],
     "note": "Store figures are illustrative. The grid factor is from the CEA CO2 Baseline Database, version 21.0."
   },
-  "senseible": "Senseible reads the bills you do have for billing period, tariff category, sanctioned load and units, and applies 0.710 kg CO2 per kWh, giving you the measured stores to build the benchmark from. Each bill is fingerprinted, and kWh you enter for a store without a bill is marked Entered by you.",
+  "senseible": "Senseible reads the bills you do have for billing period, tariff category, sanctioned load and units, and applies 0.710 kg CO2 per kWh for FY 2024-25, giving you the measured stores to build the benchmark from. Each bill is fingerprinted, and kWh you enter for a store without a bill is marked Entered by you.",
   "links": [
     {
       "label": "Missing electricity bills for some months",

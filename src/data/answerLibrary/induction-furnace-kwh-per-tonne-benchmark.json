@@ -36,7 +36,7 @@
     {
       "h": "Turning the benchmark into CO2",
       "p": [
-        "Multiply kWh per tonne by 0.710 kg CO2 per kWh, the CEA grid factor, for location-based Scope 2. Every 50 kWh per tonne you save cuts 35.5 kg CO2 per tonne of liquid metal."
+        "Multiply kWh per tonne by 0.710 kg CO2 per kWh for FY 2024-25, the CEA grid factor, for location-based Scope 2. Every 50 kWh per tonne you save cuts 35.5 kg CO2 per tonne of liquid metal."
       ]
     }
   ],

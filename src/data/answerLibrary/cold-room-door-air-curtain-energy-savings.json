@@ -2,7 +2,7 @@
   "slug": "cold-room-door-air-curtain-energy-savings",
   "q": "How do I measure the energy saved by a strip curtain or fast door on a cold room?",
   "title": "Cold room door savings: curtains, fast doors",
-  "short": "Compare the cold room's metered kWh for the same months before and after fitting the curtain or fast door, with throughput noted, and convert the difference at 0.710 kg CO2 per kWh. Warm moist air entering through open doors adds load and ice, so door changes can show up clearly on a sub-meter.",
+  "short": "Compare the cold room's metered kWh for the same months before and after fitting the curtain or fast door, with throughput noted, and convert the difference at 0.710 kg CO2 per kWh for FY 2024-25. Warm moist air entering through open doors adds load and ice, so door changes can show up clearly on a sub-meter.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Cold storage, warehouse and food processing managers",
@@ -38,7 +38,7 @@
     ],
     "note": "Readings are illustrative; use your sub-meter for matched periods."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Cold storage energy per tonne",

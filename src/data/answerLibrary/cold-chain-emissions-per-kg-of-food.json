@@ -2,7 +2,7 @@
   "slug": "cold-chain-emissions-per-kg-of-food",
   "q": "How do I calculate the cold chain emissions for one kilogram of food?",
   "title": "Cold chain emissions per kg of food",
-  "short": "Add each cold stage per kilogram: pre-cooling and cold storage electricity at 0.710 kg CO2 per kWh, reefer truck diesel at 2.68 kg per litre, and retail chilling. Get each stage's energy per kilogram from the operator, and add refrigerant leaks where they are reported.",
+  "short": "Add each cold stage per kilogram: pre-cooling and cold storage electricity at 0.710 kg CO2 per kWh for FY 2024-25, reefer truck diesel at 2.68 kg per litre, and retail chilling. Get each stage's energy per kilogram from the operator, and add refrigerant leaks where they are reported.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Food brands, exporters and cold chain operators",

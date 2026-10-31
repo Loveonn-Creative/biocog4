@@ -2,7 +2,7 @@
   "slug": "verifier-asks-emission-factor-source-proof",
   "q": "The verifier wants proof of where our emission factors come from. What do we show?",
   "title": "Proof of emission factor sources",
-  "short": "Show each factor with its publisher, edition, year and unit, such as CEA version 21.0 for the Indian grid at 0.710 kg CO2 per kWh, and IPCC 2006 defaults for fuels. Keep a copy or link of the source table and note why it was chosen.",
+  "short": "Show each factor with its publisher, edition, year and unit, such as CEA version 21.0 for the Indian grid at 0.710 kg CO2 per kWh for FY 2024-25, and IPCC 2006 defaults for fuels. Keep a copy or link of the source table and note why it was chosen.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "MSMEs and suppliers preparing for a GHG verification",

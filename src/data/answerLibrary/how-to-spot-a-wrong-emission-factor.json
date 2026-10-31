@@ -20,7 +20,7 @@
     {
       "h": "A quick range check for common factors",
       "p": [
-        "Keep a short list of published values and compare every factor in the report against it. Using the IPCC 2006 defaults: diesel about 2.68 kg CO2 per litre, petrol 2.31, LPG 2.98 kg CO2 per kg, coal 2.42 kg CO2 per kg. For grid power in India, the CEA CO2 Baseline Database version 21.0 gives 0.710 kg CO2 per kWh. A factor more than about 20% away from these needs a stated reason, such as a supplier-specific value or a different fuel grade."
+        "Keep a short list of published values and compare every factor in the report against it. Using the IPCC 2006 defaults: diesel about 2.68 kg CO2 per litre, petrol 2.31, LPG 2.98 kg CO2 per kg, coal 2.42 kg CO2 per kg. For grid power in India, the CEA CO2 Baseline Database version 21.0 gives 0.710 kg CO2 per kWh for FY 2024-25. A factor more than about 20% away from these needs a stated reason, such as a supplier-specific value or a different fuel grade."
       ]
     },
     {
@@ -46,7 +46,7 @@
     "title": "Worked example: a 1,000x unit slip",
     "lines": [
       "Bill shows 42,000 kWh for the month",
-      "Correct: 42,000 kWh x 0.710 kg CO2 per kWh = 29,820 kg, about 29.8 tonnes CO2",
+      "Correct: 42,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 29,820 kg, about 29.8 tonnes CO2",
       "Entered as 42,000 MWh: 42,000,000 kWh x 0.710 = 29,820,000 kg, about 29,820 tonnes CO2",
       "Intensity check: if monthly output is 500 tonnes of product, the error shows as 59.6 tonnes CO2 per tonne instead of 0.06, which no reviewer should accept"
     ]

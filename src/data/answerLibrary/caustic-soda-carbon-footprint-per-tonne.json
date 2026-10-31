@@ -49,7 +49,7 @@
     ],
     "note": "Mass allocation shown. An economic or energy-based split gives different per-product figures; state the method."
   },
-  "senseible": "Senseible reads power bills and captive plant coal invoices and applies 0.710 kg CO2 per kWh and 2.42 kg CO2 per kg of coal, with the source on each line. For buyers, caustic soda purchases go to the supplier evidence trail.",
+  "senseible": "Senseible reads power bills and captive plant coal invoices and applies 0.710 kg CO2 per kWh for FY 2024-25 and 2.42 kg CO2 per kg of coal, with the source on each line. For buyers, caustic soda purchases go to the supplier evidence trail.",
   "links": [
     {
       "label": "Allocate emissions between co-products",

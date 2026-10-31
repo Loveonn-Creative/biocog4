@@ -2,7 +2,7 @@
   "slug": "anand-milk-chilling-centre-electricity-per-litre",
   "q": "How does a milk chilling centre near Anand work out electricity per litre?",
   "title": "Milk chilling centres: power per litre",
-  "short": "Multiply the centre's billed kWh by 0.710 kg CO2 per kWh and divide by litres chilled in the same period. Generator diesel during power cuts is Scope 1 and should be added at 2.68 kg CO2 per litre.",
+  "short": "Multiply the centre's billed kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by litres chilled in the same period. Generator diesel during power cuts is Scope 1 and should be added at 2.68 kg CO2 per litre.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Bulk milk chilling centres in the Anand dairy cluster of Gujarat",
@@ -31,7 +31,7 @@
     ],
     "note": "Quantities are illustrative; the factor is the CEA grid average."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Cold chain per kg of food",

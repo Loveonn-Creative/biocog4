@@ -2,7 +2,7 @@
   "slug": "flexo-label-printing-carbon-per-square-metre",
   "q": "How do I calculate the carbon footprint of flexo label printing per square metre?",
   "title": "Flexo label printing carbon per m2",
-  "short": "Divide the press electricity, including UV or hot air drying, by square metres printed, at 0.710 kg CO2 per kWh. Add the label stock, liner, inks and varnish from supplier data, and count make-ready waste, since short runs waste more stock per label.",
+  "short": "Divide the press electricity, including UV or hot air drying, by square metres printed, at 0.710 kg CO2 per kWh for FY 2024-25. Add the label stock, liner, inks and varnish from supplier data, and count make-ready waste, since short runs waste more stock per label.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Label converters, packaging printers and brand owners",

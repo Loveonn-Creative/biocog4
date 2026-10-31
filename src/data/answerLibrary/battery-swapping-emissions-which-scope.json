@@ -25,7 +25,7 @@
         "Ask the operator for metered kWh delivered to your batteries each month. This is the best data.",
         "If not available, use swaps x kWh delivered per swap. A swap rarely starts from an empty battery, so use state of charge data from the app where possible.",
         "Add a charging loss allowance and label it.",
-        "Multiply by 0.710 kg CO2 per kWh, the CEA grid average factor."
+        "Multiply by 0.710 kg CO2 per kWh for FY 2024-25, the CEA grid average factor."
       ]
     },
     {
@@ -45,7 +45,7 @@
     ],
     "note": "Replace the per-swap figure with the operator's metered kWh when you get it."
   },
-  "senseible": "Senseible applies the CEA grid factor of 0.710 kg CO2 per kWh to electricity, and swap service invoices sit in the Scope 3 supplier evidence trail. The kWh per swap needs to come from the operator or your own log.",
+  "senseible": "Senseible applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 to electricity, and swap service invoices sit in the Scope 3 supplier evidence trail. The kWh per swap needs to come from the operator or your own log.",
   "links": [
     {
       "label": "EV charging: which scope?",

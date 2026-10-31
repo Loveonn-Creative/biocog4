@@ -2,7 +2,7 @@
   "slug": "electricity-bill-shows-only-amount-paid",
   "q": "I only have payment receipts for electricity, not the bills. Can I work out emissions?",
   "title": "Electricity receipts without the bill",
-  "short": "Not reliably. The amount includes fixed charges, demand charges, duty and taxes, so rupees do not convert cleanly to kWh. Download the bills from your discom's portal or ask the office for duplicates; the units consumed on the bill are what you multiply by 0.710 kg CO2 per kWh.",
+  "short": "Not reliably. The amount includes fixed charges, demand charges, duty and taxes, so rupees do not convert cleanly to kWh. Download the bills from your discom's portal or ask the office for duplicates; the units consumed on the bill are what you multiply by 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Small businesses with incomplete electricity records",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
   "links": [
     {
       "label": "Missing electricity bills",

@@ -2,7 +2,7 @@
   "slug": "sewage-treatment-plant-electricity-per-kl",
   "q": "How much electricity does a factory or township sewage treatment plant use per kilolitre, and what CO2 is that?",
   "title": "STP electricity and CO2 per kilolitre",
-  "short": "Divide the STP's electricity for a period by the kilolitres it treated, then multiply by 0.710 kg CO2 per kWh. At 0.5 kWh per kL, for example, that is about 0.36 kg CO2 per kL. Technology, load and blower control drive the number, so measure your own plant rather than borrow a figure.",
+  "short": "Divide the STP's electricity for a period by the kilolitres it treated, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. At 0.5 kWh per kL, for example, that is about 0.36 kg CO2 per kL. Technology, load and blower control drive the number, so measure your own plant rather than borrow a figure.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Factory and industrial park facility managers, real estate operators",
@@ -29,7 +29,7 @@
     {
       "h": "Turning it into CO2 and putting it in the right scope",
       "p": [
-        "If you own or control the STP, its grid electricity is already inside your Scope 2 at 0.710 kg CO2 per kWh. Reporting kWh per kL does not add emissions; it shows where they sit. Diesel for a backup generator at the STP is Scope 1.",
+        "If you own or control the STP, its grid electricity is already inside your Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. Reporting kWh per kL does not add emissions; it shows where they sit. Diesel for a backup generator at the STP is Scope 1.",
         "Treatment itself can release methane and nitrous oxide, mainly from anaerobic zones and sludge handling. The IPCC 2006 Guidelines, Volume 5, Chapter 6 give the method. Count those separately from electricity, in CO2e with a named GWP set."
       ]
     },
@@ -56,7 +56,7 @@
     ],
     "note": "These are example readings, not a typical value for any STP technology. Use your own feeder meter and flow meter."
   },
-  "senseible": "Senseible reads the units on your electricity bill and applies 0.710 kg CO2 per kWh, so the STP's power is already in your Scope 2. A sub-meter reading or blower log lets you show the STP's share as kWh per kL alongside it.",
+  "senseible": "Senseible reads the units on your electricity bill and applies 0.710 kg CO2 per kWh for FY 2024-25, so the STP's power is already in your Scope 2. A sub-meter reading or blower log lets you show the STP's share as kWh per kL alongside it.",
   "links": [
     {
       "label": "ZLD plant energy and CO2 per kL",

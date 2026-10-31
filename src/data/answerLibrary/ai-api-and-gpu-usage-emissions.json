@@ -22,7 +22,7 @@
         "Multiply by power per GPU in kW. The rated board power is an upper bound; measured draw from monitoring tools is better.",
         "Add the rest of the server (CPU, memory, networking) if you can measure it, or state that you left it out.",
         "Multiply by the facility PUE, from the provider or a stated assumption.",
-        "Multiply by the grid factor for the hosting region: 0.710 kg CO2 per kWh for India-hosted compute (CEA, version 21.0)."
+        "Multiply by the grid factor for the hosting region: 0.710 kg CO2 per kWh for FY 2024-25 for India-hosted compute (CEA, version 21.0)."
       ]
     },
     {
@@ -46,7 +46,7 @@
       "8 GPUs x 100 hours = 800 GPU-hours",
       "800 x 0.7 kW (assumed board power) = 560 kWh",
       "560 x 1.5 (assumed PUE) = 840 kWh",
-      "840 x 0.710 kg CO2 per kWh = 596.4 kg CO2, about 0.6 t"
+      "840 x 0.710 kg CO2 per kWh for FY 2024-25 = 596.4 kg CO2, about 0.6 t"
     ],
     "note": "Board power and PUE are illustrative assumptions; replace them with measured figures."
   },

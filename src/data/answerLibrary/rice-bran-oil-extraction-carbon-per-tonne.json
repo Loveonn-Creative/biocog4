@@ -11,7 +11,7 @@
       "h": "What goes into the plant total",
       "ul": [
         "Boiler fuel for steam: coal, furnace oil or PNG at their combustion factors. Rice husk CO2 is biogenic and reported separately; its methane and nitrous oxide stay in.",
-        "Electricity for pelletisers, conveyors, the extractor, pumps, vacuum and cooling: kWh x 0.710 kg CO2 per kWh.",
+        "Electricity for pelletisers, conveyors, the extractor, pumps, vacuum and cooling: kWh x 0.710 kg CO2 per kWh for FY 2024-25.",
         "Hexane make-up: the fresh hexane bought to replace losses, with its upstream factor from the supplier or a named database. Hexane lost to air is a VOC, not a greenhouse gas.",
         "Bran: its upstream burden comes from the rice mill's own allocation. If you buy it, ask the mill or state that you used zero and why."
       ]
@@ -48,7 +48,7 @@
     ],
     "note": "Fuel, power, yields and prices are illustrative assumptions. Hexane make-up and the bran's upstream burden are left out to keep the arithmetic short."
   },
-  "senseible": "Senseible reads boiler fuel invoices and electricity bills at IPCC 2006 fuel factors and 0.710 kg CO2 per kWh, and keeps bran and hexane purchases in the Scope 3 supplier evidence trail. The allocation between oil and de-oiled bran is your documented choice.",
+  "senseible": "Senseible reads boiler fuel invoices and electricity bills at IPCC 2006 fuel factors and 0.710 kg CO2 per kWh for FY 2024-25, and keeps bran and hexane purchases in the Scope 3 supplier evidence trail. The allocation between oil and de-oiled bran is your documented choice.",
   "links": [
     {
       "label": "Edible oil mill footprint per litre",

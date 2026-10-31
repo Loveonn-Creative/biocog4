@@ -45,7 +45,7 @@
       "Annual electricity from discom bills: 600,000 kWh = 600 MWh",
       "RECs needed for 100% coverage: 600",
       "Cost = 600 x the clearing price in the session you buy in, plus fees",
-      "Location-based Scope 2 stays 600,000 x 0.710 = 426,000 kg CO2; the market-based figure can be reported as near zero for the covered units"
+      "Location-based Scope 2 stays 600,000 x 0.710 (FY 2024-25 grid factor) = 426,000 kg CO2; the market-based figure can be reported as near zero for the covered units"
     ],
     "note": "No price is given here on purpose. REC prices change every session; use the latest dated result from the exchange."
   },

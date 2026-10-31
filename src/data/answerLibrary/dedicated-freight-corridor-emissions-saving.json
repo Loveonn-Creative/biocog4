@@ -18,7 +18,7 @@
     {
       "h": "The calculation",
       "ol": [
-        "Corridor leg: net tonnes x rail km x kWh per net tonne-km x 0.710 kg CO2 per kWh.",
+        "Corridor leg: net tonnes x rail km x kWh per net tonne-km x 0.710 kg CO2 per kWh for FY 2024-25.",
         "Truck legs: tonnes x km from factory to inland container depot or siding, and from the terminal to the port gate if not by rail, x the truck class factor.",
         "All-road option: tonnes x road km x the truck class factor.",
         "Saving = all-road minus (corridor leg + truck legs)."
@@ -50,7 +50,7 @@
     ],
     "note": "0.02 kWh per net tonne-km is an assumption, not a DFCCIL figure. Distances are illustrative; use the railway receipt and actual road distance."
   },
-  "senseible": "Senseible reads rail and road freight bills that carry weight and distance as Scope 3 evidence, and applies 0.710 kg CO2 per kWh where electricity is the activity. The corridor's traction energy has to come from your operator.",
+  "senseible": "Senseible reads rail and road freight bills that carry weight and distance as Scope 3 evidence, and applies 0.710 kg CO2 per kWh for FY 2024-25 where electricity is the activity. The corridor's traction energy has to come from your operator.",
   "links": [
     {
       "label": "Rail vs road freight emissions in India",

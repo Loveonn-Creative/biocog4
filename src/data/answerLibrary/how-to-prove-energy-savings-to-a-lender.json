@@ -45,7 +45,7 @@
     "lines": [
       "Before: 420,000 kWh a year; after: 350,000 kWh a year, at the same output",
       "Saving: 420,000 minus 350,000 = 70,000 kWh a year",
-      "CO2: 70,000 x 0.710 = 49,700 kg, about 49.7 t CO2 a year",
+      "CO2: 70,000 x 0.710 (FY 2024-25 grid factor) = 49,700 kg, about 49.7 t CO2 a year",
       "Rupees, at an assumed ₹8 per kWh: 70,000 x 8 = ₹5,60,000, about ₹5.6 lakh a year"
     ],
     "note": "The tariff is an assumption; use the energy charge from your own bills. If output changed, adjust the baseline first."

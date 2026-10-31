@@ -32,7 +32,7 @@
     "title": "Worked example: mass allocation (one month, illustrative inputs)",
     "lines": [
       "PNG: 30,000 scm x 2.05 = 61,500 kg CO2",
-      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Electricity: 60,000 kWh x 0.710 (FY 2024-25 grid factor) = 42,600 kg CO2",
       "Plant total: 104,100 kg CO2 for 500 t of output",
       "Product A, 320 t: 104,100 x 320 / 500 = 66,624 kg CO2",
       "Product B, 180 t: 104,100 x 180 / 500 = 37,476 kg CO2",

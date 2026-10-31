@@ -49,7 +49,7 @@
     ],
     "note": "Areas and air change rates are illustrative. Use your own design documents; HVAC's share of plant energy varies widely between plants."
   },
-  "senseible": "Senseible reads the plant's electricity and fuel bills and applies 0.710 kg CO2 per kWh and IPCC 2006 fuel factors. Sub-meter readings and the split between suites and products are entered by you and labelled as such.",
+  "senseible": "Senseible reads the plant's electricity and fuel bills and applies 0.710 kg CO2 per kWh for FY 2024-25 and IPCC 2006 fuel factors. Sub-meter readings and the split between suites and products are entered by you and labelled as such.",
   "links": [
     { "label": "Pharma footprint per 1,000 tablets", "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets" },
     { "label": "Allocating factory electricity to products", "to": "/answers/how-to-allocate-factory-electricity-to-products" },

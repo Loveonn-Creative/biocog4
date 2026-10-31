@@ -50,7 +50,7 @@
     ],
     "note": "The 1 percent per 6 C figure is a rule of thumb. Confirm with fuel per tonne of steam before and after."
   },
-  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh for FY 2024-25, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
   "links": [
     {
       "label": "Steam pipe insulation heat loss",

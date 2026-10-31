@@ -53,7 +53,7 @@
     "title": "Worked example: gate-to-gate energy share for one product (illustrative)",
     "lines": [
       "Site energy in the period: 120,000 kWh grid electricity and 8,000 litres furnace oil",
-      "Electricity: 120,000 x 0.710 = 85,200 kg CO2",
+      "Electricity: 120,000 x 0.710 (FY 2024-25 grid factor) = 85,200 kg CO2",
       "Furnace oil: 8,000 x 2.97 = 23,760 kg CO2",
       "Site total: 85,200 + 23,760 = 108,960 kg CO2",
       "Output: 400 t in total, of which the requested product is 100 t, so a 25% mass share",

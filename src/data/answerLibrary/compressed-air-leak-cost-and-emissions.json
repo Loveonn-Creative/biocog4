@@ -2,7 +2,7 @@
   "slug": "compressed-air-leak-cost-and-emissions",
   "q": "How much do compressed air leaks cost in electricity and CO2?",
   "title": "Compressed air leaks: cost and CO2",
-  "short": "Measure leakage with a load and unload test when production is stopped: leakage share equals load time divided by load plus unload time. Multiply that share by compressor power and running hours to get wasted kWh, then by your tariff for rupees and by 0.710 kg CO2 per kWh for emissions.",
+  "short": "Measure leakage with a load and unload test when production is stopped: leakage share equals load time divided by load plus unload time. Multiply that share by compressor power and running hours to get wasted kWh, then by your tariff for rupees and by 0.710 kg CO2 per kWh for FY 2024-25 for emissions.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Engineering and auto-component MSMEs",
@@ -24,7 +24,7 @@
       "ul": [
         "Leak kWh a year = compressor input kW at load x leakage share x hours the network stays pressurised.",
         "Cost = leak kWh x your energy charge per kWh, including fuel adjustment and duty.",
-        "CO2 = leak kWh x 0.710 kg CO2 per kWh, the CEA grid factor, if the power comes from the grid."
+        "CO2 = leak kWh x 0.710 kg CO2 per kWh for FY 2024-25, the CEA grid factor, if the power comes from the grid."
       ],
       "p": [
         "This slightly overstates the saving, because a compressor still draws some power when unloaded. Use the compressor's unload power if you know it."
@@ -59,7 +59,7 @@
     ],
     "note": "Hours, tariff and test times are illustrative; use your own measurements."
   },
-  "senseible": "Senseible reads the billing period, tariff category, sanctioned load and units from your electricity bills and applies 0.710 kg CO2 per kWh, so a drop in units after a leak repair shows in your Scope 2 figure. It does not run leak tests or read compressor data.",
+  "senseible": "Senseible reads the billing period, tariff category, sanctioned load and units from your electricity bills and applies 0.710 kg CO2 per kWh for FY 2024-25, so a drop in units after a leak repair shows in your Scope 2 figure. It does not run leak tests or read compressor data.",
   "links": [
     {
       "label": "Energy audit for MSMEs",

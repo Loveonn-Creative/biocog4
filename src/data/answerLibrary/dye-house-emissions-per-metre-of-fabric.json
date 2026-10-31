@@ -51,14 +51,14 @@
     "title": "Worked example: one month at a dye house (illustrative)",
     "lines": [
       "Coal: 300 t x 2.42 kg CO2 per kg = 726.0 t CO2",
-      "Electricity: 180,000 kWh x 0.710 kg CO2 per kWh = 127.8 t CO2",
+      "Electricity: 180,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 127.8 t CO2",
       "Total: 853.8 t CO2 for 1,500,000 finished metres = 0.569 kg CO2 per metre",
       "Weight: 120 GSM x 1.5 m / 1,000 = 0.18 kg per metre, so 270,000 kg of fabric",
       "Per kg: 853,800 kg / 270,000 kg = 3.16 kg CO2 per kg of fabric"
     ],
     "note": "Coal factor is the IPCC 2006 default; your coal grade may differ. Grid factor is the CEA CO2 Baseline Database, version 21.0."
   },
-  "senseible": "Senseible reads litres or kg from diesel, LPG, PNG, coal and other fuel invoices and multiplies them by IPCC 2006 defaults, and reads kWh from electricity bills at the CEA factor of 0.710 kg CO2 per kWh, with the factor and source shown on every line. Biomass fuel lines carry a zero factor labelled biogenic, so they add nothing to the totals. The split by process and the division by metres come from your production records.",
+  "senseible": "Senseible reads litres or kg from diesel, LPG, PNG, coal and other fuel invoices and multiplies them by IPCC 2006 defaults, and reads kWh from electricity bills at the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, with the factor and source shown on every line. Biomass fuel lines carry a zero factor labelled biogenic, so they add nothing to the totals. The split by process and the division by metres come from your production records.",
   "links": [
     {
       "label": "Textile industry",

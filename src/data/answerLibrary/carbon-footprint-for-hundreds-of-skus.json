@@ -40,7 +40,7 @@
   "example": {
     "title": "Illustrative SKU from a machined steel family",
     "lines": [
-      "CNC shop rate: 50,000 kWh x 0.710 = 35,500 kg CO2 over 5,000 machine-hours = 7.1 kg CO2 per hour",
+      "CNC shop rate: 50,000 kWh x 0.710 (FY 2024-25 grid factor) = 35,500 kg CO2 over 5,000 machine-hours = 7.1 kg CO2 per hour",
       "Steel: 0.8 kg gross x 2.5 kg CO2e per kg = 2.0 kg CO2e",
       "Machining: 0.25 hours x 7.1 = 1.775 kg CO2",
       "Packaging: 0.05 kg CO2e",

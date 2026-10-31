@@ -44,7 +44,7 @@
     "lines": [
       "Reported Scope 1 and 2: 2,400 t CO2; 5% materiality = 120 t",
       "Missed diesel invoice: 3,000 L x 2.68 kg per L = 8,040 kg, about 8.0 t",
-      "Electricity bill left out: 150,000 kWh x 0.710 kg per kWh = 106,500 kg, about 106.5 t",
+      "Electricity bill left out: 150,000 kWh x 0.710 kg per kWh for FY 2024-25 = 106,500 kg, about 106.5 t",
       "Combined: 8.04 + 106.5 = 114.54 t, or 4.8% of 2,400 t",
       "Below 120 t in total, but close; the verifier will ask for both to be corrected and test for more missing bills"
     ]

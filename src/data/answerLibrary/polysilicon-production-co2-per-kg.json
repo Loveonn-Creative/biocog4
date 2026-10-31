@@ -26,7 +26,7 @@
     "title": "Worked example (illustrative figures)",
     "lines": [
       "Electricity: 60 kWh per kg of polysilicon.",
-      "On India's grid: 60 × 0.710 = 42.6 kg CO2 per kg.",
+      "On India's grid: 60 × 0.710 (FY 2024-25 grid factor) = 42.6 kg CO2 per kg.",
       "On a grid at 0.2 kg per kWh: 12 kg CO2 per kg."
     ]
   },

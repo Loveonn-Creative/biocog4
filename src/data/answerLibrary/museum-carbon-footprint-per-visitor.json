@@ -2,7 +2,7 @@
   "slug": "museum-carbon-footprint-per-visitor",
   "q": "How do I calculate a museum's carbon footprint per visitor?",
   "title": "Museum CO2 per visitor",
-  "short": "Climate control for collections usually dominates: AC and dehumidifiers running all year at 0.710 kg CO2 per kWh. Add lighting, generator diesel and refrigerant top ups, then divide by visitors. Visitor travel to the museum is Scope 3 and often larger.",
+  "short": "Climate control for collections usually dominates: AC and dehumidifiers running all year at 0.710 kg CO2 per kWh for FY 2024-25. Add lighting, generator diesel and refrigerant top ups, then divide by visitors. Visitor travel to the museum is Scope 3 and often larger.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Museums, galleries and heritage sites",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Cinema multiplex per screen",

@@ -2,7 +2,7 @@
   "slug": "silvassa-yarn-texturising-unit-electricity-co2",
   "q": "How does a yarn texturising unit in Silvassa work out carbon per kg?",
   "title": "Silvassa texturising unit: carbon per kg",
-  "short": "Texturising runs on electricity for heaters, godets and winders. Take kWh from the bill, multiply by 0.710 kg CO2, and divide by kg of textured yarn. For a buyer's full figure, add the partially oriented yarn you buy, from the supplier or a database factor, labelled as such.",
+  "short": "Texturising runs on electricity for heaters, godets and winders. Take kWh from the bill, multiply by 0.710 kg CO2 (FY 2024-25), and divide by kg of textured yarn. For a buyer's full figure, add the partially oriented yarn you buy, from the supplier or a database factor, labelled as such.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Polyester texturising and twisting units in Silvassa and Daman",

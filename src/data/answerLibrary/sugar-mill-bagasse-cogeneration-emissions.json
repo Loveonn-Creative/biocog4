@@ -48,7 +48,7 @@
     ],
     "note": "Default factors with AR5 GWPs. With AR6 values (27 for non-fossil methane, 273 for N2O) the bagasse Scope 1 is 2,819 + 3,800 = 6,619 t CO2e; state which set you use. A measured bagasse NCV (wet bagasse is often near 50% moisture) changes the energy figure."
   },
-  "senseible": "Senseible reads the coal, diesel, furnace oil and electricity invoices behind a mill's footprint, with Scope 1 at IPCC 2006 defaults and Scope 2 at 0.710 kg CO2 per kWh, and keeps cane and chemical purchases in a Scope 3 evidence trail. Bagasse is not on its fuel factor list, so the boiler CH4 and N2O, the biogenic CO2 and the product allocation are calculations you add.",
+  "senseible": "Senseible reads the coal, diesel, furnace oil and electricity invoices behind a mill's footprint, with Scope 1 at IPCC 2006 defaults and Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, and keeps cane and chemical purchases in a Scope 3 evidence trail. Bagasse is not on its fuel factor list, so the boiler CH4 and N2O, the biogenic CO2 and the product allocation are calculations you add.",
   "links": [
     {
       "label": "Biomass or waste fuel in a boiler",

@@ -27,7 +27,7 @@
     {
       "h": "What happens to the uncovered units",
       "p": [
-        "Electricity not covered by a valid instrument takes the residual mix in market-based Scope 2. India publishes no residual mix, so use the CEA grid average of 0.710 kg CO2 per kWh and say why. Location-based Scope 2 stays the same whatever certificates you hold."
+        "Electricity not covered by a valid instrument takes the residual mix in market-based Scope 2. India publishes no residual mix, so use the CEA grid average of 0.710 kg CO2 per kWh for FY 2024-25 and say why. Location-based Scope 2 stays the same whatever certificates you hold."
       ]
     },
     {
@@ -47,7 +47,7 @@
       "If you count the 400 older RECs too, market-based shows zero, but you must disclose the 2025 vintage and a reviewer may reject it"
     ]
   },
-  "senseible": "Senseible reports location-based Scope 2 from your bills at 0.710 kg CO2 per kWh, and market-based Scope 2 from the certificate data you supply, including volume and vintage. It does not buy, hold or redeem RECs.",
+  "senseible": "Senseible reports location-based Scope 2 from your bills at 0.710 kg CO2 per kWh for FY 2024-25, and market-based Scope 2 from the certificate data you supply, including volume and vintage. It does not buy, hold or redeem RECs.",
   "links": [
     {
       "label": "How to buy RECs in India",

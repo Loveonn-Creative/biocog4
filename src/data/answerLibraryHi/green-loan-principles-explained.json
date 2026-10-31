@@ -34,7 +34,7 @@
     "lines": [
       "System: 100 kW rooftop solar",
       "उम्मीद की गई generation: लगभग 1,400 kWh प्रति kW प्रति साल (अनुमान; installer का site का अनुमान लें) = 140,000 kWh",
-      "हटाई गई grid बिजली: 140,000 x 0.710 kg CO2 प्रति kWh (CEA version 21.0) = 99,400 kg",
+      "हटाई गई grid बिजली: 140,000 x 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh (CEA version 21.0) = 99,400 kg",
       "बताया गया impact: साल में लगभग 99.4 tonne CO2, location-based, पूरे साल का data आने पर meter की generation से बदला जाएगा"
     ]
   },

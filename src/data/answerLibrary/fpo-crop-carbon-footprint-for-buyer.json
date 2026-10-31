@@ -21,7 +21,7 @@
         "Nitrogen: kg N applied x 0.01 (IPCC 2006 default) x 44/28 = kg N2O, then x GWP. Add indirect N2O if you can.",
         "Urea: kg urea x 0.733 kg CO2 per kg, for the carbon in urea.",
         "Diesel: litres x 2.68 kg CO2 per litre (IPCC 2006).",
-        "Grid power for pumps: kWh x 0.710 kg CO2 per kWh (CEA, version 21.0). Many farm connections are unmetered, so estimate from pump rating and hours and label it.",
+        "Grid power for pumps: kWh x 0.710 kg CO2 per kWh for FY 2024-25 (CEA, version 21.0). Many farm connections are unmetered, so estimate from pump rating and hours and label it.",
         "Rice paddies: add methane from flooded fields, which can be the largest item. Residue burning adds methane and N2O."
       ]
     },

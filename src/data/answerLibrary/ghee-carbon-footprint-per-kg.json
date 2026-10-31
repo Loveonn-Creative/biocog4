@@ -48,7 +48,7 @@
     ],
     "note": "The farm milk figure is an assumption, not a benchmark; use your supplier's or a published study's figure and name it. On a fat-only basis the milk equivalent would be 0.995 / 0.04 = 24.9 kg."
   },
-  "senseible": "Senseible reads LPG, gas and boiler fuel invoices and electricity bills and applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh for the plant stage. The farm milk footprint and the allocation are inputs you provide and document.",
+  "senseible": "Senseible reads LPG, gas and boiler fuel invoices and electricity bills and applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh for FY 2024-25 for the plant stage. The farm milk footprint and the allocation are inputs you provide and document.",
   "links": [
     {
       "label": "Dairy plant emissions per litre",

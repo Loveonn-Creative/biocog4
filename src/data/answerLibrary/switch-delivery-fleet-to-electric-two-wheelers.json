@@ -2,7 +2,7 @@
   "slug": "switch-delivery-fleet-to-electric-two-wheelers",
   "q": "How much CO2 does switching a delivery fleet from petrol to electric two-wheelers save in India?",
   "title": "Petrol to electric scooters: CO2 saved",
-  "short": "On India's grid average of 0.710 kg CO2 per kWh, an electric delivery scooter can emit roughly half the CO2 of a petrol one per km. In the illustrative case below, 50 scooters riding 78,000 km a month save about 1.8 tonnes of CO2 a month. Use your real mileage and metered charging kWh.",
+  "short": "On India's grid average of 0.710 kg CO2 per kWh for FY 2024-25, an electric delivery scooter can emit roughly half the CO2 of a petrol one per km. In the illustrative case below, 50 scooters riding 78,000 km a month save about 1.8 tonnes of CO2 a month. Use your real mileage and metered charging kWh.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Delivery and service fleets planning an EV switch",
@@ -11,7 +11,7 @@
       "h": "The before and after formulas",
       "ul": [
         "Before: petrol litres a year x 2.31 kg CO2 per litre (IPCC 2006 default). Use a full year of fuel records to cover seasons.",
-        "After: electricity used for charging, measured at the charger or the meter, x 0.710 kg CO2 per kWh (CEA grid average, version 21.0).",
+        "After: electricity used for charging, measured at the charger or the meter, x 0.710 kg CO2 per kWh for FY 2024-25 (CEA grid average, version 21.0).",
         "Saving: before minus after, for the same kilometres. If the fleet grows after the switch, compare per km, not totals."
       ]
     },
@@ -47,7 +47,7 @@
     ],
     "note": "Mileage and kWh per km are assumptions; use your fuel records and charger meter readings."
   },
-  "senseible": "Senseible reads the fuel invoices for the petrol period and the electricity bills for the charging period, applying 2.31 kg CO2 per litre and 0.710 kg CO2 per kWh, and reports location-based and market-based Scope 2 separately. A market-based figure needs your renewable instrument data.",
+  "senseible": "Senseible reads the fuel invoices for the petrol period and the electricity bills for the charging period, applying 2.31 kg CO2 per litre and 0.710 kg CO2 per kWh for FY 2024-25, and reports location-based and market-based Scope 2 separately. A market-based figure needs your renewable instrument data.",
   "links": [
     {
       "label": "EV fleet charging: which scope?",

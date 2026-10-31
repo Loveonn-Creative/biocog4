@@ -2,7 +2,7 @@
   "slug": "textile-printing-emissions-per-metre",
   "q": "How do I calculate CO2 per metre of printed fabric for rotary screen versus digital printing?",
   "title": "CO2 per metre: rotary vs digital printing",
-  "short": "Work out each print line separately: add the fuel for drying, steaming and curing on that line and its electricity at 0.710 kg CO2 per kWh, then divide by metres printed on that line in the same month. Split shared heaters and boilers by sub-meter or machine hours. Neither process is lower by default.",
+  "short": "Work out each print line separately: add the fuel for drying, steaming and curing on that line and its electricity at 0.710 kg CO2 per kWh for FY 2024-25, then divide by metres printed on that line in the same month. Split shared heaters and boilers by sub-meter or machine hours. Neither process is lower by default.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Surat, Jaipur and Ahmedabad textile printers",

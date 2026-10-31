@@ -26,7 +26,7 @@
         "Coal: kg burnt x 2.42 kg CO2 per kg (IPCC 2006 default). Weigh what goes into the furnace, not what was bought.",
         "PNG: scm x 2.05 kg CO2 per scm. LPG: kg x 2.98.",
         "Biomass such as groundnut shell, briquettes or wood: the CO2 is biogenic and is reported separately, not added to the fossil total. The small CH4 and N2O from burning it are still counted in Scope 1, in CO2e.",
-        "Electric heating or heat pumps: kWh x 0.710 kg CO2 per kWh, the CEA grid factor."
+        "Electric heating or heat pumps: kWh x 0.710 kg CO2 per kWh for FY 2024-25, the CEA grid factor."
       ]
     },
     {
@@ -49,7 +49,7 @@
     ],
     "note": "The coal and kWh rates are illustrative. Use your own season totals divided by kg packed."
   },
-  "senseible": "Senseible reads the coal, gas, electricity and freight invoices behind the factory share (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "senseible": "Senseible reads the coal, gas, electricity and freight invoices behind the factory share (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25) and keeps supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
   "links": [
     { "label": "Processed food footprint per kg", "to": "/answers/processed-food-carbon-footprint-per-kg" },
     { "label": "Biomass fuel in a boiler or dryer", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" },

@@ -42,7 +42,7 @@
       "Steel parts 600 kg x 2.0 = 1,200 kg CO2e",
       "Motors and drives 120 kg x 5.0 = 600 kg CO2e",
       "Controller and electronics: supplier figure 400 kg CO2e",
-      "Assembly: 400 of 4,000 shop hours in a 25,000 kWh month = 2,500 kWh, x 0.710 = 1,775 kg CO2",
+      "Assembly: 400 of 4,000 shop hours in a 25,000 kWh month = 2,500 kWh, x 0.710 (FY 2024-25 grid factor) = 1,775 kg CO2",
       "Total: 3,000 + 1,200 + 600 + 400 + 1,775 = 6,975 kg CO2e, about 7.0 tonnes per machine"
     ],
     "note": "Material factors (kg CO2e per kg) and the controller figure are placeholders to show the arithmetic. Use your foundry's, steel mill's and suppliers' own figures."

@@ -46,7 +46,7 @@
   "example": {
     "title": "Worked example: a supplier's E1-5 and E1-6 inputs",
     "lines": [
-      "Grid electricity: 600,000 kWh = 600 MWh; Scope 2 location-based = 600,000 x 0.710 = 426,000 kg, 426 t CO2",
+      "Grid electricity: 600,000 kWh = 600 MWh; Scope 2 location-based = 600,000 x 0.710 (FY 2024-25 grid factor) = 426,000 kg, 426 t CO2",
       "Diesel: 20,000 litres; Scope 1 = 20,000 x 2.68 = 53,600 kg, 53.6 t CO2",
       "Diesel energy, estimate: 20,000 litres x about 36 MJ per litre = about 720,000 MJ, about 200 MWh",
       "Total energy: 600 + 200 = about 800 MWh, with the diesel share reported as fossil"

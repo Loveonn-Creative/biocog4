@@ -31,7 +31,7 @@
     {
       "h": "Effect on emissions",
       "p": [
-        "Scope 2 emissions depend on kWh, not kVA. Moving a load to another time leaves kWh unchanged, so location-based emissions stay the same at 0.710 kg CO2 per kWh. A battery adds its round trip losses to grid kWh. Shaving with a diesel set moves emissions into Scope 1 at about 2.68 kg CO2 per litre, which can raise your total. Only measures that cut consumption, such as fixing leaks or efficient motors, cut both."
+        "Scope 2 emissions depend on kWh, not kVA. Moving a load to another time leaves kWh unchanged, so location-based emissions stay the same at 0.710 kg CO2 per kWh for FY 2024-25. A battery adds its round trip losses to grid kWh. Shaving with a diesel set moves emissions into Scope 1 at about 2.68 kg CO2 per litre, which can raise your total. Only measures that cut consumption, such as fixing leaks or efficient motors, cut both."
       ]
     }
   ],
@@ -46,7 +46,7 @@
     ],
     "note": "Take the floor percentage, demand rate and any excess demand penalty from your own state commission's current tariff order."
   },
-  "senseible": "Senseible reads billing period, tariff category, sanctioned load and units from your electricity bill and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh, so the carbon figure moves only when kWh does, not when a shaved peak lowers the demand line.",
+  "senseible": "Senseible reads billing period, tariff category, sanctioned load and units from your electricity bill and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 to the kWh, so the carbon figure moves only when kWh does, not when a shaved peak lowers the demand line.",
   "links": [
     {
       "label": "How to read an HT bill",

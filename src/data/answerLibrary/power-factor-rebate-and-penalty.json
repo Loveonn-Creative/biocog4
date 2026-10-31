@@ -49,11 +49,11 @@
       "Demand: 500 / 0.80 = 625 kVA before; 500 / 0.95 = about 526 kVA after",
       "kVAh bill for 1,00,000 kWh: 1,25,000 kVAh at 0.80; about 1,05,263 kVAh at 0.95; 19,737 fewer units",
       "At an assumed ₹8 per kVAh: 19,737 x 8 = ₹1,57,896 a month saved",
-      "Scope 2 either way: 1,00,000 kWh x 0.710 kg CO2 per kWh = 71,000 kg CO2"
+      "Scope 2 either way: 1,00,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 71,000 kg CO2"
     ],
     "note": "The tariff rate is assumed. Use the rate and power factor rules in your state's current tariff order."
   },
-  "senseible": "Senseible reads the billing details on an electricity bill (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh. On a kVAh bill it uses the printed kWh, or kVAh times the printed power factor labelled as an estimate.",
+  "senseible": "Senseible reads the billing details on an electricity bill (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 to the kWh. On a kVAh bill it uses the printed kWh, or kVAh times the printed power factor labelled as an estimate.",
   "links": [
     {
       "label": "Electricity bill in kVAh: emissions",

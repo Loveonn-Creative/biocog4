@@ -45,7 +45,7 @@
     ],
     "note": "Load, hours, 0.7 kW/TR and the 60 kg top-up are illustrative; use your measured figures. Grid factor: CEA CO2 Baseline Database, version 21.0."
   },
-  "senseible": "Senseible reads plant kWh from electricity bills, and from meter feeds where these are set up with the Senseible team, and applies the CEA factor of 0.710 kg CO2 per kWh for Scope 2. It keeps refrigerant service invoices as evidence and calculates their CO2e when you give the gas and kilograms charged; TR-hours come from your plant logs.",
+  "senseible": "Senseible reads plant kWh from electricity bills, and from meter feeds where these are set up with the Senseible team, and applies the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25 for Scope 2. It keeps refrigerant service invoices as evidence and calculates their CO2e when you give the gas and kilograms charged; TR-hours come from your plant logs.",
   "links": [
     {
       "label": "Good chiller kW per TR",

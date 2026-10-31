@@ -51,7 +51,7 @@
     ],
     "note": "Cement, aggregate and admixture factors are illustrative inputs for the arithmetic, not published values. Replace each with your supplier's EPD value; fly ash transport is left out here and should be added."
   },
-  "senseible": "Senseible reads cement, fly ash, GGBS and diesel invoices and plant electricity bills; diesel and electricity go into Scope 1 and 2 at 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh, and material purchases go to the Scope 3 supplier evidence trail. Mix designs and cubic metres delivered come from your batch records.",
+  "senseible": "Senseible reads cement, fly ash, GGBS and diesel invoices and plant electricity bills; diesel and electricity go into Scope 1 and 2 at 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh for FY 2024-25, and material purchases go to the Scope 3 supplier evidence trail. Mix designs and cubic metres delivered come from your batch records.",
   "links": [
     {
       "label": "Embodied carbon from quantities",

@@ -56,7 +56,7 @@
     ],
     "note": "Both gold factors are placeholders to show the method. Replace them with your dataset's or refiner's figures and their year. The 0.84 g of alloy metal is left out because it is small."
   },
-  "senseible": "Senseible reads the workshop's electricity bills at the CEA grid factor of 0.710 kg CO2 per kWh and LPG invoices at the IPCC 2006 default of 2.98 kg CO2 per kg, giving the Scope 1 and 2 total you divide by grams dispatched. Gold purchase invoices sit in its Scope 3 supplier evidence trail; product reports are self-declared drafts.",
+  "senseible": "Senseible reads the workshop's electricity bills at the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 and LPG invoices at the IPCC 2006 default of 2.98 kg CO2 per kg, giving the Scope 1 and 2 total you divide by grams dispatched. Gold purchase invoices sit in its Scope 3 supplier evidence trail; product reports are self-declared drafts.",
   "links": [
     {
       "label": "Counting recycled content in a footprint",

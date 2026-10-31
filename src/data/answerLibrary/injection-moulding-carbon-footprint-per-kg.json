@@ -46,12 +46,12 @@
       "Resin line: 1.122 x 2.0 = 2.244 kg CO2e",
       "Machine: 1,200 kWh for 1,500 kg of good parts = 0.80 kWh per kg",
       "Shared chiller, dryer and compressor: 300 kWh / 1,500 kg = 0.20 kWh per kg",
-      "Electricity line: 1.00 kWh x 0.710 kg CO2 per kWh = 0.710 kg CO2",
+      "Electricity line: 1.00 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 0.710 kg CO2",
       "Total: 2.244 + 0.710 = 2.954 kg CO2e per kg of good parts, so 0.148 kg per 50 g part"
     ],
     "note": "Replace the placeholder with your resin's sourced factor. The grid factor is CEA CO2 Baseline Database version 21.0 and covers CO2 only; the resin factor is CO2e. Masterbatch, inserts, packaging and transport are left out here."
   },
-  "senseible": "Senseible reads resin purchase quantities from invoices and kWh from electricity bills, applying 0.710 kg CO2 per kWh. Resin lines show Needs Data until a sourced factor for that polymer is added, and the split of kWh across machines and parts comes from your own meter or machine data.",
+  "senseible": "Senseible reads resin purchase quantities from invoices and kWh from electricity bills, applying 0.710 kg CO2 per kWh for FY 2024-25. Resin lines show Needs Data until a sourced factor for that polymer is added, and the split of kWh across machines and parts comes from your own meter or machine data.",
   "links": [
     {
       "label": "Allocating factory electricity to products",

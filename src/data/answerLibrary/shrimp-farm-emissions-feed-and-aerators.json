@@ -17,7 +17,7 @@
     {
       "h": "The aerator part",
       "p": [
-        "Aerator kWh per kg = number of aerators x kW each x hours run per day x days of culture / kg harvested. Paddle wheel aerators are usually rated in HP; 1 HP is 0.746 kW. Multiply by 0.710 kg CO2 per kWh for grid power. Where aerators run on diesel engines or a DG set, use litres x 2.68 kg CO2 per litre instead. Night and late-crop aeration is often the largest block of hours."
+        "Aerator kWh per kg = number of aerators x kW each x hours run per day x days of culture / kg harvested. Paddle wheel aerators are usually rated in HP; 1 HP is 0.746 kW. Multiply by 0.710 kg CO2 per kWh for FY 2024-25 for grid power. Where aerators run on diesel engines or a DG set, use litres x 2.68 kg CO2 per litre instead. Night and late-crop aeration is often the largest block of hours."
       ]
     },
     {
@@ -48,7 +48,7 @@
     ],
     "note": "The feed factor, aerator rating and hours are illustrative. Use the feed mill's figure and the farm's own records."
   },
-  "senseible": "Senseible reads feed purchase invoices into the Scope 3 evidence trail and electricity or diesel bills for aerators at 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre. A farm-level footprint also needs the harvest and feed records the exporter collects from farms.",
+  "senseible": "Senseible reads feed purchase invoices into the Scope 3 evidence trail and electricity or diesel bills for aerators at 0.710 kg CO2 per kWh for FY 2024-25 and 2.68 kg CO2 per litre. A farm-level footprint also needs the harvest and feed records the exporter collects from farms.",
   "links": [
     {
       "label": "Shrimp processing footprint per kg",

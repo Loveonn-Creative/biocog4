@@ -10,7 +10,7 @@
     {
       "h": "Steps",
       "p": [
-        "Energy: kWh x 0.710 for the month, plus any fuel.",
+        "Energy: kWh x 0.710 (FY 2024-25 grid factor) for the month, plus any fuel.",
         "Divide by clocks finished that month.",
         "Add materials per clock with their sources."
       ]

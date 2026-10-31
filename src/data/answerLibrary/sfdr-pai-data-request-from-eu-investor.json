@@ -50,7 +50,7 @@
     "title": "Worked example: a mid-sized Indian manufacturer's climate figures",
     "lines": [
       "Scope 1: diesel 50,000 L x 2.68 kg CO2 per L = 134,000 kg CO2, 134 t",
-      "Scope 2 (location-based): grid 2,000 MWh x 0.710 t CO2 per MWh = 1,420 t CO2",
+      "Scope 2 (location-based): grid 2,000 MWh x 0.710 t CO2 per MWh for FY 2024-25 = 1,420 t CO2",
       "Scope 3: 6,000 t CO2e, spend-based estimate, labelled",
       "Revenue Rs 200 crore at an illustrative Rs 90 per EUR = EUR 22.22 million",
       "GHG intensity the fund will compute: (134 + 1,420 + 6,000) / 22.22 = about 340 t CO2e per EUR million",

@@ -2,7 +2,7 @@
   "slug": "mall-common-area-electricity-allocation",
   "q": "How do I allocate a mall's common-area electricity to my store?",
   "title": "Mall common-area electricity share",
-  "short": "Ask the mall for the common-area electricity in kWh and the total leasable area, then take your store's share by area and multiply by 0.710 kg CO2 per kWh. For a tenant it is Scope 3, Category 8; the operator reports the whole common area in its Scope 2.",
+  "short": "Ask the mall for the common-area electricity in kWh and the total leasable area, then take your store's share by area and multiply by 0.710 kg CO2 per kWh for FY 2024-25. For a tenant it is Scope 3, Category 8; the operator reports the whole common area in its Scope 2.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Retail tenants in malls and the mall operators who bill them",
@@ -37,7 +37,7 @@
     ],
     "note": "Inputs are illustrative; use the mall's statement of common-area units."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Retail store electricity from a mall",

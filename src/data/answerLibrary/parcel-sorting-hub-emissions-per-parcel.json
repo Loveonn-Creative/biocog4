@@ -2,7 +2,7 @@
   "slug": "parcel-sorting-hub-emissions-per-parcel",
   "q": "How do I calculate the emissions of a parcel sorting hub per parcel?",
   "title": "Parcel sorting hub per parcel",
-  "short": "Add the hub's electricity for sorters, conveyors and lights at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by parcels sorted. The GLEC Framework calls this a hub emission intensity, which shippers add to the transport legs.",
+  "short": "Add the hub's electricity for sorters, conveyors and lights at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then divide by parcels sorted. The GLEC Framework calls this a hub emission intensity, which shippers add to the transport legs.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Courier companies, e-commerce logistics and 3PL operators",
@@ -38,7 +38,7 @@
     ],
     "note": "Inputs are illustrative; use the hub's meter and parcel count."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Courier shipment emissions from invoices",

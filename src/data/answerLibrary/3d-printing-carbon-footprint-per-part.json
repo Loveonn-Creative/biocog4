@@ -2,7 +2,7 @@
   "slug": "3d-printing-carbon-footprint-per-part",
   "q": "How do I work out the carbon footprint of a 3D printed part?",
   "title": "3D printed part: carbon footprint",
-  "short": "Add two things: the printer's electricity for that part and the material used. Electricity is the printer's average power times print hours, times 0.710 kg CO2 per kWh. Material is the filament or powder weight, including supports and failed prints, times a named factor for that polymer or metal.",
+  "short": "Add two things: the printer's electricity for that part and the material used. Electricity is the printer's average power times print hours, times 0.710 kg CO2 per kWh for FY 2024-25. Material is the filament or powder weight, including supports and failed prints, times a named factor for that polymer or metal.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Prototype shops, tool rooms and product designers",

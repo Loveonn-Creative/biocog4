@@ -42,13 +42,13 @@
     "lines": [
       "Coal burnt in the captive plant: 200,000 t = 200,000,000 kg",
       "Scope 1: 200,000,000 x 2.42 kg CO2 per kg (IPCC 2006 default) = 484,000,000 kg, 484,000 t CO2",
-      "Grid top-up during outages: 5,000,000 kWh x 0.710 kg CO2 per kWh = 3,550,000 kg, 3,550 t CO2 in Scope 2",
+      "Grid top-up during outages: 5,000,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 3,550,000 kg, 3,550 t CO2 in Scope 2",
       "Category 3 upstream coal: 200,000,000 x 0.15 kg CO2e per kg (illustrative only, not an official factor) = 30,000,000 kg, 30,000 t CO2e",
       "Upstream coal as a share of Scope 1: 30,000 / 484,000 = about 6%"
     ],
     "note": "The 0.15 figure only shows the arithmetic; replace it with the published factor you choose and name its source. Indian coal varies widely in carbon content, so a factor based on your coal's GCV or tested carbon content will be closer than the IPCC default."
   },
-  "senseible": "Senseible reads coal invoices in kg and applies the IPCC 2006 default of 2.42 kg CO2 per kg for Scope 1, and reads grid electricity bills for Scope 2 at 0.710 kg CO2 per kWh, with the source shown on each line. It keeps the coal quantities on file, so the upstream factor you choose and document for Category 3 is applied to the same tonnes.",
+  "senseible": "Senseible reads coal invoices in kg and applies the IPCC 2006 default of 2.42 kg CO2 per kg for Scope 1, and reads grid electricity bills for Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, with the source shown on each line. It keeps the coal quantities on file, so the upstream factor you choose and document for Category 3 is applied to the same tonnes.",
   "links": [
     {
       "label": "Category 3 for fuel and grid power",

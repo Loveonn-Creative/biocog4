@@ -36,7 +36,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads your MSEDCL bill for billing period, tariff category, sanctioned load and units and reports location-based Scope 2 at 0.710 kg CO2 per kWh (CEA, version 21.0). For market-based Scope 2 it uses the instrument you record: the PPA and energy account for open access units, or MSEDCL's green tariff certificate.",
+  "senseible": "Senseible reads your MSEDCL bill for billing period, tariff category, sanctioned load and units and reports location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25 (CEA, version 21.0). For market-based Scope 2 it uses the instrument you record: the PPA and energy account for open access units, or MSEDCL's green tariff certificate.",
   "links": [
     {
       "label": "MSEDCL green power tariff: how to apply",

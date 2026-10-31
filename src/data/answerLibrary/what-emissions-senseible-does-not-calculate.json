@@ -28,7 +28,7 @@
         "A bill billed only in kVAh, with no kWh and no power factor printed, is kept with no emissions until the kWh or power factor is supplied.",
         "kvarh, kW and kVA figures are never converted into energy.",
         "Net-metered units are not treated as consumption; the import reading is needed.",
-        "The published grid factor is India's (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0). Where no factor exists for the country of use, no figure is produced."
+        "The published grid factor is India's (0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0). Where no factor exists for the country of use, no figure is produced."
       ]
     },
     {

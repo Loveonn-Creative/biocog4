@@ -20,7 +20,7 @@
     {
       "h": "The calculation",
       "p": [
-        "Per tonne = (plant kWh x 0.710 + each fuel x its factor + process CO2 from pitch volatiles and packing coke + needle coke x its factor + pitch x its factor) / tonnes of finished electrode. Divide by good output, not by green tonnage, so machining losses and rejects stay inside the figure."
+        "Per tonne = (plant kWh x 0.710 (FY 2024-25 grid factor) + each fuel x its factor + process CO2 from pitch volatiles and packing coke + needle coke x its factor + pitch x its factor) / tonnes of finished electrode. Divide by good output, not by green tonnage, so machining losses and rejects stay inside the figure."
       ]
     },
     {

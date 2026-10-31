@@ -38,7 +38,7 @@
       "Goal and scope: footprint of one 2.0 kg flange, cradle to gate, for a buyer enquiry",
       "Inventory: 2.4 kg steel billet, 1.5 kWh grid electricity, 0.12 litres furnace oil, 0.4 kg scrap sent for recycling",
       "Impact, billet: 2.4 x 2.0 kg CO2e per kg (illustrative supplier figure) = 4.8 kg CO2e",
-      "Impact, electricity: 1.5 x 0.710 = 1.065 kg CO2",
+      "Impact, electricity: 1.5 x 0.710 (FY 2024-25 grid factor) = 1.065 kg CO2",
       "Impact, furnace oil: 0.12 x 2.97 = about 0.356 kg CO2",
       "Total: 4.8 + 1.065 + 0.356 = about 6.2 kg per flange",
       "Interpretation: the billet is 4.8 / 6.221 = about 77% of the result, so billet source and yield matter most"

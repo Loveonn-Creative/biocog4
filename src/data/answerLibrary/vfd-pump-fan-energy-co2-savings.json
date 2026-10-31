@@ -2,7 +2,7 @@
   "slug": "vfd-pump-fan-energy-co2-savings",
   "q": "How much electricity and CO2 does a VFD on a pump or fan save, and how do I calculate it?",
   "title": "VFD on a pump or fan: kWh and CO2 saved",
-  "short": "A VFD saves electricity when a centrifugal pump or fan runs below full flow for long hours. Power falls roughly with the cube of speed, so 80 percent speed needs about half the power. Saving equals present measured kW minus predicted kW at the lower speed, times hours, times 0.710 kg CO2 per kWh.",
+  "short": "A VFD saves electricity when a centrifugal pump or fan runs below full flow for long hours. Power falls roughly with the cube of speed, so 80 percent speed needs about half the power. Saving equals present measured kW minus predicted kW at the lower speed, times hours, times 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Plant engineers and MSME owners",
@@ -35,7 +35,7 @@
     {
       "h": "Turning kWh into CO2 and rupees",
       "p": [
-        "CO2 saved is kWh saved times 0.710 kg CO2 per kWh, the CEA grid factor, for grid power. If the motor runs on a diesel generator, convert the kWh saved into litres at the generator's measured kWh per litre and multiply by 2.68 kg CO2 per litre. Rupees saved are kWh times your energy charge, including fuel adjustment and duty."
+        "CO2 saved is kWh saved times 0.710 kg CO2 per kWh for FY 2024-25, the CEA grid factor, for grid power. If the motor runs on a diesel generator, convert the kWh saved into litres at the generator's measured kWh per litre and multiply by 2.68 kg CO2 per litre. Rupees saved are kWh times your energy charge, including fuel adjustment and duty."
       ]
     }
   ],
@@ -50,7 +50,7 @@
     ],
     "note": "Fans have almost no static head, so the cube law fits well. For a pump with static head, expect a smaller saving and use the system curve."
   },
-  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh for FY 2024-25, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
   "links": [
     {
       "label": "Measuring savings from an efficiency project",

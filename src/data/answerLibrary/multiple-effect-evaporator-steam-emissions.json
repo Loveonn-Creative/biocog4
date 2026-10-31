@@ -2,7 +2,7 @@
   "slug": "multiple-effect-evaporator-steam-emissions",
   "q": "How do I calculate the emissions of a multiple effect evaporator (MEE)?",
   "title": "Multiple effect evaporator emissions",
-  "short": "Give the MEE its share of boiler fuel from the live steam it takes, add pump and vacuum electricity at 0.710 kg CO2 per kWh, and divide by kilolitres of effluent evaporated. More effects use less steam per kilolitre, so the steam meter shows how the MEE is performing.",
+  "short": "Give the MEE its share of boiler fuel from the live steam it takes, add pump and vacuum electricity at 0.710 kg CO2 per kWh for FY 2024-25, and divide by kilolitres of effluent evaporated. More effects use less steam per kilolitre, so the steam meter shows how the MEE is performing.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Textile, pharma, chemical and distillery units running MEEs for zero liquid discharge",
@@ -40,7 +40,7 @@
     ],
     "note": "Fuel, steam and volume are illustrative; use the MEE steam meter and evaporation log."
   },
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
   "links": [
     {
       "label": "ETP sludge and wastewater in Scope 3",

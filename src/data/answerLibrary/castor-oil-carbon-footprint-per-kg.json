@@ -47,7 +47,7 @@
     ],
     "note": "Nitrogen rate, yields, energy use and prices are illustrative, and fertiliser manufacture is left out; use your own records."
   },
-  "senseible": "Senseible reads the crusher's fuel, electricity and freight invoices, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh, and keeps seed purchases in a Scope 3 evidence trail. Product reports are self-declared drafts; farm data come from your growers or procurement records.",
+  "senseible": "Senseible reads the crusher's fuel, electricity and freight invoices, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, and keeps seed purchases in a Scope 3 evidence trail. Product reports are self-declared drafts; farm data come from your growers or procurement records.",
   "links": [
     {
       "label": "Allocating emissions between co-products",

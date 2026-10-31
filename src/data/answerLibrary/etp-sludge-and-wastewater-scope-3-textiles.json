@@ -47,7 +47,7 @@
       "COD at outlet: 2,000 mg per litre = 2 kg per kL (assumed); organic load 36,000 x 2 = 72,000 kg COD",
       "Methane, low case (well run aerobic CETP, correction factor 0): 0 t",
       "Methane, high case (overloaded aerobic, factor 0.3): 72,000 x 0.25 x 0.3 = 5,400 kg CH4 x 27 (IPCC AR6, non-fossil methane) = 145,800 kg, about 146 t CO2e",
-      "CETP energy at an assumed 4 kWh per kL: 36,000 x 4 = 144,000 kWh x 0.710 kg CO2 per kWh = 102,240 kg, about 102 t CO2",
+      "CETP energy at an assumed 4 kWh per kL: 36,000 x 4 = 144,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 102,240 kg, about 102 t CO2",
       "Sludge trips: 180 t a year in 10 t loads = 18 trips x 300 km round trip = 5,400 km / 4 km per litre (assumed) = 1,350 L x 2.68 kg CO2 per L = 3,618 kg, about 3.6 t CO2",
       "Category 5 line: about 106 t (low) to about 252 t (high), before disposal-site emissions for the sludge"
     ],

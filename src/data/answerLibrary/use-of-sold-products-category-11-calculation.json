@@ -30,7 +30,7 @@
       "ol": [
         "Hours and load: from field data, test standards or customer surveys, not best case.",
         "Lifetime: from warranty, design life or replacement data.",
-        "Grid factor: where the product is used. For India use 0.710 kg CO2 per kWh (CEA CO2 Baseline Database version 21.0); for exports, the destination country's factor.",
+        "Grid factor: where the product is used. For India use 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database version 21.0); for exports, the destination country's factor.",
         "Whether the product is final or intermediate. A motor sold to a pump maker still uses energy directly, so it is usually reported; check the exclusion rules for intermediate products before leaving it out."
       ]
     },
@@ -52,7 +52,7 @@
     ],
     "note": "Hours, lifetime and load are assumptions for illustration; publish your own with the result."
   },
-  "senseible": "Senseible does not model use-phase emissions of products you sell. The grid factor it applies to your own bills, 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database, is the same figure you can use for products run in India.",
+  "senseible": "Senseible does not model use-phase emissions of products you sell. The grid factor it applies to your own bills, 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database, is the same figure you can use for products run in India.",
   "links": [
     { "label": "Use-phase emissions for pumps and motors", "to": "/answers/use-phase-emissions-for-pumps-and-motors" },
     { "label": "Excluding downstream categories for intermediate products", "to": "/answers/exclude-downstream-scope-3-intermediate-products" },

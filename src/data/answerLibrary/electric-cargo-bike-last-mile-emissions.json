@@ -2,7 +2,7 @@
   "slug": "electric-cargo-bike-last-mile-emissions",
   "q": "What are the emissions of an electric cargo bike for deliveries?",
   "title": "Electric cargo bike delivery emissions",
-  "short": "Only the charging electricity counts in use, at 0.710 kg CO2 per kWh. A cargo bike uses a few kWh a day, so a day's deliveries come to a few kg CO2, far below a diesel van. Building the battery and bike is Scope 3 Category 2.",
+  "short": "Only the charging electricity counts in use, at 0.710 kg CO2 per kWh for FY 2024-25. A cargo bike uses a few kWh a day, so a day's deliveries come to a few kg CO2, far below a diesel van. Building the battery and bike is Scope 3 Category 2.",
   "topic": "markets",
   "intent": "explain",
   "audience": "Delivery operators and retailers",
@@ -30,7 +30,7 @@
       "About 35 g CO2 per parcel"
     ]
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "EV deliveries are not zero",

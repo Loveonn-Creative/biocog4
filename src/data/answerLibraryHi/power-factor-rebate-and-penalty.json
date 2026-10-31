@@ -46,11 +46,11 @@
       "Demand: पहले 500 / 0.80 = 625 kVA; बाद में 500 / 0.95 = लगभग 526 kVA",
       "1,00,000 kWh का kVAh bill: 0.80 पर 1,25,000 kVAh; 0.95 पर लगभग 1,05,263 kVAh; 19,737 units कम",
       "मान लिया ₹8 प्रति kVAh: 19,737 x 8 = हर महीने ₹1,57,896 की बचत",
-      "दोनों हालत में Scope 2: 1,00,000 kWh x 0.710 kg CO2 प्रति kWh = 71,000 kg CO2"
+      "दोनों हालत में Scope 2: 1,00,000 kWh x 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh = 71,000 kg CO2"
     ],
     "note": "Tariff rate मान लिया गया है। अपने राज्य के मौजूदा tariff order का rate और power factor नियम लें।"
   },
-  "senseible": "Senseible बिजली के bill से billing details पढ़ता है (period, tariff category, sanctioned load, units) और kWh पर CEA का 0.710 kg CO2 प्रति kWh grid factor लगाता है। kVAh bill पर यह छपा हुआ kWh लेता है, या kVAh गुणा छपा हुआ power factor, अनुमान के label के साथ।",
+  "senseible": "Senseible बिजली के bill से billing details पढ़ता है (period, tariff category, sanctioned load, units) और kWh पर CEA का 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh grid factor लगाता है। kVAh bill पर यह छपा हुआ kWh लेता है, या kVAh गुणा छपा हुआ power factor, अनुमान के label के साथ।",
   "links": [
     {
       "label": "kVAh वाला बिजली bill: emissions",

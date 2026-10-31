@@ -2,7 +2,7 @@
   "slug": "ship-repair-dry-dock-emissions",
   "q": "What are the main emissions at a ship repair yard or dry dock?",
   "title": "Ship repair dry dock: emissions",
-  "short": "Electricity for dock pumps, cranes and welding is usually the biggest share, at 0.710 kg CO2 per kWh. Add diesel for gensets and cranes, cutting gases such as acetylene, and paint solvents. Steel plate and paint bought in are Scope 3.",
+  "short": "Electricity for dock pumps, cranes and welding is usually the biggest share, at 0.710 kg CO2 per kWh for FY 2024-25. Add diesel for gensets and cranes, cutting gases such as acetylene, and paint solvents. Steel plate and paint bought in are Scope 3.",
   "topic": "product",
   "intent": "explain",
   "audience": "Ship repair yards",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
   "links": [
     {
       "label": "Acetylene cylinder CO2",

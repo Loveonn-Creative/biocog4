@@ -13,7 +13,7 @@
         "Page weight: kB or MB transferred per view, from your browser's developer tools or a page test, averaged over your main pages.",
         "Page views per month, from your analytics.",
         "Energy per GB: the figure the model you use publishes, covering data centres, networks and user devices.",
-        "Grid factor: where most of the energy is used. For an Indian audience and hosting, 0.710 kg CO2 per kWh (CEA, version 21.0)."
+        "Grid factor: where most of the energy is used. For an Indian audience and hosting, 0.710 kg CO2 per kWh for FY 2024-25 (CEA, version 21.0)."
       ]
     },
     {
@@ -46,7 +46,7 @@
     "lines": [
       "Page weight 2 MB x 100,000 views a month = 200,000 MB = 200 GB",
       "200 GB x 0.2 kWh per GB (illustrative intensity) = 40 kWh",
-      "40 x 0.710 kg CO2 per kWh = 28.4 kg CO2 a month, about 341 kg a year"
+      "40 x 0.710 kg CO2 per kWh for FY 2024-25 = 28.4 kg CO2 a month, about 341 kg a year"
     ],
     "note": "The 0.2 kWh per GB is a placeholder. Use the energy intensity published in the current version of the model you choose."
   },

@@ -10,7 +10,7 @@
     {
       "h": "The formula",
       "p": [
-        "CO2 per tonne of cement = clinker ratio x supplier clinker CO2 per tonne + grinding kWh per tonne x 0.710 + drying fuel per tonne x its factor + gypsum, fly ash or slag share x their factors.",
+        "CO2 per tonne of cement = clinker ratio x supplier clinker CO2 per tonne + grinding kWh per tonne x 0.710 (FY 2024-25 grid factor) + drying fuel per tonne x its factor + gypsum, fly ash or slag share x their factors.",
         "Clinker ratio = clinker consumed / cement produced in the same period, from your stock and production records, not the design mix."
       ]
     },

@@ -2,7 +2,7 @@
   "slug": "quick-commerce-dark-store-emissions-per-order",
   "q": "What is the carbon footprint of a quick commerce dark store per order?",
   "title": "Dark store emissions per order",
-  "short": "Cold rooms and freezers usually dominate a dark store's electricity, then lighting and cooling. Divide monthly electricity at 0.710 kg CO2 per kWh, plus refrigerant leaks, by orders packed. Rider trips are a separate figure, Scope 1 or 3 depending on who runs the fleet.",
+  "short": "Cold rooms and freezers usually dominate a dark store's electricity, then lighting and cooling. Divide monthly electricity at 0.710 kg CO2 per kWh for FY 2024-25, plus refrigerant leaks, by orders packed. Rider trips are a separate figure, Scope 1 or 3 depending on who runs the fleet.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Quick commerce operators and store franchisees",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Gig riders: which scope",

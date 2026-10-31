@@ -10,7 +10,7 @@
     {
       "h": "The formula",
       "p": [
-        "CO2 per tonne of bars = (billet tonnes charged x supplier billet factor + reheating fuel x its factor + mill kWh x 0.710) / tonnes of bars produced.",
+        "CO2 per tonne of bars = (billet tonnes charged x supplier billet factor + reheating fuel x its factor + mill kWh x 0.710 (FY 2024-25 grid factor)) / tonnes of bars produced.",
         "Billet tonnes charged is more than bars made, because of scale loss, crop ends and miss-rolls. Using charged tonnes puts the yield loss into the figure, where it belongs."
       ]
     },

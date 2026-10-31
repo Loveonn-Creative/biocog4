@@ -50,9 +50,9 @@
       "Total consumed: 850,000 + 150,000 = 1,000,000 kWh",
       "RECs retired in your name for the year: 100,000 kWh",
       "Renewable: 150,000 + 200,000 + 100,000 = 450,000 kWh, so 45%; without the RECs, 35%",
-      "Location-based Scope 2 is unchanged: 850,000 x 0.710 kg CO2 per kWh = 603,500 kg CO2"
+      "Location-based Scope 2 is unchanged: 850,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 603,500 kg CO2"
     ],
-    "note": "0.710 kg CO2 per kWh is the CEA CO2 Baseline Database version 21.0 grid factor."
+    "note": "0.710 kg CO2 per kWh for FY 2024-25 is the CEA CO2 Baseline Database version 21.0 grid factor."
   },
   "senseible": "Senseible reads units from electricity bills, keeps net-metered units apart and does not treat exported units as consumption. Market-based Scope 2 needs your instrument data, such as green tariff bills or REC retirement records.",
   "links": [

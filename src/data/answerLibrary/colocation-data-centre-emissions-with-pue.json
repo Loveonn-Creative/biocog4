@@ -2,7 +2,7 @@
   "slug": "colocation-data-centre-emissions-with-pue",
   "q": "How do I calculate emissions for servers in a colocation data centre using PUE?",
   "title": "Colocation server emissions with PUE",
-  "short": "Multiply your servers' average IT power in kW by the hours in the year, then by the facility's annual PUE, then by the grid factor. In India: kWh x PUE x 0.710 kg CO2 per kWh. Ask the provider for your metered IT kWh and their measured annual PUE, not the design figure.",
+  "short": "Multiply your servers' average IT power in kW by the hours in the year, then by the facility's annual PUE, then by the grid factor. In India: kWh x PUE x 0.710 kg CO2 per kWh for FY 2024-25. Ask the provider for your metered IT kWh and their measured annual PUE, not the design figure.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Indian SaaS, fintech and IT firms with colocation racks",
@@ -13,7 +13,7 @@
         "IT energy: the kWh your racks actually draw, from the provider's metered power reports. If you only have a contracted kW, use average draw, not the breaker rating.",
         "PUE: total facility energy divided by IT equipment energy, as defined in ISO/IEC 30134-2. It adds your share of cooling, UPS losses and lighting. Use the measured annual figure for the site.",
         "Facility energy for your racks: IT kWh x PUE.",
-        "Emissions: facility kWh x the grid factor for where the data centre sits. For India, 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database, version 21.0."
+        "Emissions: facility kWh x the grid factor for where the data centre sits. For India, 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database, version 21.0."
       ]
     },
     {
@@ -49,7 +49,7 @@
     ],
     "note": "The 40% renewable share is an assumption for illustration; use only shares backed by certificates or contracts for the period."
   },
-  "senseible": "Senseible's cloud and data centre calculator gives a quick estimate, and where your company pays the electricity bill for its space directly, Senseible reads the kWh from the bill and applies 0.710 kg CO2 per kWh. It does not read colocation providers' power dashboards or PUE reports.",
+  "senseible": "Senseible's cloud and data centre calculator gives a quick estimate, and where your company pays the electricity bill for its space directly, Senseible reads the kWh from the bill and applies 0.710 kg CO2 per kWh for FY 2024-25. It does not read colocation providers' power dashboards or PUE reports.",
   "links": [
     {
       "label": "Cloud and data centre emissions calculator",

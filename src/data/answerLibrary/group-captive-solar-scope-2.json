@@ -70,14 +70,14 @@
     "title": "Worked example: one year with group captive solar",
     "lines": [
       "Total consumption: 1,000 MWh, of which 600 MWh adjusted as group captive solar",
-      "Location-based: 1,000 MWh x 0.710 t CO2 per MWh = 710 t CO2",
+      "Location-based: 1,000 MWh x 0.710 t CO2 per MWh for FY 2024-25 = 710 t CO2",
       "Market-based: solar 600 MWh at zero; grid 400 MWh x 0.710 = 284 t CO2",
       "Report both: 710 t CO2 location-based and 284 t CO2 market-based, with the residual mix proxy disclosed",
       "BRSR energy table: renewable 600 x 3.6 = 2,160 GJ; non-renewable 400 x 3.6 = 1,440 GJ; renewable share 60 percent"
     ],
     "note": "The 284 t figure holds only if the solar attributes are contractually yours and not sold as RECs."
   },
-  "senseible": "Senseible reports location-based Scope 2 from the kWh on your electricity bills at 0.710 kg CO2 per kWh, and market-based Scope 2 when you supply the contract or certificate data. It does not verify that the attribute claim is valid.",
+  "senseible": "Senseible reports location-based Scope 2 from the kWh on your electricity bills at 0.710 kg CO2 per kWh for FY 2024-25, and market-based Scope 2 when you supply the contract or certificate data. It does not verify that the attribute claim is valid.",
   "links": [
     {
       "label": "Rooftop solar and net metering",

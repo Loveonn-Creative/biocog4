@@ -42,7 +42,7 @@
     "lines": [
       "Office electricity: 3,00,000 kWh a year; 25% of billable hours on Microsoft work",
       "Microsoft share: 3,00,000 x 0.25 = 75,000 kWh",
-      "Location-based: 75,000 x 0.710 = 53,250 kg CO2, about 53.3 t",
+      "Location-based: 75,000 x 0.710 (FY 2024-25 grid factor) = 53,250 kg CO2, about 53.3 t",
       "Instruments needed for 100% coverage: 75,000 kWh, for example rooftop solar or a green open access contract on that share, of a type the Supplier CFE Guidance accepts"
     ],
     "note": "Office load and share are illustrative. Check the instrument type against Microsoft's Supplier CFE Guidance before buying."

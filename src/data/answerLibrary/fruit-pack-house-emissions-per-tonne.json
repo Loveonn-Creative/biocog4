@@ -2,7 +2,7 @@
   "slug": "fruit-pack-house-emissions-per-tonne",
   "q": "How do I calculate a fruit pack house's emissions per tonne packed?",
   "title": "Fruit pack house emissions per tonne",
-  "short": "Add electricity for pre-cooling, washing, grading lines and cold rooms at 0.710 kg CO2 per kWh, generator diesel and refrigerant top-ups, then divide by tonnes packed. Cartons and crates are bought-in packaging, added from supplier figures.",
+  "short": "Add electricity for pre-cooling, washing, grading lines and cold rooms at 0.710 kg CO2 per kWh for FY 2024-25, generator diesel and refrigerant top-ups, then divide by tonnes packed. Cartons and crates are bought-in packaging, added from supplier figures.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Pack houses, fruit exporters and FPOs",
@@ -38,7 +38,7 @@
     ],
     "note": "Inputs are illustrative; use the pack house meter and dispatch records."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Cold storage energy per tonne",

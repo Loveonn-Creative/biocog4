@@ -22,7 +22,7 @@
         "Take the month's PNG bill in scm for the genset (sub-meter it if the boiler shares the supply).",
         "Multiply by 2.05 kg CO2 per scm to get kg CO2.",
         "Divide by the kWh on the genset's energy meter for the same month.",
-        "Compare with 0.710 kg CO2 per kWh for the same kWh drawn from the grid."
+        "Compare with 0.710 kg CO2 per kWh for FY 2024-25 for the same kWh drawn from the grid."
       ]
     },
     {
@@ -49,7 +49,7 @@
     ],
     "note": "The diesel and output figures are illustrative; use your own meter readings."
   },
-  "senseible": "Senseible reads PNG bills in scm at 2.05 kg CO2 per scm and diesel invoices at 2.68 kg CO2 per litre as Scope 1, and grid bills at 0.710 kg CO2 per kWh as Scope 2, with the factor shown on each line. The kg per kWh of a genset needs your genset meter reading.",
+  "senseible": "Senseible reads PNG bills in scm at 2.05 kg CO2 per scm and diesel invoices at 2.68 kg CO2 per litre as Scope 1, and grid bills at 0.710 kg CO2 per kWh for FY 2024-25 as Scope 2, with the factor shown on each line. The kg per kWh of a genset needs your genset meter reading.",
   "links": [
     {
       "label": "DG set emissions per kWh vs grid",

@@ -29,7 +29,7 @@
       "h": "Count feedstock oil once",
       "p": [
         "Feedstock oil is a raw material, not boiler fuel. If its invoices are also entered as fuel burnt, its carbon is counted twice. Keep feedstock in the carbon balance and put only fuels burnt for other purposes, such as diesel for a DG set or a forklift, in the fuel lines.",
-        "Grid electricity is separate: kWh x 0.710 kg CO2 per kWh for location-based Scope 2."
+        "Grid electricity is separate: kWh x 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2."
       ]
     },
     {
@@ -54,7 +54,7 @@
     ],
     "note": "Oil and gas quantities and all carbon fractions are illustrative assumptions. Use your own lot analyses and production records."
   },
-  "senseible": "Senseible reads the invoices for feedstock oil, natural gas, diesel and electricity, so the quantities in your carbon balance trace back to dated documents. Grid electricity is converted at 0.710 kg CO2 per kWh, and the carbon balance itself uses your lab carbon fractions.",
+  "senseible": "Senseible reads the invoices for feedstock oil, natural gas, diesel and electricity, so the quantities in your carbon balance trace back to dated documents. Grid electricity is converted at 0.710 kg CO2 per kWh for FY 2024-25, and the carbon balance itself uses your lab carbon fractions.",
   "links": [
     {
       "label": "Product carbon footprint calculator",

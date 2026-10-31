@@ -35,7 +35,7 @@
       "h": "What to send with the number",
       "ul": [
         "The allocation key and the customer's share, with the period.",
-        "Emission factors and their sources, for example 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0.",
+        "Emission factors and their sources, for example 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database version 21.0.",
         "What is left out, such as Scope 3 or a plant you did not include.",
         "A note that the figure is self-declared, unless someone independent has checked it. Keep the same method next year so changes are real."
       ]

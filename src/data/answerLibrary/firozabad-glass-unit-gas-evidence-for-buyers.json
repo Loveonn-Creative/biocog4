@@ -2,7 +2,7 @@
   "slug": "firozabad-glass-unit-gas-evidence-for-buyers",
   "q": "How should a Firozabad glass unit show its gas use and emissions to buyers?",
   "title": "Firozabad glass unit gas evidence",
-  "short": "Send monthly gas bills, electricity bills and production in tonnes of good glass, with emissions worked out at 2.05 kg CO2 per scm and 0.710 kg CO2 per kWh, plus batch carbonate CO2. Units in the Taj Trapezium Zone are required to use natural gas, which buyers can check against the bills.",
+  "short": "Send monthly gas bills, electricity bills and production in tonnes of good glass, with emissions worked out at 2.05 kg CO2 per scm and 0.710 kg CO2 per kWh for FY 2024-25, plus batch carbonate CO2. Units in the Taj Trapezium Zone are required to use natural gas, which buyers can check against the bills.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Glass bangle, glassware and decorative glass units in the Firozabad cluster",
@@ -29,7 +29,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Glass bangle furnace per tonne",

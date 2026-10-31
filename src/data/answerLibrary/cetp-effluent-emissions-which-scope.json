@@ -46,7 +46,7 @@
     "lines": [
       "CETP year: 15,00,000 kL inflow, 30,00,000 kg inlet COD, 45,00,000 kWh electricity, 50,000 kg CH4 estimated by the CETP",
       "Your unit: 60,000 kL and 90,000 kg COD; volume share 60,000 / 15,00,000 = 4%; COD share 90,000 / 30,00,000 = 3%",
-      "Electricity: 45,00,000 x 0.710 = 31,95,000 kg CO2; your 4% = 1,27,800 kg CO2",
+      "Electricity: 45,00,000 x 0.710 (FY 2024-25 grid factor) = 31,95,000 kg CO2; your 4% = 1,27,800 kg CO2",
       "Methane: 50,000 x 3% = 1,500 kg CH4; at GWP 27 (IPCC AR6, non-fossil methane) = 40,500 kg CO2e",
       "Your Category 5 line: 1,27,800 + 40,500 = 1,68,300 kg CO2e, about 168 t CO2e"
     ],

@@ -2,7 +2,7 @@
   "slug": "ccts-tool-bm-t-003-electricity-emission-factor",
   "q": "Which grid emission factor does a CCTS offset project use for electricity saved or consumed under BM-T-003?",
   "title": "Grid factor for CCTS projects under BM-T-003",
-  "short": "Use the grid factor that BEE tool BM-T-003 sets, not the 0.710 kg CO2 per kWh weighted average from your company footprint. BM-T-003 covers baseline, project and leakage emissions from electricity consumption, so read the version you register under for the factor and loss treatment it requires, and record its source and edition.",
+  "short": "Use the grid factor that BEE tool BM-T-003 sets, not the 0.710 kg CO2 per kWh for FY 2024-25 weighted average from your company footprint. BM-T-003 covers baseline, project and leakage emissions from electricity consumption, so read the version you register under for the factor and loss treatment it requires, and record its source and edition.",
   "topic": "markets",
   "intent": "check",
   "audience": "Energy consultants and plant engineers",
@@ -52,7 +52,7 @@
       "The two results need not match; each is correct for its own purpose"
     ]
   },
-  "senseible": "Senseible applies the CEA weighted average of 0.710 kg CO2 per kWh (version 21.0) to the kWh on your bills for location-based Scope 2, and keeps a dated, bill-backed record of grid kWh before and after a project, the activity data a BM-T-003 calculation starts from.",
+  "senseible": "Senseible applies the CEA weighted average of 0.710 kg CO2 per kWh for FY 2024-25 (version 21.0) to the kWh on your bills for location-based Scope 2, and keeps a dated, bill-backed record of grid kWh before and after a project, the activity data a BM-T-003 calculation starts from.",
   "links": [
     {
       "label": "CEA weighted average vs combined margin",

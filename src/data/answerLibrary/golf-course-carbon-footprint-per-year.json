@@ -2,7 +2,7 @@
   "slug": "golf-course-carbon-footprint-per-year",
   "q": "What makes up a golf course's carbon footprint?",
   "title": "Golf course carbon footprint",
-  "short": "Irrigation pumping and the clubhouse use electricity, at 0.710 kg CO2 per kWh. Mowers and carts on diesel or petrol are Scope 1, and so is nitrous oxide from fertiliser spread on the turf. Do not subtract carbon stored in grass or trees unless it is measured and reported separately.",
+  "short": "Irrigation pumping and the clubhouse use electricity, at 0.710 kg CO2 per kWh for FY 2024-25. Mowers and carts on diesel or petrol are Scope 1, and so is nitrous oxide from fertiliser spread on the turf. Do not subtract carbon stored in grass or trees unless it is measured and reported separately.",
   "topic": "product",
   "intent": "explain",
   "audience": "Golf clubs and resort operators",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Borewell pumping per kl",

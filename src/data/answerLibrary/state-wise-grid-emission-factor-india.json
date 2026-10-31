@@ -42,12 +42,12 @@
     "title": "Worked example: a plant with a part green tariff",
     "lines": [
       "Units billed: 100,000 kWh, of which 60,000 kWh on a discom green tariff",
-      "Location-based: 100,000 x 0.710 kg CO2 per kWh = 71,000 kg CO2",
+      "Location-based: 100,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 71,000 kg CO2",
       "Market-based: green tariff units at 0; remaining 40,000 x 0.710 = 28,400 kg CO2"
     ],
     "note": "India does not publish a residual mix factor, so the national grid factor is used for the remaining units; say so in your method note."
   },
-  "senseible": "Senseible applies the national CEA weighted average factor (0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) to the kWh on your bill for location-based Scope 2. It does not use state-level factors; market-based Scope 2 needs your green tariff, open access or REC documents.",
+  "senseible": "Senseible applies the national CEA weighted average factor (0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) to the kWh on your bill for location-based Scope 2. It does not use state-level factors; market-based Scope 2 needs your green tariff, open access or REC documents.",
   "links": [
     { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" },
     { "label": "Vietnam's grid emission factor", "to": "/climate-intelligence/vietnam-grid-emission-factor" },

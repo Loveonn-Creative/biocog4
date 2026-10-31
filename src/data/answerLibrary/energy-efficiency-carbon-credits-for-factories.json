@@ -36,7 +36,7 @@
     "title": "Labelled estimate: a variable speed drive on a 75 kW fan",
     "lines": [
       "Assumed saving: 60,000 kWh a year",
-      "Grid factor: 0.710 kg CO2 per kWh (CEA weighted average, version 21.0)",
+      "Grid factor: 0.710 kg CO2 per kWh for FY 2024-25 (CEA weighted average, version 21.0)",
       "60,000 x 0.710 = 42,600 kg CO2, about 43 tonnes a year"
     ],
     "note": "Credit methods usually require the CEA combined margin factor rather than the weighted average, so the creditable figure will differ. At this size the project needs grouping to be viable."

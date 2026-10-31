@@ -33,7 +33,7 @@
       "h": "What to write in your report",
       "ol": [
         "Name the source: CEA CO2 Baseline Database, the version and the fiscal year it covers.",
-        "State the factor and unit, for example 0.710 kg CO2 per kWh.",
+        "State the factor and unit, for example 0.710 kg CO2 per kWh for FY 2024-25.",
         "Say it is location-based Scope 2, and report market-based separately if you hold certificates or a green tariff.",
         "Keep the same edition for the whole reporting year; when a new edition comes out, apply it going forward and note the change."
       ]
@@ -43,12 +43,12 @@
     "title": "Worked example: one month of a factory bill",
     "lines": [
       "Units billed: 42,000 kWh",
-      "Factor: 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0)",
+      "Factor: 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database, version 21.0)",
       "42,000 x 0.710 = 29,820 kg CO2, about 29.8 tonnes for the month"
     ],
     "note": "If a buyer insists on a different factor, recalculate with theirs and keep both figures with their sources."
   },
-  "senseible": "Senseible reads the kWh from your electricity bill and applies the CEA weighted average factor (0.710 kg CO2 per kWh, version 21.0) for location-based Scope 2, showing the source on every line. It does not apply IEA factors or grid factors for other countries.",
+  "senseible": "Senseible reads the kWh from your electricity bill and applies the CEA weighted average factor (0.710 kg CO2 per kWh for FY 2024-25, version 21.0) for location-based Scope 2, showing the source on every line. It does not apply IEA factors or grid factors for other countries.",
   "links": [
     { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" },
     { "label": "Market vs location-based Scope 2", "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide" },

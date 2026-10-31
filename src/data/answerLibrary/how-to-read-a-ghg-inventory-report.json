@@ -32,7 +32,7 @@
     {
       "h": "Fourth check: factors, exclusions and base year",
       "ol": [
-        "Factors: each large line should name its factor, unit and source edition, for example 0.710 kg CO2 per kWh from CEA CO2 Baseline Database version 21.0.",
+        "Factors: each large line should name its factor, unit and source edition, for example 0.710 kg CO2 per kWh for FY 2024-25 from CEA CO2 Baseline Database version 21.0.",
         "Exclusions: any source left out should be named with a reason. Silence is not the same as zero.",
         "Base year: if the report claims a reduction, it should state the base year, its emissions, and whether it was recalculated after any change in sites or method.",
         "Offsets and certificates: carbon credits should appear in a separate line, never subtracted from the scope totals."

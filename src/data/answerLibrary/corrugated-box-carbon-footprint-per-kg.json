@@ -26,7 +26,7 @@
       "h": "Energy at your own plant",
       "ul": [
         "Corrugator steam: boiler fuel per kg of boxes. Coal at 2.42 kg CO2 per kg, PNG at 2.05 per scm, furnace oil at 2.97 per litre. Biomass CO2 is biogenic and reported separately.",
-        "Electricity for the corrugator, printer slotters, stitching and gluing: kWh x 0.710 kg CO2 per kWh.",
+        "Electricity for the corrugator, printer slotters, stitching and gluing: kWh x 0.710 kg CO2 per kWh for FY 2024-25.",
         "Starch, inks, stitching wire and strapping per kg, each with a supplier or database factor."
       ]
     },
@@ -48,7 +48,7 @@
     ],
     "note": "The 0.9 paper factor is an assumption for illustration only. Replace it with your mill's figure; it moves the result more than any other input."
   },
-  "senseible": "Senseible reads the fuel, electricity, paper and freight invoices behind a box footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps kraft and other supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "senseible": "Senseible reads the fuel, electricity, paper and freight invoices behind a box footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25) and keeps kraft and other supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
   "links": [
     { "label": "Packaging footprint for an export shipment", "to": "/answers/packaging-carbon-footprint-export-shipment" },
     { "label": "Recycled content in a product footprint", "to": "/answers/how-to-count-recycled-content-in-product-footprint" },

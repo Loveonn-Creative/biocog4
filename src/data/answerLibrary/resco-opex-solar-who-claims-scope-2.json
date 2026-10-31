@@ -28,13 +28,13 @@
     {
       "h": "When you cannot claim the solar",
       "p": [
-        "If the developer sells RECs or carbon credits from the plant, the buyer of those instruments owns the renewable claim, not you. Report your solar units in market-based Scope 2 at 0.710 kg CO2 per kWh, the national grid average, and say in a note that you used it because no residual mix factor is published for India. Claiming zero as well would count the same clean power twice."
+        "If the developer sells RECs or carbon credits from the plant, the buyer of those instruments owns the renewable claim, not you. Report your solar units in market-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, the national grid average, and say in a note that you used it because no residual mix factor is published for India. Claiming zero as well would count the same clean power twice."
       ]
     },
     {
       "h": "How to report it",
       "ol": [
-        "Grid imports from the discom bill, at 0.710 kg CO2 per kWh, in both location-based and market-based Scope 2.",
+        "Grid imports from the discom bill, at 0.710 kg CO2 per kWh for FY 2024-25, in both location-based and market-based Scope 2.",
         "Solar units bought from the developer, on a separate line with the PPA and generation data as evidence.",
         "In market-based Scope 2, those solar units at zero when the attribute tests pass, or at the grid average when they do not.",
         "A note naming the ownership model, the PPA date and who holds the attributes."
@@ -51,7 +51,7 @@
     ],
     "note": "Illustrative figures. Use the plant's metered generation and your discom import units."
   },
-  "senseible": "Senseible reads the grid import units from your discom bill and applies 0.710 kg CO2 per kWh for location-based Scope 2. Market-based Scope 2 needs instrument data, so you add the solar units bought under the PPA with the contract as evidence; Senseible does not read the developer's meter or judge the PPA clause.",
+  "senseible": "Senseible reads the grid import units from your discom bill and applies 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2. Market-based Scope 2 needs instrument data, so you add the solar units bought under the PPA with the contract as evidence; Senseible does not read the developer's meter or judge the PPA clause.",
   "links": [
     {
       "label": "Rooftop solar and net metering in Scope 2",

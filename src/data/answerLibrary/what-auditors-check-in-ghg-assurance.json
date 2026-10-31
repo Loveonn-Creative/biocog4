@@ -48,7 +48,7 @@
     "title": "Worked example: recalculating one sampled line",
     "lines": [
       "Sampled bill: 42,000 kWh, location-based Scope 2",
-      "Factor claimed: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0",
+      "Factor claimed: 0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0",
       "Auditor recalculates: 42,000 x 0.710 = 29,820 kg CO2",
       "Inventory shows 29,820 kg: agrees. Any other figure would point to a different factor edition or a unit error, and the auditor would ask why"
     ]

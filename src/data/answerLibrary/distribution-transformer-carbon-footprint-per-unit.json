@@ -51,7 +51,7 @@
     ],
     "note": "Weights, material factors and the 0.5 kW no-load loss are illustrative, and load losses would add more. For an export unit use the destination grid's factor and the lifetime the product rules set."
   },
-  "senseible": "Senseible reads the factory's electricity bills at 0.710 kg CO2 per kWh and DG diesel invoices at 2.68 kg CO2 per litre into a fingerprinted Scope 1 and 2 record, the factory energy you allocate per unit. CRGO, copper and oil invoices go to the Scope 3 supplier evidence trail; product reports are self-declared drafts.",
+  "senseible": "Senseible reads the factory's electricity bills at 0.710 kg CO2 per kWh for FY 2024-25 and DG diesel invoices at 2.68 kg CO2 per litre into a fingerprinted Scope 1 and 2 record, the factory energy you allocate per unit. CRGO, copper and oil invoices go to the Scope 3 supplier evidence trail; product reports are self-declared drafts.",
   "links": [
     {
       "label": "Transformer losses in Scope 2",

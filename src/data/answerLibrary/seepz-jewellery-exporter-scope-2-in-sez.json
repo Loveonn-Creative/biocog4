@@ -2,7 +2,7 @@
   "slug": "seepz-jewellery-exporter-scope-2-in-sez",
   "q": "Does a jewellery exporter in SEEPZ use the India grid factor for Scope 2?",
   "title": "SEEPZ jewellers: Scope 2 grid factor",
-  "short": "Yes, for the location-based figure. Electricity drawn in an SEZ is still Indian grid power, so use 0.710 kg CO2 per kWh. A lower market-based figure needs contractual instruments, such as renewable certificates or a green tariff, in your name.",
+  "short": "Yes, for the location-based figure. Electricity drawn in an SEZ is still Indian grid power, so use 0.710 kg CO2 per kWh for FY 2024-25. A lower market-based figure needs contractual instruments, such as renewable certificates or a green tariff, in your name.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Gold and diamond jewellery exporters in SEEPZ, Mumbai",
@@ -21,7 +21,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Jewellery casting workshop",

@@ -57,7 +57,7 @@
       "Banking charge averaged over all units: ₹0.10 per kWh",
       "Landed cost: 3.91 + 0.90 + 1.20 + 0.10 = ₹6.11 per kWh, against a discom energy charge of, say, ₹7.50",
       "Saving: ₹1.39 per kWh; on 1,00,000 kWh a month, ₹1,39,000 before duty and scheduling costs",
-      "Carbon: market-based Scope 2 falls by 1,00,000 x 0.710 = 71,000 kg CO2 if the renewable attributes are yours; location-based does not change"
+      "Carbon: market-based Scope 2 falls by 1,00,000 x 0.710 (FY 2024-25 grid factor) = 71,000 kg CO2 if the renewable attributes are yours; location-based does not change"
     ],
     "note": "Every rate here is assumed for the arithmetic. Take the real values from your state commission's current order and the developer's offer."
   },

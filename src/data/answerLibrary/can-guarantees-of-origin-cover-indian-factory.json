@@ -42,7 +42,7 @@
     "title": "Worked example: a 3,000 MWh Indian factory",
     "lines": [
       "Consumption: 3,000,000 kWh",
-      "GOs for 3,000 MWh bought by the EU subsidiary: not valid for India, so market-based = 3,000,000 x 0.710 = 2,130,000 kg, 2,130 t CO2",
+      "GOs for 3,000 MWh bought by the EU subsidiary: not valid for India, so market-based = 3,000,000 x 0.710 (FY 2024-25 grid factor) = 2,130,000 kg, 2,130 t CO2",
       "I-RECs or India RECs for 3,000 MWh of Indian generation, retired for the same year: market-based 0 t",
       "Location-based in both cases: 2,130 t CO2, reported alongside"
     ]

@@ -10,7 +10,7 @@
     {
       "h": "The formula",
       "p": [
-        "Footprint per kg = metal input per kg of finished parts x metal factor + (kWh x 0.710 + fuel x its factor) / kg of finished parts despatched.",
+        "Footprint per kg = metal input per kg of finished parts x metal factor + (kWh x 0.710 (FY 2024-25 grid factor) + fuel x its factor) / kg of finished parts despatched.",
         "Metal input per kg is net of turnings and swarf that you melt again in your own furnace. Only the metal that leaves as sold scrap or melt loss raises it."
       ]
     },

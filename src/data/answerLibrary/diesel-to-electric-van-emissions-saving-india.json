@@ -11,7 +11,7 @@
       "h": "The two formulas",
       "ul": [
         "Diesel: km / km per litre x 2.68 kg CO2 per litre (IPCC 2006 default).",
-        "Electric: km x kWh per km, plus charging losses, x 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0)."
+        "Electric: km x kWh per km, plus charging losses, x 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database, version 21.0)."
       ],
       "p": [
         "Take km per litre from your fuel slips and trip logs, and the EV's energy use from its ARAI homologated figure or, better, from your charger meter after a month of real routes."
@@ -22,7 +22,7 @@
       "ul": [
         "EV efficiency: a heavier load, hills, air conditioning and stop-start city routes raise kWh per km.",
         "Diesel mileage: an old or overloaded van at 9 to 10 km per litre makes the EV saving larger.",
-        "Charging source: units from your own rooftop solar carry no grid emissions; units from the grid carry 0.710 kg CO2 per kWh.",
+        "Charging source: units from your own rooftop solar carry no grid emissions; units from the grid carry 0.710 kg CO2 per kWh for FY 2024-25.",
         "Charging losses: the meter at the wall reads more than the battery stores, so include them."
       ]
     },
@@ -50,7 +50,7 @@
     ],
     "note": "Mileage, kWh per km and charging loss are assumptions; replace them with your vehicles' figures."
   },
-  "senseible": "Senseible reads diesel slips and electricity bills and applies 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh, so you get the before and after figures from your own documents. It does not compare vehicle models, read telematics or calculate battery lifecycle emissions.",
+  "senseible": "Senseible reads diesel slips and electricity bills and applies 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh for FY 2024-25, so you get the before and after figures from your own documents. It does not compare vehicle models, read telematics or calculate battery lifecycle emissions.",
   "links": [
     {
       "label": "Logistics emissions calculator",

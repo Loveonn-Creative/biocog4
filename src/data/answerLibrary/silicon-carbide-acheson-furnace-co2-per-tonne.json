@@ -2,7 +2,7 @@
   "slug": "silicon-carbide-acheson-furnace-co2-per-tonne",
   "q": "How much CO2 does silicon carbide production emit per tonne?",
   "title": "Silicon carbide CO2 per tonne",
-  "short": "Two parts: process CO2 from the petroleum coke that reduces the silica, for which IPCC 2006 gives a default of about 2.62 t CO2 per tonne of silicon carbide, and the large electricity use of the Acheson furnace at 0.710 kg CO2 per kWh.",
+  "short": "Two parts: process CO2 from the petroleum coke that reduces the silica, for which IPCC 2006 gives a default of about 2.62 t CO2 per tonne of silicon carbide, and the large electricity use of the Acheson furnace at 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "product",
   "intent": "explain",
   "audience": "Silicon carbide and abrasive grain producers",
@@ -35,7 +35,7 @@
       "Furnace electricity is added on top from the meter."
     ]
   },
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
   "links": [
     {
       "label": "Petcoke emission factor",

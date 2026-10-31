@@ -18,7 +18,7 @@
       "h": "Furnace electricity, allocated by weight",
       "p": [
         "Most mesh belt and pusher furnaces are electrically heated, and they draw power whether the belt is full or half empty. Use a sub-meter on the furnace if you have one; otherwise share the plant's monthly kWh by machine hours. Divide furnace kWh by kg sintered in the same month, so a lightly loaded month shows its true cost per kg.",
-        "Compacting presses, sizing presses, the furnace cooling water and the compressor are separate electricity lines. Put each in kWh per kg, then multiply the total by 0.710 kg CO2 per kWh for location-based Scope 2."
+        "Compacting presses, sizing presses, the furnace cooling water and the compressor are separate electricity lines. Put each in kWh per kg, then multiply the total by 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2."
       ]
     },
     {
@@ -47,7 +47,7 @@
     ],
     "note": "The powder factor, kWh per kg and LPG per kg are illustrative. Use your supplier's figure and your own meter and gas records for the same month."
   },
-  "senseible": "Senseible reads powder, LPG, PNG and electricity invoices, applying 0.710 kg CO2 per kWh and the IPCC 2006 factors for LPG and PNG, and keeps powder purchases in the Scope 3 evidence trail. Product reports are self-declared drafts built from your output figures.",
+  "senseible": "Senseible reads powder, LPG, PNG and electricity invoices, applying 0.710 kg CO2 per kWh for FY 2024-25 and the IPCC 2006 factors for LPG and PNG, and keeps powder purchases in the Scope 3 evidence trail. Product reports are self-declared drafts built from your output figures.",
   "links": [
     {
       "label": "Allocating factory electricity to products",

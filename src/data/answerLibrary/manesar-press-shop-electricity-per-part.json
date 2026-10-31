@@ -2,7 +2,7 @@
   "slug": "manesar-press-shop-electricity-per-part",
   "q": "How does a Manesar sheet metal press shop work out electricity per part for an auto buyer?",
   "title": "Manesar press shop electricity per part",
-  "short": "Meter or estimate each press line's kWh for a month, divide by good parts from that line, and multiply by 0.710 kg CO2 per kWh. Where lines share one meter, split by running hours times rated power. Add welding, painting and compressed air if the buyer asks for the finished part.",
+  "short": "Meter or estimate each press line's kWh for a month, divide by good parts from that line, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Where lines share one meter, split by running hours times rated power. Add welding, painting and compressed air if the buyer asks for the finished part.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Sheet metal and press shop suppliers in Manesar",

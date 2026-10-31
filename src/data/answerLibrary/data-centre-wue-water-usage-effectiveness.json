@@ -47,7 +47,7 @@
     ],
     "note": "Figures are illustrative, not a benchmark."
   },
-  "senseible": "Senseible reads the site's electricity bills and applies 0.710 kg CO2 per kWh for the emissions side; the water and UPS meter readings for WUE come from your facility logs.",
+  "senseible": "Senseible reads the site's electricity bills and applies 0.710 kg CO2 per kWh for FY 2024-25 for the emissions side; the water and UPS meter readings for WUE come from your facility logs.",
   "links": [
     {
       "label": "PUE formula and what a good PUE is",

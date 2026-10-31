@@ -43,11 +43,11 @@
     "title": "Worked example: one factory, three lines",
     "lines": [
       "Diesel for the DG set, 12,000 L: IPCC default 2.68 kg CO2/L, 12,000 x 2.68 = 32,160 kg CO2",
-      "Grid power, 3,00,000 kWh: CEA 0.710 kg CO2/kWh, 3,00,000 x 0.710 = 2,13,000 kg CO2",
+      "Grid power, 3,00,000 kWh: CEA 0.710 kg CO2/kWh for FY 2024-25, 3,00,000 x 0.710 = 2,13,000 kg CO2",
       "Bought aluminium, 20 t: supplier figure if it has a method; otherwise an average per tonne labelled with its source"
     ]
   },
-  "senseible": "Senseible uses the CEA factor (0.710 kg CO2 per kWh, version 21.0) for grid electricity and IPCC 2006 defaults for fuels, and shows the source on every line. Scope 3 lines go to a separate supplier evidence trail, and spend-based estimates are labelled as such.",
+  "senseible": "Senseible uses the CEA factor (0.710 kg CO2 per kWh for FY 2024-25, version 21.0) for grid electricity and IPCC 2006 defaults for fuels, and shows the source on every line. Scope 3 lines go to a separate supplier evidence trail, and spend-based estimates are labelled as such.",
   "links": [
     {
       "label": "Are IPCC Tier 1 default factors enough?",

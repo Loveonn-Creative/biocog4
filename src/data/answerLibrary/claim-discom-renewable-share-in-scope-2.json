@@ -26,7 +26,7 @@
     {
       "h": "What you can say to a buyer now",
       "ol": [
-        "Give location-based Scope 2: units on your bills x 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0.",
+        "Give location-based Scope 2: units on your bills x 0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0.",
         "Give market-based Scope 2 at the same grid factor, and say India publishes no residual mix, which is what the 2015 Guidance allows.",
         "Report 0% renewable electricity unless you hold a green tariff, green open access, RECs, or your own solar.",
         "If the buyer needs a renewable share, a green tariff from your discom is often the simplest route for a small factory."
@@ -41,7 +41,7 @@
       "With a green tariff for 50,000 kWh, backed by a discom statement: 1,50,000 x 0.710 = 1,06,500 kg, 106.5 t CO2 market-based"
     ]
   },
-  "senseible": "Senseible calculates location-based Scope 2 from the kWh on your bills at 0.710 kg CO2 per kWh (CEA version 21.0). Market-based Scope 2 changes only when you add instrument or supplier data, such as a green tariff statement or retired certificates.",
+  "senseible": "Senseible calculates location-based Scope 2 from the kWh on your bills at 0.710 kg CO2 per kWh for FY 2024-25 (CEA version 21.0). Market-based Scope 2 changes only when you add instrument or supplier data, such as a green tariff statement or retired certificates.",
   "links": [
     {
       "label": "Does a green tariff make Scope 2 zero?",

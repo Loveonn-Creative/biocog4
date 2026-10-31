@@ -43,7 +43,7 @@
     "lines": [
       "Pulp yield 55%: 1,000 / 0.55 = 1,818 kg fruit per tonne of pulp",
       "Boiler: 20 litres furnace oil x 2.97 = 59.4 kg CO2",
-      "Electricity: 100 kWh x 0.710 = 71.0 kg CO2",
+      "Electricity: 100 kWh x 0.710 (FY 2024-25 grid factor) = 71.0 kg CO2",
       "Processing share: 130.4 kg CO2 per tonne, 0.13 kg per kg pulp",
       "Add: orchard emissions for 1,818 kg fruit, and bag and drum from supplier factors"
     ],

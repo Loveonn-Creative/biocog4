@@ -2,7 +2,7 @@
   "slug": "ceramic-spray-dryer-co2-per-tonne-powder",
   "q": "How much fuel and CO2 does a ceramic spray dryer use per tonne of powder?",
   "title": "Spray dryer CO2 per tonne of powder",
-  "short": "Work it out from your own logs: fuel to the spray dryer's hot air generator times its factor, plus the dryer's electricity times 0.710 kg CO2 per kWh, divided by tonnes of powder made in the same period. For PNG that is scm x 2.05 kg CO2. Water evaporated per tonne explains most of the difference between plants.",
+  "short": "Work it out from your own logs: fuel to the spray dryer's hot air generator times its factor, plus the dryer's electricity times 0.710 kg CO2/kWh (FY 2024-25), divided by tonnes of powder made in the same period. For PNG that is scm x 2.05 kg CO2. Water evaporated per tonne explains most of the difference between plants.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Morbi and Thangadh tile makers",
@@ -28,7 +28,7 @@
         "PNG: 2.05 kg CO2 per scm",
         "LPG: 2.98 kg CO2 per kg",
         "Coal, where still used: 2.42 kg CO2 per kg",
-        "Grid electricity: 0.710 kg CO2 per kWh"
+        "Grid electricity: 0.710 kg CO2 per kWh for FY 2024-25"
       ],
       "p": [
         "These are CO2 only. If a supplier gives you a measured calorific value for its gas, use it to convert scm to GJ, but keep the CO2 per scm consistent with the factor source you name."
@@ -53,7 +53,7 @@
     ],
     "note": "Illustrative inputs, not a benchmark. Use your own sub-meter and lab data."
   },
-  "senseible": "Senseible reads PNG, LPG and coal invoices and electricity bills and applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh, showing the factor on each line. Splitting fuel between dryer and kiln and dividing by tonnes of powder uses your sub-meter and production logs.",
+  "senseible": "Senseible reads PNG, LPG and coal invoices and electricity bills and applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh for FY 2024-25, showing the factor on each line. Splitting fuel between dryer and kiln and dividing by tonnes of powder uses your sub-meter and production logs.",
   "links": [
     {
       "label": "Tile footprint per square metre",

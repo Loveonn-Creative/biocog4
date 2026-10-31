@@ -33,7 +33,7 @@
     {
       "h": "What changes in your Scope 2",
       "p": [
-        "Location-based Scope 2 does not change. Every kWh you use still takes the CEA grid factor of 0.710 kg CO2 per kWh.",
+        "Location-based Scope 2 does not change. Every kWh you use still takes the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25.",
         "Market-based Scope 2 can count the green units at zero only when the discom's statement shows the renewable attributes went to you and were not counted again elsewhere. Without that document, report them at the grid factor and keep asking."
       ]
     }
@@ -49,7 +49,7 @@
     ],
     "note": "If the premium in the current order differs, scale the rupee figures; the Scope 2 figures do not depend on it."
   },
-  "senseible": "Senseible reads your BESCOM or other Karnataka bill for billing period, tariff category, sanctioned load and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh. It reports market-based Scope 2 alongside when you record the green units with the discom's statement.",
+  "senseible": "Senseible reads your BESCOM or other Karnataka bill for billing period, tariff category, sanctioned load and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. It reports market-based Scope 2 alongside when you record the green units with the discom's statement.",
   "links": [
     {
       "label": "Green tariff or RECs: which costs less?",

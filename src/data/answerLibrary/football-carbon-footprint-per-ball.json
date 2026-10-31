@@ -20,7 +20,7 @@
     {
       "h": "Factory energy per ball",
       "p": [
-        "Take a month's electricity and fuel for lamination, cutting, printing, bladder moulding and thermo-bonding. Multiply by the factors (0.710 kg CO2 per kWh for grid power, 2.98 kg CO2 per kg of LPG, 2.68 kg CO2 per litre of diesel) and divide by balls made. If you make size 5 match balls and size 1 minis, divide by kg of output instead."
+        "Take a month's electricity and fuel for lamination, cutting, printing, bladder moulding and thermo-bonding. Multiply by the factors (0.710 kg CO2 per kWh for FY 2024-25 for grid power, 2.98 kg CO2 per kg of LPG, 2.68 kg CO2 per litre of diesel) and divide by balls made. If you make size 5 match balls and size 1 minis, divide by kg of output instead."
       ]
     },
     {

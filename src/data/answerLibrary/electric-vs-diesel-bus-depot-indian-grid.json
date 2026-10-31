@@ -11,7 +11,7 @@
       "h": "Steps",
       "p": [
         "Diesel bus: litres per km from fuel records x 2.68 kg CO2 per litre.",
-        "Electric bus: kWh per km at the depot meter, including charger losses, x 0.710 kg CO2 per kWh.",
+        "Electric bus: kWh per km at the depot meter, including charger losses, x 0.710 kg CO2 per kWh for FY 2024-25.",
         "Compare on the same routes and seasons."
       ]
     },
@@ -31,7 +31,7 @@
     ],
     "note": "Consumption figures are illustrative; use your own fuel and meter records."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Electric bus depot charging",

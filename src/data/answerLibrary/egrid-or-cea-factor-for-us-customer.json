@@ -2,7 +2,7 @@
   "slug": "egrid-or-cea-factor-for-us-customer",
   "q": "My US customer told me to use eGRID factors for my electricity. Is that right for a factory in India?",
   "title": "eGRID or CEA factor for an Indian factory?",
-  "short": "No. eGRID is the US EPA's database for electricity generated in US grid subregions; it has no figure for India. For location-based Scope 2 the GHG Protocol uses the grid where the power is consumed, so an Indian factory should use the CEA factor, 0.710 kg CO2 per kWh in version 21.0.",
+  "short": "No. eGRID is the US EPA's database for electricity generated in US grid subregions; it has no figure for India. For location-based Scope 2 the GHG Protocol uses the grid where the power is consumed, so an Indian factory should use the CEA factor, 0.710 kg CO2 per kWh for FY 2024-25 in version 21.0.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Indian suppliers to US buyers",
@@ -23,7 +23,7 @@
       "h": "How to reply to the customer",
       "ol": [
         "Report kWh for the period, from your electricity bills.",
-        "State the factor: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0, location-based.",
+        "State the factor: 0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0, location-based.",
         "Explain in one line that eGRID covers US subregions only and the GHG Protocol uses the grid where power is used.",
         "If they still want a second figure, send it separately and label the factor and source, but keep the CEA figure as your reported number."
       ]
@@ -39,12 +39,12 @@
     "title": "Worked example: a month of factory power",
     "lines": [
       "Units billed: 85,000 kWh",
-      "CEA factor: 0.710 kg CO2 per kWh (version 21.0)",
+      "CEA factor: 0.710 kg CO2 per kWh for FY 2024-25 (version 21.0)",
       "85,000 x 0.710 = 60,350 kg CO2, about 60.4 tonnes location-based Scope 2"
     ],
     "note": "Send kWh and the factor with the total, so the customer can see the arithmetic."
   },
-  "senseible": "Senseible reads the kWh from your electricity bills and applies the CEA grid factor, 0.710 kg CO2 per kWh from version 21.0, naming the source on every line.",
+  "senseible": "Senseible reads the kWh from your electricity bills and applies the CEA grid factor, 0.710 kg CO2 per kWh for FY 2024-25 from version 21.0, naming the source on every line.",
   "links": [
     {
       "label": "Is there a state-wise grid factor for India",

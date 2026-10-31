@@ -47,7 +47,7 @@
     "lines": [
       "Diesel invoice: 1,000 L x 2.68 kg CO2 per litre = 2,680 kg CO2 (Scope 1)",
       "LPG invoice: 500 kg x 2.98 kg CO2 per kg = 1,490 kg CO2 (Scope 1)",
-      "Electricity bill: 12,000 kWh x 0.710 kg CO2 per kWh = 8,520 kg CO2 (Scope 2)",
+      "Electricity bill: 12,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 8,520 kg CO2 (Scope 2)",
       "Total Scope 1 and 2: 2,680 + 1,490 + 8,520 = 12,690 kg CO2, about 12.7 tonnes"
     ],
     "note": "Fuel factors are IPCC 2006 defaults; the grid factor is from the CEA CO2 Baseline Database, version 21.0."

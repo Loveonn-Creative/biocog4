@@ -2,7 +2,7 @@
   "slug": "cupola-vs-induction-furnace-emissions",
   "q": "Does switching from a coke cupola to an induction furnace cut a foundry's carbon footprint in India?",
   "title": "Cupola to induction: does CO2 fall?",
-  "short": "Not always. On Indian grid power at 0.710 kg CO2 per kWh, an induction furnace using an estimated 550 to 700 kWh per tonne melted emits 0.39 to 0.50 t CO2. A cupola burning about 120 kg of coke per tonne emits about 0.38 t with blowers. Induction wins clearly only with renewable power or fewer kWh per tonne.",
+  "short": "Not always. On Indian grid power at 0.710 kg CO2/kWh (FY 2024-25), an induction furnace using an estimated 550 to 700 kWh per tonne melted emits 0.39 to 0.50 t CO2. A cupola burning about 120 kg of coke per tonne emits about 0.38 t with blowers. Induction wins clearly only with renewable power or fewer kWh per tonne.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Foundry owners weighing a furnace change for EU buyers or a green loan",
@@ -11,7 +11,7 @@
       "h": "The two calculations side by side",
       "ul": [
         "Cupola: kg coke per tonne melted x 3.02 kg CO2 per kg (IPCC 2006 default for coke oven coke), plus limestone at 0.44 kg CO2 per kg, plus blower electricity.",
-        "Induction: kWh per tonne of liquid metal x 0.710 kg CO2 per kWh (CEA CO2 Baseline Database version 21.0) for grid power.",
+        "Induction: kWh per tonne of liquid metal x 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database version 21.0) for grid power.",
         "Compare per tonne of good castings, not per tonne melted, because the two furnaces can give different yields and rejection rates."
       ]
     },
@@ -47,7 +47,7 @@
     ],
     "note": "Coke ratio, blower kWh and induction kWh are labelled assumptions for illustration; foundry cluster studies show wide ranges. Limestone is left out of the cupola line here, which flatters the cupola slightly."
   },
-  "senseible": "Senseible reads electricity bills (kWh at 0.710 kg CO2 per kWh), so the induction side comes from your own bills. It has no coke factor and gives no figure for coke, so the cupola side needs the 3.02 factor applied by you, and it does not model a furnace change in advance.",
+  "senseible": "Senseible reads electricity bills (kWh at 0.710 kg CO2 per kWh for FY 2024-25), so the induction side comes from your own bills. It has no coke factor and gives no figure for coke, so the cupola side needs the 3.02 factor applied by you, and it does not model a furnace change in advance.",
   "links": [
     {
       "label": "Cupola coke CO2 per tonne of castings",

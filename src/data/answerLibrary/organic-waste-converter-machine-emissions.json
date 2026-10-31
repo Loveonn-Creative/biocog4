@@ -2,7 +2,7 @@
   "slug": "organic-waste-converter-machine-emissions",
   "q": "How do I calculate the emissions of an organic waste converter machine?",
   "title": "Organic waste converter emissions",
-  "short": "Multiply the machine's electricity, from a sub-meter or rated power and hours, by 0.710 kg CO2 per kWh, and divide by kg of wet waste processed. Composting the output releases a little methane and N2O. Landfill emissions avoided are not deducted.",
+  "short": "Multiply the machine's electricity, from a sub-meter or rated power and hours, by 0.710 kg CO2 per kWh for FY 2024-25, and divide by kg of wet waste processed. Composting the output releases a little methane and N2O. Landfill emissions avoided are not deducted.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Housing societies, campuses, hotels and canteens",

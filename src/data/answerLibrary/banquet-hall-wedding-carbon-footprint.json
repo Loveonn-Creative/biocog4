@@ -26,7 +26,7 @@
     "title": "One evening",
     "lines": [
       "Diesel 120 L x 2.68 = 322 kg; LPG 6 x 19 kg x 2.98 = 340 kg",
-      "Grid 900 kWh x 0.710 = 639 kg; total 1,301 kg for 500 guests = 2.6 kg each"
+      "Grid 900 kWh x 0.710 (FY 2024-25 grid factor) = 639 kg; total 1,301 kg for 500 guests = 2.6 kg each"
     ]
   },
   "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",

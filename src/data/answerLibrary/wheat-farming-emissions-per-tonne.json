@@ -2,7 +2,7 @@
   "slug": "wheat-farming-emissions-per-tonne",
   "q": "How do I calculate the carbon footprint of growing wheat per tonne?",
   "title": "Wheat farming emissions per tonne",
-  "short": "Add nitrogen fertiliser N2O with IPCC Tier 1 defaults, urea CO2, tractor and harvester diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh, then divide by tonnes harvested per acre. Fertiliser N2O is often the largest field source.",
+  "short": "Add nitrogen fertiliser N2O with IPCC Tier 1 defaults, urea CO2, tractor and harvester diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh for FY 2024-25, then divide by tonnes harvested per acre. Fertiliser N2O is often the largest field source.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Wheat farmers, FPOs, flour mills and grain buyers",
