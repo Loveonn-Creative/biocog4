@@ -274,6 +274,7 @@ async function translateLocale(api, data, locale) {
   let lowYield = 0;
   let calls = 0;
   let errors = 0;
+  let gained = 0;
   const worker = async () => {
     while (!stopped && next < batches.length) {
       const batch = batches[next++];
@@ -289,6 +290,7 @@ async function translateLocale(api, data, locale) {
         const t = map[s];
         if (typeof t === 'string' && t.trim() && t !== s) { have[s] = t; changed++; }
       }
+      gained += changed;
       const wordy = batch.filter(hasWords).length;
       // Nothing came back translated: the daily limit (or the AI is down).
       if (wordy >= 10 && changed === 0) stopped = 'daily limit (a call returned no translations)';
@@ -300,7 +302,7 @@ async function translateLocale(api, data, locale) {
   };
   await Promise.all(Array.from({ length: PARALLEL }, worker));
   writePacks(locale, data, have);
-  return stopped;
+  return { stopped, gained };
 }
 
 function commitLocale(locale, cov) {
@@ -319,10 +321,15 @@ async function translate(data) {
   const locales = only ?? LOCALE_ORDER;
   let stopped = null;
   for (const locale of locales) {
-    stopped = await translateLocale(api, data, locale);
+    const r = await translateLocale(api, data, locale);
+    stopped = r.stopped;
     const cov = coverage(data, locale);
     console.log(`${locale}: ${cov.done}/${cov.total} (${cov.pct}%)`);
     if (flag('commit')) commitLocale(locale, cov);
+    // What is left in a language that made progress is mostly names and numbers
+    // that read the same translated; move on. A language that gains nothing
+    // means the limit (or the AI) really stopped answering.
+    if (stopped && r.gained > 0 && !stopped.startsWith('error')) { console.log(`  ${locale}: ${stopped}; moving on`); stopped = null; continue; }
     if (stopped) { console.log(`stopped: ${stopped}`); break; }
   }
   report(data);
