@@ -1,0 +1,89 @@
+{
+  "slug": "yamunanagar-plywood-cluster-sawdust-energy-co2",
+  "q": "What is the carbon footprint of the Yamunanagar plywood cluster if sawdust is the main fuel?",
+  "title": "Yamunanagar plywood: sawdust, power and CO2",
+  "short": "Grid power is the fossil line: 71.2 million kWh a year, about 48,000 t CO2 today. TERI's profile of 696 units also counts 414,600 t of sawdust, about 96% of the cluster's energy. That CO2 is biogenic and goes on a separate line, not into your total.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Plywood, peeling and saw mill units in Yamunanagar, Haryana",
+  "sections": [
+    {
+      "h": "Who is in the cluster",
+      "ul": [
+        "300 plywood units of about 10,000 sq ft a day, 356 peeling units of about 3,500 sq ft a day, and 40 saw mills of about 1.5 t a day.",
+        "About 3 million sq ft of plywood a day, roughly half of India's plywood, mostly from poplar.",
+        "Peeling units and saw mills use only electricity; plywood units burn their own sawdust in boilers for drying and hot pressing."
+      ]
+    },
+    {
+      "h": "A typical unit in a year",
+      "ul": [
+        "Plywood: 1,71,160 kWh and 1,382 t of sawdust (457 toe). About 97% of its energy is heat.",
+        "Peeling: 50,281 kWh. Saw mill: 48,384 kWh.",
+        "Boilers are mostly 3 tph, hand-fired, about 55% efficient, without economisers or condensate recovery."
+      ]
+    },
+    {
+      "h": "About the profile's 6,976 t CO2",
+      "p": [
+        "The profile prints 6,976 t CO2 for 71.2 million kWh. That is under 0.1 kg per kWh, far below any Indian grid factor, so do not reuse it. Multiply your own kWh by 0.675."
+      ]
+    },
+    {
+      "h": "Cheap savings TERI costed",
+      "ul": [
+        "Combustion air control: 5% of sawdust, 69 t a year, about Rs 1.4 lakh saved for Rs 0.7 lakh, six-month payback.",
+        "Pressure power pumps for condensate: about 6% of sawdust.",
+        "Sawdust-fired hot air generator for drying: 20% less sawdust and 15% less power, about Rs 8.2 lakh a year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster and unit figures (estimate)",
+    "lines": [
+      "Grid: 71.2 million kWh x 0.675 kg = 48,060 t CO2",
+      "Typical plywood unit: 1,71,160 kWh x 0.675 kg = 116 t CO2 a year",
+      "Sawdust: 1,32,672 toe = 5,555 TJ x 112 t CO2 per TJ = about 622,000 t biogenic CO2",
+      "Sawdust methane and nitrous oxide: 5,555 TJ x (30 kg x 27 + 4 kg x 273) = about 10,600 t CO2e, Scope 1"
+    ],
+    "note": "Quantities from TERI's Yamuna Nagar profile. IPCC 2006 defaults for wood waste (112 t CO2, 30 kg CH4, 4 kg N2O per TJ), AR6 GWPs, CEA FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible reads your UHBVN bills into monthly records at the CEA factor for each bill's year, which gives the fossil line of your carbon number per sheet or per cubic metre.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Counting resin in Scope 3",
+      "to": "/answers/yamunanagar-plywood-resin-scope-3"
+    },
+    {
+      "label": "Plywood footprint per cubic metre",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Yamuna Nagar plywood industry cluster (2016)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/YamunaNagarPlywood.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR6 Working Group I (global warming potentials)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

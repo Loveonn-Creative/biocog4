@@ -1,0 +1,64 @@
+{
+  "slug": "porbandar-calcined-bauxite-coke-co2",
+  "q": "What is the carbon footprint of Porbandar's calcined bauxite and minerals units?",
+  "title": "Porbandar calcined bauxite: coke and CO2",
+  "short": "Coke is about 98% of the energy, and calcined bauxite burns most of it. TERI counted 31,720 t of coke and 5.3 million kWh across Porbandar's 60 mineral units: 21,070 toe and about 97,522 t CO2 a year. The 20 calcined bauxite units use 16,884 toe, about 80%.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Calcined bauxite, emery abrasive and chalk powder units in Porbandar and GIDC Dharampur, Gujarat",
+  "sections": [
+    {
+      "h": "Three products, one heavy user",
+      "ul": [
+        "Chalk powder: 25 units, 90,000 t a year, electricity only, about 4.7 toe per unit.",
+        "Emery abrasives: 15 units, 21,600 t, about 271 toe per unit: 265 toe of coke and 70,416 kWh.",
+        "Calcined bauxite: 20 units, 128,000 t, about 884 toe per unit: 832 toe of coke and 141,944 kWh.",
+        "Calcined bauxite units sit on HT connections of 200 kVA or more; most chalk units are LT at about 100 kVA."
+      ]
+    },
+    {
+      "h": "Inside the vertical shaft kiln",
+      "p": [
+        "High grade bauxite, about 58% alumina, is stacked with coke in alternate layers, typically 28 of them, and held near 1,000 C for 24 hours. About a quarter of the weight leaves: 8.5 t in gives roughly 6.5 t of calcined bauxite at 84 to 88% alumina. The kiln has a single brick lining relined after every heat, and one blower feeds two kilns through a V pipe. A few units run 100 m rotary kilns, which give denser grain, 3.0 against 2.6 g per cc."
+      ]
+    },
+    {
+      "h": "Where TERI found savings",
+      "ul": [
+        "Double layer refractory lining in the shaft kiln: 5 to 8% less coke, and fewer relines.",
+        "A separate air blast for each kiln instead of one blower split two ways: 4 to 6%.",
+        "Flue gas heat to dry raw bauxite: 5 to 7% of drying heat.",
+        "Variable speed drive on the rotary kiln motor: up to 15%; on pulverisers and conveyors: up to 10%."
+      ]
+    },
+    {
+      "h": "Who will ask for your figure",
+      "p": [
+        "Calcined bauxite is a base material for high alumina refractories, castables and fused alumina. Refractory makers whose steel and cement buyers want product footprints will ask you for kg CO2 per tonne, coke and electricity shown separately, with the months covered and the coke's test certificate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One calcined bauxite unit (estimate)",
+    "lines": [
+      "Coke: 832 toe at the cluster ratio of 31,720 t per 20,618 toe = about 1,280 t",
+      "Coke CO2: 1,280 t x 28.2 GJ x 107 kg CO2 per GJ = about 3,860 t",
+      "Electricity: 141,944 kWh x 0.675 kg = 96 t",
+      "Output: 128,000 t / 20 units = 6,400 t, so about 0.62 t CO2 per tonne",
+      "Cluster: 31,720 t coke x 3.02 = 95,700 t, plus 5.3 million kWh x 0.675 = 3,580 t"
+    ],
+    "note": "Fuel and output from TERI's Porbandar profile. Coke uses the IPCC 2006 default for coke oven coke; your supplier's carbon test may differ. Electricity uses the CEA factor for FY 2025-26."
+  },
+  "senseible": "Senseible reads your power bills into a monthly record with CO2 at the CEA grid factor and keeps your coke invoices with them, dated and fingerprinted, so a refractory buyer can trace your figure to the documents.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Refractory brick CO2 per tonne", "to": "/answers/refractory-brick-carbon-footprint-per-tonne" },
+    { "label": "Wankaner refractories on petcoke", "to": "/answers/wankaner-refractory-tunnel-kiln-petcoke-carbon" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Porbandar mixed minerals processing industries (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/Porbandar-Mixed-Minerals-Industries-Gujarat.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31"
+}

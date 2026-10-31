@@ -1,0 +1,94 @@
+{
+  "slug": "gas-hot-air-generator-replacing-wood-dryer-co2",
+  "q": "How much CO2 does a chemical dryer save by switching a wood-fired hot air generator to gas?",
+  "title": "Wood to gas hot air generator: CO2 effect",
+  "short": "It raises your reported fossil CO2, by about 35 t a year on BEE's Ahmedabad figures. A 30,000 kcal/h gas unit replaces 130 t of wood with 14,940 Nm3 of gas and adds 6,040 kWh. Wood CO2 is biogenic and reported separately, so the report's 93 t cut does not belong in Scope 1.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Owners of chemical, dye and pigment units in Ahmedabad and similar clusters drying product in tray dryers on wood-fired hot air generators",
+  "sections": [
+    {
+      "h": "What BEE's Ahmedabad report measured",
+      "ul": [
+        "A wood-fired hot air generator feeding one 200-tray dryer burns about 36 kg of wood an hour, around 130 t a year.",
+        "Measured heat out was 35,964 kcal/h against 97,200 kcal/h of wood in, an efficiency of about 37%.",
+        "The proposed 30,000 kcal/h gas unit burns 4.15 Nm3 an hour, 14,940 Nm3 a year, with a 2 hp blower and air out at up to 150 C.",
+        "Electricity rises by about 6,040 kWh a year.",
+        "Project cost Rs 2.50 lakh, saving Rs 0.76 lakh a year, simple payback 3.29 years, at 2010 prices."
+      ]
+    },
+    {
+      "h": "Why the report's 93 t cut is not yours to claim",
+      "p": [
+        "The report counts 130 t of wood as 123 t of CO2 avoided, subtracts 30 t for the gas, and calls the difference a 93 t reduction. Under the GHG Protocol, CO2 from burning wood is biogenic: you report it separately, outside the Scope 1 total. Gas is fossil and goes inside it.",
+        "So the switch takes your Scope 1 from close to zero for this dryer to about 31 t, and Scope 2 up by about 4 t. Methane and nitrous oxide from burning wood do stay in Scope 1, but they are small, so removing them barely moves the total."
+      ]
+    },
+    {
+      "h": "Good reasons to switch anyway",
+      "ul": [
+        "Steady air temperature, which the report links to drying quality.",
+        "No wood logs to store, size and feed by hand.",
+        "Less pressure on local forests, which the report flags because much of the wood is not from renewable sources.",
+        "If the wood is cut from forest that is not replanted, write that in a note to your inventory. Do not net it off your Scope 1 figure."
+      ]
+    },
+    {
+      "h": "What to check before you order",
+      "ul": [
+        "Gas supply and pressure for 4.5 m3 an hour at your site, and a separate gas meter on the new unit.",
+        "Whether your supplier bills in Nm3 (at 0 C) or scm (usually 15 C); the two differ by about 5%.",
+        "Your own wood use per hour over a full week, weighed, before you compare running costs at today's prices."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One 200-tray dryer for a year, before and after",
+    "lines": [
+      "Before: 130 t of wood. CO2 from it is biogenic, reported separately. Fossil CO2 for this dryer: close to zero",
+      "After, gas: 14,940 Nm3 x 2.05 kg CO2 per m3 = 30.6 t CO2 (Scope 1)",
+      "After, extra power: 6,040 kWh x 0.675 = 4.1 t CO2 (Scope 2)",
+      "Change in reported fossil CO2: about 34.7 t more a year"
+    ],
+    "note": "Gas at our natural gas factor of 2.05 kg CO2 per cubic metre; LNG delivered as gas is natural gas. Grid factor is CEA's for FY 2025-26. Both are estimates."
+  },
+  "senseible": "Senseible reads your gas and electricity bills and gives monthly CO2 for each with the factor named, so the effect of a dryer switch shows up line by line in your records. The green loan check shows what a lender will want to see for the new unit.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Biomass boilers: methane and N2O stay in Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Ahmedabad chemical cluster footprint",
+      "to": "/answers/ahmedabad-chemical-cluster-gas-carbon-footprint"
+    },
+    {
+      "label": "Biomass gasifier or LPG for a dryer",
+      "to": "/answers/biomass-gasifier-vs-lpg-furnace-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: energy efficient gas fired hot air generator 30,000 kcal/h, Ahmedabad chemical cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Ahmedabad_30000.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "refractory-tunnel-kiln-10-tpd-coal-saving",
+  "q": "How much coal does a 10 TPD tunnel kiln save over downdraft firing for refractories?",
+  "title": "10 TPD tunnel kiln vs downdraft: coal saved",
+  "short": "It roughly halves coal per tonne fired. BEE's Godavari report puts downdraft kilns at 1.5 t of coal per tonne of refractories and a 10 TPD tunnel kiln at 0.78, saving 646 t of coal and about 1,137 t CO2 a year. Cost Rs 91 lakh, payback 3.30 years at 2011 prices.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Refractory makers with steady orders weighing a tunnel kiln against their downdraft kilns",
+  "sections": [
+    {
+      "h": "Why downdraft kilns burn so much",
+      "p": [
+        "A downdraft kiln heats its walls and the whole setting from cold every 8 to 10 days, then lets the heat go in cooling. The report measured 10 to 15% efficiency. A tunnel kiln fires continuously: ware is preheated by outgoing gas and cools inside the kiln, and the report assumes 35% efficiency."
+      ]
+    },
+    {
+      "h": "The report's figures",
+      "ul": [
+        "Downdraft: 45 t of 4,200 kcal/kg coal to fire 30 t of refractories, 1.5 t of coal per tonne.",
+        "Tunnel kiln: 1,150 kcal per kg of product, 7.82 t of coal a day for 10 t, about 23.47 t for the same 30 t.",
+        "Saving 21.53 t a batch, 646 t a year over 30 batches, and Rs 27.57 lakh a year after Rs 1.50 lakh of extra power.",
+        "48 hours cool to cool; 24 hours from ambient to 1,200 C, 6 hours soaking at 1,000 C, 18 hours cooling.",
+        "Project cost Rs 91 lakh with civil and erection work included."
+      ]
+    },
+    {
+      "h": "When a tunnel kiln makes sense",
+      "ul": [
+        "It only earns its saving running full: 10 t a day, every day, about 300 t a month of similar shapes.",
+        "35% efficiency is a design figure. Ask the supplier to guarantee kcal per kg fired.",
+        "Log coal and output for several months on the old kilns first, so the before figure is yours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per tonne fired and per year",
+    "lines": [
+      "Downdraft: 1.50 t coal x 1.76 = 2.64 t CO2 per tonne of refractories",
+      "Tunnel kiln: 0.78 t coal x 1.76 = 1.37 t CO2 per tonne",
+      "Year: 646 t coal saved x 1.76 = 1,137 t CO2",
+      "The report's 1,162 t used 1.8 t CO2 per tonne of coal"
+    ],
+    "note": "Coal at our Indian coal factor, an estimate. The tunnel kiln's extra fan power is costed in the report but not given in kWh, so it is left out."
+  },
+  "senseible": "Senseible reads coal and electricity invoices into monthly CO2 records linked to each bill. Add tonnes fired and you have coal and CO2 per tonne, the before and after a lender wants for a kiln loan.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Tunnel kiln or shuttle kiln",
+      "to": "/answers/tunnel-kiln-vs-shuttle-kiln-emissions"
+    },
+    {
+      "label": "Kiln waste heat recovery",
+      "to": "/answers/downdraft-kiln-waste-heat-recovery-coal-saving"
+    },
+    {
+      "label": "Refractory kiln on a biomass gasifier",
+      "to": "/answers/refractory-kiln-coal-to-biomass-gasifier-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: tunnel kiln 10 TPD, East and West Godavari refractories cluster (2011, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/East_and_West_Godavari_refractories_cluster/07_Tunnel_kiln_10_TPD.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

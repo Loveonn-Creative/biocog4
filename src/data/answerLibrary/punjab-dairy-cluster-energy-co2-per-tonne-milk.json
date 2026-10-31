@@ -1,0 +1,70 @@
+{
+  "slug": "punjab-dairy-cluster-energy-co2-per-tonne-milk",
+  "q": "What is the energy and CO2 per tonne of milk in Punjab's dairy plants?",
+  "title": "Punjab dairies: energy and CO2 per tonne",
+  "short": "About 0.06 t CO2 per tonne of milk. TERI's brief for UNIDO puts Punjab's dairy plants at 112,155 toe a year: furnace oil 47%, diesel 26%, electricity 27%. Audits found 0.44 to 0.57 GJ per tonne of milk, and about 0.54 million t CO2 in all.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cooperative milk unions, private dairies and chilling centres in Punjab",
+  "sections": [
+    {
+      "h": "Where the energy goes",
+      "ul": [
+        "Electricity: 435 million kWh, 29,942 toe, 27%.",
+        "Furnace oil: 62.56 million litres, 53,180 toe, 47%, mostly single pass boilers for pasteurisation and cleaning, with flue gas at 250 to 300 C.",
+        "Diesel: 29 million litres, 29,033 toe, 26%. Captive generators cover about 20% of the electrical load, because rural supply ran below 18 hours a day.",
+        "Refrigeration and boilers are more than 75% of a dairy's energy cost; refrigeration alone is about 64% of its electricity."
+      ]
+    },
+    {
+      "h": "Why plants differ per tonne",
+      "p": [
+        "Large cooperative plants are built to take milk already chilled at village centres. Small and private plants often start from raw milk temperature, so they cool more per tonne. Powder plants add hot air fans and evaporation. The audited range is 0.011 to 0.014 toe per tonne. A plant making powder, ghee or ice cream should report products separately."
+      ]
+    },
+    {
+      "h": "The savings TERI listed",
+      "ul": [
+        "Solar water heating to preheat process water: 10 to 12% of thermal energy.",
+        "Economiser or air preheater, plus insulated steam and hot water lines: about 10% of fossil fuel.",
+        "Desuperheater after the ammonia compressor, where discharge gas is 120 C or more, heating water to 55 to 70 C: at least 5% of boiler energy.",
+        "Motors and drives, many rewound and loaded at 20 to 30%: 10 to 15% of electricity.",
+        "Insulated steel shell ice bank tanks instead of concrete tanks with wooden covers, cutting heat gain from 18 to 30% to 3 to 5%: about 5% of refrigeration energy.",
+        "Together: 23,168 toe and about 0.09 million t CO2 a year."
+      ]
+    },
+    {
+      "h": "Records for your own figure",
+      "ol": [
+        "Furnace oil litres per month, from invoices and tank dips.",
+        "Diesel split between boiler, generators and vehicles.",
+        "Grid kWh from bills, and generator kWh from the meter if fitted.",
+        "Tonnes of milk received, and output by product."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Sector total and one tonne of milk (estimate)",
+    "lines": [
+      "Electricity: 435 million kWh x 0.675 kg = 293,625 t CO2",
+      "Furnace oil: 62.56 million L x 2.97 kg = 185,803 t",
+      "Diesel: 29 million L x 2.645 kg = 76,705 t",
+      "Total about 556,130 t, close to TERI's 0.54 million t",
+      "Milk handled: 112,155 toe / 0.012 toe per tonne = about 9.3 million t, so about 60 kg CO2 per tonne of milk"
+    ],
+    "note": "Fuel quantities from TERI's Punjab dairy brief for UNIDO, based on 2008-09 milk volumes. Plants that have since moved to gas or biomass will differ. Factors: CEA FY 2025-26 grid factor and IPCC 2006 defaults for oil."
+  },
+  "senseible": "Senseible reads furnace oil and diesel invoices and power bills into one monthly record with CO2 from published factors, so the per tonne figure you send a buyer or bank uses your plant's own bills.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Dairy energy per kg of milk", "to": "/answers/dairy-plant-energy-per-kg-milk-benchmark" },
+    { "label": "Gujarat chilling centres vs dairies", "to": "/answers/gujarat-dairy-chilling-centres-energy-carbon" },
+    { "label": "Dairy plant CO2 per litre", "to": "/answers/dairy-plant-emissions-per-litre-of-milk" }
+  ],
+  "sources": [
+    { "label": "TERI for UNIDO, Cluster profile: Punjab dairy industries (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/PunjabDairyClusterBrief.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "brsr-value-chain-adverse-environmental-impact",
+  "q": "What does BRSR mean by a significant adverse environmental impact from the value chain?",
+  "title": "BRSR: adverse impact from the value chain",
+  "short": "It is Principle 6 leadership indicator 6: disclose any significant adverse environmental impact arising from your value chain, and the mitigation or adaptation steps taken. Neither the format nor SEBI's guidance note defines significant, so set your own test, apply it to suppliers and customers, and say what it was.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Listed companies preparing BRSR, and suppliers their teams assess",
+  "sections": [
+    {
+      "h": "The two questions together",
+      "p": [
+        "Indicator 6 asks for significant adverse impacts from the value chain and what you did about them. Indicator 7 asks for the percentage of value chain partners, by value of business done with them, that were assessed for environmental impacts. Both are leadership indicators, so voluntary.",
+        "In the original BRSR format the same two questions were numbered 8 and 9. Older templates still carry those numbers; the July 2023 format uses 6 and 7."
+      ]
+    },
+    {
+      "h": "A test for significant you can defend",
+      "ul": [
+        "A partner broke an environmental law or consent condition, for example a closure direction from a pollution control board.",
+        "A regulator, court or community complaint named the impact.",
+        "The partner's emissions or water use are large within your own figures, for example one material supplier behind most of your purchased goods."
+      ],
+      "p": [
+        "Write the test in your report, so a reader can see why some things were reported and others were not."
+      ]
+    },
+    {
+      "h": "Where to look",
+      "ul": [
+        "Suppliers of energy-heavy or polluting materials.",
+        "Job workers doing dyeing, plating, tanning or other wet processes.",
+        "Transporters and the agencies taking your hazardous waste.",
+        "Downstream: what happens to your product and packaging at end of life."
+      ]
+    },
+    {
+      "h": "Mitigation or adaptation: what to write",
+      "p": [
+        "Report only what was done: a supplier re-audited, orders moved, a corrective plan agreed, packaging changed. Adaptation covers steps such as moving sourcing away from a water-stressed area. If your test found nothing, say \"none identified\" and describe the test. That is an honest answer."
+      ]
+    },
+    {
+      "h": "If you are the supplier",
+      "p": [
+        "Expect questions on your consent to operate, pollution board notices, energy and emissions. Factual answers with documents move you into your customer's assessed share under indicator 7."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example disclosure (a made-up case)",
+    "lines": [
+      "Impact: a dyeing job worker supplying 6% of purchases by value received a closure direction from the state pollution control board in August for effluent discharge.",
+      "Mitigation: orders moved to two job workers running zero liquid discharge plants; the supplier is to be re-audited before any reinstatement.",
+      "Assessed share (indicator 7): partners covering 58% of purchases by value assessed by questionnaire with documents."
+    ]
+  },
+  "senseible": "Senseible builds suppliers' energy and Scope 1 and 2 figures from their own bills, each tied to its document, which supports the assessed share in indicator 7. It does not judge effluent, biodiversity or other wider impacts.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Share of value chain partners assessed",
+      "to": "/answers/brsr-value-chain-environment-assessment-share"
+    },
+    {
+      "label": "CPCB red category vs high carbon emitter",
+      "to": "/answers/cpcb-red-category-vs-high-carbon-emitter"
+    },
+    {
+      "label": "BRSR value chain data from MSME suppliers",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR format updated July 2023 (Annexure II to the BRSR Core circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    },
+    {
+      "label": "SEBI, master circular of 11 July 2023, Annexures 16 and 17 (earlier BRSR format and guidance note)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Re-check indicator numbering if SEBI amends the Principle 6 leadership indicators again (the March 2025 circular added an eighth, on green credits)."
+}

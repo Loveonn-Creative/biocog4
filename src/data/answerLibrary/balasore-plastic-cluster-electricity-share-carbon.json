@@ -1,0 +1,76 @@
+{
+  "slug": "balasore-plastic-cluster-electricity-share-carbon",
+  "q": "How much energy does the Balasore plastic cluster use, and what share is grid power?",
+  "title": "Balasore plastics: grid power share and CO2",
+  "short": "84% of the energy, and more of the carbon. TERI's 2015 profile puts Balasore's 40 or so plastic units at 2,860 toe a year: 27.8 million kWh of grid power, 452 kL of diesel and 36 t of LPG. On today's factors that is about 20,000 t CO2, 93% of it from electricity.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Pipe, sack, film and moulding units in the Balasore plastic cluster, Odisha",
+  "sections": [
+    {
+      "h": "Who makes what",
+      "ul": [
+        "Pipes and fittings: 6 units, 39,000 t a year, 1,755 toe. More than 60% of the cluster's energy.",
+        "Poly bags and sacks: 13 units, 10,500 t, 450 toe.",
+        "Household items: 4 units, 4,800 t, 220 toe.",
+        "Others: 16 units, 8,300 t, 435 toe. Total 62,600 t."
+      ]
+    },
+    {
+      "h": "How the units are supplied",
+      "p": [
+        "Most units have an LT connection of about 100 kVA; pipe and sack plants have HT connections of 400 kVA or more. Diesel runs DG sets in outages, which have become uncommon. A few non-woven sack plants fire thermic fluid heaters with oil."
+      ]
+    },
+    {
+      "h": "Where the kWh go, and what cuts them",
+      "ul": [
+        "Barrel heaters: radiant heater bands with thyristor control save 20 to 30%.",
+        "Hydraulic injection moulding: all-electric machines use 50 to 80% less; servo drives on hydraulics save about 30%.",
+        "Extruder motors: variable speed drives save up to 20%.",
+        "Compressed air: every bar of pressure you drop saves about 6%."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster CO2 on today's factors (estimate)",
+    "lines": [
+      "Electricity: 27.8 million kWh x 0.675 kg = 18,765 t CO2",
+      "Diesel: 452 kL x 2.645 t = 1,196 t CO2",
+      "LPG: 36 t x 2.98 = 107 t CO2",
+      "Total about 20,070 t, or 0.32 t CO2 per tonne of product",
+      "Pipes, if their 1,755 toe were all power: about 523 kWh and 353 kg CO2 per tonne"
+    ],
+    "note": "Quantities from TERI's Balasore profile. Grid factor CEA FY 2025-26; fuels IPCC 2006."
+  },
+  "senseible": "Senseible reads your electricity bills (units, tariff, sanctioned load) and DG diesel invoices into monthly records, so your carbon number per tonne comes from your own meter, not a cluster average.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Rajkot plastics cluster",
+      "to": "/answers/rajkot-plastic-cluster-electricity-co2"
+    },
+    {
+      "label": "Plastic water tank footprint",
+      "to": "/answers/plastic-water-tank-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Balasore plastic industries (2015)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Balasore_Plastics_Orissa.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

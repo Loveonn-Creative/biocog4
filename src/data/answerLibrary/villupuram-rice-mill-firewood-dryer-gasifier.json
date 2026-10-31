@@ -1,0 +1,65 @@
+{
+  "slug": "villupuram-rice-mill-firewood-dryer-gasifier",
+  "q": "Can a small Villupuram rice mill replace its firewood paddy dryer with a gasifier, and what does it save?",
+  "title": "Villupuram rice mills: firewood dryer swap",
+  "short": "It can, and TERI's Villupuram profile estimates that a biomass gasifier making hot air from husk or wood saves 30 to 50% of dryer fuel. Fitted to the district's 40 or so 2 tph mills, it would save about 900 toe a year, roughly 56 t of firewood equivalent per mill (estimate).",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Small parboiling rice mills in Villupuram, Tindivanam, Vikravandi, Kallakurichi and Chinnaselam",
+  "sections": [
+    {
+      "h": "Why the small mills burn wood",
+      "p": [
+        "In Villupuram's 4 tph mills, steam at about 8 kg per cm2 heats the air that dries parboiled paddy. The 2 tph mills mostly fire wood straight into a hot air dryer instead. Firewood meets about 20% of the district's mill heat, 5,640 t a year, and it is the one fuel they buy: about Rs 19.7 million a year across the cluster. A typical 2 tph mill uses 131 toe of heat and 8 toe of electricity a year."
+      ]
+    },
+    {
+      "h": "What a gasifier changes",
+      "ul": [
+        "Husk or wood is turned into producer gas, which burns cleanly and can be controlled, instead of burning the fuel directly.",
+        "TERI's estimate: 30 to 50% less fuel for the same drying.",
+        "It can run on husk freed up by boiler improvements, so bought firewood falls first."
+      ]
+    },
+    {
+      "h": "Do the boiler at the same time",
+      "ul": [
+        "Economiser and condensate return, feedwater up to 90 C: about 10% less husk. Across about 50 mills, 2,304 t of husk (744 toe), worth about Rs 28 lakh a year.",
+        "Solar water heating for soaking water: about 421 t of husk (136 toe) a year.",
+        "Insulate steam and hot water lines, and fit steam traps where the small mills have none."
+      ]
+    },
+    {
+      "h": "What to record before and after",
+      "ol": [
+        "Firewood bought each month, with bills and weights.",
+        "Paddy dried, and moisture before and after the dryer.",
+        "Husk burnt and husk sold.",
+        "The same months a year apart, so a lender can see the change."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One 2 tph mill (estimate)",
+    "lines": [
+      "If all firewood goes to the 40 small mills: 5,640 t / 40 = about 141 t a year each",
+      "At 30 to 50% saved: 42 to 70 t of wood a year",
+      "At the cluster's cost, Rs 19.7 million / 5,640 t = about Rs 3,500 a tonne: Rs 1.5 to 2.5 lakh a year",
+      "TERI's figure: 900 toe / 40 mills = 22.5 toe each, about 56 t of wood equivalent at 0.4 toe per tonne",
+      "Wood CO2 avoided, reported as biogenic: 22.5 toe x 41.868 GJ x 112 kg = about 105 t a year"
+    ],
+    "note": "From TERI's Villupuram profile (2014-15). The split of firewood between mills is an assumption; wood CO2 uses the IPCC 2006 default for wood. Your own bills give the real figures."
+  },
+  "senseible": "The green loan check shows what a lender wants before funding a dryer change. Senseible keeps your firewood, husk and power bills in one dated record, so the before and after comes from documents.",
+  "links": [
+    { "label": "Green loan check", "to": "/green-loan-check" },
+    { "label": "Red Hills vs Villupuram energy", "to": "/answers/red-hills-vs-villupuram-rice-mills-energy-co2" },
+    { "label": "Biomass gasifier vs LPG furnace", "to": "/answers/biomass-gasifier-vs-lpg-furnace-emissions" },
+    { "label": "Biomass boilers still have Scope 1", "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Villupuram rice mills (SAMEEEKSHA, 2014-15 data)", "url": "https://sameeeksha.org/pdf/clusterprofile/Villupuram_Rice_Mills_Tamil%20Nadu.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31"
+}

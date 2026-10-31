@@ -1,0 +1,89 @@
+{
+  "slug": "aluminium-melting-oil-to-wood-gasifier",
+  "q": "Can an aluminium melting furnace on furnace oil switch to a wood gasifier?",
+  "title": "Aluminium melting: furnace oil to wood gas",
+  "short": "Yes, and it cuts fossil CO2 by about 221 t a year on BEE's Jagadhri figures: 76.8 kL of furnace oil replaced by 268.8 t of wood and 10,933 kWh. The report lists the CO2 cut as Nil; wood CO2 is biogenic and reported separately. Payback 1.69 years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Aluminium melters in Jagadhri and similar clusters running oil-fired pit furnaces",
+  "sections": [
+    {
+      "h": "What BEE costed",
+      "ul": [
+        "Pit furnace: 400 kg a melt at 690 C, 64 litres of furnace oil a melt (160 litres a tonne), efficiency 9.8 to 12.5%.",
+        "Gasifier: 200 kW downdraft unit rated to replace up to 50 litres of oil an hour, on 2 to 3 inch wood chips at 15% moisture, 175 kg an hour at full output.",
+        "224 kg of wood a melt; energy cost Rs 793 a melt (wood Rs 672, power Rs 41, labour Rs 80) against Rs 1,600 of oil.",
+        "Rs 16.38 lakh in all, Rs 14.38 lakh of it for the gasifier, burner, wood dryer, chipper and piping; one week of downtime."
+      ]
+    },
+    {
+      "h": "Why the report's Nil is wrong",
+      "p": [
+        "The report treats the wood's CO2 as if it were fossil and concludes there is no cut. Under the GHG Protocol, CO2 from burning wood is biogenic and reported separately, outside Scope 1. The furnace oil was fossil. So Scope 1 falls by the oil's CO2, about 228 t, less about 7 t for the gasifier's power. Methane and nitrous oxide from the wood flame stay in Scope 1, but they are small."
+      ]
+    },
+    {
+      "h": "If your aluminium goes to the EU",
+      "p": [
+        "Aluminium is a CBAM good. Biomass fuel counts as zero only if it meets the EU's renewable energy sustainability criteria and you can prove it. Without that proof, the verifier counts the wood's CO2 in full."
+      ]
+    },
+    {
+      "h": "Before you switch",
+      "ul": [
+        "Chip supply of about 270 t a year, dried and sized, with weighed invoices.",
+        "Space for the chipper, dryer and ash handling next to the furnace.",
+        "Oil per melt logged for a month, so the before figure is your own."
+      ]
+    }
+  ],
+  "example": {
+    "title": "1,200 melts a year, 480 t of aluminium",
+    "lines": [
+      "Oil removed: 76,800 litres x 2.97 = 228.1 t CO2",
+      "Gasifier power: 10,933 kWh x 0.675 = 7.4 t CO2",
+      "Net fossil cut: about 220.7 t CO2 a year, from 475 kg to 15 kg a tonne",
+      "Wood: 268.8 t, its CO2 reported separately as biogenic"
+    ],
+    "note": "Furnace oil at our factor of 2.97 kg CO2 per litre and grid at CEA's FY 2025-26 factor, both estimates."
+  },
+  "senseible": "Senseible reads furnace oil invoices and power bills into monthly CO2 records linked to each bill, and gives the CBAM data an EU importer asks for from the same records. It does not decide whether your wood meets EU sustainability rules.",
+  "links": [
+    {
+      "label": "CBAM for Indian exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "Zero-rating biomass under CBAM",
+      "to": "/answers/cbam-biomass-fuel-zero-rating-proof"
+    },
+    {
+      "label": "Biomass gasifier or LPG for a furnace",
+      "to": "/answers/biomass-gasifier-vs-lpg-furnace-emissions"
+    },
+    {
+      "label": "Jagadhri brass and aluminium cluster",
+      "to": "/answers/jagadhri-brass-aluminium-cluster-wood-coke-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: wood gasifier for aluminium melting, 400 kg, Jagadhri brass and aluminium cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Jagadhri_brass_and_aluminium_cluster/08_Wood_gasifier_aluminium_400kg_Jagadhri_cluster.pdf"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback. CBAM biomass rules: recheck on EUR-Lex."
+}

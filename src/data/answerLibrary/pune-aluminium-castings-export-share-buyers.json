@@ -1,0 +1,90 @@
+{
+  "slug": "pune-aluminium-castings-export-share-buyers",
+  "q": "How much of Pune's aluminium casting output is exported, and who buys it?",
+  "title": "Pune aluminium castings: exports and buyers",
+  "short": "Almost 20% is exported. TERI puts Pune at about 4,00,000 t of castings a year, some 22% of India's aluminium casting output. Most units cast for vehicle makers such as Tata, Mahindra, Bajaj Auto and Honda, and for electrical firms such as Siemens and Crompton Greaves.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Owners and export managers of Pune aluminium casting units answering OEM and overseas buyers",
+  "sections": [
+    {
+      "h": "What Pune ships",
+      "ul": [
+        "Cylinder heads, engine bodies, engine pipes and suspension forks for two-wheelers and cars.",
+        "Motor bodies, pump bodies and fan parts for electrical makers.",
+        "Alloy wheels and cylinder heads from a few large, mechanised units.",
+        "Mostly from alloy ingots in LM, ADC and AC grades; only a few units melt scrap."
+      ]
+    },
+    {
+      "h": "Two kinds of buyer, two kinds of question",
+      "ul": [
+        "Indian OEMs and their global parents ask for your product footprint as Scope 3 supplier data. It counts everything: fuel, electricity, and the alloy you buy.",
+        "EU customers may need CBAM data, but only if they declare your part under a covered aluminium code such as 7616. A casting declared as a vehicle, engine or pump part, in Chapters 84, 85 or 87, is outside CBAM today. Ask your importer which code they use before building anything."
+      ]
+    },
+    {
+      "h": "What to have ready before the email arrives",
+      "ol": [
+        "Twelve months of furnace oil, gas, LPG, diesel and electricity, from invoices and bills.",
+        "Tonnes of good castings shipped in the same months, by product family if you can.",
+        "Alloy ingot and scrap tonnes bought, with each supplier's footprint per tonne if they have one.",
+        "The CN code each export customer declares."
+      ]
+    },
+    {
+      "h": "Who to ask locally",
+      "p": [
+        "ALUCAST, the Aluminium Casters' Association of India, has about 100 members and runs training and an annual die casting conference; MCCIA, NCTS Pune and the Pimpri Chinchwad Small Industries Association also work with the cluster."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The exported share in tonnes of CO2 (estimate)",
+    "lines": [
+      "Exports: 20% x 4,00,000 t = about 80,000 t of castings a year",
+      "Cluster energy CO2: about 0.94 t per tonne of castings on today's factors",
+      "Energy CO2 riding on exports: 80,000 x 0.94 = about 75,000 t a year",
+      "The alloy itself adds more, and differs by supplier"
+    ],
+    "note": "Output and export share from TERI's profile and SAMEEEKSHA's summary (2015-16 data); CO2 per tonne from the cluster's fuel and power at CEA FY 2025-26 and IPCC 2006 factors."
+  },
+  "senseible": "For a casting under a covered code, Senseible's CBAM cost calculator shows what your figure means for the importer from 2026 to 2034, and your fuel invoices and power bills read into monthly records give the numbers behind it.",
+  "links": [
+    {
+      "label": "CBAM for exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "Are aluminium castings covered by CBAM?",
+      "to": "/answers/are-aluminium-castings-covered-by-cbam"
+    },
+    {
+      "label": "Pune cluster energy mix",
+      "to": "/answers/pune-aluminium-casting-cluster-energy-mix"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Pune aluminium casting industries (2015)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Pune_Aluminium_Casting_Maharashtra.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Cluster summary: Pune aluminium casting cluster",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=179&Itemid=502"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

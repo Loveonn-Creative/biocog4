@@ -1,0 +1,76 @@
+{
+  "slug": "medium-vs-mains-frequency-induction-furnace",
+  "q": "How much does a medium frequency furnace save over a mains frequency induction furnace?",
+  "title": "Mains vs medium frequency induction furnace",
+  "short": "Expect about 90 kWh less per tonne of molten metal. BEE's Punjab foundry report puts 50 Hz mains frequency furnaces at 680 to 690 kWh per tonne and medium frequency furnaces, above 500 Hz, at 590 to 600. For 2,250 t a year that is 202.5 MWh and about 137 t CO2.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Foundry owners running 50 Hz induction furnaces and weighing a medium frequency replacement",
+  "sections": [
+    {
+      "h": "Why the medium frequency furnace uses less",
+      "p": [
+        "A mains frequency furnace has low power density, so it melts slowly and loses heat over the long cycle. A medium frequency furnace runs at about three times the power density, melts faster and loses less heat, though frequency conversion adds some electrical loss. It also needs no molten heel and starts up quicker."
+      ]
+    },
+    {
+      "h": "BEE's costing",
+      "ul": [
+        "2,250 t a year: 1,552.5 MWh at 690 kWh per tonne, against 1,350 MWh at 600.",
+        "Saving 202.5 MWh, Rs 10.13 lakh a year at Rs 5 per kWh.",
+        "Project cost Rs 30.08 lakh, payback 2.97 years, downtime 4 days, at 2011 prices.",
+        "The report lists 164 t of CO2 on an older grid factor; at 0.675 it is about 137 t."
+      ]
+    },
+    {
+      "h": "When it pays slower",
+      "p": [
+        "The saving scales with tonnes melted. At 1,000 t a year, 90 kWh a tonne is 90 MWh and Rs 4.5 lakh at the report's rate, so the same Rs 30.08 lakh takes about 6.7 years to pay back. Work it out with your own tonnes and today's tariff before you decide."
+      ]
+    },
+    {
+      "h": "Measure first",
+      "ul": [
+        "kWh per tonne from the furnace's own meter, over a month, divided by tonnes of liquid metal tapped.",
+        "Hours the furnace holds metal waiting for moulds, which eats into any saving."
+      ]
+    }
+  ],
+  "example": {
+    "title": "2,250 t a year",
+    "lines": [
+      "Mains frequency: 2,250 x 690 kWh = 1,552.5 MWh",
+      "Medium frequency: 2,250 x 600 kWh = 1,350 MWh",
+      "Saved: 202.5 MWh x 0.675 = 136.7 t CO2 a year",
+      "Per tonne: 90 kWh x 0.675 = 61 kg CO2"
+    ],
+    "note": "Grid factor is CEA's for FY 2025-26, an estimate."
+  },
+  "senseible": "Senseible reads monthly electricity bills and gives kWh and CO2 linked to each bill; divide by your melt tonnes and you have the per tonne figure to compare before and after. The green loan check shows what a lender needs.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Arc furnace to medium frequency",
+      "to": "/answers/arc-furnace-to-medium-frequency-induction-saving"
+    },
+    {
+      "label": "Finance for an induction furnace upgrade",
+      "to": "/answers/green-loan-induction-furnace-upgrade-readiness"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: medium frequency furnace in place of mains frequency furnace, Batala, Jalandhar and Ludhiana foundry cluster (2011, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Batala_Jalandhar_Ludhiana_foundry_cluster/Medium_frequency_furnace_in_place_of_main_frequency_furnace_Batala_Jlndr_Ludh_Fdry_Cluster.pdf"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

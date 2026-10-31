@@ -1,0 +1,72 @@
+{
+  "slug": "kundli-cold-store-electricity-by-capacity",
+  "q": "How much electricity and CO2 does a cold store of under 2,500, 2,500-5,000 or over 5,000 tonnes use a year?",
+  "title": "Cold store power by size: Kundli figures",
+  "short": "TERI's Kundli figures: about 220,500 kWh a year for a store under 2,500 t, 488,100 kWh for 2,500 to 5,000 t, and 855,700 kWh above 5,000 t. That is 149, 329 and 578 t CO2 on today's grid factor, and about 132 kWh per tonne of capacity in every band.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Cold store owners, and traders or food brands who rent cold store space and must report it",
+  "sections": [
+    {
+      "h": "The average stores behind the figures",
+      "ul": [
+        "Under 2,500 t: average 1,676 t; energy bill about Rs 1.9 million a year.",
+        "2,500 to 5,000 t: average 3,710 t; about Rs 4.2 million. These stores use about 57% of the cluster's power.",
+        "Over 5,000 t: average 6,505 t; about Rs 7.3 million.",
+        "All grid power; DG sets cover outages, and short cuts barely change chamber temperature."
+      ]
+    },
+    {
+      "h": "Read the 132 kWh carefully",
+      "p": [
+        "All three figures come to the same 132 kWh per tonne of capacity, which tells you they scale with size rather than measure how well each store runs. Use them to sanity-check a bill. To judge your own store, divide monthly kWh by tonnes actually in store that month, and compare season with season."
+      ]
+    },
+    {
+      "h": "If you rent space and a buyer asks",
+      "p": [
+        "A trader or brand storing produce reports its share of the store's electricity as Scope 3. The fairest split is tonne-months: your tonnes times months stored, over the store's total tonne-months for the year. Ask the store for its annual kWh and occupancy; most keep both for billing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Your share of a 3,000 t store (worked example)",
+    "lines": [
+      "Store's power: 3,000 t x 132 kWh = about 394,800 kWh = 266 t CO2 a year",
+      "Store's occupancy: 2,400 t on average x 12 months = 28,800 tonne-months",
+      "Your potatoes: 300 t x 6 months = 1,800 tonne-months, 6.25% of the total",
+      "Your share: 266 t x 6.25% = about 16.7 t CO2"
+    ],
+    "note": "kWh per tonne of capacity from TERI's Kundli profile (2014-15); occupancy figures are an example. Grid factor CEA FY 2025-26."
+  },
+  "senseible": "Senseible keeps stored-goods electricity as a Scope 3 line in your supplier evidence trail, so a buyer can see the store's kWh, your tonne-months and the factor behind your share.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Kundli cluster electricity and CO2",
+      "to": "/answers/kundli-cold-storage-cluster-electricity-co2"
+    },
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Kundli cold storage cluster (2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Kundli_Cold_Storage.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

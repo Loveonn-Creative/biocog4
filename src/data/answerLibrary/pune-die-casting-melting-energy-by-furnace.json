@@ -1,0 +1,82 @@
+{
+  "slug": "pune-die-casting-melting-energy-by-furnace",
+  "q": "How much furnace oil, gas or power does it take to melt a tonne of aluminium in a die-casting unit?",
+  "title": "Melting aluminium: oil, gas or kWh a tonne",
+  "short": "It depends on the furnace more than the fuel. In Pune, TERI found skalner furnaces use 90 to 110 litres of furnace oil or about 100 scm of gas per tonne melted, oil or gas crucibles 150 to 220 litres, and electric crucibles 500 to 550 kWh plus 50 to 100 kWh for holding.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Melting and maintenance heads in aluminium die casting units choosing or tuning a furnace",
+  "sections": [
+    {
+      "h": "The four furnaces you will find in Pune",
+      "ul": [
+        "Skalner: direct flame on the metal, 500 kg to 4 t an hour, takes scrap. Used by most large and some medium units. Metal loss about 4%.",
+        "Tower: continuous melting, 100 kg to 1 t an hour, lower fuel use and about 2% metal loss, but only same-alloy ingots and limited scrap.",
+        "Oil or gas crucible: flame around a crucible, batches of 100 to 500 kg an hour. Common in small and medium units, and the thirstiest per tonne.",
+        "Electric resistance crucible: used for melting by some smaller units and for holding by most medium and large ones. About 30% of melting furnaces in the cluster are electric; about 40 electric holding furnaces run in Pune."
+      ]
+    },
+    {
+      "h": "Which wins on carbon today",
+      "p": [
+        "Per tonne melted, a gas skalner is lowest, then an oil skalner, then an electric crucible, and an oil crucible is worst. So moving a small unit from an oil crucible to an electric one cuts CO2 even on today's grid. Moving a large unit from a well-run skalner to electric melting does not, unless the power is renewable."
+      ]
+    },
+    {
+      "h": "A typical skalner unit, whole plant",
+      "p": [
+        "TERI's sample: 2,12,868 litres of furnace oil and 27,79,310 kWh for 2,391 t a year, 0.183 toe a tonne. On today's factors that is about 632 t CO2 from oil and 1,876 t from power, roughly 1.05 t CO2 per tonne. Melting is the visible fuel; holding, PDC machines and machining make power the larger share."
+      ]
+    },
+    {
+      "h": "If the casting goes to the EU",
+      "p": [
+        "For covered aluminium goods CBAM counts direct emissions only, so oil or gas burnt for melting counts and electricity does not. An electric melter has a near-zero melting figure for CBAM but a real one in its OEM's footprint. Keep both from the same records."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne melted, by furnace (estimate)",
+    "lines": [
+      "Skalner on gas: 100 scm x 2.05 kg = 205 kg CO2",
+      "Skalner on furnace oil: 90 to 110 L x 2.97 kg = 267 to 327 kg CO2",
+      "Electric crucible: 550 to 650 kWh (melting plus holding) x 0.675 kg = 371 to 439 kg CO2",
+      "Oil crucible: 150 to 220 L x 2.97 kg = 446 to 653 kg CO2"
+    ],
+    "note": "Fuel ranges from TERI's Pune profile; factors CEA FY 2025-26 and IPCC 2006. Melting only: holding in oil-fired units, machines and utilities come on top."
+  },
+  "senseible": "Senseible reads furnace oil, gas and LPG invoices and electricity bills into monthly records, so you can divide by tonnes melted and see which furnace is costing you; the CBAM pages show what the direct figure means for an EU buyer.",
+  "links": [
+    {
+      "label": "CBAM for exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "Pune cluster energy mix",
+      "to": "/answers/pune-aluminium-casting-cluster-energy-mix"
+    },
+    {
+      "label": "Scrap melting fuel per tonne",
+      "to": "/answers/aluminium-scrap-melting-fuel-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Pune aluminium casting industries (2015)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Pune_Aluminium_Casting_Maharashtra.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "induction-furnace-superheat-kwh-per-tonne",
+  "q": "How much extra power does superheating molten metal by 50 C cost in an induction furnace?",
+  "title": "Induction furnace superheat: kWh per tonne",
+  "short": "About 25 kWh per tonne for every 50 C above what the pour needs, says TERI's 2025 Bankura profile. On a furnace melting 100,000 t a year that is 2.5 million kWh, roughly 1,690 t CO2 at India's grid factor. An open crucible loses another 4 to 6% as radiation.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Steel melt shops and foundries running induction furnaces, in Bankura and other secondary steel clusters",
+  "sections": [
+    {
+      "h": "Why the extra degrees cost",
+      "p": [
+        "Every degree above the temperature the caster or mould needs is paid for in kWh and then lost in the ladle. Bankura's 11 induction melt shops make 1,263,600 t a year on 1,200.4 million kWh, about 950 kWh per tonne, so 25 kWh is close to 3% of the melt."
+      ]
+    },
+    {
+      "h": "Habits that cut kWh on the melt floor",
+      "ul": [
+        "Run at full power: shorter heats use less energy per tonne.",
+        "Keep a lid on the crucible. A lid mechanism saves up to 3% and pays back in a few months.",
+        "Put the spectrometer near the melt shop, so metal does not sit hot waiting for a result.",
+        "Weigh and lay out the charge before the heat, free of sand, dirt, oil and heavy rust: 5 to 10% of electricity."
+      ]
+    },
+    {
+      "h": "SCR or IGBT",
+      "p": [
+        "Many Bankura melt shops still run SCR power supplies. TERI puts an IGBT furnace at 15 to 20% less energy, with payback inside a year on energy alone."
+      ]
+    },
+    {
+      "h": "Where these kWh show, and where they do not",
+      "p": [
+        "For iron and steel, EU CBAM counts direct emissions only, so the furnace's grid power does not enter your billet or bar's CBAM figure. The sponge iron and pig iron in your charge do, as precursors, and so does any fuel burnt on site. Your Scope 2 figure, your Indian buyers' supplier footprints and a green loan case all use the kWh. So cut superheat for cost and Scope 2; for CBAM, work on the charge mix and precursor data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 100,000 t a year melt shop (estimate)",
+    "lines": [
+      "Bankura average: 1,200.4 million kWh / 1,263,600 t = 950 kWh per tonne",
+      "50 C less superheat: 25 kWh x 100,000 t = 2.5 million kWh x 0.675 kg = 1,688 t CO2",
+      "IGBT at 15%: 950 x 0.15 = 142.5 kWh per tonne, 14.25 million kWh, 9,619 t CO2",
+      "Lid at up to 3%: 28.5 kWh per tonne, 2.85 million kWh, 1,924 t CO2"
+    ],
+    "note": "Furnace figures from TERI's 2025 Bankura energy profile; the 950 kWh per tonne is the cluster average and your furnace will differ. Grid factor from CEA for FY 2025-26."
+  },
+  "senseible": "Senseible's CBAM pages set out what an EU importer needs for billets and bars. Senseible reads your power bills into monthly kWh and CO2, so a superheat or IGBT change shows up in your own numbers.",
+  "links": [
+    { "label": "CBAM for Indian exporters", "to": "/cbam" },
+    { "label": "Induction furnace kWh per tonne", "to": "/answers/induction-furnace-kwh-per-tonne-benchmark" },
+    { "label": "Green loan for a furnace upgrade", "to": "/answers/green-loan-induction-furnace-upgrade-readiness" },
+    { "label": "Is sponge iron covered by CBAM?", "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Bankura secondary steel cluster (2025)", "url": "https://sameeeksha.org/pdf/Bankura%20cluster%20profile.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated text", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "balasore-pipe-fittings-units-energy-share",
+  "q": "Do pipe and fittings makers in Balasore use most of the cluster's energy?",
+  "title": "Balasore plastics: who uses the energy",
+  "short": "Yes. Six pipe and fittings units use 1,755 of the cluster's 2,860 toe a year, over 60%, because they make 39,000 of its 62,600 t. Per tonne they are no hungrier than sack or household makers, about 0.045 toe each. Electricity is 84% of the cluster's energy.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "HDPE and PVC pipe, woven sack, film and moulded goods makers in Balasore, Odisha",
+  "sections": [
+    {
+      "h": "The cluster by product",
+      "ul": [
+        "Pipes and fittings: 6 units, 39,000 t, 1,755 toe.",
+        "Poly bags and sacks: 13 units, 10,500 t, 450 toe.",
+        "Household items: 4 units, 4,800 t, 220 toe.",
+        "Others: 16 units, 8,300 t, 435 toe.",
+        "Fuels: 27.8 million kWh of grid power, 452 kL of diesel for generators, 36 t of LPG."
+      ]
+    },
+    {
+      "h": "Per tonne, the products are close",
+      "p": [
+        "Pipes come to 0.045 toe per tonne, sacks 0.043 and household goods 0.046; the mixed others 0.052. The pipe units lead the cluster because they run big HT extrusion lines of 400 kVA or more, not because each tonne is harder to make. If a buyer compares your pipe with another supplier's, compare kWh per tonne, not the cluster share."
+      ]
+    },
+    {
+      "h": "Where an extrusion line loses power",
+      "ul": [
+        "Barrel heaters on on-off control with poor insulation: radiant heater bands with thyristor control save 20 to 30%.",
+        "Extruder screw at constant speed: a variable frequency drive saves up to 20%.",
+        "Process cooling: staging chillers, cooling towers and efficient pumps save 10 to 25% of cooling cost.",
+        "Compressed air: leaks often above 20% can be brought near 5%; one bar lower pressure saves about 6%.",
+        "Injection moulding: all-electric machines use 50 to 80% less, servo-driven hydraulics about 30% less."
+      ]
+    },
+    {
+      "h": "What to send a pipe buyer",
+      "ol": [
+        "Kg CO2 per tonne of pipe from your kWh and generator diesel, with the months covered.",
+        "Tonnes despatched, matched to invoices.",
+        "Resin type and supplier for each grade; ask the resin supplier for its own figure, because making the polymer is outside your bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster and one tonne of pipe (estimate)",
+    "lines": [
+      "Electricity: 27.8 million kWh x 0.675 kg = 18,765 t CO2",
+      "Diesel: 452 kL x 2.645 t = 1,196 t",
+      "LPG: 36 t x 2.98 t = 107 t",
+      "Total about 20,070 t on 62,600 t = about 0.32 t CO2 per tonne",
+      "Pipe units at the cluster's fuel mix: 61% of energy, about 12,300 t CO2 on 39,000 t = about 0.32 t per tonne"
+    ],
+    "note": "Energy and output from TERI's Balasore plastics profile. The profile does not split fuels by product, so the pipe line assumes the cluster mix. Factors: CEA FY 2025-26 grid factor and IPCC 2006 defaults."
+  },
+  "senseible": "Senseible reads power bills, generator diesel slips and LPG invoices into a monthly record and keeps a supplier evidence trail, so the per tonne figure you send a buyer traces to your own bills.",
+  "links": [
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" },
+    { "label": "Plastic moulding electricity per kg", "to": "/answers/daman-plastic-moulding-unit-electricity-per-kg" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Balasore plastic industries (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/Balasore_Plastics_Orissa.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31"
+}

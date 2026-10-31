@@ -1,0 +1,76 @@
+{
+  "slug": "bhubaneswar-shrimp-processing-cluster-co2",
+  "q": "What is the carbon footprint of Bhubaneswar's shrimp export processing cluster?",
+  "title": "Bhubaneswar shrimp processors: CO2",
+  "short": "About 36,000 t CO2 a year on today's factors, nearly all from grid power. TERI's 2015-16 profile counts 16 year-round plants making about 33,600 t of seafood, over 90% shrimp, using 50.1 million kWh and 890 kL of diesel: roughly 1.1 t CO2 per tonne processed.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Shrimp processors and exporters in Patia, Mancheswar and Paradip answering buyer questionnaires",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "43 registered exporters, 26 active; 21 processing plants, 16 running all year and 5 only in peak season.",
+        "Six plants each in Patia and Mancheswar, three in Paradip, one towards Berhampur.",
+        "Turnover about Rs 2,070 crore, mostly exports to Japan, the USA and Southeast Asia; four plants export to the EU.",
+        "Most plants make about 50 t a month, about six make 150 t, and the two largest about 750 t."
+      ]
+    },
+    {
+      "h": "Where the electricity goes",
+      "ul": [
+        "Freezing 38%, cold storage 20%, ice making 18%: refrigeration is about 80%.",
+        "Water supply and treatment 9%, air conditioning 6%, lighting 2%, other 7%.",
+        "About two tonnes of flake ice per tonne of fish, from the plant's own ice machines.",
+        "Refrigeration runs on ammonia, so refrigerant leaks add no CO2e."
+      ]
+    },
+    {
+      "h": "Which kilogram your buyer divides by",
+      "p": [
+        "Headless block shrimp recovers 65 to 70% of the raw weight; peeled IQF shrimp for Europe about 55%. The same plant gives a higher figure per kg of IQF than per kg of block, so state the product and whether you divide by raw intake or packed weight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster and plant figures on today's factors (estimate)",
+    "lines": [
+      "Cluster grid: 50.1 million kWh x 0.675 kg = 33,818 t CO2",
+      "Cluster diesel: 890 kL x 2.645 t = 2,354 t CO2",
+      "Total 36,172 t / 33,600 t = 1.08 t CO2 per tonne",
+      "Small plant, 600 t: 9,50,000 kWh and 20 kL = 694 t CO2, 1.16 t per tonne",
+      "Large plant, 9,000 t: 1,30,00,000 kWh and 200 kL = 9,304 t CO2, 1.03 t per tonne"
+    ],
+    "note": "Quantities from TERI's Bhubaneswar profile (2015-16). The profile's own 46,859 t uses the grid factor of its time; CEA FY 2025-26 and IPCC 2006 here."
+  },
+  "senseible": "Senseible keeps your plant's power and diesel as the figures behind a per-kg number in a supplier evidence trail, so an importer can trace each line back to a CESU bill or diesel invoice.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Shrimp plant kWh per tonne",
+      "to": "/answers/bhubaneswar-shrimp-plant-kwh-per-tonne"
+    },
+    {
+      "label": "Frozen shrimp footprint per kg",
+      "to": "/answers/shrimp-processing-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Bhubaneswar seafood processing industries (2015-16 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/bhubaneshwar-seafood-processing-odisha.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

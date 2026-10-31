@@ -1,0 +1,81 @@
+{
+  "slug": "refractory-kiln-coal-to-biomass-gasifier-co2",
+  "q": "What changes in coal and CO2 when a refractory kiln switches to a biomass gasifier?",
+  "title": "Refractory kiln: coal to biomass gasifier",
+  "short": "Coal goes to zero and fossil CO2 falls by about 2,360 t a year in BEE's Godavari report: 1,350 t of coal out, 2,160 t of wood in, plus some fan power. The wood's own CO2 is biogenic and reported separately. Project cost Rs 17.00 lakh, payback 2.73 years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Refractory brick makers in East and West Godavari and other clusters firing coal in downdraft kilns",
+  "sections": [
+    {
+      "h": "The kiln and the gasifier in the report",
+      "ul": [
+        "Downdraft kilns on an 8 day cycle: 2 days slow firing, 4 rapid, 1 soaking, 1 cooling. Efficiency 10 to 15%.",
+        "45 t of coal a batch at 4,200 kcal/kg during rapid firing, 30 batches a year: 1,350 t.",
+        "A 500,000 kcal/h downdraft gasifier on wood chips of 2 to 3 inches at 15% moisture, with 6 hp of fans.",
+        "9 t of wood a day, 72 t a batch, 2,160 t a year, costed at 2,000 kcal/kg.",
+        "Project cost Rs 17.00 lakh, saving Rs 6.23 lakh a year, payback 2.73 years, one week of downtime."
+      ]
+    },
+    {
+      "h": "Counting the CO2 properly",
+      "p": [
+        "The coal is fossil: 1,350 t x 1.76 = 2,376 t of CO2 gone from Scope 1. The wood is biomass, so its CO2 is reported separately as biogenic, outside the scope totals. Methane and nitrous oxide from the gasifier flame stay in Scope 1 but are small. The fans add a little grid power. The report's 2,430 t used 1.8 t of CO2 per tonne of coal; on our factor the net cut is about 2,360 t."
+      ]
+    },
+    {
+      "h": "Before you sign",
+      "ul": [
+        "Wood supply: 2,160 t a year is about 180 t a month, bought by weight with invoices that name the material.",
+        "Moisture: the 2,000 kcal/kg in the costing implies wet wood. Drier chips mean fewer tonnes and a smaller bill.",
+        "Gasifier size against your peak heat demand in rapid firing, not the batch average.",
+        "If a buyer or lender asks, keep records that the wood is residue or from replanted land."
+      ]
+    }
+  ],
+  "example": {
+    "title": "30 batches a year",
+    "lines": [
+      "Coal removed: 1,350 t x 1.76 = 2,376 t CO2",
+      "Gasifier fans: 6 hp, about 4.5 kW x 24 h x 8 days x 30 batches = 25,920 kWh x 0.675 = 17.5 t CO2 (estimate)",
+      "Net fossil cut: about 2,358 t CO2 a year",
+      "Wood: 2,160 t, its CO2 reported separately as biogenic"
+    ],
+    "note": "Coal at our Indian coal factor and grid power at CEA's FY 2025-26 factor, both estimates. The report gives fan power only as a cost, so the kWh line assumes the fans run through every batch."
+  },
+  "senseible": "Senseible reads coal invoices and electricity bills into monthly CO2 records, each linked to its bill, so the year before and the year after a fuel switch sit side by side. The green loan check shows what a lender will ask for.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Biomass boilers: methane and N2O stay in Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "10 TPD tunnel kiln vs downdraft",
+      "to": "/answers/refractory-tunnel-kiln-10-tpd-coal-saving"
+    },
+    {
+      "label": "Refractory brick footprint per tonne",
+      "to": "/answers/refractory-brick-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: biomass gasifier system up to 50 t capacity kiln, East and West Godavari refractories cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/East_and_West_Godavari_refractories_cluster/01_Biomass_gasifier_system_up_to_50ton_capacity_kiln_Godavari_Refr_cluster.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

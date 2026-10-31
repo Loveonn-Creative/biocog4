@@ -1,0 +1,71 @@
+{
+  "slug": "ankleshwar-chemical-cluster-energy-gas-power",
+  "q": "How much gas and electricity does the Ankleshwar chemical MSME cluster use?",
+  "title": "Ankleshwar chemical cluster: gas and power",
+  "short": "Ankleshwar's 750 chemical MSMEs used 26,637 toe in 2020-21, by TERI's mapping for BEE: 15,195 toe of heat from natural gas and LDO, and 11,442 toe of electricity, about 133 million kWh. At today's factors electricity carries roughly 70% of the CO2, about 125,000 t a year (estimate).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Dye, pigment, pesticide, specialty chemical, pharma and paint MSMEs in Ankleshwar and Panoli GIDC, Gujarat",
+  "sections": [
+    {
+      "h": "The cluster in one table",
+      "ul": [
+        "750 MSMEs making dyes, pigments, insecticides, specialty chemicals, pharmaceuticals and paints.",
+        "Output about 315,512 t a year.",
+        "Heat: 15,195 toe, from natural gas and LDO.",
+        "Electricity: 11,442 toe, 43% of all energy."
+      ]
+    },
+    {
+      "h": "Why the power bill outweighs the gas bill in CO2",
+      "p": [
+        "Natural gas releases about 0.20 kg CO2 for each kWh of heat; a kWh from the grid carries 0.675 kg. So although heat is the larger share of energy, electricity is the larger share of CO2. When you look for savings, the electricity bill deserves as much attention as the boiler."
+      ]
+    },
+    {
+      "h": "Your unit is not the average",
+      "p": [
+        "The cluster works out at roughly 0.40 t CO2 per tonne of product, but a dye unit with a spray dryer, a pesticide formulator and a paint blender sit far apart. Batch chemistry also swings month to month. Report per product family where you can, and keep the same months for energy and output."
+      ]
+    },
+    {
+      "h": "Records a listed customer will ask for",
+      "ol": [
+        "Monthly gas bills, in scm with the calorific value printed.",
+        "LDO invoices in litres and stock change.",
+        "Electricity bills in kWh, plus generator diesel if you run one.",
+        "Production in tonnes by product family.",
+        "Solvent recovery and incineration, if you run them on site."
+      ]
+    },
+    {
+      "h": "Who is asking",
+      "p": [
+        "Large listed customers reporting under SEBI's BRSR may ask their value chain partners for energy by source and Scope 1 and 2 emissions. Most dyes and specialty chemicals are not CBAM goods, but check your CN codes if you export to the EU."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster CO2 at today's factors (estimate)",
+    "lines": [
+      "Heat as gas: 15,195 toe x 10 million kcal / 8,750 kcal per scm = 17.4 million scm x 2.05 kg = about 35,600 t",
+      "If the heat were all LDO instead: 15,195 toe x 41.868 GJ x 74.1 kg = about 47,100 t",
+      "Electricity: 11,442 toe x 11,630 kWh = 133.1 million kWh x 0.675 kg = about 89,800 t",
+      "Total 125,400 to 136,900 t on 315,512 t = 0.40 to 0.43 t CO2 per tonne"
+    ],
+    "note": "Energy totals from SAMEEEKSHA's summary of TERI's 2020-21 study for BEE, which does not split gas from LDO, hence the range. The 8,750 kcal per scm gas value is an assumption; your bill prints the real one. Factors: IPCC 2006 defaults and CEA FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible reads gas and power bills into Scope 1 and 2 lines with CO2 from published factors, keeps LDO invoices in the same record, and drafts a self-declared BRSR energy and emissions table from them.",
+  "links": [
+    { "label": "BRSR reporting", "to": "/brsr-reporting" },
+    { "label": "Ahmedabad chemical cluster carbon", "to": "/answers/ahmedabad-chemical-cluster-gas-carbon-footprint" },
+    { "label": "Are Vapi and Ankleshwar chemicals in CBAM?", "to": "/answers/vapi-ankleshwar-chemicals-covered-by-cbam" },
+    { "label": "API unit solvent recovery emissions", "to": "/answers/ankleshwar-api-unit-solvent-recovery-emissions" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA, Ankleshwar chemical cluster summary (TERI for BEE, 2020-21 data)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=131&Itemid=502" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31"
+}

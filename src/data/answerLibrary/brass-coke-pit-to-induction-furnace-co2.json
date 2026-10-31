@@ -1,0 +1,79 @@
+{
+  "slug": "brass-coke-pit-to-induction-furnace-co2",
+  "q": "What does moving brass melting from a coke pit furnace to a 500 kg induction furnace do to CO2?",
+  "title": "Brass: coke pit furnace to induction, CO2",
+  "short": "CO2 falls by about 166 kg for every tonne of brass melted, on today's grid. BEE's Jagadhri report has a pit furnace burning 80 kg of coke per 600 kg melt and a 500 kg induction furnace using 175 kWh per melt. Cost Rs 17.05 lakh, payback 1.67 years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Brass melters in Jagadhri and other clusters using coke-fired pit furnaces",
+  "sections": [
+    {
+      "h": "The two furnaces in the report",
+      "ul": [
+        "Pit furnace: a crucible in a refractory-lined pit with coke packed under and around it, 600 kg a melt, 4 to 5 melts a day, about two and a half hours each.",
+        "80 kg of coke a melt, with about 20 kg left unburnt at the end. Flue gas at 500 to 550 C; efficiency 8 to 12%.",
+        "Induction: 500 kg a melt, 175 kWh, 5 melts a day for 300 days, 262,500 kWh a year.",
+        "At Rs 22 a kg of coke and Rs 4.5 a kWh, the saving is Rs 1,359 a tonne and Rs 10.19 lakh a year."
+      ]
+    },
+    {
+      "h": "Per tonne is the fair comparison",
+      "p": [
+        "The report sets 120 t of coke a year against 262,500 kWh, but the coke total is for 600 kg melts and the power for 500 kg melts. Compare per tonne: 133 kg of coke against 350 kWh. On the report's yearly totals the cut is about 185 t; for the same 750 t of brass it is about 125 t. The report's 114 t used older factors."
+      ]
+    },
+    {
+      "h": "Checks that change the answer",
+      "ul": [
+        "Unburnt coke: if the 20 kg left in the pit goes into the next melt, real coke use is 100 kg a tonne and the CO2 cut falls to about 66 kg a tonne.",
+        "Power supply: induction melting needs continuous supply, so check outages and your contract demand.",
+        "Weigh coke per melt for a month before you compare."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per tonne of brass melted",
+    "lines": [
+      "Pit furnace: 80 / 0.6 = 133 kg coke x 3.02 = 403 kg CO2",
+      "Induction: 175 / 0.5 = 350 kWh x 0.675 = 236 kg CO2",
+      "Saved: about 166 kg CO2 a tonne",
+      "On 750 t a year: about 125 t CO2"
+    ],
+    "note": "Coke at the IPCC 2006 default (107,000 kg CO2 per TJ at 28.2 GJ per tonne) and grid at CEA's FY 2025-26 factor, both estimates."
+  },
+  "senseible": "Senseible reads coke invoices and electricity bills into monthly CO2 records linked to each bill; add tonnes melted and you have the per tonne figure for before and after. The green loan check shows what a lender asks for on a furnace loan.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Oil crucible or induction for brass",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    },
+    {
+      "label": "Jagadhri brass and aluminium cluster",
+      "to": "/answers/jagadhri-brass-aluminium-cluster-wood-coke-carbon"
+    },
+    {
+      "label": "Brass: coal pit to gas rotary furnace",
+      "to": "/answers/brass-coal-furnace-to-gas-rotoberatory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: induction furnace for brass melting, 500 kg, Jagadhri brass and aluminium cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Jagadhri_brass_and_aluminium_cluster/04_Induction_furnace_for_brass_500kg_Jagadhri_cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

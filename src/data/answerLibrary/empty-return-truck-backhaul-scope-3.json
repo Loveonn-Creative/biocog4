@@ -1,0 +1,75 @@
+{
+  "slug": "empty-return-truck-backhaul-scope-3",
+  "q": "Do I have to count the empty return trip of a hired truck in Scope 3?",
+  "title": "Empty return trip of a hired truck",
+  "short": "No. GHG Protocol guidance for upstream transport says companies may optionally count unladen backhaul, the empty vehicle's return. If you do, take the fuel burned on the empty leg: empty distance divided by empty fuel efficiency, times the fuel's emission factor. Check first that your factor does not already include it.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Indian manufacturers and exporters who hire trucks for their own loads",
+  "sections": [
+    {
+      "h": "Where the rule sits",
+      "p": [
+        "In the Category 4 guidance, under the fuel-based method, companies may optionally calculate unladen backhaul. The formula: fuel for the backhaul equals the average fuel efficiency of the vehicle unladen times the distance travelled unladen, and that fuel times its emission factor gives the CO2e. It is optional, so leaving it out is not an error. Say which way you went."
+      ]
+    },
+    {
+      "h": "Do not count it twice",
+      "p": [
+        "The distance-based method multiplies tonne-km by a factor that, in the guidance's words, incorporates average fuel consumption, average utilisation and vehicle loading. Average empty running can already be inside that figure. Add an empty leg only when you work from the trip's actual fuel, not on top of a per tonne-km factor."
+      ]
+    },
+    {
+      "h": "When counting it is worth the effort",
+      "ul": [
+        "You hire the whole truck and it has no return load, for example from a remote plant or quarry.",
+        "Your freight rate is priced for both ways.",
+        "A buyer asked for fuel-based freight figures."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ul": [
+        "The transporter's note that the truck returned empty.",
+        "Empty kilometres, from the trip log or FASTag statement.",
+        "The transporter's fuel efficiency for the truck when empty.",
+        "The diesel factor you used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one hired truck, 310 km each way",
+    "lines": [
+      "Laden leg at 3.5 km per L: 310 / 3.5 = 88.6 L x 2.645 kg CO2 per L = 234.3 kg CO2",
+      "Empty return at 5 km per L: 310 / 5 = 62 L x 2.645 = 164.0 kg CO2",
+      "With backhaul: 398.3 kg CO2; the empty leg adds 70% to the laden trip"
+    ],
+    "note": "Fuel efficiencies are example inputs; use your transporter's figures for the truck."
+  },
+  "senseible": "Senseible reads lorry receipts, freight bills and fuel slips, so the laden leg comes with its document. Keep the transporter's note on the empty return beside it if you choose to count backhaul.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Empty container moves",
+      "to": "/answers/empty-container-repositioning-emissions"
+    },
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "Truck diesel mileage by size",
+      "to": "/answers/indian-truck-diesel-mileage-by-size"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 4 (upstream transportation), fuel-based and distance-based methods",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

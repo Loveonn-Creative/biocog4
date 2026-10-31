@@ -1,0 +1,88 @@
+{
+  "slug": "secondary-steel-sec-by-process-ballari",
+  "q": "What is the typical kWh and coal per tonne for DRI, induction furnace, re-rolling and ferro alloy units?",
+  "title": "Ballari steel: kWh and coal per tonne",
+  "short": "TERI's 2025 Ballari study: sponge iron takes 1,000 to 1,200 kg of coal and 70 to 80 kWh a tonne, an induction furnace with continuous casting 850 to 950 kWh, rolling 80 to 120 kWh plus 90 to 120 kg of coal to reheat, and ferro manganese 3,500 to 4,500 kWh with 450 to 550 kg of coke.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plant heads and energy managers in DRI, induction furnace, re-rolling and ferro alloy units",
+  "sections": [
+    {
+      "h": "The ranges, per tonne of product",
+      "ul": [
+        "Pellet: 30 to 35 kWh and 50 to 55 kg of coal.",
+        "Sponge iron (DRI): 70 to 80 kWh and 1,000 to 1,200 kg of coal.",
+        "Mini blast furnace or BF-BOF: 80 to 120 kWh and 600 to 700 kg of coke.",
+        "Induction furnace with continuous casting: 850 to 950 kWh.",
+        "Reheating furnace in a re-rolling mill: 4 to 6 kWh and 90 to 120 kg of coal.",
+        "Rolling mill: 80 to 120 kWh.",
+        "Ferro manganese: 3,500 to 4,500 kWh and 450 to 550 kg of coke."
+      ]
+    },
+    {
+      "h": "Before you compare, check the coal",
+      "p": [
+        "The study assumes coal at 5,000 kcal per kg and coke at 7,500. If your coal is 4,200 kcal, you will burn more kilograms per tonne with no worse a kiln. Compare heat per tonne, not just kilograms, using the GCV on your coal test reports."
+      ]
+    },
+    {
+      "h": "Turning a range into CO2",
+      "ol": [
+        "Coal: kg x 1.76 for Indian coal or 2.44 for imported.",
+        "Coke: kg x about 3.0, the IPCC default for coke, unless your supplier gives a tested figure.",
+        "Electricity: kWh x 0.675.",
+        "Add the stages your metal actually went through, in the proportion you used them."
+      ]
+    },
+    {
+      "h": "What CBAM sees",
+      "p": [
+        "For iron and steel goods CBAM counts direct emissions only. A DRI tonne's coal counts in full; an induction furnace's electricity drops out. That is why an induction-route billet can look light on a CBAM form and heavy in a buyer's footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne at the middle of each range (estimate)",
+    "lines": [
+      "DRI: 1,100 kg coal x 1.76 + 75 kWh x 0.675 = 1,936 + 51 = about 1.99 t CO2",
+      "Induction furnace with CCM: 900 kWh x 0.675 = 608 kg CO2",
+      "Reheating and rolling: 105 kg coal x 1.76 + 105 kWh x 0.675 = 185 + 71 = 256 kg CO2",
+      "Ferro manganese: 4,000 kWh x 0.675 + 500 kg coke x 3.0 = 2,700 + 1,500 = about 4.2 t CO2"
+    ],
+    "note": "Ranges from TERI's 2025 Ballari study; factors India BUR-2 coal, IPCC 2006 coke and CEA FY 2025-26. Your own logs replace every number here."
+  },
+  "senseible": "Senseible reads coal invoices and power bills into monthly records you can divide by tonnes made; coke has no built-in factor, so it needs your supplier's test figure. The CBAM pages show the direct-emissions view.",
+  "links": [
+    {
+      "label": "CBAM for exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "Ballari cluster energy and CO2",
+      "to": "/answers/ballari-steel-cluster-energy-and-co2"
+    },
+    {
+      "label": "Induction furnace kWh benchmark",
+      "to": "/answers/induction-furnace-kwh-per-tonne-benchmark"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, In-depth study: Iron and steel industries in Ballari cluster (2025)",
+      "url": "https://sameeeksha.org/pdf/publications/Ballari%20Cluster%20Report%20Report.pdf"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

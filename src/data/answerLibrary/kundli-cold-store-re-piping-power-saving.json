@@ -1,0 +1,65 @@
+{
+  "slug": "kundli-cold-store-re-piping-power-saving",
+  "q": "When should an old cold store be re-piped, and how much power does pressure drop cost?",
+  "title": "Cold store re-piping: when and what it saves",
+  "short": "Re-pipe if the store was built before 2005 or loses more than 0.2 bar between evaporator and condenser, says TERI's Kundli profile. Each 0.1 bar of drop costs almost 2 C of suction and about 7% more power. New pipe, insulation and valves cut electricity 5 to 8%, paid back within a year.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Cold store owners and operators in Kundli, Sonipat and other ammonia cold storage clusters",
+  "sections": [
+    {
+      "h": "How to measure the drop",
+      "ol": [
+        "Fit two identical, calibrated pressure gauges: one at the compressor, one at the evaporator.",
+        "Read both at steady load and note the difference.",
+        "Walk the pipe run with a checklist: frost on pipes or valves means the insulation has failed.",
+        "Look hard at corroded lines; Kundli stores use mild steel pipe for ammonia, typically 250 to 400 feet of it."
+      ]
+    },
+    {
+      "h": "What the profile found in Kundli",
+      "ul": [
+        "About 53 stores in Kundli, of about 90 in Sonipat, from 665 to 8,600 t; 27 are below 2,500 t.",
+        "Ammonia reciprocating compressors run at full load with manual control; refrigeration is 89 to 95% of the power bill.",
+        "Valves and flanges left bare in both old and new stores.",
+        "A typical year: about 220,542 kWh for a 1,676 t store, 488,085 kWh for 3,710 t, 855,710 kWh for 6,505 t."
+      ]
+    },
+    {
+      "h": "Other fixes from the same study",
+      "ul": [
+        "Evaporator fans on a variable speed drive with on-off control at set temperature: Rs 1.0 to 1.2 million for a 5,000 t store, payback 18 to 24 months.",
+        "Condenser fans on a variable speed drive: about 25% less fan power, payback under a year; 20% slower fans use about half the power.",
+        "Use the anterooms you already have during loading: 3 to 5%.",
+        "Air curtains and sealed dock doors; LED lamps, which also add less heat to the chamber; IE3 motors for 5 to 7%."
+      ]
+    },
+    {
+      "h": "Building the case for a lender",
+      "p": [
+        "Keep twelve months of power bills, tonnes in store each month and the two gauge readings. After the work, take the same readings in the same season. The kWh difference against tonnes stored is the figure a bank or buyer will trust."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 3,710 t store (estimate)",
+    "lines": [
+      "Today: 488,085 kWh x 0.675 kg = 329 t CO2 a year",
+      "New pipe, insulation and valves at 5 to 8%: 24,400 to 39,000 kWh, 16 to 26 t CO2",
+      "Each 0.1 bar of drop removed: 7% of refrigeration power, at about 90% of the bill: 488,085 x 0.9 x 0.07 = about 30,700 kWh, 21 t CO2"
+    ],
+    "note": "Store sizes and kWh from TERI's Kundli profile (2014-15); the 0.1 bar rule is the profile's rule of thumb. Grid factor from CEA for FY 2025-26."
+  },
+  "senseible": "The green loan check lists what a lender asks before funding a refit. Senseible reads your monthly power bills into kWh and CO2 at the CEA factor, so the saving shows against your own baseline.",
+  "links": [
+    { "label": "Green loan check", "to": "/green-loan-check" },
+    { "label": "Cold storage energy per tonne", "to": "/answers/cold-storage-energy-per-tonne" },
+    { "label": "Potato store electricity per bag", "to": "/answers/potato-cold-storage-electricity-per-bag" },
+    { "label": "Ammonia vs HFC refrigerant", "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Kundli cold storage cluster (SAMEEEKSHA, 2014-15 data)", "url": "https://sameeeksha.org/pdf/clusterprofile/Kundli_Cold_Storage.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31"
+}

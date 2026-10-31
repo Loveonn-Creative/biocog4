@@ -1,0 +1,93 @@
+{
+  "slug": "supplier-carbon-survey-format-contents",
+  "q": "What should a buyer's supplier carbon survey format contain?",
+  "title": "What a supplier carbon survey should contain",
+  "short": "The GHG Protocol's supplier engagement guidance lists twelve items: emission sources and scope, boundary, reporting period, activity data and emissions in CO2e, comparability with earlier methods, emission factors and sources, uncertainties, trends, progress to targets, events affecting the data, ratio indicators for allocation, and anything else relevant.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Buyer sustainability and procurement teams designing a supplier survey, and suppliers reading one",
+  "sections": [
+    {
+      "h": "Why a fixed format",
+      "p": [
+        "The guidance asks for one standard format so answers compare year on year and supplier against supplier, errors fall, and figures can be recalculated the same way later. It also notes that a spreadsheet is easy to send but tiresome for a supplier filling different ones for every customer."
+      ]
+    },
+    {
+      "h": "The twelve fields, as an Indian MSME would fill them",
+      "ul": [
+        "Emission sources and scope: DG set diesel and LPG in Scope 1, grid power in Scope 2.",
+        "Boundary: which plants and godowns are in, and whether you own or rent them.",
+        "Reporting period: say April to March, or the period you asked for.",
+        "Activity data and emissions in CO2e: kWh from the DISCOM bills, litres, kg, and the CO2e from each.",
+        "Comparability with last year: any change in method.",
+        "Emission factors and sources: factor, publisher and year for each fuel and the grid.",
+        "Uncertainty: for example, two months estimated from meter photos.",
+        "Trends, progress to targets, events affecting the data: the guidance marks these if applicable.",
+        "Ratio indicators for allocation: total production and the quantity shipped to you.",
+        "Any other relevant information."
+      ]
+    },
+    {
+      "h": "Ask in units suppliers already have",
+      "p": [
+        "A first-time supplier knows its kWh, litres and tonnes, not its CO2e. Ask for both, and you can check the arithmetic yourself. Ask for the financial year they keep books in if your own period differs, with monthly figures so you can recut it."
+      ]
+    },
+    {
+      "h": "What goes out before the survey",
+      "p": [
+        "The guidance tells buyers to send a letter from procurement first, covering:"
+      ],
+      "ul": [
+        "the programme and why it matters;",
+        "any consequences of not taking part;",
+        "how the data will be collected and used, and that it will be kept confidential;",
+        "help available, and the schedule;",
+        "a request for the name of the person who will answer."
+      ]
+    },
+    {
+      "h": "After the survey goes out",
+      "p": [
+        "The same guidance recommends a training session, a help desk, periodic check-ins, a clear line on suppliers who do not respond, and a thank-you once data is reviewed. Leave the target and trend fields optional in year one; a supplier answering for the first time rarely has them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: why the ratio indicator field matters",
+    "lines": [
+      "Supplier's Scope 1 and 2 for the year: 2,400 t CO2e",
+      "Supplier's total output: 8,000 t; shipped to you: 1,000 t",
+      "Your share: 2,400 x 1,000 / 8,000 = 300 t CO2e",
+      "Without the two output figures, you can only use the 2,400 t whole or fall back to a spend estimate"
+    ],
+    "note": "Example figures."
+  },
+  "senseible": "Suppliers who use Senseible can fill the activity data, emissions and factor fields from their own bills, with the document behind every line.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "One master answer for every buyer form",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    },
+    {
+      "label": "Suppliers who do not respond",
+      "to": "/answers/supplier-not-responding-carbon-survey-consequences"
+    },
+    {
+      "label": "Which suppliers to ask first",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Supplier Engagement Guidance",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Supplier%20Engagement%20Guidance.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

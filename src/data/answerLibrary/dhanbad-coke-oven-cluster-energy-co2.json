@@ -1,0 +1,66 @@
+{
+  "slug": "dhanbad-coke-oven-cluster-energy-co2",
+  "q": "What is the total energy and CO2 of the Dhanbad hard coke cluster?",
+  "title": "Dhanbad coke ovens: cluster energy and CO2",
+  "short": "TERI's 2016 profile puts Dhanbad's 100 or so coke units at 208,254 toe and about 858,894 t CO2 a year. Almost 99% is heat from coal volatiles burning inside non-recovery ovens; grid power is 30.24 million kWh. A typical unit uses 2,083 toe, 0.220 toe per tonne of hard coke.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Hard coke, soft coke and met coke makers in Dhanbad, Baliapur, Govindpur, Chirkunda, Nirsa and Katras",
+  "sections": [
+    {
+      "h": "How a Dhanbad oven runs",
+      "p": [
+        "The units charge 5 to 8 t of blended coal into horizontal non-recovery ovens, with a 48 hour cycle and at most 15 batches a month. Volatiles and by-products burn inside the oven at 1,200 to 1,300 C, which is the oven's only fuel after a cold start on biomass and diesel. The coke comes out as one lump and is water quenched. There is no temperature monitoring; firing is judged by eye. The cluster makes about 945,000 t of coke a year at about 75% yield, mostly for steel plants within 200 km, with a little exported."
+      ]
+    },
+    {
+      "h": "The 2016 energy table",
+      "ul": [
+        "Coal: 315,000 t, 204,750 toe, 826,875 t CO2.",
+        "Electricity: 30.24 million kWh, 2,601 toe, for crushers, conveyors, overhead bins, winding drums and pumps.",
+        "Diesel: 903 kL.",
+        "Total: 208,254 toe and 858,894 t CO2."
+      ]
+    },
+    {
+      "h": "Reading the 315,000 t",
+      "p": [
+        "At 75% yield, 945,000 t of coke needs about 1.26 million t of coal charged. The 315,000 t in the table matches the quarter of that charge that does not come out as coke: the volatiles that burn in the oven. The cluster's CO2 comes from that part. For your own oven, a carbon balance on coal in and coke out is more accurate than any cluster average."
+      ]
+    },
+    {
+      "h": "Savings in the profile",
+      "ul": [
+        "Insulating refractory lining with ceramic fibre between brick layers.",
+        "Temperature probes at two crown points in each oven, so air ports are set to the reading.",
+        "Double track charging, which spreads the batch evenly and improves yield.",
+        "Full loading: wall losses stay the same when fewer ovens run.",
+        "Flue gas leaves above 1,000 C; with today's ovens, waste heat recovery is limited."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per tonne of hard coke (estimate)",
+    "lines": [
+      "Oven: 826,875 t CO2 / 945,000 t coke = 0.88 t",
+      "Electricity: 30.24 million kWh / 945,000 t = 32 kWh x 0.675 kg = 22 kg",
+      "Diesel: 903 kL x 2.645 t = 2,388 t, or 2.5 kg per tonne",
+      "Total about 0.90 t CO2 per tonne of coke",
+      "Typical unit: 2,083 toe / 0.220 = about 9,470 t coke, about 8,500 t CO2 a year"
+    ],
+    "note": "Oven CO2 is TERI's figure; electricity uses the CEA factor for FY 2025-26 and diesel the IPCC 2006 default. Test your coal and coke for carbon to replace the cluster figure with your own."
+  },
+  "senseible": "Senseible reads power bills and diesel slips into monthly CO2 lines and keeps coal purchase invoices and weighbridge slips in the same dated record, so the inputs to your carbon balance trace back to documents.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Dhanbad coke plant CO2 per tonne", "to": "/answers/dhanbad-hard-coke-plant-co2-per-tonne" },
+    { "label": "Bought met coke upstream", "to": "/answers/purchased-met-coke-upstream-emissions" },
+    { "label": "Dhanbad coal washery power", "to": "/answers/dhanbad-coal-washery-electricity-per-tonne" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Dhanbad coke oven industries (SAMEEEKSHA, 2016 data)", "url": "https://sameeeksha.org/pdf/clusterprofile/Dhanbad-CokeOven-Industries-Jharkhand.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "red-hills-vs-villupuram-rice-mills-energy-co2",
+  "q": "How do the Red Hills and Villupuram rice mill clusters in Tamil Nadu compare on energy, firewood and CO2?",
+  "title": "Red Hills vs Villupuram rice mills: energy",
+  "short": "Red Hills, near Chennai, used 19,118 toe in 2014-15 for about 279,000 t of rice; Villupuram used 11,305 toe for 76,000 t. Villupuram's small mills dry paddy on firewood, 20% of its heat, and need about 0.15 toe per tonne of rice against Red Hills' 0.07. Grid power carries the fossil CO2.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Parboiled and raw rice mills in Red Hills (Thiruvallur) and Villupuram district, Tamil Nadu",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "Red Hills: about 200 mills, about 100 still running: 70 parboiled and 30 hulling units supplying government programmes. 429,000 t of paddy gives about 279,000 t of rice, 69% of it parboiled.",
+        "Red Hills energy: 54,990 t of husk and some wood, 16,497 toe; 30.5 million kWh, 2,621 toe. Boilers average about 2.5 tph at 10 kg per cm2.",
+        "Villupuram: about 90 mills, about 50 running at about 30% of capacity: 40 of 2 tph and 10 of 4 tph, making about 76,000 t of rice, mostly parboiled.",
+        "Villupuram energy: 25,344 t of husk, 8,186 toe; 5,640 t of firewood, 2,260 toe; 10 million kWh, 859 toe. Boilers average about 3 tph at 8 kg per cm2."
+      ]
+    },
+    {
+      "h": "Why Villupuram needs twice the energy per tonne",
+      "p": [
+        "The Villupuram profile lists the reasons: smaller mills dry steamed paddy with wood fired hot air instead of steam, boilers in small mills are of obsolete design with no monitoring, and smaller mills have no steam traps. Running at about 30% of capacity likely adds to it, since boiler and standing losses are spread over less rice."
+      ]
+    },
+    {
+      "h": "Firewood is the fuel you pay for",
+      "p": [
+        "Husk comes from your own paddy; firewood is bought. Villupuram's mills spent about Rs 19.7 million on 5,640 t of it in a year. In Red Hills, a few units mix wood with husk to cut particulate emissions near homes. Either way, wood and husk CO2 is biogenic and reported apart from the Scope 1 total."
+      ]
+    },
+    {
+      "h": "Power per tonne",
+      "p": [
+        "Red Hills uses about 109 kWh per tonne of rice and Villupuram about 132. Because husk and wood are biogenic, those kWh are nearly all of the fossil CO2 a rice buyer sees."
+      ]
+    },
+    {
+      "h": "A note on the Red Hills CO2 figure",
+      "p": [
+        "The Red Hills profile's table shows 2,988 t CO2 against 30.5 million kWh, far less than that many units imply at any Indian grid factor. Work from the kWh on your bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Fossil and biogenic CO2, both clusters (estimate)",
+    "lines": [
+      "Red Hills power: 30.5 million kWh x 0.675 kg = 20,588 t fossil, about 74 kg per tonne of rice",
+      "Red Hills husk and wood: 16,497 toe x 41.868 GJ x 100 kg = about 69,070 t biogenic",
+      "Villupuram power: 10 million kWh x 0.675 = 6,750 t fossil, about 89 kg per tonne of rice",
+      "Villupuram husk: 8,186 toe x 41.868 x 100 kg = about 34,270 t biogenic",
+      "Villupuram firewood: 2,260 toe x 41.868 x 112 kg = about 10,600 t biogenic"
+    ],
+    "note": "Energy and output from TERI's Red Hills and Villupuram profiles (2014-15). Biogenic CO2 uses IPCC 2006 defaults for solid biomass and for wood; the grid factor is CEA's for FY 2025-26."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 at the CEA factor and keeps firewood and husk bills in the same record, so the fossil figure a buyer asks for traces to your documents.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Parboiled vs hulling mill energy", "to": "/answers/red-hills-parboiled-vs-hulling-mill-energy" },
+    { "label": "Villupuram firewood dryer swap", "to": "/answers/villupuram-rice-mill-firewood-dryer-gasifier" },
+    { "label": "Biomass boilers still have Scope 1", "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Red Hills rice mill cluster (SAMEEEKSHA, 2014-15 data)", "url": "https://sameeeksha.org/pdf/clusterprofile/RedHills_RiceMills_TamilNadu.pdf" },
+    { "label": "TERI, Cluster profile: Villupuram rice mills (SAMEEEKSHA, 2014-15 data)", "url": "https://sameeeksha.org/pdf/clusterprofile/Villupuram_Rice_Mills_Tamil%20Nadu.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "ballari-steel-cluster-energy-and-co2",
+  "q": "What is the total energy use and CO2 of the Ballari iron and steel cluster outside the integrated plant?",
+  "title": "Ballari steel cluster: energy and CO2",
+  "short": "Leaving out JSW's integrated plant, TERI's 2025 study counts 42 iron and steel plants in Ballari making 8.71 million t a year, using 1.84 Mtoe and emitting 8.34 million t CO2. Sponge iron is most of it: 27 plants and 5.64 million t CO2, about two thirds.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Sponge iron, pellet, induction furnace, re-rolling and ferro alloy plants in Ballari district, Karnataka",
+  "sections": [
+    {
+      "h": "The 42 plants",
+      "ul": [
+        "Sponge iron: 27 (23 stand-alone, 4 within composite plants), 2.616 million t.",
+        "Pellets: 4, 4.54 million t. Induction furnace: 3. Re-rolling: 4. Ferro alloy: 2. One mini blast furnace and one BF-BOF plant.",
+        "Most are designated consumers under BEE's PAT scheme, so they already report energy to BEE."
+      ]
+    },
+    {
+      "h": "Coal is the story",
+      "p": [
+        "Coal and coke, 3.34 million t a year, give 94% of the energy and 7.4 million t CO2, more than 88% of the total. Sponge iron kilns burn 2.61 million t of it. Electricity, 1,330 million kWh, is 6% of energy and about 11% of CO2."
+      ]
+    },
+    {
+      "h": "Why a cluster average per tonne misleads",
+      "p": [
+        "8.34 / 8.71 looks like 0.96 t CO2 a tonne, but more than half of the 8.71 million t is pellets that go on into the kilns, so tonnes are counted twice. Use the figure for your own process instead."
+      ]
+    },
+    {
+      "h": "What the study suggests",
+      "ul": [
+        "Sponge iron: waste heat power, kiln preheating from waste heat, pellets in place of lump ore, mullite kiln lining, drives on fans and pumps, and in time gas-based DRI.",
+        "Induction furnaces: scrap bundling, continuous casting with direct rolling.",
+        "Re-rolling: recuperators, coal gasifiers in place of pulverised coal, better furnace lining."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne by process (from the study)",
+    "lines": [
+      "Sponge iron: 5.64 million t / 2.616 million t = 2.16 t CO2 per tonne",
+      "Ferro alloy: 0.60 / 0.137 = 4.4 t CO2 per tonne",
+      "Mini blast furnace: 0.49 / 0.24 = 2.0 t CO2 per tonne",
+      "Induction furnace: 0.21 / 0.30 = 0.70 t CO2 per tonne",
+      "Re-rolling: 0.16 / 0.572 = 0.28 t CO2 per tonne",
+      "Pellets: 0.64 / 4.54 = 0.14 t CO2 per tonne"
+    ],
+    "note": "Production and CO2 from TERI's 2025 Ballari study, which excludes JSW's integrated plant."
+  },
+  "senseible": "Senseible reads coal invoices (1.76 t CO2 a tonne Indian, 2.44 imported) and power bills into monthly records; electricity stays in the record for buyers' footprints even though CBAM leaves it out for steel. Coke needs your supplier's factor.",
+  "links": [
+    {
+      "label": "CBAM for exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "kWh and coal per tonne by process",
+      "to": "/answers/secondary-steel-sec-by-process-ballari"
+    },
+    {
+      "label": "Ballari pellet plant CO2",
+      "to": "/answers/ballari-pellet-plant-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, In-depth study: Iron and steel industries in Ballari cluster (2025)",
+      "url": "https://sameeeksha.org/pdf/publications/Ballari%20Cluster%20Report%20Report.pdf"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

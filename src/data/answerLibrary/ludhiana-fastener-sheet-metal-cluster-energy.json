@@ -1,0 +1,85 @@
+{
+  "slug": "ludhiana-fastener-sheet-metal-cluster-energy",
+  "q": "What is the energy use of Ludhiana's fastener and sheet metal cluster?",
+  "title": "Ludhiana fasteners and sheet metal: energy",
+  "short": "Small next to the steel inside the parts. SAMEEEKSHA puts Ludhiana's 1,000 fastener and 700 sheet metal units at 14,073 toe a year, on electricity and diesel, for 591,000 t of product. That is about 24 kg of oil equivalent a tonne; the wire rod and sheet you buy carry far more.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Fastener and sheet metal part makers in Ludhiana answering OEM and EU buyers",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 1,000 fastener units and 700 sheet metal units, most of them MSMEs, in a district of about 39,000 industrial units.",
+        "219,000 t of fasteners a year, worth about Rs 1,400 crore: bolts and nuts, studs, rivets, threaded bars, hex screws.",
+        "372,000 t of sheet metal products, worth about Rs 3,500 crore: washers, clamps, housings, brackets.",
+        "About 33,000 jobs. Main energy: electricity, with diesel for generators."
+      ]
+    },
+    {
+      "h": "Your own energy, per tonne",
+      "p": [
+        "14,073 toe over 591,000 t is about 24 kgoe a tonne. If it were all grid power that is about 277 kWh and 187 kg CO2 a tonne; if it were all diesel, about 74 kg. Electricity is the main fuel, so most units will sit nearer the top of that range. Your own bills give the real figure."
+      ]
+    },
+    {
+      "h": "Where CBAM comes in",
+      "p": [
+        "Fasteners of iron or steel (heading 7318) and many other articles of steel (7326) are CBAM goods unless declared as parts of a machine or vehicle. For steel goods CBAM counts direct emissions only, so your electricity drops out and the embedded emissions of the wire rod or sheet you bought become almost the whole figure."
+      ]
+    },
+    {
+      "h": "What to collect first",
+      "ol": [
+        "Tonnes of wire rod, bar or sheet bought, by supplier and grade, for the calendar year.",
+        "Each steel supplier's embedded emissions per tonne, or their CBAM data if they have it.",
+        "Your diesel and any other fuel burnt on site, from invoices.",
+        "Electricity, for the buyers who want a full product footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per tonne of product (estimate)",
+    "lines": [
+      "Energy: 14,073 toe / 591,000 t = 23.8 kgoe per tonne",
+      "As grid power: 23.8 kgoe = 277 kWh x 0.675 = 187 kg CO2",
+      "As diesel: 23.8 kgoe x 3.1 t CO2 per toe = 74 kg CO2",
+      "Cluster: between about 44,000 and 110,000 t CO2 a year from energy"
+    ],
+    "note": "Cluster figures from SAMEEEKSHA's Ludhiana fasteners summary, which gives no split between power and diesel, hence the range. 1 toe taken as 11,628 kWh; diesel CO2 from IPCC 2006."
+  },
+  "senseible": "Senseible reads your diesel invoices and power bills into monthly records, and its CBAM pages show how your steel supplier's figure and your own fuel combine into what an EU importer reports.",
+  "links": [
+    {
+      "label": "CBAM for exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "Are nuts and bolts covered by CBAM?",
+      "to": "/answers/are-nuts-and-bolts-covered-by-cbam"
+    },
+    {
+      "label": "Why the steel bar dominates",
+      "to": "/answers/ludhiana-forging-cbam-figure-steel-bar-share"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Cluster summary: Ludhiana fasteners",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=250&Itemid=502"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "brsr-scope-3-intensity-per-rupee-turnover",
+  "q": "How is Scope 3 intensity per rupee of turnover reported in BRSR?",
+  "title": "BRSR Scope 3 intensity per rupee",
+  "short": "Divide total Scope 3 emissions, in tonnes of CO2e, by total turnover in rupees for the same year. It sits in Principle 6 leadership indicator 2, which also asks for a gas break-up if available, an optional intensity metric you choose, both years, and whether an external agency assessed the figure.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed companies preparing BRSR, and suppliers whose data feeds it",
+  "sections": [
+    {
+      "h": "The table, line by line",
+      "ul": [
+        "Total Scope 3 emissions, metric tonnes of CO2e, with a break-up into CO2, CH4, N2O, HFCs, PFCs, SF6 and NF3 if available.",
+        "Total Scope 3 emissions per rupee of turnover.",
+        "Total Scope 3 emission intensity, optional, on a metric the entity picks.",
+        "Current and previous financial year.",
+        "A note: was it independently assessed, evaluated or assured by an external agency, and if so, which one."
+      ]
+    },
+    {
+      "h": "What SEBI says about the arithmetic",
+      "p": [
+        "SEBI's guidance note defines it as total Scope 3 emissions divided by total turnover in rupees. For other metrics it suggests units of product, production volume, floor area or full-time employees. It asks you to exclude GHG trades, apply GWP values and factors consistently, and disclose their sources.",
+        "Unlike the Scope 1 and 2 table, the Scope 3 table has no PPP-adjusted line. It is a leadership indicator, so it is voluntary."
+      ]
+    },
+    {
+      "h": "Write the unit out",
+      "p": [
+        "Per rupee gives a tiny number, and a misplaced zero is the most common error. Give the figure per rupee as asked, and write the same value per crore of turnover beside it so a reader can check it."
+      ]
+    },
+    {
+      "h": "What the table does not ask",
+      "p": [
+        "There is no line for categories. Name the Scope 3 categories you included and excluded in a note; the GHG Protocol Scope 3 Standard requires that list, with reasons for each exclusion."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Rs 1,200 crore turnover",
+    "lines": [
+      "Scope 3: purchased goods 21,000 t + upstream freight 3,000 t + travel and commuting 1,000 t = 25,000 t CO2e",
+      "Turnover: Rs 1,200 crore = Rs 12,00,00,00,000",
+      "Per rupee: 25,000 / 12,00,00,00,000 = 0.00000208 t CO2e, which is 2.08 g CO2e per rupee",
+      "Per crore: 25,000 / 1,200 = 20.83 t CO2e",
+      "Optional metric: 25,000 t / 50,000 t of product = 0.5 t CO2e per tonne"
+    ],
+    "note": "Example figures."
+  },
+  "senseible": "Senseible keeps purchase, freight and other Scope 3 lines in a separate supplier evidence trail with the document behind each. Its BRSR output is a self-declared draft, so the external agency note stays No unless an independent body checked the figure.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Does BRSR require Scope 3?",
+      "to": "/answers/does-brsr-require-scope-3"
+    },
+    {
+      "label": "Intensity adjusted for PPP",
+      "to": "/answers/brsr-emission-intensity-per-rupee-ppp"
+    },
+    {
+      "label": "Which gases BRSR includes",
+      "to": "/answers/brsr-which-greenhouse-gases-to-include"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR format updated July 2023 (Annexure II to the BRSR Core circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    },
+    {
+      "label": "SEBI, master circular of 11 July 2023, Annexures 16 and 17 (earlier BRSR format and guidance note)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard, chapter 7 (collecting data) and section 11.1 (required information)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Re-check the BRSR format and guidance note after any SEBI circular amending Annexure 16 or 17."
+}

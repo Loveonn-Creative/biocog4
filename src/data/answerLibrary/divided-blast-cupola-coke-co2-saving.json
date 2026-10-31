@@ -1,0 +1,82 @@
+{
+  "slug": "divided-blast-cupola-coke-co2-saving",
+  "q": "How much CO2 does converting a foundry cupola to divided blast save?",
+  "title": "Divided blast cupola: coke and CO2 saved",
+  "short": "Roughly 75 t of CO2 a year in BEE's Batala, Jalandhar and Ludhiana report: fuel per 2.14 t melt drops from 500 kg to 400 kg, or 25 t over 250 melts. The report's own 25 t CO2 figure undercounts. Cost Rs 6.64 lakh, saving Rs 3.95 lakh a year, payback 1.68 years (2011).",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Grey iron foundry owners in Punjab and other cupola clusters deciding whether to rebuild a conventional cupola as a divided blast cupola",
+  "sections": [
+    {
+      "h": "The cupola BEE costed",
+      "ul": [
+        "One melt a day in an 8 to 10 hour shift, 250 days a year.",
+        "About 2.14 t of cast iron a melt at 1,300 to 1,500 C, taking 5 to 7 hours.",
+        "Fuel per melt falls from 500 kg to 400 kg, charge from 2.14 t to 2.10 t, and rejected metal from 140 kg to 100 kg.",
+        "Downtime for the rebuild: 3 weeks."
+      ]
+    },
+    {
+      "h": "What a divided blast cupola changes",
+      "p": [
+        "Blast air enters through two rows of tuyeres about a metre apart, split roughly equally, each row with its own wind belt so pressure and volume can be set separately.",
+        "Studies by BCIRA quoted in the report found 20 to 32% less charge coke and an 11 to 23% faster melt at the same tapping temperature. TERI's 1988 demonstration cupola in Howrah cut coke by 35% against a poorly designed divided blast unit."
+      ]
+    },
+    {
+      "h": "Why the report's 25 t CO2 is too low",
+      "p": [
+        "The report saves 25 t of fuel a year and lists 25 t of CO2, though its own note gives 2.1 t of CO2 per tonne of fuel, which would be 52.5 t. It calls the fuel coal; cupolas burn foundry coke. At the IPCC default for coke, about 3.02 t of CO2 per tonne, 25 t of coke is about 75 t of CO2. If your invoices really show coal, use your coal's factor."
+      ]
+    },
+    {
+      "h": "Before you rebuild",
+      "ul": [
+        "Get the design worked out for your shell: tuyere area and number, the top to bottom air ratio, blower volume and pressure, well depth and stack height. A copied design loses most of the saving.",
+        "Weigh coke into every charge for a month before and after.",
+        "Track coke per tonne of good castings, not per tonne melted, so fewer rejects show up too."
+      ]
+    }
+  ],
+  "example": {
+    "title": "250 melts a year, before and after",
+    "lines": [
+      "Before: 500 kg x 250 = 125 t coke x 3.02 = 377.5 t CO2",
+      "After: 400 kg x 250 = 100 t coke x 3.02 = 302 t CO2",
+      "Saved: 25 t coke, about 75.5 t CO2 a year",
+      "Per tonne melted: 500 / 2.14 = 234 kg coke (706 kg CO2) down to 400 / 2.10 = 190 kg (575 kg CO2)"
+    ],
+    "note": "Coke at the IPCC 2006 default, 107,000 kg CO2 per TJ at 28.2 GJ per tonne, an estimate. Blower power and limestone are left out."
+  },
+  "senseible": "Senseible reads coke and power invoices into monthly records with CO2 for each, so the change after a cupola rebuild shows up per tonne once you add your production. The green loan check tells you what a lender will ask for.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Cupola CO2 per tonne of castings",
+      "to": "/answers/cupola-furnace-coke-emissions-per-tonne"
+    },
+    {
+      "label": "Batala cupola coke per tonne",
+      "to": "/answers/batala-foundry-cupola-coke-per-tonne"
+    },
+    {
+      "label": "Cupola or induction furnace",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: divided blast cupola furnace, Batala, Jalandhar and Ludhiana foundry cluster (2011, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Batala_Jalandhar_Ludhiana_foundry_cluster/Divided_blast_cupola_furnace_Batala_Jlndr_Ludh_Fdry_Cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

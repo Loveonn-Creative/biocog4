@@ -1,0 +1,88 @@
+{
+  "slug": "giridih-secondary-steel-cluster-energy-co2",
+  "q": "What is the energy use and CO2 of the Giridih secondary steel cluster in Jharkhand?",
+  "title": "Giridih secondary steel: energy and CO2",
+  "short": "TERI's May 2024 profile puts Giridih's steel units at 1.49 million t of coal and 1,095 million kWh a year, about 0.88 million toe, and 3.93 million t CO2. Sponge iron is half of it: 1.97 million t CO2 from 0.75 million t of DRI.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Sponge iron, pig iron, steel melting, ferro alloy, re-rolling and wire units around Tundi Road, Giridih",
+  "sections": [
+    {
+      "h": "What the cluster makes",
+      "ul": [
+        "About 30 steel units, mostly on Tundi Road. TERI's production table: DRI 7,50,000 t, pig iron 6,45,000 t, steel melting 6,00,000 t, ferro alloys 37,400 t, re-rolling, wire and others 5,86,800 t.",
+        "Known for Fe 550 and Fe 600 TMT bars; also billets, wire rod, binding and barbed wire, nails.",
+        "Most units take DVC power for its reliability and lower tariff."
+      ]
+    },
+    {
+      "h": "CO2 by unit type",
+      "ul": [
+        "DRI: 1.05 million t of coal and 90 million kWh, 1.97 million t CO2.",
+        "Pig iron: 0.39 million t of coal and coke, 1.17 million t CO2.",
+        "Steel melting: 720 million kWh, 0.51 million t CO2.",
+        "Ferro alloys: 180 million kWh, 0.21 million t CO2."
+      ]
+    },
+    {
+      "h": "Giridih kilns burn more coal per tonne",
+      "p": [
+        "1.05 million t of coal for 0.75 million t of DRI is 1.4 t a tonne. TERI's Ballari study puts sponge iron at 1.0 to 1.2 t. Some of the gap is coal quality, so compare heat per tonne using your coal's GCV, but a kiln at 1.4 t has room to save."
+      ]
+    },
+    {
+      "h": "What TERI says would help",
+      "ul": [
+        "Waste heat power: a 2 x 100 tpd DRI plant could generate about 4 MW.",
+        "Better kiln lining: about 5 kg of coal saved per tonne.",
+        "Recuperators on reheating furnaces: up to 25% less fuel.",
+        "Continuous casting with direct rolling in place of reheating, and IE3 or IE4 motors: about 10% of motor power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne by unit type (from the profile)",
+    "lines": [
+      "DRI: 1.97 million t CO2 / 0.75 million t = 2.6 t CO2 per tonne",
+      "Pig iron: 1.17 / 0.645 = 1.8 t CO2 per tonne",
+      "Steel melting: 0.51 / 0.60 = 0.85 t CO2 per tonne (1,200 kWh a tonne)",
+      "Ferro alloys: 0.21 / 0.0374 = 5.6 t CO2 per tonne",
+      "Cluster: 3.93 / 2.62 = 1.5 t CO2 per tonne of all products"
+    ],
+    "note": "From TERI's May 2024 Giridih profile. The cluster average adds stages that feed each other, so use your own unit type."
+  },
+  "senseible": "Senseible reads coal invoices and DVC bills into monthly records you can divide by tonnes; coke needs your supplier's factor. The CBAM pages show what a DRI or billet figure means for an EU buyer.",
+  "links": [
+    {
+      "label": "CBAM for exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "Giridih sponge iron CBAM figure",
+      "to": "/answers/giridih-sponge-iron-kiln-cbam-figure"
+    },
+    {
+      "label": "Bankura steel cluster",
+      "to": "/answers/bankura-secondary-steel-cluster-energy-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Giridih secondary steel cluster (May 2024)",
+      "url": "https://sameeeksha.org/pdf/Cluster%20Profile%20-%20Giridih%20sec%20steel.pdf"
+    },
+    {
+      "label": "TERI, In-depth study: Iron and steel industries in Ballari cluster (2025)",
+      "url": "https://sameeeksha.org/pdf/publications/Ballari%20Cluster%20Report%20Report.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

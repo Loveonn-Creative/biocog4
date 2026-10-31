@@ -1,0 +1,64 @@
+{
+  "slug": "yamunanagar-plywood-unit-sawdust-and-power",
+  "q": "How much sawdust and electricity does a typical plywood unit use compared with a peeling unit or saw mill?",
+  "title": "Yamunanagar plywood: sawdust and power",
+  "short": "Far more. A typical Yamunanagar plywood unit burns 1,382 t of sawdust and uses 171,160 kWh a year, 457 toe, against about 4 toe for a peeling unit (50,281 kWh) or a saw mill (48,384 kWh). Sawdust is 97% of a plywood unit's energy, and its CO2 is biogenic.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Plywood, block board and flush door makers, veneer peeling units and saw mills in Yamunanagar, Haryana",
+  "sections": [
+    {
+      "h": "Three kinds of unit",
+      "ul": [
+        "300 plywood units of about 10,000 sq ft a day, together about 3 million sq ft a day.",
+        "356 peeling units of about 3,500 sq ft a day, supplying veneer to plywood units that do not peel their own.",
+        "40 saw mills of about 1.5 t a day, cutting planks.",
+        "Peeling units and saw mills run on electricity alone; plywood units add a sawdust boiler or thermic fluid heater."
+      ]
+    },
+    {
+      "h": "Where the plywood unit's heat goes",
+      "p": [
+        "Planks come in at about 50% moisture and are dried to 3 to 5% in seasoning chambers over 5 to 7 days, with steam coils and circulation fans. Sheets go through hot chambers, impregnators or stenters, then the hot press. The fuel is sawdust from the unit's own production."
+      ]
+    },
+    {
+      "h": "Savings TERI costed for a typical unit",
+      "ul": [
+        "Sawdust fired hot air generator instead of steam heating: moisture removal from 75 to about 110 kg an hour, 20% less sawdust and 15% less electricity, about Rs 8.21 lakh a year.",
+        "Combustion air control: 5%, 69 t of sawdust, Rs 1.4 lakh a year for Rs 0.7 lakh, payback about 6 months.",
+        "Better condensate return with pressure powered pumps: 6%, 83 t of sawdust.",
+        "Solar air heating to pre-dry planks by 15 to 20% moisture in 1 to 2 days."
+      ]
+    },
+    {
+      "h": "What a buyer gets from you",
+      "p": [
+        "For a plywood unit, fossil CO2 is mostly the power bill. Report sawdust CO2 as biogenic on its own line, count the methane and nitrous oxide from the boiler in Scope 1, and give resin as a separate purchased input. A peeling unit or saw mill can send kWh per square foot or per tonne and be done."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One year, three units (estimate)",
+    "lines": [
+      "Plywood: 171,160 kWh x 0.675 kg = 116 t fossil CO2",
+      "Plywood sawdust: 442 toe x 41.868 GJ x 112 kg = about 2,070 t biogenic",
+      "Peeling: 50,281 kWh x 0.675 = 34 t; saw mill: 48,384 kWh x 0.675 = 33 t",
+      "Hot air generator on the plywood unit: 15% of power = 25,670 kWh, 17 t CO2; 20% of sawdust = 276 t"
+    ],
+    "note": "Unit figures from TERI's Yamunanagar profile. Sawdust energy is total toe less electricity; biogenic CO2 uses the IPCC 2006 default for wood. Grid factor from CEA for FY 2025-26."
+  },
+  "senseible": "Senseible reads your power bills into monthly kWh and CO2 and builds the supplier evidence trail a buyer checks, each figure linked to the bill behind it.",
+  "links": [
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" },
+    { "label": "Yamunanagar plywood resin", "to": "/answers/yamunanagar-plywood-resin-scope-3" },
+    { "label": "Plywood CO2 per cubic metre", "to": "/answers/plywood-carbon-footprint-per-cubic-metre" },
+    { "label": "Biomass boilers still have Scope 1", "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Yamunanagar plywood industry cluster (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/YamunaNagarPlywood.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31"
+}
