@@ -1,0 +1,82 @@
+{
+  "slug": "cbam-monitoring-plan-checklist-verifiers-use",
+  "q": "What checklist does a CBAM verifier use on our monitoring plan?",
+  "title": "The checklist a CBAM verifier uses on a plan",
+  "short": "The Commission gives verifiers an example checklist, not a fixed form. It asks whether your plan draws the installation boundary, covers every source stream, stockpile and tank, uses the best available data sources, puts every CN code in exactly one production process, and has written procedures for new products, supplier verification reports, lab work and calibration.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian CBAM goods producers preparing a monitoring plan for its first assessment by an accredited verifier",
+  "sections": [
+    {
+      "h": "Two questions behind every line",
+      "ol": [
+        "Is this part of the plan allowed by the Methodology Act and the CBAM Regulation? A method the Act does not permit, a variable with no monitoring method, or the wrong functional unit fails here.",
+        "Does it only meet the minimum, or is a better method available? The verifier looks for improvements you could make with equipment you already have, and for longer-term ones that would make your data more accurate."
+      ]
+    },
+    {
+      "h": "Boundaries and the plant description",
+      "ul": [
+        "A plan of the installation and a flow diagram showing which energy and material flows and measurement points belong to it, and which belong to non-CBAM goods or to another operator's installation.",
+        "Materials, fuels, heat or electricity you send out to other installations, not only what you receive.",
+        "A description clear enough to follow each production process, the energy supply, the material flows and the reactions or treatment that make each good.",
+        "If the plant or plan changed, changes that are consistent with the previous version and with your explanation."
+      ]
+    },
+    {
+      "h": "Source streams and data sources",
+      "ul": [
+        "For each source stream, how the quantity is measured and how its net calorific value, emission factor and biomass fraction are set.",
+        "Any continuous emission measurement systems properly specified.",
+        "Stockpiles and tanks of fuels, materials, precursors and finished goods taken into account.",
+        "The best available data source used for every flow (Methodology Act, Annex II, section A.3).",
+        "If you burn biomass and want it zero-rated, a written procedure for meeting the EU renewable energy directive criteria, including whether you will get proofs of sustainability from a certification scheme the Commission recognises.",
+        "For data at high risk of loss, a corroborating data source or a procedure for filling gaps."
+      ]
+    },
+    {
+      "h": "Goods, CN codes and production processes",
+      "ul": [
+        "A list of the CN codes you produce, split by benchmark indicator where needed.",
+        "Goods grouped into a process only under the Methodology Act's Article 4 rules. Steel or aluminium goods share a process only if they differ just in size or shape and use the same precursors in the same types, quantities and proportions.",
+        "The bubble approach used only where no precursor made in that process is sent out of it.",
+        "Every CN code assigned to exactly one production process.",
+        "A written procedure for assigning new products to an existing or new process.",
+        "A clear method for each good's production figure in the right functional unit, with a written conversion where you need one, such as tonnes of cement to tonnes of clinker."
+      ]
+    },
+    {
+      "h": "Suppliers, precursors, heat and electricity",
+      "ul": [
+        "A list of every installation you receive precursors from and, where indirect emissions count for your goods, heat and electricity from, with a procedure for keeping it current.",
+        "A procedure for collecting verification reports from those suppliers and, where none arrives, for using the right default value for the CN code, country of origin and production year.",
+        "Where one precursor comes from several suppliers or several years, either a weighted average per CN code or a documented assignment to specific processes with evidence."
+      ]
+    },
+    {
+      "h": "Lab work and the control system",
+      "ul": [
+        "For lab analyses: a sampling plan that gives representative samples, enough samples under Annex II, section B.5.4.2, named analysis standards, and a lab accredited to ISO/IEC 17025 or with equivalent competence.",
+        "Written procedures for meter calibration and checks traceable to international standards, IT quality assurance, separation of duties, staff competence, internal review of data, corrections, control of outsourced work and record keeping with document versions.",
+        "A risk assessment that covers every risk the verifier has found, with a control for each."
+      ]
+    },
+    {
+      "h": "Having the procedure is not enough",
+      "p": [
+        "The checklist only asks whether each item exists. The verifier also judges whether it works: whether a meter's range fits the flow it measures, whether the uncertainty you state is reasonable, whether the instrument suits its surroundings, and whether a procedure names who does what, where the original data sits and where results are stored. A procedure nobody follows on the shop floor will show up during testing."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM Suite keeps each good's CN code, production process and supplier with the invoices and logs behind them, which is much of what this checklist asks for. We build it from your records, check every figure in-house, and an accredited verifier we partner with signs it off. Have your own verifier? Send it to them.",
+  "links": [
+    { "label": "Build your CBAM file", "to": "/cbam-suite" },
+    { "label": "Who assesses the plan, and how often", "to": "/answers/who-approves-cbam-monitoring-plan" },
+    { "label": "The 22 elements a plan must contain", "to": "/answers/cbam-monitoring-plan-minimum-elements-list" },
+    { "label": "Documents to give your verifier", "to": "/answers/cbam-documents-to-give-your-verifier" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 5.3", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "varanasi-brick-kilns-coal-per-kiln",
+  "q": "How much coal does a Varanasi brick kiln burn, and how much does a vertical shaft or zigzag kiln save?",
+  "title": "Varanasi brick kilns: coal per kiln",
+  "short": "A typical Varanasi Bull's trench kiln burns about 720 t of coal a season for 40 lakh bricks, 18 t per lakh. BEE's project report puts a vertical shaft kiln at 10.5 t per lakh, saving 300 t of coal a year. Zigzag firing sits between the two.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Brick kiln owners around Varanasi, Sarnath, Rohania, Haruhua and Badagaon",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 226 registered kilns; around 40% are closed or not operating.",
+        "Almost all are coal fired Bull's trench kilns with fixed chimneys; a few have induced draft fans.",
+        "Firing runs about 250 days, roughly November to June.",
+        "Some kilns mix sawdust or wood with coal; its energy is small."
+      ]
+    },
+    {
+      "h": "Energy per kg of brick",
+      "p": [
+        "Tonnes per lakh ignores brick weight and coal quality. The report measures 1.1 to 1.5 MJ per kg of fired brick in Varanasi. Its table puts fixed chimney kilns at 1.1 to 1.4, zigzag at 0.8 to 1.1 and vertical shaft at 0.7 to 1.0 MJ per kg."
+      ]
+    },
+    {
+      "h": "The vertical shaft kiln case",
+      "ul": [
+        "Project cost about Rs 30.97 lakh for 16,000 bricks a day.",
+        "Coal saved 300 t a year, worth about Rs 15 lakh.",
+        "Simple payback about 2 years.",
+        "Roofed, so it can run in the monsoon; it needs trained firemen round the clock."
+      ]
+    },
+    {
+      "h": "Records a lender or buyer wants",
+      "ol": [
+        "Coal bought each season, by invoice and weighbridge slip.",
+        "Bricks fired and bricks sold, with average fired weight.",
+        "Any wood or sawdust, kept separate as biogenic."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One kiln, one season (estimate)",
+    "lines": [
+      "Coal: 720 t x 1.76 t CO2 = 1,267 t CO2",
+      "Per lakh bricks: 18 t x 1.76 = 31.7 t CO2, or 317 kg per 1,000 bricks",
+      "Vertical shaft: 10.5 x 1.76 = 18.5 t per lakh; 300 t coal saved = 528 t CO2 a year",
+      "With imported coal at 2.44: 720 t gives 1,757 t CO2"
+    ],
+    "note": "Coal use and project figures from BEE's detailed project report for Varanasi; CO2 uses India's BUR-2 coal factor. Ask your supplier which coal you buy."
+  },
+  "senseible": "The green loan check shows what a lender will ask before a kiln conversion; Senseible reads coal invoices and weighbridge slips into season totals.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Brick kiln CO2 per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Zigzag conversion and credits",
+      "to": "/answers/zigzag-kiln-conversion-carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, DPR: vertical shaft brick kiln, 16,000 bricks a day, Varanasi",
+      "url": "https://sameeeksha.org/pdf/dpr/Varanasi_brick_cluster/Vertical_shaft_brick_kiln_firing_16000_brick_per_day_Varanasi.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

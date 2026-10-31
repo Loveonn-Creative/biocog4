@@ -22,7 +22,7 @@
     {
       "h": "Is your plan current?",
       "p": [
-        "The verifier checks whether the plan is the latest version and whether the plant or plan has changed. If the plan does not reflect what you do, the verifier asks for an update and may put verification on hold. Minor issues can go into the report instead of waiting."
+        "The verifier checks whether the plan is the latest version and whether the plant or plan has changed. If the plan does not reflect what you do, the verifier asks for an update and in principle puts verification on hold until it is made. It may carry on only if you accept that some work, at least the plan assessment, may have to be repeated against the updated plan. Minor issues can go into the report instead of waiting."
       ]
     },
     {
@@ -66,5 +66,5 @@
       "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
     }
   ],
-  "reviewed": "2026-10-25"
+  "reviewed": "2026-10-31"
 }

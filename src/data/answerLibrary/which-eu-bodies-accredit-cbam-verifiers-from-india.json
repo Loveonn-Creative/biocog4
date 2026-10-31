@@ -38,7 +38,7 @@
         "State your scopes, such as cement, crude steel or aluminium products, in the application. You need not cover every sector.",
         "Expect a document review, an office audit and at least one witness audit at a real installation. A new accreditation normally takes 6 to 12 months.",
         "You may sign a verification contract and start preliminary work before accreditation, but you can issue the verification report only once accredited and registered in the CBAM Registry.",
-        "The certificate lasts at most five years, with surveillance every year."
+        "The certificate lasts at most five years, with surveillance every year, the first within 12 months. The accreditation body can reduce your scope, suspend you, during which you may not verify, or withdraw the accreditation."
       ]
     },
     {
@@ -46,7 +46,7 @@
       "ol": [
         "Ask the verifier for its CBAM accreditation certificate and check the issuing body against the seven above, or against an EU firm's own national body.",
         "Check that the scope on the certificate covers your goods.",
-        "Check that the accreditation is valid on the day the verification report will be issued, not only when you sign.",
+        "Check that the accreditation is valid, and not suspended, on the day the verification report will be issued, not only when you sign. Your customers' verifiers check the same when they rely on your report for a precursor.",
         "Check the verifier is registered in the CBAM Registry. The Commission will publish the list of accredited verifiers on its CBAM verification page."
       ]
     }
@@ -61,9 +61,9 @@
   "sources": [
     { "label": "European Commission, State of play of CBAM accreditation (21 October 2026)", "url": "https://taxation-customs.ec.europa.eu/document/download/a782dacf-ab68-44cc-986c-28fd1b4daa94_en?filename=State-of-play%20CBAM%20accreditation.pdf" },
     { "label": "European Commission, verification of CBAM emissions page", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en" },
-    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 9.2.1 and 9.2.4", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 7.3, 9.2.1, 9.2.4, 9.3 and 9.4", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
     { "label": "European Commission, CBAM Questions and Answers (15 October 2026), questions 5.2, 5.5 and 5.10", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
   ],
-  "reviewed": "2026-10-29",
+  "reviewed": "2026-10-31",
   "reviewNote": "The Commission updates the state-of-play file; recheck which bodies accept third-country applicants at each new version."
 }

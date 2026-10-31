@@ -1,0 +1,80 @@
+{
+  "slug": "nagaur-hand-tools-forging-furnace-oil-carbon",
+  "q": "Nagaur's plier and hammer makers heat on furnace oil: what is the footprint per tonne?",
+  "title": "Nagaur pliers and hammers: CO2 per tonne",
+  "short": "Roughly 1.15 t CO2 per tonne of hand tools on today's factors. Nagaur's 55 or so units burn about 12 lakh litres of furnace oil a year, 86% of their energy, and use 1.9 million kWh to make about 4,200 t of tools, mostly pliers and hammers.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Forging units in Basni and machining units in Loharpura, and the Jalandhar exporters they supply",
+  "sections": [
+    {
+      "h": "How the cluster is split",
+      "ul": [
+        "41 forging units in Basni heat En-8 bar in oil fired furnaces and forge it under drop or spring hammers.",
+        "14 machining units in Loharpura grind, polish and assemble on electric machines.",
+        "No unit does both, so each half carries a different footprint.",
+        "Pliers and hammers are about 75% of output. Several units supply Jalandhar's exporters rather than export directly."
+      ]
+    },
+    {
+      "h": "Whose figure is it",
+      "p": [
+        "Almost all the furnace oil is burnt in Basni; Loharpura's footprint is mainly electricity. A forging unit's CO2 per tonne will be well above the cluster's 1.15 t, and a machining unit's well below. When a Jalandhar buyer asks for a figure, give your own, with the step you do named."
+      ]
+    },
+    {
+      "h": "The saving the study found",
+      "ul": [
+        "Forging furnaces are locally built of clay brick and mud with local burners and poor insulation.",
+        "Better insulation, a proper burner, air preheating from waste heat and temperature control: about 30% less oil.",
+        "Furnace auxiliaries such as right-sized motors and dampers: about 10%.",
+        "Machining motors and clutches: about 15%."
+      ]
+    },
+    {
+      "h": "What to record",
+      "ol": [
+        "Furnace oil litres from each invoice, and stock at month end.",
+        "Electricity bill units.",
+        "Tonnes of bar forged and tonnes of finished tools dispatched.",
+        "Rejects: the study estimates 4 to 5%, but nobody records them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster and an average forging unit (estimate)",
+    "lines": [
+      "Furnace oil: 12,00,000 litres x 2.97 kg = 3,564 t CO2",
+      "Electricity: 1.9 million kWh x 0.675 = 1,283 t CO2",
+      "Total about 4,850 t / 4,200 t of tools = 1.15 t CO2 per tonne",
+      "Average forging unit: 29,270 litres a year = 87 t CO2; a 30% furnace saving cuts about 8,780 litres and 26 t"
+    ],
+    "note": "Quantities from the UNIDO and TERI cluster brief, which itself gives 1.1 t per tonne. The per unit split assumes all oil is burnt in the 41 forging units."
+  },
+  "senseible": "The calculators give a per tonne figure from your oil and power; Senseible can read the oil invoices and bills behind it when a Jalandhar buyer wants records.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Jalandhar hand tools cluster",
+      "to": "/answers/jalandhar-hand-tools-cluster-energy-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UNIDO and TERI, Nagaur hand tools cluster brief",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/NagaurHandToolsClusterBrief.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "does-meter-uncertainty-count-in-cbam-materiality",
+  "q": "Does weighbridge or meter uncertainty count against the 5% CBAM materiality level?",
+  "title": "Meter uncertainty and CBAM materiality",
+  "short": "No. The uncertainty accepted in your assessed monitoring plan is not a misstatement and plays no part in the 5% materiality test. It counts only when you break the plan: a meter less accurate than the plan states, or one not installed, maintained or calibrated as the plan says. That is a non-conformity, and it can become a misstatement.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Plant heads and energy managers at Indian CBAM goods producers whose fuel meters, flow meters or weighbridges feed the emissions report",
+  "sections": [
+    {
+      "h": "Two numbers with two different jobs",
+      "p": [
+        "Uncertainty describes how good a measurement is. Materiality, 5% of the specific embedded emissions per tonne for each good, is the verifier's tool for planning its work and judging what it finds. The misstatement definition itself leaves out the uncertainty of meters and lab analyses, and the uncertainty in your assessed plan is treated as acceptable. So a weighbridge with a stated 1% uncertainty does not use up a fifth of your 5%."
+      ]
+    },
+    {
+      "h": "Where uncertainty does matter: writing the plan",
+      "p": [
+        "The Methodology Act sets no minimum uncertainty, but it expects you to choose the data source with the lower one. If you can read gas use from the gas grid operator's meter or from a meter you installed for process control, pick the one with the lower uncertainty. The verifier reviews the uncertainty figures you give with the plan, and they can affect whether it accepts the plan."
+      ]
+    },
+    {
+      "h": "When a meter breaks the plan",
+      "ul": [
+        "The instrument does not meet the uncertainty stated in your accepted plan, or not even the loosest end of the range in the Methodology Act.",
+        "The instrument is not installed properly, not working correctly, or not maintained or calibrated as the plan says. Its real uncertainty must then be assumed higher than the plan's figure, which assumed ideal conditions.",
+        "Either case is a non-conformity, and the verifier decides whether it adds up to a material misstatement: by judgement if you have no uncertainty assessment, or by arithmetic if you do."
+      ]
+    },
+    {
+      "h": "If calibration keeps slipping",
+      "p": [
+        "A meter not calibrated as the plan says is a non-conformity; if the error it causes is not material, the statement can still be positive. Meters never calibrated, the finding left uncorrected year after year and no calibrated results to fall back on can leave the verifier unable to state with reasonable assurance that your report is free of material misstatement. That is a negative statement, and your buyers then use default values."
+      ]
+    },
+    {
+      "h": "What to have ready",
+      "ul": [
+        "Calibration and maintenance records for every meter the plan names, on the schedule the plan sets. What counts as appropriate comes from legal metrology rules for trade instruments, or from the maker's specifications.",
+        "The uncertainty assessment you gave with the plan, so the verifier can work out the error instead of judging it.",
+        "A second source for key quantities, such as fuel purchases adjusted for stock changes, to replace a reading from a meter that fell out of line.",
+        "A replacement or recalibration date for any meter already flagged."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The Commission's own case: heavy fuel oil measured less accurately than planned",
+    "lines": [
+      "Annual consumption: 3,000 t of heavy fuel oil",
+      "Accepted plan: 6% uncertainty. Actual meter: 8%",
+      "Difference: 8% minus 6% = 2%; 3,000 x 2% = 60 t of fuel",
+      "Threshold the verifier set by judgement for fuel consumption: 5%, so 60 t is not material",
+      "No better data available: positive statement possible, but the non-conformity and misstatement are written into the report",
+      "Your action: replace the meter with one that meets the plan without undue delay, so the same finding does not return next year"
+    ],
+    "note": "If better data exists, the misstatement must be corrected, as every misstatement found must be."
+  },
+  "senseible": "Senseible sets each meter reading beside the fuel invoices and stock figures for the same period, so a drifting meter shows up as a gap before your verifier finds it. We build it from your records, check every figure in-house, and an accredited verifier we partner with signs it off. Have your own verifier? Send it to them.",
+  "links": [
+    { "label": "Prepare your CBAM file", "to": "/cbam-suite" },
+    { "label": "The 5% materiality level", "to": "/answers/cbam-verification-materiality-5-percent" },
+    { "label": "Misstatement vs non-conformity", "to": "/answers/cbam-misstatement-vs-non-conformity" },
+    { "label": "When a meter fails mid-year", "to": "/answers/cbam-meter-failure-data-gap-conservative-estimate" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.15 (Table 6), 6.1 and 6.3", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-31"
+}

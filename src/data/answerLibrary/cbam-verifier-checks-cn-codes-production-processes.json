@@ -1,0 +1,59 @@
+{
+  "slug": "cbam-verifier-checks-cn-codes-production-processes",
+  "q": "Does the CBAM verifier check our CN codes?",
+  "title": "Does a CBAM verifier check your CN codes?",
+  "short": "Yes. A CBAM verifier checks that each good and interim product carries the right CN code, that goods sit in production processes with no gaps or double counting, that no non-CBAM goods are inside a process boundary, and that products added during the year went to the right process.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian CBAM goods producers making several products, and the staff who classify them",
+  "sections": [
+    {
+      "h": "Why the code is a verification point",
+      "p": [
+        "CBAM goods are identified only by their CN codes, and where the CBAM Regulation lists a code shorter than 8 digits, every code starting with it is covered. Your figure per tonne is worked out per 8-digit CN code, and the 5% materiality level applies to each good by CN code. A wrong code can put a good in the wrong process, give it the wrong figure, or leave it out."
+      ]
+    },
+    {
+      "h": "The four checks",
+      "ol": [
+        "Goods and interim products, the precursors you make for your own complex goods, are assigned to the correct CN codes.",
+        "Every good is attributed to a production process, with no gaps and no double counting.",
+        "No non-CBAM goods sit inside a production process boundary by mistake, so emissions go only to CBAM goods.",
+        "Goods added to your range during the year were assigned to a suitable process."
+      ]
+    },
+    {
+      "h": "The grouping rules applied",
+      "ul": [
+        "Goods in one production process belong to the same aggregated goods category, or to the same group by composition where that fits better.",
+        "Crude steel, iron or steel products, unwrought aluminium and aluminium products are grouped in one process if they differ only in size or shape and use the same precursors in the same types, quantities and proportions.",
+        "Fertilisers in the same category are grouped if made from the same precursors in the same proportions, or of the same substance differing only in concentration.",
+        "Every CN code sits in exactly one production process.",
+        "A written procedure exists for placing new products."
+      ]
+    },
+    {
+      "h": "The product figures your buyer declares",
+      "p": [
+        "The verifier also checks the sector parameters you report with each good: the alloy grade of steel, the clinker content of cement, the nitrogen content of fertilisers and the rest listed in the Methodology Act. One way it does this is to compare your emissions report with what your customers' purchase orders required."
+      ]
+    },
+    {
+      "h": "If the classification is disputed",
+      "p": [
+        "Where you or the verifier doubt a code, the Commission's guidance says a customs expert's advice should be considered, and in exceptionally contentious cases the verification team may add a technical expert for CN classification. Agree the 8-digit code with your EU buyer's customs broker before the verification, so your report, your invoice and their import declaration all show the same one."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM Suite records each good by CN code and production process alongside the invoices and production logs behind it, so a verifier can trace any tonne to its code. We build it from your records, check every figure in-house, and an accredited verifier we partner with signs it off. Have your own verifier? Send it to them.",
+  "links": [
+    { "label": "Prepare your CBAM file", "to": "/cbam-suite" },
+    { "label": "Shipping bill and EU CN code differ", "to": "/answers/cbam-cn-code-mismatch-shipping-bill-vs-eu-declaration" },
+    { "label": "Which tonnes count as production", "to": "/answers/cbam-activity-level-off-spec-scrap-packaging" },
+    { "label": "Splitting a plant into processes", "to": "/answers/cbam-installation-split-into-production-processes" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1.1, 2.2.2, 5.3, 6.2 and 7.7", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -36,7 +36,7 @@
     {
       "h": "Indirect emissions cannot stand alone",
       "p": [
-        "No verifier can be accredited for LII by itself. It comes only together with group I, II, III, IV or V, and a body granting those groups must check the verifier's competence on indirect emissions too. If your goods carry indirect emissions and you buy electricity under a power purchase agreement or over a direct line, ask whether the team has checked smart meter data, single line diagrams and PPAs before."
+        "No verifier can be accredited for LII by itself. It comes only together with group I, II, III, IV or V, and a body granting those groups must check the verifier's competence on indirect emissions too. If your goods carry indirect emissions and you buy electricity under a power purchase agreement or over a direct line, ask whether the team has checked smart meter data, single line diagrams and PPAs before. If you use a power plant's verified emission factor instead of a default, that plant's verifier must have held the scope for its goods plus LII when it signed, and the report must cover the same year your goods were made."
       ]
     },
     {
@@ -61,8 +61,8 @@
     { "label": "Finding a CBAM accredited verifier", "to": "/answers/how-to-find-cbam-accredited-verifier" }
   ],
   "sources": [
-    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1.2, 9.2.3 and 9.2.4 (Table 11)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1.2, 7.5, 9.2.3 and 9.2.4 (Table 11)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
     { "label": "European Commission, CBAM Questions and Answers (15 October 2026), questions 5.6 and 5.19", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
   ],
-  "reviewed": "2026-10-29"
+  "reviewed": "2026-10-31"
 }

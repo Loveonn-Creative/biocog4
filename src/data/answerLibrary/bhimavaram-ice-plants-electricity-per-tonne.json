@@ -1,0 +1,77 @@
+{
+  "slug": "bhimavaram-ice-plants-electricity-per-tonne",
+  "q": "How much power per tonne of ice do Bhimavaram's ice plants use?",
+  "title": "Bhimavaram ice plants: kWh per tonne",
+  "short": "102 kWh per tonne on average. Bhimavaram's 80 block ice plants used 38.41 million kWh and 762 kL of diesel for about 376,000 t of ice a year. Plants observed ranged from 87 to 120 kWh per tonne; tube ice plants run at 55 to 65.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Block ice plants in Bhimavaram, Akividu and nearby serving prawn and fish handling",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "80 plants making 90 to 130 kg blocks; 45 of them are 31 to 40 tonnes a day.",
+        "All use ammonia as refrigerant, so there are no HFC top-ups to count.",
+        "Electricity is 98% of energy; diesel runs generators during cuts.",
+        "Blocks take about 48 hours to freeze in brine tanks."
+      ]
+    },
+    {
+      "h": "Where the kWh go",
+      "p": [
+        "In the 31 to 40 tonne plants, compressor motors take 82% of the power, raw water pumps 9%, circulation pumps 7% and agitators 1%. So compressor running hours and the ice actually pulled decide your kWh per tonne. Part-loaded plants score worst."
+      ]
+    },
+    {
+      "h": "Check your own figure",
+      "ol": [
+        "Take a month's units from the APEPDCL bill.",
+        "Count blocks pulled in the same days and multiply by block weight.",
+        "Divide kWh by tonnes. Above 110, check utilisation, brine tank insulation and compressor age.",
+        "Add generator diesel separately."
+      ]
+    },
+    {
+      "h": "Tube ice",
+      "p": [
+        "The cluster manual costs a 15 tonne a day tube ice plant at Rs 24 lakh, saving 189,000 kWh a year against a block plant running at 90 kWh per tonne, with a payback of about 3.4 years. It suits buyers who crush block ice anyway."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Carbon per tonne of ice (estimate)",
+    "lines": [
+      "Power: 102 kWh x 0.675 = 69 kg CO2 per tonne",
+      "Diesel: 762,220 litres x 2.645 kg / 376,000 t = 5.4 kg per tonne",
+      "Total about 74 kg CO2 per tonne of block ice",
+      "Tube ice at 60 kWh: 60 x 0.675 = 41 kg; 189,000 kWh saved = 128 t CO2 a year"
+    ],
+    "note": "From BEE's Bhimavaram ice making cluster manual; CO2 uses the CEA FY 2025-26 grid factor and Senseible's diesel factor."
+  },
+  "senseible": "The calculators turn your kWh and tonnes into a per tonne figure; Senseible can read the APEPDCL bills behind it each month.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Ice plant kWh per tonne benchmark",
+      "to": "/answers/ice-plant-kwh-per-tonne-benchmark"
+    },
+    {
+      "label": "Ice for fish handling: CO2",
+      "to": "/answers/ice-plant-electricity-per-tonne-of-ice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, Manual on energy conservation measures in ice making cluster, Bhimavaram",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Bhimavaram_Ice_Making.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

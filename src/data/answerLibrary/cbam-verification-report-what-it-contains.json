@@ -41,6 +41,9 @@
         "If your company is registered in the Registry, the report arrives there directly.",
         "If not, the verifier downloads an electronically signed PDF with the statement and a summary of verified emissions and sends it to you.",
         "You send that PDF and your full emissions report, the Excel file, to each EU declarant, who uploads both to the CBAM Declarants Portal."
+      ],
+      "p": [
+        "A verification report not created in the CBAM Registry cannot be used: issuing it there is what proves it is genuine. Without registering, you also hand every buyer your full emissions report, which is why the Commission recommends registering and working with your verifier through the Registry."
       ]
     },
     {
@@ -60,7 +63,8 @@
   "sources": [
     { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.14, 4.15 (Table 6 and footnote 76) and 4.16 (Table 7)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
     { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 5.19", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "European Commission, CBAM Guidance No. 1, Introduction to CBAM concepts (14 August 2026), section 2.4.4", "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf" },
     { "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated, Article 10a(5)", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
   ],
-  "reviewed": "2026-10-30"
+  "reviewed": "2026-10-31"
 }
