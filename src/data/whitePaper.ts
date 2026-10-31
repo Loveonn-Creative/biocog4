@@ -21,6 +21,11 @@
 //   5.2 grounding               supabase/functions/intelligence-chat/index.ts (<records> block, leak check)
 //   5.3 projection              supabase/functions/_shared/intelligence.ts projectTrend, PROJECTION_MIN_MONTHS
 //   Power relations             IEEE Std 1459-2010 (sinusoidal definitions)
+//   Supplier sharing (2, 6.2,   drizzle/migrations/0034_enterprise_pilot.sql and 0038 (token_hash, link claims, reminder links, share_with_enterprise,
+//   7.1, 8 to 11)               snapshot_hash, consent_text_hash, withdraw_supplier_consent, 3-day reminder rule);
+//                               supabase/functions/_shared/supplierPilot.ts (gradeFor, supplier sheet columns)
+//   5.4 supplier questions      supabase/functions/enterprise-intelligence/index.ts (RULES)
+//   8 guest uploads             supabase/functions/_shared/guestScan.ts (GUEST_DAILY_SCANS), src/lib/guestResults.ts
 
 export type WPFigure = 'uncertainty' | 'datamodel' | 'flow';
 export type WPWidget = 'scope2' | 'proration' | 'rounding' | 'hash';
@@ -76,6 +81,7 @@ export const WP_SECTIONS: WPSection[] = [
         '**Scope 3.** Where only spend data exists, a spend-based method is used and labelled as such. Spend-based results carry materially wider uncertainty than activity-based results and are presented with that range.',
         '**Avoided emissions and offsets.** Reported separately, with their methodology stated. They are never subtracted from the Scope 1, 2 or 3 inventory.',
         '**Direct measurement.** Invoices record purchases, not consumption. Sources such as refrigerant leakage, process emissions and captive generation are calculated only when the customer supplies the underlying measured or metered data.',
+        '**Supplier-shared Scope 3.** An enterprise can ask its suppliers for their emissions. Each supplier\'s figure is calculated with this same method from that supplier\'s own bills, or is the supplier\'s own figure, shared marked as without bills. It reaches the enterprise only as totals the supplier chooses to share (Section 6.2).',
       ] },
       { h3: '2.1 The core equation', id: 'core-equation' },
       { eq: ['E = A × EF'], id: 'core' },
@@ -199,6 +205,8 @@ export const WP_SECTIONS: WPSection[] = [
       { plain: 'Each month\'s total emissions ($y_{t}$, where t counts calendar months so that gaps keep their real spacing) is fitted with the straight line that minimises the squared distances to the points: ordinary least squares over up to the last 12 months. $β_{1}$ is the trend in kilograms per month and $β_{0}$ is the line\'s level at the first month.' },
       { eq: ['\\hat{Y} = Σ_{k=1…12} max( 0 , β_{0} + β_{1} (t_{last} + k) )', 'range = \\hat{Y} ± 1.28 · s_{r} · \\sqrt{12}', 's_{r} = \\sqrt{Σ_{t} r_{t}^{2} / (n − 2)}'], id: 'projection' },
       { plain: 'The line is extended 12 months past the last month and the months are added, with any negative month counted as zero. The range uses the scatter of past months around the line ($s_{r}$, computed from the residuals $r_{t}$ with n − 2 because two parameters were fitted): for twelve independent months the spread of the sum grows with √12, and ±1.28 standard deviations covers about 80% of a normal distribution. The range leaves out uncertainty in the fitted line itself and any change in the business, so it is narrower than the true uncertainty, especially with few months. A projection describes the past trend. It is not a forecast, target or commitment.' },
+      { h3: '5.4 Questions on supplier records', id: 'supplier-questions' },
+      { p: 'Enterprise teams can ask questions about their own supplier records, such as where to focus or whom to follow up. The answer uses only the supplier lines the enterprise dashboard shows for the chosen period, and the model is instructed never to invent a number, supplier, saving or cost. Patterns in a supplier\'s records may suggest the kind of action, never a size of saving.' },
     ],
   },
   {
@@ -224,6 +232,19 @@ export const WP_SECTIONS: WPSection[] = [
         ['Ledger entry', 'Hashes, factor and methodology version in force, status, reviewer actions', 'Emission line; previous entry'],
       ] } },
       { p: 'Relationships: Document (1) → Line items (many) → Emission line (1 each) ← Factor (1 per line). Factors are never edited in place; a new version is added.' },
+      { h3: '6.2 Supplier evidence shared with an enterprise', id: 'supplier-evidence' },
+      { p: 'When a supplier shares with an enterprise, the server computes the supplier\'s totals for the requested period from the supplier\'s own records and stores them as a fixed snapshot. The enterprise receives the snapshot, never the bills, line items or records behind it.' },
+      { eq: ['h_{s} = SHA-256( request ‖ period ‖ E_{1} ‖ E_{2} ‖ E_{3} ‖ E_{ver} ‖ E_{own} ‖ categories ‖ evidence hashes )'], id: 'snapshot' },
+      { plain: 'Each snapshot carries its own fingerprint ($h_{s}$), computed from the request, the period, the Scope 1, 2 and 3 totals, the part backed by verified bills ($E_{ver}$), any figure the supplier entered without bills ($E_{own}$), the totals by category and the SHA-256 fingerprints of the bills counted. Changing any of these changes the fingerprint, so an auditor can match a figure in the enterprise\'s supplier sheet to the supplier\'s own record.' },
+      { eq: ['g = E_{ver} / E_{bills}'], id: 'grade' },
+      { plain: 'The proof grade is the share ($g$) of a supplier\'s bill-based emissions ($E_{bills}$) that comes from bills which passed the checks in Section 4.1. A figure the supplier entered without bills is always grade D.' },
+      { table: { head: ['Grade', 'Share backed by verified bills'], rows: [
+        ['A', '90% or more'],
+        ['B', '75% to under 90%'],
+        ['C', '50% to under 75%'],
+        ['D', 'Under 50%, or a figure entered without bills'],
+      ] } },
+      { p: 'The enterprise\'s supplier sheet lists, for each supplier, the status, proof, Scope 1 and Scope 2 totals, the counted total, the part backed by verified bills, the grade, the period and the snapshot fingerprint.' },
     ],
   },
   {
@@ -241,6 +262,16 @@ export const WP_SECTIONS: WPSection[] = [
         ['7', 'Calculation', 'Registry factors applied; ranges computed.'],
         ['8', 'Review and storage', 'Flagged lines reviewed; results stored with the full trail.'],
       ] } },
+      { h3: '7.1 Supplier request flow', id: 'supplier-flow' },
+      { table: { head: ['Step', 'Stage', 'Behaviour'], rows: [
+        ['1', 'Request', 'The enterprise pastes its supplier list: name, email or GSTIN, what it buys and share of purchases. Each request gets a random link; only the link\'s SHA-256 hash is stored, and each link sets an expiry no more than 90 days ahead.'],
+        ['2', 'Open', 'The supplier opens the link and signs in or creates a free account. The first account to open the link claims the request, so a forwarded link works; the named account (confirmed email or GSTIN) can also open it from its own requests. After that, no other account can open it. The enterprise sees when it was opened, and by which email if it was forwarded.'],
+        ['3', 'Upload', 'The supplier uploads bills, which are read and calculated by the steps above.'],
+        ['4', 'Review', 'The supplier sees the totals that would be shared and the exact consent text before anything is shared.'],
+        ['5', 'Share', 'On Share, the server computes the snapshot (Section 6.2) and records the consent with the SHA-256 hash of the consent text shown.'],
+        ['6', 'Track', 'The enterprise sees status, totals and proof grade per supplier, and can remind a supplier who has not shared at most once every 3 days; each reminder sends a fresh link.'],
+        ['7', 'Stop', 'The supplier can stop sharing at any time. The enterprise gets nothing new and sees the request as declined; totals already shared stay with the enterprise.'],
+      ] } },
     ],
   },
   {
@@ -256,6 +287,10 @@ export const WP_SECTIONS: WPSection[] = [
         '**Secrets and origins.** Service credentials exist only in server-side environments. Cross-origin access is restricted to Senseible\'s own domains.',
         '**Payments.** Payment signatures are verified server-side and matched to the authenticated user. Card data is handled by the payment processor.',
         '**Logging.** Security events go to an access-restricted audit log. Logs do not record document contents.',
+        '**Supplier data boundary.** This is the one exception to own-records-only access. An enterprise cannot read a supplier\'s documents, line items or records. It receives only the totals computed on the server when the supplier presses Share: emissions by scope and category, the part backed by verified bills, any own figure and its note, the energy units on the bills, the number of bills and each bill\'s fingerprint. The bills and their amounts stay in the supplier\'s account.',
+        '**Supplier links and consent.** Request links carry a random 256-bit token, stored only as its SHA-256 hash; each link or reminder sets an expiry no more than 90 days ahead. Each share records the consent version and the hash of the exact consent text the supplier agreed to.',
+        '**Guest uploads.** Documents read for visitors who are not signed in are not stored on the server. Their results stay in the visitor\'s browser for 24 hours, and guest reads are limited to 30 per device per day, enforced on the server.',
+        '**Restricted files.** Restricted resources are delivered only through a signed link that expires, or to a signed-in account with a confirmed email.',
       ] },
     ],
   },
@@ -273,6 +308,7 @@ export const WP_SECTIONS: WPSection[] = [
         ['Model improvement', 'Governed by the Privacy Policy and customer contract. Users may opt out of future training. Enterprise customers can set specific terms in the Data Processing Agreement.'],
         ['User rights and grievances', 'Access, correction, deletion, withdrawal of consent and grievance redressal, as set out in the Privacy Policy.'],
         ['Ownership', 'Customers retain ownership of their raw input data.'],
+        ['Supplier data shared with an enterprise', 'Shared only after the supplier presses Share, under a recorded consent text that lists what is shared and what is not. The supplier can stop sharing at any time; totals already shared stay with the enterprise.'],
       ] } },
     ],
   },
@@ -292,6 +328,9 @@ export const WP_SECTIONS: WPSection[] = [
         ['Unauthenticated or unauthorised request', 'Rejected before processing', 'Access error'],
         ['Failed payment verification', 'Rejected before any plan change', 'No change to subscription'],
         ['Advisory chat cannot load records', 'States records are unavailable; produces no figures', 'Offer to retry'],
+        ['Supplier link expired, closed or for another account', 'Request not opened', 'Message that the request is closed or not for this account'],
+        ['Supplier has no bills dated in the requested period', 'Nothing shared', 'Option to upload bills, or enter an own figure that the enterprise sees marked as without bills'],
+        ['Reminder within 3 days of the last one', 'Reminder refused', 'Message that the supplier was already reminded'],
       ] } },
     ],
   },
@@ -307,6 +346,7 @@ export const WP_SECTIONS: WPSection[] = [
         'Range calculations use first-order error propagation and assume independent activity errors; they describe stated factor and input uncertainty, not unknown or unreported errors.',
         'A hash chain detects alteration after the fact. It does not prove that the original document was truthful.',
         'Factor coverage varies by country. Where no primary factor exists, no figure is produced.',
+        'A proof grade shows how much of a supplier\'s figure is backed by bills that passed the rule checks. It is not independent assurance of the supplier\'s emissions, and a supplier\'s own figure without bills is shared marked as such.',
       ] },
     ],
   },
@@ -344,6 +384,9 @@ export const WP_SECTIONS: WPSection[] = [
         ['$q$, $r$, $a$, $d_{x}$', 'Printed quantity, rate and amount; their number of decimal places'],
         ['$β_{0}$, $β_{1}$, $s_{r}$, $\\hat{Y}$', 'Trend intercept and slope; residual standard deviation; projected 12-month total'],
         ['$h$, $e_{i}$, ‖', 'Hash value; ledger entry i; concatenation (joined end to end)'],
+        ['$h_{s}$', 'Fingerprint of a supplier\'s shared snapshot'],
+        ['$E_{ver}$, $E_{bills}$, $E_{own}$', 'Supplier emissions backed by verified bills; from all counted bills; entered by the supplier without bills'],
+        ['$g$', 'Proof grade share, $E_{ver}$ / $E_{bills}$'],
       ] } },
     ],
   },
