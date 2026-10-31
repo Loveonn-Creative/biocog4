@@ -258,10 +258,10 @@ const SupplierEvidence = () => {
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
             <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-primary">For suppliers</p>
             <h2 className="mt-3 max-w-3xl text-[2rem] font-semibold leading-[1.1] tracking-tight [text-wrap:balance] md:text-[2.75rem]">Your buyer asked for your emissions. Send one page today.</h2>
-            <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">Type what your bills say. You get Scope 1 and Scope 2 for the period, each factor with its source, addressed to your buyer. No sign-up.</p>
+            <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">Type what your bills say. You get Scope 1 and Scope 2 for the period, with the published source behind every number, addressed to your buyer. No sign-up.</p>
             <div className="mt-10"><SupplierEmissionsTool /></div>
             <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
-              <p className="max-w-xl text-[15px] text-muted-foreground">Collecting from suppliers? Send them this link. Every reply comes back as the same one-page file, in the same units.</p>
+              <p className="max-w-xl text-[15px] text-muted-foreground">Collecting from suppliers? Send them this link. Every supplier sends you the same one-page file, in the same units.</p>
               <SupplierToolLink />
             </div>
           </div>

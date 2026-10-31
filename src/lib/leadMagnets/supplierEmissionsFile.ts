@@ -130,17 +130,14 @@ function methodLines(r: FileResult, basis: Basis): string[] {
   return [
     ...(fuels.length ? ['Scope 1: fuel burned on our site or in our own vehicles, multiplied by the factor for that fuel.'] : []),
     ...(r.scope2Kg !== null ? [`Scope 2, location-based: grid units multiplied by the CEA India grid average for ${r.grid.factorYear}${r.grid.billYear === r.grid.factorYear ? '' : `, the latest year published, applied to ${r.grid.billYear}`}. No market-based figure is given.`] : []),
-    ...(basis === 'month' ? [`Quantities are one typical month's bill multiplied by ${r.months}, not the sum of each month's bill.`] : ['Quantities are the totals of the bills for the period.']),
-    'Factors are CO2 only; methane and nitrous oxide from fuel add under 1%.',
-    'Emission sources not in the table are not included.',
+    ...(basis === 'month' ? [`Quantities are one typical month's bill multiplied by ${r.months}, not the sum of each month's bill.`] : ['Quantities are totals for the period.']),
+    'Factors cover CO2 only, so CO2e here is CO2. Methane and nitrous oxide from fuel would add under 1%.',
+    'Only the sources in the table are included. Refrigerant leaks and process emissions, if any, are not.',
   ];
 }
 
 export function supplierEmissionsFile(input: SupplierFileInput): SendableFile {
   const r = supplierEmissions(input);
-  const held = r.rows.filter((x) => x.billsHeld).map((x) => x.source.toLowerCase());
-  const declared = r.rows.filter((x) => !x.billsHeld).map((x) => x.source.toLowerCase());
-  const list = (xs: string[]) => xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}` : xs[0];
   return {
     title: 'Scope 1 and 2 emissions',
     to: to(input.buyer),
@@ -169,14 +166,15 @@ export function supplierEmissionsFile(input: SupplierFileInput): SendableFile {
       {
         heading: 'Evidence',
         lines: [
-          ...(held.length ? [`Backed by bills we hold for every month of the period: ${list(held)}. Copies can be shared on request.`] : []),
-          ...(declared.length ? [`Self-declared, without a bill for every month: ${list(declared)}.`] : []),
+          ...r.rows.map((x) => (x.billsHeld
+            ? `${x.source}: we hold the bill for every month of the period. Copies on request.`
+            : `${x.source}: self-declared. We do not hold a bill for every month.`)),
           'These figures come from our own bills and records. They have not been checked by a third party.',
         ],
       },
     ],
     footer: [
-      'Senseible can read the bills behind each line and keep every figure tied to its bill: senseible.earth/scope-3-supplier-evidence',
+      'Made with the free supplier file at senseible.earth/scope-3-supplier-evidence',
     ],
   };
 }

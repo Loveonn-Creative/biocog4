@@ -205,7 +205,7 @@ export function SupplierEmissionsTool() {
                 </li>
               ))}
             </ol>
-            <p className="text-muted-foreground">The file goes on to name each factor's source and the method, and says plainly that these are your own figures, not checked by a third party.</p>
+            <p className="text-muted-foreground">The PDF also lists each factor's source, the method, and a line saying these are your own figures, not checked by a third party.</p>
           </div>
         </div>
 
@@ -223,7 +223,7 @@ export function SupplierEmissionsTool() {
           {failed ? "The file did not download. Try again." : ready ? "One page for your buyer. Made on this device; nothing is sent." : "Type at least one number from a bill to make the file."}
         </p>
         <p className="mt-5 border-t border-border pt-4 text-[14px] text-muted-foreground">
-          Asked again next quarter? Senseible reads each bill and keeps the figure tied to it. <Link to="/" onClick={() => leadEvents.cta(PAGE, "supplier_file_read_bill")} className="font-medium text-primary underline-offset-4 hover:underline">Read a bill free →</Link>
+          Asked again next quarter? Upload your bills to Senseible and every figure stays linked to the bill it came from. <Link to="/" onClick={() => leadEvents.cta(PAGE, "supplier_file_read_bill")} className="font-medium text-primary underline-offset-4 hover:underline">Read one bill free →</Link>
         </p>
       </div>
     </div>
