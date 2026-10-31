@@ -50,14 +50,28 @@
   },
   "senseible": "Senseible prepares your CBAM file and the evidence index the verifier's team works from, wherever its staff sit, and checks every figure in-house. Senseible's check is not an accredited verification: an accredited verifier, the one Senseible partners with or your own, does that.",
   "links": [
-    { "label": "Prepare the verifier's file", "to": "/cbam-suite" },
-    { "label": "Who cannot verify you", "to": "/answers/verifier-independence-who-cannot-verify" },
-    { "label": "Can our consultant verify us", "to": "/answers/can-our-cbam-consultant-also-verify-us" },
-    { "label": "Bodies accrediting Indian verifiers", "to": "/answers/which-eu-bodies-accredit-cbam-verifiers-from-india" }
+    {
+      "label": "Prepare the verifier's file",
+      "to": "/cbam-suite"
+    },
+    {
+      "label": "Who cannot verify you",
+      "to": "/answers/verifier-independence-who-cannot-verify"
+    },
+    {
+      "label": "Bodies accrediting Indian verifiers",
+      "to": "/answers/which-eu-bodies-accredit-cbam-verifiers-from-india"
+    }
   ],
   "sources": [
-    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 5.8", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
-    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.12 and 8.4", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+    {
+      "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 5.8",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf"
+    },
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.12 and 8.4",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
   ],
   "reviewed": "2026-10-30"
 }

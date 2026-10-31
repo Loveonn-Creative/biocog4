@@ -304,3 +304,6 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://support.ecovadis.com/hc/en-us/articles/39606014723090-Update-on-Monthly-Medal-Thresholds
 - https://www.ireda.in/IredaWebPortal/documents/loan-products/schemes/scheme-11.pdf
 - https://www.sedex.com/become-a-member/supplier-membership/
+- https://www.cdp.net/en/disclose/how-to-disclose
+- https://help.cdp.net/en-us/knowledgebase/article/KA-01037
+- https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF
