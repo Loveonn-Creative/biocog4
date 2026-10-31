@@ -1,0 +1,91 @@
+{
+  "slug": "charcoal-reheating-furnace-methane",
+  "q": "Is charcoal in a brass or forging reheating furnace really carbon free?",
+  "title": "Charcoal furnaces: the methane you still count",
+  "short": "No. Its CO2, about 3.3 t per tonne, is biogenic and reported outside your scopes. But IPCC puts charcoal's methane at 200 kg per TJ, nearly seven times wood's, so each tonne burned still adds about 0.19 t CO2e to Scope 1, and making it emitted more.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Brass, bell metal and small forging units that heat crucibles or billets with charcoal and want to know what goes in their footprint",
+  "sections": [
+    {
+      "h": "Three numbers per tonne of charcoal",
+      "ul": [
+        "Heat: 29.5 GJ per tonne net (IPCC Table 1.2).",
+        "CO2: 112,000 kg per TJ, so about 3.30 t per tonne. Biogenic: reported separately, not added to Scope 1.",
+        "Methane: 200 kg per TJ (range 70 to 600), so 5.9 kg per tonne, about 159 kg CO2e. In Scope 1.",
+        "Nitrous oxide: 4 kg per TJ, so 0.12 kg per tonne, about 32 kg CO2e. In Scope 1."
+      ]
+    },
+    {
+      "h": "Why charcoal is not like wood",
+      "p": [
+        "IPCC gives wood and wood waste 30 kg of methane per TJ in industry. Charcoal gets 200. Per tonne, wood's methane and nitrous oxide come to about 30 kg CO2e; charcoal's to about 191 kg. Per GJ of heat, charcoal adds roughly three times more to Scope 1 than wood.",
+        "The range is wide. At IPCC's low methane value, methane alone adds about 56 kg CO2e a tonne; at the high value, about 478 kg. Without a measurement on your furnace, use the default and say so."
+      ]
+    },
+    {
+      "h": "The part that happened before delivery",
+      "p": [
+        "Charcoal kilns release methane while turning wood into charcoal. That belongs to the charcoal maker, and to you as Scope 3 purchased goods if you report Scope 3. A buyer asking whether your charcoal is renewable will want to know where the wood came from, so keep the supplier's name and source village on file."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "ol": [
+        "Add up tonnes of charcoal bought each month from bills or kata slips.",
+        "Multiply by 0.191 t CO2e and put that in Scope 1 with your other fuels.",
+        "Multiply by 3.30 t and show it as a separate biogenic CO2 line.",
+        "Write the factors and their source next to both lines."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A unit burning 20 t of charcoal a year (estimate)",
+    "lines": [
+      "Heat: 20 t x 29.5 GJ = 590 GJ",
+      "Methane: 590 x 0.200 kg = 118 kg x 27.0 = 3.2 t CO2e",
+      "Nitrous oxide: 590 x 0.004 kg = 2.4 kg x 273 = 0.6 t CO2e",
+      "Scope 1 from charcoal: about 3.8 t CO2e",
+      "Biogenic CO2, reported separately: 590 x 112 kg = 66 t"
+    ],
+    "note": "IPCC 2006 defaults for manufacturing industries; AR6 warming potentials (non fossil methane 27.0, nitrous oxide 273)."
+  },
+  "senseible": "Senseible has no built-in charcoal factor, so a charcoal bill does not get a CO2 figure on its own. Its fuel and power records give you the rest of the footprint, and the charcoal lines above sit beside them in your carbon number.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Methane from charcoal kilns",
+      "to": "/answers/charcoal-kiln-methane-pig-iron-footprint"
+    },
+    {
+      "label": "Balakati brass units on coal and charcoal",
+      "to": "/answers/balakati-brass-bell-metal-cluster-coal-charcoal"
+    },
+    {
+      "label": "Biomass boilers: methane stays in Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Chapter 2 Stationary Combustion, Tables 2.3 to 2.7",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Table 1.2 (net calorific values) and Chapter 2 tables",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, global warming potentials (methane 27.0 non fossil, 29.8 fossil; nitrous oxide 273)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately from the scopes)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

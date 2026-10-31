@@ -1,0 +1,80 @@
+{
+  "slug": "supplier-data-less-accurate-than-average",
+  "q": "Is a supplier's own figure always better than an average emission factor?",
+  "title": "Is supplier data always better than averages?",
+  "short": "No. The GHG Protocol's Category 1 guidance says supplier data is more specific, not automatically more accurate, and can be less accurate than an industry average. Accuracy depends on how detailed the supplier's data is, how reliable its sources are, and how its emissions were split between products.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Buyers' sustainability teams reviewing supplier figures, and Indian suppliers preparing them",
+  "sections": [
+    {
+      "h": "Specific is not the same as accurate",
+      "p": [
+        "A figure from the supplier's own plant feels better than a database average. The guidance warns that it may not be. A supplier that splits a whole company's emissions across products by revenue can land further from the truth than a well-built average for that product. Splitting a supplier's emissions between products can add considerable uncertainty, depending on the method."
+      ]
+    },
+    {
+      "h": "Three checks before replacing an average",
+      "ol": [
+        "Level of the data. The guidance ranks it: product footprint first, then process or production line, facility, business unit, and whole company last.",
+        "Source of each number. Metered kWh and invoiced litres beat estimates and budgets.",
+        "The split. Ask how the supplier shared its emissions between your goods and everything else, and whether that basis follows what drives energy use."
+      ]
+    },
+    {
+      "h": "For suppliers: make your figure the better one",
+      "ul": [
+        "Give plant or production-line data, not the group total.",
+        "Keep the bill behind every kWh and litre.",
+        "Split by a physical measure such as tonnes or machine hours, and say which.",
+        "Cover the buyer's reporting period, not just your financial year, where they differ."
+      ]
+    },
+    {
+      "h": "Screen before chasing anyone",
+      "p": [
+        "Collecting supplier data costs both sides time, so the guidance tells buyers to screen first and spend that effort where it changes the total. Methods can be mixed inside Category 1: supplier data for the few purchases that matter, averages for the rest."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one supplier, two honest answers",
+    "lines": [
+      "Supplier plant: 1,20,000 kWh x 0.675 = 81,000 kg; 5,000 litres diesel x 2.645 = 13,225 kg; total 94.2 t CO2",
+      "Your parts are 200 t of the plant's 500 t output: split by mass, 94.2 x 0.40 = 37.7 t",
+      "Your parts are 25% of the plant's sales: split by revenue, 94.2 x 0.25 = 23.6 t",
+      "Same bills, a 14.1 t gap from the split alone"
+    ],
+    "note": "Example figures. A sub-meter on the line that makes your parts would show which split is closer. Grid factor: CEA FY 2025-26, 0.675 kg CO2 per kWh."
+  },
+  "senseible": "Senseible ties each kWh and litre in a supplier's figure to the bill it came from, which answers the second check. The split between products is still the supplier's choice, and it should be stated with the figure.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Allocating supplier emissions to purchases",
+      "to": "/answers/allocate-supplier-emissions-to-my-purchases"
+    },
+    {
+      "label": "Hybrid method: what a supplier sends",
+      "to": "/answers/hybrid-method-allocated-scope-1-2-from-suppliers"
+    },
+    {
+      "label": "Which suppliers to ask first",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 1 (box 1.1)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter1.pdf"
+    },
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Introduction (table IV, levels of data)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Intro_GHGP_Tech.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

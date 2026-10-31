@@ -1,0 +1,84 @@
+{
+  "slug": "bokaro-industrial-area-msme-energy",
+  "q": "What do Bokaro industrial area MSMEs make and how much energy do they use?",
+  "title": "Bokaro industrial area: MSME energy use",
+  "short": "Phases 3 and 4 hold about 150 units: 135 fabrication and engineering works, 10 foundries and 5 flour mills, using about 6,000 toe a year, nearly all electricity. Motors take about 85% of a unit's power. Daily cuts of 2 to 4 hours put diesel generators on top.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Fabricators, foundries and flour mills in Bokaro Industrial Area, Jharkhand, many of them suppliers to Bokaro Steel Plant",
+  "sections": [
+    {
+      "h": "Who works here",
+      "ul": [
+        "Phases 1 and 2, over 50 years old: more than 200 units, many of them ancillaries to Bokaro Steel Plant, which makes about 4 million t of steel a year.",
+        "Phases 3 and 4, built since 2010: about 150 units, the ones TERI studied.",
+        "Fabrication and engineering works make blast furnace rollers, economiser parts, pressure vessels, conveyors and heavy engineering parts.",
+        "Foundries cast iron bars and castings from scrap; flour mills grind wheat flour, chana sattu and spices."
+      ]
+    },
+    {
+      "h": "Where the power goes",
+      "ul": [
+        "Motors on lathes, presses, drills, borers, bending and rolling machines: about 85%.",
+        "Welding machines: about 8%. Compressed air: about 5%.",
+        "Induction furnaces in the foundries melt 300 to 1,000 kg a heat.",
+        "Power comes from JBVNL or DVC, at 11 kV for most units. Cuts of 2 to 4 hours a day are run on diesel generators."
+      ]
+    },
+    {
+      "h": "What TERI costed",
+      "ul": [
+        "VFD on a screw compressor loaded only 35% of the time: Rs 1,05,600 a year saved for Rs 2,00,000, payback 1.9 years.",
+        "IE3 motors: 2% saving over IE2, up to 7% over IE1. Payback 5 to 7 years on a 10 or 15 HP motor at 3,000 hours a year, so replace at failure, not before.",
+        "10 kW rooftop solar on 1,400 sq ft: Rs 4,00,000 for Rs 77,000 a year, payback 5.2 years.",
+        "Lids and metal cutters for foundry crucibles, covered on its own page."
+      ]
+    },
+    {
+      "h": "When the steel plant or an OEM asks",
+      "p": [
+        "A large buyer filling in its value chain figures will ask for kWh by month, generator diesel and output for the same months. Keep the DG log in litres, not just rupees: at Rs 90 a litre the bill hides the quantity. If DVC supplies you, check which grid factor applies before you report."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster and one unit at FY 2025-26 factors (estimate)",
+    "lines": [
+      "Cluster: 6,000 toe x 11,630 kWh = 69.8 million kWh x 0.675 kg = about 47,100 t CO2 a year",
+      "A fabricator using 200,000 kWh: 135 t CO2",
+      "Plus 4,000 litres of DG diesel x 2.645 kg = 10.6 t CO2",
+      "Compressor VFD saving: Rs 1,05,600 at Rs 7.5 per kWh = 14,080 kWh = 9.5 t CO2 a year"
+    ],
+    "note": "Unit counts, energy and savings from TERI's Bokaro Industrial Area profile (2020-21 data) and SAMEEEKSHA's summary. The cluster figure treats all 6,000 toe as grid power, as the summary names electricity as the main source. The 200,000 kWh and 4,000 litre unit is an assumed example."
+  },
+  "senseible": "Senseible reads JBVNL or DVC bills and diesel invoices into monthly Scope 1 and 2 lines with CO2, and keeps them as supplier evidence you can send to the steel plant or an OEM.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Crucible lid saving in a Bokaro foundry",
+      "to": "/answers/induction-crucible-lid-saving-bokaro-foundry"
+    },
+    {
+      "label": "DVC supply: which grid factor",
+      "to": "/answers/dvc-supplied-plant-which-grid-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Bokaro industrial area summary (TERI-SSEF, 2020-21 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=308&Itemid=502"
+    },
+    {
+      "label": "TERI, Bokaro Industrial Area cluster profile (2021)",
+      "url": "https://sameeeksha.org/pdf/BOKARO%20INDUSTRIAL%20AREA%20CLUSTER%20PROFILE%20(1).docx"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

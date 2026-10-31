@@ -1,0 +1,85 @@
+{
+  "slug": "transport-fuel-spend-to-litres-formula",
+  "q": "My transporter bills only rupees: how do I turn freight fuel spend into litres for Scope 3?",
+  "title": "Freight bills in rupees to litres of diesel",
+  "short": "Multiply the freight bill, before GST, by the share of it that goes on fuel, then divide by the average diesel price for those months. That gives litres; multiply by 2.645 kg CO2 per litre. The GHG Protocol allows this when a transporter cannot give fuel figures. The fuel share is the one number to ask for.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian manufacturers and exporters reporting Category 4 freight, and buyers checking supplier freight lines",
+  "sections": [
+    {
+      "h": "Three ways the guidance lets you work out litres",
+      "p": [
+        "The GHG Protocol Category 4 guidance prefers actual fuel figures from the transporter. When those are missing, it lists three ways to derive them:"
+      ],
+      "ul": [
+        "Money spent on fuel divided by the average fuel price.",
+        "Distance travelled multiplied by the vehicle's fuel use per km.",
+        "Money spent on transport services, multiplied by the fuel cost share of that service, divided by the average fuel price."
+      ]
+    },
+    {
+      "h": "Where each number comes from",
+      "ol": [
+        "Freight spend: the year's transporter bills, GST removed, kept per transporter so you can replace one at a time.",
+        "Fuel cost share: ask the transporter what share of the freight rate is diesel for your lane and truck size, and keep their reply with the bills.",
+        "Average price: the published retail diesel price for the state and months the trips ran, not today's price.",
+        "Fuel type: if the fleet runs on both CNG and diesel, split the fuel spend by fuel first. Where the mix is unknown, the guidance allows average fuel mix figures from industry bodies or government statistics."
+      ]
+    },
+    {
+      "h": "Part loads change the answer",
+      "p": [
+        "This method fits full trucks that carry only your goods. If the truck also carried other customers' cargo, the guidance says to allocate the fuel, and for road it sets mass as the default basis: your tonnes over the truck's total tonnes. Where several shipments share a leg, use distance too. If you cannot get those figures, switch to the distance method, tonnes times km times a mode factor."
+      ]
+    },
+    {
+      "h": "Two things a diesel factor misses",
+      "ul": [
+        "Upstream fuel emissions. The guidance asks for combustion at minimum and, where possible, the fuel's extraction, refining and transport too. 2.645 kg CO2 per litre is combustion only, so say so in your notes.",
+        "Refrigerant. For chilled or frozen loads, the guidance adds refrigerant leakage times its global warming potential to the fuel figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one transporter, one year",
+    "lines": [
+      "Transporter bills for the year, GST removed: Rs 4,80,000",
+      "Fuel share stated by the transporter: 55%, so Rs 2,64,000 went on diesel",
+      "Average diesel price over those months: Rs 90 per litre, so 2,64,000 / 90 = 2,933.3 litres",
+      "Emissions: 2,933.3 x 2.645 = 7,758.7 kg, about 7.76 t CO2",
+      "Full truckloads carrying only your goods, so no allocation is needed"
+    ],
+    "note": "Example figures for the bills, fuel share and price. Use your transporter's answer and the published price for your state and months. 2.645 kg CO2 per litre covers combustion only."
+  },
+  "senseible": "Senseible reads freight records and fuel slips line by line. A bill with only an amount shows Needs Data instead of a guessed figure, and any spend-based estimate is labelled as one. The calculators let you run this arithmetic per transporter.",
+  "links": [
+    {
+      "label": "Emission calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "Freight: Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Reefer truck emissions",
+      "to": "/answers/reefer-truck-refrigeration-unit-emissions"
+    },
+    {
+      "label": "Combustion or life cycle factor",
+      "to": "/answers/life-cycle-vs-combustion-factor-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 4 (fuel-based method, formulas 4.1 to 4.4)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "life-cycle-vs-combustion-factor-scope-3",
+  "q": "Which fuel emission factor do I use in Scope 3: combustion only or life cycle?",
+  "title": "Combustion or life cycle factor in Scope 3?",
+  "short": "Life cycle, wherever you have one. The GHG Protocol Scope 3 guidance says fuel and energy used in your value chain take life cycle factors, which add extraction, processing and transport to burning. Combustion factors stay in Scope 1 and 2. Category 3 is the exception: upstream only, combustion left out.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Indian manufacturers building a Scope 3 inventory, and buyers checking supplier figures",
+  "sections": [
+    {
+      "h": "Which factor goes where",
+      "ul": [
+        "Scope 1, fuel you burn: combustion factor.",
+        "Scope 2, electricity you buy: the grid factor, which counts burning at the power plant.",
+        "Scope 3 Category 3, the upstream of that same fuel and electricity: extraction, refining and transport only, without combustion.",
+        "Other Scope 3 lines that involve fuel, such as a transporter's diesel or a taxi on a business trip: life cycle, combustion plus upstream."
+      ]
+    },
+    {
+      "h": "Why Category 3 is the odd one",
+      "p": [
+        "Combustion of your own fuel and electricity is already in Scope 1 and 2. Adding it again in Category 3 would count it twice, so Category 3 takes only the part before the fuel reaches you. A transporter's diesel appears nowhere else in your inventory, so it takes the full life cycle."
+      ]
+    },
+    {
+      "h": "Goods are different",
+      "p": [
+        "For things you buy, in Category 1 and Category 2, the guidance uses cradle-to-gate factors: everything up to the point the producer sells. A full life cycle factor for a material, running to its disposal, is not used there."
+      ]
+    },
+    {
+      "h": "If you only have a combustion factor",
+      "p": [
+        "For transport, the guidance asks at minimum for combustion and, where possible, the fuel's upstream. A combustion-only figure is acceptable if you say so. Pick upstream factors from internationally recognised, government or peer-reviewed sources, name the source and year, and use the same one each year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 2,933 litres of diesel, two owners",
+    "lines": [
+      "Combustion: 2,933 x 2.645 = 7,757.8 kg CO2",
+      "Upstream: 2,933 x 0.60 = 1,759.8 kg CO2e",
+      "Burnt by your transporter (Category 4): 7,757.8 + 1,759.8 = 9,517.6 kg",
+      "Burnt in your own generator: 7,757.8 kg in Scope 1, and 1,759.8 kg in Category 3"
+    ],
+    "note": "The upstream factor of 0.60 kg CO2e per litre is an example figure, not a published value. Use the factor from the source you name."
+  },
+  "senseible": "Senseible applies combustion factors to fuels in Scope 1 and the CEA grid factor to electricity in Scope 2, and keeps Scope 3 lines in a separate supplier evidence trail. The calculators show the arithmetic so the factor choice stays visible.",
+  "links": [
+    {
+      "label": "Emission calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Well-to-tank emissions from diesel and LPG",
+      "to": "/answers/well-to-tank-emissions-from-diesel-invoices"
+    },
+    {
+      "label": "Freight bills in rupees to litres",
+      "to": "/answers/transport-fuel-spend-to-litres-formula"
+    },
+    {
+      "label": "Using UK DESNZ factors in India",
+      "to": "/answers/can-indian-company-use-defra-factors"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Introduction (material and energy emission factors; collecting secondary data)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Intro_GHGP_Tech.pdf"
+    },
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 4 (emission factors needed)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

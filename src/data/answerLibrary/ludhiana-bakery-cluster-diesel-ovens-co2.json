@@ -1,0 +1,83 @@
+{
+  "slug": "ludhiana-bakery-cluster-diesel-ovens-co2",
+  "q": "How much diesel do Ludhiana bakeries burn and what is the cluster's CO2?",
+  "title": "Ludhiana bakeries: diesel ovens and CO2",
+  "short": "TERI's Ludhiana profile lists 1,250 kL of diesel a year across about 170 bakeries and 30 soya units, about 81% of the cluster's 3,294 toe. Add 5.26 million kWh and 133 t of LPG, and the cluster comes to roughly 7,250 t CO2 on today's factors (estimate).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Bakery and soya unit owners in Ludhiana, from back-of-shop bakers to bread plants supplying north India",
+  "sections": [
+    {
+      "h": "Who is baking on what",
+      "p": [
+        "Ludhiana bread goes across Punjab, Haryana, Himachal, Chandigarh and into Rajasthan, Uttarakhand and Uttar Pradesh. Over 83% of the 170 bakeries fire their ovens on diesel through mono-block burners of 5 to 8 litres an hour. Small shops bake in electric ovens, and a few medium bakeries have moved to LPG rotary ovens. About 57% of units are micro, and more than 100 turn over under Rs 2.5 lakh a month. The 30 soya units make soya milk and paneer, with a small diesel boiler for pasteurising."
+      ]
+    },
+    {
+      "h": "What a typical unit burns",
+      "ul": [
+        "Micro diesel bakery, 36 t a year: 3.6 kL of diesel and 6,000 kWh.",
+        "Small diesel bakery, 750 t: 63 kL and 65,350 kWh.",
+        "Small LPG bakery, 300 t: 12.9 t of LPG and 77,500 kWh.",
+        "Medium LPG bakery, 1,200 t: 42.9 t of LPG and 389,610 kWh.",
+        "Soya unit, 15 t: 7.2 kL of diesel, about 20 litres a day for 50 kg of soya, and 12,000 kWh."
+      ]
+    },
+    {
+      "h": "Read the cluster table with care",
+      "p": [
+        "The table's diesel energy, 2,685 toe, would be about 3,100 kL at the profile's own unit figures, which would put diesel CO2 near 8,200 t rather than 3,300 t. Its CO2 column also prints the diesel and LPG figures in each other's rows. Your own slips matter more than either number."
+      ]
+    },
+    {
+      "h": "Changes TERI listed",
+      "ul": [
+        "Recuperative burners in place of mono-block burners whose blower keeps cooling the oven after the fuel cuts.",
+        "Hot face insulation so the oven skin runs within about 20 C of the room.",
+        "Steel mesh trays on lighter racks: about 20% less dead weight, 5 to 10% less fuel.",
+        "A move from diesel to LPG rotary ovens: more than 20% less fuel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Ludhiana bakery cluster, CO2 a year (estimate)",
+    "lines": [
+      "Diesel: 1,250 kL x 2,645 kg = 3,306 t CO2",
+      "Electricity: 5.26 million kWh x 0.675 kg = 3,551 t CO2",
+      "LPG: 133 t x 2.98 = 396 t CO2",
+      "Total: about 7,250 t; TERI printed 8,848 t on an older grid factor",
+      "If diesel were 3,100 kL: 8,200 t from diesel, about 12,150 t in all"
+    ],
+    "note": "Fuel quantities from TERI's Ludhiana bakery profile (2017). Diesel and LPG at the factors Senseible uses; grid factor CEA FY 2025-26."
+  },
+  "senseible": "Upload a month of diesel slips, LPG invoices and the power bill, and Senseible gives your bakery's Scope 1 and 2 in minutes, so you send a buyer your figure instead of a cluster average.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "LPG or diesel oven per kg of bread",
+      "to": "/answers/ludhiana-bakery-lpg-vs-diesel-oven-saving"
+    },
+    {
+      "label": "Bakery oven CO2 per kg of bread",
+      "to": "/answers/bakery-oven-emissions-per-kg-bread"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Ludhiana bakeries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/ludhiana-bakeries-Punjab.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

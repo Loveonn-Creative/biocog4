@@ -1,0 +1,83 @@
+{
+  "slug": "gokak-jaggery-cluster-bagasse-energy",
+  "q": "How much energy do Gokak jaggery units use, and what CO2 is counted if bagasse is the fuel?",
+  "title": "Gokak jaggery: bagasse, power and CO2",
+  "short": "Bagasse supplies about 99% of the 34,735 toe Gokak's 120 or so jaggery units used in 2017-18, and its CO2 is biogenic. What counts as fossil is the grid power and generator diesel: 3.13 million kWh and 66.3 kL, about 2,290 t CO2 a year (estimate).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Jaggery unit owners around Gokak, Kudchi and Raibag, and the traders buying from them",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "95 micro units making jaggery with sugar: 28,500 t a year.",
+        "15 small units making jaggery with sugar: 13,500 t.",
+        "10 small units making jaggery without sugar: 2,700 t.",
+        "Cane comes from farms in Belgaum and Gokak; sugar from mills in Belgaum, Gokak, Hubli and Kolhapur. About 1.5 to 2 t of cane goes into each pan."
+      ]
+    },
+    {
+      "h": "Inside one unit",
+      "p": [
+        "A micro unit uses about 18,461 kWh, 460 t of bagasse and 500 litres of diesel a year; a small unit 55,384 kWh, 1,380 t and 750 litres. The crusher, usually two motors of about 15 hp, runs on the grid, mostly LT connections of 40 to 60 hp; the generator stands by for power cuts. Bagasse from the crusher is dried, by a dryer in small units and in the sun in micro units, then burnt under open iron pans 230 to 280 cm across."
+      ]
+    },
+    {
+      "h": "Three lines for a buyer",
+      "ol": [
+        "Fossil CO2: grid kWh and diesel litres. This is your Scope 1 and 2.",
+        "Biogenic CO2 from bagasse, on its own line, with tonnes burnt.",
+        "Sugar bought in, for jaggery with sugar: it carries the sugar mill's footprint, so send kg of sugar per tonne of jaggery."
+      ]
+    },
+    {
+      "h": "Where TERI saw savings",
+      "ul": [
+        "Variable speed drive on the crusher motors, which run at varying load: 10 to 15% of their power.",
+        "Replacing motors rewound three or more times with IE3 motors.",
+        "Rooftop solar on the units' large roofs; the profile notes that Karnataka allows net metering.",
+        "Waste heat recovery from the open pan furnaces, so less bagasse is burnt per pan."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Gokak, fossil CO2 (estimate)",
+    "lines": [
+      "Cluster: 3.13 million kWh x 0.675 = 2,113 t, plus 66.3 kL x 2,645 kg = 175 t: about 2,290 t",
+      "Per tonne of jaggery: 2,290 / 44,700 = about 51 kg CO2",
+      "Micro unit: 18,461 kWh x 0.675 = 12.5 t, plus 500 L x 2.645 = 1.3 t: 13.8 t for about 300 t, or 46 kg per tonne",
+      "Bagasse, reported separately: 78,200 t at 3,000 to 4,000 kcal per kg x 100 kg CO2 per GJ = about 98,000 to 131,000 t biogenic"
+    ],
+    "note": "Energy and output from TERI's Gokak jaggery profile (2017-18). TERI printed 2,742 t on an older grid factor. Bagasse at the profile's calorific range and the IPCC 2006 default for other solid biomass."
+  },
+  "senseible": "Senseible reads the unit's power bills and diesel slips into a Scope 1 and 2 figure in minutes; it applies no factor to bagasse, so the biogenic line stays yours to report.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Jaggery carbon footprint per kg",
+      "to": "/answers/jaggery-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Biomass fuel in a boiler and Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Gokak jaggery cluster (SAMEEEKSHA, 2017-18 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Gokak-jaggery-cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

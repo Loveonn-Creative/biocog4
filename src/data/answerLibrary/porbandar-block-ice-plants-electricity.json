@@ -1,0 +1,77 @@
+{
+  "slug": "porbandar-block-ice-plants-electricity",
+  "q": "How much electricity do Porbandar's block ice plants use?",
+  "title": "Porbandar block ice plants: electricity",
+  "short": "About 77 kWh per tonne of ice, on SAMEEEKSHA's cluster figures. Porbandar's 40 units, mostly small and micro, make 330,800 t of ice a year, mostly block ice for fishing boats, on 2,184 toe of electricity alone: roughly 25.4 million kWh and 17,100 t of CO2 at FY 2025-26's grid factor (estimate).",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Block ice plant owners in Porbandar, Gujarat, and the fish exporters who buy their ice",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 40 units, most of them small and micro, serving the local fishing fleet.",
+        "Mainly block ice, the type that pays in this market.",
+        "330,800 t of ice a year.",
+        "Electricity is the only energy: 2,184 toe."
+      ]
+    },
+    {
+      "h": "How 77 kWh compares",
+      "p": [
+        "Bhimavaram's block ice plants in Andhra Pradesh average 102 kWh per tonne, with plants observed from 87 to 120. Porbandar's cluster average comes out lower. Treat it as a cluster figure worked out from two totals, not a measured plant result: your own meter and block count decide where you stand."
+      ]
+    },
+    {
+      "h": "Get your own figure in a month",
+      "ol": [
+        "Read the main meter at the start and end of the month, or take kWh from the bill.",
+        "Count blocks pulled from the cans and multiply by the block weight.",
+        "Divide kWh by tonnes. Repeat in peak summer, when the same ice takes more power.",
+        "Add generator diesel if you run one during cuts, and any refrigerant top up from the service invoice."
+      ]
+    },
+    {
+      "h": "Why the fish exporter may ask",
+      "p": [
+        "Ice bought by a seafood processor is part of its supply chain. An exporter answering an EU or US buyer may ask you for kWh per tonne and the month's tonnes. A clean monthly log answers that in one line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster and one plant at FY 2025-26 factors (estimate)",
+    "lines": [
+      "Cluster: 2,184 toe x 11,630 kWh = 25.4 million kWh x 0.675 kg = about 17,140 t CO2",
+      "Per tonne of ice: 25.4 million kWh / 330,800 t = 76.8 kWh = about 52 kg CO2",
+      "An average plant: 8,270 t of ice on 635,000 kWh = about 429 t CO2 a year",
+      "At Bhimavaram's 102 kWh per tonne the same plant would use 843,500 kWh, 569 t CO2"
+    ],
+    "note": "Units, output and energy from SAMEEEKSHA's Porbandar ice making cluster summary; the per tonne figure is our division of its two totals. Bhimavaram figures from BEE's study of that cluster. CO2 at the CEA FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2; divide by your tonnes of ice for the per tonne figure a buyer asks for.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Bhimavaram ice plants per tonne",
+      "to": "/answers/bhimavaram-ice-plants-electricity-per-tonne"
+    },
+    {
+      "label": "Ice plant kWh per tonne benchmark",
+      "to": "/answers/ice-plant-kwh-per-tonne-benchmark"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Porbandar ice making industries summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=256&Itemid=502"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

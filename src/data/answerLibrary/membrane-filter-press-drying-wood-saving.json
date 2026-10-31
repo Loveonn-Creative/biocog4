@@ -1,0 +1,87 @@
+{
+  "slug": "membrane-filter-press-drying-wood-saving",
+  "q": "How does a membrane filter press reduce dryer fuel and CO2 in a chemical unit?",
+  "title": "Membrane filter press: less wood to dry",
+  "short": "By squeezing the cake to 38% moisture instead of 65%, so the dryer has less water to boil off. BEE's Ahmedabad report cuts drying from 72 to 49 hours a batch and wood by 241.5 t a year. Cost Rs 24.20 lakh, payback 3.33 years (2010). Wood CO2 is biogenic, so Scope 1 falls only about 7 t.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Chemical, dye and pigment makers who filter a slurry, then dry the wet cake on wood-fired hot air, and want to cut drying fuel at the source",
+  "sections": [
+    {
+      "h": "Where the saving starts",
+      "p": [
+        "A recessed plate filter press leaves cake at about 65% moisture, unevenly from plate to plate. A 40-plate membrane press inflates a membrane behind each cake at 8 to 10 kg per sq cm and presses more liquid out, to about 38%. Every kilogram of water squeezed out is a kilogram the dryer does not evaporate."
+      ]
+    },
+    {
+      "h": "The batch BEE costed",
+      "ul": [
+        "1,280 litres a batch, 150 batches a year.",
+        "Hot air generator burning 70 kg of wood an hour.",
+        "Drying after a conventional press: 72 hours, 5,040 kg of wood, 3.94 kg per litre processed.",
+        "Drying after a membrane press: 49 hours, 3,430 kg of wood, 2.68 kg per litre.",
+        "Saving: 1,610 kg a batch, 241.5 t a year."
+      ]
+    },
+    {
+      "h": "Money and payback",
+      "ul": [
+        "Equipment Rs 19.89 lakh, total project Rs 24.20 lakh.",
+        "Wood at Rs 3,000 a tonne: about Rs 7.26 lakh a year.",
+        "Payback 3.33 years. The report counts no extra electricity; ask whether the squeeze pump or compressor adds any, and take it off the saving."
+      ]
+    },
+    {
+      "h": "What it does to your carbon figures",
+      "p": [
+        "The report claims 227 t of CO2 saved. That is wood CO2, which is biogenic and reported outside Scope 1. The methane and nitrous oxide from 241.5 t of wood, which do count, are about 7 t CO2e. So Scope 1 falls by about 7 t, and biogenic CO2 by about 420 t, shown separately.",
+        "If your dryer runs on coal, oil or gas instead, the same moisture cut would show as a large fossil saving. Work it out with your own fuel per batch."
+      ]
+    }
+  ],
+  "example": {
+    "title": "150 batches a year (estimate)",
+    "lines": [
+      "Wood saved: (5,040 minus 3,430) kg x 150 = 241.5 t",
+      "Scope 1 methane and nitrous oxide avoided: 241.5 x 0.030 = 7.2 t CO2e",
+      "Biogenic CO2 avoided, reported separately: 241.5 x 1.75 = 422 t",
+      "Drying time freed: 23 hours a batch, about 3,450 hours a year"
+    ],
+    "note": "Wood at IPCC 2006 defaults (15.6 GJ per tonne; 112,000 kg CO2, 30 kg methane, 4 kg nitrous oxide per TJ) and AR6 warming potentials."
+  },
+  "senseible": "Senseible reads fuel and power bills into monthly CO2 records. It has no built-in wood factor, so log wood by weight and apply the figures worked out here. The green loan check shows how to present a project like this to a lender.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Efficient 96-tray dryer",
+      "to": "/answers/efficient-tray-dryer-wood-saving-chemical-unit"
+    },
+    {
+      "label": "Ahmedabad chemical cluster footprint",
+      "to": "/answers/ahmedabad-chemical-cluster-gas-carbon-footprint"
+    },
+    {
+      "label": "Biomass boilers: methane stays in Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: membrane filter press, 40 plates, Ahmedabad chemical cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Ah_40_1.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Table 1.2 (net calorific values) and Chapter 2 tables",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately from the scopes)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

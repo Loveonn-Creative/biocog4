@@ -1,0 +1,76 @@
+{
+  "slug": "eeio-spend-factor-what-it-means",
+  "q": "What does a spend-based (EEIO) factor like tonnes CO2e per million of revenue actually include?",
+  "title": "What a spend-based (EEIO) factor includes",
+  "short": "An EEIO factor spreads a country's emissions across its industries by the money flowing between them, so one figure per unit of revenue covers every upstream step behind a sector's output. The GHG Protocol's example: paper mills, 1,520 t CO2e per USD 1 million. Good for screening, poor at showing your own cuts.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Indian suppliers whose buyer estimated them from spend, and buyers' sustainability teams",
+  "sections": [
+    {
+      "h": "How the number is built",
+      "p": [
+        "EEIO stands for environmentally extended input-output. The model takes national emissions and assigns them to groups of finished products, following the money that flows between sectors. The result is emissions per unit of revenue for a sector, covering all upstream supply chain activity up to the sale. In the GHG Protocol's example, USD 1 million of paper mill revenue carries 1,520 t CO2e across everything behind it."
+      ]
+    },
+    {
+      "h": "What it does well",
+      "ul": [
+        "Covers the whole economy: no upstream source falls outside the boundary.",
+        "Needs only spend, which every buyer already has in its ledger.",
+        "Sizes all purchases quickly, which is why the guidance calls it particularly useful for screening."
+      ]
+    },
+    {
+      "h": "What it cannot tell anyone",
+      "ul": [
+        "Differences between producers in one sector: a mill on biomass and a mill on coal get the same figure.",
+        "Differences in price: emissions rise with the invoice value, as if a costlier product always emits more.",
+        "Your reductions: cutting fuel at the mill does not move the factor.",
+        "Your country, often: most EEIO sets describe one economy, such as the United States, and some regions have none."
+      ]
+    },
+    {
+      "h": "If your buyer used one on you",
+      "p": [
+        "Your figure in their inventory is your invoice value times an average for your sector, in their currency and their economy. Offer your own Scope 1 and 2, split to their purchases with the basis stated. That replaces a price-driven estimate with one tied to your bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a price rise that looks like more carbon",
+    "lines": [
+      "Buyer's purchases from an Indian paper supplier: Rs 84 lakh; at Rs 84 per USD, USD 1,00,000 = 0.1 million",
+      "Estimate: 0.1 x 1,520 = 152 t CO2e",
+      "Next year, same tonnes, price up 10%: Rs 92.4 lakh = USD 0.11 million; 0.11 x 1,520 = 167.2 t CO2e",
+      "15.2 t more on paper, with nothing changed at the mill"
+    ],
+    "note": "Example figures. 1,520 t CO2e per USD 1 million is the GHG Protocol's own example for paper mills, not a factor to apply to Indian purchases."
+  },
+  "senseible": "Senseible provides spend-based estimates where only spend is available, labelled as spend-based with wider uncertainty. A supplier that uploads its bills gets activity-based Scope 1 and 2 that can replace that estimate in a buyer's inventory.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Replacing a US EPA spend factor",
+      "to": "/answers/replace-us-epa-spend-factor-with-supplier-data"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, FX",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Why two tools give different totals",
+      "to": "/answers/why-two-tools-give-different-scope-3-numbers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Introduction (environmentally extended input-output data)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Intro_GHGP_Tech.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

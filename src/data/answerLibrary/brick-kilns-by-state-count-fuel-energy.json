@@ -1,0 +1,111 @@
+{
+  "slug": "brick-kilns-by-state-count-fuel-energy",
+  "q": "How many brick kilns does each state have, what fuels do they burn and how much energy do they use?",
+  "title": "Brick kilns by state: count, fuel and energy",
+  "short": "Tamil Nadu has the most kilns, 66,000, mostly small clamps on biomass and coal. Uttar Pradesh makes the most bricks, 58 billion a year on 5.6 million toe. Maharashtra, Punjab, Haryana and Rajasthan fire a brick on the least energy; Gujarat and Andhra Pradesh on the most.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Brick kiln owners, state brick associations and lenders in Uttar Pradesh, Maharashtra, Gujarat, Bihar, Punjab, West Bengal, Haryana, Tamil Nadu, Andhra Pradesh and Rajasthan",
+  "sections": [
+    {
+      "h": "Ten states side by side",
+      "ul": [
+        "Uttar Pradesh: 16,000 kilns, 58 billion bricks, 5.6 million toe. Coal and biomass. Mostly Bull's trench kilns, a few zigzag. Main clusters Ghaziabad, Baghpat, Varanasi, Muzaffarnagar and Mirzapur.",
+        "Maharashtra: 17,000 kilns, 28 billion bricks, 2.1 million toe. Coal and biomass. Clamps and Bull's trench kilns, bricks mostly hand moulded.",
+        "Gujarat: 31,500 kilns, 20 billion bricks, 2.78 million toe. Coal and biomass. Clamps and Bull's trench kilns.",
+        "Bihar: 6,600 kilns, 19.7 billion bricks, 2.6 million toe. Coal first, biomass second. Mostly Bull's trench, with a few zigzag and vertical shaft kilns.",
+        "Punjab: 3,300 kilns, 19 billion bricks, 1.5 million toe. Coal and biomass. Mostly Bull's trench, a few zigzag. Main clusters Ludhiana, Moga, Ferozpur and Jalandhar.",
+        "West Bengal: 4,300 kilns, 15 billion bricks, 1.73 million toe. Coal. Bull's trench kilns on natural and high draft.",
+        "Haryana: 2,800 kilns, 14 billion bricks, 1.12 million toe. Biomass and coal. Mostly Bull's trench, some zigzag; a very few make perforated bricks and hollow blocks. Main clusters Jhajjar, Sonepat, Faridabad and Ambala.",
+        "Tamil Nadu: 66,000 kilns, 12 billion bricks, 1.5 million toe. Biomass and coal, biomass listed first. Clamps and Bull's trench kilns.",
+        "Andhra Pradesh: 8,000 kilns, 9.3 billion bricks, 1.37 million toe. Biomass first, coal second. Clamps and Bull's trench kilns, with clay often hauled from far off.",
+        "Rajasthan: 1,900 kilns, 9.2 billion bricks, 0.74 million toe. Biomass and coal. Mostly Bull's trench. Main clusters Ganganagar, Jaipur, Sri Madhopur and Hanumangarh."
+      ]
+    },
+    {
+      "h": "Energy per 1,000 bricks, from the state totals",
+      "ul": [
+        "Maharashtra 3.1 GJ, although its average kiln fires only about 16 lakh bricks a year.",
+        "Punjab 3.3 GJ, Haryana 3.4 GJ, Rajasthan 3.4 GJ: big kilns, about 50 lakh bricks each a year.",
+        "Uttar Pradesh 4.0 GJ, West Bengal 4.8 GJ.",
+        "Tamil Nadu 5.2 GJ, Bihar 5.5 GJ, Gujarat 5.8 GJ, Andhra Pradesh 6.2 GJ. Tamil Nadu and Gujarat run many small clamps of 2 to 6 lakh bricks each; Bihar's kilns are mostly Bull's trench at about 30 lakh, so kiln type alone does not explain the gap."
+      ],
+      "p": [
+        "These are state averages, not a target for your kiln. Brick weight, fuel quality and kiln size differ by state, so compare your own kiln with its own past seasons first."
+      ]
+    },
+    {
+      "h": "What the season's records should hold",
+      "ol": [
+        "Coal by invoice and weighbridge slip, with the GCV the supplier states.",
+        "Biomass by weight on its own line: husk, wood, crop residue.",
+        "Bricks fired, by class, and the days the kiln ran. The season runs December to June in most of these states, so tie each coal delivery to the season it was fired in, not the financial year it was billed in.",
+        "Diesel for pumps, extruders and clay haulage. Clay carried in your own trucks or tractors is Scope 1; carried by a contractor, it is Scope 3.",
+        "If you make perforated bricks or hollow blocks, fuel per tonne fired as well as per brick, so a builder can compare them with the solid bricks they replace."
+      ]
+    },
+    {
+      "h": "Why biomass sits on its own line",
+      "p": [
+        "CO2 from burning crop residue or wood is biogenic. It is reported next to your Scope 1 total, not inside it. A Tamil Nadu clamp on husk and a West Bengal kiln on coal can use the same energy per brick and show very different fossil CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Fossil CO2 per 1,000 bricks if all the energy were coal (estimate)",
+    "lines": [
+      "West Bengal: 1.73 million toe x 41.868 GJ / 15 billion bricks = 4.83 GJ per 1,000 x 94.6 kg = about 457 kg CO2",
+      "Maharashtra: 3.14 GJ = about 297 kg; Punjab: 3.31 GJ = about 313 kg; Haryana: 3.35 GJ = about 317 kg; Rajasthan: 3.37 GJ = about 319 kg",
+      "Uttar Pradesh: 4.04 GJ = about 382 kg; Bihar: 5.53 GJ = about 523 kg",
+      "Gujarat: 5.82 GJ = about 551 kg; Andhra Pradesh: 6.17 GJ = up to 583 kg; Tamil Nadu: 5.23 GJ = up to 495 kg, but in both most of it is biomass, so fossil CO2 is far lower",
+      "Uttar Pradesh as a state, all coal: 5.6 million toe x 41.868 GJ x 94.6 kg = up to 22 million t CO2 a year"
+    ],
+    "note": "Kiln counts, output, fuels and energy from SAMEEEKSHA's state brick summaries, one page per state, drawn from TERI's brick sector work. The summaries do not split coal from biomass, so each figure is a ceiling; biomass CO2 is biogenic and shown separately. Coal at the IPCC 2006 default for bituminous coal, 94.6 kg CO2 per GJ."
+  },
+  "senseible": "Senseible reads coal invoices into season totals at 1.76 t CO2 per tonne of Indian coal, so you can set your own kiln's figure per 1,000 bricks against your state's.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Brick kiln CO2 per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Ludhiana brick kilns: coal per brick",
+      "to": "/answers/ludhiana-brick-kilns-coal-energy-per-brick"
+    },
+    {
+      "label": "Zigzag conversion and credits",
+      "to": "/answers/zigzag-kiln-conversion-carbon-credits"
+    },
+    {
+      "label": "Biomass in a boiler or kiln: Scope 1?",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Uttar Pradesh clay fired brick making clusters (TERI)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=217&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA, Maharashtra clay fired brick making clusters (TERI)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=214&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA, Tamil Nadu clay fired brick making clusters (TERI)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=218&Itemid=502"
+    },
+    {
+      "label": "SAMEEEKSHA, Andhra Pradesh clay fired brick making clusters (TERI)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=212&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

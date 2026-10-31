@@ -1,0 +1,88 @@
+{
+  "slug": "lender-project-finance-emissions-category-15",
+  "q": "How does a lender count emissions from a factory project it finances?",
+  "title": "Project finance emissions for lenders",
+  "short": "Take the project's Scope 1 and 2 emissions for the year and multiply by your share of total project cost, equity plus debt. If you are the first lender or sponsor, the GHG Protocol also asks for the projected lifetime Scope 1 and 2, reported separately from Scope 3, in the year you finance it.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Banks, NBFCs and project investors in India, and MSME borrowers asked for project emissions",
+  "sections": [
+    {
+      "h": "The yearly figure",
+      "p": [
+        "Under the GHG Protocol Category 15 guidance, project finance is long-term financing of infrastructure or industrial projects, as a sponsor or as a lender. It is a required part of the category. For each year of the loan, count the project's Scope 1 and 2 for that year times your share of total project cost.",
+        "This applies to relevant projects: those in emission-heavy sectors, those above a threshold you or your sector set, or those meeting other criteria you define. Count the project even when the money passed through an intermediary. If the project's Scope 3 dwarfs its own, as with a highway, include its Scope 3 too."
+      ]
+    },
+    {
+      "h": "The lifetime figure",
+      "ul": [
+        "Only for the initial sponsor or lender, and only in the year the project is financed.",
+        "Projected yearly emissions times expected life times your share of project cost.",
+        "Not amortised or discounted, and reported separately from Scope 3, so it is never added to the yearly figures.",
+        "Where the life is uncertain, report a range, with the assumptions behind it."
+      ]
+    },
+    {
+      "h": "When the borrower has no figures",
+      "p": [
+        "The guidance allows an average-data method as a last resort: during construction, project cost times a spend-based factor for that kind of construction; once running, project revenue times a factor for its operating sector. Keep the factors current, adjust for exchange rates and inflation, and prefer factors for the project's region."
+      ]
+    },
+    {
+      "h": "What to ask the borrower for",
+      "ul": [
+        "Twelve months of electricity bills and fuel invoices for the plant, or the design energy use per unit of output for a new unit.",
+        "Planned yearly output and the expected working life of the main equipment.",
+        "Total project cost, split into equity and debt, so your share is clear."
+      ]
+    },
+    {
+      "h": "What else in Category 15 is optional",
+      "p": [
+        "General corporate loans with no stated use of proceeds, funds managed for clients, underwriting and advisory work are optional under the guidance. Avoided emissions from a project, such as clean power displacing grid power, go outside the inventory and are reported apart."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a new forging unit",
+    "lines": [
+      "Loan Rs 12 crore; total project cost Rs 30 crore (equity plus debt); share 12 / 30 = 40%",
+      "Grid electricity: 24,00,000 kWh x 0.675 kg CO2 per kWh (CEA, FY 2025-26) = 1,620 t CO2",
+      "Furnace oil: 3,00,000 litres x 2.97 kg CO2 per litre = 891 t CO2",
+      "Yearly Scope 3 Category 15 line: (1,620 + 891) x 0.40 = 2,511 x 0.40 = 1,004.4 t CO2",
+      "Lifetime, reported separately in the year financed: 2,511 x 15 to 25 years x 0.40 = 15,066 to 25,110 t CO2"
+    ],
+    "note": "Example figures for the loan, project cost, energy use and working life. The factors are CO2 from combustion; methane and nitrous oxide are left out."
+  },
+  "senseible": "Senseible does not calculate a lender's portfolio figures. A borrower can use it to turn the plant's electricity bills and fuel invoices into documented kWh and litres, and the green loan check shows how ready those records are for a lender.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Financed emissions for a solar project loan",
+      "to": "/answers/solar-project-finance-financed-emissions"
+    },
+    {
+      "label": "How lenders read a borrower GHG report",
+      "to": "/answers/how-lenders-read-msme-borrower-ghg-report"
+    },
+    {
+      "label": "IFRS S2 changes to financed emissions",
+      "to": "/answers/ifrs-s2-category-15-financed-emissions-relief"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 15 (tables 15.1 and 15.2, formulas 15.3 and 15.4)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter15.pdf"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0 (FY 2025-26 weighted average)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

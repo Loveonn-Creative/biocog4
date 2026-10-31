@@ -1,0 +1,84 @@
+{
+  "slug": "natural-gas-engine-cogen-methane-slip",
+  "q": "How much methane does a gas engine cogeneration set emit compared with a gas boiler?",
+  "title": "Gas engine vs gas boiler: methane slip",
+  "short": "Hundreds of times more by IPCC defaults: 597 kg of methane per TJ of gas for a four-stroke lean-burn engine against 1 kg for a boiler. That adds about 0.65 kg CO2e to every cubic metre's 2.05 kg CO2, nearly a third more. Rich-burn engines add about 0.12 kg.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Textile, food and ceramic plants running or buying a natural gas engine for power and heat, and anyone comparing it with a gas boiler plus grid power",
+  "sections": [
+    {
+      "h": "The IPCC figures, per TJ of gas burned",
+      "ul": [
+        "Gas boiler: methane 1 kg, nitrous oxide 1 kg.",
+        "Gas turbine above 3 MW: methane 4 kg, nitrous oxide 1 kg.",
+        "Reciprocating engine, four-stroke rich burn: methane 110 kg.",
+        "Reciprocating engine, four-stroke lean burn: methane 597 kg.",
+        "Reciprocating engine, two-stroke lean burn: methane 693 kg.",
+        "CO2 is the same for all of them: 56,100 kg per TJ, which is our 2.05 kg per cubic metre."
+      ]
+    },
+    {
+      "h": "Why engines leak methane",
+      "p": [
+        "Lean-burn engines run with extra air to save fuel and cut NOx. Some gas slips through the cylinder unburned and leaves in the exhaust. Methane traps far more heat than CO2 (29.8 times over 100 years for fossil methane, IPCC AR6), so a small slip shows up large in CO2e."
+      ]
+    },
+    {
+      "h": "How sure these numbers are",
+      "p": [
+        "IPCC took the engine figures from US EPA data and notes that most such engines in that data run gas pipeline compressors. A modern genset with an oxidation catalyst may emit less. If the maker or a stack test gives a measured methane figure for your engine, use it and keep the report. Without one, the IPCC default is the defensible choice."
+      ]
+    },
+    {
+      "h": "What it means for a cogeneration decision",
+      "ul": [
+        "Count methane slip on the engine side before comparing it with a boiler plus grid power. Leaving it out flatters the engine.",
+        "Ask suppliers for methane emissions in g per kWh at your load, not only efficiency and NOx.",
+        "Report the gas and its methane in Scope 1, and the grid power you no longer buy as lower Scope 2. Never net them into one figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "1,000,000 cubic metres of gas a year (estimate)",
+    "lines": [
+      "Gas energy: 1,000,000 x 0.0365 GJ = 36,540 GJ",
+      "CO2 in any burner: 1,000,000 x 2.05 kg = 2,050 t",
+      "Lean-burn engine methane: 36.54 TJ x 597 kg = 21.8 t x 29.8 = 650 t CO2e",
+      "Rich-burn engine methane: 36.54 TJ x 110 kg = 4.0 t x 29.8 = 120 t CO2e",
+      "Boiler methane and nitrous oxide: about 11 t CO2e",
+      "Scope 1 total: lean-burn engine about 2,700 t; boiler about 2,061 t"
+    ],
+    "note": "Gas heat per cubic metre derived from our factor of 2.05 kg CO2 and IPCC's 56,100 kg CO2 per TJ. Methane factors from IPCC 2006 Table 2.7; AR6 warming potentials."
+  },
+  "senseible": "Senseible reads gas and electricity bills into monthly Scope 1 and Scope 2 records, with natural gas at 2.05 kg CO2 per cubic metre. It does not add engine methane on its own, so add the slip worked out here to your carbon number.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Trigeneration and your scopes",
+      "to": "/answers/trigeneration-gas-engine-scope-1-and-2"
+    },
+    {
+      "label": "Gas generator CO2 per kWh",
+      "to": "/answers/gas-generator-emissions-per-kwh"
+    },
+    {
+      "label": "Splitting CHP emissions between power and steam",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Chapter 2 Stationary Combustion, Tables 2.3 to 2.7",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, global warming potentials (methane 27.0 non fossil, 29.8 fossil; nitrous oxide 273)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -14,6 +14,7 @@
         "Products that burn fuel: generators, engines, boilers, vehicles.",
         "Fuels and feedstocks you sell, which release CO2 when burnt.",
         "Products that contain and leak greenhouse gases: air conditioners and refrigeration units with HFC refrigerants.",
+        "Less obvious direct-use products in the standard's table: buildings, data centres, web-based software, industrial gases, fire extinguishers and fertilisers.",
         "Indirect use-phase emissions, such as the energy to heat water a detergent needs, are optional and should be reported separately if included."
       ]
     },
@@ -50,7 +51,7 @@
       "At an assumed 75% average load: 213 x 0.75 = about 160 t CO2 per motor",
       "200 motors sold in the year at 75% load: 200 x 159.75 = 31,950 t CO2"
     ],
-    "note": "Hours, lifetime and load are assumptions for illustration; publish your own with the result."
+    "note": "Hours, lifetime and load are assumptions to show the method; publish your own with the result."
   },
   "senseible": "Senseible does not model use-phase emissions of products you sell. The grid factor it applies to your own bills, 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database, is the same figure you can use for products run in India.",
   "links": [

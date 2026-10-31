@@ -1,0 +1,81 @@
+{
+  "slug": "valsad-chemical-cluster-gas-electricity",
+  "q": "How much energy does the Valsad chemical cluster use?",
+  "title": "Valsad chemical cluster: gas and power",
+  "short": "6,644 toe a year across 42 MSMEs making dyes, pigments, pesticides and pharma intermediates, by TERI's 2020-21 study for BEE: 4,802 toe of natural gas heat and 1,842 toe of electricity. Gas is 72% of the energy, yet electricity carries more of the CO2, roughly 56% (estimate).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Dye, pigment, pesticide and pharma intermediate makers in Valsad district, Gujarat",
+  "sections": [
+    {
+      "h": "Valsad in four numbers",
+      "ul": [
+        "42 MSMEs.",
+        "62,410 t of product a year.",
+        "Natural gas for process heat: 4,802 toe.",
+        "Electricity: 1,842 toe, about 21.4 million kWh."
+      ]
+    },
+    {
+      "h": "Why a smaller energy share carries more CO2",
+      "p": [
+        "Each GJ of gas burnt releases about 56 kg CO2. Each GJ of grid electricity carries about 188 kg at FY 2025-26's 0.675 kg per kWh, because most of India's power still comes from coal. So the 28% of energy that arrives as electricity outweighs the 72% that arrives as gas."
+      ]
+    },
+    {
+      "h": "Your unit against the cluster",
+      "p": [
+        "The cluster averages about 0.11 toe, or 4.5 GJ, per tonne of product. A pigment unit with a spray dryer and a pesticide formulator that only blends will sit far apart, so set your own figure against your own past years, by product family."
+      ]
+    },
+    {
+      "h": "Records a buyer or auditor will ask for",
+      "ol": [
+        "Gas bills by month in scm, with the calorific value printed.",
+        "Electricity bills in kWh, and generator diesel if you run one.",
+        "Tonnes produced by product family in the same months.",
+        "Whether steam or utilities are shared with a neighbouring unit, and how you split them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster CO2 at FY 2025-26 factors (estimate)",
+    "lines": [
+      "Gas: 4,802 toe x 41.868 GJ = 201,050 GJ x 56.1 kg = about 11,280 t CO2",
+      "Electricity: 1,842 toe x 11,630 kWh = 21.4 million kWh x 0.675 kg = about 14,460 t CO2",
+      "Total about 25,740 t on 62,410 t of product = about 0.41 t CO2 per tonne",
+      "A unit making 1,500 t on 510,000 kWh and 170,000 scm of gas: 344 t + 349 t = 693 t, 0.46 t per tonne"
+    ],
+    "note": "Unit count, output and energy from SAMEEEKSHA's summary of TERI's 2020-21 study for BEE. Gas at the IPCC 2006 default of 56.1 kg CO2 per GJ; the single unit uses Senseible's 2.05 kg per scm and is an assumed example. Grid factor from CEA's CO2 Baseline Database v22.0."
+  },
+  "senseible": "Senseible reads gas and electricity bills into Scope 1 and 2 lines, at 2.05 kg CO2 per scm and the CEA grid factor, and drafts a self-declared BRSR energy and emissions table from them.",
+  "links": [
+    {
+      "label": "BRSR reporting",
+      "to": "/brsr-reporting"
+    },
+    {
+      "label": "Ankleshwar chemical cluster: gas and power",
+      "to": "/answers/ankleshwar-chemical-cluster-energy-gas-power"
+    },
+    {
+      "label": "Dye and pigment footprint per kg",
+      "to": "/answers/dye-pigment-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Valsad chemical cluster summary (TERI for BEE, 2020-21 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=315&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

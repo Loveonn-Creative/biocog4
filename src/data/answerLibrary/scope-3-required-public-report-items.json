@@ -1,0 +1,78 @@
+{
+  "slug": "scope-3-required-public-report-items",
+  "q": "What must a company publicly report to claim its Scope 3 inventory follows the GHG Protocol?",
+  "title": "What a GHG Protocol Scope 3 report must show",
+  "short": "Section 11.1 of the Scope 3 Standard lists what must be public: a Scope 1 and 2 report, Scope 3 by category in CO2e without biogenic CO2 or offsets, what was included and excluded with reasons, base year details, biogenic CO2 separately, and for each category its data, methods and share from suppliers.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Buyers' sustainability teams preparing a Scope 3 report, and suppliers asked to support one",
+  "sections": [
+    {
+      "h": "The required list",
+      "ol": [
+        "A Scope 1 and 2 report that follows the GHG Protocol Corporate Standard.",
+        "Total Scope 3, shown separately by category.",
+        "For each category, emissions of CO2, methane, nitrous oxide, HFCs, PFCs and SF6 in tonnes CO2e, excluding biogenic CO2 and not reduced by any offsets or allowances bought or sold.",
+        "The categories and activities included.",
+        "The categories and activities excluded, each with its justification.",
+        "Once set, the base year, why it was chosen, the recalculation policy, base year emissions by category, and context for any change that triggered a recalculation.",
+        "For each category, biogenic CO2 reported separately.",
+        "For each category, the types and sources of data, including activity data, emission factors and GWP values, and the quality of that data.",
+        "For each category, the methods, allocation and assumptions used.",
+        "For each category, the percentage of emissions calculated from supplier or other value chain data."
+      ]
+    },
+    {
+      "h": "Two lines reviewers check first",
+      "ul": [
+        "Gross figures. Offsets and allowances bought or sold never reduce a category total.",
+        "Exclusions. A category simply missing from the table, with no reason given, fails the standard."
+      ]
+    },
+    {
+      "h": "Where supplier answers land",
+      "p": [
+        "The last three items are written per category, and they are where supplier data shows up in public. A supplier figure with its source bills, factor source and split basis lets the buyer fill all three without guessing. The supplier percentage rises with every such answer."
+      ]
+    },
+    {
+      "h": "Useful extras the standard suggests",
+      "ul": [
+        "The type of assurance, first or third party.",
+        "Finer breakdowns within a category, such as by material in Category 1.",
+        "Tonnes of each gas, not only CO2e.",
+        "Other gases with IPCC 100-year GWP values, such as NF3, listed if included."
+      ]
+    }
+  ],
+  "senseible": "Senseible's GHG Protocol reports are self-declared drafts built from your uploaded records. Each line traces to its source document and factor, which supports the data and methods items for the Scope 1, 2 and supplier lines it holds.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Share of Scope 3 from supplier data",
+      "to": "/answers/scope-3-report-share-from-supplier-data"
+    },
+    {
+      "label": "Excluding a Scope 3 category",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    },
+    {
+      "label": "Can a GHG report subtract offsets?",
+      "to": "/answers/can-a-ghg-report-subtract-carbon-offsets"
+    },
+    {
+      "label": "Reading a GHG inventory report",
+      "to": "/answers/how-to-read-a-ghg-inventory-report"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard, sections 11.1 (required information) and 11.2 (optional information)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

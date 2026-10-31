@@ -1,0 +1,87 @@
+{
+  "slug": "waste-oil-burner-furnace-co2-factor",
+  "q": "What emission factor applies when a furnace burns used or waste oil?",
+  "title": "Waste oil in a furnace: the CO2 factor",
+  "short": "About 3.03 t CO2e per tonne of waste oil burned in a factory furnace, from IPCC 2006 defaults: 73,300 kg CO2 per TJ at 40.2 GJ a tonne, plus small methane and nitrous oxide. It is fossil Scope 1, and only about 5% lower than furnace oil per unit of heat.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Forging, galvanizing and heat treatment owners who buy used or reprocessed oil as a cheaper furnace fuel and must report it",
+  "sections": [
+    {
+      "h": "The IPCC defaults for waste oil",
+      "ul": [
+        "CO2: 73,300 kg per TJ, with a 95% range of 72,200 to 74,400 (IPCC 2006, Table 2.3, manufacturing industries).",
+        "Methane: 30 kg per TJ (range 10 to 100). Nitrous oxide: 4 kg per TJ (range 1.5 to 15).",
+        "Heat content: 40.2 GJ per tonne net (Table 1.2), but the range runs from 20.3 to 80.0, the widest of any oil.",
+        "IPCC defines waste oils as used oils, such as spent lubricants, burned for heat. None of it is biogenic, so all of it goes in Scope 1."
+      ]
+    },
+    {
+      "h": "Why the heat content matters more than the factor",
+      "p": [
+        "The CO2 factor per TJ is tight. The heat per tonne is not: used oil can carry water and sludge, so two tankers can differ a lot. The default 40.2 GJ gives 2.95 t CO2 per tonne. If a lab test on your oil shows 36 GJ, the same tonne gives 2.64 t.",
+        "Ask your supplier for a net calorific value on each lot, or send a sample for testing twice a year. Keep the certificate with the invoice."
+      ]
+    },
+    {
+      "h": "Compared with furnace oil",
+      "p": [
+        "Furnace oil is 77,400 kg CO2 per TJ at 40.4 GJ a tonne, about 3.13 t CO2 per tonne. Per unit of heat, waste oil comes out about 5% lower. Switching saves money, not much carbon, and a buyer reading your report should see it as fossil fuel, not a recycled or low carbon one."
+      ]
+    },
+    {
+      "h": "What to record each month",
+      "ul": [
+        "Quantity received in kg or litres, from the invoice, and the density if it is billed in litres.",
+        "Stock at the start and end of the month, so you report oil burned, not oil bought.",
+        "The lot's calorific value certificate, if you have one.",
+        "If the oil fires a space heater in an office or canteen, IPCC's commercial table uses 300 kg methane per TJ, ten times the factory figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A forging furnace burning 60 t of waste oil a year (estimate)",
+    "lines": [
+      "Heat: 60 t x 40.2 GJ = 2,412 GJ",
+      "CO2: 2,412 GJ x 73.3 kg = 176.8 t",
+      "Methane: 2,412 GJ x 0.030 kg = 72 kg x 29.8 = 2.2 t CO2e",
+      "Nitrous oxide: 2,412 GJ x 0.004 kg = 9.6 kg x 273 = 2.6 t CO2e",
+      "Total: about 181.6 t CO2e, or 3.03 t per tonne of oil"
+    ],
+    "note": "IPCC 2006 defaults with AR6 warming potentials (fossil methane 29.8, nitrous oxide 273). Replace 40.2 GJ with your lab figure where you have one."
+  },
+  "senseible": "Senseible reads fuel invoices into monthly records, but it has no built-in factor for waste oil, so a waste oil line waits for a factor rather than being guessed. Use the figure worked out here, and see how your total compares on the calculators page.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Used engine oil in a vehicle workshop",
+      "to": "/answers/workshop-used-engine-oil-emissions-scope"
+    },
+    {
+      "label": "Furnace oil litres to kilograms",
+      "to": "/answers/furnace-oil-litres-to-kg-density"
+    },
+    {
+      "label": "GCV or NCV in fuel calculations",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Chapter 2 Stationary Combustion, Tables 2.3 to 2.7",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Table 1.2 (net calorific values) and Chapter 2 tables",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, global warming potentials (methane 27.0 non fossil, 29.8 fossil; nitrous oxide 273)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

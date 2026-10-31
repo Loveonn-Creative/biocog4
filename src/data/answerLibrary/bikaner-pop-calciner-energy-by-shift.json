@@ -1,0 +1,75 @@
+{
+  "slug": "bikaner-pop-calciner-energy-by-shift",
+  "q": "Does running a POP calciner on more shifts cut energy per tonne?",
+  "title": "POP calciner: one shift or three?",
+  "short": "Yes. TERI measured Bikaner calciners at 472 kcal per kg of plaster on one shift, 438 on two and 403 on three: 1.98, 1.84 and 1.69 GJ per tonne. Firing round the clock uses about 15% less per tonne, because a furnace kept hot loses less heat than one restarted each day.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Plaster of Paris unit owners in Bikaner deciding how many shifts to run",
+  "sections": [
+    {
+      "h": "Three real units side by side",
+      "ul": [
+        "3,600 t a year: 95,000 kWh and 216 t of petcoke, 170 toe. About 60 kg of petcoke per tonne of plaster.",
+        "6,000 t a year: 175,000 kWh and 330 t of petcoke, 263 toe. About 55 kg.",
+        "7,800 t a year: 250,000 kWh and 390 t of petcoke, 314 toe. About 50 kg.",
+        "Worked through, these are 1.98, 1.84 and 1.69 GJ per tonne: the one, two and three shift rates. TERI's text calls the 7,800 t unit a two shift plant with a larger drum, but its figures match the three shift rate."
+      ]
+    },
+    {
+      "h": "Why the third shift pays",
+      "p": [
+        "Each batch takes about 1½ hours in a 1 or 2 t drum. A cold start needs a pilot flame, and every stop lets the furnace walls, built from plain red brick, cool and soak up heat again. Of the 75 working units, 65 already run three shifts; 10 run one shift on a 1 t drum."
+      ]
+    },
+    {
+      "h": "Before you add a shift",
+      "ul": [
+        "Only add one if you can sell the plaster; idle hot running wastes fuel too.",
+        "Insulate first. Uninsulated walls lose heat on every shift.",
+        "Fix feeding. Petcoke goes in at a fixed rate while air is set by hand, so unburnt fuel clogs the burner orifices and shows as black smoke.",
+        "Log petcoke per batch for a month at your current pattern, then again after the change, so the saving is measured rather than assumed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne of plaster, by unit (estimate)",
+    "lines": [
+      "3,600 t: 216 t petcoke x 3.17 = 685 t, plus 95,000 kWh x 0.675 = 64 t: 749 t, or 208 kg per tonne",
+      "6,000 t: 330 x 3.17 = 1,046 t, plus 118 t: 1,164 t, or 194 kg per tonne",
+      "7,800 t: 390 x 3.17 = 1,236 t, plus 169 t: 1,405 t, or 180 kg per tonne",
+      "Making 3,600 t at the three shift rate instead: about 28 kg less per tonne, roughly 100 t CO2 a year"
+    ],
+    "note": "Unit energy from TERI's Bikaner plaster of Paris profile. Petcoke at 3.17 t CO2 per tonne from the IPCC 2006 default (32.5 GJ per tonne, 97.5 kg CO2 per GJ); grid factor CEA FY 2025-26."
+  },
+  "senseible": "The calculators turn a month's kWh into CO2 at the CEA grid factor; petcoke has no factor in Senseible, so add it from the IPCC default shown here to compare one shift pattern with another.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Bikaner plaster of Paris cluster",
+      "to": "/answers/bikaner-plaster-of-paris-cluster-petcoke"
+    },
+    {
+      "label": "Plaster of Paris CO2 per tonne",
+      "to": "/answers/plaster-of-paris-calcination-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Bikaner plaster of Paris industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Bikaner-POP-Industries-Rajasthan.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

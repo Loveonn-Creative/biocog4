@@ -1,0 +1,84 @@
+{
+  "slug": "tube-ice-plant-vs-block-ice-electricity",
+  "q": "How much electricity does a 10 TPD tube ice plant save compared with block ice making?",
+  "title": "Tube ice vs block ice: kWh per tonne",
+  "short": "Tube ice saves about 47 kWh per tonne in BEE's Bhimavaram report: a 10 TPD plant at 73.88 kWh against 120.7 for the block plant it replaces. At 2,800 t a year that is 131,111 kWh, roughly 88 t CO2 on today's grid. Cost Rs 12.10 lakh, payback 2.46 years (2010).",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Ice plant owners supplying fishing boats and seafood processors who are weighing a tube ice plant against their brine tank block plant",
+  "sections": [
+    {
+      "h": "Block plant against tube plant",
+      "ul": [
+        "Block plant measured: 120.7 kWh per tonne, on a 45 kW (60 HP) compressor with 5 HP agitator and 5 HP condenser pump.",
+        "Cluster block plants ranged from 85 to 120 kWh per tonne.",
+        "Tube ice plant offered: 10 t a day on a 50 HP compressor motor, a 1 HP ice cutter, a 1 HP chilled water pump and a 50 TR cooling tower, at 73.88 kWh per tonne.",
+        "Plant and motor Rs 12.00 lakh, plus Rs 0.10 lakh for fitting."
+      ]
+    },
+    {
+      "h": "How the two plants make ice",
+      "p": [
+        "A block plant fills cans with water, stands them in an agitated brine tank cooled by ammonia coils, and waits 48 hours for a block to form. Blocks are then crushed to the size the buyer wants.",
+        "A tube plant freezes and harvests in a continuous cycle. The quoted 10 TPD machine draws 34.11 kW at 80% load and makes 138.5 kg every 18 minutes, the maker's figures."
+      ]
+    },
+    {
+      "h": "What the report does not settle",
+      "ul": [
+        "Whether your buyers will take tube ice. The report notes crushed block ice melts faster and cools fish faster, while more tube ice fits in a box of fish.",
+        "Output: the saving is worked on your current 2,800 t a year. A plant sized at 10 t a day can make more, which raises total kWh.",
+        "The CO2: the report claims 106 t, using an older grid factor. On CEA's FY 2025-26 factor it is about 88 t."
+      ]
+    },
+    {
+      "h": "How to compare fairly",
+      "ol": [
+        "Meter the block plant's kWh for a month and count tonnes of ice sold.",
+        "Ask the tube plant supplier for kWh per tonne at your water temperature, in writing.",
+        "Compare per tonne, then multiply by the tonnes you expect to sell, not the plant's capacity."
+      ]
+    }
+  ],
+  "example": {
+    "title": "2,800 t of ice a year",
+    "lines": [
+      "Block: 120.7 kWh x 2,800 = 337,988 kWh x 0.675 = 228 t CO2",
+      "Tube: 73.88 kWh x 2,800 = 206,864 kWh x 0.675 = 140 t CO2",
+      "Saved: 131,124 kWh, about 88 t CO2 (report rounds to 131,111 kWh)",
+      "Money at the report's Rs 3.75 per kWh: Rs 4.92 lakh a year"
+    ],
+    "note": "Grid factor from CEA's database for FY 2025-26, an estimate."
+  },
+  "senseible": "Senseible reads each electricity bill into monthly kWh and CO2 records, which, set against tonnes sold, give the per tonne figure a lender or buyer asks for. The green loan check shows what to prepare for financing the new plant.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Bhimavaram ice plants: power per tonne",
+      "to": "/answers/bhimavaram-ice-plants-electricity-per-tonne"
+    },
+    {
+      "label": "New compressor for a block ice plant",
+      "to": "/answers/ice-plant-new-refrigeration-compressor-kwh-saving"
+    },
+    {
+      "label": "Ice plant electricity per tonne of ice",
+      "to": "/answers/ice-plant-electricity-per-tonne-of-ice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: tube ice plant 10 TPD, Bhimavaram ice making cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Bhimavaram_ice_making_cluster/Tube_ice_plant_10_TPD_Bhimavrm_IMC.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "intermediate-product-end-of-life-not-final",
+  "q": "If I sell a component, whose end-of-life do I report: the component or the finished product?",
+  "title": "End of life for a component you sell",
+  "short": "The component's. The GHG Protocol guidance says a company selling intermediate products accounts for disposing of that product at the end of its life, not the final product. A maker of plastic fan housings counts the housings and their cartons, not the whole ceiling fan, motor and copper included.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Indian component and material suppliers, and buyers reviewing their Category 12 figures",
+  "sections": [
+    {
+      "h": "What your Category 12 line holds",
+      "ul": [
+        "The mass of components you sold in the reporting year, with their whole expected end of life counted in that year.",
+        "Packaging that leaves with them: cartons, crates and wraps used to ship to your customer, including packaging thrown away before the final product reaches its end of life.",
+        "The split of that mass by treatment: landfill, incineration, recycling, each times a factor for that treatment."
+      ]
+    },
+    {
+      "h": "Why not the finished product",
+      "p": [
+        "Your customer's motor, wiring and steel were never sold by you. Counting them would put materials in your inventory that belong to the assembler's own Category 12. The guidance draws the line at what you sold: same mass you invoiced, same year you invoiced it."
+      ]
+    },
+    {
+      "h": "Where the disposal split comes from",
+      "p": [
+        "Customers rarely tell a component maker how the final product is scrapped. The guidance accepts these sources, in rough order of strength:"
+      ],
+      "ol": [
+        "Your own research on how products containing your part are treated.",
+        "Government rules that set how a product type must be treated.",
+        "Industry association studies of disposal patterns.",
+        "Average national waste treatment data."
+      ]
+    },
+    {
+      "h": "If you cannot know where the part ends up",
+      "p": [
+        "A part with many possible end uses can make downstream estimates unreasonable. The Scope 3 Standard then lets you disclose and justify excluding Categories 9, 10, 11 and 12 together. It says not to drop a subset, so you cannot leave out Category 12 alone while reporting the others."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: polypropylene fan housings",
+    "lines": [
+      "Sold this year: 40,000 kg of housings, shipped in 3,000 kg of corrugated cartons",
+      "Housings: 70% landfill x 0.05 = 1,400 kg; 10% incinerated x 2.0 = 8,000 kg; 20% recycled x 0 = 0",
+      "Cartons: 30% landfill x 1.0 = 900 kg; 70% recycled x 0 = 0",
+      "Category 12 total: 1,400 + 8,000 + 900 = 10,300 kg, 10.3 t CO2e"
+    ],
+    "note": "Example figures: the shares and the factors (kg CO2e per kg) are placeholders. Take factors from a recognised database and name it. Recycled material shows zero here because reprocessing is counted by whoever uses the recycled material."
+  },
+  "senseible": "Senseible keeps your sales and packaging invoices as records, so the tonnes sold and cartons shipped in a year come from documents rather than memory. Choosing the disposal split is still your call, and it should be written down.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Downstream Scope 3 for component makers",
+      "to": "/answers/exclude-downstream-scope-3-intermediate-products"
+    },
+    {
+      "label": "Packaging end of life in Category 12",
+      "to": "/answers/sold-packaging-end-of-life-category-12"
+    },
+    {
+      "label": "Metal products at end of life",
+      "to": "/answers/metal-products-end-of-life-category-12"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 12 (formula 12.1)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter12.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard, section 6.4 (downstream emissions of intermediate products)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

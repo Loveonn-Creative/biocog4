@@ -1,0 +1,80 @@
+{
+  "slug": "rajkot-kitchenware-unit-electricity-by-product",
+  "q": "How much electricity does a stove, gas lighter, cutlery or cookware unit use a year?",
+  "title": "Kitchenware unit power: stove to cutlery",
+  "short": "TERI's Rajkot profile puts a typical unit at 247,565 kWh a year for stoves, 116,405 for knives and cutlery, 73,398 for cookers and non-stick, 72,424 for gas lighters and 31,636 for kitchen baskets. Spread over each unit's output, that is about 0.26 to 0.52 kWh a piece.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Rajkot kitchenware makers asked for a per-piece figure, and buyers checking the one they receive",
+  "sections": [
+    {
+      "h": "Per unit and per piece",
+      "ul": [
+        "Stove: 10 units averaging 4.8 lakh pieces; 247,565 kWh, about 0.52 kWh a stove.",
+        "Kitchen basket and others: 55 units averaging 85,000 pieces; 31,636 kWh, about 0.37 kWh a piece.",
+        "Gas lighter: 53 units averaging 2.1 lakh pieces; 72,424 kWh, about 0.35 kWh a lighter.",
+        "Cooker and non-stick cookware: 36 units averaging 2.6 lakh pieces; 73,398 kWh, about 0.29 kWh a piece.",
+        "Knife and cutlery: 196 units averaging 4.4 lakh pieces; 116,405 kWh plus 0.144 toe of fuel, about 0.26 kWh a piece."
+      ]
+    },
+    {
+      "h": "Why stoves top the list",
+      "p": [
+        "A stove starts as CRC sheet deep drawn on a hydraulic press, is spot welded for the stand, then tested for burner efficiency and flame stability. Presses of 100 to 150 t on 7.5 to 15 hp pumps, and 5 to 10 kVA welders, draw far more per piece than a mechanical press stamping a spoon. Non-stick pans add an electric oven at 400 to 450 C for about 30 minutes per cycle."
+      ]
+    },
+    {
+      "h": "What your kWh leaves out",
+      "ul": [
+        "Chrome plating on stoves and kitchen baskets is usually sent out. Ask the plater for its power per batch, or list it as outsourced.",
+        "Piezo units for gas lighters are imported; their footprint sits with the maker.",
+        "The steel, aluminium and plastic, which normally outweigh the factory power."
+      ]
+    },
+    {
+      "h": "What to send a buyer",
+      "ol": [
+        "kWh per piece for the product they buy, not the plant average. If lines share a meter, split by machine hours and say so.",
+        "Generator diesel, if any.",
+        "Grams of each material per piece, and what was outsourced."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per piece from factory power (estimate)",
+    "lines": [
+      "Stove: 0.52 kWh x 0.675 = 0.35 kg CO2",
+      "Kitchen basket: 0.37 kWh x 0.675 = 0.25 kg",
+      "Gas lighter: 0.35 kWh x 0.675 = 0.24 kg",
+      "Cooker or non-stick pan: 0.29 kWh x 0.675 = 0.19 kg",
+      "Knife or cutlery piece: 0.26 kWh x 0.675 = 0.18 kg"
+    ],
+    "note": "Unit kWh, unit counts and output from TERI's Rajkot kitchenware profile; pieces per unit are category output divided by units, so a unit making heavier items will sit higher. Grid factor CEA FY 2025-26."
+  },
+  "senseible": "Senseible keeps each month's electricity bill behind the kWh you report, in a Scope 3 supplier trail the buyer can open and check, so a per-piece figure rests on bills rather than a spreadsheet.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Rajkot kitchenware cluster CO2",
+      "to": "/answers/rajkot-kitchenware-cluster-electricity-co2"
+    },
+    {
+      "label": "Pressure cooker footprint per unit",
+      "to": "/answers/pressure-cooker-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Rajkot kitchenware manufacturing industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/rajkot-kitchenware.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

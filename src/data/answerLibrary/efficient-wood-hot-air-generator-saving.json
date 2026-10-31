@@ -1,0 +1,95 @@
+{
+  "slug": "efficient-wood-hot-air-generator-saving",
+  "q": "How much wood does an efficient wood-fired hot air generator save over an old one?",
+  "title": "Efficient wood hot air generator: wood saved",
+  "short": "Sixteen kg of wood an hour, 36 down to 20, in BEE's Ahmedabad report: 57.6 t of wood a year over 3,600 hours. Cost Rs 3.03 lakh, payback 2.18 years (2010). Fossil CO2 rises about 3 t from the blower, because wood CO2 is biogenic; the report's 53 t cut is not Scope 1.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Chemical and dye units heating tray dryers with wood-fired hot air generators, deciding between a better wood unit and a gas one",
+  "sections": [
+    {
+      "h": "Old heater against new",
+      "ul": [
+        "Old: single pass, poor grate, high draught resistance. About 36 kg of wood an hour for 35,936 kcal of hot air; the report calls it 37% efficient in one place and around 32% in another.",
+        "New 30,000 kcal an hour unit: three pass heat exchange, forced draught, controlled combustion, larger grate. About 20 kg of wood an hour.",
+        "12 hours a day, 300 days a year: 57,600 kg of wood saved.",
+        "Blower load 1.86 kW, 6,696 kWh a year, which the report charges in full against the saving."
+      ]
+    },
+    {
+      "h": "Better wood heater or gas heater",
+      "ul": [
+        "Efficient wood unit: Rs 3.03 lakh, Rs 1.39 lakh a year, 2.18 years. Fossil CO2 up about 3 t.",
+        "Gas unit, from the same report series: Rs 2.50 lakh, Rs 0.76 lakh a year, 3.29 years. Fossil CO2 up about 35 t, because gas is fossil and wood is not.",
+        "If a buyer is asking for lower Scope 1 and 2, the efficient wood unit keeps them lower. If the buyer or lender questions where your wood comes from, gas avoids that question but raises your reported total."
+      ]
+    },
+    {
+      "h": "What counts in your footprint",
+      "p": [
+        "Wood CO2 is biogenic: report it separately. Methane and nitrous oxide from burning it stay in Scope 1, about 1.7 t CO2e for the 57.6 t saved. The blower's 6,696 kWh add about 4.5 t in Scope 2. Net, Scope 1 plus 2 rise by about 2.8 t."
+      ]
+    },
+    {
+      "h": "Checks before you buy",
+      "ul": [
+        "Weigh wood fed per hour for a week on the old unit; the saving is measured from that number.",
+        "Ask whether the old blower stays. If it is replaced, only the difference in kWh counts.",
+        "Ask the supplier for the outlet air temperature and flow at your dryer's load."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One hot air generator, one year (estimate)",
+    "lines": [
+      "Wood saved: 16 kg x 12 h x 300 days = 57.6 t",
+      "Money: 57.6 t x Rs 3,000 = Rs 1.73 lakh, less 6,696 kWh x Rs 5 = Rs 0.33 lakh: Rs 1.39 lakh",
+      "Scope 1 avoided: 57.6 x 0.030 = 1.7 t CO2e; Scope 2 added: 6,696 x 0.675 = 4.5 t",
+      "Biogenic CO2 avoided, reported separately: 57.6 x 1.75 = about 101 t"
+    ],
+    "note": "Wood at IPCC 2006 defaults with AR6 warming potentials; grid CEA FY 2025-26."
+  },
+  "senseible": "Senseible reads electricity and gas bills into monthly CO2 records, which is where either choice shows up. It has no built-in wood factor, so add wood using the figures here. The green loan check shows what a lender needs for the new heater.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Wood to gas hot air generator",
+      "to": "/answers/gas-hot-air-generator-replacing-wood-dryer-co2"
+    },
+    {
+      "label": "Efficient 96-tray dryer",
+      "to": "/answers/efficient-tray-dryer-wood-saving-chemical-unit"
+    },
+    {
+      "label": "Membrane filter press",
+      "to": "/answers/membrane-filter-press-drying-wood-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: energy efficient hot air generator 30,000 kcal/hr, Ahmedabad chemical cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Ah_30000_1.pdf"
+    },
+    {
+      "label": "BEE, Detailed project report: gas fired hot air generator 30,000 kcal/hr, Ahmedabad chemical cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Ahmedabad_30000.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Table 1.2 (net calorific values) and Chapter 2 tables",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately from the scopes)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

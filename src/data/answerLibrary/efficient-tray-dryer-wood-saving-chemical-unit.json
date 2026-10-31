@@ -1,0 +1,93 @@
+{
+  "slug": "efficient-tray-dryer-wood-saving-chemical-unit",
+  "q": "How much wood and CO2 does an efficient 96-tray dryer save in a dyes or chemicals unit?",
+  "title": "Efficient 96-tray dryer: wood and CO2",
+  "short": "Wood use falls by 66 t a year in BEE's Ahmedabad report, by cutting a 96-tray batch from 48 to 30 hours. Your reported fossil CO2 does not fall: it rises about 2 t, because wood CO2 is biogenic and the new fans add 5,819 kWh. Cost Rs 3.86 lakh, payback 2.28 years (2010).",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dye, pigment and intermediate makers in Ahmedabad and similar clusters drying wet cake in wood-heated tray dryers",
+  "sections": [
+    {
+      "h": "Old dryer against new",
+      "ul": [
+        "Old: no insulation, propeller fans with no partition, uneven tray spacing. Measured efficiency 5.9%, 8.64 kg of wood per tray, 48 hours a batch.",
+        "New: double wall with 50 mm mineral wool, four multi-blade fans on a 1 HP motor, roof dampers, digital temperature control. 9.5% efficient, 3.35 kg of wood per tray, 30 hours a batch.",
+        "Saving: about 507 kg of wood a batch, 65.97 t over 130 batches a year.",
+        "Electricity charged to the project: 5,819 kWh a year."
+      ]
+    },
+    {
+      "h": "The money, at 2010 prices",
+      "ul": [
+        "Wood at Rs 3,000 a tonne: Rs 1.98 lakh a year.",
+        "Less power at Rs 5 a kWh: Rs 0.29 lakh.",
+        "Net Rs 1.69 lakh against Rs 3.86 lakh: 2.28 years. Implementation takes about 13 weeks."
+      ]
+    },
+    {
+      "h": "Why the report's 60 t CO2 cut is not a Scope 1 cut",
+      "p": [
+        "The report converts the wood saved into 60 t of CO2 avoided. Wood CO2 is biogenic, so under the GHG Protocol it sits outside your scopes. What does count is the methane and nitrous oxide from burning wood, about 2 t CO2e for 66 t, and the dryer's electricity, about 4 t. Net, your reported footprint goes up slightly.",
+        "That is no reason to skip it. The case is the money, the faster batch, and less wood bought, which the report notes is mostly not from renewable sources."
+      ]
+    },
+    {
+      "h": "What to check",
+      "ul": [
+        "Weigh wood into the hot air generator for a week before and after; per tray figures are only as good as the scale.",
+        "Confirm the drying time on your own product. The report's 48 to 30 hours was for cake at 0.43 kg of moisture per kg of bone dry product.",
+        "Ask whether the old propeller fans come out. If they stay, the 5,819 kWh is extra; if they go, the real rise is smaller."
+      ]
+    }
+  ],
+  "example": {
+    "title": "130 batches a year (estimate)",
+    "lines": [
+      "Wood saved: (8.64 minus 3.35) kg x 96 trays x 130 = about 66 t",
+      "Methane and nitrous oxide avoided: 66 t x 0.030 = 2.0 t CO2e",
+      "Fan power added: 5,819 kWh x 0.675 = 3.9 t CO2",
+      "Change in Scope 1 plus 2: about 2 t more",
+      "Biogenic CO2 avoided, reported separately: 66 t x 1.75 = about 115 t"
+    ],
+    "note": "Wood at IPCC 2006 defaults (15.6 GJ per tonne; 112,000 kg CO2, 30 kg methane and 4 kg nitrous oxide per TJ), AR6 warming potentials; grid CEA FY 2025-26."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly CO2 records. It has no built-in wood factor, so wood bills need the figures worked out here. The green loan check shows what a lender asks for before funding a dryer.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Hybrid solar tray dryer",
+      "to": "/answers/hybrid-solar-tray-dryer-wood-saving"
+    },
+    {
+      "label": "Wood to gas hot air generator",
+      "to": "/answers/gas-hot-air-generator-replacing-wood-dryer-co2"
+    },
+    {
+      "label": "Biomass boilers: methane stays in Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: energy efficient tray dryer, 96 trays, Ahmedabad chemical cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Ahmedabad_96.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Table 1.2 (net calorific values) and Chapter 2 tables",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately from the scopes)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}

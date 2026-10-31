@@ -1,0 +1,84 @@
+{
+  "slug": "brass-reheating-furnace-oil-to-gas-1200kg",
+  "q": "What gas use replaces furnace oil in a 1,200 kg/hr brass reheating furnace, and what CO2 is saved?",
+  "title": "Brass billet furnace: oil to gas, CO2 saved",
+  "short": "Each tonne of billets needs about 26 Nm3 of gas in place of 37 litres of furnace oil in BEE's Jamnagar report: 62,400 Nm3 for 88,872 litres a year. By our factors CO2 falls about 130 t a year, not the report's 154 t. Cost Rs 15.20 lakh, payback 1.56 years (2010).",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Jamnagar brass rod and section makers reheating billets for extrusion in oil-fired furnaces and weighing a move to piped gas",
+  "sections": [
+    {
+      "h": "The furnace BEE costed",
+      "ul": [
+        "Capacity 1.2 t an hour, 2,000 hours and 2,400 t of billets a year.",
+        "Existing oil-fired furnace: 18.73% efficient, 37.03 litres of furnace oil per tonne, no waste heat recovery.",
+        "Proposed gas-fired furnace with waste heat recovery: 29% efficient, 26 Nm3 of gas per tonne.",
+        "Electricity goes up by about 3,000 kWh a year for a 2 HP blower. Downtime for the change: 7 days."
+      ]
+    },
+    {
+      "h": "Why our CO2 cut is lower than the report's",
+      "p": [
+        "The report counts 281 t of CO2 for the oil, which works out to 3.16 kg a litre, and 127 t for the gas. At our furnace oil factor of 2.97 kg a litre the oil is 264 t. The gas at 2.05 kg a cubic metre is 128 t, and the extra power about 2 t. That leaves about 134 t saved.",
+        "The report gives gas in Nm3, usually measured at 0 C. Our factor is per standard cubic metre at about 15 C, which holds roughly 5% less gas. Converted, the gas is about 135 t and the saving about 127 t. Either way, about 130 t a year is the honest figure."
+      ]
+    },
+    {
+      "h": "The money, at 2010 prices",
+      "ul": [
+        "Oil at Rs 28 a litre: Rs 1,037 per tonne of billets. Gas at Rs 24 per Nm3: Rs 624 per tonne.",
+        "Saving Rs 412 per tonne, Rs 9.89 lakh on 2,400 t, less Rs 0.15 lakh of power: Rs 9.74 lakh a year.",
+        "Rs 15.20 lakh / Rs 9.74 lakh = 1.56 years. Today's oil and gas prices decide whether that still holds."
+      ]
+    },
+    {
+      "h": "Before you switch",
+      "ul": [
+        "Get the gas company's billing unit in writing: Nm3 or scm, and at what temperature.",
+        "Fit a gas meter on the furnace alone, and log billet tonnes each shift, so you can show m3 per tonne.",
+        "Check the supplier's 29% efficiency claim against a trial week, not the brochure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "2,400 t of billets a year, before and after",
+    "lines": [
+      "Before: 88,872 L oil x 2.97 = 263.9 t CO2 (110 kg per t of billets)",
+      "After: 62,400 m3 gas x 2.05 = 127.9 t CO2 (53 kg per t)",
+      "Extra power: 3,000 kWh x 0.675 = 2.0 t CO2",
+      "Saved: about 134 t CO2 a year; about 127 t if the gas is Nm3 at 0 C"
+    ],
+    "note": "Furnace oil 2.97 kg CO2 per litre and natural gas 2.05 kg per standard cubic metre are our factors; grid 0.675 kg per kWh is CEA's for FY 2025-26. All estimates."
+  },
+  "senseible": "Senseible reads furnace oil, gas and power invoices into monthly Scope 1 and Scope 2 records, with furnace oil at 2.97 kg CO2 per litre and gas at 2.05 kg per cubic metre, so the switch shows up line by line. Your carbon number then reflects the new fuel from the first gas bill.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Furnace oil to PNG: CO2 saved",
+      "to": "/answers/furnace-oil-to-png-switch-emissions-saving"
+    },
+    {
+      "label": "Jamnagar brass cluster energy and carbon",
+      "to": "/answers/jamnagar-brass-cluster-energy-and-carbon-footprint"
+    },
+    {
+      "label": "Reheating furnace insulation savings",
+      "to": "/answers/reheating-furnace-insulation-fuel-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: energy efficient gas fired reheating furnace 1,200 kg/hr, Jamnagar brass cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/Jamnagar_brass_cluster/DPR_on_Energy_Efficient_Gas_Fired_Reheating_Furnace_1200_Kg.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Equipment figures are from a BEE SME programme project report; costs and paybacks are at that report's prices. Recheck with today's fuel and power prices and a current quote."
+}
