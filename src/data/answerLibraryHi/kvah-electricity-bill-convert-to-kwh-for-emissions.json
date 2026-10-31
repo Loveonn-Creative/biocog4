@@ -2,7 +2,7 @@
   "slug": "kvah-electricity-bill-convert-to-kwh-for-emissions",
   "q": "मेरा बिजली का bill kVAh में है। Emissions कैसे निकालूँ?",
   "title": "kVAh वाला बिजली bill: emissions",
-  "short": "पहले kWh में बदलें, फिर grid factor से गुणा करें। अगर उसी bill पर kWh reading छपी है तो वही लें। न हो तो kWh = kVAh x उस billing period का छपा हुआ power factor। 0.710 kg CO2 प्रति kWh का factor सीधे kVAh पर लगाने से आपके emissions ज़्यादा दिखेंगे।",
+  "short": "पहले kWh में बदलें, फिर grid factor से गुणा करें। अगर उसी bill पर kWh reading छपी है तो वही लें। न हो तो kWh = kVAh x उस billing period का छपा हुआ power factor। 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh का factor सीधे kVAh पर लगाने से आपके emissions ज़्यादा दिखेंगे।",
   "sections": [
     {
       "h": "kVAh और kWh एक जैसे क्यों नहीं हैं",
@@ -34,7 +34,7 @@
       "ul": [
         "kVAh, आपने जो kWh या power factor लिया, और bill पर हर एक कहाँ छपा था।",
         "kWh bill से पढ़ा गया या kVAh x power factor से निकाला गया। दूसरे वाले पर लिखें कि यह निकाला गया आँकड़ा है।",
-        "Factor और स्रोत: 0.710 kg CO2 प्रति kWh, CEA CO2 Baseline Database version 21.0, location-based Scope 2।"
+        "Factor और स्रोत: 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh, CEA CO2 Baseline Database version 21.0, location-based Scope 2।"
       ]
     }
   ],
@@ -43,8 +43,8 @@
     "lines": [
       "Bill की energy: 50,000 kVAh; bill पर छपा औसत power factor: 0.96",
       "kWh = 50,000 x 0.96 = 48,000 kWh",
-      "Emissions = 48,000 x 0.710 = 34,080 kg CO2, लगभग 34.1 tonne",
-      "ग़लत तरीका: 50,000 x 0.710 = 35,500 kg CO2, जो 1,420 kg, यानी लगभग 4.2% ज़्यादा दिखाता है"
+      "Emissions = 48,000 x 0.710 (वित्त वर्ष 2024-25) = 34,080 kg CO2, लगभग 34.1 tonne",
+      "ग़लत तरीका: 50,000 x 0.710 (वित्त वर्ष 2024-25) = 35,500 kg CO2, जो 1,420 kg, यानी लगभग 4.2% ज़्यादा दिखाता है"
     ],
     "note": "Power factor जितना कम, ग़लती उतनी बड़ी। 0.90 पर ग़लती लगभग 11% होती है।"
   },

@@ -6,7 +6,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "3d-printing-carbon-footprint-per-part",
   "q": "How do I work out the carbon footprint of a 3D printed part?",
   "title": "3D printed part: carbon footprint",
-  "short": "Add two things: the printer's electricity for that part and the material used. Electricity is the printer's average power times print hours, times 0.710 kg CO2 per kWh. Material is the filament or powder weight, including supports and failed prints, times a named factor for that polymer or metal.",
+  "short": "Add two things: the printer's electricity for that part and the material used. Electricity is the printer's average power times print hours, times 0.710 kg CO2 per kWh for FY 2024-25. Material is the filament or powder weight, including supports and failed prints, times a named factor for that polymer or metal.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -54,7 +54,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ac-temperature-setpoint-24-savings",
   "q": "How much energy and CO2 does setting ACs to 24 C save in an office or factory?",
   "title": "AC at 24 C: energy and CO2 saved",
-  "short": "Roughly 6% of air conditioner electricity for each degree you raise the setpoint, according to the Ministry of Power and BEE. Moving an office from 20 C to 24 C can cut AC units by a fifth to a quarter. Multiply the kWh saved by 0.710 kg CO2 per kWh and call it an estimate until bills confirm it.",
+  "short": "Roughly 6% of air conditioner electricity for each degree you raise the setpoint, according to the Ministry of Power and BEE. Moving an office from 20 C to 24 C can cut AC units by a fifth to a quarter. Multiply the kWh saved by 0.710 kg CO2/kWh (FY 2024-25) and call it an estimate until bills confirm it.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -102,7 +102,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "acrylic-sweater-carbon-footprint-per-piece",
   "q": "What is the carbon footprint of an acrylic or woollen sweater made in Ludhiana?",
   "title": "Acrylic or wool sweater footprint per piece",
-  "short": "There is no single figure; you calculate it per style. Multiply the yarn each sweater really uses, including knitting and linking waste, by the yarn's footprint per kg, then add knitting and finishing electricity at 0.710 kg CO2 per kWh and dyeing fuel. Yarn usually dominates, and for wool the farm stage decides most of it.",
+  "short": "There is no single figure; you calculate it per style. Multiply the yarn each sweater really uses, including knitting and linking waste, by the yarn's footprint per kg, then add knitting and finishing electricity at 0.710 kg CO2 per kWh for FY 2024-25 and dyeing fuel. Yarn usually dominates, and for wool the farm stage decides most of it.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -294,7 +294,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "agra-shoe-unit-electricity-per-pair",
   "q": "How does an Agra shoe unit work out electricity emissions per pair?",
   "title": "Agra shoe units: electricity per pair",
-  "short": "Add the kWh on the month's electricity bills, multiply by the CEA grid factor of 0.710 kg CO2 per kWh, and divide by the pairs finished that month. Use the same month for both numbers so seasonal swings do not distort the figure.",
+  "short": "Add the kWh on the month's electricity bills, multiply by the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, and divide by the pairs finished that month. Use the same month for both numbers so seasonal swings do not distort the figure.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -366,7 +366,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "air-compressor-kwh-from-load-unload-hours",
   "q": "How do I estimate an air compressor's electricity and CO2 from its load and unload hours?",
   "title": "Compressor kWh from load and unload hours",
-  "short": "Multiply load hours by the power drawn while loaded, add unload hours times the power drawn while unloaded, and multiply the total kWh by 0.710 kg CO2 per kWh. Read the hours from the compressor controller and take both power figures from the manufacturer's data sheet or a one-off clamp meter reading.",
+  "short": "Multiply load hours by the power drawn while loaded, add unload hours times the power drawn while unloaded, and multiply the total kWh by 0.710 kg CO2 per kWh for FY 2024-25. Read the hours from the compressor controller and take both power figures from the manufacturer's data sheet or a one-off clamp meter reading.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -694,7 +694,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ambala-scientific-glassware-unit-gas-per-kg",
   "q": "How do I calculate CO2 per kg of glassware at an Ambala scientific glassware unit?",
   "title": "Ambala glassware: CO2 per kg",
-  "short": "LPG burnt in lampworking burners and lehrs × 2.98 kg CO2 per kg of LPG, plus electricity × 0.710, divided by kg of good glassware. Bought borosilicate tubing carries its own footprint in Scope 3, often larger than your direct emissions.",
+  "short": "LPG burnt in lampworking burners and lehrs × 2.98 kg CO2 per kg of LPG, plus electricity × 0.710 (FY 2024-25 grid factor), divided by kg of good glassware. Bought borosilicate tubing carries its own footprint in Scope 3, often larger than your direct emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -710,7 +710,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ambur-shoe-upper-unit-electricity-per-pair",
   "q": "How does an Ambur shoe upper unit work out electricity per pair?",
   "title": "Ambur shoe uppers: power per pair",
-  "short": "Multiply the month's billed kWh by 0.710 kg CO2 per kWh and divide by pairs of uppers stitched. Cutting, skiving and stitching machines run on grid power, so for an upper unit this is the main own-energy line.",
+  "short": "Multiply the month's billed kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by pairs of uppers stitched. Cutting, skiving and stitching machines run on grid power, so for an upper unit this is the main own-energy line.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -718,7 +718,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ambur-tannery-boiler-etp-emissions",
   "q": "How does an Ambur tannery count boiler and effluent plant emissions?",
   "title": "Ambur tanneries: boiler and ETP emissions",
-  "short": "Boiler fuel burned on site is Scope 1: coal, wood or oil times its factor. Electricity for drums, the effluent plant and dryers is Scope 2 at 0.710 kg CO2 per kWh. A shared effluent plant you pay for is Scope 3; your own plant's electricity stays in Scope 2.",
+  "short": "Boiler fuel burned on site is Scope 1: coal, wood or oil times its factor. Electricity for drums, the effluent plant and dryers is Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. A shared effluent plant you pay for is Scope 3; your own plant's electricity stays in Scope 2.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -742,7 +742,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "amusement-park-carbon-footprint-per-visitor",
   "q": "How do I calculate an amusement park's carbon footprint per visitor?",
   "title": "Amusement park CO2 per visitor",
-  "short": "Rides, lighting and food courts run on electricity at 0.710 kg CO2 per kWh, with diesel generators for backup. Divide by visitors for a per visitor figure. Ride motors draw heavily at start up, so off peak days with few riders raise the per visitor number.",
+  "short": "Rides, lighting and food courts run on electricity at 0.710 kg CO2 per kWh for FY 2024-25, with diesel generators for backup. Divide by visitors for a per visitor figure. Ride motors draw heavily at start up, so off peak days with few riders raise the per visitor number.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -758,7 +758,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "anand-milk-chilling-centre-electricity-per-litre",
   "q": "How does a milk chilling centre near Anand work out electricity per litre?",
   "title": "Milk chilling centres: power per litre",
-  "short": "Multiply the centre's billed kWh by 0.710 kg CO2 per kWh and divide by litres chilled in the same period. Generator diesel during power cuts is Scope 1 and should be added at 2.68 kg CO2 per litre.",
+  "short": "Multiply the centre's billed kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by litres chilled in the same period. Generator diesel during power cuts is Scope 1 and should be added at 2.68 kg CO2 per litre.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -1238,7 +1238,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "aurangabad-brewery-co2-per-hectolitre",
   "q": "How do I calculate a brewery carbon footprint per hectolitre of beer?",
   "title": "Brewery CO2 per hectolitre",
-  "short": "Add boiler fuel for brewing and pasteurising, electricity for cooling and packaging at 0.710 kg CO2 per kWh, refrigerant leaks and any CO2 bought for carbonation, then divide by hectolitres packed. Fermentation CO2 is biogenic, so report it separately. Bottles, cans and malt belong in Scope 3.",
+  "short": "Add boiler fuel for brewing and pasteurising, electricity for cooling and packaging at 0.710 kg CO2 per kWh for FY 2024-25, refrigerant leaks and any CO2 bought for carbonation, then divide by hectolitres packed. Fermentation CO2 is biogenic, so report it separately. Bottles, cans and malt belong in Scope 3.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1286,7 +1286,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "auto-service-workshop-carbon-footprint",
   "q": "How do I calculate the carbon footprint of a car or bike service workshop?",
   "title": "Car service workshop carbon footprint",
-  "short": "Add the workshop electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by vehicles serviced. Record refrigerant from AC servicing and the waste oil and parts sent out, as Scope 3 evidence.",
+  "short": "Add the workshop electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then divide by vehicles serviced. Record refrigerant from AC servicing and the waste oil and parts sent out, as Scope 3 evidence.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1366,7 +1366,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "baddi-pharma-plant-grid-factor-hydro-state",
   "q": "Can a Baddi pharma plant use a lower grid factor because Himachal runs on hydro?",
   "title": "Baddi plant: hydro state, grid factor",
-  "short": "No. India publishes one national grid factor, 0.710 kg CO2 per kWh in CEA v21.0, and the location based method uses it for every state. Himachal hydro feeds the shared grid. To report lower Scope 2, buy renewable power or certificates and show it under the market based method.",
+  "short": "No. India publishes one national grid factor, 0.710 kg CO2 per kWh for FY 2024-25 in CEA v21.0, and the location based method uses it for every state. Himachal hydro feeds the shared grid. To report lower Scope 2, buy renewable power or certificates and show it under the market based method.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1382,7 +1382,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bahadurgarh-footwear-unit-electricity-per-pair",
   "q": "How does a footwear unit in Bahadurgarh work out CO2 per pair?",
   "title": "Bahadurgarh footwear CO2 per pair",
-  "short": "Divide the unit's yearly electricity, DG diesel and any boiler fuel by pairs produced. Grid power at 0.710 kg CO2 per kWh and diesel at 2.68 kg per litre cover most units. Export buyers often add materials such as soles and adhesives, which need supplier data.",
+  "short": "Divide the unit's yearly electricity, DG diesel and any boiler fuel by pairs produced. Grid power at 0.710 kg CO2 per kWh for FY 2024-25 and diesel at 2.68 kg per litre cover most units. Export buyers often add materials such as soles and adhesives, which need supplier data.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -1438,7 +1438,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ballari-iron-ore-beneficiation-electricity-per-tonne",
   "q": "How does a Ballari ore beneficiation plant work out electricity carbon per tonne?",
   "title": "Ballari ore beneficiation: carbon per tonne",
-  "short": "Divide the plant's metered kWh for crushing, grinding, screening and pumping by tonnes of concentrate produced, and multiply by 0.710 kg CO2 per kWh. Report per tonne of concentrate and per tonne of feed, because yield varies with ore grade.",
+  "short": "Divide the plant's metered kWh for crushing, grinding, screening and pumping by tonnes of concentrate produced, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Report per tonne of concentrate and per tonne of feed, because yield varies with ore grade.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1478,7 +1478,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "balotra-textile-processing-unit-boiler-co2",
   "q": "How does a textile processing unit in Balotra work out CO2 per metre?",
   "title": "Balotra processing unit: CO2 per metre",
-  "short": "Add fuel burnt in the boiler and thermic fluid heater, times its emission factor, and grid electricity at 0.710 kg CO2 per kWh. Divide by metres processed in the same month. Dyeing and printing use most of the steam, so record steam or fuel by section if buyers ask by process.",
+  "short": "Add fuel burnt in the boiler and thermic fluid heater, times its emission factor, and grid electricity at 0.710 kg CO2 per kWh for FY 2024-25. Divide by metres processed in the same month. Dyeing and printing use most of the steam, so record steam or fuel by section if buyers ask by process.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -1526,7 +1526,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bank-atm-electricity-emissions-per-machine",
   "q": "What are the emissions of running an ATM?",
   "title": "ATM emissions per machine",
-  "short": "An ATM kiosk's emissions are mostly the air conditioner keeping the room cool, plus the machine, lights and UPS. Multiply the kiosk's units by 0.710 kg CO2 per kWh. If a site owner pays the bill and it is in your rent, it still needs counting, often as an estimate.",
+  "short": "An ATM kiosk's emissions are mostly the air conditioner keeping the room cool, plus the machine, lights and UPS. Multiply the kiosk's units by 0.710 kg CO2 per kWh for FY 2024-25. If a site owner pays the bill and it is in your rent, it still needs counting, often as an estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -1534,7 +1534,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bank-branch-carbon-footprint-calculation",
   "q": "How do I calculate the carbon footprint of a bank branch?",
   "title": "Bank branch carbon footprint",
-  "short": "Add each branch's electricity at 0.710 kg CO2 per kWh, generator diesel at 2.68 kg per litre and AC refrigerant top-ups. Sum branches for the operational footprint. Loans and investments are a separate figure, financed emissions in Scope 3 Category 15, not part of the branch number.",
+  "short": "Add each branch's electricity at 0.710 kg CO2 per kWh for FY 2024-25, generator diesel at 2.68 kg per litre and AC refrigerant top-ups. Sum branches for the operational footprint. Loans and investments are a separate figure, financed emissions in Scope 3 Category 15, not part of the branch number.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1606,7 +1606,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "barite-grinding-drilling-grade-co2-per-tonne",
   "q": "How much CO2 does grinding barite for drilling mud emit per tonne?",
   "title": "Barite grinding CO2 per tonne",
-  "short": "Grinding to drilling grade fineness is most of it: mill electricity times 0.710 kg CO2 per kWh, divided by tonnes. Add mining diesel and freight to the buyer. Barite is not a CBAM good, but oilfield buyers increasingly ask for a figure.",
+  "short": "Grinding to drilling grade fineness is most of it: mill electricity times 0.710 kg CO2 per kWh for FY 2024-25, divided by tonnes. Add mining diesel and freight to the buyer. Barite is not a CBAM good, but oilfield buyers increasingly ask for a figure.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -1662,7 +1662,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "batch-chemical-reactor-emissions-per-batch",
   "q": "How do I calculate the emissions of one batch in a chemical reactor?",
   "title": "Batch reactor emissions per batch",
-  "short": "Add the steam the reactor took for heating, as a share of boiler fuel, the electricity for the agitator and brine chilling at 0.710 kg CO2 per kWh, and any thermic fluid heating. Divide by the batch output in kilograms, and keep the batch record as evidence.",
+  "short": "Add the steam the reactor took for heating, as a share of boiler fuel, the electricity for the agitator and brine chilling at 0.710 kg CO2 per kWh for FY 2024-25, and any thermic fluid heating. Divide by the batch output in kilograms, and keep the batch record as evidence.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1670,7 +1670,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "battery-backup-vs-dg-set-emissions",
   "q": "Is grid-charged battery backup lower carbon than running a DG set during power cuts?",
   "title": "Battery backup or DG set: which emits less?",
-  "short": "Usually yes, and clearly so when the DG set runs at light load. Battery backup emits 0.710 kg CO2 per kWh divided by its round-trip efficiency, about 0.81 kg at 88 percent. A DG set emits 2.68 kg per litre divided by kWh per litre: 0.89 kg at 3 kWh per litre, 1.34 kg at 2.",
+  "short": "Usually yes, and clearly so when the DG set runs at light load. Battery backup emits 0.710 kg CO2 per kWh for FY 2024-25 divided by its round-trip efficiency, about 0.81 kg at 88 percent. A DG set emits 2.68 kg per litre divided by kWh per litre: 0.89 kg at 3 kWh per litre, 1.34 kg at 2.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -1718,7 +1718,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "beauty-salon-carbon-footprint",
   "q": "What is the carbon footprint of a beauty salon?",
   "title": "Beauty salon carbon footprint",
-  "short": "In a salon, electricity for ACs, hair dryers, straighteners and water heaters is usually the largest bill, counted at 0.710 kg CO2 per kWh. Products bought, towels laundered and disposables are Scope 3. Divide the total by appointments for a figure per visit.",
+  "short": "In a salon, electricity for ACs, hair dryers, straighteners and water heaters is usually the largest bill, counted at 0.710 kg CO2 per kWh for FY 2024-25. Products bought, towels laundered and disposables are Scope 3. Divide the total by appointments for a figure per visit.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -1926,7 +1926,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bhadohi-carpet-wool-dyeing-emissions",
   "q": "How do I calculate dyeing emissions per kg of wool in a Bhadohi carpet unit?",
   "title": "Bhadohi wool dyeing: CO2 per kg",
-  "short": "Add the fuel burned to heat the dye vats, from wood, coal, diesel or gas invoices converted to CO2, and the electricity for pumps and dryers at 0.710 kg CO2 per kWh. Divide by kg of wool dyed in the same month. Wood is biogenic, so report its CO2 separately.",
+  "short": "Add the fuel burned to heat the dye vats, from wood, coal, diesel or gas invoices converted to CO2, and the electricity for pumps and dryers at 0.710 kg CO2 per kWh for FY 2024-25. Divide by kg of wool dyed in the same month. Wood is biogenic, so report its CO2 separately.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1942,7 +1942,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bhagalpur-tussar-silk-reeling-emissions",
   "q": "What are the emissions from reeling tussar silk in Bhagalpur?",
   "title": "Bhagalpur tussar reeling: emissions",
-  "short": "Most of it is the fuel used to cook cocoons before reeling. Firewood gives biogenic CO2, reported separately, plus small methane and nitrous oxide in Scope 1. LPG or coal cooking is fossil CO2. Count the reeling machine's electricity at 0.710 kg CO2 per kWh.",
+  "short": "Most of it is the fuel used to cook cocoons before reeling. Firewood gives biogenic CO2, reported separately, plus small methane and nitrous oxide in Scope 1. LPG or coal cooking is fossil CO2. Count the reeling machine's electricity at 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -1974,7 +1974,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bhilwara-textile-mill-captive-thermal-power",
   "q": "A Bhilwara textile mill runs its own coal power plant: how does that change its footprint?",
   "title": "Bhilwara mills with captive coal power",
-  "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 kg, so the comparison is worth making.",
+  "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 (FY 2024-25 grid factor) kg, so the comparison is worth making.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1998,7 +1998,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bhiwandi-powerloom-electricity-per-metre",
   "q": "How does a Bhiwandi powerloom unit work out electricity CO2 per metre?",
   "title": "Bhiwandi powerlooms: CO2 per metre",
-  "short": "Multiply the month's electricity bill in kWh by 0.710 kg CO2 per kWh and divide by metres woven. Read metres from the loom counters or the production register. Yarn bought in is Scope 3 and is usually reported separately from weaving.",
+  "short": "Multiply the month's electricity bill in kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by metres woven. Read metres from the loom counters or the production register. Yarn bought in is Scope 3 and is usually reported separately from weaving.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -2190,7 +2190,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "biomass-power-open-access-scope-2",
   "q": "What emission factor do I use for biomass power bought via open access?",
   "title": "Scope 2 factor for open access biomass power",
-  "short": "For location-based Scope 2, use the grid factor, 0.710 kg CO2 per kWh, on all units consumed, including the biomass units. For market-based, the biomass units carry only their methane and nitrous oxide, about 27 g CO2e per kWh in the example below. The plant's biogenic CO2 is reported separately, outside the scopes.",
+  "short": "For location-based Scope 2, use the grid factor, 0.710 kg CO2 per kWh for FY 2024-25, on all units consumed, including the biomass units. For market-based, the biomass units carry only their methane and nitrous oxide, about 27 g CO2e per kWh in the example below. The plant's biogenic CO2 is reported separately, outside the scopes.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -2230,7 +2230,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "blast-freezer-energy-per-tonne",
   "q": "How do I calculate the energy and emissions of a blast freezer per tonne?",
   "title": "Blast freezer energy per tonne",
-  "short": "Sub-meter the blast freezer, multiply its kWh by 0.710 kg CO2 per kWh, and divide by tonnes frozen. Add refrigerant top-ups from service records as Scope 1. Product entry temperature and loading pattern change the energy per tonne, so record both.",
+  "short": "Sub-meter the blast freezer, multiply its kWh by 0.710 kg CO2 per kWh for FY 2024-25, and divide by tonnes frozen. Add refrigerant top-ups from service records as Scope 1. Product entry temperature and loading pattern change the energy per tonne, so record both.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -2278,7 +2278,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "blood-bank-electricity-emissions",
   "q": "How do we calculate the carbon footprint of a blood bank?",
   "title": "Blood bank: emissions",
-  "short": "Blood banks run refrigerators, deep freezers and platelet agitators all day, every day, so electricity dominates. Count units at 0.710 kg CO2 per kWh, plus genset diesel during outages. Blood bags, reagents and donation camp travel are Scope 3.",
+  "short": "Blood banks run refrigerators, deep freezers and platelet agitators all day, every day, so electricity dominates. Count units at 0.710 kg CO2 per kWh for FY 2024-25, plus genset diesel during outages. Blood bags, reagents and donation camp travel are Scope 3.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -2286,7 +2286,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "blown-film-extrusion-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of blown film per kg?",
   "title": "Blown film carbon footprint per kg",
-  "short": "Per kg of good film, multiply the resin bought per kg of good film by the resin's footprint, add extruder and plant electricity per kg at 0.710 kg CO2 per kWh, and add masterbatch, cores and packing. Resin is usually most of the total, so the resin factor and your scrap rate matter most.",
+  "short": "Per kg of good film, multiply the resin bought per kg of good film by the resin's footprint, add extruder and plant electricity per kg at 0.710 kg CO2 per kWh for FY 2024-25, and add masterbatch, cores and packing. Resin is usually most of the total, so the resin factor and your scrap rate matter most.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -2438,7 +2438,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bone-china-tableware-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of bone china or porcelain tableware per piece?",
   "title": "Bone china tableware carbon per piece",
-  "short": "Add the kiln fuel for the biscuit, glaze and decoration firings at its default factor and the plant electricity at 0.710 kg CO2 per kWh, divide by good pieces, then add the clay body, glaze, decals and packaging from supplier data. Rejects raise the figure per good piece.",
+  "short": "Add the kiln fuel for the biscuit, glaze and decoration firings at its default factor and the plant electricity at 0.710 kg CO2 per kWh for FY 2024-25, divide by good pieces, then add the clay body, glaze, decals and packaging from supplier data. Rejects raise the figure per good piece.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -2446,7 +2446,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "book-printing-carbon-footprint-per-copy",
   "q": "How do I calculate the carbon footprint of printing one book?",
   "title": "Book printing carbon per copy",
-  "short": "Weigh the book, multiply the paper and cover board by the mills' factors, and add the printing and binding energy at 0.710 kg CO2 per kWh divided by copies. Paper weight, stock choice and print run waste all move the figure.",
+  "short": "Weigh the book, multiply the paper and cover board by the mills' factors, and add the printing and binding energy at 0.710 kg CO2 per kWh for FY 2024-25 divided by copies. Paper weight, stock choice and print run waste all move the figure.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -2518,7 +2518,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "brass-artware-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of brass artware and handicrafts per kg?",
   "title": "Brass artware carbon per kg",
-  "short": "Add the furnace fuel for melting at its default factor, and electricity for polishing and lacquering at 0.710 kg CO2 per kWh, then divide by kilograms finished. Add the brass itself from the supplier, noting how much is scrap, with its own supplier figure.",
+  "short": "Add the furnace fuel for melting at its default factor, and electricity for polishing and lacquering at 0.710 kg CO2 per kWh for FY 2024-25, then divide by kilograms finished. Add the brass itself from the supplier, noting how much is scrap, with its own supplier figure.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -2622,7 +2622,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "broiler-farm-emissions-per-kg-live-weight",
   "q": "How do I calculate a broiler farm's emissions per kg of live weight?",
   "title": "Broiler farm emissions per kg",
-  "short": "Add the farm's electricity for fans, lights and water at 0.710 kg CO2 per kWh and LPG or coal for brooding at their default factors, then divide by kg of live weight sold. Feed is usually the largest share, so add it from the feed mill's figure.",
+  "short": "Add the farm's electricity for fans, lights and water at 0.710 kg CO2 per kWh for FY 2024-25 and LPG or coal for brooding at their default factors, then divide by kg of live weight sold. Feed is usually the largest share, so add it from the feed mill's figure.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -3022,7 +3022,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bus-stand-terminal-carbon-footprint",
   "q": "What makes up the carbon footprint of a bus stand?",
   "title": "Bus stand carbon footprint",
-  "short": "Electricity for lighting, fans, display boards and offices is the main part, at 0.710 kg CO2 per kWh, with diesel for backup generators. Bus fuel burned while idling at the bays belongs to the bus operator's Scope 1, not the terminal's.",
+  "short": "Electricity for lighting, fans, display boards and offices is the main part, at 0.710 kg CO2 per kWh for FY 2024-25, with diesel for backup generators. Bus fuel burned while idling at the bays belongs to the bus operator's Scope 1, not the terminal's.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -3046,7 +3046,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "butibori-steel-re-roller-coal-gasifier-co2",
   "q": "A Butibori re-rolling mill reheats billets with a coal gasifier. How is the CO2 counted?",
   "title": "Butibori re-roller coal gasifier CO2",
-  "short": "Count the coal fed to the gasifier, not the gas made: multiply tonnes of coal by its emission factor in Scope 1. Add electricity for the mill at 0.710 and divide by tonnes of rolled product. Billets bought in carry their own emissions.",
+  "short": "Count the coal fed to the gasifier, not the gas made: multiply tonnes of coal by its emission factor in Scope 1. Add electricity for the mill at 0.710 (FY 2024-25 grid factor) and divide by tonnes of rolled product. Billets bought in carry their own emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -3182,7 +3182,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "buyer-asks-location-and-market-based-scope-2",
   "q": "Our buyer asks for Scope 2 both location based and market based. What is the difference?",
   "title": "Location based vs market based Scope 2",
-  "short": "Location based uses the average grid factor where you are, 0.710 kg CO2 per kWh in India. Market based uses what you contracted: green tariffs, RECs or PPAs, with a residual mix factor for the rest. Report both; without contracts, the two figures are similar.",
+  "short": "Location based uses the average grid factor where you are, 0.710 kg CO2 per kWh for FY 2024-25 in India. Market based uses what you contracted: green tariffs, RECs or PPAs, with a residual mix factor for the rest. Report both; without contracts, the two figures are similar.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -3358,7 +3358,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "calcium-carbide-furnace-emissions-per-tonne",
   "q": "What are the emissions from a calcium carbide furnace?",
   "title": "Calcium carbide furnace emissions",
-  "short": "Three sources add up: CO2 from burning limestone to lime, CO2 from the coke whose carbon leaves as gas, and the large electricity use of the arc furnace. Count power at 0.710 kg CO2 per kWh. Calcium carbide is not a CBAM good.",
+  "short": "Three sources add up: CO2 from burning limestone to lime, CO2 from the coke whose carbon leaves as gas, and the large electricity use of the arc furnace. Count power at 0.710 kg CO2 per kWh for FY 2024-25. Calcium carbide is not a CBAM good.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -3390,7 +3390,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "call-centre-emissions-per-seat",
   "q": "How do I calculate the carbon footprint of a call centre per seat?",
   "title": "Call centre emissions per seat",
-  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by production seats. Night shifts and 24-hour cooling raise use per seat, and employee cabs are a separate Scope 1 or Scope 3 line.",
+  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then divide by production seats. Night shifts and 24-hour cooling raise use per seat, and employee cabs are a separate Scope 1 or Scope 3 line.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -3854,7 +3854,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "car-dealership-showroom-carbon-footprint",
   "q": "What makes up the carbon footprint of a car dealership?",
   "title": "Car dealership carbon footprint",
-  "short": "Showroom lighting and air conditioning are Scope 2, at 0.710 kg CO2 per kWh. Generator diesel and demo or test drive cars you own are Scope 1. The workshop adds compressors, paint and refrigerant top ups. The cars you sell keep emitting on the road, which is a separate and much larger figure.",
+  "short": "Showroom lighting and air conditioning are Scope 2, at 0.710 kg CO2 per kWh for FY 2024-25. Generator diesel and demo or test drive cars you own are Scope 1. The workshop adds compressors, paint and refrigerant top ups. The cars you sell keep emitting on the road, which is a separate and much larger figure.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -3862,7 +3862,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "car-paint-booth-emissions-per-vehicle",
   "q": "How do I calculate the emissions of a car paint booth per vehicle painted?",
   "title": "Car paint booth emissions per job",
-  "short": "Add the burner fuel for the bake cycle, LPG at 2.98 kg CO2 per kilogram or diesel at 2.68 per litre, and the fan and lighting electricity at 0.710 kg CO2 per kWh. Divide by paint jobs, and count panels as well if job sizes vary.",
+  "short": "Add the burner fuel for the bake cycle, LPG at 2.98 kg CO2 per kilogram or diesel at 2.68 per litre, and the fan and lighting electricity at 0.710 kg CO2 per kWh for FY 2024-25. Divide by paint jobs, and count panels as well if job sizes vary.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -3878,7 +3878,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "car-wash-carbon-footprint-per-car",
   "q": "How do I calculate the carbon footprint of a car wash per car?",
   "title": "Car wash carbon footprint per car",
-  "short": "Take the car wash electricity, from a sub-meter or its share of the site bill, multiply by 0.710 kg CO2 per kWh, and divide by cars washed. Add water heating fuel if used, and keep water tanker or supply bills as Scope 3 evidence.",
+  "short": "Take the car wash electricity, from a sub-meter or its share of the site bill, multiply by 0.710 kg CO2 per kWh for FY 2024-25, and divide by cars washed. Add water heating fuel if used, and keep water tanker or supply bills as Scope 3 evidence.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -3886,7 +3886,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "car-workshop-genset-and-grid-electricity-split",
   "q": "How does a car workshop split generator and grid electricity in its footprint?",
   "title": "Car workshops: generator vs grid",
-  "short": "Count them separately. Grid kWh go to Scope 2 at 0.710 kg CO2 per kWh. Diesel for the generator goes to Scope 1 at 2.68 kg CO2 per litre. Do not also convert the generator's kWh, or you count the same power twice.",
+  "short": "Count them separately. Grid kWh go to Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. Diesel for the generator goes to Scope 1 at 2.68 kg CO2 per litre. Do not also convert the generator's kWh, or you count the same power twice.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -4094,7 +4094,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "carbon-per-rupee-of-electricity-bill",
   "q": "Can I estimate emissions from the rupee amount of my electricity bill?",
   "title": "Carbon per rupee of electricity",
-  "short": "Only as a rough check. Divide 0.710 kg CO2 per kWh by your all-in cost per kWh: at about ₹8 per kWh that is roughly 0.09 kg per rupee. Fixed charges, demand charges and taxes distort it, so for reporting always use the kWh printed on the bill.",
+  "short": "Only as a rough check. Divide 0.710 kg CO2 per kWh for FY 2024-25 by your all-in cost per kWh: at about ₹8 per kWh that is roughly 0.09 kg per rupee. Fixed charges, demand charges and taxes distort it, so for reporting always use the kWh printed on the bill.",
   "topic": "accounting",
   "reviewed": "2026-10-23"
  },
@@ -5694,7 +5694,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ccts-tool-bm-t-003-electricity-emission-factor",
   "q": "Which grid emission factor does a CCTS offset project use for electricity saved or consumed under BM-T-003?",
   "title": "Grid factor for CCTS projects under BM-T-003",
-  "short": "Use the grid factor that BEE tool BM-T-003 sets, not the 0.710 kg CO2 per kWh weighted average from your company footprint. BM-T-003 covers baseline, project and leakage emissions from electricity consumption, so read the version you register under for the factor and loss treatment it requires, and record its source and edition.",
+  "short": "Use the grid factor that BEE tool BM-T-003 sets, not the 0.710 kg CO2 per kWh for FY 2024-25 weighted average from your company footprint. BM-T-003 covers baseline, project and leakage emissions from electricity consumption, so read the version you register under for the factor and loss treatment it requires, and record its source and edition.",
   "topic": "markets",
   "reviewed": "2026-10-18"
  },
@@ -5974,7 +5974,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ceramic-frit-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint per kg of ceramic frit or glaze?",
   "title": "Carbon footprint per kg of frit or glaze",
-  "short": "Add three parts for a period: fuel CO2 from the frit furnace, process CO2 released by carbonates in the batch (mass of each carbonate times its IPCC factor), and electricity at 0.710 kg CO2 per kWh. Divide by kg of frit made. Then add bought raw materials for a cradle-to-gate figure.",
+  "short": "Add three parts for a period: fuel CO2 from the frit furnace, process CO2 released by carbonates in the batch (mass of each carbonate times its IPCC factor), and electricity at 0.710 kg CO2 per kWh for FY 2024-25. Divide by kg of frit made. Then add bought raw materials for a cradle-to-gate figure.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -5982,7 +5982,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ceramic-spray-dryer-co2-per-tonne-powder",
   "q": "How much fuel and CO2 does a ceramic spray dryer use per tonne of powder?",
   "title": "Spray dryer CO2 per tonne of powder",
-  "short": "Work it out from your own logs: fuel to the spray dryer's hot air generator times its factor, plus the dryer's electricity times 0.710 kg CO2 per kWh, divided by tonnes of powder made in the same period. For PNG that is scm x 2.05 kg CO2. Water evaporated per tonne explains most of the difference between plants.",
+  "short": "Work it out from your own logs: fuel to the spray dryer's hot air generator times its factor, plus the dryer's electricity times 0.710 kg CO2/kWh (FY 2024-25), divided by tonnes of powder made in the same period. For PNG that is scm x 2.05 kg CO2. Water evaporated per tonne explains most of the difference between plants.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -6438,7 +6438,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cinema-multiplex-carbon-footprint-per-screen",
   "q": "How do I calculate the carbon footprint of a cinema multiplex per screen?",
   "title": "Cinema multiplex carbon per screen",
-  "short": "Take the multiplex electricity from the bill at 0.710 kg CO2 per kWh, add generator diesel at 2.68 kg per litre and any refrigerant top-ups, then divide by screens. Air conditioning is often the largest load, so report per screen and per show if you track shows.",
+  "short": "Take the multiplex electricity from the bill at 0.710 kg CO2 per kWh for FY 2024-25, add generator diesel at 2.68 kg per litre and any refrigerant top-ups, then divide by screens. Air conditioning is often the largest load, so report per screen and per show if you track shows.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -6510,7 +6510,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "clinic-carbon-footprint-calculation",
   "q": "How do I calculate the carbon footprint of a clinic or small hospital?",
   "title": "Clinic carbon footprint calculation",
-  "short": "Start with the clinic electricity bill at 0.710 kg CO2 per kWh, add generator diesel at 2.68 kg per litre, AC refrigerant top-ups and any anaesthetic gases, then divide by patient visits. Medicines and supplies go in Scope 3 once the basics are in place.",
+  "short": "Start with the clinic electricity bill at 0.710 kg CO2 per kWh for FY 2024-25, add generator diesel at 2.68 kg per litre, AC refrigerant top-ups and any anaesthetic gases, then divide by patient visits. Medicines and supplies go in Scope 3 once the basics are in place.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -6566,7 +6566,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cng-station-compressor-electricity-per-kg",
   "q": "How much CO2 does a CNG station's compressor add per kg of gas sold?",
   "title": "CNG station compressor CO2 per kg",
-  "short": "Divide the compressor's monthly kWh by the kilograms of CNG dispensed, then multiply by 0.710 kg CO2 per kWh. That is the station's Scope 2 per kg. Gas vented during maintenance is unburnt methane and counts in Scope 1. The CO2 from burning the gas belongs to the vehicle owner.",
+  "short": "Divide the compressor's monthly kWh by the kilograms of CNG dispensed, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. That is the station's Scope 2 per kg. Gas vented during maintenance is unburnt methane and counts in Scope 1. The CO2 from burning the gas belongs to the vehicle owner.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -6886,7 +6886,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cold-chain-emissions-per-kg-of-food",
   "q": "How do I calculate the cold chain emissions for one kilogram of food?",
   "title": "Cold chain emissions per kg of food",
-  "short": "Add each cold stage per kilogram: pre-cooling and cold storage electricity at 0.710 kg CO2 per kWh, reefer truck diesel at 2.68 kg per litre, and retail chilling. Get each stage's energy per kilogram from the operator, and add refrigerant leaks where they are reported.",
+  "short": "Add each cold stage per kilogram: pre-cooling and cold storage electricity at 0.710 kg CO2 per kWh for FY 2024-25, reefer truck diesel at 2.68 kg per litre, and retail chilling. Get each stage's energy per kilogram from the operator, and add refrigerant leaks where they are reported.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -6902,7 +6902,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cold-room-door-air-curtain-energy-savings",
   "q": "How do I measure the energy saved by a strip curtain or fast door on a cold room?",
   "title": "Cold room door savings: curtains, fast doors",
-  "short": "Compare the cold room's metered kWh for the same months before and after fitting the curtain or fast door, with throughput noted, and convert the difference at 0.710 kg CO2 per kWh. Warm moist air entering through open doors adds load and ice, so door changes can show up clearly on a sub-meter.",
+  "short": "Compare the cold room's metered kWh for the same months before and after fitting the curtain or fast door, with throughput noted, and convert the difference at 0.710 kg CO2 per kWh for FY 2024-25. Warm moist air entering through open doors adds load and ice, so door changes can show up clearly on a sub-meter.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -6926,7 +6926,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cold-store-temperature-setpoint-energy-measurement",
   "q": "How do I measure the energy saved by changing a cold store's temperature set point?",
   "title": "Cold store set point energy saving",
-  "short": "Change the set point only within the product's quality limit, then compare the sub-metered kWh with a period of similar load and weather, and convert the difference at 0.710 kg CO2 per kWh. Report the measured figure with dates, not a rule-of-thumb percentage.",
+  "short": "Change the set point only within the product's quality limit, then compare the sub-metered kWh with a period of similar load and weather, and convert the difference at 0.710 kg CO2 per kWh for FY 2024-25. Report the measured figure with dates, not a rule-of-thumb percentage.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -6934,7 +6934,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "college-hostel-carbon-footprint-per-student",
   "q": "How do I calculate the carbon footprint of a college hostel per student?",
   "title": "College hostel carbon per student",
-  "short": "Add hostel electricity at 0.710 kg CO2 per kWh, mess LPG at 2.98 kg per kg, and generator diesel at 2.68 kg per litre, then divide by resident students. Sub-meter the hostel if it shares a campus supply, or label the split an estimate.",
+  "short": "Add hostel electricity at 0.710 kg CO2 per kWh for FY 2024-25, mess LPG at 2.98 kg per kg, and generator diesel at 2.68 kg per litre, then divide by resident students. Sub-meter the hostel if it shares a campus supply, or label the split an estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -6942,7 +6942,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "colocation-data-centre-emissions-with-pue",
   "q": "How do I calculate emissions for servers in a colocation data centre using PUE?",
   "title": "Colocation server emissions with PUE",
-  "short": "Multiply your servers' average IT power in kW by the hours in the year, then by the facility's annual PUE, then by the grid factor. In India: kWh x PUE x 0.710 kg CO2 per kWh. Ask the provider for your metered IT kWh and their measured annual PUE, not the design figure.",
+  "short": "Multiply your servers' average IT power in kW by the hours in the year, then by the facility's annual PUE, then by the grid factor. In India: kWh x PUE x 0.710 kg CO2 per kWh for FY 2024-25. Ask the provider for your metered IT kWh and their measured annual PUE, not the design figure.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -7062,7 +7062,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "compressed-air-leak-cost-and-emissions",
   "q": "How much do compressed air leaks cost in electricity and CO2?",
   "title": "Compressed air leaks: cost and CO2",
-  "short": "Measure leakage with a load and unload test when production is stopped: leakage share equals load time divided by load plus unload time. Multiply that share by compressor power and running hours to get wasted kWh, then by your tariff for rupees and by 0.710 kg CO2 per kWh for emissions.",
+  "short": "Measure leakage with a load and unload test when production is stopped: leakage share equals load time divided by load plus unload time. Multiply that share by compressor power and running hours to get wasted kWh, then by your tariff for rupees and by 0.710 kg CO2 per kWh for FY 2024-25 for emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -7070,7 +7070,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "compressed-air-pressure-reduction-savings",
   "q": "How much energy does lowering compressed air pressure save, and how do I work out the CO2?",
   "title": "Lower compressor pressure: energy and CO2",
-  "short": "Lowering compressor delivery pressure by 1 bar cuts compressor power by roughly 6 to 10 percent, according to the BEE guide book on electrical utilities. Multiply your compressor's annual kWh by that share for the saving, then by 0.710 kg CO2 per kWh for grid electricity.",
+  "short": "Lowering compressor delivery pressure by 1 bar cuts compressor power by roughly 6 to 10 percent, according to the BEE guide book on electrical utilities. Multiply your compressor's annual kWh by that share for the saving, then by 0.710 kg CO2 per kWh for FY 2024-25 for grid electricity.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -7134,7 +7134,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "container-terminal-rtg-crane-electrification-co2",
   "q": "How much CO2 does electrifying container yard cranes save?",
   "title": "Electric yard cranes: CO2 saving",
-  "short": "A diesel rubber-tyred gantry crane burns diesel at 2.68 kg CO2 per litre. An electrified one uses grid power at 0.710 kg CO2 per kWh. Compare litres per box moved before with kWh per box after. The saving is the difference times boxes handled.",
+  "short": "A diesel rubber-tyred gantry crane burns diesel at 2.68 kg CO2 per litre. An electrified one uses grid power at 0.710 kg CO2 per kWh for FY 2024-25. Compare litres per box moved before with kWh per box after. The saving is the difference times boxes handled.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -7150,7 +7150,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "contractor-carbon-data-for-tender-bids",
   "q": "What carbon data should a construction contractor include in a tender bid?",
   "title": "Carbon data for tender bids",
-  "short": "Give site emissions from completed projects: diesel at 2.68 kg CO2 per litre and site electricity at 0.710 kg CO2 per kWh, per square metre or per contract value. Back each figure with invoices and fuel logs, and list the steps you will take on the new site.",
+  "short": "Give site emissions from completed projects: diesel at 2.68 kg CO2 per litre and site electricity at 0.710 kg CO2 per kWh for FY 2024-25, per square metre or per contract value. Back each figure with invoices and fuel logs, and list the steps you will take on the new site.",
   "topic": "markets",
   "reviewed": "2026-10-21"
  },
@@ -7198,7 +7198,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "contractor-site-genset-vs-temporary-grid-supply",
   "q": "Should a contractor count site generator diesel or the temporary grid connection?",
   "title": "Contractors: site generator vs grid",
-  "short": "Both, in different scopes. Diesel you burn in site generators is Scope 1 at 2.68 kg CO2 per litre. Electricity from a temporary grid connection in your name is Scope 2 at 0.710 kg CO2 per kWh.",
+  "short": "Both, in different scopes. Diesel you burn in site generators is Scope 1 at 2.68 kg CO2 per litre. Electricity from a temporary grid connection in your name is Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -7286,7 +7286,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "copra-drying-emissions-per-tonne",
   "q": "What are the emissions from drying copra?",
   "title": "Copra drying: emissions",
-  "short": "Copra is dried in the sun, in kilns burning coconut shells and husks, or in electric or solar dryers. Shell and husk fires give biogenic CO2 reported separately, with methane and nitrous oxide in Scope 1. Electric dryers count at 0.710 kg CO2 per kWh.",
+  "short": "Copra is dried in the sun, in kilns burning coconut shells and husks, or in electric or solar dryers. Shell and husk fires give biogenic CO2 reported separately, with methane and nitrous oxide in Scope 1. Electric dryers count at 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -7382,7 +7382,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cotton-farming-emissions-per-kg-seed-cotton",
   "q": "How do I calculate the carbon footprint of growing cotton per kg of seed cotton?",
   "title": "Cotton farming emissions per kg",
-  "short": "For seed cotton, sum the field N2O from nitrogen fertiliser using IPCC defaults, CO2 from urea, diesel at 2.68 kg CO2 per litre and pump electricity at 0.710 kg per kWh, then divide by kg harvested per acre. The gin later splits it between lint and seed.",
+  "short": "For seed cotton, sum the field N2O from nitrogen fertiliser using IPCC defaults, CO2 from urea, diesel at 2.68 kg CO2 per litre and pump electricity at 0.710 kg per kWh for FY 2024-25, then divide by kg harvested per acre. The gin later splits it between lint and seed.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -7390,7 +7390,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cotton-ginning-emissions-per-bale",
   "q": "How much CO2 does cotton ginning and pressing emit per bale?",
   "title": "Cotton ginning CO2 per bale",
-  "short": "Divide the season's ginning and pressing emissions by the bales produced: grid kWh times 0.710 kg CO2, plus DG diesel times 2.68 kg per litre. Then split the result between lint and cottonseed, by mass or by value. The split method can double the lint figure, so always state which one you used.",
+  "short": "Divide the season's ginning and pressing emissions by the bales produced: grid kWh times 0.710 (FY 2024-25 grid factor) kg CO2, plus DG diesel times 2.68 kg per litre. Then split the result between lint and cottonseed, by mass or by value. The split method can double the lint figure, so always state which one you used.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -7406,7 +7406,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cottonseed-delinting-emissions-per-tonne",
   "q": "What are the emissions from delinting cottonseed?",
   "title": "Cottonseed delinting: emissions",
-  "short": "Delinting strips short fibres from cottonseed, by machine or with acid. Machine delinting uses electricity at 0.710 kg CO2 per kWh. Acid delinting adds the bought acid, a Scope 3 material, plus heat for drying the seed. Divide by tonnes of seed processed.",
+  "short": "Delinting strips short fibres from cottonseed, by machine or with acid. Machine delinting uses electricity at 0.710 kg CO2 per kWh for FY 2024-25. Acid delinting adds the bought acid, a Scope 3 material, plus heat for drying the seed. Divide by tonnes of seed processed.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -7542,7 +7542,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cuddalore-chemical-unit-buyer-carbon-data",
   "q": "What carbon data should a chemical unit in Cuddalore send to an export buyer?",
   "title": "Cuddalore chemical unit: buyer carbon data",
-  "short": "Send Scope 1 from boiler and heater fuel, Scope 2 from grid electricity at 0.710 kg CO2 per kWh, and a figure per kg of the product the buyer takes. State the boundary and the allocation method. If the buyer asks for cradle-to-gate, add raw material emissions and say which come from suppliers.",
+  "short": "Send Scope 1 from boiler and heater fuel, Scope 2 from grid electricity at 0.710 kg CO2 per kWh for FY 2024-25, and a figure per kg of the product the buyer takes. State the boundary and the allocation method. If the buyer asks for cradle-to-gate, add raw material emissions and say which come from suppliers.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -7558,7 +7558,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cupola-vs-induction-furnace-emissions",
   "q": "Does switching from a coke cupola to an induction furnace cut a foundry's carbon footprint in India?",
   "title": "Cupola to induction: does CO2 fall?",
-  "short": "Not always. On Indian grid power at 0.710 kg CO2 per kWh, an induction furnace using an estimated 550 to 700 kWh per tonne melted emits 0.39 to 0.50 t CO2. A cupola burning about 120 kg of coke per tonne emits about 0.38 t with blowers. Induction wins clearly only with renewable power or fewer kWh per tonne.",
+  "short": "Not always. On Indian grid power at 0.710 kg CO2/kWh (FY 2024-25), an induction furnace using an estimated 550 to 700 kWh per tonne melted emits 0.39 to 0.50 t CO2. A cupola burning about 120 kg of coke per tonne emits about 0.38 t with blowers. Induction wins clearly only with renewable power or fewer kWh per tonne.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -7686,7 +7686,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "dairy-plant-emissions-per-litre-of-milk",
   "q": "What are the emissions per litre of milk processed at a dairy plant?",
   "title": "Dairy plant emissions per litre of milk",
-  "short": "Divide the plant's monthly Scope 1 and 2 emissions by the litres of milk received. Electricity at 0.710 kg CO2 per kWh, boiler fuel and DG diesel make up most of it, plus any HFC refrigerant top-ups. Liquid milk plants land far lower per litre than plants making powder or ghee.",
+  "short": "Divide the plant's monthly Scope 1 and 2 emissions by the litres of milk received. Electricity at 0.710 kg CO2 per kWh for FY 2024-25, boiler fuel and DG diesel make up most of it, plus any HFC refrigerant top-ups. Liquid milk plants land far lower per litre than plants making powder or ghee.",
   "topic": "product",
   "reviewed": "2026-10-17"
  },
@@ -7710,7 +7710,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "daman-plastic-moulding-unit-electricity-per-kg",
   "q": "How does a plastic moulding unit in Daman work out CO2 per kg of product?",
   "title": "Daman moulding unit CO2 per kg",
-  "short": "Electricity is the main source. Divide yearly kWh by kilograms moulded and multiply by 0.710 kg CO2 per kWh. For buyers asking for a product footprint, add the plastic resin itself from the resin supplier or a recognised factor, which is usually larger than the moulding energy.",
+  "short": "Electricity is the main source. Divide yearly kWh by kilograms moulded and multiply by 0.710 kg CO2 per kWh for FY 2024-25. For buyers asking for a product footprint, add the plastic resin itself from the resin supplier or a recognised factor, which is usually larger than the moulding energy.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -7950,7 +7950,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "desalination-plant-electricity-co2-per-kl",
   "q": "How much CO2 does a desalination plant emit per kL of water?",
   "title": "Desalination CO2 per kL",
-  "short": "Divide the plant's electricity by kL of product water and multiply by 0.710 kg CO2 per kWh. Seawater reverse osmosis uses far more energy than brackish water treatment, and energy recovery devices cut it. Use your plant meter, not a textbook figure.",
+  "short": "Divide the plant's electricity by kL of product water and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Seawater reverse osmosis uses far more energy than brackish water treatment, and energy recovery devices cut it. Use your plant meter, not a textbook figure.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -7982,7 +7982,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "dg-set-emissions-per-kwh-vs-grid",
   "q": "How many kg of CO2 does a diesel generator emit per kWh, and is DG power cleaner or dirtier than grid power in India?",
   "title": "DG set kg CO2 per kWh versus the grid",
-  "short": "A DG set emits about 0.67 to 0.80 kg CO2 per kWh near full load and over 1.0 kg at light load, from litres per kWh x 2.68. The India grid is 0.710 kg CO2 per kWh, so a DG set is roughly level with the grid at best and clearly dirtier at part load.",
+  "short": "A DG set emits about 0.67 to 0.80 kg CO2 per kWh near full load and over 1.0 kg at light load, from litres per kWh x 2.68. The India grid is 0.710 kg CO2 per kWh for FY 2024-25, so a DG set is roughly level with the grid at best and clearly dirtier at part load.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -7998,7 +7998,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "dhanbad-coal-washery-electricity-per-tonne",
   "q": "How do I work out CO2 per tonne of washed coal at a Dhanbad washery?",
   "title": "Dhanbad washery: CO2 per tonne of washed coal",
-  "short": "Add the washery's electricity in kWh times the grid factor, 0.710 kg CO2 per kWh on CEA v21.0, to diesel for loaders and trucks at 2.68 kg per litre. Divide by tonnes of clean coal dispatched, not raw coal fed, because buyers ask per tonne they receive.",
+  "short": "Add the washery's electricity in kWh times the grid factor, 0.710 kg CO2 per kWh for FY 2024-25 on CEA v21.0, to diesel for loaders and trucks at 2.68 kg per litre. Divide by tonnes of clean coal dispatched, not raw coal fed, because buyers ask per tonne they receive.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -8030,7 +8030,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "diesel-forklift-vs-electric-forklift-emissions",
   "q": "How do I calculate emissions from diesel forklifts, and how much does switching to electric forklifts save in India?",
   "title": "Diesel vs electric forklift emissions",
-  "short": "Multiply the diesel your forklifts burn by 2.68 kg CO2 per litre; that is Scope 1. For an electric forklift, multiply the charging kWh by the grid factor of 0.710 kg CO2 per kWh; that is Scope 2. The saving is the difference, and on India's grid it is usually large but well short of 100%.",
+  "short": "Multiply the diesel your forklifts burn by 2.68 kg CO2 per litre; that is Scope 1. For an electric forklift, multiply the charging kWh by the grid factor of 0.710 kg CO2 per kWh for FY 2024-25; that is Scope 2. The saving is the difference, and on India's grid it is usually large but well short of 100%.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
  },
@@ -8726,7 +8726,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "drip-irrigation-energy-saving-per-acre",
   "q": "How do I calculate the emissions saved by moving to drip irrigation?",
   "title": "Drip irrigation energy saving per acre",
-  "short": "Measure pump kWh for a season before and after drip on the same land, and multiply the difference by 0.710 kg CO2 per kWh. Drip saves energy by pumping less water, but the saving depends on crop, soil and how the system is run, so measure it.",
+  "short": "Measure pump kWh for a season before and after drip on the same land, and multiply the difference by 0.710 kg CO2 per kWh for FY 2024-25. Drip saves energy by pumping less water, but the saving depends on crop, soil and how the system is run, so measure it.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -8742,7 +8742,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "drone-crop-spraying-emissions-per-acre",
   "q": "What are the emissions of spraying crops with a drone?",
   "title": "Drone crop spraying emissions",
-  "short": "An electric spraying drone uses battery charge, so emissions are the charging electricity times 0.710 kg CO2 per kWh, or genset diesel if charged in the field. Per acre that is small next to tractor spraying. The pesticide itself has its own footprint.",
+  "short": "An electric spraying drone uses battery charge, so emissions are the charging electricity times 0.710 kg CO2 per kWh for FY 2024-25, or genset diesel if charged in the field. Per acre that is small next to tractor spraying. The pesticide itself has its own footprint.",
   "topic": "markets",
   "reviewed": "2026-10-22"
  },
@@ -8814,7 +8814,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "duplex-board-carbon-footprint-per-tonne",
   "q": "How do I calculate the carbon footprint of duplex board per tonne?",
   "title": "Duplex board carbon per tonne",
-  "short": "Add the boiler fuel at its default factor and mill electricity at 0.710 kg CO2 per kWh, divide by tonnes of board, then add the waste paper, coating clay and binders from supplier data. The coating line adds drying energy, so coated grades use more than uncoated ones.",
+  "short": "Add the boiler fuel at its default factor and mill electricity at 0.710 kg CO2 per kWh for FY 2024-25, divide by tonnes of board, then add the waste paper, coating clay and binders from supplier data. The coating line adds drying energy, so coated grades use more than uncoated ones.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -8894,7 +8894,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "dvc-supplied-plant-which-grid-factor",
   "q": "Which grid factor should a factory supplied by DVC or any one state utility use?",
   "title": "DVC or state supply: which grid factor",
-  "short": "Use the national figure. India's grids are one synchronised system, and the CEA CO2 Baseline Database publishes a single weighted average, 0.710 kg CO2 per kWh in version 21.0, for all grid power. There is no official utility specific factor for location based reporting, whichever company bills you.",
+  "short": "Use the national figure. India's grids are one synchronised system, and the CEA CO2 Baseline Database publishes a single weighted average, 0.710 kg CO2 per kWh for FY 2024-25 in version 21.0, for all grid power. There is no official utility specific factor for location based reporting, whichever company bills you.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -8974,7 +8974,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ecommerce-fulfilment-centre-emissions-per-parcel",
   "q": "How do I calculate a fulfilment centre's emissions per parcel?",
   "title": "Fulfilment centre emissions per parcel",
-  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh, diesel for backup and forklifts, and refrigerant top ups, then divide by parcels shipped. Packaging and inbound and outbound trucking are separate Scope 3 lines. A 3PL sharing a site allocates by area or volume.",
+  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh for FY 2024-25, diesel for backup and forklifts, and refrigerant top ups, then divide by parcels shipped. Packaging and inbound and outbound trucking are separate Scope 3 lines. A 3PL sharing a site allocates by area or volume.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -9150,7 +9150,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ed-coating-line-carbon-per-square-metre",
   "q": "How do I calculate the carbon footprint of an electrocoating (ED) line per square metre?",
   "title": "ED coating line carbon per m2",
-  "short": "Add the oven and tank heating fuel, PNG at 2.05 kg CO2 per scm, and the line electricity at 0.710 kg CO2 per kWh, including the rectifier and chiller. Divide by square metres coated, and add the paint from the supplier's factor.",
+  "short": "Add the oven and tank heating fuel, PNG at 2.05 kg CO2 per scm, and the line electricity at 0.710 kg CO2 per kWh for FY 2024-25, including the rectifier and chiller. Divide by square metres coated, and add the paint from the supplier's factor.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -9174,7 +9174,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "egrid-or-cea-factor-for-us-customer",
   "q": "My US customer told me to use eGRID factors for my electricity. Is that right for a factory in India?",
   "title": "eGRID or CEA factor for an Indian factory?",
-  "short": "No. eGRID is the US EPA's database for electricity generated in US grid subregions; it has no figure for India. For location-based Scope 2 the GHG Protocol uses the grid where the power is consumed, so an Indian factory should use the CEA factor, 0.710 kg CO2 per kWh in version 21.0.",
+  "short": "No. eGRID is the US EPA's database for electricity generated in US grid subregions; it has no figure for India. For location-based Scope 2 the GHG Protocol uses the grid where the power is consumed, so an Indian factory should use the CEA factor, 0.710 kg CO2 per kWh for FY 2024-25 in version 21.0.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -9238,7 +9238,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electric-bus-depot-charging-emissions",
   "q": "How do I calculate the emissions of charging electric buses at a depot?",
   "title": "Electric bus depot charging emissions",
-  "short": "Take the depot charger electricity from its meter, multiply by 0.710 kg CO2 per kWh, and divide by bus kilometres run. The company with operational control of the depot and buses reports it as Scope 2; an authority contracting the service records it in Scope 3.",
+  "short": "Take the depot charger electricity from its meter, multiply by 0.710 kg CO2 per kWh for FY 2024-25, and divide by bus kilometres run. The company with operational control of the depot and buses reports it as Scope 2; an authority contracting the service records it in Scope 3.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -9246,7 +9246,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electric-bus-depot-rooftop-solar-scope-2",
   "q": "Does rooftop solar at an electric bus depot cut its Scope 2?",
   "title": "E-bus depots: rooftop solar and Scope 2",
-  "short": "Solar power used directly from your own rooftop is not grid electricity, so those kWh carry no Scope 2. Only grid units imported for charging count, at 0.710 kg CO2 per kWh location-based. Keep solar generation records to show the split.",
+  "short": "Solar power used directly from your own rooftop is not grid electricity, so those kWh carry no Scope 2. Only grid units imported for charging count, at 0.710 kg CO2 per kWh for FY 2024-25 location-based. Keep solar generation records to show the split.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -9254,7 +9254,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electric-cargo-bike-last-mile-emissions",
   "q": "What are the emissions of an electric cargo bike for deliveries?",
   "title": "Electric cargo bike delivery emissions",
-  "short": "Only the charging electricity counts in use, at 0.710 kg CO2 per kWh. A cargo bike uses a few kWh a day, so a day's deliveries come to a few kg CO2, far below a diesel van. Building the battery and bike is Scope 3 Category 2.",
+  "short": "Only the charging electricity counts in use, at 0.710 kg CO2 per kWh for FY 2024-25. A cargo bike uses a few kWh a day, so a day's deliveries come to a few kg CO2, far below a diesel van. Building the battery and bike is Scope 3 Category 2.",
   "topic": "markets",
   "reviewed": "2026-10-22"
  },
@@ -9262,7 +9262,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electric-crematorium-vs-wood-pyre-emissions",
   "q": "How do emissions from an electric crematorium compare with a wood pyre?",
   "title": "Electric crematorium vs wood pyre",
-  "short": "An electric crematorium's emissions are the electricity it uses, at 0.710 kg CO2 per kWh, read from its meter per cremation. A wood pyre's CO2 is biogenic but releases smoke, methane and nitrous oxide, and the wood itself has to be cut and carried. Gas crematoria burn LPG or PNG, which is fossil Scope 1.",
+  "short": "An electric crematorium's emissions are the electricity it uses, at 0.710 kg CO2 per kWh for FY 2024-25, read from its meter per cremation. A wood pyre's CO2 is biogenic but releases smoke, methane and nitrous oxide, and the wood itself has to be cut and carried. Gas crematoria burn LPG or PNG, which is fossil Scope 1.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -9286,7 +9286,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electric-irrigation-pump-emissions-per-acre",
   "q": "How do I calculate emissions from an electric irrigation pump per acre?",
   "title": "Electric irrigation pump emissions",
-  "short": "Take the pump's kWh from a meter or the electricity bill, or estimate it from rated power and run hours, and multiply by 0.710 kg CO2 per kWh. Divide by acres irrigated. Unmetered farm connections need the estimate, labelled as one.",
+  "short": "Take the pump's kWh from a meter or the electricity bill, or estimate it from rated power and run hours, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Divide by acres irrigated. Unmetered farm connections need the estimate, labelled as one.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -9310,7 +9310,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electric-or-lng-truck-vs-diesel-emissions",
   "q": "Is an electric or LNG truck lower carbon than a diesel truck for Indian freight, per tonne-km?",
   "title": "Electric or LNG truck vs diesel per tonne-km",
-  "short": "Not by much on India's grid average. On labelled estimates, an electric truck charged at 0.710 kg CO2 per kWh comes out level with diesel to about 30 percent higher per tonne-km, and clearly lower only with renewable power. An LNG truck cuts tailpipe CO2 by roughly 10 to 15 percent, but methane slip can cancel much of that.",
+  "short": "Not by much on India's grid average. On labelled estimates, an electric truck charged at 0.710 kg CO2/kWh (FY 2024-25) comes out level with diesel to about 30 percent higher per tonne-km, and clearly lower only with renewable power. An LNG truck cuts tailpipe CO2 by roughly 10 to 15 percent, but methane slip can cancel much of that.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -9334,7 +9334,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electric-vs-cng-three-wheeler-emissions",
   "q": "Is an electric three-wheeler lower carbon than a CNG three-wheeler at India's grid factor?",
   "title": "Electric vs CNG three-wheeler emissions",
-  "short": "Usually yes, but by less than people expect. At 0.10 kWh per km at the charger and 0.710 kg CO2 per kWh, an e-rickshaw or e-cargo three-wheeler emits about 0.071 kg CO2 per km, against about 0.090 kg for a CNG three-wheeler doing 30 km per kg. That is roughly a fifth lower.",
+  "short": "Usually yes, but by less than people expect. At 0.10 kWh per km at the charger and 0.710 kg CO2 per kWh for FY 2024-25, an e-rickshaw or e-cargo three-wheeler emits about 0.071 kg CO2 per km, against about 0.090 kg for a CNG three-wheeler doing 30 km per kg. That is roughly a fifth lower.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -9358,7 +9358,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electricity-bill-shows-only-amount-paid",
   "q": "I only have payment receipts for electricity, not the bills. Can I work out emissions?",
   "title": "Electricity receipts without the bill",
-  "short": "Not reliably. The amount includes fixed charges, demand charges, duty and taxes, so rupees do not convert cleanly to kWh. Download the bills from your discom's portal or ask the office for duplicates; the units consumed on the bill are what you multiply by 0.710 kg CO2 per kWh.",
+  "short": "Not reliably. The amount includes fixed charges, demand charges, duty and taxes, so rupees do not convert cleanly to kWh. Download the bills from your discom's portal or ask the office for duplicates; the units consumed on the bill are what you multiply by 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "reviewed": "2026-10-23"
  },
@@ -9398,7 +9398,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "electroplating-carbon-footprint-per-square-metre",
   "q": "How do I calculate the carbon footprint of electroplating per square metre or per part?",
   "title": "Electroplating carbon footprint per m2",
-  "short": "Add a month's rectifier, bath heating, extraction and pump energy, convert with 0.710 kg CO2 per kWh and the fuel factors, and divide by square metres plated. Then add the anode metal consumed per square metre times the metal's footprint. Multiply by a part's plated area to get the figure per part.",
+  "short": "Add a month's rectifier, bath heating, extraction and pump energy, convert with 0.710 kg CO2 per kWh for FY 2024-25 and the fuel factors, and divide by square metres plated. Then add the anode metal consumed per square metre times the metal's footprint. Multiply by a part's plated area to get the figure per part.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -10230,7 +10230,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "eva-slipper-carbon-footprint-per-pair",
   "q": "How do I calculate the carbon footprint of EVA slippers per pair?",
   "title": "EVA slipper carbon per pair",
-  "short": "Add the factory electricity at 0.710 kg CO2 per kWh and any LPG or gas for heating, divide by pairs made, then add the EVA compound, straps and packaging from supplier data. Sole weight matters because the compound is counted per kilogram.",
+  "short": "Add the factory electricity at 0.710 kg CO2 per kWh for FY 2024-25 and any LPG or gas for heating, divide by pairs made, then add the EVA compound, straps and packaging from supplier data. Sole weight matters because the compound is counted per kilogram.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -10334,7 +10334,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "eye-hospital-carbon-footprint-per-surgery",
   "q": "How do I calculate an eye hospital's carbon footprint per surgery?",
   "title": "Eye hospital CO2 per surgery",
-  "short": "Add theatre and clinic electricity at 0.710 kg CO2 per kWh, generator diesel and sterilisation, then divide by surgeries. Single use kits, lenses and drugs are Scope 3 and can match or exceed the energy. Report outpatient visits separately from surgeries.",
+  "short": "Add theatre and clinic electricity at 0.710 kg CO2 per kWh for FY 2024-25, generator diesel and sterilisation, then divide by surgeries. Single use kits, lenses and drugs are Scope 3 and can match or exceed the energy. Report outpatient visits separately from surgeries.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -10382,7 +10382,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "factory-skylights-daylight-lighting-savings",
   "q": "Do skylights and daylight panels cut factory lighting emissions?",
   "title": "Skylights: lighting savings",
-  "short": "Yes, if lights actually switch off when daylight is enough. Daylight sheets or light pipes replace lighting kWh during the day, at 0.710 kg CO2 per kWh. Add daylight sensors or zoned switching, or people leave lights on. In air-conditioned areas, check the extra heat gain.",
+  "short": "Yes, if lights actually switch off when daylight is enough. Daylight sheets or light pipes replace lighting kWh during the day, at 0.710 kg CO2 per kWh for FY 2024-25. Add daylight sensors or zoned switching, or people leave lights on. In air-conditioned areas, check the extra heat gain.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -10406,7 +10406,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "faecal-sludge-treatment-plant-emissions",
   "q": "What emissions does a faecal sludge treatment plant produce?",
   "title": "Faecal sludge treatment emissions",
-  "short": "Methane from sludge left without air is the main concern, with some nitrous oxide. Drying beds and well run aerobic stages emit less; anaerobic ponds emit more. Add electricity at 0.710 kg CO2 per kWh and diesel for desludging trucks. Capturing biogas cuts methane.",
+  "short": "Methane from sludge left without air is the main concern, with some nitrous oxide. Drying beds and well run aerobic stages emit less; anaerobic ponds emit more. Add electricity at 0.710 kg CO2 per kWh for FY 2024-25 and diesel for desludging trucks. Capturing biogas cuts methane.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -10670,7 +10670,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "firozabad-glass-unit-gas-evidence-for-buyers",
   "q": "How should a Firozabad glass unit show its gas use and emissions to buyers?",
   "title": "Firozabad glass unit gas evidence",
-  "short": "Send monthly gas bills, electricity bills and production in tonnes of good glass, with emissions worked out at 2.05 kg CO2 per scm and 0.710 kg CO2 per kWh, plus batch carbonate CO2. Units in the Taj Trapezium Zone are required to use natural gas, which buyers can check against the bills.",
+  "short": "Send monthly gas bills, electricity bills and production in tonnes of good glass, with emissions worked out at 2.05 kg CO2 per scm and 0.710 kg CO2 per kWh for FY 2024-25, plus batch carbonate CO2. Units in the Taj Trapezium Zone are required to use natural gas, which buyers can check against the bills.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -10750,7 +10750,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "flexo-label-printing-carbon-per-square-metre",
   "q": "How do I calculate the carbon footprint of flexo label printing per square metre?",
   "title": "Flexo label printing carbon per m2",
-  "short": "Divide the press electricity, including UV or hot air drying, by square metres printed, at 0.710 kg CO2 per kWh. Add the label stock, liner, inks and varnish from supplier data, and count make-ready waste, since short runs waste more stock per label.",
+  "short": "Divide the press electricity, including UV or hot air drying, by square metres printed, at 0.710 kg CO2 per kWh for FY 2024-25. Add the label stock, liner, inks and varnish from supplier data, and count make-ready waste, since short runs waste more stock per label.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -10894,7 +10894,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "footwear-factory-emissions-allocation-per-pair",
   "q": "How do I split a footwear factory's emissions across different styles?",
   "title": "Footwear factory emissions per pair",
-  "short": "Total the factory electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then split by standard minutes per style rather than pairs, since a boot takes much longer to make than a sandal. State the rule beside each per-pair figure.",
+  "short": "Total the factory electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then split by standard minutes per style rather than pairs, since a boot takes much longer to make than a sandal. State the rule beside each per-pair figure.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -11110,7 +11110,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "frozen-french-fries-carbon-footprint-per-kg",
   "q": "What is the carbon footprint of frozen french fries?",
   "title": "Frozen french fries carbon footprint",
-  "short": "Potatoes, frying oil and the energy to blanch, fry and freeze make up most of it. Freezing and cold storage electricity at 0.710 kg CO2 per kWh is large in India. Divide by kg packed, and count peel and trim losses in the potatoes bought.",
+  "short": "Potatoes, frying oil and the energy to blanch, fry and freeze make up most of it. Freezing and cold storage electricity at 0.710 kg CO2 per kWh for FY 2024-25 is large in India. Divide by kg packed, and count peel and trim losses in the potatoes bought.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -11166,7 +11166,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "fruit-pack-house-emissions-per-tonne",
   "q": "How do I calculate a fruit pack house's emissions per tonne packed?",
   "title": "Fruit pack house emissions per tonne",
-  "short": "Add electricity for pre-cooling, washing, grading lines and cold rooms at 0.710 kg CO2 per kWh, generator diesel and refrigerant top-ups, then divide by tonnes packed. Cartons and crates are bought-in packaging, added from supplier figures.",
+  "short": "Add electricity for pre-cooling, washing, grading lines and cold rooms at 0.710 kg CO2 per kWh for FY 2024-25, generator diesel and refrigerant top-ups, then divide by tonnes packed. Cartons and crates are bought-in packaging, added from supplier figures.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -11174,7 +11174,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "fruit-ripening-chamber-electricity-per-tonne",
   "q": "How do I calculate the emissions of a fruit ripening chamber per tonne?",
   "title": "Ripening chamber emissions per tonne",
-  "short": "Multiply the chamber's electricity for cooling, air circulation and controls by 0.710 kg CO2 per kWh and divide by tonnes ripened. Ethylene used to trigger ripening is not one of the greenhouse gases the GHG Protocol counts, so only energy and refrigerant leaks matter.",
+  "short": "Multiply the chamber's electricity for cooling, air circulation and controls by 0.710 kg CO2 per kWh for FY 2024-25 and divide by tonnes ripened. Ethylene used to trigger ripening is not one of the greenhouse gases the GHG Protocol counts, so only energy and refrigerant leaks matter.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -11246,7 +11246,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "fuel-station-carbon-footprint-calculation",
   "q": "How do I calculate the carbon footprint of a petrol pump or fuel station?",
   "title": "Fuel station carbon footprint",
-  "short": "A fuel station's own footprint is its electricity for dispensers, lights and the convenience store at 0.710 kg CO2 per kWh, plus generator diesel. The fuel it sells is not its Scope 1: customers burning it fall under Scope 3, Category 11, for sold fuels.",
+  "short": "A fuel station's own footprint is its electricity for dispensers, lights and the convenience store at 0.710 kg CO2 per kWh for FY 2024-25, plus generator diesel. The fuel it sells is not its Scope 1: customers burning it fall under Scope 3, Category 11, for sold fuels.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -11262,7 +11262,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "fuel-surcharge-on-electricity-bill-emissions",
   "q": "My electricity bill shows a fuel and power purchase adjustment surcharge. Does that change my emissions?",
   "title": "Does a fuel surcharge on my bill raise CO2?",
-  "short": "No. The fuel and power purchase adjustment surcharge (called FPPCA, FPPAS or FAC depending on the state) changes what you pay per unit, not the units you used. Scope 2 is kWh x 0.710 kg CO2 per kWh, so your emissions stay the same. It matters only if you work kWh back from rupees.",
+  "short": "No. The fuel and power purchase adjustment surcharge (called FPPCA, FPPAS or FAC depending on the state) changes what you pay per unit, not the units you used. Scope 2 is kWh x 0.710 kg CO2 per kWh for FY 2024-25, so your emissions stay the same. It matters only if you work kWh back from rupees.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -11310,7 +11310,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "fume-hood-energy-use-lab-emissions",
   "q": "How do I estimate the energy and emissions of a laboratory fume hood?",
   "title": "Fume hood energy and emissions",
-  "short": "Work out the air the hood exhausts (sash opening area x face velocity), then add the fan power to move it and the cooling energy to condition the replacement air. Multiply the electrical kW by operating hours and by 0.710 kg CO2 per kWh. In a hot, humid climate, cooling the make-up air is usually the biggest part.",
+  "short": "Work out the air the hood exhausts (sash opening area x face velocity), then add the fan power to move it and the cooling energy to condition the replacement air. Multiply the electrical kW by operating hours and by 0.710 kg CO2/kWh (FY 2024-25). In a hot, humid climate, cooling the make-up air is usually the biggest part.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -11390,7 +11390,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "gajraula-chemical-unit-coal-boiler-co2",
   "q": "How does a chemical plant in Gajraula count CO2 from its coal boiler and captive power?",
   "title": "Gajraula chemical plant boiler CO2",
-  "short": "Coal burnt for steam and captive power is Scope 1. Work it out from coal tonnes, calorific value and factor, using lab analysis where available. If the captive plant supplies power to other units, split its emissions by energy delivered, and count grid imports separately at 0.710 kg CO2 per kWh.",
+  "short": "Coal burnt for steam and captive power is Scope 1. Work it out from coal tonnes, calorific value and factor, using lab analysis where available. If the captive plant supplies power to other units, split its emissions by energy delivered, and count grid imports separately at 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -11422,7 +11422,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "garment-stitching-emissions-per-piece",
   "q": "How do I calculate emissions per garment for a cut-make-trim export unit?",
   "title": "Emissions per garment in a CMT unit",
-  "short": "Add the month's grid electricity at 0.710 kg CO2 per kWh, DG diesel at 2.68 kg per litre and any boiler fuel, then divide by pieces produced. If styles differ a lot, divide by standard allowed minutes instead and multiply back by each style's minutes. Fabric is separate.",
+  "short": "Add the month's grid electricity at 0.710 kg CO2 per kWh for FY 2024-25, DG diesel at 2.68 kg per litre and any boiler fuel, then divide by pieces produced. If styles differ a lot, divide by standard allowed minutes instead and multiply back by each style's minutes. Fabric is separate.",
   "topic": "product",
   "reviewed": "2026-10-17"
  },
@@ -11518,7 +11518,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "genome-valley-pharma-cold-room-electricity",
   "q": "How does a Genome Valley pharma unit count its cold room electricity?",
   "title": "Pharma cold rooms: electricity count",
-  "short": "Cold room power is part of your Scope 2: kWh times 0.710 kg CO2 per kWh. If the cold room has its own meter, report it separately so you can see what storage costs per pallet or per batch.",
+  "short": "Cold room power is part of your Scope 2: kWh times 0.710 kg CO2 per kWh for FY 2024-25. If the cold room has its own meter, report it separately so you can see what storage costs per pallet or per batch.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -11766,7 +11766,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "gold-refinery-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of a gold refinery per kilogram?",
   "title": "Gold refinery carbon per kg",
-  "short": "Add the refinery electricity at 0.710 kg CO2 per kWh and any LPG or gas for melting at its default factor, then divide by kilograms refined. That is the refining stage only; the origin of the gold, mined or recycled, is a separate part of the full footprint and must be added from the supplier.",
+  "short": "Add the refinery electricity at 0.710 kg CO2 per kWh for FY 2024-25 and any LPG or gas for melting at its default factor, then divide by kilograms refined. That is the refining stage only; the origin of the gold, mined or recycled, is a separate part of the full footprint and must be added from the supplier.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -11782,7 +11782,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "golf-course-carbon-footprint-per-year",
   "q": "What makes up a golf course's carbon footprint?",
   "title": "Golf course carbon footprint",
-  "short": "Irrigation pumping and the clubhouse use electricity, at 0.710 kg CO2 per kWh. Mowers and carts on diesel or petrol are Scope 1, and so is nitrous oxide from fertiliser spread on the turf. Do not subtract carbon stored in grass or trees unless it is measured and reported separately.",
+  "short": "Irrigation pumping and the clubhouse use electricity, at 0.710 kg CO2 per kWh for FY 2024-25. Mowers and carts on diesel or petrol are Scope 1, and so is nitrous oxide from fertiliser spread on the turf. Do not subtract carbon stored in grass or trees unless it is measured and reported separately.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -11806,7 +11806,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "government-office-carbon-footprint-calculation",
   "q": "How does a government office or department calculate its carbon footprint?",
   "title": "Carbon footprint for a government office",
-  "short": "Start with what the office controls: diesel for official vehicles and generators as Scope 1, and electricity for its buildings as Scope 2 at 0.710 kg CO2 per kWh. Add official travel and major purchases as Scope 3 later. Departments with many buildings should report each site separately, then total.",
+  "short": "Start with what the office controls: diesel for official vehicles and generators as Scope 1, and electricity for its buildings as Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. Add official travel and major purchases as Scope 3 later. Departments with many buildings should report each site separately, then total.",
   "topic": "accounting",
   "reviewed": "2026-10-23"
  },
@@ -12054,7 +12054,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "green-loan-electric-boiler-switch-readiness",
   "q": "Is switching from a coal or oil boiler to an electric boiler a green loan project?",
   "title": "Electric boiler switch: green loan readiness",
-  "short": "It can be, but show the numbers both ways. Fuel emissions disappear from Scope 1, while electricity adds Scope 2 at 0.710 kg CO2 per kWh on the Indian grid. With grid power alone the net cut may be small or negative; with solar or green open access it is large.",
+  "short": "It can be, but show the numbers both ways. Fuel emissions disappear from Scope 1, while electricity adds Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25 on the Indian grid. With grid power alone the net cut may be small or negative; with solar or green open access it is large.",
   "topic": "markets",
   "reviewed": "2026-10-22"
  },
@@ -12238,7 +12238,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "greywater-recycling-energy-per-kl",
   "q": "How do I calculate the energy and CO2 per kL of recycled greywater?",
   "title": "Greywater recycling energy per kL",
-  "short": "Divide the recycling plant's electricity, from a sub-meter, by kL treated and reused, then multiply by 0.710 kg CO2 per kWh. Compare it with the energy per kL of the fresh water it replaces to see whether reuse also saves emissions.",
+  "short": "Divide the recycling plant's electricity, from a sub-meter, by kL treated and reused, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. Compare it with the energy per kL of the fresh water it replaces to see whether reuse also saves emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -12270,7 +12270,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "grid-electricity-hydrogen-carbon-intensity",
   "q": "What is the carbon intensity of hydrogen made with Indian grid electricity?",
   "title": "Carbon intensity of grid-powered hydrogen",
-  "short": "About 37 kg CO2 per kg of hydrogen, if the electrolyser uses about 52 kWh per kg and all power comes from the grid at 0.710 kg CO2 per kWh. That is more than 18 times India's 2 kg CO2e per kg green hydrogen threshold, so grid power can only be a small share.",
+  "short": "About 37 kg CO2 per kg of hydrogen, if the electrolyser uses about 52 kWh per kg and all power comes from the grid at 0.710 kg CO2 per kWh for FY 2024-25. That is more than 18 times India's 2 kg CO2e per kg green hydrogen threshold, so grid power can only be a small share.",
   "topic": "accounting",
   "reviewed": "2026-10-25"
  },
@@ -12310,7 +12310,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "groundnut-decorticator-electricity-per-tonne",
   "q": "How much electricity does a groundnut decorticator unit use per tonne?",
   "title": "Groundnut decorticator: power per tonne",
-  "short": "A decorticating unit shells pods with motors, fans and sieves. Read units from the electricity bill and divide by tonnes of pods shelled, then multiply by 0.710 kg CO2 per kWh. Shells used as boiler fuel elsewhere are biomass, not counted as your emission.",
+  "short": "A decorticating unit shells pods with motors, fans and sieves. Read units from the electricity bill and divide by tonnes of pods shelled, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. Shells used as boiler fuel elsewhere are biomass, not counted as your emission.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -12414,7 +12414,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "gym-carbon-footprint-per-member",
   "q": "How do I calculate the carbon footprint of a gym per member?",
   "title": "Gym carbon footprint per member",
-  "short": "Read the gym electricity bill at 0.710 kg CO2 per kWh, add LPG or diesel for hot water or backup at their default factors, then divide by active members. Air conditioning, powered machines and hot water are the main loads, so report per member each month.",
+  "short": "Read the gym electricity bill at 0.710 kg CO2 per kWh for FY 2024-25, add LPG or diesel for hot water or backup at their default factors, then divide by active members. Air conditioning, powered machines and hot water are the main loads, so report per member each month.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -12622,7 +12622,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "heat-pump-for-process-heat-india",
   "q": "Can an industrial heat pump replace my boiler for process heat below 90 C, and how much CO2 does it save on India's grid?",
   "title": "Heat pump vs boiler for process heat in India",
-  "short": "Often yes for hot water and low-temperature process heat below 90 C. On India's grid factor of 0.710 kg CO2 per kWh, a heat pump beats a diesel, furnace oil or coal boiler at a coefficient of performance (COP) above about 2.3, but needs a COP above about 3.1 to beat an efficient PNG boiler.",
+  "short": "Often yes for hot water and low-temperature process heat below 90 C. On India's grid factor of 0.710 kg CO2 per kWh for FY 2024-25, a heat pump beats a diesel, furnace oil or coal boiler at a coefficient of performance (COP) above about 2.3, but needs a COP above about 3.1 to beat an efficient PNG boiler.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -12638,7 +12638,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "heat-treatment-emissions-per-tonne",
   "q": "How do I calculate emissions per tonne for a heat treatment shop?",
   "title": "Heat treatment emissions per tonne",
-  "short": "Add a month's furnace electricity, LPG or PNG and any methanol carrier gas, convert each to CO2 with its factor, and divide by the tonnes treated that month. Electricity at 0.710 kg CO2 per kWh and LPG at 2.98 kg CO2 per kg usually make up nearly all of it.",
+  "short": "Add a month's furnace electricity, LPG or PNG and any methanol carrier gas, convert each to CO2 with its factor, and divide by the tonnes treated that month. Electricity at 0.710 kg CO2 per kWh for FY 2024-25 and LPG at 2.98 kg CO2 per kg usually make up nearly all of it.",
   "topic": "product",
   "reviewed": "2026-10-17"
  },
@@ -12694,7 +12694,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "high-bay-led-retrofit-co2-saving-proof",
   "q": "How do we prove the CO2 saving from replacing high-bay lights with LEDs?",
   "title": "High-bay LED retrofit saving",
-  "short": "Count fittings and wattage before and after, multiply by operating hours to get kWh, then use 0.710 kg CO2 per kWh. Back it with the purchase invoice, a photo log, and electricity bills or a sub-meter reading for the lighting circuit. Lenders and verifiers trust measured kWh over nameplate maths.",
+  "short": "Count fittings and wattage before and after, multiply by operating hours to get kWh, then use 0.710 kg CO2 per kWh for FY 2024-25. Back it with the purchase invoice, a photo log, and electricity bills or a sub-meter reading for the lighting circuit. Lenders and verifiers trust measured kWh over nameplate maths.",
   "topic": "accounting",
   "reviewed": "2026-10-23"
  },
@@ -12774,7 +12774,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "homestay-carbon-footprint-per-guest-night",
   "q": "How do I calculate a homestay's carbon footprint per guest night?",
   "title": "Homestay carbon per guest night",
-  "short": "Add electricity at 0.710 kg CO2 per kWh, LPG at 2.98 kg CO2 per kg, and diesel for any backup, then divide by guest nights. Separate the family's own use where meters allow, or allocate by rooms occupied by guests.",
+  "short": "Add electricity at 0.710 kg CO2 per kWh for FY 2024-25, LPG at 2.98 kg CO2 per kg, and diesel for any backup, then divide by guest nights. Separate the family's own use where meters allow, or allocate by rooms occupied by guests.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -12790,7 +12790,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hooghly-jute-mill-energy-per-tonne",
   "q": "How do I work out the carbon footprint per tonne of hessian or sacking from a jute mill?",
   "title": "Jute mill: carbon per tonne of goods",
-  "short": "Add the mill's electricity and any boiler fuel over a period, convert them with the right factors, and divide by tonnes of finished goods. Grid power at 0.710 kg CO2 per kWh usually dominates, since spinning and weaving are electric. Raw jute farming is a separate, upstream figure.",
+  "short": "Add the mill's electricity and any boiler fuel over a period, convert them with the right factors, and divide by tonnes of finished goods. Grid power at 0.710 kg CO2 per kWh for FY 2024-25 usually dominates, since spinning and weaving are electric. Raw jute farming is a separate, upstream figure.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -12806,7 +12806,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hospital-autoclave-sterilisation-emissions",
   "q": "How do I calculate emissions from autoclave sterilisation in a hospital?",
   "title": "Hospital autoclave emissions per cycle",
-  "short": "Count the steam's boiler fuel, or the electricity of electric steam generators at 0.710 kg CO2 per kWh, plus vacuum pumps and controls, and divide by cycles run. Biomedical waste sent to a common treatment facility is Scope 3, not part of this figure.",
+  "short": "Count the steam's boiler fuel, or the electricity of electric steam generators at 0.710 kg CO2 per kWh for FY 2024-25, plus vacuum pumps and controls, and divide by cycles run. Biomedical waste sent to a common treatment facility is Scope 3, not part of this figure.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -12830,7 +12830,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hospital-psa-oxygen-plant-emissions",
   "q": "How do I calculate the emissions of a hospital PSA oxygen plant?",
   "title": "Hospital PSA oxygen plant emissions",
-  "short": "A PSA oxygen plant runs on electricity, mainly its air compressor. Multiply the plant's kWh from a sub-meter by 0.710 kg CO2 per kWh, add generator diesel during outages, and divide by cubic metres of oxygen produced. Bought liquid oxygen is Scope 3 instead.",
+  "short": "A PSA oxygen plant runs on electricity, mainly its air compressor. Multiply the plant's kWh from a sub-meter by 0.710 kg CO2 per kWh for FY 2024-25, add generator diesel during outages, and divide by cubic metres of oxygen produced. Bought liquid oxygen is Scope 3 instead.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -12910,7 +12910,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hotel-in-house-laundry-emissions-per-kg",
   "q": "How do I calculate emissions per kg of linen in a hotel's own laundry?",
   "title": "In-house hotel laundry per kg",
-  "short": "Add the laundry's steam or boiler fuel, washer, dryer and ironer electricity at 0.710 kg CO2 per kWh, and any LPG for dryers, then divide by kg of linen washed. A sub-meter or the boiler log shows the laundry's share of hotel energy.",
+  "short": "Add the laundry's steam or boiler fuel, washer, dryer and ironer electricity at 0.710 kg CO2 per kWh for FY 2024-25, and any LPG for dryers, then divide by kg of linen washed. A sub-meter or the boiler log shows the laundry's share of hotel energy.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -12926,7 +12926,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hotel-swimming-pool-heating-emissions",
   "q": "How do I calculate the emissions of heating a hotel swimming pool?",
   "title": "Hotel pool heating emissions",
-  "short": "Count the fuel or electricity used to heat the pool: LPG or diesel for a boiler at their default factors, or the heat pump's electricity at 0.710 kg CO2 per kWh. Add the filtration pump. A pool cover cuts evaporation, which is where most of the heat is lost.",
+  "short": "Count the fuel or electricity used to heat the pool: LPG or diesel for a boiler at their default factors, or the heat pump's electricity at 0.710 kg CO2 per kWh for FY 2024-25. Add the filtration pump. A pool cover cuts evaporation, which is where most of the heat is lost.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -12934,7 +12934,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hourly-grid-emission-factors-india",
   "q": "Are hourly grid emission factors available for India, and will Scope 2 need them?",
   "title": "Hourly grid emission factors in India",
-  "short": "No official hourly grid factors exist for India. The CEA publishes one annual factor, currently 0.710 kg CO2 per kWh, and the GHG Protocol accepts it. Hourly factors may matter later: the draft Scope 2 revision proposes hourly matching for market-based claims, but nothing is final.",
+  "short": "No official hourly grid factors exist for India. The CEA publishes one annual factor, currently 0.710 kg CO2 per kWh for FY 2024-25, and the GHG Protocol accepts it. Hourly factors may matter later: the draft Scope 2 revision proposes hourly matching for market-based claims, but nothing is final.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -13542,7 +13542,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "howrah-foundry-cupola-to-induction-co2",
   "q": "Will switching our Howrah foundry from cupola to induction furnace cut CO2?",
   "title": "Howrah foundry: cupola to induction",
-  "short": "Not automatically on grid power. An induction furnace replaces coke with electricity, and at India's grid factor of 0.710 kg CO2 per kWh the CO2 per tonne can land close to a well-run cupola. It falls clearly when the power comes from solar or other renewable supply, and local smoke drops either way.",
+  "short": "Not automatically on grid power. An induction furnace replaces coke with electricity, and at India's grid factor of 0.710 kg CO2 per kWh for FY 2024-25 the CO2 per tonne can land close to a well-run cupola. It falls clearly when the power comes from solar or other renewable supply, and local smoke drops either way.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -13614,7 +13614,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hyderabad-pharma-api-unit-boiler-co2",
   "q": "How does a Hyderabad pharma API unit count CO2 from boilers and solvent incineration?",
   "title": "Hyderabad API unit boiler and solvent CO2",
-  "short": "Count boiler fuel in Scope 1: coal in full, biomass with biogenic CO2 separate. Solvents burnt in an incinerator or used as fuel also emit fossil CO2 from their carbon. Add electricity at 0.710 and divide by kilograms of API.",
+  "short": "Count boiler fuel in Scope 1: coal in full, biomass with biogenic CO2 separate. Solvents burnt in an incinerator or used as fuel also emit fossil CO2 from their carbon. Add electricity at 0.710 (FY 2024-25 grid factor) and divide by kilograms of API.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -13630,7 +13630,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hydro-reservoir-methane-emissions",
   "q": "Do hydropower reservoirs emit greenhouse gases?",
   "title": "Hydro reservoir methane",
-  "short": "They can: flooded vegetation and soils decompose and release methane, especially in warm, shallow reservoirs. Grid emission factors count only combustion, so reservoir methane is not in the 0.710 figure. Hydro operators can estimate it using IPCC guidance on flooded land.",
+  "short": "They can: flooded vegetation and soils decompose and release methane, especially in warm, shallow reservoirs. Grid emission factors count only combustion, so reservoir methane is not in the 0.710 (FY 2024-25 grid factor) figure. Hydro operators can estimate it using IPCC guidance on flooded land.",
   "topic": "markets",
   "reviewed": "2026-10-22"
  },
@@ -13694,7 +13694,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ice-bank-thermal-storage-scope-2",
   "q": "Does an ice bank or chilled water storage tank cut my Scope 2 emissions?",
   "title": "Thermal storage and Scope 2",
-  "short": "Usually not on the location-based method. Storage shifts chiller load to night, but India's grid factor is one annual average (0.710 kg CO2 per kWh), so the same kWh give the same CO2. Making ice can even use more kWh. It can still cut cost and peak demand.",
+  "short": "Usually not on the location-based method. Storage shifts chiller load to night, but India's grid factor is one annual average (0.710 kg CO2 per kWh for FY 2024-25), so the same kWh give the same CO2. Making ice can even use more kWh. It can still cut cost and peak demand.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -13710,7 +13710,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ice-plant-electricity-per-tonne-of-ice",
   "q": "How much electricity and CO2 goes into a tonne of ice for fish handling?",
   "title": "Electricity and CO2 per tonne of ice",
-  "short": "Take the ice plant's metered kWh for a period, divide by tonnes of ice made in those days, and multiply by 0.710 kg CO2 per kWh. Then add generator diesel (2.68 kg CO2 per litre) and any HFC refrigerant top-ups. No Indian public benchmark exists, so your own meter and block count decide it.",
+  "short": "Take the ice plant's metered kWh for a period, divide by tonnes of ice made in those days, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Then add generator diesel (2.68 kg CO2 per litre) and any HFC refrigerant top-ups. No Indian public benchmark exists, so your own meter and block count decide it.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -13742,7 +13742,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ie2-to-ie4-motor-replacement-savings",
   "q": "Is replacing an IE2 motor with an IE3 or IE4 motor worth it, and how much CO2 does it save?",
   "title": "IE2 to IE4 motor: is it worth it?",
-  "short": "It pays when the motor runs long hours near full load. Work out input power at your load with each efficiency (output divided by efficiency); the difference times running hours is kWh saved. Price it at your tariff and multiply by 0.710 kg CO2 per kWh. Lightly used motors are better replaced at failure.",
+  "short": "It pays when the motor runs long hours near full load. Work out input power at your load with each efficiency (output divided by efficiency); the difference times running hours is kWh saved. Price it at your tariff and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Lightly used motors are better replaced at failure.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -14126,7 +14126,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "induction-billet-heater-vs-oil-fired-forging-furnace",
   "q": "Does replacing an oil-fired forging furnace with an induction billet heater cut CO2 in India?",
   "title": "Induction billet heater vs oil-fired furnace",
-  "short": "Only if the induction heater uses less than about 4.2 kWh per tonne for every litre of furnace oil the old furnace burnt per tonne. On the Indian grid at 0.710 kg CO2 per kWh, a litre of furnace oil (2.97 kg CO2) equals 4.18 kWh, so measure both from your own bills.",
+  "short": "Only if the induction heater uses less than about 4.2 kWh per tonne for every litre of furnace oil the old furnace burnt per tonne. On the Indian grid at 0.710 kg CO2 per kWh for FY 2024-25, a litre of furnace oil (2.97 kg CO2) equals 4.18 kWh, so measure both from your own bills.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -14158,7 +14158,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "induction-hardening-vs-furnace-hardening-co2",
   "q": "Is induction hardening lower carbon than furnace hardening?",
   "title": "Induction vs furnace hardening",
-  "short": "Often, for parts that need only a hard surface. Induction heats a thin surface layer with electricity in seconds, while a gas furnace heats the whole part and the furnace. The answer depends on your grid factor (0.710 kg CO2 per kWh) and the gas saved, so compare per part.",
+  "short": "Often, for parts that need only a hard surface. Induction heats a thin surface layer with electricity in seconds, while a gas furnace heats the whole part and the furnace. The answer depends on your grid factor (0.710 kg CO2 per kWh for FY 2024-25) and the gas saved, so compare per part.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -14166,7 +14166,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "induction-vs-lpg-canteen-kitchen-emissions",
   "q": "Is induction cooking lower carbon than LPG in a factory canteen or hotel kitchen in India?",
   "title": "Induction vs LPG in a canteen kitchen",
-  "short": "Not on India's grid average today. Per unit of heat reaching the pan, induction at 0.710 kg CO2 per kWh emits roughly one and a half to two times the CO2 of an LPG burner. Induction becomes the lower carbon choice when the electricity comes from rooftop solar or another renewable supply.",
+  "short": "Not on India's grid average today. Per unit of heat reaching the pan, induction at 0.710 kg CO2 per kWh for FY 2024-25 emits roughly one and a half to two times the CO2 of an LPG burner. Induction becomes the lower carbon choice when the electricity comes from rooftop solar or another renewable supply.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -14174,7 +14174,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "industrial-gases-oxygen-nitrogen-scope-3",
   "q": "How do I estimate Scope 3 emissions from purchased oxygen, nitrogen or argon?",
   "title": "Scope 3 from oxygen, nitrogen and argon",
-  "short": "Purchased oxygen, nitrogen and argon go in Scope 3 Category 1. Estimate them as cubic metres bought x the electricity the supplier's plant uses per cubic metre x the grid factor, 0.710 kg CO2 per kWh in India. Ask the supplier for its kWh per cubic metre; label any assumed figure as an estimate.",
+  "short": "Purchased oxygen, nitrogen and argon go in Scope 3 Category 1. Estimate them as cubic metres bought x the electricity the supplier's plant uses per cubic metre x the grid factor, 0.710 kg CO2 per kWh for FY 2024-25 in India. Ask the supplier for its kWh per cubic metre; label any assumed figure as an estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
  },
@@ -14934,7 +14934,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ivf-clinic-carbon-footprint",
   "q": "What makes up the carbon footprint of an IVF clinic?",
   "title": "IVF clinic carbon footprint",
-  "short": "Electricity is most of it: incubators, clean room air handling and lab AC run day and night, at 0.710 kg CO2 per kWh. Liquid nitrogen for cryostorage and plastics are Scope 3. Nitrous oxide used for sedation is Scope 1.",
+  "short": "Electricity is most of it: incubators, clean room air handling and lab AC run day and night, at 0.710 kg CO2 per kWh for FY 2024-25. Liquid nitrogen for cryostorage and plastics are Scope 3. Nitrous oxide used for sedation is Scope 1.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -14982,7 +14982,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "jaipur-gemstone-cutting-carbon-per-carat",
   "q": "How does a Jaipur coloured gemstone cutting unit work out carbon per carat?",
   "title": "Gemstone cutting carbon per carat",
-  "short": "Add electricity at 0.710 kg CO2 per kWh and any generator diesel at 2.68 kg per litre for the month, then divide by carats of finished stones. Rough stone and its mining sit in Scope 3 and need the supplier's data or a stated estimate.",
+  "short": "Add electricity at 0.710 kg CO2 per kWh for FY 2024-25 and any generator diesel at 2.68 kg per litre for the month, then divide by carats of finished stones. Rough stone and its mining sit in Scope 3 and need the supplier's data or a stated estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -15110,7 +15110,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "jewellery-casting-workshop-emissions",
   "q": "How do I calculate the emissions of a jewellery casting workshop?",
   "title": "Jewellery casting workshop emissions",
-  "short": "Add the electricity for burnout ovens, casting machines and polishing at 0.710 kg CO2 per kWh, and LPG for torches and melting at 2.98 kg per kilogram. Divide by pieces or grams cast. Add the metal separately, per gram, from the supplier.",
+  "short": "Add the electricity for burnout ovens, casting machines and polishing at 0.710 kg CO2 per kWh for FY 2024-25, and LPG for torches and melting at 2.98 kg per kilogram. Divide by pieces or grams cast. Add the metal separately, per gram, from the supplier.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -15118,7 +15118,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "jewellery-showroom-carbon-footprint",
   "q": "How do I calculate the carbon footprint of a jewellery showroom?",
   "title": "Jewellery showroom carbon footprint",
-  "short": "Read the showroom electricity bill at 0.710 kg CO2 per kWh and add generator diesel at 2.68 kg per litre. Lighting and air conditioning are the main loads, so report per square foot of floor and per month. The jewellery itself sits in Scope 3 as purchased goods.",
+  "short": "Read the showroom electricity bill at 0.710 kg CO2 per kWh for FY 2024-25 and add generator diesel at 2.68 kg per litre. Lighting and air conditioning are the main loads, so report per square foot of floor and per month. The jewellery itself sits in Scope 3 as purchased goods.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -15566,7 +15566,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "kirana-store-carbon-footprint",
   "q": "What is the carbon footprint of a kirana store?",
   "title": "Kirana store: carbon footprint",
-  "short": "For most kirana stores it is the electricity bill: fridges, freezers, lights and fans, at 0.710 kg CO2 per kWh. Add an inverter's losses or a small genset if you have one. Goods you sell carry their own footprint, which sits in Scope 3 and is rarely asked of a small shop.",
+  "short": "For most kirana stores it is the electricity bill: fridges, freezers, lights and fans, at 0.710 kg CO2 per kWh for FY 2024-25. Add an inverter's losses or a small genset if you have one. Goods you sell carry their own footprint, which sits in Scope 3 and is rarely asked of a small shop.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -15574,7 +15574,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "kishangarh-marble-processing-electricity-per-sq-m",
   "q": "How much electricity and CO2 does a Kishangarh marble processing unit use per square metre?",
   "title": "Kishangarh marble: CO2 per sq m",
-  "short": "Divide monthly kWh by square metres of finished slab or tile, then multiply by 0.710 kg CO2 per kWh. A unit using 50,000 kWh to finish 20,000 square metres runs at 2.5 kWh and about 1.8 kg CO2 per square metre. Gangsaws and polishing lines take most of it.",
+  "short": "Divide monthly kWh by square metres of finished slab or tile, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. A unit using 50,000 kWh to finish 20,000 square metres runs at 2.5 kWh and about 1.8 kg CO2 per square metre. Gangsaws and polishing lines take most of it.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -15606,7 +15606,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "knitted-fabric-carbon-footprint-per-kg",
   "q": "What is the carbon footprint per kg of knitted fabric from a Tiruppur knitting and dyeing unit?",
   "title": "Carbon footprint per kg of knitted fabric",
-  "short": "Add three parts per kg of finished fabric: the yarn's footprint, scaled up for knitting and dyeing losses; electricity for knitting, dyeing and the ZLD plant at 0.710 kg CO2 per kWh; and the boiler fuel. With firewood, report its CO2 separately as biogenic and count only methane and nitrous oxide in Scope 1.",
+  "short": "Add three parts per kg of finished fabric: the yarn's footprint, scaled up for knitting and dyeing losses; electricity for knitting, dyeing and the ZLD plant at 0.710 kg CO2 per kWh for FY 2024-25; and the boiler fuel. With firewood, report its CO2 separately as biogenic and count only methane and nitrous oxide in Scope 1.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -15726,7 +15726,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "kraft-paper-carbon-footprint-per-tonne",
   "q": "How do I calculate the carbon footprint of kraft paper per tonne?",
   "title": "Kraft paper carbon per tonne",
-  "short": "Add the boiler fuel for drying at its IPCC default factor and the mill electricity at 0.710 kg CO2 per kWh, divide by tonnes of paper, then add waste paper or pulp, starch and chemicals from supplier data..",
+  "short": "Add the boiler fuel for drying at its IPCC default factor and the mill electricity at 0.710 kg CO2 per kWh for FY 2024-25, divide by tonnes of paper, then add waste paper or pulp, starch and chemicals from supplier data..",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -15782,7 +15782,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "kvah-electricity-bill-convert-to-kwh-for-emissions",
   "q": "My electricity bill is in kVAh. How do I calculate emissions?",
   "title": "Electricity bill in kVAh: emissions",
-  "short": "Convert to kWh first, then multiply by the grid factor. Use the kWh reading printed on the same bill if there is one. If not, kWh = kVAh x the power factor printed for that billing period. Applying the 0.710 kg CO2 per kWh factor straight to kVAh overstates your emissions.",
+  "short": "Convert to kWh first, then multiply by the grid factor. Use the kWh reading printed on the same bill if there is one. If not, kWh = kVAh x the power factor printed for that billing period. Applying the 0.710 kg CO2 per kWh for FY 2024-25 factor straight to kVAh overstates your emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -15798,7 +15798,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "lab-grown-diamond-carbon-footprint-per-carat",
   "q": "How do I calculate the carbon footprint of a lab-grown diamond per carat?",
   "title": "Lab-grown diamond footprint per carat",
-  "short": "Divide the metered electricity used by your growth reactors in a period by the rough carats grown, multiply by 0.710 kg CO2 per kWh, then divide by your rough-to-polished yield and add cutting and polishing energy. Reactor electricity drives the result, so use metered data, not published averages.",
+  "short": "Divide the metered electricity used by your growth reactors in a period by the rough carats grown, multiply by 0.710 kg CO2 per kWh for FY 2024-25, then divide by your rough-to-polished yield and add cutting and polishing energy. Reactor electricity drives the result, so use metered data, not published averages.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -15894,7 +15894,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "laser-plasma-gas-cutting-emissions-compared",
   "q": "Which emits less: laser, plasma or gas cutting of steel?",
   "title": "Laser, plasma or gas cutting",
-  "short": "Laser and plasma run on electricity, so their emissions sit in Scope 2 at 0.710 kg CO2 per kWh. Gas cutting burns acetylene or LPG, which is Scope 1, plus bought oxygen in Scope 3. Compare per metre cut at your plate thickness, from meter readings and gas invoices.",
+  "short": "Laser and plasma run on electricity, so their emissions sit in Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. Gas cutting burns acetylene or LPG, which is Scope 1, plus bought oxygen in Scope 3. Compare per metre cut at your plate thickness, from meter readings and gas invoices.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -16062,7 +16062,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "leather-wallet-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of a leather wallet?",
   "title": "Leather wallet carbon per piece",
-  "short": "The leather is the main material. Multiply the square feet used, including cutting waste, by the tannery's footprint per square foot, add lining, thread and packaging from supplier data, and add the making energy at 0.710 kg CO2 per kWh.",
+  "short": "The leather is the main material. Multiply the square feet used, including cutting waste, by the tannery's footprint per square foot, add lining, thread and packaging from supplier data, and add the making energy at 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -16078,7 +16078,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "led-billboard-electricity-emissions",
   "q": "How much carbon does an LED billboard emit?",
   "title": "LED billboard: emissions",
-  "short": "An LED billboard's emissions are its electricity, often running 16 to 24 hours a day. Multiply metered kWh by 0.710 kg CO2 per kWh. The media owner pays the bill and reports it as Scope 2. An advertiser can count its share as Scope 3 purchased services.",
+  "short": "An LED billboard's emissions are its electricity, often running 16 to 24 hours a day. Multiply metered kWh by 0.710 kg CO2 per kWh for FY 2024-25. The media owner pays the bill and reports it as Scope 2. An advertiser can count its share as Scope 3 purchased services.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -16094,7 +16094,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "led-lighting-retrofit-factory-co2-saving",
   "q": "How much CO2 does replacing factory high-bay lights with LEDs save?",
   "title": "LED high-bay retrofit: CO2 saved",
-  "short": "Watts saved per fitting × fittings × hours run × 0.710 kg CO2 per kWh. Replacing 100 metal halide high-bays of 250 W with 120 W LEDs, run 3,600 hours a year, saves about 46,800 kWh and 33 tonnes of CO2.",
+  "short": "Watts saved per fitting × fittings × hours run × 0.710 kg CO2 per kWh for FY 2024-25. Replacing 100 metal halide high-bays of 250 W with 120 W LEDs, run 3,600 hours a year, saves about 46,800 kWh and 33 tonnes of CO2.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -16110,7 +16110,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "led-retrofit-energy-co2-savings",
   "q": "How do I calculate the electricity and CO2 saved by an LED lighting retrofit in a factory or warehouse?",
   "title": "LED retrofit: kWh and CO2 saved",
-  "short": "kWh saved = (old fitting watts including ballast minus new LED watts) x number of fittings x burning hours a year / 1,000. Multiply kWh saved by 0.710 kg CO2 per kWh for location-based Scope 2 and by your tariff for rupees. Measure the old system watts, not just the lamp rating.",
+  "short": "kWh saved = (old fitting watts including ballast minus new LED watts) x number of fittings x burning hours a year / 1,000. Multiply kWh saved by 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2 and by your tariff for rupees. Measure the old system watts, not just the lamp rating.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -16158,7 +16158,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "lift-and-escalator-electricity-emissions",
   "q": "How do I calculate the emissions from lifts and escalators in a building?",
   "title": "Lift and escalator emissions",
-  "short": "Sub-meter the lifts and escalators, or estimate from rated motor power and run hours, then multiply kWh by 0.710 kg CO2 per kWh. They sit inside the building's Scope 2, so report them as a sub-figure when planning regenerative drives or escalator sleep modes.",
+  "short": "Sub-meter the lifts and escalators, or estimate from rated motor power and run hours, then multiply kWh by 0.710 kg CO2 per kWh for FY 2024-25. They sit inside the building's Scope 2, so report them as a sub-figure when planning regenerative drives or escalator sleep modes.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -16166,7 +16166,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "lift-irrigation-scheme-electricity-emissions",
   "q": "How do we calculate the carbon footprint of a lift irrigation scheme?",
   "title": "Lift irrigation scheme: emissions",
-  "short": "Lift irrigation pumps water uphill, so electricity dominates. Multiply metered kWh at each pumping station by 0.710 kg CO2 per kWh, then divide by water delivered or hectares served. Pump efficiency and the height lifted drive the figure.",
+  "short": "Lift irrigation pumps water uphill, so electricity dominates. Multiply metered kWh at each pumping station by 0.710 kg CO2 per kWh for FY 2024-25, then divide by water delivered or hectares served. Pump efficiency and the height lifted drive the figure.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -16262,7 +16262,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "lote-chemical-unit-buyer-carbon-data",
   "q": "What carbon data do buyers ask a chemical unit in Lote Parshuram for?",
   "title": "Lote chemical unit buyer carbon data",
-  "short": "Most buyers want Scope 1 and 2 per tonne of product: boiler and heater fuel, grid power at 0.710 kg CO2 per kWh, and any process emissions. Larger buyers also ask for main raw material footprints and a reduction plan. Start with twelve months of bills and batch records.",
+  "short": "Most buyers want Scope 1 and 2 per tonne of product: boiler and heater fuel, grid power at 0.710 kg CO2 per kWh for FY 2024-25, and any process emissions. Larger buyers also ask for main raw material footprints and a reduction plan. Start with twelve months of bills and batch records.",
   "topic": "markets",
   "reviewed": "2026-10-22"
  },
@@ -16302,7 +16302,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "lpg-bottling-plant-emissions-per-cylinder",
   "q": "What are the emissions of an LPG bottling plant per cylinder filled?",
   "title": "LPG bottling plant: per cylinder",
-  "short": "The plant's own emissions are electricity for compressors, carousels and pumps, at 0.710 kg CO2 per kWh, and diesel for gensets and forklifts. Divide by cylinders filled. The gas inside is not the plant's emission; it is burnt later by the customer.",
+  "short": "The plant's own emissions are electricity for compressors, carousels and pumps, at 0.710 kg CO2 per kWh for FY 2024-25, and diesel for gensets and forklifts. Divide by cylinders filled. The gas inside is not the plant's emission; it is burnt later by the customer.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -16558,7 +16558,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "malegaon-powerloom-grey-fabric-carbon-per-kg",
   "q": "How does a powerloom unit in Malegaon work out carbon per kg of grey fabric?",
   "title": "Malegaon powerloom: carbon per kg of fabric",
-  "short": "Electricity is nearly all of it. Take monthly kWh from the bill, add diesel if a generator runs, and divide by kg of grey fabric woven. At 0.710 kg CO2 per kWh, units per kg drive the figure, so loom speed, idle running and motor condition matter more than anything else.",
+  "short": "Electricity is nearly all of it. Take monthly kWh from the bill, add diesel if a generator runs, and divide by kg of grey fabric woven. At 0.710 kg CO2 per kWh for FY 2024-25, units per kg drive the figure, so loom speed, idle running and motor condition matter more than anything else.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -16566,7 +16566,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "mall-common-area-electricity-allocation",
   "q": "How do I allocate a mall's common-area electricity to my store?",
   "title": "Mall common-area electricity share",
-  "short": "Ask the mall for the common-area electricity in kWh and the total leasable area, then take your store's share by area and multiply by 0.710 kg CO2 per kWh. For a tenant it is Scope 3, Category 8; the operator reports the whole common area in its Scope 2.",
+  "short": "Ask the mall for the common-area electricity in kWh and the total leasable area, then take your store's share by area and multiply by 0.710 kg CO2 per kWh for FY 2024-25. For a tenant it is Scope 3, Category 8; the operator reports the whole common area in its Scope 2.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -16606,7 +16606,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "manesar-press-shop-electricity-per-part",
   "q": "How does a Manesar sheet metal press shop work out electricity per part for an auto buyer?",
   "title": "Manesar press shop electricity per part",
-  "short": "Meter or estimate each press line's kWh for a month, divide by good parts from that line, and multiply by 0.710 kg CO2 per kWh. Where lines share one meter, split by running hours times rated power. Add welding, painting and compressed air if the buyer asks for the finished part.",
+  "short": "Meter or estimate each press line's kWh for a month, divide by good parts from that line, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Where lines share one meter, split by running hours times rated power. Add welding, painting and compressed air if the buyer asks for the finished part.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -16878,7 +16878,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "methanol-production-emissions-per-tonne",
   "q": "How are emissions from making methanol calculated?",
   "title": "Methanol plant emissions per tonne",
-  "short": "Use a carbon balance: carbon in the gas or coal fed in, minus carbon leaving in the methanol, is emitted as CO2. Coal-based methanol emits far more than gas-based. Add grid power at 0.710 kg CO2 per kWh. Methanol is not a CBAM good today.",
+  "short": "Use a carbon balance: carbon in the gas or coal fed in, minus carbon leaving in the methanol, is emitted as CO2. Coal-based methanol emits far more than gas-based. Add grid power at 0.710 kg CO2 per kWh for FY 2024-25. Methanol is not a CBAM good today.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -16894,7 +16894,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "metro-rail-co2-per-passenger-km",
   "q": "How do I calculate a metro rail line's CO2 per passenger km?",
   "title": "Metro rail CO2 per passenger km",
-  "short": "Take the traction electricity for the period, multiply by 0.710 kg CO2 per kWh, and divide by passenger km from ridership and average trip length. Report station power separately. Regenerative braking lowers net traction kWh only if the meter records the returned energy.",
+  "short": "Take the traction electricity for the period, multiply by 0.710 kg CO2 per kWh for FY 2024-25, and divide by passenger km from ridership and average trip length. Report station power separately. Regenerative braking lowers net traction kWh only if the meter records the returned energy.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -17158,7 +17158,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "morbi-tile-kiln-gas-carbon-per-square-metre",
   "q": "How does a Morbi tile maker work out kiln and spray dryer gas per square metre?",
   "title": "Morbi tile gas and power per square metre",
-  "short": "Add the gas burnt in spray dryers, dryers and kilns, at 2.05 kg CO2 per scm of piped natural gas, to electricity at 0.710 kg CO2 per kWh, then divide by square metres of good tiles packed. Use the month's gas bill and meter, not the contracted quantity.",
+  "short": "Add the gas burnt in spray dryers, dryers and kilns, at 2.05 kg CO2 per scm of piped natural gas, to electricity at 0.710 kg CO2 per kWh for FY 2024-25, then divide by square metres of good tiles packed. Use the month's gas bill and meter, not the contracted quantity.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -17182,7 +17182,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "morbi-tile-unit-rooftop-solar-share",
   "q": "How does a Morbi tile unit show the effect of rooftop solar on its footprint?",
   "title": "Morbi tile units: rooftop solar share",
-  "short": "Report grid imports at 0.710 kg CO2 per kWh and show solar used on site as a separate line with no grid factor. The saving is the solar kWh used times the grid factor, but only grid imports go in Scope 2.",
+  "short": "Report grid imports at 0.710 kg CO2 per kWh for FY 2024-25 and show solar used on site as a separate line with no grid factor. The saving is the solar kWh used times the grid factor, but only grid imports go in Scope 2.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -17254,7 +17254,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "mortuary-cold-room-electricity-emissions",
   "q": "What are the emissions of running a mortuary cold room?",
   "title": "Mortuary cold room emissions",
-  "short": "Refrigeration electricity runs around the clock: compressor kWh times 0.710 kg CO2 per kWh. Refrigerant leaks topped up during servicing are Scope 1, multiplied by the gas's warming potential, and they can rival the electricity.",
+  "short": "Refrigeration electricity runs around the clock: compressor kWh times 0.710 kg CO2 per kWh for FY 2024-25. Refrigerant leaks topped up during servicing are Scope 1, multiplied by the gas's warming potential, and they can rival the electricity.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -17398,7 +17398,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "multi-level-car-park-electricity-emissions",
   "q": "How do we count the emissions of a multi-level car park?",
   "title": "Multi-level car park: emissions",
-  "short": "A car park's own emissions are electricity for lighting, ventilation fans, lifts and boom barriers, at 0.710 kg CO2 per kWh. Cars driving in are their owners' emissions, not the car park's. EV chargers on your bill are your Scope 2 unless metered and billed on.",
+  "short": "A car park's own emissions are electricity for lighting, ventilation fans, lifts and boom barriers, at 0.710 kg CO2 per kWh for FY 2024-25. Cars driving in are their owners' emissions, not the car park's. EV chargers on your bill are your Scope 2 unless metered and billed on.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -17430,7 +17430,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "multilayer-flexible-pouch-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of a multilayer laminated pouch per kg or per thousand pouches?",
   "title": "Multilayer pouch carbon footprint",
-  "short": "Split the laminate into layers by mass, multiply each layer's share by that material's per kg factor, then add adhesive, ink, converting electricity at 0.710 kg CO2 per kWh and your scrap. For a thousand pouches, multiply the per kg figure by the weight of a thousand pouches.",
+  "short": "Split the laminate into layers by mass, multiply each layer's share by that material's per kg factor, then add adhesive, ink, converting electricity at 0.710 kg CO2 per kWh for FY 2024-25 and your scrap. For a thousand pouches, multiply the per kg figure by the weight of a thousand pouches.",
   "topic": "product",
   "reviewed": "2026-10-19"
  },
@@ -17446,7 +17446,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "multiple-effect-evaporator-steam-emissions",
   "q": "How do I calculate the emissions of a multiple effect evaporator (MEE)?",
   "title": "Multiple effect evaporator emissions",
-  "short": "Give the MEE its share of boiler fuel from the live steam it takes, add pump and vacuum electricity at 0.710 kg CO2 per kWh, and divide by kilolitres of effluent evaporated. More effects use less steam per kilolitre, so the steam meter shows how the MEE is performing.",
+  "short": "Give the MEE its share of boiler fuel from the live steam it takes, add pump and vacuum electricity at 0.710 kg CO2 per kWh for FY 2024-25, and divide by kilolitres of effluent evaporated. More effects use less steam per kilolitre, so the steam meter shows how the MEE is performing.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -17462,7 +17462,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "museum-carbon-footprint-per-visitor",
   "q": "How do I calculate a museum's carbon footprint per visitor?",
   "title": "Museum CO2 per visitor",
-  "short": "Climate control for collections usually dominates: AC and dehumidifiers running all year at 0.710 kg CO2 per kWh. Add lighting, generator diesel and refrigerant top ups, then divide by visitors. Visitor travel to the museum is Scope 3 and often larger.",
+  "short": "Climate control for collections usually dominates: AC and dehumidifiers running all year at 0.710 kg CO2 per kWh for FY 2024-25. Add lighting, generator diesel and refrigerant top ups, then divide by visitors. Visitor travel to the museum is Scope 3 and often larger.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -17470,7 +17470,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "mushroom-farm-carbon-footprint-per-kg",
   "q": "How do I calculate a mushroom farm's carbon footprint per kg?",
   "title": "Mushroom farm carbon per kg",
-  "short": "Add electricity for air conditioning, humidifiers and cold rooms at 0.710 kg CO2 per kWh and generator or boiler fuel, then divide by kg of mushrooms sold. Climate-controlled growing rooms usually make electricity the main on-farm source; compost materials are bought-in inputs.",
+  "short": "Add electricity for air conditioning, humidifiers and cold rooms at 0.710 kg CO2 per kWh for FY 2024-25 and generator or boiler fuel, then divide by kg of mushrooms sold. Climate-controlled growing rooms usually make electricity the main on-farm source; compost materials are bought-in inputs.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -17518,7 +17518,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "mvr-evaporator-vs-steam-evaporator-co2",
   "q": "Does an MVR evaporator cut emissions compared with a steam evaporator?",
   "title": "MVR evaporator vs steam evaporator",
-  "short": "It replaces most of the steam with electricity: a compressor reuses the evaporated vapour as the heating medium. Scope 1 falls and Scope 2 rises. With India's grid at 0.710 kg CO2 per kWh, check the net change with your own steam and power figures before claiming a cut.",
+  "short": "It replaces most of the steam with electricity: a compressor reuses the evaporated vapour as the heating medium. Scope 1 falls and Scope 2 rises. With India's grid at 0.710 kg CO2 per kWh for FY 2024-25, check the net change with your own steam and power figures before claiming a cut.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -17574,7 +17574,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "nashik-grape-pre-cooling-electricity-per-tonne",
   "q": "How does a Nashik grape packhouse work out pre-cooling electricity per tonne?",
   "title": "Nashik grapes: pre-cooling per tonne",
-  "short": "Multiply the pre-cooling and cold room kWh by 0.710 kg CO2 per kWh and divide by tonnes packed in the same period. If the meter covers the whole packhouse, the figure includes packing too, so say so.",
+  "short": "Multiply the pre-cooling and cold room kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by tonnes packed in the same period. If the meter covers the whole packhouse, the figure includes packing too, so say so.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -17614,7 +17614,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "navi-mumbai-data-centre-pue-scope-2-example",
   "q": "How does PUE change a Navi Mumbai data centre's Scope 2?",
   "title": "Navi Mumbai data centres: PUE and Scope 2",
-  "short": "Scope 2 follows total facility electricity, not IT load alone. PUE is total facility energy divided by IT energy, so at a PUE of 1.5 every 100 kWh of IT draw means 150 kWh billed, all counted at 0.710 kg CO2 per kWh on the location-based method.",
+  "short": "Scope 2 follows total facility electricity, not IT load alone. PUE is total facility energy divided by IT energy, so at a PUE of 1.5 every 100 kWh of IT draw means 150 kWh billed, all counted at 0.710 kg CO2 per kWh for FY 2024-25 on the location-based method.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -17622,7 +17622,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "navi-mumbai-data-centre-scope-2-per-kw",
   "q": "How does a Navi Mumbai data centre calculate Scope 2 emissions per kW of IT load?",
   "title": "Data centre Scope 2 per kW of IT load",
-  "short": "Multiply total facility electricity, which is IT load times PUE, by 0.710 kg CO2 per kWh for the location-based figure, then divide by average IT load in kW. Report a market-based figure separately for renewable power bought under open access or certificates.",
+  "short": "Multiply total facility electricity, which is IT load times PUE, by 0.710 kg CO2 per kWh for FY 2024-25 for the location-based figure, then divide by average IT load in kW. Report a market-based figure separately for renewable power bought under open access or certificates.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -17662,7 +17662,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "nellore-parboiled-rice-mill-husk-steam",
   "q": "How does a Nellore parboiled rice mill count emissions from its husk boiler?",
   "title": "Nellore parboiling: husk boiler emissions",
-  "short": "Husk CO2 is biogenic, so report it separately; methane and nitrous oxide from burning it stay in Scope 1. Add electricity for hulling, polishing and dryers at 0.710 kg CO2 per kWh, and divide by tonnes of paddy or rice. Selling surplus husk or ash does not reduce your own figure.",
+  "short": "Husk CO2 is biogenic, so report it separately; methane and nitrous oxide from burning it stay in Scope 1. Add electricity for hulling, polishing and dryers at 0.710 kg CO2 per kWh for FY 2024-25, and divide by tonnes of paddy or rice. Selling surplus husk or ash does not reduce your own figure.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -17750,7 +17750,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "newsprint-paper-carbon-footprint-per-tonne",
   "q": "What is the carbon footprint of newsprint per tonne?",
   "title": "Newsprint CO2 per tonne",
-  "short": "Newsprint from recycled fibre needs de-inking and pulping electricity plus steam for drying; newsprint from mechanical pulp uses a great deal of refiner electricity. Add electricity at 0.710 kg CO2 per kWh and boiler fuel, then divide by tonnes of reels.",
+  "short": "Newsprint from recycled fibre needs de-inking and pulping electricity plus steam for drying; newsprint from mechanical pulp uses a great deal of refiner electricity. Add electricity at 0.710 kg CO2 per kWh for FY 2024-25 and boiler fuel, then divide by tonnes of reels.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -17950,7 +17950,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "office-ac-replacement-co2-savings",
   "q": "How much electricity and CO2 does replacing old office ACs with 5-star inverter ACs save?",
   "title": "CO2 saved by replacing old office ACs",
-  "short": "Work it out as cooling delivered divided by the old unit's efficiency, minus cooling divided by the new unit's ISEER, then multiply the kWh saved by 0.710 kg CO2 per kWh. The saving depends on the old unit's real efficiency and the ISEER on the new unit's label; in the worked example below it is about 44 percent.",
+  "short": "Work it out as cooling delivered divided by the old unit's efficiency, minus cooling divided by the new unit's ISEER, then multiply the kWh saved by 0.710 kg CO2/kWh (FY 2024-25). The saving depends on the old unit's real efficiency and the ISEER on the new unit's label; in the worked example below it is about 44 percent.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -18006,7 +18006,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "office-vending-machine-electricity-emissions",
   "q": "How much do office vending machines add to our emissions?",
   "title": "Office vending machine emissions",
-  "short": "A refrigerated vending machine runs day and night, so it uses more electricity than its size suggests. Count its units at 0.710 kg CO2 per kWh, from a plug meter or its rated consumption, labelled as an estimate. Timers on lighting and cooling cut it.",
+  "short": "A refrigerated vending machine runs day and night, so it uses more electricity than its size suggests. Count its units at 0.710 kg CO2 per kWh for FY 2024-25, from a plug meter or its rated consumption, labelled as an estimate. Timers on lighting and cooling cut it.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -18022,7 +18022,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "offset-printing-ctp-plate-carbon-footprint",
   "q": "How do I calculate the carbon footprint of an offset printing CTP plate?",
   "title": "CTP plate carbon footprint",
-  "short": "Work out the plate weight from size, thickness and the density of aluminium, and multiply by the supplier's aluminium factor. Add the platesetter and processor electricity per plate at 0.710 kg CO2 per kWh, and chemistry where it is used.",
+  "short": "Work out the plate weight from size, thickness and the density of aluminium, and multiply by the supplier's aluminium factor. Add the platesetter and processor electricity per plate at 0.710 kg CO2 per kWh for FY 2024-25, and chemistry where it is used.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -18054,7 +18054,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "on-premise-server-room-emissions",
   "q": "How do I calculate the emissions of an on-premise server room?",
   "title": "On-premise server room emissions",
-  "short": "Meter the server room's total electricity, including its air conditioning and UPS losses, and multiply by 0.710 kg CO2 per kWh. Divide by racks, and compare with the IT load alone to get the PUE. Moving to colocation or cloud shifts it to Scope 3.",
+  "short": "Meter the server room's total electricity, including its air conditioning and UPS losses, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Divide by racks, and compare with the IT load alone to get the PUE. Moving to colocation or cloud shifts it to Scope 3.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -18166,7 +18166,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "oragadam-auto-supplier-carbon-data",
   "q": "Our Oragadam plant supplies carmakers near Chennai. What carbon data should we have ready?",
   "title": "Oragadam auto supplier carbon data",
-  "short": "Have a year of electricity bills, diesel and LPG invoices, and production by part, giving Scope 1 and 2 and a figure per part. Grid power at 0.710 kg CO2 per kWh is usually the biggest own source; purchased steel and aluminium are larger still.",
+  "short": "Have a year of electricity bills, diesel and LPG invoices, and production by part, giving Scope 1 and 2 and a figure per part. Grid power at 0.710 kg CO2 per kWh for FY 2024-25 is usually the biggest own source; purchased steel and aluminium are larger still.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -18190,7 +18190,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "organic-waste-converter-machine-emissions",
   "q": "How do I calculate the emissions of an organic waste converter machine?",
   "title": "Organic waste converter emissions",
-  "short": "Multiply the machine's electricity, from a sub-meter or rated power and hours, by 0.710 kg CO2 per kWh, and divide by kg of wet waste processed. Composting the output releases a little methane and N2O. Landfill emissions avoided are not deducted.",
+  "short": "Multiply the machine's electricity, from a sub-meter or rated power and hours, by 0.710 kg CO2 per kWh for FY 2024-25, and divide by kg of wet waste processed. Composting the output releases a little methane and N2O. Landfill emissions avoided are not deducted.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -18270,7 +18270,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "packaged-drinking-water-plant-emissions-per-litre",
   "q": "What is the carbon footprint of a packaged drinking water plant per litre?",
   "title": "Packaged drinking water per litre",
-  "short": "At the plant, electricity for RO, ozonation and filling is the main own source, at 0.710 kg CO2 per kWh. The bottles usually weigh more in the total: PET preforms and caps are Scope 3. Divide the month's total by litres filled.",
+  "short": "At the plant, electricity for RO, ozonation and filling is the main own source, at 0.710 kg CO2 per kWh for FY 2024-25. The bottles usually weigh more in the total: PET preforms and caps are Scope 3. Divide the month's total by litres filled.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -18390,7 +18390,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pali-textile-dyeing-unit-coal-boiler-co2",
   "q": "How does a Pali dyeing and printing unit count CO2 from its boiler?",
   "title": "Pali dyeing unit boiler CO2",
-  "short": "Multiply the coal, lignite or wood used each month by its emission factor: coal and lignite in full in Scope 1, wood with its CO2 reported as biogenic. Add electricity at 0.710 kg CO2 per kWh. Divide by metres or kilograms processed.",
+  "short": "Multiply the coal, lignite or wood used each month by its emission factor: coal and lignite in full in Scope 1, wood with its CO2 reported as biogenic. Add electricity at 0.710 kg CO2 per kWh for FY 2024-25. Divide by metres or kilograms processed.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -18414,7 +18414,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "panipat-shoddy-yarn-mill-electricity-per-kg",
   "q": "How does a Panipat recycled yarn mill work out electricity per kg?",
   "title": "Panipat recycled yarn: power per kg",
-  "short": "Multiply billed kWh by 0.710 kg CO2 per kWh and divide by kilograms of yarn spun in the same month. Mechanical recycling of waste into shoddy yarn runs mainly on electricity, so this is the mill's main own-energy line.",
+  "short": "Multiply billed kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by kilograms of yarn spun in the same month. Mechanical recycling of waste into shoddy yarn runs mainly on electricity, so this is the mill's main own-energy line.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -18486,7 +18486,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "paper-straw-carbon-footprint-per-straw",
   "q": "How do I calculate the carbon footprint of a paper straw?",
   "title": "Paper straw carbon per straw",
-  "short": "Weigh one straw, multiply the paper weight by the paper supplier's factor, add the adhesive, and add the winding and cutting electricity at 0.710 kg CO2 per kWh divided by straws made. Compare with plastic straws on the same basis, per straw, including disposal.",
+  "short": "Weigh one straw, multiply the paper weight by the paper supplier's factor, add the adhesive, and add the winding and cutting electricity at 0.710 kg CO2 per kWh for FY 2024-25 divided by straws made. Compare with plastic straws on the same basis, per straw, including disposal.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -18526,7 +18526,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "parcel-sorting-hub-emissions-per-parcel",
   "q": "How do I calculate the emissions of a parcel sorting hub per parcel?",
   "title": "Parcel sorting hub per parcel",
-  "short": "Add the hub's electricity for sorters, conveyors and lights at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by parcels sorted. The GLEC Framework calls this a hub emission intensity, which shippers add to the transport legs.",
+  "short": "Add the hub's electricity for sorters, conveyors and lights at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then divide by parcels sorted. The GLEC Framework calls this a hub emission intensity, which shippers add to the transport legs.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -18654,7 +18654,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "peenya-precision-component-exporter-buyer-data",
   "q": "What carbon data do foreign buyers ask Peenya precision component exporters for?",
   "title": "Peenya component exporters: buyer data",
-  "short": "Expect Scope 1 and 2 totals with the 0.710 kg CO2 per kWh CEA factor, the share of green power and a figure per part, mostly material plus allocated machining energy. Check whether your parts fall under CBAM: steel fasteners and some steel articles do, machined assemblies of other metals usually do not.",
+  "short": "Expect Scope 1 and 2 totals with the 0.710 kg CO2 per kWh for FY 2024-25 CEA factor, the share of green power and a figure per part, mostly material plus allocated machining energy. Check whether your parts fall under CBAM: steel fasteners and some steel articles do, machined assemblies of other metals usually do not.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -18742,7 +18742,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pet-bottle-recycling-flakes-carbon-per-kg",
   "q": "How do I calculate the carbon footprint of recycled PET flakes per kilogram?",
   "title": "PET bottle flakes carbon per kg",
-  "short": "Add the wash line electricity at 0.710 kg CO2 per kWh and the hot wash heating fuel at its default factor, then divide by kilograms of clean flakes. Add collection and baling transport from the aggregator, and report process losses.",
+  "short": "Add the wash line electricity at 0.710 kg CO2 per kWh for FY 2024-25 and the hot wash heating fuel at its default factor, then divide by kilograms of clean flakes. Add collection and baling transport from the aggregator, and report process losses.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -18758,7 +18758,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pet-preform-bottle-carbon-footprint",
   "q": "What is the carbon footprint of a PET preform or bottle per kg, and how much does recycled PET cut it?",
   "title": "PET preform footprint per kg and per bottle",
-  "short": "A PET preform's footprint per kg is the resin's footprint, weighted by its virgin and recycled shares and grossed up for scrap, plus moulding electricity at 0.710 kg CO2 per kWh. Recycled PET cuts it because, under the cut-off method, it carries only collection and reprocessing, not the oil-based chemistry of virgin resin.",
+  "short": "A PET preform's footprint per kg is the resin's footprint, weighted by its virgin and recycled shares and grossed up for scrap, plus moulding electricity at 0.710 kg CO2 per kWh for FY 2024-25. Recycled PET cuts it because, under the cut-off method, it carries only collection and reprocessing, not the oil-based chemistry of virgin resin.",
   "topic": "product",
   "reviewed": "2026-10-19"
  },
@@ -18806,7 +18806,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pharma-brine-chilling-plant-emissions",
   "q": "How do I calculate emissions from a pharma plant's brine chilling system running below zero?",
   "title": "Brine chilling plant emissions in pharma",
-  "short": "Multiply the brine plant's kWh, from a sub-meter or measured kW per TR x TR x hours, by 0.710 kg CO2 per kWh, then add refrigerant topped up in kg times its GWP. Expect kW per TR well above a normal chiller, because compressors work harder at sub-zero evaporator temperatures.",
+  "short": "Multiply the brine plant's kWh, from a sub-meter or measured kW per TR x TR x hours, by 0.710 kg CO2 per kWh for FY 2024-25, then add refrigerant topped up in kg times its GWP. Expect kW per TR well above a normal chiller, because compressors work harder at sub-zero evaporator temperatures.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -18846,7 +18846,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pharmacy-store-carbon-footprint",
   "q": "How does a pharmacy store calculate its carbon footprint?",
   "title": "Pharmacy store: carbon footprint",
-  "short": "A chemist's shop mostly uses electricity for vaccine and insulin fridges, air conditioning that keeps medicines below 25 degrees C, and lighting. Count units at 0.710 kg CO2 per kWh. Medicines bought for resale are Scope 3 Category 1.",
+  "short": "A chemist's shop mostly uses electricity for vaccine and insulin fridges, air conditioning that keeps medicines below 25 degrees C, and lighting. Count units at 0.710 kg CO2 per kWh for FY 2024-25. Medicines bought for resale are Scope 3 Category 1.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -18886,7 +18886,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "phosphating-pretreatment-line-emissions",
   "q": "How do I calculate the emissions of a phosphating pretreatment line?",
   "title": "Phosphating line emissions",
-  "short": "Add the fuel heating the degreasing and phosphating tanks, LPG at 2.98 kg CO2 per kilogram or PNG at 2.05 per scm, and the pump and conveyor electricity at 0.710 kg CO2 per kWh. Divide by square metres or tonnes treated.",
+  "short": "Add the fuel heating the degreasing and phosphating tanks, LPG at 2.98 kg CO2 per kilogram or PNG at 2.05 per scm, and the pump and conveyor electricity at 0.710 kg CO2 per kWh for FY 2024-25. Divide by square metres or tonnes treated.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -18942,7 +18942,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pithampur-auto-component-supplier-carbon-data",
   "q": "What carbon data do vehicle makers ask Pithampur auto component suppliers for?",
   "title": "Pithampur auto suppliers: carbon data",
-  "short": "Expect Scope 1 and 2 totals with the 0.710 kg CO2 per kWh CEA grid factor, renewable electricity share and a figure per part. Build them from electricity and fuel bills, steel and aluminium purchases and an allocation by weight or machine hours, and keep one dataset for every customer template.",
+  "short": "Expect Scope 1 and 2 totals with the 0.710 kg CO2 per kWh for FY 2024-25 CEA grid factor, renewable electricity share and a figure per part. Build them from electricity and fuel bills, steel and aluminium purchases and an allocation by weight or machine hours, and keep one dataset for every customer template.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -18958,7 +18958,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "place-of-worship-carbon-footprint",
   "q": "How does a temple, mosque, church or gurdwara calculate its carbon footprint?",
   "title": "Place of worship carbon footprint",
-  "short": "Start with electricity bills at 0.710 kg CO2 per kWh, then generator diesel and LPG for kitchens. Lamps and incense are small. Divide by a fixed period, and report a large community kitchen separately so it can be compared with others.",
+  "short": "Start with electricity bills at 0.710 kg CO2 per kWh for FY 2024-25, then generator diesel and LPG for kitchens. Lamps and incense are small. Divide by a fixed period, and report a large community kitchen separately so it can be compared with others.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -19070,7 +19070,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "plywood-carbon-footprint-per-cubic-metre",
   "q": "What is the carbon footprint of plywood per cubic metre, for a Yamunanagar-type mill?",
   "title": "Plywood carbon footprint per cubic metre",
-  "short": "Work it out from one month of mill data: resin bought times its supplier factor, plus press and peeling electricity at 0.710 kg CO2 per kWh, plus diesel and the methane and nitrous oxide from the biomass boiler, all divided by cubic metres made. Report the carbon stored in the wood separately.",
+  "short": "Work it out from one month of mill data: resin bought times its supplier factor, plus press and peeling electricity at 0.710 kg CO2 per kWh for FY 2024-25, plus diesel and the methane and nitrous oxide from the biomass boiler, all divided by cubic metres made. Report the carbon stored in the wood separately.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -19214,7 +19214,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "polyester-texturising-electricity-per-kg-yarn",
   "q": "How much electricity does texturising POY into DTY polyester yarn use per kg, and what is the CO2?",
   "title": "Texturising power and CO2 per kg of DTY",
-  "short": "Measure it on your own machines: divide the texturising section's kWh for a month by kg of DTY packed, then multiply by 0.710 kg CO2 per kWh. For the yarn's full footprint, add the POY supplier's footprint per kg, scaled up for your waste. kWh per kg varies a lot with denier and machine speed.",
+  "short": "Measure it on your own machines: divide the texturising section's kWh for a month by kg of DTY packed, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. For the yarn's full footprint, add the POY supplier's footprint per kg, scaled up for your waste. kWh per kg varies a lot with denier and machine speed.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -19222,7 +19222,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "polyhouse-farming-emissions-per-kg",
   "q": "How do I calculate the carbon footprint of polyhouse vegetables per kg?",
   "title": "Polyhouse farming emissions per kg",
-  "short": "Add electricity for fans, cooling pads, fogging and pumps at 0.710 kg CO2 per kWh, diesel for generators, and fertiliser N2O, then divide by kg harvested. Spread the plastic film and structure over their working life as bought-in inputs.",
+  "short": "Add electricity for fans, cooling pads, fogging and pumps at 0.710 kg CO2 per kWh for FY 2024-25, diesel for generators, and fertiliser N2O, then divide by kg harvested. Spread the plastic film and structure over their working life as bought-in inputs.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -19278,7 +19278,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "port-handling-emissions-per-teu",
   "q": "How do I calculate container handling emissions per TEU at a port or terminal?",
   "title": "Port handling emissions per TEU",
-  "short": "Add the terminal's electricity for cranes and reefers at 0.710 kg CO2 per kWh and diesel for straddle carriers, reach stackers and yard tractors at 2.68 kg per litre. Divide by TEU handled. Shippers using the terminal report their share in Scope 3 through the GLEC Framework.",
+  "short": "Add the terminal's electricity for cranes and reefers at 0.710 kg CO2 per kWh for FY 2024-25 and diesel for straddle carriers, reach stackers and yard tractors at 2.68 kg per litre. Divide by TEU handled. Shippers using the terminal report their share in Scope 3 through the GLEC Framework.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -19310,7 +19310,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "potato-cold-storage-electricity-per-bag",
   "q": "How do I calculate the emissions of storing potatoes in cold storage per bag?",
   "title": "Potato cold storage emissions per bag",
-  "short": "Take the cold store's electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre for the storage season, then divide by bag-months stored. A full store spreads the same refrigeration load over more bags, so occupancy changes the figure per bag.",
+  "short": "Take the cold store's electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre for the storage season, then divide by bag-months stored. A full store spreads the same refrigeration load over more bags, so occupancy changes the figure per bag.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -19318,7 +19318,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pottery-kiln-emissions-per-firing",
   "q": "How do I calculate the emissions of a pottery kiln firing?",
   "title": "Pottery kiln emissions per firing",
-  "short": "For an electric kiln, multiply the kWh per firing, from a meter or the controller log, by 0.710 kg CO2 per kWh. For a gas kiln, multiply the LPG or PNG used by its default factor. Divide by the pieces in the load for a per-piece figure.",
+  "short": "For an electric kiln, multiply the kWh per firing, from a meter or the controller log, by 0.710 kg CO2 per kWh for FY 2024-25. For a gas kiln, multiply the LPG or PNG used by its default factor. Divide by the pieces in the load for a per-piece figure.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -19398,7 +19398,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "powerloom-vs-airjet-loom-energy-per-metre",
   "q": "Is a shuttle powerloom or an airjet loom lower carbon per metre of fabric?",
   "title": "Shuttle powerloom or airjet: CO2 per metre",
-  "short": "Neither wins by default. An airjet loom draws much more power per hour, mostly for compressed air, but it also weaves far more metres an hour, so per metre the gap can be small or reversed. Compare kWh per metre of the same fabric, compressor included, then multiply by 0.710 kg CO2 per kWh.",
+  "short": "Neither wins by default. An airjet loom draws much more power per hour, mostly for compressed air, but it also weaves far more metres an hour, so per metre the gap can be small or reversed. Compare kWh per metre of the same fabric, compressor included, then multiply by 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -19678,7 +19678,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pu-sole-vs-rubber-sole-carbon-per-pair",
   "q": "Which has a lower carbon footprint per pair, a PU sole or a rubber sole?",
   "title": "PU sole vs rubber sole carbon",
-  "short": "Compare weight times the material factor, from the PU system or rubber compound supplier, plus the moulding energy at 0.710 kg CO2 per kWh. The answer depends on sole weight and each supplier's factor rather than on the material name.",
+  "short": "Compare weight times the material factor, from the PU system or rubber compound supplier, plus the moulding energy at 0.710 kg CO2 per kWh for FY 2024-25. The answer depends on sole weight and each supplier's factor rather than on the material name.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -19726,7 +19726,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "pump-efficiency-test-and-replacement-savings",
   "q": "How do I test a pump's efficiency and work out the CO2 saved by replacing it?",
   "title": "Pump efficiency test and replacement CO2",
-  "short": "Measure flow, total head and input power at the pump's normal duty. Hydraulic power in kW is flow (m3/s) x head (m) x 1,000 x 9.81 / 1,000; divide it by input power for wire-to-water efficiency. The saving from a new pump is the input power difference at the same duty x hours x 0.710 kg CO2 per kWh.",
+  "short": "Measure flow, total head and input power at the pump's normal duty. Hydraulic power in kW is flow (m3/s) x head (m) x 1,000 x 9.81 / 1,000; divide it by input power for wire-to-water efficiency. The saving from a new pump is the input power difference at the same duty x hours x 0.710 kg CO2/kWh (FY 2024-25).",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -19806,7 +19806,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "purchased-water-emission-factor",
   "q": "What emission factor should I use for municipal, MIDC or tanker water I buy?",
   "title": "Emission factor for purchased water",
-  "short": "There is no official Indian emission factor for supplied water, so build one from energy. For utility water, multiply kilolitres by the supplier's kWh per kL and by 0.710 kg CO2 per kWh. For tanker water, use diesel per trip times 2.68 kg CO2 per litre, divided by kL delivered. Label both as estimates.",
+  "short": "There is no official Indian emission factor for supplied water, so build one from energy. For utility water, multiply kilolitres by the supplier's kWh per kL and by 0.710 kg CO2 per kWh for FY 2024-25. For tanker water, use diesel per trip times 2.68 kg CO2 per litre, divided by kL delivered. Label both as estimates.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -19814,7 +19814,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "purified-water-and-wfi-generation-emissions",
   "q": "How do I count emissions from purified water and WFI generation in a formulation plant?",
   "title": "Purified water and WFI emissions",
-  "short": "Count the energy each step uses. For a multi-column still, multiply steam per litre of WFI by litres made and by the CO2 per kg of your boiler's steam. For membrane systems, multiply kWh per litre by litres and by 0.710 kg CO2 per kWh. Then add hot loop heating and cooling.",
+  "short": "Count the energy each step uses. For a multi-column still, multiply steam per litre of WFI by litres made and by the CO2 per kg of your boiler's steam. For membrane systems, multiply kWh per litre by litres and by 0.710 kg CO2 per kWh for FY 2024-25. Then add hot loop heating and cooling.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -19902,7 +19902,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "quick-commerce-dark-store-emissions-per-order",
   "q": "What is the carbon footprint of a quick commerce dark store per order?",
   "title": "Dark store emissions per order",
-  "short": "Cold rooms and freezers usually dominate a dark store's electricity, then lighting and cooling. Divide monthly electricity at 0.710 kg CO2 per kWh, plus refrigerant leaks, by orders packed. Rider trips are a separate figure, Scope 1 or 3 depending on who runs the fleet.",
+  "short": "Cold rooms and freezers usually dominate a dark store's electricity, then lighting and cooling. Divide monthly electricity at 0.710 kg CO2 per kWh for FY 2024-25, plus refrigerant leaks, by orders packed. Rider trips are a separate figure, Scope 1 or 3 depending on who runs the fleet.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -20134,7 +20134,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "rayagada-paper-mill-coal-boiler-co2",
   "q": "How does a Rayagada paper mill separate coal boiler CO2 from biogenic CO2?",
   "title": "Rayagada paper mill coal and biogenic CO2",
-  "short": "Count coal and any oil in full in Scope 1. Report CO2 from black liquor, bark and other wood residues as biogenic, outside the Scope 1 total, with their methane and N2O inside it. Add bought electricity at 0.710. Divide by tonnes of paper.",
+  "short": "Count coal and any oil in full in Scope 1. Report CO2 from black liquor, bark and other wood residues as biogenic, outside the Scope 1 total, with their methane and N2O inside it. Add bought electricity at 0.710 (FY 2024-25 grid factor). Divide by tonnes of paper.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -20294,7 +20294,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "reclaimed-rubber-carbon-footprint-per-kg",
   "q": "What is the carbon footprint of reclaimed rubber per kg?",
   "title": "Reclaimed rubber per kg",
-  "short": "Reclaimed rubber is made by grinding scrap tyres and devulcanising the crumb with heat, steam and oils. Its own footprint is the electricity for grinding and refining, at 0.710 kg CO2 per kWh, and the boiler fuel. It avoids making new rubber, but report that saving separately.",
+  "short": "Reclaimed rubber is made by grinding scrap tyres and devulcanising the crumb with heat, steam and oils. Its own footprint is the electricity for grinding and refining, at 0.710 kg CO2 per kWh for FY 2024-25, and the boiler fuel. It avoids making new rubber, but report that saving separately.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -20398,7 +20398,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "refractory-brick-carbon-footprint-per-tonne",
   "q": "How do I calculate the carbon footprint of refractory bricks per tonne?",
   "title": "Refractory brick carbon per tonne",
-  "short": "Add the kiln fuel at its IPCC default factor and plant electricity at 0.710 kg CO2 per kWh, divide by tonnes fired, then add raw materials such as fireclay, alumina or magnesia from supplier data. Raw materials that release CO2 when fired, such as magnesite, add process CO2.",
+  "short": "Add the kiln fuel at its IPCC default factor and plant electricity at 0.710 kg CO2 per kWh for FY 2024-25, divide by tonnes fired, then add raw materials such as fireclay, alumina or magnesia from supplier data. Raw materials that release CO2 when fired, such as magnesite, add process CO2.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -20470,7 +20470,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "regenerative-thermal-oxidiser-fuel-emissions",
   "q": "How do I count the emissions of a regenerative thermal oxidiser (RTO)?",
   "title": "RTO emissions: support fuel and fans",
-  "short": "Count the support fuel burnt in the RTO at its IPCC default factor and the fan electricity at 0.710 kg CO2 per kWh. Also count the CO2 formed when the solvent vapours burn, from their carbon content, as Scope 1. An RTO prevents VOC release, but its own fuel and power still count.",
+  "short": "Count the support fuel burnt in the RTO at its IPCC default factor and the fan electricity at 0.710 kg CO2 per kWh for FY 2024-25. Also count the CO2 formed when the solvent vapours burn, from their carbon content, as Scope 1. An RTO prevents VOC release, but its own fuel and power still count.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -20630,7 +20630,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "residual-mix-factor-india-market-based-scope-2",
   "q": "What residual mix factor should I use for market-based Scope 2 in India?",
   "title": "Residual mix factor for India",
-  "short": "India has no official residual mix factor, so use the CEA grid weighted average, 0.710 kg CO2 per kWh (CO2 Baseline Database version 21.0), for electricity not covered by certificates or contracts. Say in your report that it is a grid average used because no residual mix is published.",
+  "short": "India has no official residual mix factor, so use the CEA grid weighted average, 0.710 kg CO2 per kWh for FY 2024-25 (CO2 Baseline Database version 21.0), for electricity not covered by certificates or contracts. Say in your report that it is a grid average used because no residual mix is published.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -20662,7 +20662,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "retail-store-carbon-footprint-per-square-foot",
   "q": "How do I calculate the carbon footprint of a retail store per square foot?",
   "title": "Retail store carbon per square foot",
-  "short": "Divide the store's electricity at 0.710 kg CO2 per kWh, plus generator diesel and refrigerant top-ups, by the carpet area in square feet. Report each store per month, and keep refrigerated stores apart, since chillers and freezers use far more energy per square foot.",
+  "short": "Divide the store's electricity at 0.710 kg CO2 per kWh for FY 2024-25, plus generator diesel and refrigerant top-ups, by the carpet area in square feet. Report each store per month, and keep refrigerated stores apart, since chillers and freezers use far more energy per square foot.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -20886,7 +20886,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ropeway-electricity-co2-per-passenger",
   "q": "How do I work out a passenger ropeway's CO2 per passenger?",
   "title": "Ropeway CO2 per passenger",
-  "short": "Read the drive station's electricity meter for the month, multiply by 0.710 kg CO2 per kWh and divide by passengers carried. Backup diesel for rescue drives is Scope 1. Off season days raise the per passenger figure because the line runs nearly empty.",
+  "short": "Read the drive station's electricity meter for the month, multiply by 0.710 kg CO2 per kWh for FY 2024-25 and divide by passengers carried. Backup diesel for rescue drives is Scope 1. Off season days raise the per passenger figure because the line runs nearly empty.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -21054,7 +21054,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "saharanpur-wood-carving-unit-emissions",
   "q": "What is the carbon footprint of a wood carving unit in Saharanpur?",
   "title": "Saharanpur wood carving: emissions",
-  "short": "A carving unit's own emissions are mostly electricity for saws, lathes, sanders and spray guns, at 0.710 kg CO2 per kWh. Timber, polish and lacquer are bought-in Scope 3. Carbon stored in the wood is reported separately, not subtracted from your total.",
+  "short": "A carving unit's own emissions are mostly electricity for saws, lathes, sanders and spray guns, at 0.710 kg CO2 per kWh for FY 2024-25. Timber, polish and lacquer are bought-in Scope 3. Carbon stored in the wood is reported separately, not subtracted from your total.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -21550,7 +21550,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "seed-processing-plant-emissions-per-tonne",
   "q": "How do I calculate a seed processing plant's emissions per tonne?",
   "title": "Seed processing plant per tonne",
-  "short": "Add electricity for cleaning, grading, treating and packing lines at 0.710 kg CO2 per kWh, dryer fuel and cold store power, then divide by tonnes of seed processed. Seed grown by contract farmers is a bought-in input, counted in Scope 3.",
+  "short": "Add electricity for cleaning, grading, treating and packing lines at 0.710 kg CO2 per kWh for FY 2024-25, dryer fuel and cold store power, then divide by tonnes of seed processed. Seed grown by contract farmers is a bought-in input, counted in Scope 3.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -21558,7 +21558,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "seepz-jewellery-exporter-scope-2-in-sez",
   "q": "Does a jewellery exporter in SEEPZ use the India grid factor for Scope 2?",
   "title": "SEEPZ jewellers: Scope 2 grid factor",
-  "short": "Yes, for the location-based figure. Electricity drawn in an SEZ is still Indian grid power, so use 0.710 kg CO2 per kWh. A lower market-based figure needs contractual instruments, such as renewable certificates or a green tariff, in your name.",
+  "short": "Yes, for the location-based figure. Electricity drawn in an SEZ is still Indian grid power, so use 0.710 kg CO2 per kWh for FY 2024-25. A lower market-based figure needs contractual instruments, such as renewable certificates or a green tariff, in your name.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -21678,7 +21678,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "servo-vs-hydraulic-injection-moulding-energy",
   "q": "How much electricity and CO2 does a servo injection moulding machine save over a fixed-pump hydraulic one?",
   "title": "Servo vs hydraulic moulding machine energy",
-  "short": "There is no fixed figure; it depends on your cycle. Measure kWh per kg of good parts on the same mould for a week on each machine, take the difference, multiply by annual output, then by 0.710 kg CO2 per kWh. Savings are biggest on long cycles with long cooling or holding times.",
+  "short": "There is no fixed figure; it depends on your cycle. Measure kWh per kg of good parts on the same mould for a week on each machine, take the difference, multiply by annual output, then by 0.710 kg CO2 per kWh for FY 2024-25. Savings are biggest on long cycles with long cooling or holding times.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -21694,7 +21694,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "sewage-treatment-plant-electricity-per-kl",
   "q": "How much electricity does a factory or township sewage treatment plant use per kilolitre, and what CO2 is that?",
   "title": "STP electricity and CO2 per kilolitre",
-  "short": "Divide the STP's electricity for a period by the kilolitres it treated, then multiply by 0.710 kg CO2 per kWh. At 0.5 kWh per kL, for example, that is about 0.36 kg CO2 per kL. Technology, load and blower control drive the number, so measure your own plant rather than borrow a figure.",
+  "short": "Divide the STP's electricity for a period by the kilolitres it treated, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. At 0.5 kWh per kL, for example, that is about 0.36 kg CO2 per kL. Technology, load and blower control drive the number, so measure your own plant rather than borrow a figure.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
  },
@@ -21718,7 +21718,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "sez-or-industrial-park-electricity-emission-factor",
   "q": "My factory in an SEZ or industrial park buys power from the park developer. Which emission factor applies?",
   "title": "Emission factor for SEZ or park power",
-  "short": "For location-based Scope 2, use the CEA grid factor, 0.710 kg CO2 per kWh, when the park's network draws from the state grid. For market-based Scope 2, use the developer's supplier-specific factor if it can show the fuel and units of its own plant; otherwise the grid factor stays your best figure.",
+  "short": "For location-based Scope 2, use the CEA grid factor, 0.710 kg CO2 per kWh for FY 2024-25, when the park's network draws from the state grid. For market-based Scope 2, use the developer's supplier-specific factor if it can show the fuel and units of its own plant; otherwise the grid factor stays your best figure.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -21750,7 +21750,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "shade-net-carbon-footprint-per-square-metre",
   "q": "What is the carbon footprint of agricultural shade net per square metre?",
   "title": "Shade net per square metre",
-  "short": "Shade nets are knitted from HDPE monofilament, so the polymer is most of the footprint. Extruding and knitting add electricity at 0.710 kg CO2 per kWh. Weigh grams per square metre and multiply by an HDPE factor, then add process energy.",
+  "short": "Shade nets are knitted from HDPE monofilament, so the polymer is most of the footprint. Extruding and knitting add electricity at 0.710 kg CO2 per kWh for FY 2024-25. Weigh grams per square metre and multiply by an HDPE factor, then add process energy.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -21766,7 +21766,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "shahabad-stone-polishing-unit-electricity",
   "q": "How do Shahabad stone cutting and polishing units work out their carbon footprint?",
   "title": "Shahabad stone polishing footprint",
-  "short": "Most of it is electricity for gang saws, cutters and polishers, at 0.710 kg CO2 per kWh, plus diesel for quarry machines and trucks. Divide by square metres of finished slab. Record units from bills and output from sales.",
+  "short": "Most of it is electricity for gang saws, cutters and polishers, at 0.710 kg CO2 per kWh for FY 2024-25, plus diesel for quarry machines and trucks. Divide by square metres of finished slab. Record units from bills and output from sales.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -21846,7 +21846,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ship-repair-dry-dock-emissions",
   "q": "What are the main emissions at a ship repair yard or dry dock?",
   "title": "Ship repair dry dock: emissions",
-  "short": "Electricity for dock pumps, cranes and welding is usually the biggest share, at 0.710 kg CO2 per kWh. Add diesel for gensets and cranes, cutting gases such as acetylene, and paint solvents. Steel plate and paint bought in are Scope 3.",
+  "short": "Electricity for dock pumps, cranes and welding is usually the biggest share, at 0.710 kg CO2 per kWh for FY 2024-25. Add diesel for gensets and cranes, cutting gases such as acetylene, and paint solvents. Steel plate and paint bought in are Scope 3.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -21886,7 +21886,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "shore-power-at-berth-scope-2-or-scope-3",
   "q": "When a ship plugs into shore power at berth, whose scope is it?",
   "title": "Shore power at berth: whose scope",
-  "short": "The ship owner or operator consumes the electricity, so it is their Scope 2, at the grid factor of the port's country. In India that is 0.710 kg CO2 per kWh. The port that resells the power does not count it as its own use. It replaces fuel the ship's auxiliary engines would burn.",
+  "short": "The ship owner or operator consumes the electricity, so it is their Scope 2, at the grid factor of the port's country. In India that is 0.710 kg CO2 per kWh for FY 2024-25. The port that resells the power does not count it as its own use. It replaces fuel the ship's auxiliary engines would burn.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -22166,7 +22166,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "silicon-carbide-acheson-furnace-co2-per-tonne",
   "q": "How much CO2 does silicon carbide production emit per tonne?",
   "title": "Silicon carbide CO2 per tonne",
-  "short": "Two parts: process CO2 from the petroleum coke that reduces the silica, for which IPCC 2006 gives a default of about 2.62 t CO2 per tonne of silicon carbide, and the large electricity use of the Acheson furnace at 0.710 kg CO2 per kWh.",
+  "short": "Two parts: process CO2 from the petroleum coke that reduces the silica, for which IPCC 2006 gives a default of about 2.62 t CO2 per tonne of silicon carbide, and the large electricity use of the Acheson furnace at 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -22190,7 +22190,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "silvassa-yarn-texturising-unit-electricity-co2",
   "q": "How does a yarn texturising unit in Silvassa work out carbon per kg?",
   "title": "Silvassa texturising unit: carbon per kg",
-  "short": "Texturising runs on electricity for heaters, godets and winders. Take kWh from the bill, multiply by 0.710 kg CO2, and divide by kg of textured yarn. For a buyer's full figure, add the partially oriented yarn you buy, from the supplier or a database factor, labelled as such.",
+  "short": "Texturising runs on electricity for heaters, godets and winders. Take kWh from the bill, multiply by 0.710 (FY 2024-25 grid factor) kg CO2, and divide by kg of textured yarn. For a buyer's full figure, add the partially oriented yarn you buy, from the supplier or a database factor, labelled as such.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -22278,7 +22278,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "sivakasi-printing-press-carbon-per-tonne",
   "q": "How does a Sivakasi printing press work out carbon per tonne printed?",
   "title": "Sivakasi printing press carbon per tonne",
-  "short": "Add press and finishing electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by tonnes of printed product dispatched. Paper and board usually carry far more carbon than printing, so add them as purchased goods from supplier figures.",
+  "short": "Add press and finishing electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then divide by tonnes of printed product dispatched. Paper and board usually carry far more carbon than printing, so add them as purchased goods from supplier figures.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -22342,7 +22342,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "small-hydro-open-access-scope-2",
   "q": "Can we claim zero Scope 2 if we buy small hydro power through open access?",
   "title": "Small hydro via open access: Scope 2",
-  "short": "Under the market-based method, yes for the units covered, if the contract and documents prove you alone claim that power. Under the location-based method you still use the grid factor, 0.710 kg CO2 per kWh. Report both.",
+  "short": "Under the market-based method, yes for the units covered, if the contract and documents prove you alone claim that power. Under the location-based method you still use the grid factor, 0.710 kg CO2 per kWh for FY 2024-25. Report both.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -22526,7 +22526,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "solapur-textile-unit-steam-boiler-co2",
   "q": "How does a Solapur textile unit work out CO2 from the steam boiler used for dyeing and sizing?",
   "title": "Solapur textile boiler CO2",
-  "short": "Record the fuel each month: coal or lignite in full in Scope 1, wood or briquettes with CO2 reported as biogenic. Multiply by the fuel's factor, add electricity at 0.710 kg per kWh, and divide by kilograms of yarn or fabric processed.",
+  "short": "Record the fuel each month: coal or lignite in full in Scope 1, wood or briquettes with CO2 reported as biogenic. Multiply by the fuel's factor, add electricity at 0.710 kg per kWh for FY 2024-25, and divide by kilograms of yarn or fabric processed.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -22678,7 +22678,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "solar-plus-grid-electricity-factor-for-buyer",
   "q": "We use rooftop solar and grid power. What electricity factor do we give a buyer?",
   "title": "Electricity factor with solar and grid",
-  "short": "Give the buyer your actual Scope 2: grid units bought times 0.710 kg CO2 per kWh. Solar you generate and use yourself has no grid emissions, so it lowers the total. Dividing by all units used gives a blended factor, but report kWh from each source too.",
+  "short": "Give the buyer your actual Scope 2: grid units bought times 0.710 kg CO2 per kWh for FY 2024-25. Solar you generate and use yourself has no grid emissions, so it lowers the total. Dividing by all units used gives a blended factor, but report kWh from each source too.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -22750,7 +22750,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "solvent-recovery-distillation-steam-emissions",
   "q": "How do I calculate the emissions of a solvent recovery distillation plant?",
   "title": "Solvent recovery plant emissions",
-  "short": "Take the steam the recovery columns use, from the steam meter, and give them that share of the boiler fuel. Add the electricity for pumps and condensers at 0.710 kg CO2 per kWh, then divide by kilograms of solvent recovered. Report boiler fuel as Scope 1 and grid power as Scope 2.",
+  "short": "Take the steam the recovery columns use, from the steam meter, and give them that share of the boiler fuel. Add the electricity for pumps and condensers at 0.710 kg CO2 per kWh for FY 2024-25, then divide by kilograms of solvent recovered. Report boiler fuel as Scope 1 and grid power as Scope 2.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -22854,7 +22854,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "spinning-mill-carbon-footprint-per-kg-yarn",
   "q": "What is the carbon footprint per kg of cotton yarn from an Indian spinning mill?",
   "title": "Carbon footprint per kg of cotton yarn",
-  "short": "Divide the mill's yearly Scope 1 and 2 emissions by kg of yarn produced. Electricity dominates: kWh per kg of yarn times 0.710 kg CO2 per kWh. A mill using 3.2 kWh per kg gets about 2.27 kg CO2 per kg from grid power alone, before adding cotton fibre.",
+  "short": "Divide the mill's yearly Scope 1 and 2 emissions by kg of yarn produced. Electricity dominates: kWh per kg of yarn times 0.710 kg CO2 per kWh for FY 2024-25. A mill using 3.2 kWh per kg gets about 2.27 kg CO2 per kg from grid power alone, before adding cotton fibre.",
   "topic": "product",
   "reviewed": "2026-10-17"
  },
@@ -22918,7 +22918,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "sriperumbudur-electronics-supplier-scope-2",
   "q": "How does a Sriperumbudur electronics supplier report Scope 2 to a global brand?",
   "title": "Sriperumbudur electronics: Scope 2",
-  "short": "Report location based Scope 2 from kWh on your bills times 0.710 kg CO2 per kWh (CEA v21.0), and market based Scope 2 only for renewable power you can prove, such as open access contracts or certificates. Brands compare both and check the evidence.",
+  "short": "Report location based Scope 2 from kWh on your bills times 0.710 kg CO2 per kWh for FY 2024-25 (CEA v21.0), and market based Scope 2 only for renewable power you can prove, such as open access contracts or certificates. Brands compare both and check the evidence.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -23062,7 +23062,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "steam-ejector-vs-vacuum-pump-emissions",
   "q": "Does a vacuum pump have lower emissions than a steam ejector?",
   "title": "Steam ejector vs vacuum pump emissions",
-  "short": "Compare the boiler fuel behind the ejector steam with the pump electricity at 0.710 kg CO2 per kWh, over the same hours. The answer depends on your steam rate and boiler fuel, which your meters can show.",
+  "short": "Compare the boiler fuel behind the ejector steam with the pump electricity at 0.710 kg CO2 per kWh for FY 2024-25, over the same hours. The answer depends on your steam rate and boiler fuel, which your meters can show.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -23222,7 +23222,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "stone-crusher-aggregate-co2-per-tonne",
   "q": "What is the carbon footprint of crushed stone aggregate per tonne from a crusher?",
   "title": "CO2 per tonne of crushed stone aggregate",
-  "short": "Add the crusher's electricity times 0.710 kg CO2 per kWh to the diesel burnt by loaders, excavators, dumpers and any DG set times 2.68 kg per litre, then divide by tonnes dispatched. Take power from the discom bill and diesel from invoices and issue slips.",
+  "short": "Add the crusher's electricity times 0.710 kg CO2 per kWh for FY 2024-25 to the diesel burnt by loaders, excavators, dumpers and any DG set times 2.68 kg per litre, then divide by tonnes dispatched. Take power from the discom bill and diesel from invoices and issue slips.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -23302,7 +23302,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "sugarcane-farming-emissions-per-tonne-cane",
   "q": "How do I calculate the carbon footprint of growing sugarcane per tonne of cane?",
   "title": "Sugarcane farming emissions per tonne",
-  "short": "Add nitrogen fertiliser N2O with IPCC defaults, urea CO2, tractor diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh, then divide by tonnes of cane per acre. Count trash burning separately if fields are burnt after harvest.",
+  "short": "Add nitrogen fertiliser N2O with IPCC defaults, urea CO2, tractor diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh for FY 2024-25, then divide by tonnes of cane per acre. Count trash burning separately if fields are burnt after harvest.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -23342,7 +23342,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "supermarket-display-freezer-electricity",
   "q": "How do I calculate the emissions of supermarket display freezers and chillers?",
   "title": "Supermarket freezer electricity",
-  "short": "Sub-meter the refrigerated cabinets, or take their share of the store bill, and multiply the kWh by 0.710 kg CO2 per kWh. Add refrigerant top-ups from service invoices as Scope 1. A meter shows how open and doored cabinets compare in your store.",
+  "short": "Sub-meter the refrigerated cabinets, or take their share of the store bill, and multiply the kWh by 0.710 kg CO2 per kWh for FY 2024-25. Add refrigerant top-ups from service invoices as Scope 1. A meter shows how open and doored cabinets compare in your store.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -23422,7 +23422,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "surat-cvd-diamond-grower-electricity-per-carat",
   "q": "How does a Surat CVD diamond grower work out electricity CO2 per carat?",
   "title": "Surat CVD growers: CO2 per carat",
-  "short": "Divide the month's reactor electricity, times the grid factor, by rough carats grown. On the grid at 0.710 kg CO2 per kWh the figure is large, because reactors run for weeks. Renewable power bought with evidence lowers the market-based figure; the location-based figure stays on the grid factor.",
+  "short": "Divide the month's reactor electricity, times the grid factor, by rough carats grown. On the grid at 0.710 kg CO2 per kWh for FY 2024-25 the figure is large, because reactors run for weeks. Renewable power bought with evidence lowers the market-based figure; the location-based figure stays on the grid factor.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -23430,7 +23430,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "surat-diamond-unit-electricity-emissions",
   "q": "How does a Surat diamond polishing unit count its electricity emissions?",
   "title": "Surat diamond unit: electricity CO2",
-  "short": "Multiply the kWh on each month's electricity bill by the CEA grid factor of 0.710 kg CO2 per kWh. That is the unit's Scope 2. Divide by carats polished in the month if a buyer wants a per-carat making figure, and say that it covers your electricity only.",
+  "short": "Multiply the kWh on each month's electricity bill by the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25. That is the unit's Scope 2. Divide by carats polished in the month if a buyer wants a per-carat making figure, and say that it covers your electricity only.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -23438,7 +23438,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "surat-processing-house-fuel-per-metre",
   "q": "How does a Surat textile processing house split boiler and thermic fluid fuel per metre of fabric?",
   "title": "Surat processing house fuel per metre",
-  "short": "Add the fuel burnt in boilers and thermic fluid heaters, coal at 2.42 kg CO2 per kg or your lab factor, to electricity at 0.710 kg CO2 per kWh, then divide by metres processed. Split by process only where steam or heat is metered.",
+  "short": "Add the fuel burnt in boilers and thermic fluid heaters, coal at 2.42 kg CO2 per kg or your lab factor, to electricity at 0.710 kg CO2 per kWh for FY 2024-25, then divide by metres processed. Split by process only where steam or heat is metered.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -23454,7 +23454,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "surat-water-jet-loom-electricity-per-metre",
   "q": "How does a Surat water-jet weaving unit count electricity per metre of fabric?",
   "title": "Surat water-jet looms: power per metre",
-  "short": "Divide the month's electricity emissions by the metres woven that month: kWh times 0.710 kg CO2 per kWh, over metres from the production register. Include the pumps and compressors on the same bill, since they serve the looms.",
+  "short": "Divide the month's electricity emissions by the metres woven that month: kWh times 0.710 kg CO2 per kWh for FY 2024-25, over metres from the production register. Include the pumps and compressors on the same bill, since they serve the looms.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -23462,7 +23462,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "surat-zari-unit-electricity-per-kg",
   "q": "How does a Surat zari unit work out electricity emissions per kg of thread?",
   "title": "Surat zari units: electricity per kg",
-  "short": "Multiply the month's billed kWh by 0.710 kg CO2 per kWh and divide by the kilograms of zari thread produced that month. Keep metallic and polyester zari separate if they run on different machines, because their power use per kg can differ.",
+  "short": "Multiply the month's billed kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by the kilograms of zari thread produced that month. Keep metallic and polyester zari separate if they run on different machines, because their power use per kg can differ.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -23550,7 +23550,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "switch-delivery-fleet-to-electric-two-wheelers",
   "q": "How much CO2 does switching a delivery fleet from petrol to electric two-wheelers save in India?",
   "title": "Petrol to electric scooters: CO2 saved",
-  "short": "On India's grid average of 0.710 kg CO2 per kWh, an electric delivery scooter can emit roughly half the CO2 of a petrol one per km. In the illustrative case below, 50 scooters riding 78,000 km a month save about 1.8 tonnes of CO2 a month. Use your real mileage and metered charging kWh.",
+  "short": "On India's grid average of 0.710 kg CO2 per kWh for FY 2024-25, an electric delivery scooter can emit roughly half the CO2 of a petrol one per km. In the illustrative case below, 50 scooters riding 78,000 km a month save about 1.8 tonnes of CO2 a month. Use your real mileage and metered charging kWh.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -23622,7 +23622,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "taloja-chemical-unit-steam-and-power-co2",
   "q": "How does a chemical unit in Taloja work out CO2 per tonne of product?",
   "title": "Taloja chemical unit CO2 per tonne",
-  "short": "Count fuel burnt for steam and heat, grid electricity at 0.710 kg CO2 per kWh, and any process emissions from reactions. Divide by tonnes produced, or allocate by steam and power use when several products share utilities. Buyers will ask for both Scope 1 and 2.",
+  "short": "Count fuel burnt for steam and heat, grid electricity at 0.710 kg CO2 per kWh for FY 2024-25, and any process emissions from reactions. Divide by tonnes produced, or allocate by steam and power use when several products share utilities. Buyers will ask for both Scope 1 and 2.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -23646,7 +23646,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "tamil-nadu-mill-own-windmill-scope-2",
   "q": "How does a Tamil Nadu mill report power from its own windmills in Scope 2?",
   "title": "Own windmills: Scope 2 reporting",
-  "short": "Report twice. Location based, every kWh you take from the grid uses 0.710 kg CO2 per kWh, including wheeled wind units. Market based, the wind units credited to your bill count as zero if you keep the renewable attributes and do not sell them as certificates. Keep the wheeling and banking statements.",
+  "short": "Report twice. Location based, every kWh you take from the grid uses 0.710 kg CO2 per kWh for FY 2024-25, including wheeled wind units. Market based, the wind units credited to your bill count as zero if you keep the renewable attributes and do not sell them as certificates. Keep the wheeling and banking statements.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -23726,7 +23726,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "taxi-fleet-operator-emissions-per-km",
   "q": "How do I calculate a taxi or cab fleet's emissions per km?",
   "title": "Taxi fleet emissions per km",
-  "short": "Add CNG at 2.69 kg CO2 per kg, diesel at 2.68 and petrol at 2.31 kg per litre from fuel records, plus charging electricity for EVs at 0.710 kg per kWh. Divide by fleet km from trip logs. Corporate clients report their trips in Scope 3.",
+  "short": "Add CNG at 2.69 kg CO2 per kg, diesel at 2.68 and petrol at 2.31 kg per litre from fuel records, plus charging electricity for EVs at 0.710 kg per kWh for FY 2024-25. Divide by fleet km from trip logs. Corporate clients report their trips in Scope 3.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -23742,7 +23742,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "tea-factory-carbon-footprint-per-kg-made-tea",
   "q": "What is the carbon footprint per kg of made tea from an Indian tea factory?",
   "title": "Carbon footprint per kg of made tea",
-  "short": "Add up the factory's fuel and electricity emissions for the season and divide by kg of made tea. In formula: (coal kg x 2.42 + gas scm x 2.05 + kWh x 0.710 + DG diesel litres x 2.68) / kg made tea. Report firewood CO2 separately as biogenic, and add green leaf if you buy it.",
+  "short": "Add the season's fuel and electricity emissions and divide by kg of made tea: (coal kg x 2.42 + gas scm x 2.05 + kWh x 0.710 (FY 2024-25 grid factor) + DG diesel litres x 2.68) / kg made tea. Report firewood CO2 separately as biogenic, and add green leaf if you buy it.",
   "topic": "product",
   "reviewed": "2026-10-17"
  },
@@ -23830,7 +23830,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "textile-auxiliary-chemicals-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of textile auxiliary chemicals per kg?",
   "title": "Textile auxiliaries carbon per kg",
-  "short": "Add each raw material, such as surfactants, polymers or solvents, from supplier data. Then add the blending plant energy, electricity at 0.710 kg CO2 per kWh and gas at its default factor, divided by kilograms produced.",
+  "short": "Add each raw material, such as surfactants, polymers or solvents, from supplier data. Then add the blending plant energy, electricity at 0.710 kg CO2 per kWh for FY 2024-25 and gas at its default factor, divided by kilograms produced.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -23838,7 +23838,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "textile-printing-emissions-per-metre",
   "q": "How do I calculate CO2 per metre of printed fabric for rotary screen versus digital printing?",
   "title": "CO2 per metre: rotary vs digital printing",
-  "short": "Work out each print line separately: add the fuel for drying, steaming and curing on that line and its electricity at 0.710 kg CO2 per kWh, then divide by metres printed on that line in the same month. Split shared heaters and boilers by sub-meter or machine hours. Neither process is lower by default.",
+  "short": "Work out each print line separately: add the fuel for drying, steaming and curing on that line and its electricity at 0.710 kg CO2 per kWh for FY 2024-25, then divide by metres printed on that line in the same month. Split shared heaters and boilers by sub-meter or machine hours. Neither process is lower by default.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -24086,7 +24086,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "torrefied-biomass-pellets-emissions-per-tonne",
   "q": "What are the emissions from making torrefied biomass pellets?",
   "title": "Torrefied biomass pellets: emissions",
-  "short": "Torrefaction roasts biomass at about 250 to 300 degrees C without air, then it is pelletised. The plant's own emissions are electricity for grinding and pelleting, at 0.710 kg CO2 per kWh, and any fossil fuel used to start the reactor. Gases from the biomass itself are biogenic.",
+  "short": "Torrefaction roasts biomass at about 250 to 300 degrees C without air, then it is pelletised. The plant's own emissions are electricity for grinding and pelleting, at 0.710 kg CO2 per kWh for FY 2024-25, and any fossil fuel used to start the reactor. Gases from the biomass itself are biogenic.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -24102,7 +24102,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "tower-crane-electric-vs-diesel-emissions",
   "q": "Is a tower crane on grid power lower carbon than one run from a diesel generator?",
   "title": "Tower crane: grid power vs diesel",
-  "short": "Most tower cranes run on electric motors, so the real question is where its power comes from. Compare the generator diesel at 2.68 kg CO2 per litre with grid kWh at 0.710 kg CO2 per kWh, over the same month and the same lifting work.",
+  "short": "Most tower cranes run on electric motors, so the real question is where its power comes from. Compare the generator diesel at 2.68 kg CO2 per litre with grid kWh at 0.710 kg CO2 per kWh for FY 2024-25, over the same month and the same lifting work.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -24174,7 +24174,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "tram-electricity-co2-per-passenger-km",
   "q": "How do I calculate a tram's CO2 per passenger km?",
   "title": "Tram CO2 per passenger km",
-  "short": "Take traction electricity from the substations feeding the overhead line, multiply by 0.710 kg CO2 per kWh, and divide by passenger km. Depot and workshop power are separate lines. Low ridership on a route raises the per passenger figure sharply.",
+  "short": "Take traction electricity from the substations feeding the overhead line, multiply by 0.710 kg CO2 per kWh for FY 2024-25, and divide by passenger km. Depot and workshop power are separate lines. Low ridership on a route raises the per passenger figure sharply.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -24326,7 +24326,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "tunnel-boring-machine-electricity-emissions",
   "q": "How are emissions from a tunnel boring machine counted?",
   "title": "Tunnel boring machine: emissions",
-  "short": "A tunnel boring machine runs on electricity, often several megawatts, so its emissions are metered kWh times 0.710 kg CO2 per kWh. Add ventilation, muck conveyors and site gensets. Segment linings of concrete and steel are usually the larger Scope 3 share.",
+  "short": "A tunnel boring machine runs on electricity, often several megawatts, so its emissions are metered kWh times 0.710 kg CO2 per kWh for FY 2024-25. Add ventilation, muck conveyors and site gensets. Segment linings of concrete and steel are usually the larger Scope 3 share.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -24622,7 +24622,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ultra-low-temperature-freezer-energy-emissions",
   "q": "How much electricity and CO2 does a -80 C lab freezer use, and does raising it to -70 C help?",
   "title": "ULT freezer energy and CO2",
-  "short": "Measure it: plug a meter on the freezer for a week, multiply kWh per day by 365 and by 0.710 kg CO2 per kWh. Raising the setpoint from -80 C to -70 C usually cuts use, but by an amount that depends on the model, so measure before and after rather than trusting a headline percentage.",
+  "short": "Measure it: plug a meter on the freezer for a week, multiply kWh per day by 365 and by 0.710 kg CO2 per kWh for FY 2024-25. Raising the setpoint from -80 C to -70 C usually cuts use, but by an amount that depends on the model, so measure before and after rather than trusting a headline percentage.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -24678,7 +24678,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "us-buyer-epa-factors-for-india-supplier",
   "q": "Our US buyer's template uses EPA emission factors. Should we use them for our Indian plant?",
   "title": "US EPA factors for an Indian plant?",
-  "short": "Use them for fuels, where the chemistry is the same, but not for grid electricity. For power, use India's grid factor of 0.710 kg CO2 per kWh from the CEA database. Say which factors you used next to each figure.",
+  "short": "Use them for fuels, where the chemistry is the same, but not for grid electricity. For power, use India's grid factor of 0.710 kg CO2 per kWh for FY 2024-25 from the CEA database. Say which factors you used next to each figure.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -24742,7 +24742,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "used-engine-oil-re-refining-emissions",
   "q": "How do I calculate the emissions of re-refining used engine oil?",
   "title": "Used oil re-refining emissions",
-  "short": "Add the heater fuel for distillation at its default factor, PNG at 2.05 kg CO2 per scm, and the plant electricity at 0.710 kg CO2 per kWh, then divide by kilolitres of base oil produced. Include any residues or off-gases burned on site.",
+  "short": "Add the heater fuel for distillation at its default factor, PNG at 2.05 kg CO2 per scm, and the plant electricity at 0.710 kg CO2 per kWh for FY 2024-25, then divide by kilolitres of base oil produced. Include any residues or off-gases burned on site.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -24942,7 +24942,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "vehicle-scrapping-rvsf-emissions-per-vehicle",
   "q": "How do I calculate the emissions of a vehicle scrapping facility per vehicle?",
   "title": "Vehicle scrapping emissions per vehicle",
-  "short": "Add the facility electricity at 0.710 kg CO2 per kWh, LPG for cutting at 2.98 kg per kilogram and machine diesel at 2.68 kg per litre, then divide by vehicles scrapped. Record refrigerant recovered from vehicle AC, and any released, separately.",
+  "short": "Add the facility electricity at 0.710 kg CO2 per kWh for FY 2024-25, LPG for cutting at 2.98 kg per kilogram and machine diesel at 2.68 kg per litre, then divide by vehicles scrapped. Record refrigerant recovered from vehicle AC, and any released, separately.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -24950,7 +24950,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "veraval-fish-processing-ice-plant-electricity",
   "q": "How does a Veraval fish processing and ice plant count its emissions?",
   "title": "Veraval fish processing emissions",
-  "short": "Electricity for freezing, cold storage and ice making is usually the largest part, at 0.710 kg CO2 per kWh. Add diesel for generators and refrigerant leaks topped up during the year. Divide by tonnes of fish processed.",
+  "short": "Electricity for freezing, cold storage and ice making is usually the largest part, at 0.710 kg CO2 per kWh for FY 2024-25. Add diesel for generators and refrigerant leaks topped up during the year. Divide by tonnes of fish processed.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -24966,7 +24966,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "verifier-asks-emission-factor-source-proof",
   "q": "The verifier wants proof of where our emission factors come from. What do we show?",
   "title": "Proof of emission factor sources",
-  "short": "Show each factor with its publisher, edition, year and unit, such as CEA version 21.0 for the Indian grid at 0.710 kg CO2 per kWh, and IPCC 2006 defaults for fuels. Keep a copy or link of the source table and note why it was chosen.",
+  "short": "Show each factor with its publisher, edition, year and unit, such as CEA version 21.0 for the Indian grid at 0.710 kg CO2 per kWh for FY 2024-25, and IPCC 2006 defaults for fuels. Keep a copy or link of the source table and note why it was chosen.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -25142,7 +25142,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "vertical-farm-electricity-per-kg-produce",
   "q": "What is the carbon footprint of vegetables from an indoor vertical farm?",
   "title": "Vertical farm footprint per kg",
-  "short": "Mostly electricity for LED lighting, air conditioning and pumps. On India's grid at 0.710 kg CO2 per kWh, kWh per kg decides the result, so measure it. Rooftop solar or contracted renewable power can cut market-based Scope 2. Add packaging and delivery.",
+  "short": "Mostly electricity for LED lighting, air conditioning and pumps. On India's grid at 0.710 kg CO2 per kWh for FY 2024-25, kWh per kg decides the result, so measure it. Rooftop solar or contracted renewable power can cut market-based Scope 2. Add packaging and delivery.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -25150,7 +25150,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "veterinary-clinic-carbon-footprint",
   "q": "What makes up the carbon footprint of a veterinary clinic?",
   "title": "Veterinary clinic: carbon footprint",
-  "short": "Electricity for air conditioning, X-ray, autoclaves and vaccine fridges is usually the largest part, at 0.710 kg CO2 per kWh. Van or ambulance fuel is Scope 1. Anaesthetic gases such as isoflurane are strong greenhouse gases but not among the seven the GHG Protocol requires, so report them as a separate line. Medicines, consumables and clinical waste are Scope 3.",
+  "short": "Electricity for air conditioning, X-ray, autoclaves and vaccine fridges is usually the largest part, at 0.710 kg CO2/kWh (FY 2024-25). Van or ambulance fuel is Scope 1. Anaesthetic gases such as isoflurane are strong greenhouse gases but not among the seven the GHG Protocol requires, so report them as a separate line. Medicines, consumables and clinical waste are Scope 3.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -25158,7 +25158,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "vfd-pump-fan-energy-co2-savings",
   "q": "How much electricity and CO2 does a VFD on a pump or fan save, and how do I calculate it?",
   "title": "VFD on a pump or fan: kWh and CO2 saved",
-  "short": "A VFD saves electricity when a centrifugal pump or fan runs below full flow for long hours. Power falls roughly with the cube of speed, so 80 percent speed needs about half the power. Saving equals present measured kW minus predicted kW at the lower speed, times hours, times 0.710 kg CO2 per kWh.",
+  "short": "A VFD saves electricity when a centrifugal pump or fan runs below full flow for long hours. Power falls roughly with the cube of speed, so 80 percent speed needs about half the power. Saving equals present measured kW minus predicted kW at the lower speed, times hours, times 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -25270,7 +25270,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "vitrified-tile-polishing-line-electricity",
   "q": "How much do polishing and squaring add to a vitrified tile's footprint?",
   "title": "Tile polishing line electricity",
-  "short": "Sub-meter the polishing, squaring and calibration line, multiply its kWh by 0.710 kg CO2 per kWh and divide by square metres polished. Add it to the kiln and press figure for polished tiles only, since unpolished tiles skip this stage.",
+  "short": "Sub-meter the polishing, squaring and calibration line, multiply its kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by square metres polished. Add it to the kiln and press figure for polished tiles only, since unpolished tiles skip this stage.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -25366,7 +25366,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "warehouse-electricity-per-pallet-position",
   "q": "How do I calculate warehouse emissions per pallet position?",
   "title": "Warehouse emissions per pallet position",
-  "short": "Add the warehouse electricity at 0.710 kg CO2 per kWh, generator and forklift diesel at 2.68 kg per litre, and refrigerant top-ups, then divide by pallet positions. Ambient and cold warehouses differ widely, so report each type separately and share by occupied positions.",
+  "short": "Add the warehouse electricity at 0.710 kg CO2 per kWh for FY 2024-25, generator and forklift diesel at 2.68 kg per litre, and refrigerant top-ups, then divide by pallet positions. Ambient and cold warehouses differ widely, so report each type separately and share by occupied positions.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -25478,7 +25478,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "water-park-carbon-footprint-per-visitor",
   "q": "What is the carbon footprint of a water park per visitor?",
   "title": "Water park CO2 per visitor",
-  "short": "Pumping and filtration electricity is the largest part, running long hours to keep pools moving and clean, at 0.710 kg CO2 per kWh. Add generator diesel and chlorine, then divide by visitors. Pools heated in winter add a large fuel or electricity line.",
+  "short": "Pumping and filtration electricity is the largest part, running long hours to keep pools moving and clean, at 0.710 kg CO2 per kWh for FY 2024-25. Add generator diesel and chlorine, then divide by visitors. Pools heated in winter add a large fuel or electricity line.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -25510,7 +25510,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "water-utility-co2-per-kl-supplied",
   "q": "How does a water utility calculate CO2 per kL supplied?",
   "title": "Water utility CO2 per kL supplied",
-  "short": "Add pumping and treatment electricity, multiply by 0.710 kg CO2 per kWh, then divide by kL supplied. State whether you divide by water pumped or water billed: leaks and other non revenue water raise the figure per billed kL.",
+  "short": "Add pumping and treatment electricity, multiply by 0.710 kg CO2 per kWh for FY 2024-25, then divide by kL supplied. State whether you divide by water pumped or water billed: leaks and other non revenue water raise the figure per billed kL.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -25518,7 +25518,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "weaving-electricity-per-metre-of-fabric",
   "q": "How much electricity and CO2 does weaving one metre of fabric take on water-jet, air-jet and rapier looms?",
   "title": "Electricity and CO2 per metre of weaving",
-  "short": "There is no single figure: it depends on loom type, speed, pick density and width, so measure it. Divide a month's weaving kWh by metres woven, then multiply by 0.710 kg CO2 per kWh. Sub-meter each loom group, and the compressor for air-jets, to compare loom types fairly.",
+  "short": "There is no single figure: it depends on loom type, speed, pick density and width, so measure it. Divide a month's weaving kWh by metres woven, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. Sub-meter each loom group, and the compressor for air-jets, to compare loom types fairly.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -25910,7 +25910,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "wheat-farming-emissions-per-tonne",
   "q": "How do I calculate the carbon footprint of growing wheat per tonne?",
   "title": "Wheat farming emissions per tonne",
-  "short": "Add nitrogen fertiliser N2O with IPCC Tier 1 defaults, urea CO2, tractor and harvester diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh, then divide by tonnes harvested per acre. Fertiliser N2O is often the largest field source.",
+  "short": "Add nitrogen fertiliser N2O with IPCC Tier 1 defaults, urea CO2, tractor and harvester diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh for FY 2024-25, then divide by tonnes harvested per acre. Fertiliser N2O is often the largest field source.",
   "topic": "product",
   "reviewed": "2026-10-21"
  },
@@ -26374,7 +26374,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "winery-carbon-footprint-per-bottle",
   "q": "What is the carbon footprint of a bottle of wine from an Indian winery?",
   "title": "Winery CO2 per bottle",
-  "short": "The glass bottle is often the largest part. Add winery electricity for crushing, cooling fermentation tanks and cold storage at 0.710 kg CO2 per kWh, grape growing inputs and freight. CO2 from fermentation is biogenic and reported separately.",
+  "short": "The glass bottle is often the largest part. Add winery electricity for crushing, cooling fermentation tanks and cold storage at 0.710 kg CO2 per kWh for FY 2024-25, grape growing inputs and freight. CO2 from fermentation is biogenic and reported separately.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -26454,7 +26454,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "work-from-home-emissions-calculation",
   "q": "Do I have to report work-from-home emissions for hybrid staff in India, and how do I estimate them?",
   "title": "Estimate work-from-home emissions in India",
-  "short": "Usually not: the GHG Protocol treats teleworking as optional, so you report it by choice or because a client asks. To estimate it, multiply remote working days by the extra electricity used per day at home, then by the grid factor of 0.710 kg CO2 per kWh.",
+  "short": "Usually not: the GHG Protocol treats teleworking as optional, so you report it by choice or because a client asks. To estimate it, multiply remote working days by the extra electricity used per day at home, then by the grid factor of 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
  },
@@ -26502,7 +26502,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "yarn-doubling-twisting-electricity-per-kg",
   "q": "How much CO2 does yarn doubling and twisting add per kg?",
   "title": "Yarn doubling and twisting CO2 per kg",
-  "short": "Doubling and twisting run on electricity, so divide the section's monthly kWh by kg of yarn produced and multiply by 0.710 kg CO2 per kWh. Finer counts and higher twist take more energy per kg. Add any humidification and compressed air the section uses.",
+  "short": "Doubling and twisting run on electricity, so divide the section's monthly kWh by kg of yarn produced and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Finer counts and higher twist take more energy per kg. Add any humidification and compressed air the section uses.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },

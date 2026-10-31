@@ -41,7 +41,7 @@
     "title": "उदाहरण: एक महीने में GSTR-2B क्या छोड़ देता",
     "lines": [
       "Generator और forklifts के लिए diesel, pump के invoices से: 10,000 litre x 2.68 kg CO2 प्रति litre = 26,800 kg CO2",
-      "Grid बिजली, discom के bill से: 175,000 kWh x 0.710 kg CO2 प्रति kWh = 124,250 kg CO2",
+      "Grid बिजली, discom के bill से: 175,000 kWh x 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh = 124,250 kg CO2",
       "GSTR-2B में न दिखने वाला कुल: 26,800 + 124,250 = 151,050 kg CO2, लगभग 151 tonne"
     ],
     "note": "Diesel factor IPCC 2006 का default है; grid factor CEA CO2 Baseline Database, version 21.0 से है।"

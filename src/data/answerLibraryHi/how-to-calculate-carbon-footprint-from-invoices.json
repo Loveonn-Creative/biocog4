@@ -44,7 +44,7 @@
     "lines": [
       "Diesel invoice: 1,000 L x 2.68 kg CO2 प्रति litre = 2,680 kg CO2 (Scope 1)",
       "LPG invoice: 500 kg x 2.98 kg CO2 प्रति kg = 1,490 kg CO2 (Scope 1)",
-      "बिजली का bill: 12,000 kWh x 0.710 kg CO2 प्रति kWh = 8,520 kg CO2 (Scope 2)",
+      "बिजली का bill: 12,000 kWh x 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh = 8,520 kg CO2 (Scope 2)",
       "कुल Scope 1 और 2: 2,680 + 1,490 + 8,520 = 12,690 kg CO2, लगभग 12.7 tonne"
     ],
     "note": "Fuel factors IPCC 2006 के default हैं; grid factor CEA CO2 Baseline Database, version 21.0 से है।"
