@@ -39,14 +39,14 @@
   "example": {
     "title": "One season of 3,600 hours",
     "lines": [
-      "Burner: 240 minus 216 kg an hour x 3,600 = 84.9 t coal",
+      "Burner: 863.2 t x (1 minus 19.81 / 21.97) = 84.9 t coal",
       "Gasifier: 48 kg an hour x 3,600 = 172.8 t coal",
       "Total: 257.7 t coal x 1.76 = 453.5 t CO2 avoided",
       "Coal still burned: 863.2 minus 257.7 = 605.5 t, about 1,066 t CO2"
     ],
     "note": "Coal at our Indian coal factor, an estimate. The report gives no figure for the gasifier's blower power."
   },
-  "senseible": "Senseible reads coal invoices and electricity bills into season totals and CO2, each linked to its bill, so the coal a gasifier really saves shows up against the year before. The green loan check shows what a lender will want.",
+  "senseible": "Senseible reads coal invoices and electricity bills into monthly totals and CO2, each linked to its bill, so the coal a gasifier really saves shows up against the year before. The green loan check shows what a lender will want.",
   "links": [
     {
       "label": "Green loan readiness check",

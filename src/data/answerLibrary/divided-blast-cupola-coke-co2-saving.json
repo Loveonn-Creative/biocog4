@@ -20,7 +20,7 @@
       "h": "What a divided blast cupola changes",
       "p": [
         "Blast air enters through two rows of tuyeres about a metre apart, split roughly equally, each row with its own wind belt so pressure and volume can be set separately.",
-        "Studies by BCIRA quoted in the report found 20 to 32% less charge coke and an 11 to 23% faster melt at the same tapping temperature. TERI's 1988 demonstration cupola in Howrah cut coke by 35% against a poorly designed divided blast unit."
+        "British foundry research quoted in the report found 20 to 32% less charge coke and an 11 to 23% faster melt at the same tapping temperature. A 1988 demonstration cupola in Howrah cut coke by 35% against a poorly designed divided blast unit."
       ]
     },
     {
@@ -48,7 +48,7 @@
     ],
     "note": "Coke at the IPCC 2006 default, 107,000 kg CO2 per TJ at 28.2 GJ per tonne, an estimate. Blower power and limestone are left out."
   },
-  "senseible": "Senseible reads coke and power invoices into monthly records with CO2 for each, so the change after a cupola rebuild shows up per tonne once you add your production. The green loan check tells you what a lender will ask for.",
+  "senseible": "Senseible reads coke and power invoices into monthly records: tonnes of coke from each invoice, and kWh with CO2 from each power bill. It has no built-in coke factor, so apply the one worked above. The green loan check tells you what a lender will ask for.",
   "links": [
     {
       "label": "Green loan readiness check",

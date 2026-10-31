@@ -2,7 +2,7 @@
   "slug": "brsr-zero-liquid-discharge-question",
   "q": "What does BRSR ask about zero liquid discharge, and how do we answer it?",
   "title": "BRSR zero liquid discharge question",
-  "short": "Principle 6 essential indicator 4 asks whether the company has a mechanism for zero liquid discharge, and if yes, for details of its coverage and implementation. Answer site by site: which plants run ZLD, since when, what the system treats, and how much water it recovers.",
+  "short": "Principle 6 essential indicator 5 asks whether the company has a mechanism for zero liquid discharge, and if yes, for details of its coverage and implementation. Answer site by site: which plants run ZLD, since when, what the system treats, and how much water it recovers.",
   "topic": "regulation",
   "intent": "how-to",
   "audience": "Plant heads and EHS teams at listed companies",
@@ -10,7 +10,7 @@
     {
       "h": "The question",
       "p": [
-        "BRSR Principle 6, essential indicator 4: Has the entity implemented a mechanism for Zero Liquid Discharge? If yes, provide details of its coverage and implementation."
+        "BRSR Principle 6, essential indicator 5: Has the entity implemented a mechanism for Zero Liquid Discharge? If yes, provide details of its coverage and implementation."
       ]
     },
     {

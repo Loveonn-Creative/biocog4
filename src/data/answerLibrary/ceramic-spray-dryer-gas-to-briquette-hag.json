@@ -2,7 +2,7 @@
   "slug": "ceramic-spray-dryer-gas-to-briquette-hag",
   "q": "How much natural gas does a briquette-fired hot air generator replace in a tile spray dryer?",
   "title": "Spray dryer: briquette hot air for gas",
-  "short": "Only about 12% of the spray dryer's gas. BEE's Morbi report preheats combustion air to 300 C with a briquette fired hot air generator, saving 2,096 of 18,000 scm a day, plus 143 scm on the tile dryer: 671,700 scm and about 1,377 t CO2 a year. Payback 1.47 years at 2010 prices.",
+  "short": "Only about 12% of the spray dryer's gas. BEE's Morbi report preheats combustion air to 300 C with a briquette fired hot air generator, saving 2,096 of 18,000 scm a day, plus 143 scm on the tile dryer: 671,700 scm, about 1,377 t CO2 a year if the briquettes are biomass. Payback 1.47 years at 2010 prices.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Morbi tile makers running spray dryers and tile dryers on natural gas",
@@ -43,7 +43,7 @@
     ],
     "note": "Our natural gas and Indian coal factors, both estimates. The coal line assumes briquettes with the same carbon as average Indian coal; check yours."
   },
-  "senseible": "Senseible reads gas bills and briquette invoices into monthly records with CO2 per bill and the factor named, so a buyer or lender can see which fuel moved. The green loan check shows what a lender asks for.",
+  "senseible": "Senseible reads gas bills into monthly CO2 records with the factor named, and keeps briquette invoices as tonnes, since it applies no briquette factor. A buyer or lender can see which fuel moved. The green loan check shows what a lender asks for.",
   "links": [
     {
       "label": "Green loan readiness check",

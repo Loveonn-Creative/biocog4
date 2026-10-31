@@ -41,7 +41,7 @@
     ],
     "note": "Coke at the IPCC 2006 default (107,000 kg CO2 per TJ at 28.2 GJ per tonne) and grid at CEA's FY 2025-26 factor, both estimates."
   },
-  "senseible": "Senseible reads coke invoices and electricity bills into monthly CO2 records linked to each bill; add tonnes melted and you have the per tonne figure for before and after. The green loan check shows what a lender asks for on a furnace loan.",
+  "senseible": "Senseible reads coke invoices and electricity bills into monthly records linked to each bill, with CO2 for the power. It has no built-in coke factor, so apply the one worked above to the coke tonnes. The green loan check shows what a lender asks for on a furnace loan.",
   "links": [
     {
       "label": "Green loan readiness check",

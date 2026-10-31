@@ -2,7 +2,7 @@
   "slug": "afbc-coal-boiler-n2o-emissions",
   "q": "Does a fluidised bed coal boiler emit more nitrous oxide than a stoker boiler?",
   "title": "Fluidised bed coal boiler: N2O vs stoker",
-  "short": "Yes, by a wide margin. IPCC 2006 gives 61 kg of N2O per terajoule of coal for circulating or bubbling fluidised bed combustors, against 0.7 kg for overfeed and underfeed stokers. At the AR6 GWP of 273 that is about 16.7 t CO2e per TJ, roughly 15% on top of the coal's CO2.",
+  "short": "Yes, by a wide margin. IPCC 2006 gives 61 kg of N2O per terajoule of coal for circulating or bubbling fluidised bed combustors, against 0.7 kg for overfeed and underfeed stokers. At the AR6 GWP of 273 that is about 16.7 t CO2e per TJ, adding roughly 15 to 18% to the coal's own CO2.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Plant engineers and owners with AFBC or CFBC boilers on coal, lignite or petcoke, and the auditors preparing their inventories",
@@ -43,7 +43,7 @@
     ],
     "note": "Coal CO2 at our Indian coal factor, an estimate; N2O from IPCC 2006 Table 2.7 and AR6 GWP."
   },
-  "senseible": "Senseible reads coal and lignite invoices and gives the CO2 from each delivery with its factor named. Add the N2O line for a fluidised bed boiler from its heat input, as worked above, so the total your buyer or lender sees is complete.",
+  "senseible": "Senseible reads coal invoices and gives the CO2 from each delivery with its factor named. Add the N2O line for a fluidised bed boiler from its heat input, as worked above, so the total your buyer or lender sees is complete.",
   "links": [
     {
       "label": "Your carbon number for buyers and banks",

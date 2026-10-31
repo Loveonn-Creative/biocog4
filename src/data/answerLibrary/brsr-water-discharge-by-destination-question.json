@@ -2,7 +2,7 @@
   "slug": "brsr-water-discharge-by-destination-question",
   "q": "How do I fill the BRSR water discharge table by destination and treatment level?",
   "title": "BRSR water discharge table, filled in",
-  "short": "Principle 6 essential indicator 4 asks for discharge in kilolitres to surface water, groundwater, seawater, third parties and others, each split into no treatment and with treatment, naming the level. Add them for total discharge, which also gives consumption as withdrawal minus discharge.",
+  "short": "Kilolitres by where the water went: surface water, groundwater, seawater, third parties and others, each split into no treatment and with treatment, naming the level. That is Principle 6 essential indicator 4. Add the rows for total discharge; withdrawal minus that total gives consumption.",
   "topic": "regulation",
   "intent": "how-to",
   "audience": "EHS and BRSR teams at listed companies and their plants",

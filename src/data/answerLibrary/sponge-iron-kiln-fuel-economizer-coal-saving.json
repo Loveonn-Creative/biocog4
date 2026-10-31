@@ -2,7 +2,7 @@
   "slug": "sponge-iron-kiln-fuel-economizer-coal-saving",
   "q": "How much coal does a fuel economizer save on a 50 tpd sponge iron kiln?",
   "title": "Sponge iron kiln fuel economiser: coal saved",
-  "short": "A fuel economiser that preheats ore and dolomite to 700 C with kiln exhaust saves 1,548 t of coal a year on a 50 tpd kiln, in BEE's Orissa report. That is about 2,724 t CO2 on India's average coal factor. Cost Rs 140 lakh, payback 42 months at 2010 prices.",
+  "short": "A fuel economiser that preheats ore and dolomite to 700 C with kiln exhaust saves 1,548 t of coal a year on a 50 tpd kiln, in BEE's Orissa report. That is about 2,724 t CO2 on India's average coal factor. Cost Rs 140 lakh against Rs 46.43 lakh a year saved, about three years at 2010 prices.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Coal-based sponge iron plants in Sundargarh and similar areas running 50 tpd rotary kilns",
@@ -13,7 +13,7 @@
         "It sits after the after-burning chamber, where flue gas leaves the kiln at about 950 C, some 12,000 Nm3 an hour.",
         "The ore and dolomite feed, 3.75 t of ore an hour, is heated from 30 C to 700 C before they enter the kiln: 552,750 kcal an hour.",
         "That heat no longer comes from coal in the kiln's preheating zone: 184 kg an hour of 3,000 kcal/kg coal.",
-        "24 hours, 350 days: 1,548 t a year, worth Rs 46.43 lakh at Rs 3,000 a tonne. No downtime to install."
+        "24 hours, 350 days: 1,548 t a year, worth Rs 46.43 lakh at Rs 3,000 a tonne. No downtime to install. Against Rs 140 lakh that is about three years; the report states 42 months."
       ]
     },
     {

@@ -44,7 +44,7 @@
       "DG set diesel: 3,000 L x 2.645 kg CO2 per L = 7.94 t CO2 (Scope 1)",
       "Total: 169.94 t CO2 for FY 2025-26, with output of 1,200 t so the buyer can allocate"
     ],
-    "note": "Example figures. Grid factor from the CEA database for FY 2025-26."
+    "note": "Example figures. Grid factor from the CEA database for FY 2025-26, an estimate."
   },
   "senseible": "If the survey is stuck because the numbers are spread across a year of bills, upload them to Senseible and get Scope 1 and 2 by month, each figure tied to its bill, ready for the buyer's form.",
   "links": [

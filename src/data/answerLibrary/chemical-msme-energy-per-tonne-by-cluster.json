@@ -32,7 +32,7 @@
       "h": "Work out yours",
       "ol": [
         "Add a year of fuel in GJ: gas scm x the heat value on your bill, coal tonnes x its calorific value, and so on.",
-        "Add electricity at 3.6 MJ per kWh, its heat value. Ask any auditor which convention they use, since some count power at the fuel burned to make it.",
+        "Add electricity at 3.6 MJ per kWh, its heat value. Some auditors count power at the fuel burned to make it, so say which convention you used.",
         "Divide by tonnes produced in the same year and compare with your product group, not just your cluster."
       ]
     },
