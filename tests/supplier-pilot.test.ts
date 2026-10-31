@@ -121,3 +121,14 @@ describe('supplier claims on the dashboard', () => {
     expect(after.kg).toBe(300);
   });
 });
+
+describe('supplier can stop sharing', () => {
+  // The consent text promises "I can stop sharing at any time", so the share screen must offer it.
+  test('share screen calls the consent withdrawal function the migration grants to signed-in users', async () => {
+    const page = await Bun.file('src/pages/SupplierShare.tsx').text();
+    expect(page).toContain('I can stop sharing at any time');
+    expect(page).toContain("untypedRpc('withdraw_supplier_consent', { p_request_id: r.request_id })");
+    const sql = await Bun.file('drizzle/migrations/0034_enterprise_pilot.sql').text();
+    expect(sql).toContain('GRANT EXECUTE ON FUNCTION public.withdraw_supplier_consent(uuid) TO authenticated');
+  });
+});

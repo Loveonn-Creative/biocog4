@@ -32,6 +32,9 @@ export default function SupplierShare() {
   const { user } = useSession();
   const [declared, setDeclared] = useState('');
   const [sharing, setSharing] = useState(false);
+  const [confirmStop, setConfirmStop] = useState(false);
+  const [stopping, setStopping] = useState(false);
+  const [stoppedFrom, setStoppedFrom] = useState<string | null>(null);
 
   const req = useQuery({
     queryKey: ['my-supplier-request', user?.id, requestId],
@@ -79,19 +82,49 @@ export default function SupplierShare() {
     void req.refetch();
   };
 
+  // Withdraws consent for this request; the buyer keeps what was already shared and sees the request as Declined.
+  const stopSharing = async () => {
+    if (!r) return;
+    setStopping(true);
+    const { error } = await untypedRpc('withdraw_supplier_consent', { p_request_id: r.request_id });
+    setStopping(false);
+    if (error) { toast.error('Sharing not stopped. Try again.'); return; }
+    setConfirmStop(false);
+    setStoppedFrom(r.company_name);
+  };
+
   return (
     <div className="min-h-screen bg-background pb-16 md:pb-0">
       <Helmet><title>Share with your buyer | Senseible</title><meta name="robots" content="noindex" /></Helmet>
       <Navigation onSignOut={() => navigate('/')} />
       <main className="container mx-auto px-4 py-8 max-w-xl space-y-5">
-        {req.isPending ? <div className="flex justify-center py-16"><Loader2 className="w-6 h-6 animate-spin text-primary" /></div>
+        {stoppedFrom ? (
+          <section className="rounded-xl border p-6 space-y-3">
+            <h1 className="text-xl font-semibold">You stopped sharing with {stoppedFrom}</h1>
+            <p className="text-sm text-muted-foreground">They get nothing new from you. Totals you already shared stay with them.</p>
+            <Button asChild variant="outline"><Link to="/dashboard">Back to dashboard</Link></Button>
+          </section>
+        ) : req.isPending ? <div className="flex justify-center py-16"><Loader2 className="w-6 h-6 animate-spin text-primary" /></div>
         : !r ? <p className="rounded-xl border p-6 text-sm">This request is not for this account, or it has closed.</p>
         : r.status === 'shared' ? (
           <section className="rounded-xl border p-6 space-y-3">
             <CheckCircle2 className="w-8 h-8 text-primary" />
             <h1 className="text-xl font-semibold">Shared with {r.company_name}</h1>
             <p className="text-sm text-muted-foreground">They now see your totals for {fmt(r.period_start)} to {fmt(r.period_end)}. Upload more bills and share again to update them.</p>
-            <div className="flex gap-2"><Button onClick={() => void share()} disabled={sharing} variant="outline">Share again</Button><Button asChild variant="ghost"><Link to="/dashboard">Back to dashboard</Link></Button></div>
+            <div className="flex flex-wrap gap-2"><Button onClick={() => void share()} disabled={sharing || stopping} variant="outline">Share again</Button><Button asChild variant="ghost"><Link to="/dashboard">Back to dashboard</Link></Button></div>
+            <div className="border-t pt-3">
+              {confirmStop ? (
+                <div className="space-y-2">
+                  <p className="text-sm">Stop sharing with {r.company_name}? They keep what you already shared.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <Button variant="destructive" size="sm" onClick={() => void stopSharing()} disabled={stopping}>{stopping && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}Stop sharing</Button>
+                    <Button variant="ghost" size="sm" onClick={() => setConfirmStop(false)} disabled={stopping}>Keep sharing</Button>
+                  </div>
+                </div>
+              ) : (
+                <Button variant="link" size="sm" className="px-0 text-muted-foreground" onClick={() => setConfirmStop(true)}>Stop sharing</Button>
+              )}
+            </div>
           </section>
         ) : (
           <section className="rounded-xl border p-6 space-y-4">
