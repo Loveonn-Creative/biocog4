@@ -20,7 +20,7 @@ export function whitePaperBlocks(): Block[] {
       else if ('ul' in b) out.push({ ul: b.ul.map(wpText) });
       else if ('h3' in b) out.push({ h3: b.h3 });
       else if ('eq' in b) out.push({ p: `Equation (${WP_NUMBERS.eq.get(b.id)}): ${b.eq.map((part) => mathToText(part)).join('    ')}` });
-      else if ('plain' in b) out.push({ p: `**In plain English.** ${wpText(b.plain)}` });
+      else if ('plain' in b) out.push({ p: `**What it means.** ${wpText(b.plain)}` });
       else if ('example' in b) out.push({ p: `**${b.label ?? 'Example'}.** ${wpText(b.example)}` });
       else if ('note' in b) out.push({ p: `**${b.label ?? 'Note'}.** ${wpText(b.note)}` });
       else if ('table' in b) out.push({ table: { head: b.table.head, rows: b.table.rows.map((r) => r.map(wpText)) } });

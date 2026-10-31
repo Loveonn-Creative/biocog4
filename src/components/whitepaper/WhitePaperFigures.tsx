@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Prose } from './MathText';
 import { sharedFactorUncertainty } from '@/lib/whitePaperMath';
 
@@ -224,6 +224,42 @@ export function FlowFigure() {
       </div>
       <div className={`wp-step-detail ${s.ai ? 'wp-step-detail-ai' : ''}`} aria-live="polite">
         <p className="wp-ent-title">Step {s.n}. {s.name}{s.ai ? ' (language model)' : ''}</p>
+        <p><Prose text={s.detail} /></p>
+      </div>
+    </div>
+  );
+}
+
+const SUPPLIER_STEPS = [
+  { n: 1, lane: 'enterprise', name: 'Request', sub: 'paste supplier list', detail: 'The enterprise pastes its supplier list: name, email or GSTIN, what it buys and share of purchases. Each request gets a random link; only its SHA-256 hash is stored, and each link sets an expiry no more than 90 days ahead.' },
+  { n: 2, lane: 'supplier', name: 'Open', sub: 'link locks to one account', detail: 'The supplier signs in or creates a free account. The first account to open the link claims the request, so a forwarded link works; after that, no other account can open it.' },
+  { n: 3, lane: 'supplier', name: 'Upload', sub: 'bills read', detail: 'The supplier uploads bills, which are read, checked and calculated exactly as in the document flow above.' },
+  { n: 4, lane: 'supplier', name: 'Review', sub: 'totals and consent text', detail: 'Before anything is shared, the supplier sees the totals that would go to the enterprise and the exact consent text.' },
+  { n: 5, lane: 'supplier', name: 'Share', sub: 'snapshot and consent saved', detail: 'On Share, the server computes a fixed snapshot with its fingerprint (equation {eq:snapshot}) and records the consent with the hash of the text shown. Only the snapshot crosses to the enterprise.' },
+  { n: 6, lane: 'enterprise', name: 'Track', sub: 'status, grade, reminders', detail: 'The enterprise sees status, totals and proof grade (equation {eq:grade}) per supplier, and can remind a supplier who has not shared at most once every 3 days.' },
+  { n: 7, lane: 'supplier', name: 'Stop', sub: 'any time', detail: 'The supplier can stop sharing at any time. The enterprise gets nothing new and sees the request as declined; totals already shared stay with it.' },
+] as const;
+
+export function SupplierFlowFigure() {
+  const [sel, setSel] = useState(5);
+  const s = SUPPLIER_STEPS.find((x) => x.n === sel)!;
+  return (
+    <div className="wp-fig-body">
+      <div className="wp-lanes" role="list">
+        <span className="wp-lane-label wp-lane-label-e">Enterprise</span>
+        <span className="wp-lane-line" aria-hidden="true"><span>Only the shared snapshot crosses this line</span></span>
+        <span className="wp-lane-label wp-lane-label-s">Supplier</span>
+        {SUPPLIER_STEPS.map((st) => (
+          <div key={st.n} role="listitem" className={`wp-lane-step wp-lane-${st.lane}`} style={{ '--wp-col': st.n + 1 } as CSSProperties}>
+            <button type="button" className={`wp-step ${st.lane === 'enterprise' ? 'wp-step-ent' : ''} ${sel === st.n ? 'wp-step-on' : ''}`} aria-pressed={sel === st.n} onClick={() => setSel(st.n)}>
+              <span className="wp-step-name"><b>{st.n}</b> {st.name}</span>
+              <span className="wp-step-sub">{st.sub}</span>
+            </button>
+          </div>
+        ))}
+      </div>
+      <div className="wp-step-detail" aria-live="polite">
+        <p className="wp-ent-title">Step {s.n}. {s.name} ({s.lane === 'enterprise' ? 'enterprise' : 'supplier'})</p>
         <p><Prose text={s.detail} /></p>
       </div>
     </div>
