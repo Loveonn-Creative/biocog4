@@ -1,0 +1,66 @@
+{
+  "slug": "odisha-sponge-iron-cluster-coal-kiln-carbon",
+  "q": "Odisha's sponge iron units: how much coal do they burn, and what CBAM data do their buyers need?",
+  "title": "Odisha sponge iron cluster: coal and CO2",
+  "short": "BEE's study counted about 107 coal-based sponge iron units in Odisha, most in Sundargarh and Keonjhar, burning about 9.5 million tonnes of coal a year. In the 30 plants audited, coal was 99.8% of energy, about 1.6 t per tonne of DRI. Steel buyers need a mass balance figure for CBAM.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Owners and plant heads of rotary kiln sponge iron (DRI) units in Sundargarh, Keonjhar, Jharsuguda and Sambalpur, Odisha",
+  "sections": [
+    {
+      "h": "Where the kilns are and what they burn",
+      "ul": [
+        "107 units ran 247 rotary kilns across nine districts. Sundargarh had 47 units and 111 kilns, Keonjhar 20 units and 54 kilns, Jharsuguda 13 units and 28 kilns.",
+        "Kilns range from 25 to 375 tonnes a day. The 100 tpd kiln is the workhorse: 150 of the 247.",
+        "Coal comes mostly from Mahanadi Coalfields, grade E and F, at 3,000 to 3,500 kcal per kg, with some plants mixing in imported coal.",
+        "All 107 units together used about 9.54 million tonnes of coal and 617.7 million kWh of WESCO power a year. SAMEEEKSHA puts the cluster at about 1,049,752 tonnes of oil equivalent."
+      ]
+    },
+    {
+      "h": "What the 30 audited plants showed",
+      "p": [
+        "The 30 plants audited made 1,376,865 tonnes of sponge iron and burnt 2,233,044 tonnes of coal: about 1.62 t of coal per tonne of DRI. Coal was 99.84% of their energy and electricity 0.16%. Plants with 100 to 200 tpd kilns used 57% of the energy. Most plants shared their electricity bills with the auditors but not their coal and production records. That is the same gap a steel buyer's CBAM request runs into."
+      ]
+    },
+    {
+      "h": "What a steel buyer needs from you",
+      "ul": [
+        "Sponge iron (CN 7203) is in Annex I of the CBAM Regulation and is a precursor for steel. Your figure ends up inside your buyer's steel figure.",
+        "Direct emissions by mass balance: tonnes of coal and dolomite fed to each kiln, minus carbon leaving in the DRI, dolochar and fines. Lab carbon analyses of your own coal and char, not a textbook value.",
+        "Tonnes of DRI by month, from weighbridge and despatch records, so the figure can be divided.",
+        "Electricity bills. Power is not counted in the CBAM charge for iron and steel goods, but buyers still ask for it in footprints. Power from a waste heat boiler on the kiln adds no new fuel, so do not count it twice."
+      ]
+    },
+    {
+      "h": "Where the coal goes down",
+      "p": [
+        "BEE's manual found kiln flue gas leaving at 900 to 1,000 °C and being cooled with air or water instead of used. Preheating the iron ore with that heat cuts coal use by 20% to 25%. In its 2 x 100 tpd case, a waste heat boiler would raise about 20 tonnes of steam an hour and 4.4 MW of power. Variable speed drives on kiln drives, ID and FD fans are the electrical saving."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Screening estimate: a 2 x 100 tpd plant, one day",
+    "lines": [
+      "Coal: 360 t a day at 3,000 kcal/kg (BEE manual case) = about 12.6 GJ per tonne",
+      "CO2 if all carbon burnt: 12.6 GJ x 94.6 kg CO2 per GJ (IPCC default, bituminous coal) = about 1.19 t CO2 per t coal",
+      "360 t x 1.19 = about 428 t CO2 a day, or about 2.1 t per tonne of DRI on 200 t",
+      "With ore preheating at 20% to 25% less coal: 72 to 90 t coal saved, about 86 to 107 t CO2 a day less"
+    ],
+    "note": "An upper estimate: some carbon stays in the DRI and dolochar, which only a mass balance with your own lab analyses can subtract. Do not send this as a CBAM figure."
+  },
+  "senseible": "Senseible reads your coal purchase invoices, power bills and despatch records into a monthly record for each plant, so the tonnes behind a mass balance are ready when your buyer or verifier asks. The carbon analyses still come from your lab.",
+  "links": [
+    { "label": "CBAM for Indian exporters and their suppliers", "to": "/cbam" },
+    { "label": "Mass balance for coal-based DRI", "to": "/answers/coal-based-sponge-iron-co2-per-tonne" },
+    { "label": "Waste heat power at a Barbil plant", "to": "/answers/barbil-sponge-iron-plant-waste-heat-power" },
+    { "label": "India default values for pig iron and DRI", "to": "/answers/cbam-default-value-india-pig-iron-dri" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA, Odisha sponge iron cluster summary (BEE SME programme, 2010-11 data)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=144&Itemid=502" },
+    { "label": "BEE and APITCO, Manual on energy conservation measures in sponge iron cluster, Orissa", "url": "https://sameeeksha.org/pdf/clusterprofile/ODISHA_SPONGE_IRON_CLUSTER.pdf" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated text, Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Unit counts date from a 2008 survey quoted in the BEE manual; energy data are 2010-11. Update if SAMEEEKSHA publishes a newer Odisha profile."
+}

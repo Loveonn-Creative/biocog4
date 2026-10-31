@@ -1,0 +1,65 @@
+{
+  "slug": "karnal-basmati-rice-mills-husk-carbon",
+  "q": "Karnal rice mills burn their own husk: what does the cluster use, and what goes in a rice buyer's figure?",
+  "title": "Karnal rice mills: husk, power and CO2",
+  "short": "TERI counted about 178 mills around Karnal processing 4.45 million tonnes of paddy in 2017-18. Husk supplied 241,936 of the cluster's 268,921 toe, about 90% of a parboiling mill's energy. Husk CO2 is biogenic and reported separately, so a buyer's fossil figure comes mainly from the 313 million kWh of grid power.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Parboiled and raw basmati rice mills and exporters in Karnal, Taraori, Assandh, Nissing, Indri, Gharaunda and Nilokheri, Haryana",
+  "sections": [
+    {
+      "h": "Three kinds of mill, three energy profiles",
+      "ul": [
+        "29 medium parboiling mills, over 10 tph: 48% of paddy. A typical one burns 13,414 t of husk and uses 5,485,716 kWh a year.",
+        "121 small parboiling mills, 2 to 10 tph: 51% of paddy. Typical use is 3,450 t of husk and 1,257,600 kWh.",
+        "28 hulling units under 2 tph, raw rice only: no boiler, about 90,000 kWh a year, 37 to 45 kWh per tonne.",
+        "About 89% of the cluster's rice is parboiled. Yield is about 65% rice, 23% husk and 9% bran."
+      ]
+    },
+    {
+      "h": "What counts and what does not",
+      "ul": [
+        "Husk: CO2 from burning it is biogenic. Report it separately from your fossil total. Methane and nitrous oxide from the boiler still belong in Scope 1.",
+        "Grid electricity from UHBVN: Scope 2, at the CEA grid factor. For most mills this is the whole fossil figure.",
+        "Diesel for generators, loaders or bought husk transport: Scope 1 or 3, from fuel bills.",
+        "Husk you sell (about 15% of what mills generate) leaves your boundary. The buyer of that husk reports its burning, not you."
+      ]
+    },
+    {
+      "h": "What a rice buyer asks for",
+      "p": [
+        "An importer or retailer usually wants kg CO2e per tonne of milled rice, with the paddy sourcing kept separate, because paddy growing, mostly methane from flooded fields, is counted as agriculture and needs farm data the mill does not hold. Send your figure per tonne of rice, state that husk CO2 is shown separately as biogenic, and say whether paddy is included. Keep monthly paddy intake, rice despatched, boiler husk use and power bills."
+      ]
+    },
+    {
+      "h": "The cheapest cuts",
+      "p": [
+        "TERI found single pass husk boilers at 48% to 60% efficiency, flue gas leaving at 180 to 310 °C, and compressors set at 7.5 to 10 bar for a 5.5 bar need. A three pass boiler with heat recovery saves 15% to 27% of husk, an economiser 5% to 8%, and dropping compressor pressure by a bar saves about 7% of that compressor's power. Husk saved can be sold, and the power saving shows on the bill."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a medium parboiling mill's fossil figure",
+    "lines": [
+      "Paddy: 2.1 million t / 29 mills = about 72,400 t a year; rice at 65% = about 47,100 t",
+      "Power: 5,485,716 kWh x 0.675 kg CO2 per kWh = about 3,703 t CO2",
+      "Per tonne of rice: 3,703,000 kg / 47,100 t = about 79 kg CO2",
+      "Cluster: 313 million kWh x 0.675 = about 211,000 t CO2, or about 73 kg per tonne of the 2.88 million t of rice"
+    ],
+    "note": "Fossil CO2 from grid power only; boiler methane and nitrous oxide, diesel and biogenic husk CO2 are extra lines. Typical mill figures are TERI's; use your own bills. Grid factor: CEA FY 2025-26, version 22.0."
+  },
+  "senseible": "Senseible reads UHBVN bills and diesel invoices into a monthly record for each mill, so you can send an export buyer a per tonne figure with the bills behind it. Husk you burn is entered as biogenic and kept apart from the fossil total.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Rice mill energy per tonne benchmarks", "to": "/answers/rice-mill-energy-per-tonne-benchmark" },
+    { "label": "Husk sold to a power plant: who claims it", "to": "/answers/rice-husk-sold-to-power-plant-who-claims" },
+    { "label": "Rice procurement in Scope 3", "to": "/answers/rice-procurement-scope-3-emissions" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Karnal rice mill cluster (2018, data for 2017-18)", "url": "https://sameeeksha.org/pdf/clusterprofile/Karnal-Rice-Mill.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "TERI's cluster CO2 of 256,660 t used an older grid factor; figures here use the CEA FY 2025-26 value."
+}

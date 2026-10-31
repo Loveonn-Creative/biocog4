@@ -1,0 +1,67 @@
+{
+  "slug": "rajkot-bearing-cluster-electricity-carbon",
+  "q": "How much energy and CO2 do Rajkot bearing makers use, and which stage uses most?",
+  "title": "Rajkot bearing cluster: power and CO2",
+  "short": "TERI counted about 150 bearing units in Rajkot: 90 assembly, 35 rolling element and 25 cage makers. They used 3,903 toe a year, 91% of it electricity, 41.3 million kWh. Assembly units used about 53%, rolling elements 34%. On today's grid factor that is roughly 28,700 t CO2 a year.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Bearing assembly, roller and ball makers and cage makers in Aji, Metoda (Lodhika) and Shapar-Veraval, Rajkot",
+  "sections": [
+    {
+      "h": "Three kinds of unit",
+      "ul": [
+        "Assembly units, 90: buy forged rings, rolling elements and cages, then grind faces, bores, outer diameters and raceways, super finish, assemble and rivet. Turning and heat treatment of rings are usually outsourced. 2,095 toe.",
+        "Rolling element makers, 35: cold head balls and rollers from SAE 52100 wire rod, harden and temper in gas or electric furnaces, super finish. 1,333 toe.",
+        "Cage makers, 25: blank and form CRC strip in presses, then shot blast. 475 toe."
+      ]
+    },
+    {
+      "h": "The energy mix",
+      "ul": [
+        "Electricity from PGVCL: 41.3 million kWh, 3,555 toe.",
+        "Natural gas: 0.4 million scm, 326 toe, used by the few rolling element makers with gas fired heat treatment furnaces.",
+        "Diesel: 23.6 kL for generators, small because cuts are rare.",
+        "Typical unit: micro about 54,000 kWh a year, small about 238,000 kWh, medium about 1.23 million kWh plus 33.4 toe of thermal energy."
+      ]
+    },
+    {
+      "h": "Know whose emissions are whose",
+      "p": [
+        "Because the cluster is split by stage, one bearing's footprint is spread across several firms. An assembly unit's own Scope 1 and 2 cover grinding and assembly power. Bought rings, rolling elements, cages and the outsourced heat treatment are its Scope 3 category 1. If you make rolling elements and sell them to an assembler, your figure per kg becomes part of theirs, so give it per kg or per thousand pieces with the months covered. Bearings (CN 8482) are not CBAM goods; the request comes from OEMs and exporters."
+      ]
+    },
+    {
+      "h": "Savings TERI listed",
+      "ul": [
+        "VFDs on header machines (up to 15%) and super finishing machines (up to 8%).",
+        "VFD on screw compressors that idle unloaded half the time: 20% to 35%. Leaks above 20% can come down to about 5%; each bar less pressure saves about 6%.",
+        "Recuperators on gas heat treatment furnaces with flue gas at 450 to 600 °C: 8% to 15% of gas.",
+        "IE3 motors in place of motors rewound twice or more: 3% to 7%."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a typical medium bearing unit",
+    "lines": [
+      "Power: 1,228,411 kWh x 0.675 kg CO2 per kWh = about 829 t",
+      "Thermal: 33.4 toe x 41.868 GJ x 56.1 kg CO2 per GJ (taken as natural gas) = about 78 t",
+      "Own Scope 1 and 2: about 907 t a year",
+      "Cluster: 41.3 million kWh x 0.675 = about 27,900 t, plus gas and diesel, about 28,700 t"
+    ],
+    "note": "Typical unit figures from TERI's profile. The thermal fuel is assumed to be gas. Grid factor: CEA FY 2025-26, version 22.0. Bought components are extra, in Scope 3."
+  },
+  "senseible": "Senseible reads PGVCL bills and gas or diesel invoices into monthly Scope 1 and 2 records for each unit, so an assembler or component maker can give an OEM a figure from its own bills.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Ball bearing footprint per bearing", "to": "/answers/ball-bearing-carbon-footprint-per-bearing" },
+    { "label": "Bearing steel in Scope 3", "to": "/answers/jaipur-bearing-maker-steel-scope-3" },
+    { "label": "Are bearings covered by CBAM?", "to": "/answers/are-pumps-valves-and-bearings-covered-by-cbam" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Rajkot bearing industries (2016)", "url": "https://sameeeksha.org/pdf/clusterprofile/rajkot-bearing.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "TERI's cluster CO2 of 41,250 t used an older grid factor. Re-check when CEA publishes a new database version."
+}

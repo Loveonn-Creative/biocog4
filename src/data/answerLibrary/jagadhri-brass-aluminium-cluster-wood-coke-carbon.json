@@ -1,0 +1,66 @@
+{
+  "slug": "jagadhri-brass-aluminium-cluster-wood-coke-carbon",
+  "q": "Jagadhri brass and aluminium units burn wood, coke and furnace oil: what is the cluster footprint?",
+  "title": "Jagadhri brass and aluminium: fuels and CO2",
+  "short": "BEE's study of about 175 Jagadhri units, 100 brass and 75 aluminium, counted 32,090 toe a year: wood 18,880, furnace oil 6,500, imported coke 4,560 and 25 GWh of power. Fossil CO2 is roughly 58,000 t a year. Aluminium sheet and circles fall under CBAM; utensils and brass do not.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Brass sheet, strip and utensil makers and aluminium utensil and sheet makers in Jagadhri and Yamuna Nagar, Haryana",
+  "sections": [
+    {
+      "h": "Which furnace you run decides your figure",
+      "ul": [
+        "Coke fired pit furnace, brass: 0.11 to 0.15 kg coke per kg melted, 600 to 900 kg a batch, 4 to 5 batches a day.",
+        "Oil fired pit furnace: 0.115 to 0.125 litres per kg for brass, 0.13 to 0.15 for aluminium.",
+        "Induction furnace, brass: 0.166 to 0.193 kWh per kg, 700 to 1,500 kg a batch. Few units have one.",
+        "Annealing furnace: 0.15 to 0.26 kg of fuel per kg annealed, many of them wood fired. Wood is the cluster's biggest fuel by energy."
+      ]
+    },
+    {
+      "h": "The cluster's fuel bill",
+      "p": [
+        "All 175 units together used 59,000 t of wood, 6,500 kL of furnace oil, 7,600 t of imported coke and 25 GWh of power a year. About 100 units are integrated with hot and cold rolling, 30 only hot roll and 45 only cold roll. Brass units make 15 to 50 t a month, aluminium units 20 to 80. Raw material is mostly brass, copper and aluminium scrap bought through local agents."
+      ]
+    },
+    {
+      "h": "CBAM: which of your products it touches",
+      "ul": [
+        "If you sell aluminium plates, sheets, strip or circles (CN 7606), they are in Annex I of the CBAM Regulation, and an EU importer needs embedded emissions for them.",
+        "Aluminium table, kitchen and household articles (7615), meaning utensils, are not covered today.",
+        "Brass and copper sheets, strips and utensils are not CBAM goods.",
+        "For a covered aluminium product, your melting and annealing fuel is the direct part, and the scrap or ingot you melt carries its own embedded emissions that the importer will ask about."
+      ]
+    },
+    {
+      "h": "Cutting fuel",
+      "p": [
+        "BEE's manual proposed biomass gasifiers for brass and aluminium melting and for annealing, waste heat recovery and energy efficient pit furnaces, modified wood fired annealing furnaces with thermocouples, and induction furnaces for melting. Moving an oil or coke pit furnace to induction swaps Scope 1 fuel for Scope 2 power, so compare both before and after on your own bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: cluster CO2 by fuel",
+    "lines": [
+      "Imported coke: 4,560 toe x 41.868 GJ x 107 kg CO2 per GJ = about 20,400 t",
+      "Furnace oil: 6,500 toe x 41.868 x 77.4 = about 21,100 t",
+      "Electricity: 25 million kWh x 0.675 = about 16,900 t; fossil total about 58,400 t",
+      "Wood, biogenic and reported separately: 18,880 toe x 41.868 x 112 = about 88,500 t"
+    ],
+    "note": "An estimate using IPCC 2006 default factors and the CEA FY 2025-26 grid factor on BEE's cluster totals. Use your own invoices for a unit figure."
+  },
+  "senseible": "Senseible reads coke, furnace oil and wood invoices and power bills into a monthly record for your unit, so an aluminium circle exporter can show melting and annealing fuel per tonne when an EU importer asks.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Jagadhri utensil unit: furnace CO2", "to": "/answers/jagadhri-utensil-unit-melting-furnace-co2" },
+    { "label": "CBAM and aluminium sheet and coil", "to": "/answers/cbam-cn-7606-aluminium-sheet-plate-coil" },
+    { "label": "Are kitchen utensils covered by CBAM?", "to": "/answers/are-kitchen-utensils-covered-by-cbam" }
+  ],
+  "sources": [
+    { "label": "BEE and Zenith Energy Services, Manual on energy conservation measures in brass and aluminium cluster, Jagadhri", "url": "https://sameeeksha.org/pdf/clusterprofile/Jagadhri_Brass_&_Aluminium_Industries.pdf" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated text, Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "BEE's manual dates from about 2012. Re-check CBAM Annex I if the Commission extends coverage downstream."
+}

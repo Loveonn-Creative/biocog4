@@ -1,0 +1,68 @@
+{
+  "slug": "agra-footwear-components-cluster-carbon",
+  "q": "What does Agra's footwear component cluster use in energy, and which product uses most?",
+  "title": "Agra footwear components: energy and CO2",
+  "short": "TERI counted about 205 component units in Agra using 8,624 toe in 2014-15: 59 million kWh of power, 2,880 kL of diesel and 1.2 million scm of gas. The 150 plastic sole units used 5,429 toe, about 63%. On today's factors the cluster emits roughly 50,000 t CO2 a year, mostly from electricity.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Plastic sole, heel, last and shoe sheet makers in Foundry Nagar and Sikandra, Agra, and the shoe brands that buy from them",
+  "sections": [
+    {
+      "h": "Who makes what",
+      "ul": [
+        "Plastic soles: 150 units, about 37,200 tonnes a year. Across the cluster, raw materials include PVC, TPR, TPU, PP, ABS, HDPE and natural or SBR rubber.",
+        "Shoe sheets: 20 units, about 4,740 tonnes. Shoe lasts: 12 units, about 3,402 tonnes. Plastic heels: 20 units. Leather soles: 3 units.",
+        "About 75% of units are unregistered. Most have LT connections of 50 to 215 kVA, with diesel or gas generators for back-up.",
+        "Gas and diesel also fire thermic fluid heaters in rubber sole units."
+      ]
+    },
+    {
+      "h": "Energy by product",
+      "ul": [
+        "Plastic soles: 5,429 toe",
+        "Sole sheets: 1,602 toe",
+        "Shoe lasts: 848 toe",
+        "Plastic heels: 555 toe",
+        "Leather soles: 190 toe"
+      ]
+    },
+    {
+      "h": "Per kg, per pair",
+      "p": [
+        "Specific consumption ran from 0.91 to 2.67 kWh per kg. Lasts were highest at 2.67 kWh per kg and weigh 2 to 2.2 kg a pair, so a pair of lasts carries far more energy than a pair of soles at about 0.4 kg. When a brand asks for a figure per pair, weigh what you ship: kg per pair times kWh per kg is the honest way to split a month's bill across mixed products."
+      ]
+    },
+    {
+      "h": "Where the power goes and what cuts it",
+      "ul": [
+        "Barrel heaters on moulding machines and extruders, often on/off controlled and poorly insulated. Radiant heater bands with thyristor control save 20% to 30%.",
+        "Hydraulic injection moulding machines. All-electric machines use 50% to 80% less; among hydraulic machines, a servo motor on the pump is the most efficient.",
+        "Compressors, chillers and cooling towers, the usual leak and pressure fixes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: cluster CO2 and one pair of soles",
+    "lines": [
+      "Electricity: 59 million kWh x 0.675 kg CO2 per kWh = about 39,800 t",
+      "Diesel: 2,880 kL x 2.68 kg CO2 per litre = about 7,700 t",
+      "Gas: 1.2 million scm x 2.05 kg CO2 per scm = about 2,500 t; total about 50,000 t a year",
+      "A 0.4 kg pair of soles at an assumed 1.4 kWh per kg: 0.56 kWh x 0.675 = about 0.38 kg CO2 from moulding power"
+    ],
+    "note": "The 1.4 kWh per kg is an assumption inside TERI's 0.91 to 2.67 range; use your own bills and kg shipped. Material (PVC, TPR, rubber) is a separate Scope 3 line."
+  },
+  "senseible": "Senseible reads your electricity bills and diesel or gas invoices into monthly records, and works out kWh per kg or per pair from the production you enter, so you can answer a brand's question with your own bills.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Agra shoe unit: electricity per pair", "to": "/answers/agra-shoe-unit-electricity-per-pair" },
+    { "label": "Soles and adhesives in a shoe maker's Scope 3", "to": "/answers/agra-shoe-unit-soles-and-adhesives-scope-3" },
+    { "label": "Generator diesel in Scope 1", "to": "/answers/agra-footwear-unit-diesel-genset-scope-1" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Agra footwear industries (2015, data for 2014-15)", "url": "https://sameeeksha.org/pdf/clusterprofile/Footwear_Agra_Uttar_Pradesh.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "TERI's profile text says about 200 units, its table 205; its electricity share appears as both 58% and 87%. The table figures are used here."
+}

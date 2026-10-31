@@ -1,0 +1,66 @@
+{
+  "slug": "kochi-seafood-processors-freezer-energy-carbon",
+  "q": "Compressors carry most of the load in Kochi seafood plants: what is the cluster's carbon footprint?",
+  "title": "Kochi seafood plants: freezer power and CO2",
+  "short": "Kochi's 35 or so seafood processors run almost entirely on grid power: about 30,000 MWh a year, 2,574 toe. Refrigeration compressors are 73% of connected load and freezing about 75% of electricity. At today's grid factor that is roughly 20,000 t CO2 a year, or 0.25 to 0.57 t per tonne of product.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Seafood processing and export units between Thoppumpady and Aroor in the Kochi cluster, Kerala",
+  "sections": [
+    {
+      "h": "The cluster in numbers",
+      "ul": [
+        "About 35 units, 30 of them studied under BEE's SME programme, with capacities from 456 to 46,500 tonnes a year of shrimp, squid, cuttlefish, octopus, crab, clams and mussels.",
+        "Monthly power use ranged from 11,731 to 268,433 kWh a unit, averaging 87,943 kWh.",
+        "Power came from KSEB on HT or LT connections, with diesel generators for cuts. Some units ran entirely on generator power. There is no other fuel.",
+        "Specific consumption ranged from about 375 to 842 kWh per tonne of product, a spread of more than two to one between units doing similar work."
+      ]
+    },
+    {
+      "h": "Where the electricity goes",
+      "p": [
+        "Of 9,471 kW of connected load analysed, compressors were 6,930 kW (73%), air conditioning 14%, pumps 10% and lighting 3%. IQF and blast freezers blow air at around minus 40 °C; plate freezers press product between refrigerated plates. Most were built on site by local fabricators and run without automatic control. BEE's auditors found units deliberately over-freezing for fear of rejection on core temperature, and poorly insulated ammonia lines soaking up heat before it reached the freezer."
+      ]
+    },
+    {
+      "h": "What a buyer's figure is made of",
+      "ul": [
+        "Scope 2: kWh on each KSEB bill, times the CEA grid factor. For these plants this is nearly the whole footprint.",
+        "Scope 1: generator diesel from fuel bills. Ammonia (R717) has no global warming potential, so leaks are a safety issue, not a carbon one. Any HFC units in cold rooms or air conditioners do count.",
+        "Divide by tonnes of finished, frozen product that month, not raw material received, and say which you used.",
+        "Bought ice, packaging and the catch itself sit in Scope 3 for you and your buyer."
+      ]
+    },
+    {
+      "h": "The savings BEE listed",
+      "p": [
+        "Thermal storage for ice making, screw compressors in place of reciprocating ones, and vapour absorption machines run on LNG or biomass were rated high. Evaporative condensers, VFDs on pumps and repaired insulation were rated medium. Each one shows up directly on the KSEB bill, which is the evidence a buyer or lender will want."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the average Kochi unit",
+    "lines": [
+      "87,943 kWh a month x 12 = 1,055,316 kWh a year",
+      "1,055,316 kWh x 0.675 kg CO2 per kWh = about 712 t CO2 a year",
+      "Best unit: 375 kWh per tonne x 0.675 = about 253 kg CO2 per tonne of product",
+      "Highest unit: 842 kWh per tonne x 0.675 = about 568 kg CO2 per tonne of product"
+    ],
+    "note": "Grid factor is the CEA CO2 Baseline Database value for FY 2025-26 (version 22.0). Consumption figures are from BEE's 2010-11 study; use your own bills and production log."
+  },
+  "senseible": "Senseible reads KSEB bills and generator diesel invoices into monthly Scope 1 and 2 records, so an exporter can send a per tonne figure with the bills behind it when a buyer asks.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Ammonia vs HFC refrigeration", "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant" },
+    { "label": "Ice plant power per tonne", "to": "/answers/ice-plant-kwh-per-tonne-benchmark" },
+    { "label": "Cold storage energy per tonne", "to": "/answers/cold-storage-energy-per-tonne" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA, Kochi seafood processing cluster summary (BEE SME programme, 2010-11 data)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=126&Itemid=499" },
+    { "label": "BEE and Ernst & Young, Manual on energy conservation opportunities in seafood processing industries, Kochi", "url": "https://sameeeksha.org/pdf/clusterprofile/Kochi_See_Food_Processing.pdf" },
+    { "label": "TERI, Cluster profile: Kochi seafood processing cluster", "url": "https://sameeeksha.org/pdf/clusterprofile/Kochi_seafood_processing_cluster.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Cluster data are from 2010-11. Re-check the grid factor when CEA publishes a new database version."
+}

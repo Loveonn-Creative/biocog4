@@ -1,0 +1,62 @@
+{
+  "slug": "jaipur-toughened-glass-units-electricity-carbon",
+  "q": "Jaipur toughened and laminated glass units run on electricity: what carbon data can they give builders?",
+  "title": "Jaipur toughened glass: power and CO2 data",
+  "short": "Jaipur's 19 operating safety glass MSMEs processed about 31,098 t in 2019-20 using 1,185 toe, almost all grid power. A typical toughening unit used about 1.09 million kWh for 2,275 t: about 480 kWh and 325 kg CO2 per tonne. Builders also need the float glass maker's figure, which you pass on.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Toughened, laminated and insulated glass processors in Sitapura, Sanganer, VKI, Jhotwara and Bhankrota, Jaipur, and the builders and facade contractors they supply",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 24 units, 19 operating MSMEs, most running since 2017. 12 toughening units processed 27,297 t; 7 moulding and fabrication units 3,801 t.",
+        "Products: toughened, heat strengthened, laminated, insulated and specialty glass such as ceramic coated, bent and bulletproof.",
+        "Float and figured glass comes from large makers in Rajasthan, Haryana, Gujarat and Tamil Nadu. Buyers are mainly builders in north and west India.",
+        "Power from JVVNL. A few units keep diesel generators; most simply stop during a cut."
+      ]
+    },
+    {
+      "h": "Your two numbers",
+      "ol": [
+        "Your own processing: kWh on the JVVNL bills for cutting, edging, washing, the tempering furnace, quenching blowers, compressors and the lamination autoclave, plus any generator diesel. Divide by tonnes or square metres dispatched.",
+        "The float glass inside: tonnes or square metres bought times the float maker's own figure, from their EPD or supplier statement. Do not make one up; if you have none, say so."
+      ]
+    },
+    {
+      "h": "Square metres, not tonnes",
+      "p": [
+        "Builders and facade consultants ask per square metre at a given thickness. Toughened glass weighs about 2.5 kg per square metre per mm of thickness, so 12 mm is about 30 kg. Keep tonnes and square metres for each month and the thickness mix, so you can convert both ways."
+      ]
+    },
+    {
+      "h": "Where the bill comes down",
+      "p": [
+        "TERI found most small units on locally fabricated, manually run tempering furnaces, while a few use imported PLC controlled ones. A PLC furnace, VFDs on quenching fans and VFD or PMSM air compressors are the measures it lists. Energy is 8% to 10% of processing cost and float glass up to 80%, so a footprint request is really a request about your float supplier too."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 12 mm toughened glass",
+    "lines": [
+      "Typical unit: 1,094,973 kWh / 2,275 t = about 481 kWh per tonne",
+      "481 kWh x 0.675 kg CO2 per kWh = about 325 kg CO2 per tonne processed",
+      "12 mm sheet: 2.5 x 12 = 30 kg per square metre; 0.030 t x 325 = about 9.7 kg CO2 per square metre for toughening",
+      "Add the float glass maker's figure for 30 kg; that part comes from their statement, not from you"
+    ],
+    "note": "Unit energy is TERI's 2019-20 typical figure; use your own bills and dispatches. Glass density is taken as 2,500 kg per cubic metre. Grid factor: CEA FY 2025-26, version 22.0."
+  },
+  "senseible": "Senseible reads JVVNL bills and diesel invoices into a monthly record and keeps your float glass supplier's figure beside it, so a builder gets your processing figure and the supplier's, each with its evidence.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Toughened glass footprint per square metre", "to": "/answers/toughened-glass-carbon-footprint-per-sq-m" },
+    { "label": "Facade glass embodied carbon", "to": "/answers/glass-facade-embodied-carbon-per-sq-m" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA, Jaipur glass cluster summary (BEE energy and resource mapping, 2019-20 data)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=304&Itemid=502" },
+    { "label": "Energy cluster profile report: Jaipur glass cluster", "url": "https://sameeeksha.org/pdf/clusterprofile/Jaipur%20glass%20cluster.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "TERI's cluster GHG of 11,274 t used an older grid factor. Re-check when CEA publishes a new database version."
+}

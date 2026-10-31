@@ -1,0 +1,64 @@
+{
+  "slug": "surendranagar-ceramic-units-gas-and-co2-per-tonne",
+  "q": "How much gas and CO2 per tonne do Surendranagar's ceramic units use?",
+  "title": "Surendranagar ceramics: gas and CO2 per tonne",
+  "short": "TERI's 2017-18 profile of 26 Wadhwan and Joravarnagar units, mostly electrical porcelain, found 4.26 million scm of gas and 4.14 million kWh a year, 0.128 to 0.176 toe per tonne. On today's factors that is about 11,500 t CO2, roughly 0.42 t per tonne of product. Gas is about three quarters of it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "LT insulator, porcelain fuse and other ceramic makers in GIDC Wadhwan and Joravarnagar, Surendranagar, Gujarat",
+  "sections": [
+    {
+      "h": "Find your size",
+      "ul": [
+        "Medium, over 10 tpd: 9 units, 16,740 t a year. Typical use 284,038 scm of gas and 338,706 kWh.",
+        "Small, 3 to 10 tpd: 7 units, 6,615 t. Typical use 128,880 scm and 94,514 kWh.",
+        "Micro, under 3 tpd: 10 units, 4,200 t. Typical use 80,333 scm and 43,926 kWh.",
+        "Products: LT insulators, porcelain fuses, kit-kat and bus-bar fuses, change-overs, with a few tile, sanitaryware and grinding media units."
+      ]
+    },
+    {
+      "h": "Where the gas goes",
+      "p": [
+        "Gas from Gujarat Gas fires tunnel kilns of 3 to 5 tpd, up to 45 m long, at 1,100 to 1,300 °C, with firing taking up to three days. Thermal energy is 89% of the total. In most kilns gas flow follows temperature while combustion air stays fixed, so when gas cuts off, cold air keeps sweeping heat up the stack. Kiln cars are heavy: dead weight is about 24% of the load."
+      ]
+    },
+    {
+      "h": "Fixes and what they save",
+      "ul": [
+        "PLC air and gas ratio control: 7% to 12% of kiln gas, payback 12 to 18 months.",
+        "Low thermal mass kiln cars with hollow supports: 3% to 7%, payback 6 to 8 months.",
+        "Ceramic fibre or rock wool on kiln walls: 1% to 2%.",
+        "High alumina balls instead of natural pebbles in ball mills: grinding falls from 17 to 21 kWh per tonne to 13 to 16, a 15% to 25% saving."
+      ]
+    },
+    {
+      "h": "What to send a buyer",
+      "p": [
+        "When a switchgear maker or utility asks for your footprint, send kg CO2 per tonne fired, with gas in Scope 1 and power in Scope 2 shown separately, the months covered, and whether rejects are in the tonnes. Ceramic products and insulators are not CBAM goods, so this is a buyer request, not an EU customs one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a medium unit",
+    "lines": [
+      "Gas: 284,038 scm x 2.05 kg CO2 per scm = about 582 t",
+      "Power: 338,706 kWh x 0.675 kg CO2 per kWh = about 229 t",
+      "Total about 811 t on about 1,860 t of product (16,740 t / 9 units) = about 0.44 t CO2 per tonne",
+      "After a 10% kiln gas saving: about 58 t CO2 a year less"
+    ],
+    "note": "TERI reported 822 t for this unit using older factors. Gas factor 2.05 kg per scm and CEA grid factor for FY 2025-26 (version 22.0). Use your own bills."
+  },
+  "senseible": "Senseible reads Gujarat Gas and PGVCL bills into a monthly record, so a unit can show gas and power per tonne fired and prove a kiln saving from its own bills.",
+  "links": [
+    { "label": "Carbon and savings calculators", "to": "/calculators" },
+    { "label": "Thangadh sanitaryware cluster next door", "to": "/answers/thangadh-sanitaryware-cluster-energy-and-carbon" },
+    { "label": "Morbi ceramic cluster footprint", "to": "/answers/morbi-ceramic-cluster-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Surendranagar ceramic cluster (data for 2017-18)", "url": "https://sameeeksha.org/pdf/clusterprofile/Surendranagar-Ceramic-Cluster.pdf" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "TERI's cluster total of 11,443 t CO2 used older factors; the recalculated figure is close to it."
+}

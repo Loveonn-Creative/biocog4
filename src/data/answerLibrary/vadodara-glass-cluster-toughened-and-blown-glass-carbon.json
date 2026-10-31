@@ -1,0 +1,57 @@
+{
+  "slug": "vadodara-glass-cluster-toughened-and-blown-glass-carbon",
+  "q": "What do Vadodara's toughened glass and glass blowing units use in energy, and what is CO2 per tonne?",
+  "title": "Vadodara glass units: energy and CO2 per tonne",
+  "short": "BEE's 2020-21 cluster study found 33 glass MSMEs in Vadodara, 15 toughening and 18 glass blowing, processing 42,670 t on 3,377 toe: 1,892 toe of electricity and 1,485 toe of LPG and diesel. That is roughly 18,800 to 19,500 t CO2, about 0.44 to 0.46 t per tonne, three quarters of it from power.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Toughened glass processors and glass blowing units in the Vadodara cluster, Gujarat",
+  "sections": [
+    {
+      "h": "Two trades in one cluster",
+      "ul": [
+        "15 toughened glass units, which heat bought float glass and quench it with air.",
+        "18 glass blowing units making blown glassware.",
+        "Together: 42,670 t a year and 3,377 toe, of which electricity 1,892 toe (56%) and thermal 1,485 toe (44%).",
+        "The fuels listed are LPG, diesel and electricity. The summary does not split them by trade, so check your own bills before assuming which trade uses which."
+      ]
+    },
+    {
+      "h": "Why power dominates the CO2",
+      "p": [
+        "1,892 toe of electricity is about 22 million kWh. At the grid factor each kWh carries about 0.675 kg CO2, so power gives about 14,900 t. The 1,485 toe of LPG and diesel gives 3,900 to 4,600 t depending on the split, which the summary does not give. A toughening unit cutting furnace losses or a blowing unit fixing its burners both move the number, but kWh is the bigger lever for the cluster."
+      ]
+    },
+    {
+      "h": "Records each trade should keep",
+      "ul": [
+        "Toughening: monthly kWh, tonnes and square metres dispatched, thickness mix, and the float glass supplier's own footprint figure for the glass you buy.",
+        "Glass blowing: LPG cylinders or bulk kg bought, diesel litres, kWh, and pieces and kg finished. Split by product line if you make more than one.",
+        "Both: keep generator diesel separate from process fuel, since buyers ask which is which."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: cluster CO2 and per tonne",
+    "lines": [
+      "Electricity: 1,892 toe x 11,630 kWh = about 22.0 million kWh x 0.675 = about 14,850 t",
+      "Thermal if all LPG: 1,485 toe x 41.868 GJ x 63.1 kg CO2 per GJ = about 3,920 t",
+      "Thermal if all diesel: 1,485 x 41.868 x 74.1 = about 4,610 t",
+      "Total 18,800 to 19,500 t on 42,670 t = about 0.44 to 0.46 t CO2 per tonne"
+    ],
+    "note": "An estimate from the SAMEEEKSHA summary, IPCC 2006 default factors and the CEA FY 2025-26 grid factor. The LPG and diesel split is not published, so a range is shown. Your own bills give your own figure."
+  },
+  "senseible": "Senseible reads your power bills, LPG invoices and diesel slips into a monthly record and works out CO2 per tonne or per piece from the output you enter, so each unit has its own figure instead of a cluster average.",
+  "links": [
+    { "label": "Carbon and savings calculators", "to": "/calculators" },
+    { "label": "Toughened glass per square metre", "to": "/answers/toughened-glass-carbon-footprint-per-sq-m" },
+    { "label": "Scientific glassware gas per kg", "to": "/answers/ambala-scientific-glassware-unit-gas-per-kg" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA, Vadodara glass cluster summary (TERI for BEE, energy and resource mapping of MSME clusters, 2020-21 data)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=318&Itemid=502" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Only the SAMEEEKSHA summary is published for this cluster. Add unit-level figures if the full TERI report is released."
+}

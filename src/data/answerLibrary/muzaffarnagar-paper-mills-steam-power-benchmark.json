@@ -1,0 +1,65 @@
+{
+  "slug": "muzaffarnagar-paper-mills-steam-power-benchmark",
+  "q": "How far are Muzaffarnagar paper mills from the energy benchmark, and what does closing the gap do to carbon?",
+  "title": "Muzaffarnagar paper mills vs the benchmark",
+  "short": "BEE's study of about 29 mills found 10.1 to 18.2 GJ of fuel and 550 to 1,080 kWh per tonne of paper, against IPPTA norms of about 9.9 to 17.6 GJ of steam and 550 to 650 kWh for kraft. Its 15 listed projects would save 9.5 million kWh and 397,000 GJ of heat, about 22,800 t CO2 a year.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Kraft, duplex board and writing paper mills on Bhopa Road, Jansath Road and Shamli in the Muzaffarnagar cluster, Uttar Pradesh",
+  "sections": [
+    {
+      "h": "The cluster BEE studied",
+      "ul": [
+        "About 29 mills with about 542,700 tonnes a year of installed capacity, running at 20% to 90% utilisation. 16 use only waste paper, 12 mix agro residue and waste paper, 1 is agro based.",
+        "About 66% make only kraft paper, 16% only duplex board, and the rest writing or printing paper with some kraft or board.",
+        "Fuel is coal (about 3,800 kcal per kg) and biomass: rice husk (3,300), bagasse (2,000), pith and some wood chips (3,500).",
+        "Most mills make their own power: about 68.3 MW of coal and biomass cogeneration across the cluster. The total came to about 102,645 toe a year."
+      ]
+    },
+    {
+      "h": "Your mill against the norm",
+      "ul": [
+        "Measured in the cluster: 550 to 1,080 kWh and 10.13 to 18.15 GJ of fuel per tonne of paper.",
+        "IPPTA norm, kraft: 4.1 t steam (17.6 GJ) and 650 kWh per tonne from agro residue; 2.3 t steam (9.9 GJ) and 550 kWh from waste paper.",
+        "IPPTA norm, board: 9.4 to 10.3 GJ of steam and 615 to 685 kWh per tonne.",
+        "Compare like with like: fuel GJ includes boiler losses. At an assumed 75% boiler efficiency, 15 GJ of fuel gives about 11.3 GJ of steam, still above the 9.9 GJ waste paper kraft norm; 900 kWh is well above 550.",
+        "BEE's manual notes these Indian norms are themselves 25% to 30% above the best Indian mills and 30% to 40% above international ones."
+      ]
+    },
+    {
+      "h": "What the 15 projects add up to",
+      "p": [
+        "BEE's consultants wrote detailed project reports for 15 measures, from boiler feed and flash steam recovery to paper machine hood ventilation and pressurised head boxes. Together they save 9,537,288 kWh and 396,982 GJ of heat a year. Assuming half the power and half the heat displaced fossil sources, the manual puts the cut at 22,832 t CO2: 3,815 from power and 19,017 from fuel. Most of the carbon is in the steam, not the motors."
+      ]
+    },
+    {
+      "h": "Proof a lender will ask for",
+      "p": [
+        "For an energy efficiency loan, show fuel per tonne and kWh per tonne for at least twelve months before, and the same after. That needs monthly coal and biomass purchases with stock change, calorific value reports, power bills or captive generation logs, and tonnes of paper reeled by grade."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 20,000 t waste paper kraft mill",
+    "lines": [
+      "Now: 15 GJ fuel per tonne x 20,000 t = 300,000 GJ a year",
+      "Target 12 GJ per tonne: 60,000 GJ saved a year",
+      "If half that heat came from coal: 30,000 GJ x 94.6 kg CO2 per GJ = about 2,840 t CO2 a year less",
+      "Biomass half: no fossil CO2 saved, but husk or bagasse freed to sell or stock"
+    ],
+    "note": "An estimate: the mill size, current and target figures are assumptions for illustration. Coal factor is the IPCC 2006 default for bituminous coal. Use your own fuel records."
+  },
+  "senseible": "Senseible reads coal and biomass purchase invoices and power bills into a monthly record, so a mill can show fuel and power per tonne before and after a project. Whether a loan is approved is the lender's decision.",
+  "links": [
+    { "label": "Check your green loan readiness", "to": "/green-loan-check" },
+    { "label": "Muzaffarnagar kraft mills: counting boiler fuel", "to": "/answers/muzaffarnagar-kraft-paper-mill-boiler-fuel" },
+    { "label": "SIDBI loans for paper mill equipment", "to": "/answers/sidbi-gcf-loan-paper-mill-equipment" },
+    { "label": "Kraft paper footprint per tonne", "to": "/answers/kraft-paper-carbon-footprint-per-tonne" }
+  ],
+  "sources": [
+    { "label": "BEE and Deloitte, Manual on energy conservation measures in paper cluster, Muzaffarnagar (BEE SME programme)", "url": "https://sameeeksha.org/pdf/dpr/Muzaffarnagar_Paper.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "The BEE manual dates from about 2010. Mill count, capacity and cogeneration may have changed; update if a newer SAMEEEKSHA profile appears."
+}
