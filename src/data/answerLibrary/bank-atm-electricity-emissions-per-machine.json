@@ -2,7 +2,7 @@
   "slug": "bank-atm-electricity-emissions-per-machine",
   "q": "What are the emissions of running an ATM?",
   "title": "ATM emissions per machine",
-  "short": "An ATM kiosk's emissions are mostly the air conditioner keeping the room cool, plus the machine, lights and UPS. Multiply the kiosk's units by 0.710 kg CO2 per kWh. If a site owner pays the bill and it is in your rent, it still needs counting, often as an estimate.",
+  "short": "An ATM kiosk's emissions are mostly the air conditioner keeping the room cool, plus the machine, lights and UPS. Multiply the kiosk's units by 0.710 kg CO2 per kWh for FY 2024-25. If a site owner pays the bill and it is in your rent, it still needs counting, often as an estimate.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Banks and ATM service providers",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Bank branch footprint",

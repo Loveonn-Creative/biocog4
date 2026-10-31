@@ -2,7 +2,7 @@
   "slug": "blown-film-extrusion-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of blown film per kg?",
   "title": "Blown film carbon footprint per kg",
-  "short": "Per kg of good film, multiply the resin bought per kg of good film by the resin's footprint, add extruder and plant electricity per kg at 0.710 kg CO2 per kWh, and add masterbatch, cores and packing. Resin is usually most of the total, so the resin factor and your scrap rate matter most.",
+  "short": "Per kg of good film, multiply the resin bought per kg of good film by the resin's footprint, add extruder and plant electricity per kg at 0.710 kg CO2 per kWh for FY 2024-25, and add masterbatch, cores and packing. Resin is usually most of the total, so the resin factor and your scrap rate matter most.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Film extruders making packaging film for exporters and brands",
@@ -47,7 +47,7 @@
     ],
     "note": "The resin factor is illustrative; replace it with your supplier's or an eco-profile figure for the grade."
   },
-  "senseible": "Senseible reads the electricity bills and fuel invoices behind a product footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps resin purchases in the Scope 3 evidence trail by HSN code and kg. Product reports are self-declared drafts, not ISO 14067 certified footprints.",
+  "senseible": "Senseible reads the electricity bills and fuel invoices behind a product footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25) and keeps resin purchases in the Scope 3 evidence trail by HSN code and kg. Product reports are self-declared drafts, not ISO 14067 certified footprints.",
   "links": [
     {
       "label": "Product carbon footprint calculator",

@@ -2,7 +2,7 @@
   "slug": "purchased-water-emission-factor",
   "q": "What emission factor should I use for municipal, MIDC or tanker water I buy?",
   "title": "Emission factor for purchased water",
-  "short": "There is no official Indian emission factor for supplied water, so build one from energy. For utility water, multiply kilolitres by the supplier's kWh per kL and by 0.710 kg CO2 per kWh. For tanker water, use diesel per trip times 2.68 kg CO2 per litre, divided by kL delivered. Label both as estimates.",
+  "short": "There is no official Indian emission factor for supplied water, so build one from energy. For utility water, multiply kilolitres by the supplier's kWh per kL and by 0.710 kg CO2 per kWh for FY 2024-25. For tanker water, use diesel per trip times 2.68 kg CO2 per litre, divided by kL delivered. Label both as estimates.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Factories reporting BRSR water and Scope 3",
@@ -17,7 +17,7 @@
       "h": "Utility water",
       "ol": [
         "Ask the supplier for its pumping and treatment energy in kWh per kL. Some utilities report it; others can give total kWh and total kL supplied.",
-        "Multiply your kL by that figure and by 0.710 kg CO2 per kWh.",
+        "Multiply your kL by that figure and by 0.710 kg CO2 per kWh for FY 2024-25.",
         "If you cannot get a supplier figure, use an assumed value with its basis written down, and replace it when you can."
       ]
     },

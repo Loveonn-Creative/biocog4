@@ -51,7 +51,7 @@
     ],
     "note": "Use the premium on your own bill or in the tariff order in force. Market-based reporting may call for a residual mix factor instead of the grid average for uncovered units; say which you used."
   },
-  "senseible": "Senseible reads your MSEDCL bill for the billing period, tariff category and units, and applies the CEA grid factor of 0.710 kg CO2 per kWh for location-based Scope 2. Green tariff units count in your market-based figure once you add MSEDCL's renewable attribution document as the instrument.",
+  "senseible": "Senseible reads your MSEDCL bill for the billing period, tariff category and units, and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2. Green tariff units count in your market-based figure once you add MSEDCL's renewable attribution document as the instrument.",
   "links": [
     {
       "label": "Does a green tariff make Scope 2 zero",

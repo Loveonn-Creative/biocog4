@@ -34,7 +34,7 @@
     {
       "h": "Turning it into CO2",
       "p": [
-        "Grid electricity: kWh x 0.710 kg CO2 per kWh, the CEA weighted average factor. Power from your DG set during outages is Scope 1: litres of diesel x 2.68 kg CO2 per litre.",
+        "Grid electricity: kWh x 0.710 kg CO2 per kWh for FY 2024-25, the CEA weighted average factor. Power from your DG set during outages is Scope 1: litres of diesel x 2.68 kg CO2 per litre.",
         "Methane from anaerobic zones and sludge is a separate source with its own method. Keep it out of the electricity figure."
       ]
     },
@@ -58,7 +58,7 @@
     ],
     "note": "The motor ratings, hours and load factors are illustrative; use your own log or, better, a sub-meter."
   },
-  "senseible": "Senseible reads your electricity bills for billing period, tariff category and units, and applies 0.710 kg CO2 per kWh for location-based Scope 2. It also reads two meter readings in a photo of an ETP sub-meter and takes their difference as units; the flow figures come from your own log.",
+  "senseible": "Senseible reads your electricity bills for billing period, tariff category and units, and applies 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2. It also reads two meter readings in a photo of an ETP sub-meter and takes their difference as units; the flow figures come from your own log.",
   "links": [
     {
       "label": "ZLD plant energy and CO2 per kilolitre",

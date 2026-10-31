@@ -2,7 +2,7 @@
   "slug": "batch-chemical-reactor-emissions-per-batch",
   "q": "How do I calculate the emissions of one batch in a chemical reactor?",
   "title": "Batch reactor emissions per batch",
-  "short": "Add the steam the reactor took for heating, as a share of boiler fuel, the electricity for the agitator and brine chilling at 0.710 kg CO2 per kWh, and any thermic fluid heating. Divide by the batch output in kilograms, and keep the batch record as evidence.",
+  "short": "Add the steam the reactor took for heating, as a share of boiler fuel, the electricity for the agitator and brine chilling at 0.710 kg CO2 per kWh for FY 2024-25, and any thermic fluid heating. Divide by the batch output in kilograms, and keep the batch record as evidence.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Specialty chemical, dye intermediate and API manufacturers",
@@ -39,7 +39,7 @@
     ],
     "note": "Inputs are illustrative; use steam meter readings and the batch manufacturing record."
   },
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
   "links": [
     {
       "label": "Thermic fluid heater emissions",

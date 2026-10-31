@@ -10,7 +10,7 @@
     {
       "h": "The formula",
       "p": [
-        "kg CO2 per kL = specific energy in kWh per kL x grid factor. One kilolitre is one cubic metre. With the India grid factor of 0.710 kg CO2 per kWh, 3.5 kWh per kL gives 2.485 kg CO2 and 5 kWh per kL gives 3.55 kg CO2.",
+        "kg CO2 per kL = specific energy in kWh per kL x grid factor. One kilolitre is one cubic metre. With the India grid factor of 0.710 kg CO2 per kWh for FY 2024-25, 3.5 kWh per kL gives 2.485 kg CO2 and 5 kWh per kL gives 3.55 kg CO2.",
         "The 3.5 to 5 kWh range is the IRENA and IEA-ETSAP figure for large-scale seawater RO, published in 2012. Plants built since then with newer membranes and energy recovery can run below it, and long pipelines to your site add pumping energy, so treat the range as an estimate until you have a metered figure. Brackish water RO needs less energy because the feed is less salty; thermal desalination needs far more."
       ]
     },
@@ -49,7 +49,7 @@
     ],
     "note": "If the same water came from your own grid-powered RO plant, these 410 t would already sit in your Scope 2 through the electricity bill."
   },
-  "senseible": "Senseible reads your electricity bills (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, so an in-house RO plant's power is counted in Scope 2. Invoices for bought water go to the Scope 3 supplier evidence trail, where a supplier's kWh per kL figure gives a firmer number than a spend-based estimate.",
+  "senseible": "Senseible reads your electricity bills (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, so an in-house RO plant's power is counted in Scope 2. Invoices for bought water go to the Scope 3 supplier evidence trail, where a supplier's kWh per kL figure gives a firmer number than a spend-based estimate.",
   "links": [
     {
       "label": "ZLD plant energy and carbon per kL",

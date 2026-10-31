@@ -2,7 +2,7 @@
   "slug": "auto-service-workshop-carbon-footprint",
   "q": "How do I calculate the carbon footprint of a car or bike service workshop?",
   "title": "Car service workshop carbon footprint",
-  "short": "Add the workshop electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by vehicles serviced. Record refrigerant from AC servicing and the waste oil and parts sent out, as Scope 3 evidence.",
+  "short": "Add the workshop electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then divide by vehicles serviced. Record refrigerant from AC servicing and the waste oil and parts sent out, as Scope 3 evidence.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Authorised dealers, multi-brand workshops and service chains",
@@ -39,7 +39,7 @@
     ],
     "note": "Readings are illustrative; use electricity bills, the generator fuel log and the job card count."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Car paint booth per vehicle",

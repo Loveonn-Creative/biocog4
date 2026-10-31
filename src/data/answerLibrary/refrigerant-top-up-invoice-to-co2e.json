@@ -49,7 +49,7 @@
       "AR6: 12 x 2,255.5 + 5 x 1,530 + 3 x 771 = 27,066 + 7,650 + 2,313 = 37,029 kg CO2e, about 37.0 t",
       "Same gas, same kilograms: the AR6 figure is about 17% higher, so the basis must be stated"
     ],
-    "note": "For comparison, 31.6 t CO2e is roughly what 44,500 kWh of grid electricity emits at 0.710 kg CO2 per kWh. Small refrigerant top-ups can matter."
+    "note": "For comparison, 31.6 t CO2e is roughly what 44,500 kWh of grid electricity emits at 0.710 kg CO2 per kWh for FY 2024-25. Small refrigerant top-ups can matter."
   },
   "senseible": "Senseible reads service and purchase invoices and keeps them as evidence. It calculates refrigerant emissions only when you supply the measured data, such as the gas and kilograms charged, and does not treat a gas purchase alone as leakage.",
   "links": [

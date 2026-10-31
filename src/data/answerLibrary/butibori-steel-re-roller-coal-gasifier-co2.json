@@ -2,7 +2,7 @@
   "slug": "butibori-steel-re-roller-coal-gasifier-co2",
   "q": "A Butibori re-rolling mill reheats billets with a coal gasifier. How is the CO2 counted?",
   "title": "Butibori re-roller coal gasifier CO2",
-  "short": "Count the coal fed to the gasifier, not the gas made: multiply tonnes of coal by its emission factor in Scope 1. Add electricity for the mill at 0.710 and divide by tonnes of rolled product. Billets bought in carry their own emissions.",
+  "short": "Count the coal fed to the gasifier, not the gas made: multiply tonnes of coal by its emission factor in Scope 1. Add electricity for the mill at 0.710 (FY 2024-25 grid factor) and divide by tonnes of rolled product. Billets bought in carry their own emissions.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Steel re-rolling mills in Butibori, Hingna and the Nagpur area",

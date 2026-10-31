@@ -49,11 +49,11 @@
       "Output expected to grow 30 percent by FY 2030-31; if emissions grow with it: 2,000 x 1.30 = 2,600 t CO2 (assumption)",
       "Target: 40 percent below baseline, so 2,000 x 0.60 = 1,200 t CO2 in FY 2030-31",
       "Cut needed against the growth case: 2,600 minus 1,200 = 1,400 t CO2, not the 800 t a flat baseline suggests",
-      "Rooftop solar 500 kWp x 1,400 kWh per kWp a year (assumed yield) = 700,000 kWh x 0.710 kg CO2 per kWh = 497 t CO2",
+      "Rooftop solar 500 kWp x 1,400 kWh per kWp a year (assumed yield) = 700,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 497 t CO2",
       "Compressor and motor upgrades: 150,000 kWh saved x 0.710 = 106.5 t CO2",
       "Total from actions: 497 + 106.5 = 603.5 t CO2; gap: 1,400 minus 603.5 = 796.5 t CO2 still to find"
     ],
-    "note": "The plant, growth rate and target are illustrative. The grid factor is held at 0.710 kg CO2 per kWh (CEA version 21.0); say so in the plan, since future editions will change it."
+    "note": "The plant, growth rate and target are illustrative. The grid factor is held at 0.710 kg CO2 per kWh for FY 2024-25 (CEA version 21.0); say so in the plan, since future editions will change it."
   },
   "senseible": "Senseible builds the Scope 1 and 2 baseline from your invoices and bills, with the factor and source on each line, and the decarbonize India page sets out reduction actions to test against your gap. The plan itself is self-declared and approved by you.",
   "links": [

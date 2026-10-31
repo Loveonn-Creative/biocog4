@@ -2,7 +2,7 @@
   "slug": "ultra-low-temperature-freezer-energy-emissions",
   "q": "How much electricity and CO2 does a -80 C lab freezer use, and does raising it to -70 C help?",
   "title": "ULT freezer energy and CO2",
-  "short": "Measure it: plug a meter on the freezer for a week, multiply kWh per day by 365 and by 0.710 kg CO2 per kWh. Raising the setpoint from -80 C to -70 C usually cuts use, but by an amount that depends on the model, so measure before and after rather than trusting a headline percentage.",
+  "short": "Measure it: plug a meter on the freezer for a week, multiply kWh per day by 365 and by 0.710 kg CO2 per kWh for FY 2024-25. Raising the setpoint from -80 C to -70 C usually cuts use, but by an amount that depends on the model, so measure before and after rather than trusting a headline percentage.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Pharma R&D, CRO, biobank and hospital lab managers",
@@ -46,7 +46,7 @@
     ],
     "note": "Readings are illustrative. Use your own meter data."
   },
-  "senseible": "Senseible reads the lab's electricity bills for total location-based Scope 2 at the CEA factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0. Meter feeds for individual equipment can be set up with the Senseible team for each customer.",
+  "senseible": "Senseible reads the lab's electricity bills for total location-based Scope 2 at the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0. Meter feeds for individual equipment can be set up with the Senseible team for each customer.",
   "links": [
     {
       "label": "Refrigerant top-up to CO2e",

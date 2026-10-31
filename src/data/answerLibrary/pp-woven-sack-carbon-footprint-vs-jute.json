@@ -18,7 +18,7 @@
       "h": "Building the PP sack figure",
       "ul": [
         "PP granules and filler masterbatch per sack x their factors, using kg bought per good sack so tape and cutting waste is included.",
-        "Tape line, circular loom, lamination and printing electricity per sack x 0.710 kg CO2 per kWh.",
+        "Tape line, circular loom, lamination and printing electricity per sack x 0.710 kg CO2 per kWh for FY 2024-25.",
         "A BOPP laminate or LDPE liner adds its own mass and factor."
       ]
     },
@@ -54,7 +54,7 @@
     ],
     "note": "Sack weights are illustrative. Multiply each mass by a sourced material factor before you compare totals."
   },
-  "senseible": "Senseible keeps sack purchase invoices in the Scope 3 evidence trail by HSN code and quantity, and turns your tape line and loom electricity bills into Scope 2 at 0.710 kg CO2 per kWh. Material factors for PP and jute need a named source before a sack figure is produced.",
+  "senseible": "Senseible keeps sack purchase invoices in the Scope 3 evidence trail by HSN code and quantity, and turns your tape line and loom electricity bills into Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. Material factors for PP and jute need a named source before a sack figure is produced.",
   "links": [
     {
       "label": "Jute bag vs plastic bag: carbon and claims",

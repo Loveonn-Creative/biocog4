@@ -45,7 +45,7 @@
       "Per-kg route: 5 t x 3.186 = 15.93 t CO2, about 0.7% lower"
     ]
   },
-  "senseible": "Senseible reads fuel invoices and slips and applies the IPCC 2006 defaults, such as diesel 2.68 kg CO2 per litre and furnace oil 2.97 kg CO2 per litre, with electricity at the CEA factor of 0.710. A line without a printed quantity shows Needs Data rather than a guess.",
+  "senseible": "Senseible reads fuel invoices and slips and applies the IPCC 2006 defaults, such as diesel 2.68 kg CO2 per litre and furnace oil 2.97 kg CO2 per litre, with electricity at the CEA factor of 0.710 (FY 2024-25 grid factor). A line without a printed quantity shows Needs Data rather than a guess.",
   "links": [
     {
       "label": "Diesel emission factor",

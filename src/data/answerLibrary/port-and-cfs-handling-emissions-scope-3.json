@@ -54,7 +54,7 @@
   "example": {
     "title": "Illustrative example: a CFS intensity from its own records",
     "lines": [
-      "CFS yearly electricity: 1,200,000 kWh x 0.710 kg CO2 per kWh = 852,000 kg CO2",
+      "CFS yearly electricity: 1,200,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 852,000 kg CO2",
       "CFS yearly diesel for reach stackers: 150,000 L x 2.68 kg CO2 per L = 402,000 kg CO2",
       "Total 1,254,000 kg CO2 / 300,000 tonnes handled = 4.18 kg CO2 per tonne",
       "Your box: 18.4 tonnes x 4.18 = about 77 kg CO2 for the CFS stop"

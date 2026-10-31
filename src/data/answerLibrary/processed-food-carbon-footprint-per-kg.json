@@ -52,7 +52,7 @@
     "lines": [
       "Potato: 2.0 kg per kg of product x 0.20 kg CO2e/kg (illustrative factor) = 0.400",
       "Vegetable oil: 0.15 kg x 3.0 kg CO2e/kg (illustrative factor) = 0.450",
-      "Plant electricity incl. freezing: 0.9 kWh x 0.710 kg CO2/kWh = 0.639",
+      "Plant electricity incl. freezing: 0.9 kWh x 0.710 kg CO2/kWh for FY 2024-25 = 0.639",
       "PNG for the fryer: 0.08 scm x 2.05 kg CO2/scm = 0.164",
       "LDPE pack: 0.03 kg x 2.5 kg CO2e/kg (illustrative factor) = 0.075",
       "Total: 0.400 + 0.450 + 0.639 + 0.164 + 0.075 = 1.728, about 1.73 kg CO2e per kg; ingredients are 0.85, about 49 percent"

@@ -48,7 +48,7 @@
     ],
     "note": "Consumption figures are invented for the arithmetic; use your own bills."
   },
-  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. That covers the Scope 1 and 2 core of a campus footprint from the bills you already hold.",
+  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. That covers the Scope 1 and 2 core of a campus footprint from the bills you already hold.",
   "links": [
     {
       "label": "Staff bus: Scope 1 or Category 7?",

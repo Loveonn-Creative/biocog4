@@ -2,7 +2,7 @@
   "slug": "buyer-asks-location-and-market-based-scope-2",
   "q": "Our buyer asks for Scope 2 both location based and market based. What is the difference?",
   "title": "Location based vs market based Scope 2",
-  "short": "Location based uses the average grid factor where you are, 0.710 kg CO2 per kWh in India. Market based uses what you contracted: green tariffs, RECs or PPAs, with a residual mix factor for the rest. Report both; without contracts, the two figures are similar.",
+  "short": "Location based uses the average grid factor where you are, 0.710 kg CO2 per kWh for FY 2024-25 in India. Market based uses what you contracted: green tariffs, RECs or PPAs, with a residual mix factor for the rest. Report both; without contracts, the two figures are similar.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Suppliers completing buyer carbon templates",

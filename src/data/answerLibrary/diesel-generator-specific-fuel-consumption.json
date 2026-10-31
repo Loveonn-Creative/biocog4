@@ -48,7 +48,7 @@
       "DG energy meter: 3,600 kWh",
       "kWh per litre = 3,600 / 1,200 = 3.0",
       "Scope 1 = 1,200 x 2.68 = 3,216 kg CO2",
-      "Per unit generated = 3,216 / 3,600 = 0.893 kg CO2 per kWh, against 0.710 for the grid",
+      "Per unit generated = 3,216 / 3,600 = 0.893 kg CO2 per kWh, against 0.710 (FY 2024-25 grid factor) for the grid",
       "At 3.5 kWh per litre the same 3,600 kWh needs 1,028.6 litres, saving 171.4 litres and about 459 kg CO2"
     ],
     "note": "2.68 kg CO2 per litre is the IPCC 2006 default for diesel used by Senseible. The 3 to 3.5 kWh per litre range is an estimate; your OEM curve is the reference."

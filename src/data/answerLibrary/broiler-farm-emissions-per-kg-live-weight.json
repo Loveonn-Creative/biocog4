@@ -2,7 +2,7 @@
   "slug": "broiler-farm-emissions-per-kg-live-weight",
   "q": "How do I calculate a broiler farm's emissions per kg of live weight?",
   "title": "Broiler farm emissions per kg",
-  "short": "Add the farm's electricity for fans, lights and water at 0.710 kg CO2 per kWh and LPG or coal for brooding at their default factors, then divide by kg of live weight sold. Feed is usually the largest share, so add it from the feed mill's figure.",
+  "short": "Add the farm's electricity for fans, lights and water at 0.710 kg CO2 per kWh for FY 2024-25 and LPG or coal for brooding at their default factors, then divide by kg of live weight sold. Feed is usually the largest share, so add it from the feed mill's figure.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Poultry integrators and contract broiler farmers",

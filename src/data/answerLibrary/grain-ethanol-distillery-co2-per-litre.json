@@ -41,7 +41,7 @@
     "title": "Worked example: plant energy share for one day",
     "lines": [
       "Output: 1,00,000 litres ethanol and 90 t DDGS",
-      "Coal: 50 t x 2.42 kg CO2 per kg = 1,21,000 kg; grid power: 20,000 kWh x 0.710 = 14,200 kg; total 1,35,200 kg",
+      "Coal: 50 t x 2.42 kg CO2 per kg = 1,21,000 kg; grid power: 20,000 kWh x 0.710 (FY 2024-25 grid factor) = 14,200 kg; total 1,35,200 kg",
       "Economic split at Rs 70 a litre ethanol and Rs 20 a kg DDGS: 70 lakh / 88 lakh = 79.5% to ethanol",
       "Ethanol share: 1,35,200 x 0.795 = about 1,07,545 kg; per litre: about 1.08 kg CO2",
       "In g per MJ: 1,075 g / 21.1 MJ = about 51 g CO2 per MJ, before grain farming"

@@ -40,7 +40,7 @@
   "example": {
     "title": "Illustrative month against the year",
     "lines": [
-      "Year: 10,00,000 kWh for 15,00,000 kg of output; 0.667 kWh per kg x 0.710 = 0.473 kg CO2 per kg",
+      "Year: 10,00,000 kWh for 15,00,000 kg of output; 0.667 kWh per kg x 0.710 (FY 2024-25 grid factor) = 0.473 kg CO2 per kg",
       "June: 1,00,000 kWh for 1,10,000 kg; 0.909 kWh per kg x 0.710 = 0.645 kg CO2 per kg",
       "June alone overstates the annual figure by about 36%"
     ],

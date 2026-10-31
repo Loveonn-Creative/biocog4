@@ -51,7 +51,7 @@
     "title": "Example: one summer month",
     "lines": [
       "60,000 kWh ÷ 5,000 tonne-months = 12 kWh",
-      "12 × 0.710 = 8.5 kg CO2 per tonne-month"
+      "12 × 0.710 (FY 2024-25 grid factor) = 8.5 kg CO2 per tonne-month"
     ]
   },
   "reviewed": "2026-10-22"

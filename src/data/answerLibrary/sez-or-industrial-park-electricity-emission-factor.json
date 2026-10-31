@@ -2,7 +2,7 @@
   "slug": "sez-or-industrial-park-electricity-emission-factor",
   "q": "My factory in an SEZ or industrial park buys power from the park developer. Which emission factor applies?",
   "title": "Emission factor for SEZ or park power",
-  "short": "For location-based Scope 2, use the CEA grid factor, 0.710 kg CO2 per kWh, when the park's network draws from the state grid. For market-based Scope 2, use the developer's supplier-specific factor if it can show the fuel and units of its own plant; otherwise the grid factor stays your best figure.",
+  "short": "For location-based Scope 2, use the CEA grid factor, 0.710 kg CO2 per kWh for FY 2024-25, when the park's network draws from the state grid. For market-based Scope 2, use the developer's supplier-specific factor if it can show the fuel and units of its own plant; otherwise the grid factor stays your best figure.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Exporters in SEZs and private industrial parks",

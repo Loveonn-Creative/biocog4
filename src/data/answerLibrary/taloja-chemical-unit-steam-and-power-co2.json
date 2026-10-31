@@ -2,7 +2,7 @@
   "slug": "taloja-chemical-unit-steam-and-power-co2",
   "q": "How does a chemical unit in Taloja work out CO2 per tonne of product?",
   "title": "Taloja chemical unit CO2 per tonne",
-  "short": "Count fuel burnt for steam and heat, grid electricity at 0.710 kg CO2 per kWh, and any process emissions from reactions. Divide by tonnes produced, or allocate by steam and power use when several products share utilities. Buyers will ask for both Scope 1 and 2.",
+  "short": "Count fuel burnt for steam and heat, grid electricity at 0.710 kg CO2 per kWh for FY 2024-25, and any process emissions from reactions. Divide by tonnes produced, or allocate by steam and power use when several products share utilities. Buyers will ask for both Scope 1 and 2.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Chemical and pharma intermediate units in the Taloja industrial area",

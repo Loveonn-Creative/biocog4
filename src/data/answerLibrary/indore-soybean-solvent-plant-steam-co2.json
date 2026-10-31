@@ -12,7 +12,7 @@
       "ol": [
         "Boiler fuel by type and quantity per month.",
         "Fossil fuel × its factor; biomass fuel reported as biogenic.",
-        "Electricity kWh × 0.710.",
+        "Electricity kWh × 0.710 (FY 2024-25 grid factor).",
         "Divide by meal or seed tonnes, and say which."
       ]
     },

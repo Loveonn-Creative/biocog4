@@ -2,7 +2,7 @@
   "slug": "battery-backup-vs-dg-set-emissions",
   "q": "Is grid-charged battery backup lower carbon than running a DG set during power cuts?",
   "title": "Battery backup or DG set: which emits less?",
-  "short": "Usually yes, and clearly so when the DG set runs at light load. Battery backup emits 0.710 kg CO2 per kWh divided by its round-trip efficiency, about 0.81 kg at 88 percent. A DG set emits 2.68 kg per litre divided by kWh per litre: 0.89 kg at 3 kWh per litre, 1.34 kg at 2.",
+  "short": "Usually yes, and clearly so when the DG set runs at light load. Battery backup emits 0.710 kg CO2 per kWh for FY 2024-25 divided by its round-trip efficiency, about 0.81 kg at 88 percent. A DG set emits 2.68 kg per litre divided by kWh per litre: 0.89 kg at 3 kWh per litre, 1.34 kg at 2.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "MSME owners and commercial building managers",
@@ -46,7 +46,7 @@
     ],
     "note": "Add standby losses to the battery side if the charger runs all year."
   },
-  "senseible": "Senseible calculates both sides from your bills: diesel invoices at 2.68 kg CO2 per litre as Scope 1 and grid kWh at 0.710 kg CO2 per kWh (CEA version 21.0) as Scope 2, so the shift shows up in the monthly record.",
+  "senseible": "Senseible calculates both sides from your bills: diesel invoices at 2.68 kg CO2 per litre as Scope 1 and grid kWh at 0.710 kg CO2 per kWh for FY 2024-25 (CEA version 21.0) as Scope 2, so the shift shows up in the monthly record.",
   "links": [
     {
       "label": "DG set emissions per kWh vs grid",

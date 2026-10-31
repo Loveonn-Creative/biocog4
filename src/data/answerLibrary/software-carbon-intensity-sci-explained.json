@@ -45,14 +45,14 @@
     "title": "Worked example: one month of an API service in India",
     "lines": [
       "Energy: one dedicated server averaging 1 kW for 720 hours = 720 kWh",
-      "Operational: 720 x 0.710 kg CO2 per kWh (CEA, version 21.0) = 511.2 kg",
+      "Operational: 720 x 0.710 kg CO2 per kWh for FY 2024-25 (CEA, version 21.0) = 511.2 kg",
       "Embodied: assumed 1,500 kg CO2e for the server over a 4 year life (35,040 hours); 1,500 x 720 / 35,040 = 30.8 kg",
       "Total: 511.2 + 30.8 = 542.0 kg",
       "R: 2,000,000 API calls; 542,000 g / 2,000,000 = 0.271 g per call"
     ],
     "note": "The embodied figure is an illustrative assumption. The grid factor covers CO2 only; say so if you report the score as CO2e."
   },
-  "senseible": "Senseible's cloud and data centre calculator turns vCPU-hours, memory, storage and network transfer into kWh and emissions by hosting region, which gives the E x I part. For servers on your own premises, it reads the kWh from your electricity bill and applies 0.710 kg CO2 per kWh.",
+  "senseible": "Senseible's cloud and data centre calculator turns vCPU-hours, memory, storage and network transfer into kWh and emissions by hosting region, which gives the E x I part. For servers on your own premises, it reads the kWh from your electricity bill and applies 0.710 kg CO2 per kWh for FY 2024-25.",
   "links": [
     {
       "label": "Cloud and data centre emissions calculator",

@@ -49,7 +49,7 @@
     ],
     "note": "Farm and packaging factors are assumptions. Electricity is 58% of this total."
   },
-  "senseible": "Senseible reads electricity bills (billing period, tariff, sanctioned load and units, at 0.710 kg CO2 per kWh, CEA version 21.0) and fuel invoices such as furnace oil and diesel (IPCC 2006 defaults) into Scope 1 and 2 with the factor on each line. Refrigerant is calculated when you give the gas and kilograms charged; raw material and output come from your records.",
+  "senseible": "Senseible reads electricity bills (billing period, tariff, sanctioned load and units, at 0.710 kg CO2 per kWh for FY 2024-25, CEA version 21.0) and fuel invoices such as furnace oil and diesel (IPCC 2006 defaults) into Scope 1 and 2 with the factor on each line. Refrigerant is calculated when you give the gas and kilograms charged; raw material and output come from your records.",
   "links": [
     {
       "label": "Processed food footprint per kg",

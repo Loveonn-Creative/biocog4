@@ -10,7 +10,7 @@
     {
       "h": "Energy emissions for the plant",
       "ul": [
-        "Grid electricity: kWh x 0.710 kg CO2 per kWh.",
+        "Grid electricity: kWh x 0.710 kg CO2 per kWh for FY 2024-25.",
         "DG diesel: litres x 2.68 kg CO2.",
         "Boiler fuel for steam and hot water: PNG at 2.05 kg CO2 per scm, furnace oil at 2.97 kg per litre, or coal at 2.42 kg per kg."
       ]

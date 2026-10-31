@@ -42,7 +42,7 @@
       "प्रति kg रास्ता: 5 t x 3.186 = 15.93 t CO2, लगभग 0.7% कम"
     ]
   },
-  "senseible": "Senseible fuel के invoices और slips पढ़ता है और IPCC 2006 के defaults लगाता है, जैसे diesel 2.68 kg CO2 प्रति litre और furnace oil 2.97 kg CO2 प्रति litre, और बिजली पर CEA का 0.710 factor। जिस line पर quantity छपी न हो, उस पर अंदाज़े की जगह Needs Data दिखता है।",
+  "senseible": "Senseible fuel के invoices और slips पढ़ता है और IPCC 2006 के defaults लगाता है, जैसे diesel 2.68 kg CO2 प्रति litre और furnace oil 2.97 kg CO2 प्रति litre, और बिजली पर CEA का 0.710 (वित्त वर्ष 2024-25) factor। जिस line पर quantity छपी न हो, उस पर अंदाज़े की जगह Needs Data दिखता है।",
   "links": [
     {
       "label": "Diesel emission factor",

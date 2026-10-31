@@ -32,7 +32,7 @@
     {
       "h": "Step 4: the carbon figure",
       "p": [
-        "Solar used on site cuts grid imports, and lower imports mean lower location-based Scope 2. Multiply the units you no longer import by 0.710 kg CO2 per kWh, the CEA grid factor. Do not subtract exported units from imports in your Scope 2 figure."
+        "Solar used on site cuts grid imports, and lower imports mean lower location-based Scope 2. Multiply the units you no longer import by 0.710 kg CO2 per kWh for FY 2024-25, the CEA grid factor. Do not subtract exported units from imports in your Scope 2 figure."
       ]
     }
   ],
@@ -47,7 +47,7 @@
     ],
     "note": "Capex, tariff and yield are illustrative, not market figures; use your quote, your bill and your site estimate."
   },
-  "senseible": "Senseible reads the billing period, tariff category, sanctioned load and units from your electricity bills, applies 0.710 kg CO2 per kWh, and its energy transition savings calculator gives a payback and CO2 estimate. It does not design solar plants, read inverter data or quote installation prices.",
+  "senseible": "Senseible reads the billing period, tariff category, sanctioned load and units from your electricity bills, applies 0.710 kg CO2 per kWh for FY 2024-25, and its energy transition savings calculator gives a payback and CO2 estimate. It does not design solar plants, read inverter data or quote installation prices.",
   "links": [
     { "label": "Solar ROI calculator", "to": "/calculators/energy-transition-savings" },
     { "label": "Solar loans for MSMEs in India", "to": "/climate-intelligence/solar-loan-for-msme-india" },

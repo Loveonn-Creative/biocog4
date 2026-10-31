@@ -2,7 +2,7 @@
   "slug": "hooghly-jute-mill-energy-per-tonne",
   "q": "How do I work out the carbon footprint per tonne of hessian or sacking from a jute mill?",
   "title": "Jute mill: carbon per tonne of goods",
-  "short": "Add the mill's electricity and any boiler fuel over a period, convert them with the right factors, and divide by tonnes of finished goods. Grid power at 0.710 kg CO2 per kWh usually dominates, since spinning and weaving are electric. Raw jute farming is a separate, upstream figure.",
+  "short": "Add the mill's electricity and any boiler fuel over a period, convert them with the right factors, and divide by tonnes of finished goods. Grid power at 0.710 kg CO2 per kWh for FY 2024-25 usually dominates, since spinning and weaving are electric. Raw jute farming is a separate, upstream figure.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Jute mills along the Hooghly and in Andhra Pradesh, and buyers of jute bags and sacking",
@@ -10,7 +10,7 @@
     {
       "h": "Your own share",
       "ul": [
-        "Electricity kWh from bills x 0.710 kg CO2 per kWh.",
+        "Electricity kWh from bills x 0.710 kg CO2 per kWh for FY 2024-25.",
         "Coal, wood or oil for boilers used in batching, finishing or the canteen, with their factors.",
         "Diesel for gensets and forklifts."
       ]
@@ -28,7 +28,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, plus fuel invoices, so each tonne figure traces back to the bills behind it.",
+  "senseible": "Senseible reads electricity bills at 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database version 21.0, plus fuel invoices, so each tonne figure traces back to the bills behind it.",
   "links": [
     {
       "label": "Jute bag vs plastic",

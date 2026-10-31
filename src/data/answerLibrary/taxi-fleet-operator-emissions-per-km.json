@@ -2,7 +2,7 @@
   "slug": "taxi-fleet-operator-emissions-per-km",
   "q": "How do I calculate a taxi or cab fleet's emissions per km?",
   "title": "Taxi fleet emissions per km",
-  "short": "Add CNG at 2.69 kg CO2 per kg, diesel at 2.68 and petrol at 2.31 kg per litre from fuel records, plus charging electricity for EVs at 0.710 kg per kWh. Divide by fleet km from trip logs. Corporate clients report their trips in Scope 3.",
+  "short": "Add CNG at 2.69 kg CO2 per kg, diesel at 2.68 and petrol at 2.31 kg per litre from fuel records, plus charging electricity for EVs at 0.710 kg per kWh for FY 2024-25. Divide by fleet km from trip logs. Corporate clients report their trips in Scope 3.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Taxi fleet owners and corporate cab operators",

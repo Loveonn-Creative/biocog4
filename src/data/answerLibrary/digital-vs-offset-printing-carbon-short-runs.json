@@ -32,7 +32,7 @@
     "title": "Worked example: 300 copies (illustrative inputs)",
     "lines": [
       "Offset, 300 copies: 40 kWh make-ready + 0.02 kWh x 300 copies = 46 kWh",
-      "Offset CO2: 46 x 0.710 = 32.66 kg, 0.109 kg per copy",
+      "Offset CO2: 46 x 0.710 (FY 2024-25 grid factor) = 32.66 kg, 0.109 kg per copy",
       "Digital, 300 copies: 0.08 kWh per copy = 24 kWh x 0.710 = 17.04 kg, 0.0568 kg per copy",
       "Paper per copy is the same in both and is added separately"
     ],

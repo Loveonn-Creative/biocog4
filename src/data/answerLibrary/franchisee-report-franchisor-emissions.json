@@ -37,14 +37,14 @@
   "example": {
     "title": "Worked example: one restaurant outlet for a year",
     "lines": [
-      "Electricity: 36,000 kWh x 0.710 kg CO2 per kWh = 25,560 kg CO2 (Scope 2)",
+      "Electricity: 36,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 25,560 kg CO2 (Scope 2)",
       "DG set diesel: 600 L x 2.68 kg CO2 per L = 1,608 kg CO2 (Scope 1)",
       "LPG: 40 commercial cylinders x 19 kg = 760 kg x 2.98 = 2,264.8 kg CO2 (Scope 1)",
       "Total: 25,560 + 1,608 + 2,264.8 = 29,432.8 kg CO2, about 29.4 tonnes"
     ],
     "note": "Fuel factors are IPCC 2006 defaults and cover combustion CO2 only; the grid factor is from the CEA CO2 Baseline Database, version 21.0. Refrigerant top-ups would be added in CO2e with a named GWP set."
   },
-  "senseible": "Senseible reads your outlet's electricity bills (billing period, tariff category, sanctioned load, units) and applies 0.710 kg CO2 per kWh for Scope 2, and reads diesel and LPG invoices with quantities using IPCC 2006 defaults, such as 2.68 kg CO2 per litre of diesel, for Scope 1. Each bill is fingerprinted, so the same figures can go to your franchisor without being counted twice.",
+  "senseible": "Senseible reads your outlet's electricity bills (billing period, tariff category, sanctioned load, units) and applies 0.710 kg CO2 per kWh for FY 2024-25 for Scope 2, and reads diesel and LPG invoices with quantities using IPCC 2006 defaults, such as 2.68 kg CO2 per litre of diesel, for Scope 1. Each bill is fingerprinted, so the same figures can go to your franchisor without being counted twice.",
   "links": [
     {
       "label": "Franchisor data collection for Category 14",

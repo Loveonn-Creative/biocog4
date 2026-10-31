@@ -54,7 +54,7 @@
       "As CO2: 75 x 44 / 12 = 275 t CO2",
       "Stored for 100 years: 275 x 0.89 = 244.75 t CO2",
       "Diesel for transport: 3,000 L x 2.68 kg CO2 per L = 8.04 t CO2",
-      "Grid power for shredding: 15,000 kWh x 0.710 kg CO2 per kWh = 10.65 t CO2",
+      "Grid power for shredding: 15,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 10.65 t CO2",
       "Net removal: 244.75 minus 18.69 = about 226 t CO2, or 2.26 t CO2 per dry tonne"
     ],
     "note": "Illustrative only. Kiln methane, feedstock collection and any buffer or uncertainty deduction from the programme would lower the credited amount further."

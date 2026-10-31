@@ -2,7 +2,7 @@
   "slug": "eva-slipper-carbon-footprint-per-pair",
   "q": "How do I calculate the carbon footprint of EVA slippers per pair?",
   "title": "EVA slipper carbon per pair",
-  "short": "Add the factory electricity at 0.710 kg CO2 per kWh and any LPG or gas for heating, divide by pairs made, then add the EVA compound, straps and packaging from supplier data. Sole weight matters because the compound is counted per kilogram.",
+  "short": "Add the factory electricity at 0.710 kg CO2 per kWh for FY 2024-25 and any LPG or gas for heating, divide by pairs made, then add the EVA compound, straps and packaging from supplier data. Sole weight matters because the compound is counted per kilogram.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Slipper and flip-flop makers and retailers",

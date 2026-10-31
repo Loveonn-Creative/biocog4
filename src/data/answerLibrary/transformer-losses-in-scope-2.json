@@ -40,12 +40,12 @@
       "Units recorded on the LT meter: 1,20,000 kWh",
       "Transformer loss units added on the bill: 3,000 kWh (as printed)",
       "Scope 2 units: 1,20,000 + 3,000 = 1,23,000 kWh",
-      "1,23,000 x 0.710 kg CO2 per kWh = 87,330 kg CO2, about 87.3 t",
+      "1,23,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 87,330 kg CO2, about 87.3 t",
       "Share from transformer losses: 3,000 x 0.710 = 2,130 kg CO2"
     ],
     "note": "The loss units are taken as printed. The method for adding them differs by state supply code, so read your own bill rather than applying another state's percentage."
   },
-  "senseible": "Senseible reads the billed units from your electricity bill and applies the CEA factor of 0.710 kg CO2 per kWh. Where loss units are printed as a separate line, check that the kWh it shows include them, and enter the total yourself if they do not; the line is then marked Entered by you.",
+  "senseible": "Senseible reads the billed units from your electricity bill and applies the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25. Where loss units are printed as a separate line, check that the kWh it shows include them, and enter the total yourself if they do not; the line is then marked Entered by you.",
   "links": [
     {
       "label": "Reading an HT industrial bill",

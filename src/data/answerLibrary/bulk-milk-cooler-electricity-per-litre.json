@@ -50,7 +50,7 @@
     ],
     "note": "COP, DG efficiency and the DG share are assumptions; heat leaks and the agitator come on top. Replace with metered kWh and DG diesel."
   },
-  "senseible": "Senseible reads electricity bills and diesel invoices and applies 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre, so a chilling centre with its own bill and fuel invoices gets a monthly Scope 1 and 2 record you can divide by litres collected.",
+  "senseible": "Senseible reads electricity bills and diesel invoices and applies 0.710 kg CO2 per kWh for FY 2024-25 and 2.68 kg CO2 per litre, so a chilling centre with its own bill and fuel invoices gets a monthly Scope 1 and 2 record you can divide by litres collected.",
   "links": [
     {
       "label": "Dairy plant emissions per litre of milk",

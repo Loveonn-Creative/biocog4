@@ -43,7 +43,7 @@
     "title": "Illustrative example: the plant energy share for one month",
     "lines": [
       "Output: 100,000 tyres, total 900 t of tyre",
-      "Electricity: 2,000,000 kWh x 0.710 = 1,420,000 kg CO2",
+      "Electricity: 2,000,000 kWh x 0.710 (FY 2024-25 grid factor) = 1,420,000 kg CO2",
       "Coal for curing steam: 400 t = 400,000 kg x 2.42 = 968,000 kg CO2",
       "Plant energy total: 2,388,000 kg CO2",
       "Per tyre: 2,388,000 / 100,000 = 23.9 kg CO2; per kg of tyre: 2,388,000 / 900,000 = 2.65 kg CO2"

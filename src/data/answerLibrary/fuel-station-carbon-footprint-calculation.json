@@ -2,7 +2,7 @@
   "slug": "fuel-station-carbon-footprint-calculation",
   "q": "How do I calculate the carbon footprint of a petrol pump or fuel station?",
   "title": "Fuel station carbon footprint",
-  "short": "A fuel station's own footprint is its electricity for dispensers, lights and the convenience store at 0.710 kg CO2 per kWh, plus generator diesel. The fuel it sells is not its Scope 1: customers burning it fall under Scope 3, Category 11, for sold fuels.",
+  "short": "A fuel station's own footprint is its electricity for dispensers, lights and the convenience store at 0.710 kg CO2 per kWh for FY 2024-25, plus generator diesel. The fuel it sells is not its Scope 1: customers burning it fall under Scope 3, Category 11, for sold fuels.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Fuel station dealers and oil marketing company outlets",
@@ -37,7 +37,7 @@
     ],
     "note": "Inputs are illustrative; use the station electricity bill and generator log."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Diesel generator: Scope 1 or 2?",

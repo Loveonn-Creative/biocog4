@@ -48,7 +48,7 @@
     ],
     "note": "Billet factors are illustrative only; use the supplier's figure for each lot."
   },
-  "senseible": "Senseible reads the PNG, diesel and electricity bills behind an extrusion footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps billet purchases in the Scope 3 evidence trail by HSN code and kg. Product reports are self-declared drafts, and its CBAM cost calculator works from the embedded emissions you enter.",
+  "senseible": "Senseible reads the PNG, diesel and electricity bills behind an extrusion footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25) and keeps billet purchases in the Scope 3 evidence trail by HSN code and kg. Product reports are self-declared drafts, and its CBAM cost calculator works from the embedded emissions you enter.",
   "links": [
     {
       "label": "Why Indian aluminium is carbon-intensive",

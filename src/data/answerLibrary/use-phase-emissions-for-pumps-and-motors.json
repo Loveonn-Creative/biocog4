@@ -47,7 +47,7 @@
       "Hours: 6 h a day x 300 days = 1,800 h a year",
       "Annual use: 1.5 x 1,800 = 2,700 kWh",
       "Lifetime use over 10 years: 2,700 x 10 = 27,000 kWh",
-      "Emissions: 27,000 x 0.710 = 19,170 kg CO2, about 19.2 t per pump",
+      "Emissions: 27,000 x 0.710 (FY 2024-25 grid factor) = 19,170 kg CO2, about 19.2 t per pump",
       "For 5,000 pumps sold in the year: 5,000 x 19.17 = 95,850 t CO2"
     ],
     "note": "Hours, days and lifetime are assumptions for illustration. Replace them with your own evidence and publish them with the result."

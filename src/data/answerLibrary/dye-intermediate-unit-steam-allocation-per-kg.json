@@ -18,7 +18,7 @@
     {
       "h": "Electricity",
       "p": [
-        "Reactor agitators, pumps and chillers run on grid power: add each product's share of kWh x 0.710."
+        "Reactor agitators, pumps and chillers run on grid power: add each product's share of kWh x 0.710 (FY 2024-25 grid factor)."
       ]
     }
   ],

@@ -2,7 +2,7 @@
   "slug": "dairy-plant-emissions-per-litre-of-milk",
   "q": "What are the emissions per litre of milk processed at a dairy plant?",
   "title": "Dairy plant emissions per litre of milk",
-  "short": "Divide the plant's monthly Scope 1 and 2 emissions by the litres of milk received. Electricity at 0.710 kg CO2 per kWh, boiler fuel and DG diesel make up most of it, plus any HFC refrigerant top-ups. Liquid milk plants land far lower per litre than plants making powder or ghee.",
+  "short": "Divide the plant's monthly Scope 1 and 2 emissions by the litres of milk received. Electricity at 0.710 kg CO2 per kWh for FY 2024-25, boiler fuel and DG diesel make up most of it, plus any HFC refrigerant top-ups. Liquid milk plants land far lower per litre than plants making powder or ghee.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Dairy cooperatives, private dairies and milk chilling centres",

@@ -2,7 +2,7 @@
   "slug": "carbon-per-rupee-of-electricity-bill",
   "q": "Can I estimate emissions from the rupee amount of my electricity bill?",
   "title": "Carbon per rupee of electricity",
-  "short": "Only as a rough check. Divide 0.710 kg CO2 per kWh by your all-in cost per kWh: at about ₹8 per kWh that is roughly 0.09 kg per rupee. Fixed charges, demand charges and taxes distort it, so for reporting always use the kWh printed on the bill.",
+  "short": "Only as a rough check. Divide 0.710 kg CO2 per kWh for FY 2024-25 by your all-in cost per kWh: at about ₹8 per kWh that is roughly 0.09 kg per rupee. Fixed charges, demand charges and taxes distort it, so for reporting always use the kWh printed on the bill.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Owners sanity-checking a footprint",
@@ -23,7 +23,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
   "links": [
     {
       "label": "State-wise grid factors",

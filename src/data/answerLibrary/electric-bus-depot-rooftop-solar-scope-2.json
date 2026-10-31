@@ -2,7 +2,7 @@
   "slug": "electric-bus-depot-rooftop-solar-scope-2",
   "q": "Does rooftop solar at an electric bus depot cut its Scope 2?",
   "title": "E-bus depots: rooftop solar and Scope 2",
-  "short": "Solar power used directly from your own rooftop is not grid electricity, so those kWh carry no Scope 2. Only grid units imported for charging count, at 0.710 kg CO2 per kWh location-based. Keep solar generation records to show the split.",
+  "short": "Solar power used directly from your own rooftop is not grid electricity, so those kWh carry no Scope 2. Only grid units imported for charging count, at 0.710 kg CO2 per kWh for FY 2024-25 location-based. Keep solar generation records to show the split.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Electric bus depot operators and transport undertakings with rooftop solar",
@@ -21,7 +21,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads the import units on an electricity bill and applies the India grid factor of 0.710 kg CO2 per kWh. Net-metered units are not treated as consumption, and kVAh lines get no factor until kWh is available. It does not read inverter or solar meter data.",
+  "senseible": "Senseible reads the import units on an electricity bill and applies the India grid factor of 0.710 kg CO2 per kWh for FY 2024-25. Net-metered units are not treated as consumption, and kVAh lines get no factor until kWh is available. It does not read inverter or solar meter data.",
   "links": [
     {
       "label": "E-bus depot charging emissions",

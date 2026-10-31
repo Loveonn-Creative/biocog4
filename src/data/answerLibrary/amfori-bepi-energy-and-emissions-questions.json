@@ -27,7 +27,7 @@
       "ul": [
         "Electricity bills for every connection, with kWh, and DG run hours with diesel invoices.",
         "Boiler fuel purchase invoices, with stock records if fuel is stored. Keep biomass such as briquettes or husk on its own line, since its CO2 is reported apart.",
-        "Your own Scope 1 and Scope 2 calculation that names its factors, such as 0.710 kg CO2 per kWh from the CEA database and 2.68 kg CO2 per litre of diesel, to cross-check the platform's figure.",
+        "Your own Scope 1 and Scope 2 calculation that names its factors, such as 0.710 kg CO2 per kWh for FY 2024-25 from the CEA database and 2.68 kg CO2 per litre of diesel, to cross-check the platform's figure.",
         "Solar generation meter readings, and any open access or green tariff invoices.",
         "Before and after readings for each action, such as a compressor leak survey or LED retrofit."
       ]

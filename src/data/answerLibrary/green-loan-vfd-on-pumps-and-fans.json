@@ -34,7 +34,7 @@
     "lines": [
       "Cooling tower fan: 22 kW, 20 hours a day, 300 days = 132,000 kWh a year",
       "With VFD at 70% average speed: about 34% of full power, 44,880 kWh",
-      "Saving: 87,120 kWh x 0.710 kg = 61.9 t CO2 a year"
+      "Saving: 87,120 kWh x 0.710 kg (FY 2024-25) = 61.9 t CO2 a year"
     ],
     "note": "Fan power varies roughly with the cube of speed; measured readings beat this rule of thumb."
   },

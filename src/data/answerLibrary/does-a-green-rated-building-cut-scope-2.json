@@ -10,7 +10,7 @@
     {
       "h": "Why the rating itself does not count",
       "p": [
-        "Location-based Scope 2 is metered kWh x the grid factor. In India that factor is the CEA weighted average, 0.710 kg CO2 per kWh in version 21.0, whichever building you sit in. A rating can change the kWh. It cannot change the factor, and you cannot subtract a rating level from your total."
+        "Location-based Scope 2 is metered kWh x the grid factor. In India that factor is the CEA weighted average, 0.710 kg CO2 per kWh for FY 2024-25 in version 21.0, whichever building you sit in. A rating can change the kWh. It cannot change the factor, and you cannot subtract a rating level from your total."
       ]
     },
     {
@@ -37,7 +37,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2, so a move shows up as a change in billed units.",
+  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0, for location-based Scope 2, so a move shows up as a change in billed units.",
   "links": [
     {
       "label": "GRIHA documents for government suppliers",

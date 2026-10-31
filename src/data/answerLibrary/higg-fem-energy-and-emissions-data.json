@@ -44,7 +44,7 @@
   "example": {
     "title": "Worked example: checking your own totals before entry",
     "lines": [
-      "Grid electricity: 1,200,000 kWh x 0.710 kg CO2 per kWh = 852 t CO2",
+      "Grid electricity: 1,200,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 852 t CO2",
       "DG diesel: 60,000 L x 2.68 kg CO2 per L = 160.8 t CO2",
       "Boiler coal: 1,500 t x 2.42 kg CO2 per kg = 3,630 t CO2",
       "Total: 852 + 160.8 + 3,630 = 4,642.8 t CO2"

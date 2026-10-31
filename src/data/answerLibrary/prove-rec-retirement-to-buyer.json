@@ -50,7 +50,7 @@
       "Bills, April 2025 to March 2026: 1,800,000 kWh, which is 1,800 MWh",
       "Redemption statement: 1,500 India RECs, beneficiary named as the company and this factory, generation within FY 2025-26",
       "Covered: 1,500 MWh; uncovered: 300 MWh, which is 300,000 kWh",
-      "Location-based Scope 2: 1,800,000 x 0.710 = 1,278,000 kg CO2, about 1,278 tonnes",
+      "Location-based Scope 2: 1,800,000 x 0.710 (FY 2024-25 grid factor) = 1,278,000 kg CO2, about 1,278 tonnes",
       "Market-based Scope 2: 300,000 x 0.710 = 213,000 kg CO2, about 213 tonnes, using the grid figure for the uncovered part as stated in the note"
     ],
     "note": "If the buyer's method asks for a residual mix factor for the uncovered part, use theirs and say so."

@@ -57,7 +57,7 @@
     ],
     "note": "R-513A: 0.56 x 0.501 + 0.44 x 1,530 = 673.48, rounded to 673.5. Leak rates and running hours are illustrative."
   },
-  "senseible": "Senseible does not recommend equipment or refrigerants. It records refrigerant emissions when you supply the gas and kilograms charged, and calculates electricity emissions from your bills at 0.710 kg CO2 per kWh, so you can track both parts of a chiller's footprint after purchase.",
+  "senseible": "Senseible does not recommend equipment or refrigerants. It records refrigerant emissions when you supply the gas and kilograms charged, and calculates electricity emissions from your bills at 0.710 kg CO2 per kWh for FY 2024-25, so you can track both parts of a chiller's footprint after purchase.",
   "links": [
     {
       "label": "India's HFC phase-down schedule",

@@ -18,7 +18,7 @@
       "ol": [
         "Diesel avoided: road distance the train replaces / your truck's loaded mileage in km per litre.",
         "Truck CO2 avoided: litres x 2.68 kg CO2 per litre (IPCC 2006 default for diesel).",
-        "Train CO2 added: the train's energy for the trip in kWh / number of trucks on it x 0.710 kg CO2 per kWh.",
+        "Train CO2 added: the train's energy for the trip in kWh / number of trucks on it x 0.710 kg CO2 per kWh for FY 2024-25.",
         "Net saving: step 2 minus step 3. Road legs to Kolad and from the destination terminal count in both options if the route differs."
       ]
     },
@@ -49,7 +49,7 @@
     ],
     "note": "Distance, mileage and train energy are assumptions for the arithmetic; replace them with your records and the railway's figures."
   },
-  "senseible": "Senseible reads diesel invoices and freight records into dated Scope 1 and Category 4 entries, using 2.68 kg CO2 per litre for diesel and 0.710 kg CO2 per kWh for grid power.",
+  "senseible": "Senseible reads diesel invoices and freight records into dated Scope 1 and Category 4 entries, using 2.68 kg CO2 per litre for diesel and 0.710 kg CO2 per kWh for FY 2024-25 for grid power.",
   "links": [
     {
       "label": "Rail vs road freight emissions in India",

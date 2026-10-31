@@ -42,7 +42,7 @@
     "title": "Worked example: the basis for a specific claim (illustrative)",
     "lines": [
       "Grow room electricity for the month: 120,000 kWh for 2,000 carats rough grown, so 60 kWh per rough carat",
-      "60 x 0.710 = 42.6 kg CO2 per rough carat from grid power",
+      "60 x 0.710 (FY 2024-25 grid factor) = 42.6 kg CO2 per rough carat from grid power",
       "At an assumed 35% rough-to-polished yield: 42.6 / 0.35 = 121.7 kg CO2 per polished carat, before cutting and polishing energy"
     ],
     "note": "Use your own metered kWh and yield; this shows the method, not an industry figure."

@@ -45,7 +45,7 @@
       "This year: 100,000 kWh for 1,100 tonnes = 90.9 kWh per tonne",
       "Expected at base year intensity: 1,100 x 120 = 132,000 kWh",
       "Saving: 132,000 minus 100,000 = 32,000 kWh",
-      "Reduction: 32,000 x 0.710 = 22,720 kg CO2, about 22.7 tonnes, Scope 2, project method"
+      "Reduction: 32,000 x 0.710 (FY 2024-25 grid factor) = 22,720 kg CO2, about 22.7 tonnes, Scope 2, project method"
     ],
     "note": "Normalising for output keeps a production increase from hiding the saving, and a fall in output from inflating it."
   },

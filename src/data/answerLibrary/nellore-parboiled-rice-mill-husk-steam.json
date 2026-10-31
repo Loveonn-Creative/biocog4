@@ -2,7 +2,7 @@
   "slug": "nellore-parboiled-rice-mill-husk-steam",
   "q": "How does a Nellore parboiled rice mill count emissions from its husk boiler?",
   "title": "Nellore parboiling: husk boiler emissions",
-  "short": "Husk CO2 is biogenic, so report it separately; methane and nitrous oxide from burning it stay in Scope 1. Add electricity for hulling, polishing and dryers at 0.710 kg CO2 per kWh, and divide by tonnes of paddy or rice. Selling surplus husk or ash does not reduce your own figure.",
+  "short": "Husk CO2 is biogenic, so report it separately; methane and nitrous oxide from burning it stay in Scope 1. Add electricity for hulling, polishing and dryers at 0.710 kg CO2 per kWh for FY 2024-25, and divide by tonnes of paddy or rice. Selling surplus husk or ash does not reduce your own figure.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Parboiling rice mills around Nellore",

@@ -2,7 +2,7 @@
   "slug": "vitrified-tile-polishing-line-electricity",
   "q": "How much do polishing and squaring add to a vitrified tile's footprint?",
   "title": "Tile polishing line electricity",
-  "short": "Sub-meter the polishing, squaring and calibration line, multiply its kWh by 0.710 kg CO2 per kWh and divide by square metres polished. Add it to the kiln and press figure for polished tiles only, since unpolished tiles skip this stage.",
+  "short": "Sub-meter the polishing, squaring and calibration line, multiply its kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by square metres polished. Add it to the kiln and press figure for polished tiles only, since unpolished tiles skip this stage.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Vitrified and porcelain tile makers",

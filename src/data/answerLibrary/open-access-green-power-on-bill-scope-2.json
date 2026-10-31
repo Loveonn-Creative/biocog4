@@ -20,7 +20,7 @@
     {
       "h": "The common mistake: reporting only the net units",
       "p": [
-        "Many bills put the net discom units in the largest box. If you multiply only that by the grid factor, your location-based Scope 2 is too low, because the open access power still reached you over the same grid. Location-based Scope 2 under the GHG Protocol covers all electricity you consumed, so add the adjusted units back before you apply 0.710 kg CO2 per kWh."
+        "Many bills put the net discom units in the largest box. If you multiply only that by the grid factor, your location-based Scope 2 is too low, because the open access power still reached you over the same grid. Location-based Scope 2 under the GHG Protocol covers all electricity you consumed, so add the adjusted units back before you apply 0.710 kg CO2 per kWh for FY 2024-25."
       ]
     },
     {
@@ -49,7 +49,7 @@
     ],
     "note": "The 56.8 t market-based figure needs a contract that passes you the attributes of the 1,20,000 kWh, and no RECs sold against them. The grid average stands in for a residual mix, which India does not publish; say so in the report."
   },
-  "senseible": "Senseible reads billing details from the HT bill (period, tariff category, sanctioned load, units) and reports location-based Scope 2 at 0.710 kg CO2 per kWh, with market-based alongside when you record the open access units and their contract evidence. It does not check your contract or confirm that RECs were not sold for the same units.",
+  "senseible": "Senseible reads billing details from the HT bill (period, tariff category, sanctioned load, units) and reports location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, with market-based alongside when you record the open access units and their contract evidence. It does not check your contract or confirm that RECs were not sold for the same units.",
   "links": [
     { "label": "Green energy open access in India", "to": "/climate-intelligence/green-energy-open-access-india" },
     { "label": "Does a green tariff make Scope 2 zero?", "to": "/answers/green-tariff-zero-scope-2" },

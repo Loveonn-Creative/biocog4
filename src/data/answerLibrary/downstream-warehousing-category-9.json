@@ -44,10 +44,10 @@
     "lines": [
       "Sample distributor warehouse: 60,000 kWh of grid electricity a year",
       "Your goods take an average 15% of its pallet positions: 60,000 x 15% = 9,000 kWh",
-      "9,000 x 0.710 kg CO2 per kWh = 6,390 kg CO2 for this distributor",
+      "9,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 6,390 kg CO2 for this distributor",
       "40 distributors of similar size and volume: 6,390 x 40 = 2,55,600 kg CO2, about 256 tonnes, in Category 9"
     ],
-    "note": "Figures are illustrative. Scaling by count assumes similar sites; scale by the volume each distributor buys where it differs. 0.710 kg CO2 per kWh is the CEA grid factor, version 21.0."
+    "note": "Figures are illustrative. Scaling by count assumes similar sites; scale by the volume each distributor buys where it differs. 0.710 kg CO2 per kWh for FY 2024-25 is the CEA grid factor, version 21.0."
   },
   "senseible": "Storage figures after the sale come from your distributors and retailers. Senseible keeps your own freight and supplier documents in its Scope 3 evidence trail, and splitting a distributor's total down to your goods is a step you do with the allocation key you choose.",
   "links": [

@@ -49,7 +49,7 @@
       "Total from actions: 284 + 40.2 = 324.2 t, which is 324.2 / 1,000 = 32.4% of the baseline",
       "A 42% target would need 0.42 x 1,000 = 420 t, so the plan must name about 95.8 t more"
     ],
-    "note": "The plant, its baseline and the 42% target are hypothetical. The 0.710 kg CO2 per kWh grid factor is from the CEA CO2 Baseline Database version 21.0 and the diesel factor is the IPCC 2006 default."
+    "note": "The plant, its baseline and the 42% target are hypothetical. The 0.710 kg CO2 per kWh for FY 2024-25 grid factor is from the CEA CO2 Baseline Database version 21.0 and the diesel factor is the IPCC 2006 default."
   },
   "senseible": "Senseible gives you a measured Scope 1 and 2 baseline from your invoices and bills, with the factor and source document behind each line, and its net zero roadmap builder helps lay out actions. It does not write your transition plan, set or validate your target, or assure it.",
   "links": [

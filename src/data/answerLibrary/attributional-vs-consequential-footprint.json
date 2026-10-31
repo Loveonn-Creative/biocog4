@@ -38,13 +38,13 @@
   "example": {
     "title": "Illustrative example: 100,000 kWh of rooftop solar used on site",
     "lines": [
-      "Attributional, location-based Scope 2: 100,000 fewer grid kWh x 0.710 kg CO2 per kWh (grid average) = 71,000 kg less in your inventory",
+      "Attributional, location-based Scope 2: 100,000 fewer grid kWh x 0.710 kg CO2 per kWh for FY 2024-25 (grid average) = 71,000 kg less in your inventory",
       "Consequential: grid generation displaced at the margin, assumed 0.90 kg CO2 per kWh for this example = 90,000 kg avoided",
       "The two figures answer different questions; only the 71,000 kg change belongs in your Scope 2"
     ],
     "note": "The CEA CO2 Baseline Database also publishes operating, build and combined margin factors, which carbon credit methods use; 0.90 here is a placeholder, not a CEA value."
   },
-  "senseible": "Senseible's Scope 1 and 2 figures are attributional: activity from your bills times average factors, such as the CEA grid weighted average of 0.710 kg CO2 per kWh (version 21.0). Reports built from that record are self-declared drafts.",
+  "senseible": "Senseible's Scope 1 and 2 figures are attributional: activity from your bills times average factors, such as the CEA grid weighted average of 0.710 kg CO2 per kWh for FY 2024-25 (version 21.0). Reports built from that record are self-declared drafts.",
   "links": [
     {
       "label": "How to calculate avoided emissions",

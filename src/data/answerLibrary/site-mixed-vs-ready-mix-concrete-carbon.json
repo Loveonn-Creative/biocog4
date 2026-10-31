@@ -33,7 +33,7 @@
     "title": "Worked example: per cubic metre (illustrative inputs)",
     "lines": [
       "Site mixer: 0.5 litre diesel per m3 x 2.68 = 1.34 kg CO2 per m3",
-      "Ready mix: plant 2 kWh x 0.710 = 1.42 kg, plus truck mixer 1 litre x 2.68 = 2.68 kg, so 4.10 kg CO2 per m3",
+      "Ready mix: plant 2 kWh x 0.710 (FY 2024-25 grid factor) = 1.42 kg, plus truck mixer 1 litre x 2.68 = 2.68 kg, so 4.10 kg CO2 per m3",
       "Mixing difference: 4.10 minus 1.34 = 2.76 kg CO2 per m3",
       "Cement: site mix 340 kg vs ready mix design 320 kg per m3, a 20 kg difference",
       "Cement difference: 20 kg x the cement factor per kg from the supplier"

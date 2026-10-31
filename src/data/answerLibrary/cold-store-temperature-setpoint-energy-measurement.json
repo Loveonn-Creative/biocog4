@@ -2,7 +2,7 @@
   "slug": "cold-store-temperature-setpoint-energy-measurement",
   "q": "How do I measure the energy saved by changing a cold store's temperature set point?",
   "title": "Cold store set point energy saving",
-  "short": "Change the set point only within the product's quality limit, then compare the sub-metered kWh with a period of similar load and weather, and convert the difference at 0.710 kg CO2 per kWh. Report the measured figure with dates, not a rule-of-thumb percentage.",
+  "short": "Change the set point only within the product's quality limit, then compare the sub-metered kWh with a period of similar load and weather, and convert the difference at 0.710 kg CO2 per kWh for FY 2024-25. Report the measured figure with dates, not a rule-of-thumb percentage.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Cold storage and frozen food warehouse operators",
@@ -38,7 +38,7 @@
     ],
     "note": "Readings are illustrative; use your sub-meter and temperature logs."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "AC set point at 24 savings",

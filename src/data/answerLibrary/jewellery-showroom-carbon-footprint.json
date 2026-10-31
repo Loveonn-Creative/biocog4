@@ -2,7 +2,7 @@
   "slug": "jewellery-showroom-carbon-footprint",
   "q": "How do I calculate the carbon footprint of a jewellery showroom?",
   "title": "Jewellery showroom carbon footprint",
-  "short": "Read the showroom electricity bill at 0.710 kg CO2 per kWh and add generator diesel at 2.68 kg per litre. Lighting and air conditioning are the main loads, so report per square foot of floor and per month. The jewellery itself sits in Scope 3 as purchased goods.",
+  "short": "Read the showroom electricity bill at 0.710 kg CO2 per kWh for FY 2024-25 and add generator diesel at 2.68 kg per litre. Lighting and air conditioning are the main loads, so report per square foot of floor and per month. The jewellery itself sits in Scope 3 as purchased goods.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Jewellery retailers and chains",
@@ -38,7 +38,7 @@
     ],
     "note": "Inputs are illustrative; use the showroom bill and generator fuel slips."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Gold jewellery per gram",

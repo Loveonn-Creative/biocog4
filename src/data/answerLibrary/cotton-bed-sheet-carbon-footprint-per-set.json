@@ -45,13 +45,13 @@
       "Fabric in the set: 14.12 m2 x 0.120 kg/m2 (120 GSM) = 1.694 kg",
       "Cutting and hemming yield 92%: 1.694 / 0.92 = 1.842 kg fabric issued",
       "Fabric footprint, assumed 12.0 kg CO2e per kg (replace with your mill's figure): 1.842 x 12.0 = 22.10 kg CO2e",
-      "Stitching and packing: 0.6 kWh per set x 0.710 kg CO2 per kWh = 0.43 kg CO2",
+      "Stitching and packing: 0.6 kWh per set x 0.710 kg CO2 per kWh for FY 2024-25 = 0.43 kg CO2",
       "Packaging, assumed factors: board insert 0.25 kg x 1.0 = 0.25; polybag 0.03 kg x 2.5 = 0.08 kg CO2e",
       "Total: 22.10 + 0.43 + 0.25 + 0.08 = 22.86 kg CO2e per set"
     ],
     "note": "The fabric and packaging factors are placeholders to show the arithmetic. The fabric line is over 95% of the result, so that is where your data effort should go."
   },
-  "senseible": "Senseible reads your unit's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, which gives you the stitching and packing energy per set. Reports are self-declared drafts, so present the set figure as your own calculation.",
+  "senseible": "Senseible reads your unit's electricity bills (0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, which gives you the stitching and packing energy per set. Reports are self-declared drafts, so present the set figure as your own calculation.",
   "links": [
     {
       "label": "Cotton vs polyester fabric footprint",

@@ -19,7 +19,7 @@
       "ol": [
         "Coke burnt: from coke purchase invoices adjusted for opening and closing stock, in kg.",
         "Limestone flux: the CO2 released when limestone is calcined is 44/100 of its weight, so 0.44 kg CO2 per kg of pure limestone.",
-        "Electricity for blowers, sand plant, fettling and moulding: kWh from the electricity bill x 0.710 kg CO2 per kWh (CEA CO2 Baseline Database version 21.0).",
+        "Electricity for blowers, sand plant, fettling and moulding: kWh from the electricity bill x 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database version 21.0).",
         "Output: tonnes of good castings dispatched or accepted after inspection in the same period."
       ]
     },
@@ -52,7 +52,7 @@
     ],
     "note": "The coke ratio, limestone use and kWh here are illustrative. Coke ratios in foundry cluster studies vary widely with cupola design and practice."
   },
-  "senseible": "Senseible has no emission factor for coke and does not map coke to its coal factor, so it gives no figure for coke; work out coke CO2 yourself with the 3.02 factor. Senseible reads electricity bills in kWh at 0.710 kg CO2 per kWh, which covers the blower and fettling share.",
+  "senseible": "Senseible has no emission factor for coke and does not map coke to its coal factor, so it gives no figure for coke; work out coke CO2 yourself with the 3.02 factor. Senseible reads electricity bills in kWh at 0.710 kg CO2 per kWh for FY 2024-25, which covers the blower and fettling share.",
   "links": [
     {
       "label": "Cupola vs induction furnace emissions",

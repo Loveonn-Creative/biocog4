@@ -2,7 +2,7 @@
   "slug": "cotton-farming-emissions-per-kg-seed-cotton",
   "q": "How do I calculate the carbon footprint of growing cotton per kg of seed cotton?",
   "title": "Cotton farming emissions per kg",
-  "short": "For seed cotton, sum the field N2O from nitrogen fertiliser using IPCC defaults, CO2 from urea, diesel at 2.68 kg CO2 per litre and pump electricity at 0.710 kg per kWh, then divide by kg harvested per acre. The gin later splits it between lint and seed.",
+  "short": "For seed cotton, sum the field N2O from nitrogen fertiliser using IPCC defaults, CO2 from urea, diesel at 2.68 kg CO2 per litre and pump electricity at 0.710 kg per kWh for FY 2024-25, then divide by kg harvested per acre. The gin later splits it between lint and seed.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Cotton farmers, ginners, spinners and apparel brands",

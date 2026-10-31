@@ -42,7 +42,7 @@
     "title": "Worked example: embedded intensity for a month",
     "lines": [
       "Coal: 300 t, 300,000 kg x 2.42 = 726,000 kg CO2",
-      "Electricity: 900,000 kWh x 0.710 = 639,000 kg CO2",
+      "Electricity: 900,000 kWh x 0.710 (FY 2024-25 grid factor) = 639,000 kg CO2",
       "Total: 1,365,000 kg CO2; output 2,500 t",
       "Intensity: 1,365 / 2,500 = 0.546 t CO2 per tonne, before precursors"
     ],

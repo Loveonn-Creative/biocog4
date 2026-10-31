@@ -47,7 +47,7 @@
     "title": "Worked example: annual impact line for a 200 kW rooftop solar loan",
     "lines": [
       "Generation meter, April to March: 270,000 kWh",
-      "Grid emissions avoided (location-based): 270,000 x 0.710 kg CO2 per kWh = 191,700 kg",
+      "Grid emissions avoided (location-based): 270,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 191,700 kg",
       "Reported impact: 191.7 tonnes CO2 avoided, CEA CO2 Baseline Database version 21.0",
       "Allocation line: ₹80 lakh disbursed, ₹80 lakh spent on the solar plant per supplier invoices"
     ],

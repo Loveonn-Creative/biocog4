@@ -2,7 +2,7 @@
   "slug": "veterinary-clinic-carbon-footprint",
   "q": "What makes up the carbon footprint of a veterinary clinic?",
   "title": "Veterinary clinic: carbon footprint",
-  "short": "Electricity for air conditioning, X-ray, autoclaves and vaccine fridges is usually the largest part, at 0.710 kg CO2 per kWh. Van or ambulance fuel is Scope 1. Anaesthetic gases such as isoflurane are strong greenhouse gases but not among the seven the GHG Protocol requires, so report them as a separate line. Medicines, consumables and clinical waste are Scope 3.",
+  "short": "Electricity for air conditioning, X-ray, autoclaves and vaccine fridges is usually the largest part, at 0.710 kg CO2/kWh (FY 2024-25). Van or ambulance fuel is Scope 1. Anaesthetic gases such as isoflurane are strong greenhouse gases but not among the seven the GHG Protocol requires, so report them as a separate line. Medicines, consumables and clinical waste are Scope 3.",
   "topic": "product",
   "intent": "explain",
   "audience": "Veterinary clinics and animal hospitals",
@@ -23,7 +23,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Anaesthetic gases Scope 1",

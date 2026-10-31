@@ -30,7 +30,7 @@
     {
       "h": "Location-based Scope 2 is not affected",
       "p": [
-        "Location-based Scope 2 uses all electricity recorded at your meter for the month times 0.710 kg CO2 per kWh. Banking moves units between months on paper; it does not change what your meter recorded, so the location-based figure for each month stays the same."
+        "Location-based Scope 2 uses all electricity recorded at your meter for the month times 0.710 kg CO2 per kWh for FY 2024-25. Banking moves units between months on paper; it does not change what your meter recorded, so the location-based figure for each month stays the same."
       ]
     }
   ],
@@ -45,7 +45,7 @@
     ],
     "note": "Figures are illustrative. The market-based result assumes the renewable attributes are yours and no RECs were sold for these units; the grid average stands in for a residual mix India does not publish."
   },
-  "senseible": "Senseible reads the units and adjusted or banked units printed on the bill and reports location-based Scope 2 at 0.710 kg CO2 per kWh. Market-based Scope 2 needs the generation and banking statements you record as instrument data.",
+  "senseible": "Senseible reads the units and adjusted or banked units printed on the bill and reports location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. Market-based Scope 2 needs the generation and banking statements you record as instrument data.",
   "links": [
     {
       "label": "Open access green power on an HT bill",

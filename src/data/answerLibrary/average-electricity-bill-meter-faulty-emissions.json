@@ -43,7 +43,7 @@
       "Corrected April to June: 33,600 x 0.710 = 23,856 kg CO2, an increase of 2,556 kg",
       "August keeps only its own metered units; the 3,600 kWh debit is not added to August"
     ],
-    "note": "Numbers are illustrative. Factor: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0."
+    "note": "Numbers are illustrative. Factor: 0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0."
   },
   "senseible": "Senseible records the units printed on each bill, so the assessed months carry the discom's figure. Keep the revision bill as evidence and update the affected periods.",
   "links": [

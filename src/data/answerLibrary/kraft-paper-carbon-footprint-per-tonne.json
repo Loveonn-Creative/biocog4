@@ -2,7 +2,7 @@
   "slug": "kraft-paper-carbon-footprint-per-tonne",
   "q": "How do I calculate the carbon footprint of kraft paper per tonne?",
   "title": "Kraft paper carbon per tonne",
-  "short": "Add the boiler fuel for drying at its IPCC default factor and the mill electricity at 0.710 kg CO2 per kWh, divide by tonnes of paper, then add waste paper or pulp, starch and chemicals from supplier data..",
+  "short": "Add the boiler fuel for drying at its IPCC default factor and the mill electricity at 0.710 kg CO2 per kWh for FY 2024-25, divide by tonnes of paper, then add waste paper or pulp, starch and chemicals from supplier data..",
   "topic": "product",
   "intent": "how-to",
   "audience": "Kraft paper mills, corrugated box makers and packaging buyers",

@@ -2,7 +2,7 @@
   "slug": "cotton-ginning-emissions-per-bale",
   "q": "How much CO2 does cotton ginning and pressing emit per bale?",
   "title": "Cotton ginning CO2 per bale",
-  "short": "Divide the season's ginning and pressing emissions by the bales produced: grid kWh times 0.710 kg CO2, plus DG diesel times 2.68 kg per litre. Then split the result between lint and cottonseed, by mass or by value. The split method can double the lint figure, so always state which one you used.",
+  "short": "Divide the season's ginning and pressing emissions by the bales produced: grid kWh times 0.710 kg CO2 (FY 2024-25), plus DG diesel times 2.68 kg per litre. Then split the result between lint and cottonseed, by mass or by value. The split method can double the lint figure, so always state which one you used.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Ginning factories (Gujarat, Maharashtra, Telangana), spinning mills",

@@ -41,13 +41,13 @@
     "lines": [
       "Crude oil: 1,030 kg per tonne refined x 2.0 kg CO2e per kg (illustrative supplier figure) = 2,060 kg CO2e",
       "Coal for steam: 60 kg x 2.42 kg CO2 per kg (IPCC 2006 default) = 145.2 kg CO2",
-      "Electricity: 50 kWh x 0.710 kg CO2 per kWh = 35.5 kg CO2",
+      "Electricity: 50 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 35.5 kg CO2",
       "Total per tonne refined oil: 2,060 + 145.2 + 35.5 = 2,240.7 kg CO2e, so 2.241 kg CO2e per kg",
       "Per litre at 0.915 kg per litre: 2.2407 x 0.915 = 2.05 kg CO2e per litre, before packaging"
     ],
     "note": "Coal and power quantities are illustrative. Add bleaching earth, hexane and packaging with their own factors when you have them."
   },
-  "senseible": "Senseible reads the boiler fuel, electricity and freight invoices behind the plant stage, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh, and keeps crude oil and seed purchases in a Scope 3 evidence trail. Product reports are self-declared drafts.",
+  "senseible": "Senseible reads the boiler fuel, electricity and freight invoices behind the plant stage, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, and keeps crude oil and seed purchases in a Scope 3 evidence trail. Product reports are self-declared drafts.",
   "links": [
     {
       "label": "Allocating emissions between co-products",

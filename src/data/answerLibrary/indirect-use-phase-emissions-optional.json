@@ -47,7 +47,7 @@
       "Garments sold: 1,00,000 T-shirts",
       "Assumed scenario: 50 warm washes over life; one machine load uses 1 kWh; each T-shirt is 1/25 of a load",
       "Energy: 1,00,000 x 50 / 25 = 2,00,000 kWh",
-      "Emissions at the India grid factor: 2,00,000 x 0.710 = 1,42,000 kg CO2, about 142 tonnes",
+      "Emissions at the India grid factor: 2,00,000 x 0.710 (FY 2024-25 grid factor) = 1,42,000 kg CO2, about 142 tonnes",
       "Report as optional indirect use-phase, separate from the required Category 11 total"
     ],
     "note": "Washes, kWh per load and garment share are illustrative. Use a cited scenario for your market, and the grid factor of the country where the garment is washed."

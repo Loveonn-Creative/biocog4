@@ -2,7 +2,7 @@
   "slug": "steam-ejector-vs-vacuum-pump-emissions",
   "q": "Does a vacuum pump have lower emissions than a steam ejector?",
   "title": "Steam ejector vs vacuum pump emissions",
-  "short": "Compare the boiler fuel behind the ejector steam with the pump electricity at 0.710 kg CO2 per kWh, over the same hours. The answer depends on your steam rate and boiler fuel, which your meters can show.",
+  "short": "Compare the boiler fuel behind the ejector steam with the pump electricity at 0.710 kg CO2 per kWh for FY 2024-25, over the same hours. The answer depends on your steam rate and boiler fuel, which your meters can show.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Chemical, pharma, edible oil and food plants running vacuum systems",
@@ -38,7 +38,7 @@
     ],
     "note": "Steam rate, boiler ratio and pump rating are illustrative; your boiler log gives your scm or kg of fuel per tonne of steam."
   },
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
   "links": [
     {
       "label": "Boiler blowdown heat recovery",

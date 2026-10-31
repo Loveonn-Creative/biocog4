@@ -42,7 +42,7 @@
     "lines": [
       "Yield 70%: coil per kg of parts = 1 / 0.70 = 1.4286 kg",
       "Steel: 1.4286 x 2.3 kg CO2e per kg (illustrative coil figure) = 3.286 kg CO2e",
-      "Press shop electricity: 0.20 kWh x 0.710 kg CO2 per kWh = 0.142 kg CO2",
+      "Press shop electricity: 0.20 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 0.142 kg CO2",
       "Paint oven PNG: 0.02 scm x 2.05 kg CO2 per scm = 0.041 kg CO2",
       "Paint shop electricity: 0.10 kWh x 0.710 = 0.071 kg CO2",
       "Total: 3.286 + 0.142 + 0.041 + 0.071 = 3.540 kg CO2e per kg of parts",
@@ -50,7 +50,7 @@
     ],
     "note": "The coil factor, yield and energy per kg are illustrative. Use your mill's figure and a month of your own issue, despatch and meter records."
   },
-  "senseible": "Senseible reads coil purchase invoices into the Scope 3 evidence trail and press shop electricity and fuel bills at 0.710 kg CO2 per kWh and the IPCC 2006 fuel factors. Its CBAM cost calculator estimates certificate cost for covered steel goods from 2026 to 2034; the CN classification and declaration sit with your EU importer.",
+  "senseible": "Senseible reads coil purchase invoices into the Scope 3 evidence trail and press shop electricity and fuel bills at 0.710 kg CO2 per kWh for FY 2024-25 and the IPCC 2006 fuel factors. Its CBAM cost calculator estimates certificate cost for covered steel goods from 2026 to 2034; the CN classification and declaration sit with your EU importer.",
   "links": [
     {
       "label": "Are steel forgings covered by CBAM?",

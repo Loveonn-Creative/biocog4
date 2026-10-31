@@ -44,7 +44,7 @@
       "30 x 4,728 = 141,840 kg CO2e, about 142 t, in Scope 1",
       "Screening range for comparison: 150 x 10% = 15 kg to 150 x 35% = 52.5 kg",
       "15 x 4,728 = 70,920 kg CO2e; 52.5 x 4,728 = 248,220 kg CO2e",
-      "Store electricity for comparison: 400,000 kWh x 0.710 = 284,000 kg CO2"
+      "Store electricity for comparison: 400,000 kWh x 0.710 (FY 2024-25 grid factor) = 284,000 kg CO2"
     ],
     "note": "Charge, top-ups and electricity are illustrative. At this leak rate the refrigerant line is half the size of the store's electricity line."
   },

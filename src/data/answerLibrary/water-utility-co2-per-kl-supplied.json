@@ -2,7 +2,7 @@
   "slug": "water-utility-co2-per-kl-supplied",
   "q": "How does a water utility calculate CO2 per kL supplied?",
   "title": "Water utility CO2 per kL supplied",
-  "short": "Add pumping and treatment electricity, multiply by 0.710 kg CO2 per kWh, then divide by kL supplied. State whether you divide by water pumped or water billed: leaks and other non revenue water raise the figure per billed kL.",
+  "short": "Add pumping and treatment electricity, multiply by 0.710 kg CO2 per kWh for FY 2024-25, then divide by kL supplied. State whether you divide by water pumped or water billed: leaks and other non revenue water raise the figure per billed kL.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Municipal water utilities and industrial estates supplying water",
@@ -30,7 +30,7 @@
       "Water billed: 700,000 kL, so 0.406 kg per kL billed."
     ]
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Borewell pumping per kL",

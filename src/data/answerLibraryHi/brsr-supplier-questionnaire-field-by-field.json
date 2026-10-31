@@ -16,7 +16,7 @@
       "h": "Emissions के fields",
       "ul": [
         "Scope 1: हर fuel की एक line (diesel, LPG, PNG, कोयला, furnace oil), quantity, unit, factor, स्रोत और tonne CO2e के साथ।",
-        "Scope 2: bills से grid kWh गुणा CEA grid factor, 0.710 kg CO2 प्रति kWh, database version के साथ।",
+        "Scope 2: bills से grid kWh गुणा CEA grid factor, 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh, database version के साथ।",
         "Scope 3 ख़ाली छोड़ें जब तक form न माँगे, और अंदाज़ा लगाने की बजाय यह लिख दें।"
       ]
     },

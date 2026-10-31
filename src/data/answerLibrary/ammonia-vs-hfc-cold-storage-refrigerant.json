@@ -11,7 +11,7 @@
       "h": "Where the carbon difference comes from",
       "ul": [
         "Leaks: refrigerant lost through joints, valves and servicing is a direct Scope 1 emission, counted as kilograms lost x the gas's GWP.",
-        "Electricity: compressors, fans and pumps run all year, and their kWh are Scope 2 at 0.710 kg CO2 per kWh on the Indian grid.",
+        "Electricity: compressors, fans and pumps run all year, and their kWh are Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25 on the Indian grid.",
         "Ammonia (R-717) is not a Kyoto gas and IPCC AR6 gives it no GWP, so its leaks count as zero CO2e. The choice then turns on electricity."
       ]
     },
@@ -52,7 +52,7 @@
     ],
     "note": "Leak rate and electricity use are assumptions for the arithmetic. Industrial refrigeration leak rates vary widely with design and maintenance; use your vendors' figures."
   },
-  "senseible": "Senseible turns a refrigerant top-up invoice into Scope 1 CO2e once the gas and the kilograms charged are given, and counts the cold store's grid power in Scope 2 at 0.710 kg CO2 per kWh, so after commissioning you can see whether leaks or electricity drive the footprint. The comparison before purchase uses your vendors' own figures.",
+  "senseible": "Senseible turns a refrigerant top-up invoice into Scope 1 CO2e once the gas and the kilograms charged are given, and counts the cold store's grid power in Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, so after commissioning you can see whether leaks or electricity drive the footprint. The comparison before purchase uses your vendors' own figures.",
   "links": [
     {
       "label": "Low GWP refrigerant for a new chiller",

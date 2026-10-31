@@ -2,7 +2,7 @@
   "slug": "electric-vs-cng-three-wheeler-emissions",
   "q": "Is an electric three-wheeler lower carbon than a CNG three-wheeler at India's grid factor?",
   "title": "Electric vs CNG three-wheeler emissions",
-  "short": "Usually yes, but by less than people expect. At 0.10 kWh per km at the charger and 0.710 kg CO2 per kWh, an e-rickshaw or e-cargo three-wheeler emits about 0.071 kg CO2 per km, against about 0.090 kg for a CNG three-wheeler doing 30 km per kg. That is roughly a fifth lower.",
+  "short": "Usually yes, but by less than people expect. At 0.10 kWh per km at the charger and 0.710 kg CO2 per kWh for FY 2024-25, an e-rickshaw or e-cargo three-wheeler emits about 0.071 kg CO2 per km, against about 0.090 kg for a CNG three-wheeler doing 30 km per kg. That is roughly a fifth lower.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Fleet owners choosing between e-3W and CNG",
@@ -10,7 +10,7 @@
     {
       "h": "The two formulas",
       "ul": [
-        "Electric: kWh per km measured at the charger, including charging losses, x 0.710 kg CO2 per kWh.",
+        "Electric: kWh per km measured at the charger, including charging losses, x 0.710 kg CO2 per kWh for FY 2024-25.",
         "CNG: kg of CNG per km x 2.69 kg CO2 per kg, the IPCC 2006 default."
       ],
       "p": [
@@ -48,7 +48,7 @@
     ],
     "note": "Consumption figures are assumptions. Replace them with your charger kWh and CNG fill logs."
   },
-  "senseible": "Senseible reads charging electricity bills at 0.710 kg CO2 per kWh and CNG invoices at 2.69 kg CO2 per kg, so you can compare the two fleets on your own fuel and power records.",
+  "senseible": "Senseible reads charging electricity bills at 0.710 kg CO2 per kWh for FY 2024-25 and CNG invoices at 2.69 kg CO2 per kg, so you can compare the two fleets on your own fuel and power records.",
   "links": [
     {
       "label": "Are EV deliveries zero emission?",

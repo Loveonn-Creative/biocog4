@@ -45,7 +45,7 @@
     ],
     "note": "Material factors are placeholders to show the method; use your foundry's figure and a named dataset. The 4 kg of chips machined off stay inside the 30 kg casting line."
   },
-  "senseible": "Senseible reads your plant's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults, such as LPG 2.98 kg CO2 per kg) into a fingerprinted Scope 1 and 2 record for the per valve energy share. Reports are self-declared drafts; casting and material factors come from your suppliers or a named dataset.",
+  "senseible": "Senseible reads your plant's electricity bills (0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults, such as LPG 2.98 kg CO2 per kg) into a fingerprinted Scope 1 and 2 record for the per valve energy share. Reports are self-declared drafts; casting and material factors come from your suppliers or a named dataset.",
   "links": [
     {
       "label": "Foundry CO2 per tonne of good castings",

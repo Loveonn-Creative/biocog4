@@ -46,7 +46,7 @@
       "Pulp insert for the same protection: 400 g",
       "Pulp fibre, recovered paper: 0.4 kg x 0.4 kg CO2e per kg (assumed) = 0.160 kg",
       "Drying with PNG at 0.25 scm per kg (assumed): 0.1 scm x 2.05 = 0.205 kg CO2",
-      "Forming power at 0.6 kWh per kg (assumed): 0.24 kWh x 0.710 = 0.170 kg CO2",
+      "Forming power at 0.6 kWh per kg (assumed): 0.24 kWh x 0.710 (FY 2024-25 grid factor) = 0.170 kg CO2",
       "Extra 250 g shipped 8,000 km by sea at 0.01 kg per tonne-km (assumed): 0.00025 x 8,000 x 0.01 = 0.020 kg",
       "Pulp total: 0.160 + 0.205 + 0.170 + 0.020 = 0.555 kg, about 12 percent above EPS here"
     ],

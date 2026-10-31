@@ -50,7 +50,7 @@
     ],
     "note": "Illustrative monthly log. The DG part alone runs at 7,236 / 9,000 = 0.80 kg CO2 per kWh, above the grid factor."
   },
-  "senseible": "Senseible reads diesel litres from fuel slips at 2.68 kg CO2 per litre and grid kWh from electricity bills at 0.710 kg CO2 per kWh, and does not count net-metered exports as consumption. Inverter and DG meter readings are not read from bills; meter feeds can be set up with the Senseible team, not as a self-serve integration.",
+  "senseible": "Senseible reads diesel litres from fuel slips at 2.68 kg CO2 per litre and grid kWh from electricity bills at 0.710 kg CO2 per kWh for FY 2024-25, and does not count net-metered exports as consumption. Inverter and DG meter readings are not read from bills; meter feeds can be set up with the Senseible team, not as a self-serve integration.",
   "links": [
     { "label": "Diesel generator: Scope 1 or 2?", "to": "/answers/diesel-generator-scope-1-or-scope-2" },
     { "label": "DG set emissions per kWh vs grid", "to": "/answers/dg-set-emissions-per-kwh-vs-grid" },

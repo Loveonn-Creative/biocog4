@@ -10,7 +10,7 @@
     {
       "h": "Steps",
       "p": [
-        "Energy: kWh x 0.710 plus fuel litres or kg x IPCC defaults, for the month.",
+        "Energy: kWh x 0.710 (FY 2024-25 grid factor) plus fuel litres or kg x IPCC defaults, for the month.",
         "Share it across saddles finished that month.",
         "Add materials per saddle: leather area, tree, fittings and packaging, each with its factor source."
       ]

@@ -37,7 +37,7 @@
     {
       "h": "Steam used for your own power",
       "p": [
-        "If the plant runs a turbine on its steam, that electricity is own generation with no Scope 2, and it adds no Scope 1 beyond the fuel already counted. The grid power you still buy is Scope 2 at 0.710 kg CO2 per kWh."
+        "If the plant runs a turbine on its steam, that electricity is own generation with no Scope 2, and it adds no Scope 1 beyond the fuel already counted. The grid power you still buy is Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25."
       ]
     }
   ],
@@ -52,7 +52,7 @@
     ],
     "note": "The DG diesel is kept out of the steam share here because it does not make steam; say so in your method."
   },
-  "senseible": "Senseible reads furnace oil and diesel invoices and electricity bills, applying IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh. The share for exported steam is a calculation you make from your steam meters and record.",
+  "senseible": "Senseible reads furnace oil and diesel invoices and electricity bills, applying IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh for FY 2024-25. The share for exported steam is a calculation you make from your steam meters and record.",
   "links": [
     {
       "label": "Sold steam or power and Scope 1",

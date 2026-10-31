@@ -2,7 +2,7 @@
   "slug": "weaving-electricity-per-metre-of-fabric",
   "q": "How much electricity and CO2 does weaving one metre of fabric take on water-jet, air-jet and rapier looms?",
   "title": "Electricity and CO2 per metre of weaving",
-  "short": "There is no single figure: it depends on loom type, speed, pick density and width, so measure it. Divide a month's weaving kWh by metres woven, then multiply by 0.710 kg CO2 per kWh. Sub-meter each loom group, and the compressor for air-jets, to compare loom types fairly.",
+  "short": "There is no single figure: it depends on loom type, speed, pick density and width, so measure it. Divide a month's weaving kWh by metres woven, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. Sub-meter each loom group, and the compressor for air-jets, to compare loom types fairly.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Surat and Bhiwandi weavers",
@@ -50,7 +50,7 @@
     ],
     "note": "Readings are illustrative, not benchmarks, and the two groups weave different qualities. Use your own sub-meter data before drawing any conclusion about loom type."
   },
-  "senseible": "Senseible turns the weaving shed's electricity bills into location-based Scope 2 at 0.710 kg CO2 per kWh, and DG diesel invoices into Scope 1. Metres woven and sub-meter splits come from your own records.",
+  "senseible": "Senseible turns the weaving shed's electricity bills into location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, and DG diesel invoices into Scope 1. Metres woven and sub-meter splits come from your own records.",
   "links": [
     { "label": "Allocate factory electricity to products", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
     { "label": "Dye house emissions per metre of fabric", "to": "/answers/dye-house-emissions-per-metre-of-fabric" },

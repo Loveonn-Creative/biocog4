@@ -36,7 +36,7 @@
   "example": {
     "title": "Worked example: a rice mill, one month",
     "lines": [
-      "Process total: 60,000 kWh x 0.710 = 42,600 kg CO2, plus 1,000 L diesel x 2.68 = 2,680 kg CO2; total 45,280 kg CO2",
+      "Process total: 60,000 kWh x 0.710 (FY 2024-25 grid factor) = 42,600 kg CO2, plus 1,000 L diesel x 2.68 = 2,680 kg CO2; total 45,280 kg CO2",
       "Outputs: 400 t milled rice and 40 t bran (husk left out to keep the example short)",
       "By mass: rice 400/440 = 90.9%, 41,164 kg; bran 4,116 kg; both 102.9 kg CO2 per tonne",
       "By value (illustrative prices ₹30,000/t rice, ₹15,000/t bran): rice ₹1.20 crore, bran ₹6 lakh, total ₹1.26 crore",

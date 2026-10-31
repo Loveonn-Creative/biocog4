@@ -45,7 +45,7 @@
       "Grid purchase before solar: 2,000,000 kWh; after: 1,500,000 kWh",
       "ISO 14064-1 view: Scope 2 falls from 2,000,000 x 0.710 = 1,420,000 kg to 1,500,000 x 0.710 = 1,065,000 kg CO2",
       "ISO 14064-2 view: reduction = 500,000 kWh x the baseline factor the methodology sets",
-      "At 0.710 kg CO2 per kWh that is 355,000 kg, about 355 t, the same tonnes already visible in the inventory"
+      "At 0.710 kg CO2 per kWh for FY 2024-25 that is 355,000 kg, about 355 t, the same tonnes already visible in the inventory"
     ],
     "note": "Project methodologies often require the CEA combined margin rather than the weighted average used here; the 0.710 figure is for illustration."
   },

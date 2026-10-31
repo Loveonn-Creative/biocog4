@@ -2,7 +2,7 @@
   "slug": "ac-temperature-setpoint-24-savings",
   "q": "How much energy and CO2 does setting ACs to 24 C save in an office or factory?",
   "title": "AC at 24 C: energy and CO2 saved",
-  "short": "Roughly 6% of air conditioner electricity for each degree you raise the setpoint, according to the Ministry of Power and BEE. Moving an office from 20 C to 24 C can cut AC units by a fifth to a quarter. Multiply the kWh saved by 0.710 kg CO2 per kWh and call it an estimate until bills confirm it.",
+  "short": "Roughly 6% of air conditioner electricity for each degree you raise the setpoint, according to the Ministry of Power and BEE. Moving an office from 20 C to 24 C can cut AC units by a fifth to a quarter. Multiply the kWh saved by 0.710 kg CO2/kWh (FY 2024-25) and call it an estimate until bills confirm it.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Facility managers and office administrators",
@@ -20,7 +20,7 @@
         "Find the AC share of electricity: a sub-meter is best; otherwise compare summer and winter bills, or add up rated power x hours for each unit and label it an estimate.",
         "Count the degrees raised, for example from 20 C to 24 C is 4 degrees.",
         "Apply about 6% per degree. BEE's own example puts 20 C to 24 C at 24%. Compounding the saving (1 minus 0.94 to the power 4) gives about 22%, which is the more cautious figure.",
-        "Multiply the kWh saved by 0.710 kg CO2 per kWh."
+        "Multiply the kWh saved by 0.710 kg CO2 per kWh for FY 2024-25."
       ]
     },
     {
@@ -48,7 +48,7 @@
     ],
     "note": "The 6% per degree figure is an estimate. The AC share of 8,000 kWh is an assumed input; use your sub-meter."
   },
-  "senseible": "Senseible reads your monthly electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh, so periods before and after a setpoint change can be compared from documents. The saving estimate and its assumptions stay yours.",
+  "senseible": "Senseible reads your monthly electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, so periods before and after a setpoint change can be compared from documents. The saving estimate and its assumptions stay yours.",
   "links": [
     {
       "label": "Measuring savings from a project",

@@ -50,7 +50,7 @@
     "lines": [
       "Customer की सालाना खरीद: Rs 2,000 crore; उसे आपकी बिक्री: Rs 45 crore",
       "हिस्सा: 45 / 2,000 = 2.25%, यानी 2% test से ऊपर",
-      "Grid बिजली: 1,20,000 kWh x 0.710 kg CO2 प्रति kWh = 85.2 t CO2 (Scope 2)",
+      "Grid बिजली: 1,20,000 kWh x 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh = 85.2 t CO2 (Scope 2)",
       "DG set और forklifts के लिए diesel: 6,000 L x 2.68 kg CO2 प्रति L = 16.08 t CO2 (Scope 1)",
       "Scope 1 और 2 का कुल: financial year के लिए 101.28 t CO2"
     ]

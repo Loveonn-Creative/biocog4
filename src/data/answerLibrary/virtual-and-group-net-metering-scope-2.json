@@ -48,7 +48,7 @@
     ],
     "note": "Using the net 13,000 kWh at B for location-based would understate it by 8,520 kg CO2. The market-based line uses the grid average for uncovered units because India has no published residual mix; say so."
   },
-  "senseible": "Senseible reads billing period, tariff category, sanctioned load and units from each premises' bill and applies 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0) for location-based Scope 2. It keeps net-metered units apart from consumption, so solar credits are not counted as units used.",
+  "senseible": "Senseible reads billing period, tariff category, sanctioned load and units from each premises' bill and applies 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database, version 21.0) for location-based Scope 2. It keeps net-metered units apart from consumption, so solar credits are not counted as units used.",
   "links": [
     {
       "label": "Rooftop solar and net metering in Scope 2",

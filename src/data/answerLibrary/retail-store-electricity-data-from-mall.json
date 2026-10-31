@@ -50,7 +50,7 @@
     ],
     "note": "Ask the landlord for DG litres and units generated to replace the assumed 3.5 kWh per litre."
   },
-  "senseible": "Senseible reads landlord invoices that print kWh and applies 0.710 kg CO2 per kWh to the grid units, keeping each invoice as evidence. A rupee-only invoice waits until you enter the kWh, and that line is marked Entered by you.",
+  "senseible": "Senseible reads landlord invoices that print kWh and applies 0.710 kg CO2 per kWh for FY 2024-25 to the grid units, keeping each invoice as evidence. A rupee-only invoice waits until you enter the kWh, and that line is marked Entered by you.",
   "links": [
     {
       "label": "Sub-metered electricity in a rented unit",

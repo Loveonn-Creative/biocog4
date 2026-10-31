@@ -51,7 +51,7 @@
     ],
     "note": "Add the raw nut and freight figures from suppliers on top. The calorific value is the IPCC default; a lab value for your shells is better."
   },
-  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a product footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a product footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25) and keeps supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
   "links": [
     {
       "label": "Biomass fuel in a boiler",

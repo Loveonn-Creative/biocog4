@@ -46,7 +46,7 @@
   "example": {
     "title": "Worked example: does the project list reach the target? (illustrative)",
     "lines": [
-      "Baseline: 30,00,000 kWh x 0.710 = 2,130 t CO2, plus 40,000 L diesel x 2.68 = 107.2 t; total 2,237.2 t",
+      "Baseline: 30,00,000 kWh x 0.710 (FY 2024-25 grid factor) = 2,130 t CO2, plus 40,000 L diesel x 2.68 = 107.2 t; total 2,237.2 t",
       "Rooftop solar: 6,00,000 kWh a year x 0.710 = 426 t",
       "IE2 to IE4 motors: 1,20,000 kWh a year x 0.710 = 85.2 t",
       "Total savings: 426 + 85.2 = 511.2 t, which is 511.2 / 2,237.2 = 22.8% below baseline",

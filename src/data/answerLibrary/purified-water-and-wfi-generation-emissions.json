@@ -2,7 +2,7 @@
   "slug": "purified-water-and-wfi-generation-emissions",
   "q": "How do I count emissions from purified water and WFI generation in a formulation plant?",
   "title": "Purified water and WFI emissions",
-  "short": "Count the energy each step uses. For a multi-column still, multiply steam per litre of WFI by litres made and by the CO2 per kg of your boiler's steam. For membrane systems, multiply kWh per litre by litres and by 0.710 kg CO2 per kWh. Then add hot loop heating and cooling.",
+  "short": "Count the energy each step uses. For a multi-column still, multiply steam per litre of WFI by litres made and by the CO2 per kg of your boiler's steam. For membrane systems, multiply kWh per litre by litres and by 0.710 kg CO2 per kWh for FY 2024-25. Then add hot loop heating and cooling.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Pharma formulation and injectables plants",

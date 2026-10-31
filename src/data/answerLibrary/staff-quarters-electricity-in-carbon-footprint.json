@@ -45,7 +45,7 @@
     ],
     "note": "Keep the monthly sub-meter log as evidence for the split."
   },
-  "senseible": "Senseible reads the units on your main electricity bill and applies the CEA grid factor of 0.710 kg CO2 per kWh for Scope 2, so the colony share stays in the company total. Keep your sub-meter log alongside the record as the evidence for any split you make for product or intensity figures.",
+  "senseible": "Senseible reads the units on your main electricity bill and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 for Scope 2, so the colony share stays in the company total. Keep your sub-meter log alongside the record as the evidence for any split you make for product or intensity figures.",
   "links": [
     {
       "label": "Allocate factory electricity to products",

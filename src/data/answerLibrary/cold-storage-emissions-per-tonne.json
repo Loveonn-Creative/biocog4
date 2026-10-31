@@ -46,7 +46,7 @@
     ],
     "note": "The total is CO2e because it includes the refrigerant; the electricity and diesel lines are CO2 only."
   },
-  "senseible": "Senseible reads the kWh from electricity bills at 0.710 kg CO2 per kWh and diesel invoices at 2.68 kg CO2 per litre, with the factor on each line. Refrigerant is calculated when you supply the gas and the kilograms charged; a gas purchase invoice alone is kept as evidence, not treated as a leak. Tonnes stored come from your own register.",
+  "senseible": "Senseible reads the kWh from electricity bills at 0.710 kg CO2 per kWh for FY 2024-25 and diesel invoices at 2.68 kg CO2 per litre, with the factor on each line. Refrigerant is calculated when you supply the gas and the kilograms charged; a gas purchase invoice alone is kept as evidence, not treated as a leak. Tonnes stored come from your own register.",
   "links": [
     {
       "label": "Refrigerant leaks in the cold chain",

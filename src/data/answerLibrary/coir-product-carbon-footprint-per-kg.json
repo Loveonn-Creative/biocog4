@@ -14,7 +14,7 @@
         "Drying: diesel or biomass for driers, divided by kg dried. Sun drying adds nothing.",
         "Pith washing and block pressing: pump and press electricity divided by kg of blocks.",
         "Spinning, weaving and tufting: kWh per kg of yarn or mat. Handlooms add almost nothing beyond lighting.",
-        "Multiply grid kWh by 0.710 kg CO2 per kWh and diesel by 2.68 kg CO2 per litre."
+        "Multiply grid kWh by 0.710 kg CO2 per kWh for FY 2024-25 and diesel by 2.68 kg CO2 per litre."
       ]
     },
     {
@@ -47,7 +47,7 @@
     ],
     "note": "The COD figure is an assumption for illustration only; measure the retting water or leave the line out and say so. A mat adds weaving, dyeing, latex or backing on top of this."
   },
-  "senseible": "Senseible reads electricity bills and diesel and other fuel invoices for defibering and drying, computes Scope 1 and 2 at IPCC 2006 defaults and 0.710 kg CO2 per kWh, and keeps latex, dye and backing purchases in the Scope 3 evidence trail, with biogenic CO2 kept apart from the fossil total.",
+  "senseible": "Senseible reads electricity bills and diesel and other fuel invoices for defibering and drying, computes Scope 1 and 2 at IPCC 2006 defaults and 0.710 kg CO2 per kWh for FY 2024-25, and keeps latex, dye and backing purchases in the Scope 3 evidence trail, with biogenic CO2 kept apart from the fossil total.",
   "links": [
     {
       "label": "Biogenic carbon for food and textile MSMEs",

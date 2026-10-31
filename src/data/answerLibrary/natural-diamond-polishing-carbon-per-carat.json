@@ -11,7 +11,7 @@
       "h": "Your factory part: energy per polished carat",
       "ol": [
         "Take a full month of electricity bills for the unit, plus DG diesel during outages.",
-        "Multiply kWh by 0.710 kg CO2 per kWh and diesel litres by 2.68 kg CO2 per litre.",
+        "Multiply kWh by 0.710 kg CO2 per kWh for FY 2024-25 and diesel litres by 2.68 kg CO2 per litre.",
         "Include planning, laser sawing, bruting, polishing wheels, air conditioning and compressors, since all serve the stones.",
         "Divide by polished carats finished in the same month. Job work done for other firms should be split out by carats or machine hours first."
       ]

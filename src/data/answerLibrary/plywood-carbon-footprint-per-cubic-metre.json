@@ -2,7 +2,7 @@
   "slug": "plywood-carbon-footprint-per-cubic-metre",
   "q": "What is the carbon footprint of plywood per cubic metre, for a Yamunanagar-type mill?",
   "title": "Plywood carbon footprint per cubic metre",
-  "short": "Work it out from one month of mill data: resin bought times its supplier factor, plus press and peeling electricity at 0.710 kg CO2 per kWh, plus diesel and the methane and nitrous oxide from the biomass boiler, all divided by cubic metres made. Report the carbon stored in the wood separately.",
+  "short": "Work it out from one month of mill data: resin bought times its supplier factor, plus press and peeling electricity at 0.710 kg CO2 per kWh for FY 2024-25, plus diesel and the methane and nitrous oxide from the biomass boiler, all divided by cubic metres made. Report the carbon stored in the wood separately.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Plywood and veneer mills, furniture exporters",

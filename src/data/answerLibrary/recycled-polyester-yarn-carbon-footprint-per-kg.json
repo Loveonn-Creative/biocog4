@@ -40,7 +40,7 @@
     "title": "Illustrative example: one month at a Panipat unit",
     "lines": [
       "Bales in: 500 tonnes; saleable yarn out: 380 tonnes",
-      "Electricity for washing, extrusion and spinning: 760,000 kWh x 0.710 = 539,600 kg CO2",
+      "Electricity for washing, extrusion and spinning: 760,000 kWh x 0.710 (FY 2024-25 grid factor) = 539,600 kg CO2",
       "Coal for the wash line boiler: 120,000 kg x 2.42 = 290,400 kg CO2",
       "Total: 539,600 + 290,400 = 830,000 kg CO2",
       "Per kg of yarn: 830,000 / 380,000 = 2.18 kg CO2, before bale transport and waste disposal"

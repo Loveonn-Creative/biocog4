@@ -2,7 +2,7 @@
   "slug": "fuel-surcharge-on-electricity-bill-emissions",
   "q": "My electricity bill shows a fuel and power purchase adjustment surcharge. Does that change my emissions?",
   "title": "Does a fuel surcharge on my bill raise CO2?",
-  "short": "No. The fuel and power purchase adjustment surcharge (called FPPCA, FPPAS or FAC depending on the state) changes what you pay per unit, not the units you used. Scope 2 is kWh x 0.710 kg CO2 per kWh, so your emissions stay the same. It matters only if you work kWh back from rupees.",
+  "short": "No. The fuel and power purchase adjustment surcharge (called FPPCA, FPPAS or FAC depending on the state) changes what you pay per unit, not the units you used. Scope 2 is kWh x 0.710 kg CO2 per kWh for FY 2024-25, so your emissions stay the same. It matters only if you work kWh back from rupees.",
   "topic": "accounting",
   "intent": "check",
   "audience": "MSME owners reading HT and LT bills",
@@ -29,7 +29,7 @@
       "h": "What to record",
       "ul": [
         "Units consumed in kWh for each billing period, from the bill.",
-        "The factor and its source: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0.",
+        "The factor and its source: 0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0.",
         "Surcharge, duty and other charge lines only in your cost records, not in the emissions calculation."
       ]
     }

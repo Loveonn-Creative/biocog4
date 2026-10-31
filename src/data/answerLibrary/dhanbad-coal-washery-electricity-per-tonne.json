@@ -2,7 +2,7 @@
   "slug": "dhanbad-coal-washery-electricity-per-tonne",
   "q": "How do I work out CO2 per tonne of washed coal at a Dhanbad washery?",
   "title": "Dhanbad washery: CO2 per tonne of washed coal",
-  "short": "Add the washery's electricity in kWh times the grid factor, 0.710 kg CO2 per kWh on CEA v21.0, to diesel for loaders and trucks at 2.68 kg per litre. Divide by tonnes of clean coal dispatched, not raw coal fed, because buyers ask per tonne they receive.",
+  "short": "Add the washery's electricity in kWh times the grid factor, 0.710 kg CO2 per kWh for FY 2024-25 on CEA v21.0, to diesel for loaders and trucks at 2.68 kg per litre. Divide by tonnes of clean coal dispatched, not raw coal fed, because buyers ask per tonne they receive.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Coal washeries in Dhanbad and Jharia supplying coking coal to steel plants",

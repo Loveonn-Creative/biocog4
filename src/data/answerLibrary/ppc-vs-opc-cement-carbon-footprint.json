@@ -48,7 +48,7 @@
   "example": {
     "title": "Labelled estimate per tonne of cement",
     "lines": [
-      "Assumed: 850 kg CO2 per tonne clinker (calcination plus kiln fuel), 80 kWh plant power per tonne cement at 0.710 kg CO2 per kWh = 56.8 kg",
+      "Assumed: 850 kg CO2 per tonne clinker (calcination plus kiln fuel), 80 kWh plant power per tonne cement at 0.710 kg CO2 per kWh for FY 2024-25 = 56.8 kg",
       "OPC, 95% clinker: 0.95 x 850 + 56.8 = 864 kg CO2 per tonne",
       "PPC, 70% clinker: 0.70 x 850 + 56.8 = 652 kg CO2 per tonne, about 25% lower than OPC",
       "PSC, 45% clinker: 0.45 x 850 + 56.8 = 439 kg CO2 per tonne, about 49% lower than OPC"

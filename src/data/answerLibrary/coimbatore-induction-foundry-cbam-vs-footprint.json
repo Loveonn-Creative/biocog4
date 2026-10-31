@@ -31,7 +31,7 @@
     "title": "Worked example: one tonne of good castings (illustrative inputs)",
     "lines": [
       "Pig iron charged: 0.20 t x 2.00 t CO2e per t = 0.40 t CO2e (CBAM figure)",
-      "Electricity: 700 kWh x 0.710 = 0.497 t CO2 (footprint only)",
+      "Electricity: 700 kWh x 0.710 (FY 2024-25 grid factor) = 0.497 t CO2 (footprint only)",
       "Footprint: 0.40 + 0.497 = 0.897 t CO2e per tonne"
     ],
     "note": "Quantities and the pig iron figure are illustrative."

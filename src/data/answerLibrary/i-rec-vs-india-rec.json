@@ -41,7 +41,7 @@
     "title": "Worked example: partial coverage for one year",
     "lines": [
       "Consumption: 2,000 MWh (2,000,000 kWh)",
-      "Location-based Scope 2: 2,000,000 x 0.710 kg CO2 per kWh = 1,420,000 kg, 1,420 tonnes",
+      "Location-based Scope 2: 2,000,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 1,420,000 kg, 1,420 tonnes",
       "Certificates retired for the same year: 1,200 MWh",
       "Uncovered: 800,000 kWh x 0.710 = 568,000 kg",
       "Market-based Scope 2: 568 tonnes, reported alongside the 1,420 tonnes location-based figure"

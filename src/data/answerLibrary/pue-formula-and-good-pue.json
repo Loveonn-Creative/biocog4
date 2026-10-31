@@ -34,7 +34,7 @@
     {
       "h": "From PUE to emissions",
       "p": [
-        "Emissions come from total facility energy, not from PUE. Multiply the grid kWh in that total by 0.710 kg CO2 per kWh, the CEA weighted average factor for India, and for generator output use diesel litres times 2.68 kg CO2 per litre instead of the grid factor. PUE then tells you how much of that is overhead you can cut."
+        "Emissions come from total facility energy, not from PUE. Multiply the grid kWh in that total by 0.710 kg CO2 per kWh for FY 2024-25, the CEA weighted average factor for India, and for generator output use diesel litres times 2.68 kg CO2 per litre instead of the grid factor. PUE then tells you how much of that is overhead you can cut."
       ]
     }
   ],
@@ -50,7 +50,7 @@
     ],
     "note": "Figures are illustrative. Grid electricity only; add generator fuel separately if the DG set ran."
   },
-  "senseible": "Senseible reads the units on your electricity bills and applies 0.710 kg CO2 per kWh, so the total energy and Scope 2 side of the calculation comes from invoices. The IT and sub-meter readings come from your own meters, or from a meter feed set up with the Senseible team for your site; it is not a self-serve integration.",
+  "senseible": "Senseible reads the units on your electricity bills and applies 0.710 kg CO2 per kWh for FY 2024-25, so the total energy and Scope 2 side of the calculation comes from invoices. The IT and sub-meter readings come from your own meters, or from a meter feed set up with the Senseible team for your site; it is not a self-serve integration.",
   "links": [
     {
       "label": "Cloud and data centre emissions calculator",

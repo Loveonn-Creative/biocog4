@@ -2,7 +2,7 @@
   "slug": "solar-plus-grid-electricity-factor-for-buyer",
   "q": "We use rooftop solar and grid power. What electricity factor do we give a buyer?",
   "title": "Electricity factor with solar and grid",
-  "short": "Give the buyer your actual Scope 2: grid units bought times 0.710 kg CO2 per kWh. Solar you generate and use yourself has no grid emissions, so it lowers the total. Dividing by all units used gives a blended factor, but report kWh from each source too.",
+  "short": "Give the buyer your actual Scope 2: grid units bought times 0.710 kg CO2 per kWh for FY 2024-25. Solar you generate and use yourself has no grid emissions, so it lowers the total. Dividing by all units used gives a blended factor, but report kWh from each source too.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "MSMEs with rooftop solar answering buyer questionnaires",

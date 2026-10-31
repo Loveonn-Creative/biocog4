@@ -2,7 +2,7 @@
   "slug": "air-compressor-kwh-from-load-unload-hours",
   "q": "How do I estimate an air compressor's electricity and CO2 from its load and unload hours?",
   "title": "Compressor kWh from load and unload hours",
-  "short": "Multiply load hours by the power drawn while loaded, add unload hours times the power drawn while unloaded, and multiply the total kWh by 0.710 kg CO2 per kWh. Read the hours from the compressor controller and take both power figures from the manufacturer's data sheet or a one-off clamp meter reading.",
+  "short": "Multiply load hours by the power drawn while loaded, add unload hours times the power drawn while unloaded, and multiply the total kWh by 0.710 kg CO2 per kWh for FY 2024-25. Read the hours from the compressor controller and take both power figures from the manufacturer's data sheet or a one-off clamp meter reading.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Factory maintenance and energy staff without a compressor submeter",
@@ -19,7 +19,7 @@
     {
       "h": "The formula",
       "p": [
-        "kWh = (load hours x loaded kW) + (unload hours x unloaded kW). CO2 = kWh x 0.710 kg CO2 per kWh for location-based Scope 2. Do this per compressor and add them; do not use one machine's figures for another."
+        "kWh = (load hours x loaded kW) + (unload hours x unloaded kW). CO2 = kWh x 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2. Do this per compressor and add them; do not use one machine's figures for another."
       ]
     },
     {

@@ -48,7 +48,7 @@
     ],
     "note": "The fibre factors are placeholders to show the arithmetic; use figures from your yarn supplier or a named study, with the allocation method stated."
   },
-  "senseible": "Senseible reads the dye house and washing unit fuel and electricity invoices (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps yarn purchases in the Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certified footprints.",
+  "senseible": "Senseible reads the dye house and washing unit fuel and electricity invoices (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25) and keeps yarn purchases in the Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certified footprints.",
   "links": [
     {
       "label": "Dye house emissions per metre of fabric",

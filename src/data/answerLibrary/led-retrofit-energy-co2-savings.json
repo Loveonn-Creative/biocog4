@@ -2,7 +2,7 @@
   "slug": "led-retrofit-energy-co2-savings",
   "q": "How do I calculate the electricity and CO2 saved by an LED lighting retrofit in a factory or warehouse?",
   "title": "LED retrofit: kWh and CO2 saved",
-  "short": "kWh saved = (old fitting watts including ballast minus new LED watts) x number of fittings x burning hours a year / 1,000. Multiply kWh saved by 0.710 kg CO2 per kWh for location-based Scope 2 and by your tariff for rupees. Measure the old system watts, not just the lamp rating.",
+  "short": "kWh saved = (old fitting watts including ballast minus new LED watts) x number of fittings x burning hours a year / 1,000. Multiply kWh saved by 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2 and by your tariff for rupees. Measure the old system watts, not just the lamp rating.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "MSME owners and facility managers",
@@ -45,7 +45,7 @@
       "Money at Rs 8 per kWh (assumed): Rs 10,13,760 a year"
     ]
   },
-  "senseible": "Senseible reads the units on your electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh, so before and after periods can be compared from documents. The fitting count, wattages and saving claim stay your own records.",
+  "senseible": "Senseible reads the units on your electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, so before and after periods can be compared from documents. The fitting count, wattages and saving claim stay your own records.",
   "links": [
     {
       "label": "Measuring energy efficiency savings",

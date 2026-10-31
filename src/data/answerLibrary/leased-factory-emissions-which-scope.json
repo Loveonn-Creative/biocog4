@@ -41,7 +41,7 @@
     "title": "Worked example: a rented unit under operational control",
     "lines": [
       "Electricity on the landlord's bill, sub-metered to you: 18,000 kWh a month",
-      "Scope 2: 18,000 x 0.710 = 12,780 kg CO2 a month, about 153 t CO2 a year",
+      "Scope 2: 18,000 x 0.710 (FY 2024-25 grid factor) = 12,780 kg CO2 a month, about 153 t CO2 a year",
       "Your diesel generator: 1,500 litres a year; Scope 1 = 1,500 x 2.68 = 4,020 kg CO2",
       "Category 8: nothing, because both are already in your Scope 1 and 2"
     ],

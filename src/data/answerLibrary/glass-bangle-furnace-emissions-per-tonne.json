@@ -48,7 +48,7 @@
     ],
     "note": "Quantities are illustrative. Use your gas bills, electricity bills and batch register for the same months."
   },
-  "senseible": "Senseible reads gas bills in scm at 2.05 kg CO2 per scm and electricity bills at 0.710 kg CO2 per kWh. Batch carbonate CO2 comes from your batch records and is added to those figures.",
+  "senseible": "Senseible reads gas bills in scm at 2.05 kg CO2 per scm and electricity bills at 0.710 kg CO2 per kWh for FY 2024-25. Batch carbonate CO2 comes from your batch records and is added to those figures.",
   "links": [
     { "label": "Container glass furnace CO2 per tonne", "to": "/answers/glass-container-furnace-emissions-per-tonne" },
     { "label": "Financing a glass furnace in Firozabad", "to": "/climate-intelligence/finance-glass-furnace-firozabad" },

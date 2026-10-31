@@ -2,7 +2,7 @@
   "slug": "bhilwara-textile-mill-captive-thermal-power",
   "q": "A Bhilwara textile mill runs its own coal power plant: how does that change its footprint?",
   "title": "Bhilwara mills with captive coal power",
-  "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 kg, so the comparison is worth making.",
+  "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 kg (FY 2024-25), so the comparison is worth making.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Spinning, weaving and processing mills in Bhilwara with captive thermal power",

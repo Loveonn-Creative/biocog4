@@ -35,7 +35,7 @@
   "example": {
     "title": "Illustrative example: plant stages only, mass allocation",
     "lines": [
-      "Splitting: 1,000 t seed gives 300 t splits (yield assumed); electricity 60,000 kWh x 0.710 = 42,600 kg CO2; splits' mass share 30% = 12,780 kg",
+      "Splitting: 1,000 t seed gives 300 t splits (yield assumed); electricity 60,000 kWh x 0.710 (FY 2024-25 grid factor) = 42,600 kg CO2; splits' mass share 30% = 12,780 kg",
       "Powder: 300 t splits gives 290 t powder; electricity 150,000 kWh x 0.710 = 106,500 kg; PNG for driers 30,000 scm x 2.05 = 61,500 kg",
       "Plant total for powder: 12,780 + 106,500 + 61,500 = 180,780 kg CO2",
       "Per kg of powder: 180,780 / 290,000 = 0.62 kg CO2, before farm and transport"

@@ -37,7 +37,7 @@
         "Download loaded hours, unloaded hours and starts from each compressor's controller for a typical month.",
         "Measure unloaded kW on each machine with a clamp meter, or take it from the maker's datasheet.",
         "Unloaded kWh = unloaded hours x unloaded kW, for every machine.",
-        "Estimate how many of those hours a sequencer would turn into off time, and multiply the kWh by 0.710 kg CO2 per kWh."
+        "Estimate how many of those hours a sequencer would turn into off time, and multiply the kWh by 0.710 kg CO2 per kWh for FY 2024-25."
       ]
     }
   ],

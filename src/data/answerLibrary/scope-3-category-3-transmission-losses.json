@@ -47,7 +47,7 @@
       "Diesel burnt in a year: 10,000 litres",
       "WTT: 10,000 x 0.6 kg CO2e per litre (illustrative only, not an official DESNZ value) = 6,000 kg CO2e",
       "Grid electricity: 100,000 kWh at an illustrative 18% T&D loss (not a CEA value)",
-      "T&D: 100,000 x 0.18 x 0.710 = 12,780 kg CO2",
+      "T&D: 100,000 x 0.18 x 0.710 (FY 2024-25 grid factor) = 12,780 kg CO2",
       "Category 3 total: 6.0 t + 12.8 t = about 18.8 t",
       "For comparison, Scope 1 diesel is 10,000 x 2.68 = 26,800 kg CO2"
     ],

@@ -47,7 +47,7 @@
   "example": {
     "title": "Illustrative: how three mistakes add up for one factory",
     "lines": [
-      "kVAh used as kWh: 1,00,000 kVAh at power factor 0.95 is 95,000 kWh; overstated by 5,000 kWh x 0.710 = 3,550 kg CO2",
+      "kVAh used as kWh: 1,00,000 kVAh at power factor 0.95 is 95,000 kWh; overstated by 5,000 kWh x 0.710 (FY 2024-25 grid factor) = 3,550 kg CO2",
       "One month's bill counted twice: 42,000 kWh x 0.710 = 29,820 kg CO2 added",
       "Generator diesel moved from Scope 2 to Scope 1: the total stays the same, but the scope split changes",
       "Errors in the total: 3,550 + 29,820 = 33,370 kg, about 33.4 tonnes CO2 too high"

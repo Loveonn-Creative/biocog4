@@ -2,7 +2,7 @@
   "slug": "induction-vs-lpg-canteen-kitchen-emissions",
   "q": "Is induction cooking lower carbon than LPG in a factory canteen or hotel kitchen in India?",
   "title": "Induction vs LPG in a canteen kitchen",
-  "short": "Not on India's grid average today. Per unit of heat reaching the pan, induction at 0.710 kg CO2 per kWh emits roughly one and a half to two times the CO2 of an LPG burner. Induction becomes the lower carbon choice when the electricity comes from rooftop solar or another renewable supply.",
+  "short": "Not on India's grid average today. Per unit of heat reaching the pan, induction at 0.710 kg CO2 per kWh for FY 2024-25 emits roughly one and a half to two times the CO2 of an LPG burner. Induction becomes the lower carbon choice when the electricity comes from rooftop solar or another renewable supply.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Hotels, institutional kitchens and factories with canteens",
@@ -49,7 +49,7 @@
     ],
     "note": "Efficiencies are labelled estimates; measure your own with a water-boiling test. LPG 2.98 kg CO2 per kg and NCV 47.3 MJ per kg are IPCC 2006 defaults."
   },
-  "senseible": "Senseible reads LPG invoices at 2.98 kg CO2 per kg and electricity bills at 0.710 kg CO2 per kWh, so the canteen's Scope 1 and Scope 2 before and after a switch come from your own documents.",
+  "senseible": "Senseible reads LPG invoices at 2.98 kg CO2 per kg and electricity bills at 0.710 kg CO2 per kWh for FY 2024-25, so the canteen's Scope 1 and Scope 2 before and after a switch come from your own documents.",
   "links": [
     {
       "label": "LPG emission factor",

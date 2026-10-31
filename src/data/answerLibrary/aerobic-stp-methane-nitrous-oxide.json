@@ -53,7 +53,7 @@
     ],
     "note": "Concentrations and the electricity figure are illustrative; use your own test reports and meter. CO2e figures include methane and nitrous oxide."
   },
-  "senseible": "Senseible reads the electricity bill or sub-meter units for the STP into Scope 2 at 0.710 kg CO2 per kWh. Process CH4 and N2O from treatment are worked out from your lab reports, as above.",
+  "senseible": "Senseible reads the electricity bill or sub-meter units for the STP into Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. Process CH4 and N2O from treatment are worked out from your lab reports, as above.",
   "links": [
     {
       "label": "Methane from an effluent treatment plant",

@@ -41,12 +41,12 @@
     "lines": [
       "Distance: 3 vans x 2,000 km a month = 6,000 km",
       "Energy at 0.18 kWh per km (assumed, including charging losses) = 1,080 kWh",
-      "Scope 2: 1,080 x 0.710 kg CO2 per kWh = 766.8 kg CO2 a month",
+      "Scope 2: 1,080 x 0.710 kg CO2 per kWh for FY 2024-25 = 766.8 kg CO2 a month",
       "These units are already in the factory bill, so do not add them again; show them as a sub-total if you want to track the fleet"
     ],
     "note": "Use the charger's metered kWh where you have it rather than a per km estimate."
   },
-  "senseible": "Charging electricity on your factory bill is part of grid Scope 2 in Senseible, at the CEA factor of 0.710 kg CO2 per kWh. Public charger receipts are not parsed as a separate category today, so add those units with your own note on the scope you chose.",
+  "senseible": "Charging electricity on your factory bill is part of grid Scope 2 in Senseible, at the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25. Public charger receipts are not parsed as a separate category today, so add those units with your own note on the scope you chose.",
   "links": [
     {
       "label": "Scope 1, 2 and 3 for small businesses",

@@ -2,7 +2,7 @@
   "slug": "navi-mumbai-data-centre-pue-scope-2-example",
   "q": "How does PUE change a Navi Mumbai data centre's Scope 2?",
   "title": "Navi Mumbai data centres: PUE and Scope 2",
-  "short": "Scope 2 follows total facility electricity, not IT load alone. PUE is total facility energy divided by IT energy, so at a PUE of 1.5 every 100 kWh of IT draw means 150 kWh billed, all counted at 0.710 kg CO2 per kWh on the location-based method.",
+  "short": "Scope 2 follows total facility electricity, not IT load alone. PUE is total facility energy divided by IT energy, so at a PUE of 1.5 every 100 kWh of IT draw means 150 kWh billed, all counted at 0.710 kg CO2 per kWh for FY 2024-25 on the location-based method.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Data centre operators and colocation customers in the Navi Mumbai hub of Maharashtra",

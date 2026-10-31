@@ -48,7 +48,7 @@
     ],
     "note": "Electricity and diesel give CO2 only; the R-404A line is CO2e, so the total is stated in CO2e."
   },
-  "senseible": "Senseible reads plant electricity bills and DG diesel invoices and applies 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre. For refrigerant, give the gas name and the kilograms charged from the service report; an invoice for gas alone stays as evidence. Product weights come from your packing records.",
+  "senseible": "Senseible reads plant electricity bills and DG diesel invoices and applies 0.710 kg CO2 per kWh for FY 2024-25 and 2.68 kg CO2 per litre. For refrigerant, give the gas name and the kilograms charged from the service report; an invoice for gas alone stays as evidence. Product weights come from your packing records.",
   "links": [
     {
       "label": "Reefer container emissions for food exporters",

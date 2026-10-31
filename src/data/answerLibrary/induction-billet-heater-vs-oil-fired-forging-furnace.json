@@ -2,7 +2,7 @@
   "slug": "induction-billet-heater-vs-oil-fired-forging-furnace",
   "q": "Does replacing an oil-fired forging furnace with an induction billet heater cut CO2 in India?",
   "title": "Induction billet heater vs oil-fired furnace",
-  "short": "Only if the induction heater uses less than about 4.2 kWh per tonne for every litre of furnace oil the old furnace burnt per tonne. On the Indian grid at 0.710 kg CO2 per kWh, a litre of furnace oil (2.97 kg CO2) equals 4.18 kWh, so measure both from your own bills.",
+  "short": "Only if the induction heater uses less than about 4.2 kWh per tonne for every litre of furnace oil the old furnace burnt per tonne. On the Indian grid at 0.710 kg CO2 per kWh for FY 2024-25, a litre of furnace oil (2.97 kg CO2) equals 4.18 kWh, so measure both from your own bills.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "Forge shop owners, lenders assessing energy-efficiency loans",
@@ -49,7 +49,7 @@
     ],
     "note": "Litres and kWh per tonne are illustrative inputs, not measured or published figures. Use your own furnace oil invoices and metered kWh; the figures are CO2 only and exclude the steel saved from lower scale loss."
   },
-  "senseible": "Senseible reads furnace oil invoices at 2.97 kg CO2 per litre and electricity bills at 0.710 kg CO2 per kWh, so you can compare Scope 1 and 2 for the months before and after the change, and its green loan readiness check uses those records. Tonnes heated come from your production records.",
+  "senseible": "Senseible reads furnace oil invoices at 2.97 kg CO2 per litre and electricity bills at 0.710 kg CO2 per kWh for FY 2024-25, so you can compare Scope 1 and 2 for the months before and after the change, and its green loan readiness check uses those records. Tonnes heated come from your production records.",
   "links": [
     {
       "label": "Forging carbon footprint per tonne",

@@ -34,7 +34,7 @@
     {
       "h": "Converting to CO2",
       "p": [
-        "Take the compressor's annual kWh from a submeter or from load and unload hours, multiply by the percentage saved, and multiply by 0.710 kg CO2 per kWh. Confirm with a month of readings after the change at similar production."
+        "Take the compressor's annual kWh from a submeter or from load and unload hours, multiply by the percentage saved, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Confirm with a month of readings after the change at similar production."
       ]
     }
   ],
@@ -48,7 +48,7 @@
     ],
     "note": "The 1% per 4 degrees is BEE's rule of thumb; the real saving depends on the season and the machine."
   },
-  "senseible": "Senseible converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh, so the lower electricity use appears in the Scope 2 records it builds from your bills.",
+  "senseible": "Senseible converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, so the lower electricity use appears in the Scope 2 records it builds from your bills.",
   "links": [
     {
       "label": "Compressed air pressure reduction savings",

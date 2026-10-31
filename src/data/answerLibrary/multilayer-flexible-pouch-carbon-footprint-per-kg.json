@@ -2,7 +2,7 @@
   "slug": "multilayer-flexible-pouch-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of a multilayer laminated pouch per kg or per thousand pouches?",
   "title": "Multilayer pouch carbon footprint",
-  "short": "Split the laminate into layers by mass, multiply each layer's share by that material's per kg factor, then add adhesive, ink, converting electricity at 0.710 kg CO2 per kWh and your scrap. For a thousand pouches, multiply the per kg figure by the weight of a thousand pouches.",
+  "short": "Split the laminate into layers by mass, multiply each layer's share by that material's per kg factor, then add adhesive, ink, converting electricity at 0.710 kg CO2 per kWh for FY 2024-25 and your scrap. For a thousand pouches, multiply the per kg figure by the weight of a thousand pouches.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Flexible packaging converters and food brands asked by buyers",
@@ -24,7 +24,7 @@
     {
       "h": "Converting energy, solvents and scrap",
       "ul": [
-        "Printing, lamination, curing, slitting and pouch making: kWh per kg of good output from a sub-meter or a month of bills, times 0.710 kg CO2 per kWh.",
+        "Printing, lamination, curing, slitting and pouch making: kWh per kg of good output from a sub-meter or a month of bills, times 0.710 kg CO2 per kWh for FY 2024-25.",
         "Boiler or thermic fluid heater fuel for drying: litres or kg x the IPCC 2006 factor for that fuel.",
         "Solvent: evaporated VOCs are not among the GHG Protocol gases, but solvent burnt in an incinerator gives fossil CO2 that counts in Scope 1.",
         "Scrap: divide inputs by good output, so trims, setup waste and rejects are carried by the pouches you sell."

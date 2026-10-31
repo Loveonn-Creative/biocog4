@@ -2,7 +2,7 @@
   "slug": "ed-coating-line-carbon-per-square-metre",
   "q": "How do I calculate the carbon footprint of an electrocoating (ED) line per square metre?",
   "title": "ED coating line carbon per m2",
-  "short": "Add the oven and tank heating fuel, PNG at 2.05 kg CO2 per scm, and the line electricity at 0.710 kg CO2 per kWh, including the rectifier and chiller. Divide by square metres coated, and add the paint from the supplier's factor.",
+  "short": "Add the oven and tank heating fuel, PNG at 2.05 kg CO2 per scm, and the line electricity at 0.710 kg CO2 per kWh for FY 2024-25, including the rectifier and chiller. Divide by square metres coated, and add the paint from the supplier's factor.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Auto component makers and job coaters running ED lines",
@@ -39,7 +39,7 @@
     ],
     "note": "Inputs are illustrative; use gas and electricity bills and the coating register."
   },
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
   "links": [
     {
       "label": "Phosphating line emissions",

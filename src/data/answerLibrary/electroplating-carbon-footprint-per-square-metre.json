@@ -2,7 +2,7 @@
   "slug": "electroplating-carbon-footprint-per-square-metre",
   "q": "How do I calculate the carbon footprint of electroplating per square metre or per part?",
   "title": "Electroplating carbon footprint per m2",
-  "short": "Add a month's rectifier, bath heating, extraction and pump energy, convert with 0.710 kg CO2 per kWh and the fuel factors, and divide by square metres plated. Then add the anode metal consumed per square metre times the metal's footprint. Multiply by a part's plated area to get the figure per part.",
+  "short": "Add a month's rectifier, bath heating, extraction and pump energy, convert with 0.710 kg CO2 per kWh for FY 2024-25 and the fuel factors, and divide by square metres plated. Then add the anode metal consumed per square metre times the metal's footprint. Multiply by a part's plated area to get the figure per part.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Moradabad, Ludhiana and Rajkot platers and their buyers",

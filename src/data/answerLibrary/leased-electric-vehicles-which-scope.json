@@ -41,12 +41,12 @@
     "title": "Worked example: five leased e-vans charged at the depot",
     "lines": [
       "Depot charger sub-meter: 900 kWh a month x 12 = 10,800 kWh",
-      "10,800 x 0.710 kg CO2 per kWh = 7,668 kg CO2, about 7.7 t a year",
+      "10,800 x 0.710 kg CO2 per kWh for FY 2024-25 = 7,668 kg CO2, about 7.7 t a year",
       "Operational control: Scope 2. Financial control with an operating lease: Category 8, same 7.7 t"
     ],
     "note": "Grid factor: CEA CO2 Baseline Database version 21.0."
   },
-  "senseible": "Senseible reads electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2.",
+  "senseible": "Senseible reads electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0, for location-based Scope 2.",
   "links": [
     {
       "label": "EV fleet charging: which scope",

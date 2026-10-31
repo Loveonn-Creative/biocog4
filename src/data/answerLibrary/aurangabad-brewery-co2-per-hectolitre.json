@@ -2,7 +2,7 @@
   "slug": "aurangabad-brewery-co2-per-hectolitre",
   "q": "How do I calculate a brewery carbon footprint per hectolitre of beer?",
   "title": "Brewery CO2 per hectolitre",
-  "short": "Add boiler fuel for brewing and pasteurising, electricity for cooling and packaging at 0.710 kg CO2 per kWh, refrigerant leaks and any CO2 bought for carbonation, then divide by hectolitres packed. Fermentation CO2 is biogenic, so report it separately. Bottles, cans and malt belong in Scope 3.",
+  "short": "Add boiler fuel for brewing and pasteurising, electricity for cooling and packaging at 0.710 kg CO2 per kWh for FY 2024-25, refrigerant leaks and any CO2 bought for carbonation, then divide by hectolitres packed. Fermentation CO2 is biogenic, so report it separately. Bottles, cans and malt belong in Scope 3.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Breweries in Aurangabad, Bengaluru and other Indian brewing clusters answering buyer and investor questions",

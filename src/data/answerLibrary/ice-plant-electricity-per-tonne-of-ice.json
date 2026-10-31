@@ -2,7 +2,7 @@
   "slug": "ice-plant-electricity-per-tonne-of-ice",
   "q": "How much electricity and CO2 goes into a tonne of ice for fish handling?",
   "title": "Electricity and CO2 per tonne of ice",
-  "short": "Take the ice plant's metered kWh for a period, divide by tonnes of ice made in those days, and multiply by 0.710 kg CO2 per kWh. Then add generator diesel (2.68 kg CO2 per litre) and any HFC refrigerant top-ups. No Indian public benchmark exists, so your own meter and block count decide it.",
+  "short": "Take the ice plant's metered kWh for a period, divide by tonnes of ice made in those days, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Then add generator diesel (2.68 kg CO2 per litre) and any HFC refrigerant top-ups. No Indian public benchmark exists, so your own meter and block count decide it.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Fishing harbours, seafood processors and ice plant owners",
@@ -47,7 +47,7 @@
     ],
     "note": "Plant figures are illustrative. Add DG diesel and any HFC top-ups for the month."
   },
-  "senseible": "Senseible reads the ice plant's electricity bills for units and tariff and applies 0.710 kg CO2 per kWh, and reads DG diesel and refrigerant invoices. Dividing by tonnes of ice uses your production log.",
+  "senseible": "Senseible reads the ice plant's electricity bills for units and tariff and applies 0.710 kg CO2 per kWh for FY 2024-25, and reads DG diesel and refrigerant invoices. Dividing by tonnes of ice uses your production log.",
   "links": [
     {
       "label": "Fishing vessel fuel per tonne of catch",

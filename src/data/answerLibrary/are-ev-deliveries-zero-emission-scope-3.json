@@ -18,7 +18,7 @@
       "ol": [
         "Get the energy used: kWh per km for the vehicle type from the carrier or the manufacturer, and the km driven for your shipments.",
         "Multiply km x kWh per km to get kWh.",
-        "Multiply by the grid factor for where the vehicle was charged, 0.710 kg CO2 per kWh for India from the CEA CO2 Baseline Database, version 21.0.",
+        "Multiply by the grid factor for where the vehicle was charged, 0.710 kg CO2 per kWh for FY 2024-25 for India from the CEA CO2 Baseline Database, version 21.0.",
         "If the carrier shares only total kWh for a shared fleet, ask how it allocates to your parcels, by weight, parcel count or distance."
       ]
     },
@@ -47,7 +47,7 @@
     ],
     "note": "This allocates by parcel count. If your parcels are heavier or travel further than the fleet average, ask the carrier to allocate by weight or distance instead."
   },
-  "senseible": "Senseible applies the CEA grid factor of 0.710 kg CO2 per kWh to electricity and reads freight invoices into a separate supplier evidence trail. It does not get kWh from a carrier's fleet; that has to come from the carrier, and the same factor then applies.",
+  "senseible": "Senseible applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 to electricity and reads freight invoices into a separate supplier evidence trail. It does not get kWh from a carrier's fleet; that has to come from the carrier, and the same factor then applies.",
   "links": [
     {
       "label": "Freight: Category 4 or 9?",

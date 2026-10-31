@@ -22,7 +22,7 @@
       "h": "आँकड़ा बदलने वाली ख़ास स्थितियाँ",
       "ul": [
         "Solar pumps सिर्फ़ दिन में पानी देते हैं और बादल वाले दिनों में कम। अगर किसान रात या बरसात के pumping के लिए diesel set रखता है, तो सिर्फ़ असल में बचे litre गिनें।",
-        "Grid से चलने वाले pump को बदलने (Component C के तहत solarisation) से grid बिजली बचती है, जिसकी कीमत 0.710 kg CO2 प्रति kWh है, diesel नहीं।",
+        "Grid से चलने वाले pump को बदलने (Component C के तहत solarisation) से grid बिजली बचती है, जिसकी कीमत 0.710 (वित्त वर्ष 2024-25) kg CO2 प्रति kWh है, diesel नहीं।",
         "Panels और pump के embodied emissions होते हैं। ये निर्माता के footprint में आते हैं और inventory में diesel की बचत से नहीं घटाए जाते।"
       ]
     },

@@ -43,7 +43,7 @@
       "Fertiliser: 100 kg N per hectare; yield 1,500 kg dry rubber per hectare",
       "N2O as N: direct 1.0 + volatilised 0.10 + leached 0.225 = 1.325 kg; x 44/28 = 2.08 kg N2O",
       "2.08 x 265 = 552 kg CO2e per hectare; / 1,500 kg = 0.37 kg CO2e per kg",
-      "Processing: 0.25 kWh x 0.710 = 0.18 kg CO2; dryer diesel 0.03 litres x 2.68 = 0.08 kg CO2",
+      "Processing: 0.25 kWh x 0.710 (FY 2024-25 grid factor) = 0.18 kg CO2; dryer diesel 0.03 litres x 2.68 = 0.08 kg CO2",
       "Subtotal: about 0.63 kg CO2e per kg, before fertiliser manufacture, acid, packaging and transport"
     ],
     "note": "Fertiliser rate, yield and processing inputs are assumptions for illustration. GWP is IPCC AR5 (N2O 265)."

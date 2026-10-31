@@ -42,7 +42,7 @@
     "title": "Worked example: the energy part of A3 for a tile plant",
     "lines": [
       "Monthly output: 500 t of tiles",
-      "Grid electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "Grid electricity: 50,000 kWh x 0.710 (FY 2024-25 grid factor) = 35,500 kg CO2",
       "Diesel for forklifts and a standby generator: 2,000 L x 2.68 = 5,360 kg CO2",
       "A3 energy emissions: 35,500 + 5,360 = 40,860 kg CO2",
       "Per tonne: 40,860 / 500 = 81.7 kg CO2 per tonne"

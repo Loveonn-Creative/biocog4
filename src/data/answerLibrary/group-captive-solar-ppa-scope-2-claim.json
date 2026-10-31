@@ -24,7 +24,7 @@
     {
       "h": "Decision rule",
       "p": [
-        "Claim zero only for units that clear all three, counted at your meter in the reporting year. Every other unit stays in market-based Scope 2 at the grid average, 0.710 kg CO2 per kWh, disclosed as a stand-in because India publishes no residual mix. Location-based Scope 2 does not move: every kWh you consume still carries the grid factor, regardless of the PPA. For how to count adjusted, banked and lapsed units on the bill, see the group captive reporting answer linked below."
+        "Claim zero only for units that clear all three, counted at your meter in the reporting year. Every other unit stays in market-based Scope 2 at the grid average, 0.710 kg CO2 per kWh for FY 2024-25, disclosed as a stand-in because India publishes no residual mix. Location-based Scope 2 does not move: every kWh you consume still carries the grid factor, regardless of the PPA. For how to count adjusted, banked and lapsed units on the bill, see the group captive reporting answer linked below."
       ]
     },
     {
@@ -39,7 +39,7 @@
     "lines": [
       "Annual consumption 3,000 MWh; group captive solar adjusted at the meter 2,000 MWh",
       "The generator sold RECs for 500 MWh of that solar, so only 1,500 MWh pass",
-      "Location-based: 3,000 MWh x 0.710 t CO2 per MWh = 2,130 t CO2",
+      "Location-based: 3,000 MWh x 0.710 t CO2 per MWh for FY 2024-25 = 2,130 t CO2",
       "Market-based: 1,500 MWh at zero; (3,000 minus 1,500) x 0.710 = 1,065 t CO2",
       "If all 2,000 MWh had passed: 1,000 x 0.710 = 710 t CO2, so the REC sale costs you 355 t of claimed reduction"
     ],
