@@ -2,7 +2,7 @@
   "slug": "supplier-with-many-buyers-share-data-once",
   "q": "We supply ten buyers who all want carbon data. Can we prepare it once?",
   "title": "Share carbon data once with many buyers",
-  "short": "Mostly yes. Build one inventory with Scope 1 and 2, product figures and their sources, then map it to each buyer's form. Formats differ, but the numbers underneath should not. Data exchange standards such as the PACT methodology help when buyers support them.",
+  "short": "Mostly yes. Build one inventory with Scope 1 and 2, product figures and their sources, then fill each buyer's form from it. Formats differ, but the numbers underneath should not. Data exchange standards such as the PACT methodology help when buyers support them.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Suppliers answering carbon requests from several customers",
@@ -16,9 +16,9 @@
       ]
     },
     {
-      "h": "Mapping",
+      "h": "One note per buyer",
       "p": [
-        "Keep a short note of how each buyer's fields map to your base data, so answers stay consistent."
+        "Keep a short note of which base figure answers each of a buyer's fields, so answers stay consistent."
       ]
     },
     {

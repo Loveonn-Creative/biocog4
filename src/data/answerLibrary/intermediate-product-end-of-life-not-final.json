@@ -44,9 +44,9 @@
     "title": "Worked example: polypropylene fan housings",
     "lines": [
       "Sold this year: 40,000 kg of housings, shipped in 3,000 kg of corrugated cartons",
-      "Housings: 70% landfill x 0.05 = 1,400 kg; 10% incinerated x 2.0 = 800 kg; 20% recycled x 0 = 0",
+      "Housings: 70% landfill x 0.05 = 1,400 kg; 10% incinerated x 2.0 = 8,000 kg; 20% recycled x 0 = 0",
       "Cartons: 30% landfill x 1.0 = 900 kg; 70% recycled x 0 = 0",
-      "Category 12 total: 1,400 + 800 + 900 = 3,100 kg, 3.1 t CO2e"
+      "Category 12 total: 1,400 + 8,000 + 900 = 10,300 kg, 10.3 t CO2e"
     ],
     "note": "Example figures: the shares and the factors (kg CO2e per kg) are placeholders. Take factors from a recognised database and name it. Recycled material shows zero here because reprocessing is counted by whoever uses the recycled material."
   },

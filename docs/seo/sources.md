@@ -331,6 +331,8 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://sameeeksha.org/index.php?option=com_content&view=article&id=217&Itemid=502
 - https://sameeeksha.org/index.php?option=com_content&view=article&id=218&Itemid=502
 - https://sameeeksha.org/index.php?option=com_content&view=article&id=225&Itemid=502
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=219&Itemid=502
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=220&Itemid=502
 - https://sameeeksha.org/index.php?option=com_content&view=article&id=235&Itemid=502
 - https://sameeeksha.org/index.php?option=com_content&view=article&id=256&Itemid=502
 - https://sameeeksha.org/index.php?option=com_content&view=article&id=308&Itemid=502

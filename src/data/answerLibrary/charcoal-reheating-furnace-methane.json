@@ -20,7 +20,7 @@
       "h": "Why charcoal is not like wood",
       "p": [
         "IPCC gives wood and wood waste 30 kg of methane per TJ in industry. Charcoal gets 200. Per tonne, wood's methane and nitrous oxide come to about 30 kg CO2e; charcoal's to about 191 kg. Per GJ of heat, charcoal adds roughly three times more to Scope 1 than wood.",
-        "The range is wide. At IPCC's low methane value a tonne adds about 56 kg CO2e; at the high value, about 478 kg. Without a measurement on your furnace, use the default and say so."
+        "The range is wide. At IPCC's low methane value, methane alone adds about 56 kg CO2e a tonne; at the high value, about 478 kg. Without a measurement on your furnace, use the default and say so."
       ]
     },
     {

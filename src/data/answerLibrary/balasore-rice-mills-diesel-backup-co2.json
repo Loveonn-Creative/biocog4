@@ -35,7 +35,7 @@
         "Generator diesel slips kept apart from vehicle diesel, with outage hours from the log book.",
         "Monthly grid bills with kWh.",
         "Husk burnt, in tonnes, on its own line as biogenic.",
-        "Tonnes of rice milled, so the buyer gets kg CO2 per tonne. The cluster's power use is about 72 kWh per tonne of rice."
+        "Tonnes of rice milled, so the buyer gets kg CO2 per tonne. TERI puts power at about 72 kWh per tonne of rice, though the cluster totals divide to about 106, so your own meter decides."
       ]
     }
   ],

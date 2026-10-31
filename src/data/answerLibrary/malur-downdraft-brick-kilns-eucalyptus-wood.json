@@ -43,10 +43,10 @@
       "Wood energy, at TERI's cluster ratio of 70,606 toe for 177,542 t: 287 t x 16.7 GJ = about 4,780 GJ",
       "Biogenic CO2: 4,780 GJ x 112 kg = about 535 t, reported separately",
       "Methane: 4.78 TJ x 30 kg = 143 kg; nitrous oxide: 4.78 TJ x 4 kg = 19 kg",
-      "In CO2e (AR5): 143 x 28 + 19 x 265 = about 9 t, counted in Scope 1",
+      "In CO2e (AR6): 143 x 27 + 19 x 273 = about 9 t, counted in Scope 1",
       "Cluster wood: 70,606 toe x 41.868 GJ x 112 kg = about 331,000 t biogenic CO2"
     ],
-    "note": "Wood quantities and batch details from TERI's Malur brick kiln profile (2016-17 data). Factors are IPCC 2006 defaults for wood in stationary combustion; global warming potentials from IPCC AR5."
+    "note": "Wood quantities and batch details from TERI's Malur brick kiln profile (2016-17 data). Factors are IPCC 2006 defaults for wood in stationary combustion; global warming potentials from IPCC AR6."
   },
   "senseible": "Senseible applies no factor to wood, so it gives no CO2 figure for it; it reads the diesel and electricity bills, the fossil part, into Scope 1 and 2 records in minutes.",
   "links": [
