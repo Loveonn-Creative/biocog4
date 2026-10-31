@@ -1,0 +1,68 @@
+{
+  "slug": "leased-asset-construction-emissions-optional",
+  "q": "Should I count the emissions of building or making a leased asset?",
+  "title": "Construction emissions of leased assets",
+  "short": "Not required. GHG Protocol Category 8 covers the operation of assets you lease: their fuel, electricity, refrigerant and process emissions. Emissions from manufacturing or constructing those assets are optional. If you add them, use life cycle factors that include manufacturing and construction, and show them separately from operating emissions.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Companies leasing sheds, warehouses, offices, vehicles or machinery",
+  "sections": [
+    {
+      "h": "What Category 8 holds by default",
+      "p": [
+        "The operating emissions of leased assets that are not already in your Scope 1 or 2: fuel burnt, electricity used, refrigerant leaks and any process emissions, for the time you held the lease. That is what a buyer or lender expects to see first."
+      ]
+    },
+    {
+      "h": "When adding construction is worth it",
+      "ul": [
+        "You lease a building put up for you, on a long lease, and want to compare leasing against building your own.",
+        "A buyer or investor asks for a full life cycle view of your sites.",
+        "You lease a large fleet or heavy machinery and want manufacturing emissions on the same footing as equipment you buy, which sits in Category 2."
+      ]
+    },
+    {
+      "h": "What it is not",
+      "ul": [
+        "Racks, mezzanines or a cold room you pay for and install in a rented shed are your own purchases, Category 2 capital goods, not a leased asset.",
+        "Repairs the landlord makes during the lease are part of the landlord's costs, not your construction emissions."
+      ]
+    },
+    {
+      "h": "If you include it",
+      "p": [
+        "Estimate from the materials used, such as tonnes of steel and cement, or from floor area, multiplied by cradle-to-gate or construction factors from a named life cycle database, and label it an estimate. The guidance does not say how to spread these emissions over a lease. Choose one approach, all in the first year or spread over the lease term, state it and keep it."
+      ]
+    }
+  ],
+  "senseible": "Senseible covers operating records: it reads electricity bills and fuel slips for leased sites. It does not estimate construction or manufacturing emissions of buildings or machines you lease.",
+  "links": [
+    {
+      "label": "Part-year leases in Category 8",
+      "to": "/answers/leased-asset-part-year-category-8"
+    },
+    {
+      "label": "Rented factory: which scope",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    },
+    {
+      "label": "Capital goods in the year of purchase",
+      "to": "/answers/capital-goods-scope-3-count-in-year-of-purchase"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 8",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter8.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

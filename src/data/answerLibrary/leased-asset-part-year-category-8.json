@@ -1,0 +1,78 @@
+{
+  "slug": "leased-asset-part-year-category-8",
+  "q": "I rented a godown for only five months: how much goes into Scope 3?",
+  "title": "Godown rented for part of the year",
+  "short": "Only the five months. If the godown sits in Category 8 rather than your Scope 2, which depends on your consolidation approach, the GHG Protocol says an asset leased for part of the year counts only for the portion leased. Use those months' bills, and split any bill that straddles the start or end by days.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs, traders and exporters with short-term godowns, sheds or office space",
+  "sections": [
+    {
+      "h": "First, is it Category 8 at all?",
+      "p": [
+        "Category 8 holds leased assets that are not already in your Scope 1 or 2. Under operational control, the approach most companies use, a godown you rent and run is yours: its electricity is Scope 2 and its generator diesel is Scope 1. It moves to Category 8 under financial control or equity share with an operating lease. Either way, the part-year rule below still decides how much you count."
+      ]
+    },
+    {
+      "h": "How to count the months you held it",
+      "ol": [
+        "Take the electricity and diesel bills for the lease period.",
+        "For a bill that runs past the lease start or end, multiply its units by lease days in the bill divided by days in the bill.",
+        "If the landlord pays and you have no bills, ask for sub-meter readings for your months, or use your share of the building's floor area for those months.",
+        "With no energy data at all, the guidance allows an average for the floor space and building type, labelled as an estimate."
+      ]
+    },
+    {
+      "h": "What to record",
+      "p": [
+        "Note the lease dates, the consolidation approach, which bills or readings you used, how any straddling bill was split, and the grid factor edition. A buyer reading your figure should see why the godown shows five months, not twelve."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a godown leased 16 July to 15 December 2025",
+    "lines": [
+      "July bill 2,170 kWh for 31 days; lease days 16 to 31 = 16; 2,170 x 16 / 31 = 1,120 kWh",
+      "August to November bills: 1,980 + 1,900 + 1,850 + 1,760 = 7,490 kWh",
+      "December bill 1,860 kWh for 31 days; lease days 1 to 15 = 15; 1,860 x 15 / 31 = 900 kWh",
+      "Total 1,120 + 7,490 + 900 = 9,510 kWh x 0.675 kg CO2 per kWh (CEA, FY 2025-26) = 6,419 kg CO2",
+      "Generator diesel bought for the godown: 140 litres x 2.645 kg CO2 per litre = 370 kg CO2",
+      "Godown total: 6,419 + 370 = 6,789 kg, about 6.8 t CO2, for the five months"
+    ],
+    "note": "Bill amounts are an example. Whether this lands in Category 8 or in your Scope 1 and 2 depends on your consolidation approach."
+  },
+  "senseible": "Senseible reads each electricity bill's billing period and units and each diesel slip's litres, so the bills for the lease months are on record with their dates. Splitting a bill that runs past the lease dates is a step you set.",
+  "links": [
+    {
+      "label": "Rented factory: Scope 1 and 2 or Scope 3",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    },
+    {
+      "label": "Rented warehouse, landlord pays the power",
+      "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3"
+    },
+    {
+      "label": "Coworking space emissions",
+      "to": "/answers/coworking-space-emissions-scope-2-or-category-8"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 8",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter8.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

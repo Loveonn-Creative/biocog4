@@ -1,0 +1,77 @@
+{
+  "slug": "upstream-fuel-factor-same-source-as-combustion",
+  "q": "Can I mix a combustion factor from one source and a well-to-tank factor from another for Category 3?",
+  "title": "Combustion and upstream factors: one source?",
+  "short": "Avoid it where you can. The GHG Protocol asks that, if possible, combustion and life cycle factors share the same period, technology and geography. If your source gives only a full life cycle factor, subtract that same source's combustion factor to get the upstream part, not a combustion factor taken from elsewhere.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sustainability and finance staff preparing Scope 3 Category 3 for Indian factories",
+  "sections": [
+    {
+      "h": "What the guidance actually says",
+      "ul": [
+        "Upstream emissions of fuels = fuel used x upstream factor, where the upstream factor is the life cycle factor minus the combustion factor.",
+        "Some sources publish upstream values with combustion already left out. Use those as they are; there is nothing to subtract.",
+        "If possible, the combustion and life cycle factors should come from sources with the same temporal, technical and geographic representativeness.",
+        "For electricity, the upstream factor is life cycle minus combustion minus T&D losses, and the T&D part is taken out only if the life cycle factor includes it."
+      ]
+    },
+    {
+      "h": "Why a mix goes wrong",
+      "p": [
+        "A life cycle factor contains its own author's view of combustion. Take away somebody else's combustion figure and the gap between the two methods lands in your upstream line, where it looks like real supply chain emissions."
+      ],
+      "ul": [
+        "CO2 against CO2e: subtracting a CO2-only combustion factor from a CO2e life cycle factor leaves the methane and nitrous oxide from burning inside the upstream figure.",
+        "Different fuel specs: per litre values depend on density and blend. A factor for diesel with a biofuel share does not line up with one for pure mineral diesel.",
+        "Gross against net calorific value: per kWh factors built on different calorific bases do not subtract cleanly, which matters most for gas."
+      ]
+    },
+    {
+      "h": "Your Scope 1 can keep its own factor",
+      "p": [
+        "The rule is about the subtraction, not about forcing one factor set everywhere. Keep your Scope 1 on the combustion factors you already use, and take the Category 3 upstream value from a single source. In your method note, name the source and edition for each, and say how the upstream value was derived."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 50,000 litres of diesel",
+    "lines": [
+      "Life cycle database: 3.20 kg CO2e per litre, of which its own combustion part is 2.70",
+      "Right: 3.20 minus 2.70 = 0.50 kg per litre upstream; 50,000 x 0.50 = 25,000 kg, or 25.0 t CO2e",
+      "Mixed: 3.20 minus 2.645 (an IPCC-based CO2-only factor) = 0.555 kg per litre; 50,000 x 0.555 = 27,750 kg, or 27.75 t",
+      "The extra 2.75 t, about 11%, is a method mismatch, not upstream emissions"
+    ],
+    "note": "The 3.20 and 2.70 values are examples, not from a real database. Use the figures in the source you name."
+  },
+  "senseible": "Senseible applies IPCC 2006 combustion factors to the litres and kilograms it reads for Scope 1, for example 2.645 kg CO2 per litre of diesel. It does not apply upstream factors, so the quantities are ready to multiply by a well-to-tank value from one named source.",
+  "links": [
+    {
+      "label": "Life cycle or combustion factor in Scope 3",
+      "to": "/answers/life-cycle-vs-combustion-factor-scope-3"
+    },
+    {
+      "label": "Well-to-tank from diesel invoices",
+      "to": "/answers/well-to-tank-emissions-from-diesel-invoices"
+    },
+    {
+      "label": "Can an Indian company use DEFRA factors",
+      "to": "/answers/can-indian-company-use-defra-factors"
+    },
+    {
+      "label": "Emission calculators",
+      "to": "/calculators"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 3 (formulas 3.1 and 3.2)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter3.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "power-trader-category-3-electricity-sold-to-end-users",
+  "q": "Does a power trader or discom report the generation of electricity it resells under Scope 3 Category 3?",
+  "title": "Resold electricity: Category 3, activity D",
+  "short": "Yes. Electricity a utility or energy retailer buys and sells on to end users is Scope 3 Category 3, activity D, in the GHG Protocol: report the life cycle emissions of generating it, upstream fuel plus combustion. A generator selling its own output does not, because that combustion is already its Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Discoms, power trading licensees, open access suppliers and their sustainability teams",
+  "sections": [
+    {
+      "h": "Where each tonne sits along the power chain",
+      "p": [
+        "The Scope 3 technical guidance follows one coal plant's output through four companies. Its example numbers show why activity D exists: without it, nobody in the middle of the chain would show the emissions of the power they trade."
+      ],
+      "ul": [
+        "Coal miner: the coal it sells is burned by others, so that combustion is its Category 11, use of sold products.",
+        "Generator: the coal it burns is its Scope 1. It reports nothing in Scope 3 for the electricity it sells, because that is already in its Scope 1. Mining and transport of its coal go in its Category 3, activity A.",
+        "Utility that buys the power: electricity it uses itself is its Scope 2. Generation of the power it buys and sells to customers, upstream plus combustion, is its Category 3, activity D.",
+        "End customer: its metered kWh are Scope 2; upstream fuel and the power lost in the grid go in its Category 3, activities B and C."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "p": [
+        "Emissions = kWh bought for resale x a life cycle emission factor, summed across suppliers or regions. Life cycle here means upstream fuel supply plus combustion at the plant, not combustion alone.",
+        "Supplier-specific method: use CO2, CH4 and N2O data for the generating units the power came from. Your power purchase agreements and scheduling records already name them. Average-data method: use the grid average factor for where the power came from, when unit data is not available."
+      ]
+    },
+    {
+      "h": "Indian points to watch",
+      "ul": [
+        "The CEA grid factor counts CO2 from combustion per kWh of net generation. On its own it is not a life cycle factor: add an upstream value from a named life cycle database and say so.",
+        "Renewable power bought for resale gets its own generator data, not the coal-heavy grid average. Keep the plant-wise purchase quantities separate.",
+        "The guidance writes activity D for power sold to end users. It does not single out a trading licensee that sells to another discom. Counting all power you buy for resale and stating that choice leaves nothing out.",
+        "The guidance's example gives a utility no Scope 1 unless SF6 escapes from its network equipment. Track SF6 top-ups in switchgear and breakers as Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a trader resells 200 million kWh bought from the grid mix",
+    "lines": [
+      "Power bought for resale in FY 2025-26: 200,000,000 kWh, with no generating unit data",
+      "Combustion part: 200,000,000 x 0.675 kg CO2 per kWh (CEA, FY 2025-26) = 135,000,000 kg, or 135,000 t CO2",
+      "Upstream part: 200,000,000 kWh x the upstream factor from your chosen life cycle database, added on top",
+      "Category 3, activity D = 135,000 t plus the upstream part, reported with both sources named"
+    ],
+    "note": "Quantities are an example. The CEA figure is CO2 only; if the upstream factor is in CO2e, say that the total mixes the two."
+  },
+  "senseible": "Senseible reads electricity bills and applies the CEA grid factor to the units you consume, as Scope 2. It does not calculate emissions of power you trade; plant-wise purchase volumes for activity D come from your own scheduling records.",
+  "links": [
+    {
+      "label": "Captive coal power and Category 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "T&D losses in Category 3",
+      "to": "/answers/scope-3-category-3-transmission-losses"
+    },
+    {
+      "label": "Discom fuel mix instead of the CEA factor",
+      "to": "/answers/discom-fuel-mix-instead-of-cea-grid-factor"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 3 (tables 3.1 and 3.2, formula 3.4)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter3.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "sold-product-maintenance-emissions-optional",
+  "q": "Do I count maintenance emissions of products after I sell them?",
+  "title": "Maintenance of sold products: Category 11?",
+  "short": "Optional. The GHG Protocol's Category 11 guidance requires the direct use-phase emissions of products you sell and lets you add emissions from maintaining them during use. Refrigerant leaking from a sold air conditioner is not optional maintenance: gases released during use are direct use-phase emissions and stay required.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Makers of pumps, motors, gensets, air conditioners, vehicles and machinery",
+  "sections": [
+    {
+      "h": "Required and optional in Category 11",
+      "ul": [
+        "Required, direct use-phase: fuel or electricity the product uses, fuels and feedstocks you sell, and greenhouse gases the product releases in use, such as refrigerant.",
+        "Optional, indirect use-phase: energy the product needs from something else, such as hot water to wash a garment. The guidance says to include it when it is expected to be significant.",
+        "Optional, maintenance during use."
+      ]
+    },
+    {
+      "h": "What maintenance usually means here",
+      "p": [
+        "The guidance does not list what maintenance covers. Common readings are the spares and consumables replaced over a product's life: oil and filters for a genset or tractor, seals and bearings for a pump, replacement batteries for an inverter, and the travel of the technician who services it. If you include any of these, say which."
+      ]
+    },
+    {
+      "h": "Service you run yourself is not Category 11",
+      "p": [
+        "If your own technicians service products under an annual maintenance contract, their vehicle fuel is your Scope 1 and the spares you buy are your purchased goods. Category 11 maintenance is the work customers or third parties do after the sale."
+      ]
+    },
+    {
+      "h": "If you include it",
+      "p": [
+        "Category 11 counts the expected lifetime emissions of products sold in the reporting year, so maintenance is estimated over the whole life too. Show it as a separate line from direct use-phase emissions, and report the lifetime, service intervals and factors you assumed, since Category 11 requires a description of methods and assumptions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: lubricating oil for 500 gensets sold this year",
+    "lines": [
+      "Expected life 10 years, 2 oil changes a year, 12 litres of oil per change",
+      "500 x 10 x 2 x 12 = 1,20,000 litres of lubricating oil over the products' lifetime",
+      "Multiply by a cradle-to-gate factor for lubricating oil from a named life cycle database",
+      "Report it apart from the diesel the gensets will burn, which is required"
+    ],
+    "note": "Life, intervals and oil volume are an example. Use the service schedule in your own manual."
+  },
+  "senseible": "Senseible does not model use-phase or maintenance emissions of products you sell. It reads your own fuel slips, bills and purchase invoices, so service work you do yourself shows up in your Scope 1 and purchases.",
+  "links": [
+    {
+      "label": "Use of sold products: the calculation",
+      "to": "/answers/use-of-sold-products-category-11-calculation"
+    },
+    {
+      "label": "Indirect use-phase emissions",
+      "to": "/answers/indirect-use-phase-emissions-optional"
+    },
+    {
+      "label": "Refrigerant leaks from sold ACs",
+      "to": "/answers/refrigerant-leakage-in-use-of-sold-acs"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 11 (table 11.1)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter11.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}
