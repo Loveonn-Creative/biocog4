@@ -36,15 +36,17 @@ export const Reveal = ({ children, delay = 0, className = "" }: { children: Reac
  */
 export const SectionHead = ({
   n, eyebrow, title, className = "", center = false,
-}: { n?: string; eyebrow: ReactNode; title: ReactNode; className?: string; center?: boolean }) => {
+}: { n?: string; eyebrow?: ReactNode; title: ReactNode; className?: string; center?: boolean }) => {
   const { ref, inView } = useInView<HTMLDivElement>(0.4);
   return (
     <div ref={ref} className={`${center ? "text-center" : ""} ${className}`}>
-      <div className={`flex items-center gap-3 mb-4 text-xs uppercase tracking-[0.14em] text-primary ${center ? "justify-center" : ""}`}>
-        {n && <span className="font-mono text-[11px] text-muted-foreground tabular-nums">{n}</span>}
-        {n && <span aria-hidden="true" className="h-px w-6 bg-primary/40" />}
-        <span>{eyebrow}</span>
-      </div>
+      {(n || eyebrow) && (
+        <div className={`flex items-center gap-3 mb-4 text-xs uppercase tracking-[0.14em] text-primary ${center ? "justify-center" : ""}`}>
+          {n && <span className="font-mono text-[11px] text-muted-foreground tabular-nums">{n}</span>}
+          {n && <span aria-hidden="true" className="h-px w-6 bg-primary/40" />}
+          {eyebrow && <span>{eyebrow}</span>}
+        </div>
+      )}
       <h2 className="relative inline-block text-[1.75rem] leading-[1.15] md:text-[2.5rem] font-semibold tracking-tight text-foreground [text-wrap:balance]">
         {title}
         <svg aria-hidden="true" viewBox="0 0 300 12" preserveAspectRatio="none" className="absolute -bottom-2 left-0 h-2.5 w-24 md:w-32 text-primary/50">

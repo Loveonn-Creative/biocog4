@@ -19,7 +19,7 @@ export const PrivacyVault = () => {
 
   return (
     <div>
-      <SectionHead className="mb-10" eyebrow="What stays, what moves" title="Privacy by design" />
+      <SectionHead className="mb-10" title="Privacy by design" />
       <div ref={ref}>
         <svg viewBox="0 0 640 230" className="w-full h-auto" role="img" aria-label="Your bill goes into a locked vault in your account and stays there. Only its total comes out.">
           {/* Vault */}
