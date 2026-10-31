@@ -1,0 +1,65 @@
+{
+  "slug": "chandigarh-fastener-units-cbam-carbon-data",
+  "q": "Chandigarh fastener makers: does CBAM cover their bolts and nuts, and what does the cluster use in energy?",
+  "title": "Chandigarh fasteners: CBAM and energy",
+  "short": "Yes. Bolts, nuts, screws and washers under 7318 are CBAM goods. Chandigarh's 220 or so fastener units run mostly on grid power, which CBAM ignores for steel, so their CBAM figure is almost all wire rod plus any furnace oil burnt in hardening or galvanising.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Fastener makers in Chandigarh's industrial areas, members of CSMA and IAC, and EU buyers sourcing from them",
+  "sections": [
+    {
+      "h": "The cluster in TERI's 2016 profile",
+      "ul": [
+        "About 615 MSMEs: 250 tractor and auto parts, 220 fasteners, 85 railway parts and 60 steel fabrication.",
+        "Fastener units are 70% micro. Micro units make most mild steel fasteners, about 60% of the market; small and medium units make high tensile ones.",
+        "The cluster uses 13,655 toe a year: electricity about 86% (136.8 million kWh), diesel for DG sets about 14%, and a little furnace oil and LPG.",
+        "Fasteners use 4,030 toe, 30% of the cluster. Furnace oil is burnt mainly by a few fastener units in galvanising furnaces.",
+        "Power supply is good: DG sets run only 25 to 30 hours a month in a typical unit.",
+        "Small units buy wire rod from the CITCO depot; units above 600 tonnes a year buy direct from steel makers."
+      ]
+    },
+    {
+      "h": "What counts in the CBAM figure for a fastener",
+      "ol": [
+        "The wire rod or bar: the steel maker's figure per tonne, or the EU default (4.270 t CO2e per tonne for Indian wire rod), multiplied by tonnes of rod per tonne of good fasteners.",
+        "Fuel burnt on site: furnace oil or LPG in hardening, tempering or galvanising furnaces, and DG diesel if you include it.",
+        "Not electricity. For iron and steel goods CBAM counts direct emissions only, so the cold headers and thread rollers that use most of your power add nothing."
+      ]
+    },
+    {
+      "h": "Before you send anything",
+      "ul": [
+        "Confirm the 8-digit code with the EU buyer: threaded bolts are 7318 15, nuts 7318 16, washers 7318 21 or 7318 22.",
+        "Ask CITCO or your steel maker whether it can give a CO2 figure per tonne of rod. Without one, the rod enters at its default.",
+        "Keep furnace oil and LPG bills by month, and the tonnes you hardened or galvanised, separate from your power bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of hex bolts, CN 7318 15, imported into the EU in 2026",
+    "lines": [
+      "Wire rod: 1.08 t per tonne of bolts x 4.270 default = 4.61 t CO2e",
+      "Hardening furnace: 30 L furnace oil per tonne x 2.97 kg = 0.09 t",
+      "Actual figure: 4.61 + 0.09 = 4.70 t CO2e per tonne",
+      "Default for 7318 15 with the 2026 mark-up: 5.720 x 1.10 = 6.292 t",
+      "Gap on 100 t: (6.292 minus 4.70) x 100 = about 159 t CO2e the importer does not have to cover"
+    ],
+    "note": "The 1.08 yield and 30 L per tonne are examples; use your own. Even with the rod at its default, a cold-forming shop's own figure here comes in below the bolt default."
+  },
+  "senseible": "Senseible turns your wire rod invoices and furnace fuel bills into dated monthly records, and its CBAM tools work out a figure per tonne by CN code for your EU buyer. Your buyer still confirms the code and files the declaration.",
+  "links": [
+    { "label": "CBAM for Indian exporters", "to": "/cbam" },
+    { "label": "Are nuts and bolts covered", "to": "/answers/are-nuts-and-bolts-covered-by-cbam" },
+    { "label": "CBAM default values for Indian fasteners", "to": "/answers/cbam-default-value-india-fasteners" },
+    { "label": "Indian wire rod default", "to": "/answers/cbam-default-value-india-rebar-wire-rod" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Chandigarh engineering industries (SAMEEEKSHA, 2016)", "url": "https://sameeeksha.org/pdf/clusterprofile/Chandigarh-Engineering-Punjab-industries.pdf" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated, Annexes I and II", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "European Commission, default values file (version of 6 August 2026), India sheet", "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 4.25 on mark-ups", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2016. Recheck the default values, and whether the downstream extension proposal changes coverage."
+}

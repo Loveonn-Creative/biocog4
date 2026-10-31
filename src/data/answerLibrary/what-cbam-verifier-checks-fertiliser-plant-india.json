@@ -1,0 +1,74 @@
+{
+  "slug": "what-cbam-verifier-checks-fertiliser-plant-india",
+  "q": "What does a CBAM verifier check at an Indian fertiliser plant?",
+  "title": "CBAM verifier checks at a fertiliser plant",
+  "short": "Nitric acid N2O from continuous stack monitoring, the nitrogen content behind every tonne sold, how your CN codes were grouped, ammonia and hydrogen bought in as precursors, CO2 sent to the urea plant, and electricity, which counts for fertilisers. The verifier needs scope IV, plus II or III where you make ammonia or nitric acid, each with LII.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian urea, ammonia, nitric acid and NPK or complex fertiliser plants whose EU importers want verified actual figures",
+  "sections": [
+    {
+      "h": "Match the verifier's scope to your plant",
+      "ul": [
+        "Urea and mixed fertilisers such as NPK, ammonium nitrate or CAN: activity group IV.",
+        "Ammonia, and hydrogen made on site: group II.",
+        "Nitric acid: group III.",
+        "Electricity counts for all fertiliser goods, so every one of these groups must come with LII, indirect emissions. A verifier accredited only for steel or cement cannot sign your report."
+      ]
+    },
+    {
+      "h": "Nitric acid: N2O is measured, never estimated",
+      "p": [
+        "N2O from the catalytic oxidation of ammonia and from any NOx or N2O abatement unit must be monitored with a continuous emission measurement system at a suitable point. Several stacks that cannot be measured from one place are monitored separately and added. N2O from burning fuel is left out. The verifier checks the CEMS data, its calibration and the flue gas flow, for which the rules prefer a mass balance over a flow meter, and converts at 265 t CO2e per tonne of N2O. That N2O then travels into every ammonium nitrate or NPK tonne made from the acid."
+      ]
+    },
+    {
+      "h": "Ammonia, hydrogen and the CO2 that goes to urea",
+      "ul": [
+        "CO2 captured at the ammonia unit and used to make urea counts as emitted at your installation. It is not treated as permanently bound.",
+        "Hydrogen produced separately is a precursor with its own embedded emissions; the electricity behind that hydrogen may be left out of the ammonia figure.",
+        "Ammonia is reported as 100% ammonia, whether hydrous or anhydrous, and nitric acid as 100% acid.",
+        "Heat recovered from the ammonia or nitric acid reaction carries zero emissions, and so does power from an expansion turbine. The verifier checks you kept these apart from boiler steam and grid power."
+      ]
+    },
+    {
+      "h": "Nitrogen content and how your goods were grouped",
+      "ul": [
+        "Fertiliser figures are per kg of nitrogen for each CN code, then multiplied by the average nitrogen in each range of composition you sell.",
+        "Goods may share one production process only if they use the same precursors in the same types, quantities and proportions, or are the same substance in different concentrations.",
+        "For mixed fertilisers you report nitrogen as ammonium, nitrate, urea and other forms, plus total N. For urea, purity and N content.",
+        "Grades made to a customer's own recipe need a nitrogen declaration for each consignment. The verifier may compare your figures with your customers' purchase orders."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Grid power for compressors, prilling towers and granulators is part of the figure for every fertiliser good. Any captive plant figure you use instead needs the evidence the rules ask for, which the verifier tests line by line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two numbers a verifier reruns",
+    "lines": [
+      "Nitric acid CEMS: 180 t of N2O from the process stacks in the year",
+      "In CO2e: 180 x 265 = 47,700 t, carried into the ammonium nitrate and NPK made from that acid",
+      "NPK 10:26:26 range: 100 kg N per tonne. At a process figure of 0.004 t CO2e per kg N: 0.004 x 100 = 0.40 t per tonne",
+      "A customer's order for a 12:32:16 grade shipped under the same 0.40 t: it should be 0.004 x 120 = 0.48 t",
+      "The 0.08 t a tonne gap is a misstatement the verifier will raise"
+    ],
+    "note": "Example quantities and figures. The GWP of 265 is the value in the Commission's fertiliser guidance."
+  },
+  "senseible": "Senseible reads gas, ammonia purchase and power invoices into dated records, and its CBAM Suite builds per-process files for ammonia, nitric acid, urea and mixed fertilisers, taking your CEMS total for N2O as measured. Every figure is checked in-house before an accredited verifier, Senseible's partner or one you appoint, signs off.",
+  "links": [
+    { "label": "Build your fertiliser CBAM file", "to": "/cbam-suite" },
+    { "label": "Nitric acid N2O", "to": "/answers/nitric-acid-plant-n2o-emissions" },
+    { "label": "Nitrogen content ranges", "to": "/answers/mixed-fertiliser-cbam-nitrogen-content-ranges" },
+    { "label": "Electricity in fertiliser CBAM", "to": "/answers/cbam-fertiliser-indirect-emissions-electricity" },
+    { "label": "Verifier scopes by sector", "to": "/answers/cbam-verifier-accreditation-scopes-by-sector" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1, 2.2, 5.3, 7.7 and 9.2.3", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Guidance No. 5c, fertilisers (14 August 2026), sections 2 and 3.1, Tables 3-1 and 3-2", "url": "https://taxation-customs.ec.europa.eu/document/download/8fd0542b-e67d-4183-bb20-a19de510f53c_en?filename=Guidance%20No.%205c%20-%20Sector-specific%20guidance%20document%20on%20fertilisers.pdf" }
+  ],
+  "reviewed": "2026-10-30"
+}

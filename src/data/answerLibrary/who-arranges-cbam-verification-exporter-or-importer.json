@@ -1,0 +1,72 @@
+{
+  "slug": "who-arranges-cbam-verification-exporter-or-importer",
+  "q": "Who arranges and pays for CBAM verification: the Indian exporter or the EU importer?",
+  "title": "Who arranges CBAM verification?",
+  "short": "The Indian plant arranges it. The Commission says the operator of the installation must contract the accredited verifier, and only the operator can decide to have its figures verified; if it does not, the importer uses default values. No EU rule says who pays. That is settled in your contract with the buyer.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian steel, aluminium, cement, fertiliser and hydrogen exporters, and the EU importers buying from them",
+  "sections": [
+    {
+      "h": "Why it sits with the plant",
+      "p": [
+        "Verified figures describe one installation's year: its fuels, process emissions, precursors and output. Only the operator holds that evidence and can let a verifier on site. The Commission's Questions and Answers puts it plainly: only third-country operators can decide to monitor, calculate and have their emissions verified. If they choose not to, declarants must use default values."
+      ]
+    },
+    {
+      "h": "What the importer cannot do",
+      "ul": [
+        "Hire a verifier for your plant on its own. The verifier needs your data, your staff and a site visit.",
+        "Buy a verification report from anyone else. The Commission warns that a third party offering an importer a paid verification report is likely a scam.",
+        "Pass on its legal responsibility. The declarant alone answers for the declaration, verification report included."
+      ]
+    },
+    {
+      "h": "Who pays is a commercial choice",
+      "p": [
+        "The rules are silent on the fee. Some exporters pay and recover it in price, some importers pay, some split it. One verified report covers the installation's year, so you can share it with every EU buyer of those goods rather than paying per customer. Expect an estimate that can grow, not a lump sum: accreditation rules do not let verifiers accept a fixed price, because extra work found during verification must be paid for."
+      ]
+    },
+    {
+      "h": "The dates that drive the contract",
+      "ul": [
+        "National accreditation bodies were expected to issue the first CBAM accreditations around September 2026.",
+        "No verification work can be done before the verifier is accredited, but you may already agree terms with a firm that is applying.",
+        "First verification reports are expected in early 2027.",
+        "The importer's first annual declaration, for 2026 imports, is due by 30 September 2027.",
+        "The Commission advises contracting a verifier early in the reporting year; monitoring plan checks can start before the year closes."
+      ]
+    },
+    {
+      "h": "Put these in writing with your buyer",
+      "ol": [
+        "Who appoints the verifier, and that the buyer may rely on its report.",
+        "Who pays, and how the fee is split if several buyers use the same report.",
+        "The date the verified report reaches the buyer.",
+        "Whether you register in the CBAM Registry, so the buyer receives figures there, or send the signed report yourself."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Splitting one verification across three buyers by tonnage",
+    "lines": [
+      "Plant ships 6,000 t of CBAM goods to the EU in the year",
+      "Buyer A 3,000 t, Buyer B 2,000 t, Buyer C 1,000 t",
+      "Shares: 3,000 / 6,000 = 50%, 2,000 / 6,000 = 33%, 1,000 / 6,000 = 17%",
+      "Each buyer pays that share of the final verifier invoice, whatever the number of days billed"
+    ],
+    "note": "Tonnages are examples. Splitting by tonnage is one option; a flat share per buyer is another."
+  },
+  "senseible": "Senseible prepares the verifier-ready file from your fuel, power and production records and checks every figure in-house first, so the verifier's days go on testing, not chasing documents. An accredited verifier signs it off: Senseible's partner, or your own.",
+  "links": [
+    { "label": "CBAM for EU declarants", "to": "/cbam-authorised-declarant" },
+    { "label": "CBAM clauses for export contracts", "to": "/answers/what-cbam-clause-to-put-in-export-contract" },
+    { "label": "Is the importer liable for errors?", "to": "/answers/is-eu-importer-liable-for-cbam-verifier-error" },
+    { "label": "Why no fixed verification fee", "to": "/answers/why-cbam-verifier-wont-quote-fixed-fee" }
+  ],
+  "sources": [
+    { "label": "European Commission, CBAM Guidance No. 1, Introduction to CBAM concepts (14 August 2026), section 2.4.4 and the CBAM process steps", "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (updated 15 October 2026), questions 5.10 to 5.13", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
+  ],
+  "reviewed": "2026-10-30"
+}

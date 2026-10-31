@@ -1,0 +1,66 @@
+{
+  "slug": "mohali-tractor-parts-cluster-carbon",
+  "q": "What is the Mohali tractor and auto parts cluster's footprint, and what do OEMs want?",
+  "title": "Mohali tractor parts: carbon and OEMs",
+  "short": "Mohali's 900 engineering MSMEs used 20,969 toe a year in TERI's 2015 profile, 84% of it grid electricity, and tractor and auto parts makers used three quarters of it. For an OEM's supplier request, your own power is often the smaller number: the steel you buy, about 300 t a year for an average unit, can outweigh it.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Tractor, auto and railway component makers in Mohali's industrial phases supplying OEMs in and around Punjab",
+  "sections": [
+    {
+      "h": "Who is in the cluster",
+      "ul": [
+        "About 4,000 MSMEs, 900 of them engineering: 700 tractor and auto parts, 100 steel fabrication, 50 railway components, 40 bathroom fittings, 10 forging units making elastic rail clips.",
+        "Customers include tractor and combine makers in and around Mohali, and Indian Railways' coach and loco works in Kapurthala and Patiala.",
+        "Each unit makes 50 to 100 different parts and records pieces, not tonnes. Turnover about Rs 6,000 crore.",
+        "Steel is almost 70% of production cost; an average unit uses about 300 t a year."
+      ]
+    },
+    {
+      "h": "Energy by segment",
+      "ul": [
+        "Tractor and auto parts 15,744 toe (75%), steel fabrication 2,249, railway components 1,398, sanitary fittings 910, forging 667.",
+        "Electricity 17,716 toe (84%), diesel for DG sets 2,796 toe (13%), furnace oil 457 toe.",
+        "DG sets now run about 25 to 30 hours a month. Connected load is 50 to 80 kVA for micro units, 80 to 120 for small and 120 to 200 for medium."
+      ]
+    },
+    {
+      "h": "What an OEM will ask you",
+      "ol": [
+        "Grid kWh and DG diesel for the year, with the factor used for each.",
+        "Steel bought, by grade, mill and tonnes, since it can be your largest number.",
+        "A figure per part, allocated by mass or machine hours, using the same basis every year.",
+        "The share of your output that goes to that OEM, so it can take only its part of your footprint."
+      ]
+    },
+    {
+      "h": "Cuts TERI listed",
+      "ul": [
+        "Electrical measures across the cluster: 10 to 15% less power, from air leaks, VFD screw compressors, IE3 motors, correctly sized capacitors and LED lighting.",
+        "Sanitary fittings units still on oil-fired melting: electric furnaces are 25 to 35% more efficient, and 30 to 35 units have already switched.",
+        "About 30% of units run CNC or VMC machines; the rest still use conventional machine tools."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an average tractor parts unit",
+    "lines": [
+      "Electricity: 13.18 million kWh a month across 700 units = about 18,800 kWh a unit a month, 226,000 kWh a year",
+      "Scope 2: 226,000 x 0.675 = about 153 t CO2",
+      "Steel bought: 300 t x 2.0 t CO2 per tonne = 600 t CO2",
+      "Steel is about four times the power footprint: 600 / 153 = 3.9"
+    ],
+    "note": "TERI's 2015 averages with Senseible's FY 2025-26 grid factor. The 2.0 t per tonne steel figure is an example; ask your mill for its own. DG diesel adds a little more to your Scope 1."
+  },
+  "senseible": "Upload PSPCL bills, diesel slips and steel purchase invoices and Senseible separates your own Scope 1 and 2 from the steel you bought, so an OEM's supplier sheet gets both, each line traceable to a document.",
+  "links": [
+    { "label": "Supplier evidence for OEMs", "to": "/scope-3-supplier-evidence" },
+    { "label": "Chennai auto supplier OEM data", "to": "/answers/chennai-auto-component-supplier-oem-data" },
+    { "label": "Bearing maker's steel Scope 3", "to": "/answers/jaipur-bearing-maker-steel-scope-3" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Mohali engineering industries (SAMEEEKSHA, 2015)", "url": "https://sameeeksha.org/pdf/clusterprofile/Mohali_Engineering_Punjab.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2015. Recheck if a newer Mohali engineering profile is published."
+}

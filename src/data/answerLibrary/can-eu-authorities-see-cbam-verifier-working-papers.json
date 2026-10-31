@@ -1,0 +1,59 @@
+{
+  "slug": "can-eu-authorities-see-cbam-verifier-working-papers",
+  "q": "Can EU authorities see the CBAM verifier's working papers on our plant?",
+  "title": "Can the EU see our CBAM verifier's file?",
+  "short": "Yes. On request, the verifier must give the Commission, or the national authority reviewing your buyer's CBAM declaration, access to its internal verification documentation. That file holds your data, the samples it took and the judgements it made. The verifier's accreditation body also checks it, as routine surveillance.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian plants going through CBAM verification and the EU importers who rely on their verified figures",
+  "sections": [
+    {
+      "h": "What sits in the verifier's file on you",
+      "ul": [
+        "The contract, the team, the days planned and any change to them.",
+        "Its strategic analysis, risk analysis and verification plan.",
+        "Your emissions report, your monitoring plan and the operator data it used to cross-check them.",
+        "The evidence it gathered, the samples it took and how it chose them, and what it did on site and off site.",
+        "Every misstatement and non-conformity it found and how each was resolved, with its materiality judgements.",
+        "Any reason for waiving or replacing the site visit, and the name and conclusion of the independent reviewer."
+      ]
+    },
+    {
+      "h": "Who can ask for it, and why",
+      "p": [
+        "The Commission and the national competent authority that reviews CBAM declarations can ask for access. The Commission's guidance says the file may help them judge whether the actual embedded emissions your buyer declared are correct. The national accreditation body is the one that routinely checks it, when it assesses the verifier each year. Authorities can penalise a declarant for errors, so a question about your figures can come long after the report was signed."
+      ]
+    },
+    {
+      "h": "What this means for your plant",
+      "ul": [
+        "Give the verifier final, dated versions. A draft with different numbers stays in its file.",
+        "Put every estimate and correction in writing, with its reason, so the trail explains itself to a reader in Brussels or Berlin.",
+        "Keep your own copy of everything you handed over, indexed the way the verifier indexed it.",
+        "Write your confidentiality clause knowing that the verifier's duty to the authorities comes from the EU rules it is accredited under."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a question two years later",
+    "lines": [
+      "2026: your plant produces and ships; 2027: the verifier signs your report and your buyer declares by 30 September",
+      "Later: the authority reviewing the declaration asks why a month's coal looks low",
+      "It asks the verifier for its file, which shows the coal sample taken, the weighbridge slips seen and your written note on a stock correction",
+      "With that note in the file, the question closes; without it, your buyer has to explain a figure it never saw being made"
+    ],
+    "note": "Example sequence. The 30 September 2027 date is the Commission's deadline for the first annual declaration."
+  },
+  "senseible": "Senseible's CBAM Suite records the evidence behind each fuel, precursor and electricity line, and its verifier pack lists it item by item with a SHA-256 fingerprint of the report, so what the verifier sampled can be found again years later. In-house checks come first; an accredited verifier, Senseible's partner or yours, signs off.",
+  "links": [
+    { "label": "Build a traceable CBAM file", "to": "/cbam-suite" },
+    { "label": "Documents to give your verifier", "to": "/answers/cbam-documents-to-give-your-verifier" },
+    { "label": "Writing an estimation note", "to": "/answers/estimation-note-for-verifier" },
+    { "label": "Is the importer liable for errors", "to": "/answers/is-eu-importer-liable-for-cbam-verifier-error" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 4.13 and Annex I", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), questions 5.9 and 5.12", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
+  ],
+  "reviewed": "2026-10-30"
+}

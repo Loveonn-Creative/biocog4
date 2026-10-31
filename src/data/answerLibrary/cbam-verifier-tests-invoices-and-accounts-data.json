@@ -1,0 +1,79 @@
+{
+  "slug": "cbam-verifier-tests-invoices-and-accounts-data",
+  "q": "How does a CBAM verifier test our fuel invoices and purchase records?",
+  "title": "How a CBAM verifier tests your invoices",
+  "short": "By picking samples and following them from the invoice to the emissions report and back. The rules name five tests: trace to the primary source, cross-check with other records, reconcile, check thresholds and recalculate. The verifier also walks through your purchase, stock and fuel systems and tests who checks the data before it moves on.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Plant accounts, stores and energy teams at Indian steel, aluminium, cement, fertiliser and hydrogen plants preparing for their first CBAM verification",
+  "sections": [
+    {
+      "h": "The five tests, at a coal-fired plant",
+      "ul": [
+        "Trace: a coal tonnage in the emissions report is followed back to the supplier invoice, delivery note and weighbridge slip it came from.",
+        "Cross-check: invoiced tonnes compared with a second source your monitoring plan names, such as the weighbridge register or the supplier's own statement.",
+        "Reconcile: purchases plus opening stock minus closing stock should equal what the plant burned.",
+        "Thresholds: a month or a delivery far outside the normal range gets questioned.",
+        "Recalculate: the verifier reruns parts of the arithmetic, for example that the emission factor really follows from the lab's carbon content."
+      ]
+    },
+    {
+      "h": "The systems the verifier walks through",
+      "ul": [
+        "Purchase records: delivery notes and invoices for fuels, raw materials and precursors.",
+        "Sales records and stock registers for the goods you produce.",
+        "Fuel management and, if you have one, energy management system.",
+        "Maintenance system, calibration logs and laboratory results.",
+        "Any software you use to compile the CBAM figures."
+      ]
+    },
+    {
+      "h": "Why invoices in accounts payable carry weight",
+      "p": [
+        "The Commission's guidance says trend and ratio checks work best on data from well-controlled sources. Its example: fuel quantities on invoices entered into accounts payable the same way as every other invoice line. Coal that is invoiced, received, booked and paid through one controlled process is easier to trust than a tonnage typed into a spreadsheet by the boiler house."
+      ]
+    },
+    {
+      "h": "Controls the verifier tests, not just figures",
+      "ul": [
+        "Does a second person check each monthly entry (the four-eyes principle)?",
+        "How often are checks done, and are they manual or automatic?",
+        "Who is responsible, and who covers when that person is on leave?",
+        "Are duties separated between the person recording data and the person checking it?",
+        "Are file versions controlled, so last year's sheet is not reused by mistake?"
+      ]
+    },
+    {
+      "h": "Method points that trip plants up",
+      "ul": [
+        "Using invoice quantities where the monitoring plan names a meter, or the reverse.",
+        "Forgetting stock changes of coal, coke or precursors at the year end.",
+        "Mixing as-received and dry-basis lab values, or gas volumes not converted to 0 °C and 101,325 Pa.",
+        "A missing month. A data gap counts as a misstatement and must be filled with conservative surrogate data even if it is below the 5% materiality level."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The coal reconciliation a verifier reruns",
+    "lines": [
+      "Opening stock 1 January: 4,200 t",
+      "Purchases per invoices: 61,800 t",
+      "Closing stock 31 December: 5,000 t",
+      "Coal consumed = 4,200 + 61,800 minus 5,000 = 61,000 t",
+      "Weighbridge register shows 60,400 t fed to the boilers and kilns, a gap of 600 t, about 1%",
+      "The verifier asks for the explanation and evidence, such as moisture loss in storage or transit shortages credited by the supplier, before deciding whether to widen its sample"
+    ],
+    "note": "Example tonnages. Which figure is used for emissions depends on what your monitoring plan names as the primary source."
+  },
+  "senseible": "Senseible reads each coal, gas and power invoice into a dated record tied to the original file. Before the verifier arrives, Senseible's in-house review in its CBAM Suite checks fuel quantities against purchases and stock changes, and every figure carries its formula so it can be rerun; the sign-off stays with an accredited verifier, Senseible's partner or yours.",
+  "links": [
+    { "label": "Build your verifier-ready file", "to": "/cbam-suite" },
+    { "label": "How verifiers spot unusual figures", "to": "/answers/cbam-verifier-analytical-procedures-unusual-figures" },
+    { "label": "CBAM materiality: 5%", "to": "/answers/cbam-verification-materiality-5-percent" },
+    { "label": "What a verifier checks at a steel plant", "to": "/answers/what-cbam-verifier-checks-steel-plant-india" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.7.1 to 4.7.4 and 4.8, quoting section 2.9 of Annex II to the CBAM accreditation and verification act", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-30"
+}

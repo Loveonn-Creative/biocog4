@@ -10,8 +10,19 @@
     {
       "h": "Who is asking, and what they see",
       "p": [
-        "A CDP supply chain request comes from a customer that is a CDP supply chain member. It pays CDP to send questionnaires to its suppliers and to see their answers in one place.",
-        "Your customer sees whether you responded and, if you did, your answers and score. A missing response is visible to them as a non-response, which usually leads to a follow-up from their procurement or sustainability team."
+        "A CDP request reaches a company in one of four ways, and the CDP Portal lists which ones apply to you:"
+      ],
+      "ul": [
+        "A customer that is a CDP Supply Chain member. This is the supply chain request; you get a direct link.",
+        "Investors that sign CDP's Letter to the Board, its Capital Markets Signatories. You also get a direct link.",
+        "Your bank.",
+        "An initiative your company is part of."
+      ]
+    },
+    {
+      "h": "What your customer sees",
+      "p": [
+        "A Supply Chain member pays CDP to send questionnaires to its suppliers and to see their answers in one place. Your customer sees whether you responded and, if you did, your answers and score. A missing response shows as a non-response, which usually leads to a follow-up from their procurement or sustainability team."
       ]
     },
     {
@@ -27,7 +38,7 @@
       "p": [
         "CDP's admin fee is generally waived if you were requested only by Supply Chain members (your customers), Banks Program members, Private Markets members or the RE100 initiative. A supplier asked only by its customers usually discloses without paying CDP.",
         "The fee applies if CDP's Capital Markets signatories, its investor group, also requested you, or if you choose to disclose without being asked. It is the same for the SME and full questionnaires, it is not refundable, and companies headquartered in India can choose CDP's lower Essential tier, aimed at SMEs.",
-        "The CDP Portal shows who requested you. Check that list before you register, and ask CDP's Help Center if you are unsure whether a fee applies."
+        "The CDP Portal shows who requested you. If you are exempt, the Submission Lead sees a single option labelled 'No fee payable' on the 'Choose admin fee' page and must still select it, or the questionnaire cannot be submitted. Ask CDP's Help Center if you are unsure whether a fee applies."
       ]
     },
     {
@@ -69,18 +80,26 @@
   ],
   "sources": [
     {
-      "label": "CDP Supply Chain programme, responder fee policy and SME questionnaire (cdp.net)",
-      "url": "https://www.cdp.net"
+      "label": "CDP, How to disclose: who can request your disclosure",
+      "url": "https://www.cdp.net/en/disclose/how-to-disclose"
+    },
+    {
+      "label": "CDP Help Center, How to pay your CDP admin fee as a Discloser ('No fee payable')",
+      "url": "https://help.cdp.net/en-us/knowledgebase/article/KA-01037"
     },
     {
       "label": "CDP, disclosure FAQs: admin fee and exemptions",
       "url": "https://www.cdp.net/en/faqs"
     },
     {
+      "label": "CDP Supply Chain programme, responder fee policy and SME questionnaire (cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
       "label": "GHG Protocol Corporate Standard",
       "url": "https://ghgprotocol.org/corporate-standard"
     }
   ],
-  "reviewed": "2026-10-29",
+  "reviewed": "2026-10-30",
   "reviewNote": "CDP sets its admin fee rules, exemptions and questionnaire each cycle; re-check the fee section of CDP's FAQs for the current year."
 }

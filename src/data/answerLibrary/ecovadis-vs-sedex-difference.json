@@ -1,0 +1,93 @@
+{
+  "slug": "ecovadis-vs-sedex-difference",
+  "q": "One buyer wants EcoVadis, another Sedex. What is the difference for a supplier?",
+  "title": "EcoVadis or Sedex: what changes for you",
+  "short": "EcoVadis rates you: its analysts score your documents against 21 criteria in four themes and publish a scorecard valid for 12 months. Sedex is a yearly membership, priced per site, where you fill a self-assessment questionnaire, share it with any number of customers, and add a SMETA audit only if a customer asks.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian MSME suppliers and exporters asked to join both EcoVadis and Sedex",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "What you get: EcoVadis gives a scored rating, 0 to 100, with a medal or badge if you qualify. Sedex gives your customers your questionnaire answers, any audit reports you share, and a benchmark of your management controls against peers in your industry and region.",
+        "Who judges: on EcoVadis, analysts review your answers and supporting documents, and check public news about you. On Sedex, you self-assess; independent judgement comes from a SMETA audit at your site, when a customer requires one.",
+        "What is covered: EcoVadis covers Environment, Labor and Human Rights, Ethics and Sustainable Procurement. Sedex covers labour standards, health and safety, the environment and business ethics, with a separate Environment Self-Assessment Questionnaire.",
+        "Unit: EcoVadis rates a group, a legal entity or a single site. Sedex membership is priced per site.",
+        "Fees: EcoVadis subscriptions are priced by company size, plan and country. Sedex lists a yearly fee per site, at two levels. Both publish their current prices.",
+        "Validity: an EcoVadis scorecard lasts 12 months from publication. Sedex membership lasts 12 months from joining; renew to keep your data visible."
+      ]
+    },
+    {
+      "h": "Where your carbon figures go",
+      "p": [
+        "EcoVadis scores energy use and greenhouse gas emissions as one of its environment criteria, and wants your figures backed by documents. Sedex's Environment Self-Assessment Questionnaire asks for Scope 1, 2 and 3 emissions alongside energy, waste, water and chemicals. The same twelve months of fuel and electricity records answer both, so build them once and enter identical numbers in each."
+      ]
+    },
+    {
+      "h": "Doing both without doing everything twice",
+      "ol": [
+        "Write down each buyer's exact ask: an EcoVadis scorecard, a minimum score or medal, Sedex membership, a completed questionnaire, or a SMETA audit.",
+        "Do not book a SMETA audit until a customer names it. Sedex itself says audits are needed only when a customer requests one.",
+        "Collect the documents once: policies, certificates, permits, training records, and your energy and emissions record. Both ask for the same kind of evidence.",
+        "Start with whichever buyer's date comes first. An EcoVadis scorecard takes about 6 to 8 weeks after you submit; Sedex onboarding takes most suppliers a few hours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A two-site garment exporter in Tiruppur",
+    "lines": [
+      "A UK retailer asks for Sedex; an EU brand asks for an EcoVadis scorecard.",
+      "Sedex: membership is priced per site, so two units means two fees, and a SMETA audit only at a site the retailer names.",
+      "EcoVadis: one assessment of the legal entity can cover both units, so one scorecard serves the brand.",
+      "Carbon: Scope 1 and 2 for each site from the same bills, entered per site on Sedex and as a company total on EcoVadis."
+    ],
+    "note": "The exporter is invented; the rules are from EcoVadis and Sedex."
+  },
+  "senseible": "One record behind both answers: Senseible reads your fuel and electricity bills into Scope 1 and 2 figures, each tied to its bill, so what you enter on Sedex matches what you enter on EcoVadis. It does not fill in either questionnaire for you.",
+  "links": [
+    {
+      "label": "Build your carbon record once",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Sedex environment questionnaire",
+      "to": "/answers/sedex-environment-saq-ghg-questions"
+    },
+    {
+      "label": "What SMETA checks on carbon",
+      "to": "/answers/sedex-smeta-environment-carbon-questions"
+    },
+    {
+      "label": "Do I have to pay for EcoVadis?",
+      "to": "/answers/do-i-have-to-pay-for-ecovadis"
+    },
+    {
+      "label": "Questionnaire support",
+      "to": "/esg-ratings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Sustainability Rating methodology disclosure (April 2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/04/EcoVadis-Sustainability-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
+    },
+    {
+      "label": "EcoVadis Help Center, What is the EcoVadis assessment process?",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/115002653188-What-is-the-EcoVadis-assessment-process"
+    },
+    {
+      "label": "EcoVadis Help Center, EcoVadis subscription costs",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/360011788959-EcoVadis-Subscription-Costs"
+    },
+    {
+      "label": "Sedex, supplier membership",
+      "url": "https://www.sedex.com/become-a-member/supplier-membership/"
+    },
+    {
+      "label": "Sedex, Environment Self-Assessment Questionnaire",
+      "url": "https://www.sedex.com/blog/elevate-your-environmental-performance-with-sedexs-environment-self-assessment-questionnaire/"
+    }
+  ],
+  "reviewed": "2026-10-30"
+}

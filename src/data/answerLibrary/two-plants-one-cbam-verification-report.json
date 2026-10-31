@@ -1,0 +1,61 @@
+{
+  "slug": "two-plants-one-cbam-verification-report",
+  "q": "We have two plants. Can one CBAM verification cover both?",
+  "title": "Two plants, one CBAM verification?",
+  "short": "No. CBAM verification works per installation, and the verifier issues one verification report for each. Two plants mean two emissions reports, two verification reports and two installation IDs, even under one company and one CIN. The same verifier can do both, as separate engagements, if its accreditation covers each plant's goods.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters of CBAM goods with more than one plant, such as a sponge iron and melt shop site plus a separate rolling mill",
+  "sections": [
+    {
+      "h": "Why each plant stands alone",
+      "p": [
+        "The Commission's verification rules apply at the level of the installation where CBAM goods are produced, and the verifier issues one verification report per installation. Your EU buyer then submits, with its declaration, the verification report for each installation its goods came from. A combined company figure cannot be used, because two plants with different fuels and routes give different numbers for the same CN code."
+      ]
+    },
+    {
+      "h": "One operator ID, two installation IDs",
+      "ul": [
+        "Your operator ID is IN plus your CIN, or your LLPIN for an LLP. It stays the same for both plants.",
+        "Each plant gets its own installation ID, such as IN-12345678-0001 and IN-12345678-0002. The ID is permanent and never reused.",
+        "If you are not registered in the CBAM Registry, the verifier of your first plant creates the IDs there. For the second plant, a verifier searches the Registry by name, address and coordinates before asking for a new one.",
+        "Give the verifier your company registration certificate, with the name in Latin letters, and a list of every plant making CBAM goods with its address, UN/LOCODE and coordinates."
+      ]
+    },
+    {
+      "h": "When one verifier does both",
+      "p": [
+        "It is allowed, but each plant is its own engagement: its own team with the competence for that plant's goods, its own risk analysis and sampling, and its own site visits. A sponge iron and billet plant needs a verifier accredited for group V; a rolling mill making bars from bought billets needs group VIII. Company documents and group procedures need explaining only once, which saves some time, not a whole engagement."
+      ]
+    },
+    {
+      "h": "When one plant supplies the other",
+      "p": [
+        "If plant A's billets go to plant B, they are a precursor for B. B's figure uses A's verified figure per tonne, so A's verification has to finish first, and B's verifier checks that A's verifier held a valid accreditation for that sector when it signed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: billets from plant 1 rolled into bars at plant 2",
+    "lines": [
+      "Plant 1, IN-12345678-0001: verified figure 2.40 t CO2e per tonne of billet",
+      "Plant 2, IN-12345678-0002: 1.05 t of billet per tonne of bar: 1.05 x 2.40 = 2.52 t",
+      "Plant 2's own reheating furnace fuel: 0.15 t per tonne of bar",
+      "Plant 2's figure: 2.52 + 0.15 = 2.67 t CO2e per tonne of bar",
+      "Two verification reports, and plant 2's cannot close until plant 1's is issued"
+    ],
+    "note": "Example IDs and figures. Electricity is left out because iron and steel goods count direct emissions only."
+  },
+  "senseible": "Senseible's CBAM Suite keeps one workbook per installation, each with its own fuels, production and precursors, so each verifier gets a clean set for its plant. Senseible checks every figure in-house first; the accredited verifier, Senseible's partner or one you choose, signs each report.",
+  "links": [
+    { "label": "One CBAM file per plant", "to": "/cbam-suite" },
+    { "label": "Importer buying from two plants", "to": "/answers/eu-importer-one-supplier-two-plants-cbam" },
+    { "label": "Verifier scopes by sector", "to": "/answers/cbam-verifier-accreditation-scopes-by-sector" },
+    { "label": "Registering in the CBAM Registry", "to": "/answers/how-non-eu-producer-registers-cbam-registry" }
+  ],
+  "sources": [
+    { "label": "European Commission, CBAM verification page", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.9, 7.1, 7.3, 10.2 and Annex II", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-30"
+}

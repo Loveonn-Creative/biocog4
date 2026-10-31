@@ -1,0 +1,65 @@
+{
+  "slug": "rajkot-auto-component-units-oem-carbon-data",
+  "q": "What carbon data do OEMs ask Rajkot's auto component units for?",
+  "title": "Rajkot auto components: OEM carbon data",
+  "short": "Monthly kWh and Scope 2 for the plant, a figure per part number, and the CO2 in the forging, casting or bar each part starts from. Rajkot's 160 or so auto component units run almost only on grid power, about 30 million kWh a year, so their own share per part is small; the blank is most of it.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Machine shops in Shapar-Veraval, Aji, Metoda and Samrat Industrial Estate making crankshafts, connecting rods, liners and valve parts for OEMs and the aftermarket",
+  "sections": [
+    {
+      "h": "The cluster in TERI's 2018 energy profile (data 2017 to 18)",
+      "ul": [
+        "About 160 MSMEs: 80 micro making 18 million pieces a year, 65 small making 85 million and 15 medium making 107 million.",
+        "About 210 million pieces a year: crankshafts, connecting rods, kingpins, tappets, cylinder liners, differential cases, camshafts, pistons and rings.",
+        "Forged and cast blanks come from Rajkot's forging units and foundries; some parts are machined straight from round bar.",
+        "Energy: 30.1 million kWh a year, electricity only. Machining and crane motors take about 85%, compressors 12% and lighting 3%."
+      ]
+    },
+    {
+      "h": "Typical units, per year",
+      "ul": [
+        "Micro: about 41,000 kWh, roughly 28 t CO2 on today's grid factor.",
+        "Small: about 181,000 kWh, roughly 122 t.",
+        "Medium: about 1.0 million kWh, roughly 677 t."
+      ]
+    },
+    {
+      "h": "Checklist for the OEM's supplier sheet",
+      "ol": [
+        "Electricity in kWh by month for the last full year, from PGVCL bills, and Scope 2 at the CEA factor for that year.",
+        "DG diesel, if any, as Scope 1.",
+        "Pieces made per part number each month, and the machine hours each part takes.",
+        "The blank: forging, casting or bar weight per part and your supplier's CO2 per kg, or a stated default if they have none.",
+        "Heat treatment and plating done outside, with the job worker's energy per kg if you can get it.",
+        "The allocation method you used, kept the same from year to year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a small unit's month, connecting rods and tappets",
+    "lines": [
+      "Plant power: 15,100 kWh x 0.675 = 10.2 t CO2",
+      "Machine hours split 70% rods, 30% tappets",
+      "Connecting rods: 7.14 t / 60,000 = 119 g CO2 each from machining",
+      "Tappets: 3.06 t / 50,000 = 61 g each",
+      "Forged rod blank: 2.0 kg x 2.9 kg CO2 per kg = 5.8 kg, about 50 times the machining share"
+    ],
+    "note": "Plant power is TERI's typical small unit spread over 12 months. Piece counts, the hours split, the blank weight and the forger's 2.9 kg per kg are examples; ask your forging supplier for its own figure."
+  },
+  "senseible": "Senseible reads your PGVCL bills into dated Scope 2 records and keeps your forging and casting suppliers' figures in a separate supplier trail, so the sheet you send an OEM shows which number came from where.",
+  "links": [
+    { "label": "Supplier evidence for your OEMs", "to": "/scope-3-supplier-evidence" },
+    { "label": "Rajkot forging energy and CBAM", "to": "/answers/rajkot-forging-cluster-closed-die-energy-cbam" },
+    { "label": "CNC machined part footprint", "to": "/answers/cnc-machined-part-carbon-footprint" },
+    { "label": "Are auto components covered by CBAM", "to": "/answers/are-auto-components-covered-by-cbam" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Rajkot auto components cluster (SAMEEEKSHA, 2018; data 2017 to 18)", "url": "https://sameeeksha.org/pdf/clusterprofile/RajkotAuto-Components-Cluster.pdf" },
+    { "label": "SAMEEEKSHA, Rajkot auto components cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=267&Itemid=499" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2017 to 18. Update the grid factor each financial year."
+}

@@ -42,10 +42,10 @@
     "lines": [
       "Cells: 2,000 x 3.2 V x 100 Ah",
       "kWh per cell: 3.2 x 100 / 1,000 = 0.32 kWh; shipment: 2,000 x 0.32 = 640 kWh",
-      "Factor: 80 kg CO2e per kWh (illustrative placeholder, replace with supplier PCF or a published figure)",
-      "640 x 80 = 51,200 kg CO2e, about 51 tonnes in Scope 3 Category 1"
+      "Scope 3 Category 1 for the shipment = 640 x the factor in kg CO2e per kWh",
+      "Each 10 kg CO2e per kWh in the factor adds 6,400 kg, about 6.4 tonnes, so a gap of 30 kg per kWh between two sources moves this shipment by about 19 tonnes"
     ],
-    "note": "80 kg CO2e per kWh is a placeholder for the arithmetic, not a recommended value."
+    "note": "No factor is given here because published cell figures differ by chemistry, plant and year; use the supplier's own figure or name the published source you chose."
   },
   "senseible": "Senseible reads cell quantities from purchase invoices into the supplier evidence trail, where the supplier's footprint can be kept with the invoice. The automatic reader applies no battery factor, so the line shows no figure from it; where only spend is known, Senseible provides a spend-based estimate labelled as such.",
   "links": [
@@ -77,5 +77,5 @@
     }
   ],
   "reviewNote": "Published cell footprints vary widely and EU carbon footprint rules for batteries are still being set; recheck the source each year.",
-  "reviewed": "2026-10-17"
+  "reviewed": "2026-10-30"
 }
