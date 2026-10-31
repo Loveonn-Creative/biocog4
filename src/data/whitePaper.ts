@@ -280,6 +280,7 @@ export const WP_SECTIONS: WPSection[] = [
     title: '8. Data security',
     blocks: [
       { ul: [
+        '**Privacy by design.** Each feature keeps and moves the least data it needs: guest uploads are not stored on the server, suppliers share computed totals rather than their bills, request links are stored only as hashes, and logs do not record document contents.',
         '**Authentication and authorisation.** Managed identity service with server-side token validation. Every server function validates the caller. Roles are held separately from profiles.',
         '**Tenant isolation.** Database Row-Level Security is enabled on every table. Signed-in users can read and write only their own records. Team data is additionally scoped by organisation membership.',
         '**Guest sessions.** Guest data and cached results are scoped to the originating session and time-limited.',
@@ -288,7 +289,7 @@ export const WP_SECTIONS: WPSection[] = [
         '**Secrets and origins.** Service credentials exist only in server-side environments. Cross-origin access is restricted to Senseible\'s own domains.',
         '**Payments.** Payment signatures are verified server-side and matched to the authenticated user. Card data is handled by the payment processor.',
         '**Logging.** Security events go to an access-restricted audit log. Logs do not record document contents.',
-        '**Supplier data boundary.** An enterprise cannot read a supplier\'s documents, line items or records. It receives only the totals computed on the server when the supplier presses Share: emissions by scope and category, the part backed by verified bills, any own figure and its note, the energy units on the bills, the number of bills and each bill\'s fingerprint. The bills and their amounts stay in the supplier\'s account.',
+        '**Supplier data boundary.** Supplier sharing exists so an enterprise can receive its suppliers\' emissions, which makes it the one exception to own-records-only access. Even then, an enterprise cannot read a supplier\'s documents, line items or records. It receives only the totals computed on the server when the supplier presses Share: emissions by scope and category, the part backed by verified bills, any own figure and its note, the energy units on the bills, the number of bills and each bill\'s fingerprint. The bills and their amounts stay in the supplier\'s account.',
         '**Supplier links and consent.** Request links carry a random 256-bit token, stored only as its SHA-256 hash; each link or reminder sets an expiry no more than 90 days ahead. Each share records the consent version and the hash of the exact consent text the supplier agreed to.',
         '**Guest uploads.** Documents read for visitors who are not signed in are not stored on the server. Their results stay in the visitor\'s browser for 24 hours, and guest reads are limited to 30 per device per day, enforced on the server.',
         '**Restricted files.** Restricted resources are delivered only through a signed link that expires, or to a signed-in account with a confirmed email.',
