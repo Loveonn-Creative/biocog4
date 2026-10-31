@@ -1,0 +1,77 @@
+{
+  "slug": "coke-pit-furnace-efficient-brass-saving",
+  "q": "How much coke does an efficient 600 kg pit furnace save in brass melting?",
+  "title": "Efficient 600 kg pit furnace: coke saved",
+  "short": "BEE's Jagadhri design cuts a 600 kg brass pit furnace from 96 to 81.6 t of coke a year, saving 14.4 t, by rounding the pit and preheating the charge with flue gas. At the IPCC coke factor that is 43.5 t CO2, more than the report's 39 t. Cost Rs 0.95 lakh.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Brass melting units in Jagadhri and other clusters using coke-fired pit furnaces",
+  "sections": [
+    {
+      "h": "The furnace today",
+      "p": [
+        "A rectangular pit lined with refractory and faced with red brick, coke fed from below and the sides, a 1 HP blower. It melts 600 kg a batch on 80 kg of coke, four batches a day for 300 days: 96 t of coke. Melt temperature was 1,021 °C, flue gas 500 to 550 °C, efficiency 11.4%, and about 20 kg of coke was left unburnt each batch."
+      ]
+    },
+    {
+      "h": "Two changes, half the saving each",
+      "ul": [
+        "Rounded corners: the pit shrinks from 0.312 to 0.297 m3, so 7.4% less coke fills the space around the crucible: 7.1 t a year.",
+        "Waste heat recovery: flue gas cooled from 500 to 200 °C in an exchanger at 65% effectiveness preheats the charge: 7.81%, or 7.3 t a year.",
+        "Together 14.4 t, 15%. The report also says efficiency rises from 11.4% to 13%, which alone would be about 12%; treat 15% as an estimate to measure."
+      ]
+    },
+    {
+      "h": "Cost and payback",
+      "p": [
+        "Rs 0.75 lakh for the furnace with heat recovery plus Rs 0.20 lakh for civil work. At the report's Rs 22,000 a tonne, 14.4 t is Rs 3.17 lakh a year: payback in under four months. If the real saving is half the estimate, payback is still about seven months."
+      ]
+    },
+    {
+      "h": "Count the coke you burn",
+      "p": [
+        "If unburnt coke is raked out and charged again, 80 kg a batch counts it twice. Work out CO2 from coke bought plus opening stock minus closing stock, which is also what a lender or buyer can check against invoices."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per year and per tonne of brass",
+    "lines": [
+      "Before: 96 t x 3.02 = 289.9 t CO2",
+      "After: 81.6 t x 3.02 = 246.4 t CO2",
+      "Saved: 14.4 t x 3.02 = 43.5 t CO2 a year",
+      "Per tonne melted: 133 kg coke (403 kg CO2) falls to 113 kg (342 kg CO2)"
+    ],
+    "note": "Coke at the IPCC 2006 default, 107,000 kg CO2 per TJ at 28.2 GJ per tonne, an estimate. Furnace figures from BEE's 2010 report."
+  },
+  "senseible": "Senseible reads coke invoices and electricity bills into dated monthly records linked to each bill. It has no built-in coke factor, so apply the IPCC figure above to the tonnes. The green loan check shows what a lender asks for on a furnace upgrade.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Coke pit furnace to induction",
+      "to": "/answers/brass-coke-pit-to-induction-furnace-co2"
+    },
+    {
+      "label": "Jagadhri brass and aluminium cluster",
+      "to": "/answers/jagadhri-brass-aluminium-cluster-wood-coke-carbon"
+    },
+    {
+      "label": "Oil crucible or induction for brass",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: energy efficient pit furnace for brass melting, 600 kg, Jagadhri brass and aluminium cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Jagadhri_brass_and_aluminium_cluster/03_Energy_Efficient_Pit_Furnace_600_kg_Jagadhri_cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

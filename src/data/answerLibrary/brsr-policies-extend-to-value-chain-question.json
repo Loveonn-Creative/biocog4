@@ -1,0 +1,71 @@
+{
+  "slug": "brsr-policies-extend-to-value-chain-question",
+  "q": "What does the BRSR question 'do your policies extend to value chain partners' mean for suppliers?",
+  "title": "BRSR: do your policies cover suppliers?",
+  "short": "Section B question 3 asks a listed company, for each of the nine principles, whether its policies extend to value chain partners: yes or no. Question 4 asks which codes and certifications it has adopted under each principle. For a supplier, a yes means a code of conduct to sign and evidence to show.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "MSME suppliers asked to sign a listed buyer's supplier code of conduct",
+  "sections": [
+    {
+      "h": "The two questions",
+      "ul": [
+        "Question 3: Do the enlisted policies extend to your value chain partners? Yes or no, for each of Principles 1 to 9.",
+        "Question 4: Name the national and international codes, certifications, labels or standards adopted, under each principle. SEBI's examples: Forest Stewardship Council, Fairtrade, Rainforest Alliance, Trustea, SA 8000, OHSAS, ISO and BIS."
+      ]
+    },
+    {
+      "h": "What a yes means for you",
+      "ul": [
+        "A supplier code of conduct with clauses on ethics, product safety, worker welfare, human rights and environment.",
+        "A right for the buyer to audit or send questionnaires.",
+        "Data requests that follow from the buyer's own BRSR, such as energy, emissions, water and waste figures."
+      ]
+    },
+    {
+      "h": "Certificates that help, by principle",
+      "ul": [
+        "Environment, Principle 6: ISO 14001, ISO 50001.",
+        "Worker safety and wellbeing, Principle 3: ISO 45001, which replaced OHSAS 18001.",
+        "Labour and human rights, Principles 3 and 5: SA 8000.",
+        "Sustainable sourcing, Principle 2: FSC, Rainforest Alliance, Fairtrade or Trustea, depending on your material."
+      ]
+    },
+    {
+      "h": "If you cannot meet every clause yet",
+      "p": [
+        "Do not tick every box. Sign with a short written note of the gaps and dates to close them. A buyer can work with a dated plan; a false yes found in an audit ends the relationship."
+      ]
+    }
+  ],
+  "senseible": "When the code of conduct asks for your energy and emissions, Senseible prepares Scope 1 and 2 figures from your electricity bills and fuel invoices, with each line linked to its bill, ready to send to the buyer.",
+  "links": [
+    {
+      "label": "Supplier questionnaire, field by field",
+      "to": "/answers/brsr-supplier-questionnaire-field-by-field"
+    },
+    {
+      "label": "BRSR data request to an MSME supplier",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "BRSR sustainable sourcing percentage",
+      "to": "/answers/brsr-sustainable-sourcing-percentage-question"
+    },
+    {
+      "label": "Supplier evidence for buyers",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, 12 July 2023: BRSR Core and updated BRSR format",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI, updated BRSR format (Annexure II to the 12 July 2023 circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

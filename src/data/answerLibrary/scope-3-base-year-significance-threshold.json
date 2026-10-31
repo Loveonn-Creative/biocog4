@@ -1,0 +1,89 @@
+{
+  "slug": "scope-3-base-year-significance-threshold",
+  "q": "When must a buyer recalculate its Scope 3 base year?",
+  "title": "When to recalculate a Scope 3 base year",
+  "short": "When a change passes the significance threshold the company set and disclosed in its recalculation policy. The Scope 3 Standard names three triggers: structural changes, changes in method or data accuracy, and adding categories or activities. Its example threshold is a change of at least ten percent in base year emissions.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Buyers tracking Scope 3 against a base year, and suppliers whose data feeds it",
+  "sections": [
+    {
+      "h": "The three triggers",
+      "ul": [
+        "Structural changes: mergers, acquisitions, divestments, outsourcing and insourcing.",
+        "Changes in calculation method, better data accuracy, or discovery of significant errors.",
+        "Changes in the categories or activities included in the inventory.",
+        "Recalculate for increases and decreases alike. Several small changes that together pass the threshold count too."
+      ]
+    },
+    {
+      "h": "What does not trigger it",
+      "ul": [
+        "Organic growth or decline: more output, a different product mix, opening or closing your own units.",
+        "Real changes in emissions, such as a supplier switching fuel or technology. These are what the trend is meant to show."
+      ]
+    },
+    {
+      "h": "Outsourcing and new categories",
+      "p": [
+        "Table 9.4 covers outsourcing and insourcing: with one base year for total Scope 1, 2 and 3, moving an activity you already reported does not need a recalculation, because it only shifts between scopes; in every other case recalculate if the cumulative effect is significant.",
+        "Table 9.5 covers adding categories or activities: with one base year for total Scope 3, recalculate if significant; with separate targets per category, adding a whole new category needs no recalculation. Backfill the base year from records you still have: bills of materials, spend or sales data."
+      ]
+    },
+    {
+      "h": "How supplier data moves the base year",
+      "p": [
+        "The standard's own example: in its third year a company collects much more supplier data. If that changes the estimates significantly, the base year is recalculated with the new data so the trend compares like with like. If the new data cannot be applied to past years, the company says so in each year's report instead.",
+        "Category 11 has its own rule: if product use assumptions change significantly after sale, recalculate the Category 11 base year with the updated assumptions."
+      ]
+    },
+    {
+      "h": "What the report must show",
+      "ul": [
+        "The base year, why it was chosen, and the recalculation policy with its threshold.",
+        "Base year Scope 3 by category, consistent with that policy.",
+        "Context for any significant change that triggered a recalculation."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: two changes, each below the threshold",
+    "lines": [
+      "Base year Scope 3: 20,000 t CO2e; policy threshold 10% = 2,000 t",
+      "Steel supplier data replaces a spend estimate: +1,200 t",
+      "Non-production purchases added to Category 1: +900 t",
+      "Together: 1,200 + 900 = 2,100 t, above 2,000 t, so the base year is recalculated"
+    ],
+    "note": "Figures are illustrative. Ten percent is the example in the Scope 3 Standard; an SBTi target or buyer programme may set its own threshold."
+  },
+  "senseible": "Senseible keeps every figure tied to the document it came from and labels spend-based estimates, so when supplier data replaces an estimate you can show what changed, by how much, and why.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Recalculating after selling or buying a unit",
+      "to": "/answers/recalculate-base-year-after-selling-a-unit"
+    },
+    {
+      "label": "Choosing a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    },
+    {
+      "label": "Rough Scope 3 data in the first year",
+      "to": "/answers/low-quality-scope-3-data-first-years"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), section 9.3, tables 9.4 and 9.5, section 11.1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), introduction",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Intro_GHGP_Tech.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

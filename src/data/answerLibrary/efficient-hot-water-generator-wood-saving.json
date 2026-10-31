@@ -1,0 +1,60 @@
+{
+  "slug": "efficient-hot-water-generator-wood-saving",
+  "q": "How much wood does an efficient 80,000 kcal hot water generator save in a dyeing unit?",
+  "title": "Efficient wood hot water generator",
+  "short": "BEE's Solapur report replaces a 22% efficient wood-fired thermic fluid heater with a 70% efficient hot water generator of 80,000 kcal an hour, cutting wood from 104 t to 64 t a year. Cost Rs 2.76 lakh, saving Rs 1.68 lakh at Rs 4.20 a kg, payback 1.64 years (2010).",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Hank yarn dyeing units in Solapur heating dye bath water with old single pass thermic fluid heaters",
+  "sections": [
+    {
+      "h": "Why the old heater wastes wood",
+      "ul": [
+        "Single pass design: flue gas leaves at 350 to 360 C after very little contact with the oil coils.",
+        "Excess air above 100%, against 45 to 50% for good wood firing; grates are not sized for the logs used.",
+        "Measured efficiency about 22%; flue losses of 35 to 40%.",
+        "A typical unit making 1.44 lakh kg of product burns 104 t of wood a year, 8 hours a day for 240 days."
+      ]
+    },
+    {
+      "h": "The generator proposed",
+      "ul": [
+        "80,000 kcal an hour, water walled wood furnace with fire door, ash door and grate, part of the flue gas recirculated as secondary air.",
+        "Rated 70% efficiency, burning about 33 kg of wood an hour.",
+        "Enough for about 400 kg of dyeing and 400 kg of soaping in an 8 hour day.",
+        "3 to 4 days to install, which can be timed with holidays."
+      ]
+    },
+    {
+      "h": "The sums do not fully agree, so measure",
+      "p": [
+        "At 33 kg an hour the generator burns about 64 t a year, which is where the report's figure comes from. But if the old heater really ran at 22% and the new one at 70%, wood would fall to about a third, around 33 t. The two efficiency claims and the two wood figures cannot all be right. Weigh wood each day for a week before and after, and judge it on kg of wood per kg of yarn."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Report figures, one unit",
+    "lines": [
+      "Wood: 33 kg x 8 h x 240 days = 63.4 t, rounded to 64 t",
+      "Saved: 104 less 64 = 40 t, x Rs 4,200 = Rs 1.68 lakh",
+      "Payback: 2.76 / 1.68 = 1.64 years",
+      "Biogenic CO2 avoided: 40 t x 3,200 kcal/kg x 4.1868 = 536 GJ x 112 kg = about 60 t",
+      "The report's 56 t used 1.4 t CO2 a tonne of wood; fossil CO2 does not change"
+    ],
+    "note": "Wood CO2 uses the IPCC 2006 default of 112 kg CO2 a GJ with the report's calorific value of 3,200 kcal a kg. It is biogenic and reported separately, outside Scopes 1 to 3."
+  },
+  "senseible": "Senseible reads your electricity bills into records with CO2. It has no factor for wood, so keep wood tonnes from purchase bills as a separate biogenic line; the green loan check shows what a lender asks for on a heater replacement.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Hot water generator vs steam boiler", "to": "/answers/hot-water-generator-vs-steam-boiler-fuel" },
+    { "label": "Economiser on a wood thermic fluid heater", "to": "/answers/thermic-fluid-heater-economiser-wood-saving" },
+    { "label": "Efficient chulha for hank dyeing", "to": "/answers/efficient-chulha-dyeing-wood-saving" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: energy efficient hot water generator, 80,000 kcal an hour, Solapur textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/dpr_80000kCal.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Check today's wood price and a current quote."
+}

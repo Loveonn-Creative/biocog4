@@ -1,0 +1,97 @@
+{
+  "slug": "use-phase-scenario-uncertainty-appendix-b",
+  "q": "How do I handle uncertainty about how customers will use my product in Category 11?",
+  "title": "Use-phase uncertainty: run scenarios",
+  "short": "Run a scenario analysis. Report your typical use profile, then recalculate with the low and high ends of use days, hours and lifetime from your own research. In the GHG Protocol's fan example the range runs from 81 to about 389 tonnes; the aim is to show your chosen case is representative, not the lowest.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Appliance, pump, motor and vehicle makers reporting use of sold products",
+  "sections": [
+    {
+      "h": "What the standard expects",
+      "p": [
+        "Category 11 rests on product specifications and assumptions about use: hours, days, lifetime. Companies are required to describe the methods and assumptions they used. Appendix B of the Technical Guidance calls testing those assumptions scenario uncertainty assessment, also known as sensitivity analysis, and says it helps make sure the scenario in the inventory is representative of the range and not the one with the lowest emissions."
+      ]
+    },
+    {
+      "h": "The GHG Protocol's own fan example",
+      "p": [
+        "A 300 W fan, 1,000 units sold, 6 hours a day, grid factor 0.45 kg CO2e per kWh (illustrative):"
+      ],
+      "ul": [
+        "Situation 1, the base case: 40 days a year for 5 years = 1,200 hours, 162 t CO2e",
+        "Situation 2: 60 days, 5 years = 1,800 hours, 243 t",
+        "Situation 3: 60 days, 8 years = 2,880 hours, about 389 t",
+        "Situation 4: 20 days, 5 years = 600 hours, 81 t",
+        "Situation 5: 20 days, 8 years = 960 hours, about 130 t"
+      ]
+    },
+    {
+      "h": "Steps for your product",
+      "ol": [
+        "Write the base use profile: days a year, hours a day, lifetime, load, where it is used.",
+        "From warranty data, service records or a customer survey, set a low and a high value for the inputs that are least certain.",
+        "Recalculate the total for each combination.",
+        "Check where your reported figure sits in the range. If it is near the bottom, explain why or move it.",
+        "Report the base figure in Category 11 and the range beside it, with the sources for each input."
+      ]
+    },
+    {
+      "h": "When the range is wide",
+      "ul": [
+        "If the spread is large compared with your total Scope 3, the guidance suggests a more detailed study of how the product is actually used.",
+        "Where products are used matters: grid factors differ a lot between countries, so exports may need their own scenarios.",
+        "The guidance's ideal is for an industry body to agree common use assumptions, which a third party can then check.",
+        "If assumptions change significantly after sale, for example through new rules or technology, the Scope 3 Standard says to recalculate the Category 11 base year with the updated assumptions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 air coolers of 190 W sold in India (assumptions labelled)",
+    "lines": [
+      "Base: 120 days x 8 hours x 7 years = 6,720 hours; 0.19 x 6,720 x 10,000 = 1,27,68,000 kWh x 0.675 = about 8,618 t CO2",
+      "Low: 90 days x 8 hours x 6 years = 4,320 hours; 82,08,000 kWh x 0.675 = about 5,540 t",
+      "High: 150 days x 8 hours x 9 years = 10,800 hours; 2,05,20,000 kWh x 0.675 = about 13,851 t",
+      "Reported: 8,618 t, with a range of 5,540 to 13,851 t and the source for each input"
+    ],
+    "note": "Days, hours and life are assumptions for illustration. 0.675 kg CO2 per kWh is the India grid factor for FY 2025-26 (CEA version 22.0)."
+  },
+  "senseible": "Senseible reads your own bills and purchase invoices; it does not model how customers use your products. The use scenarios and their sources come from you, and Senseible keeps your own Scope 1 and 2 evidence ready to send with them.",
+  "links": [
+    {
+      "label": "Sensitivity analysis on a footprint",
+      "to": "/answers/carbon-footprint-sensitivity-analysis"
+    },
+    {
+      "label": "Calculating Category 11",
+      "to": "/answers/use-of-sold-products-category-11-calculation"
+    },
+    {
+      "label": "Use-phase emissions per use",
+      "to": "/answers/use-phase-intensity-metric-per-functional-unit"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Appendix B: Scenario uncertainty",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/AppendixB.pdf"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Category 11: Use of sold products",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter11.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), box 9.2 and Appendix B",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

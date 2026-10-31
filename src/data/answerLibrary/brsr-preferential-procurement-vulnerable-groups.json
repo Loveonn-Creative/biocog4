@@ -1,0 +1,79 @@
+{
+  "slug": "brsr-preferential-procurement-vulnerable-groups",
+  "q": "What does BRSR ask about buying from suppliers from marginalised groups?",
+  "title": "BRSR preferential procurement question",
+  "short": "Principle 8 leadership indicator 3 asks three things: whether the company has a preferential procurement policy favouring suppliers from marginalised or vulnerable groups, which groups it buys from, and what percentage of total procurement by value that is. A policy with no spend figure answers only the first part.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Procurement and sustainability teams at listed companies, and suppliers owned by these groups",
+  "sections": [
+    {
+      "h": "The three parts",
+      "ol": [
+        "Do you have a preferential procurement policy giving preference to suppliers comprising marginalised or vulnerable groups? Yes or no.",
+        "From which marginalised or vulnerable groups do you procure?",
+        "What percentage of total procurement, by value, does it make up?"
+      ]
+    },
+    {
+      "h": "Who counts",
+      "p": [
+        "SEBI's guidance note describes vulnerable and marginalised groups as people unable to realise their rights or enjoy opportunities because of physical, mental, social, economic, cultural, political, geographic or health circumstances. In India it lists, among others: women, girls and transgender persons; children and the elderly; scheduled castes, scheduled tribes and other groups by caste, religion or ethnicity; displaced people, landless and small or marginal farmers, and migrant workers; and persons with disability."
+      ]
+    },
+    {
+      "h": "Working out the percentage",
+      "ol": [
+        "Take total procurement by value for the year from the purchase ledger.",
+        "Tag suppliers owned or run by these groups, with proof such as a supplier declaration backed by a caste or disability certificate, or farmer producer company records.",
+        "Count each supplier once, even if it fits two groups.",
+        "Divide tagged spend by total spend."
+      ]
+    },
+    {
+      "h": "Keep it apart from MSME sourcing",
+      "p": [
+        "Essential indicator 4 of the same principle asks for inputs sourced from MSMEs and small producers. A supplier can appear in both, but being an MSME does not by itself make a supplier part of a vulnerable group."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One year's figure (illustrative)",
+    "lines": [
+      "Total procurement: Rs 800 crore",
+      "SC or ST owned suppliers Rs 22 crore + women owned Rs 14 crore + farmer producer companies Rs 9 crore = Rs 45 crore",
+      "45 / 800 = 5.6% of procurement by value"
+    ],
+    "note": "Figures invented to show the arithmetic."
+  },
+  "senseible": "If you are a supplier in one of these groups, your buyer may also ask for your energy and emissions. Senseible prepares those from your electricity bills and fuel invoices, with each figure linked to its bill.",
+  "links": [
+    {
+      "label": "BRSR MSME sourcing percentage",
+      "to": "/answers/brsr-msme-sourcing-percentage-question"
+    },
+    {
+      "label": "BRSR sustainable sourcing percentage",
+      "to": "/answers/brsr-sustainable-sourcing-percentage-question"
+    },
+    {
+      "label": "Supplier evidence for buyers",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, 12 July 2023: BRSR Core and updated BRSR format",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI, updated BRSR format (Annexure II to the 12 July 2023 circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    },
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 17 (BRSR guidance note)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

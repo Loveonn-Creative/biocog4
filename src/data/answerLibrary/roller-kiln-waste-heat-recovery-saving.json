@@ -1,0 +1,65 @@
+{
+  "slug": "roller-kiln-waste-heat-recovery-saving",
+  "q": "How fast does waste heat recovery on a ceramic roller kiln pay back?",
+  "title": "Roller kiln waste heat recovery payback",
+  "short": "In under a year at 2010 prices. BEE's Morbi report fits a recuperator to a vitrified tile roller kiln's preheating zone exhaust, warming burner air to about 175 C and saving 295 scm of gas a day, 3.1% of the kiln's use. Cost Rs 8.46 lakh, saving Rs 10.44 lakh a year, about 143 t CO2.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Vitrified and floor tile makers in Morbi whose roller kiln smoke air still goes up the stack hot",
+  "sections": [
+    {
+      "h": "Which exhaust this uses",
+      "p": [
+        "A roller kiln has two hot exhausts. Most Morbi units already send final cooling zone air, at 250 to 300 C, to their dryers. This project takes the other one: flue gas from the preheating zone, which leaves at about 249 C. A shell and tube recuperator of 32 m2 cools it to about 125 C and passes the heat, about 108,000 kcal an hour, to the combustion air."
+      ]
+    },
+    {
+      "h": "The audited kiln",
+      "ul": [
+        "5,929 m2 of vitrified tile a day (15,980 tiles), firing at about 1,223 C.",
+        "9,540 scm of gas a day, about 1.61 scm per m2.",
+        "Preheating zone flue gas carried about 5% of the heat input.",
+        "236 working days a year in the report's sums."
+      ]
+    },
+    {
+      "h": "Cost and payback",
+      "ul": [
+        "Recuperator Rs 6.90 lakh, fitting Rs 0.35 lakh, taxes Rs 0.35 lakh, interest Rs 0.18 lakh, contingency Rs 0.69 lakh: Rs 8.46 lakh.",
+        "Saving: 295 scm x 236 days = 69,620 scm at Rs 15 = Rs 10.44 lakh. The cover table labels this kWh; it is scm.",
+        "Payback 0.8 years. At 330 firing days the saving rises to about 97,000 scm.",
+        "Twelve days of kiln downtime to fit the ducting."
+      ]
+    },
+    {
+      "h": "Keep the saving",
+      "ul": [
+        "Log flue temperature after the recuperator weekly; a rise means fouling.",
+        "Check burner air pressure after fitting, since hot air takes more volume and burners may need retuning.",
+        "Track gas per m2 fired, not monthly gas, which moves with output."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One kiln, one year",
+    "lines": [
+      "Gas saved: 295 scm x 236 days = 69,620 scm",
+      "CO2 saved: 69,620 x 2.05 = 142.7 t",
+      "Per m2: 1.61 scm (3.30 kg CO2) falls to 1.56 scm (3.20 kg)",
+      "The report's own figure is 142 t"
+    ],
+    "note": "Natural gas at our factor of 2.05 kg CO2 a scm, an estimate."
+  },
+  "senseible": "Senseible reads gas bills into monthly records with CO2 at 2.05 kg a scm, so gas per m2 before and after the recuperator can be shown to a lender or an EU buyer. The green loan check shows what a lender asks for.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Morbi tile kiln gas and CO2 per m2", "to": "/answers/morbi-tile-kiln-gas-carbon-per-square-metre" },
+    { "label": "Low thermal mass kiln cars", "to": "/answers/tunnel-kiln-low-thermal-mass-car-gas-saving" },
+    { "label": "Morbi ceramic cluster carbon footprint", "to": "/answers/morbi-ceramic-cluster-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: waste heat recovery in roller kiln, Morbi ceramic cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/MRV_CRM13.pdf" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report at 2010 prices, when gas cost Rs 15 a scm. Redo the payback with today's gas price and a current quote."
+}

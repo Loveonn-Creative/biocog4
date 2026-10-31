@@ -1,0 +1,79 @@
+{
+  "slug": "brsr-resource-efficiency-initiatives-table",
+  "q": "What goes into the BRSR table of resource efficiency and emission reduction initiatives?",
+  "title": "BRSR resource efficiency initiatives table",
+  "short": "Principle 6 leadership indicator 4 asks for a table of initiatives or new technology that improved resource efficiency or cut emissions, effluent or waste: serial number, initiative, details with a web link if any, and the outcome. Write each outcome in measured units from meters and bills, not adjectives.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Sustainability and plant engineering teams at listed companies",
+  "sections": [
+    {
+      "h": "The four columns",
+      "ul": [
+        "Sr. No.",
+        "Initiative undertaken.",
+        "Details of the initiative, with a web link if there is one, and a short summary.",
+        "Outcome of the initiative."
+      ]
+    },
+    {
+      "h": "How it differs from the GHG projects question",
+      "p": [
+        "Essential indicator 8 asks only whether you have projects that reduce greenhouse gas emissions. This leadership table is wider: water saved, waste avoided, effluent reduced and material used more efficiently all belong here, alongside energy and emissions."
+      ]
+    },
+    {
+      "h": "Outcomes that hold up",
+      "ul": [
+        "A unit and a period: kWh, kL, tonnes or t CO2 a year, with the year compared.",
+        "Where the number came from: sub-meter, bills, weighbridge slips, inverter log.",
+        "For CO2, the factor and its source.",
+        "Whether the result is measured or an estimate."
+      ]
+    },
+    {
+      "h": "Keep it consistent with the other tables",
+      "p": [
+        "A saving claimed here should be visible in your energy, water, waste or emissions tables in the same principle. If totals rose because output rose, give intensity per tonne or per rupee next to the outcome so the reader sees why."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Two rows, filled in (illustrative)",
+    "lines": [
+      "1. 500 kWp rooftop solar, Plant 1: 690,000 kWh generated (inverter log); grid purchase fell by the same; 690,000 x 0.675 = 465.8 t CO2 avoided",
+      "2. Condensate recovery, Plant 2: borewell withdrawal down 1,850 kL against the previous year (flow meter)"
+    ],
+    "note": "Figures invented. Grid factor 0.675 kg CO2 per kWh, CEA FY 2025-26."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices month by month for each site, so before and after figures for each initiative come straight from the bills, with the factor and source on every line. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "BRSR GHG reduction projects",
+      "to": "/answers/brsr-ghg-reduction-projects-question"
+    },
+    {
+      "label": "Explain a big change in emissions",
+      "to": "/answers/explain-big-change-in-brsr-emissions"
+    },
+    {
+      "label": "Principle 6 from bills, worked",
+      "to": "/answers/brsr-principle-6-worked-example-from-bills"
+    },
+    {
+      "label": "BRSR reporting",
+      "to": "/brsr-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, 12 July 2023: BRSR Core and updated BRSR format",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI, updated BRSR format (Annexure II to the 12 July 2023 circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

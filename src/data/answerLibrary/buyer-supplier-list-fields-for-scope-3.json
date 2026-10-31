@@ -1,0 +1,75 @@
+{
+  "slug": "buyer-supplier-list-fields-for-scope-3",
+  "q": "What supplier details does a buyer need before starting Scope 3 supplier engagement?",
+  "title": "Supplier list to build before Scope 3 asks",
+  "short": "Six fields per supplier, from the GHG Protocol's supplier engagement guidance: name, address, procurement contact, supplier type (production-related or not), commodity or service type, and annual spend. Then ask your purchase team to check the list for suppliers about to be added or dropped before any survey goes out.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Buyers' procurement and sustainability teams, and suppliers who want to know what is coming",
+  "sections": [
+    {
+      "h": "The six fields, from records you already hold",
+      "ul": [
+        "Supplier name: as on the GST invoice, so duplicates across plants and ledgers can be merged.",
+        "Address: the works where the goods are made, which tells you the cluster and where the goods really come from, not only the billing office.",
+        "Procurement contact: who in your team manages the supplier and can answer for it.",
+        "Supplier type: production-related (materials, components, parts) or non-production (office supplies, services, repairs).",
+        "Commodity or service type: steel coil, castings, cartons, freight, housekeeping.",
+        "Annual spend: from the purchase register for the year you are reporting."
+      ]
+    },
+    {
+      "h": "Planning steps around the list",
+      "ol": [
+        "Find who already surveys suppliers. If an EcoVadis, Sedex or CDP request is already going out, coordinate with it so suppliers are not asked twice.",
+        "Choose suppliers. Rank by expected emissions; if you cannot, rank by spend. The guidance's rule of thumb is to request data from the top 80% of known suppliers, and to widen that over time.",
+        "Engage procurement. They know which suppliers are being added or removed and which contracts are changing. Give them the reasons, the process and a list of likely supplier questions, and say the programme has senior backing.",
+        "Pick how data will come in. The guidance notes that a spreadsheet is simple to send but wearing for suppliers filling a different one for every customer."
+      ]
+    },
+    {
+      "h": "Confidential supplier data",
+      "p": [
+        "Ask each supplier how its data may be used and get written permission. Where needed, sign a non-disclosure agreement. Where several suppliers make the same part, protect each one's figures from the others, keeping competition law in mind."
+      ]
+    },
+    {
+      "h": "If you are the supplier on that list",
+      "p": [
+        "Expect a letter from the buyer's procurement team explaining the programme, its schedule and asking who will answer. Name one person, keep a year of electricity bills, fuel invoices and production figures together, and ask for the training session or help contact the guidance tells buyers to offer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: a buyer's first supplier list",
+    "lines": [
+      "Purchase register: 212 suppliers, Rs 90 crore spend",
+      "Top 31 suppliers by spend = Rs 72 crore, 80% of spend",
+      "Procurement flags 4 of them as being phased out, and 2 new vendors starting next quarter",
+      "First survey: 31 minus 4 plus 2 = 29 suppliers"
+    ],
+    "note": "Figures are illustrative. Rank by expected emissions instead of spend when you can."
+  },
+  "senseible": "Senseible reads purchase invoices and keeps supplier name, spend, quantity and HSN code in a separate supplier evidence trail, which fills most of these fields from documents you already have.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Which suppliers to ask first",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    },
+    {
+      "label": "What the supplier survey should contain",
+      "to": "/answers/supplier-carbon-survey-format-contents"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Supplier Engagement Guidance",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Supplier%20Engagement%20Guidance.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "ceramic-gas-turbine-cogeneration-numbers",
+  "q": "What do the numbers look like for gas turbine cogeneration in a ceramic plant?",
+  "title": "Ceramic gas engine cogeneration: numbers",
+  "short": "BEE's Morbi report sizes two gas engines, 2.72 MW, for a vitrified tile plant: 4.08 million scm of gas a year makes 16.7 GWh, and engine heat replaces 1.64 million scm in the spray dryer. Net CO2 falls about 6,260 t a year. Cost Rs 899 lakh, payback 2.75 years (2010).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Owners of gas-fired vitrified tile plants in Morbi weighing captive power with spray dryer heat recovery",
+  "sections": [
+    {
+      "h": "How the plant is set up",
+      "ul": [
+        "Two engines of about 1.36 MW each carry the whole plant load of 2,109 kW, 24 hours a day for 330 days.",
+        "Of the gas heat, about 40% becomes power, 30% leaves as exhaust that goes straight into the spray dryer, and 20% goes to jacket cooling water, a tenth of which is used to preheat air.",
+        "The engines burn 515 scm an hour. Exhaust replaces 155 scm an hour of dryer gas and jacket heat another 52.",
+        "The spray dryer needs flue gas at about 550 C and is a plant's largest heat user, so it can take the exhaust without extra fuel."
+      ]
+    },
+    {
+      "h": "The money, at 2010 prices",
+      "ul": [
+        "Grid power avoided: 16,695,360 kWh at Rs 4.15 = Rs 692.85 lakh.",
+        "Dryer gas saved: 1,639,440 scm at Rs 15 = Rs 246 lakh.",
+        "Engine gas bought: 4,080,914 scm at Rs 15 = Rs 612.13 lakh.",
+        "Net: Rs 326.64 lakh a year on Rs 899.11 lakh, so 2.75 years.",
+        "Cost includes Rs 494 lakh engines, Rs 105.22 lakh import duty, Rs 80 lakh heat recovery ducting and Rs 50 lakh civil work. Ten days of dryer downtime."
+      ]
+    },
+    {
+      "h": "Ignore the cover table",
+      "p": [
+        "The report's summary table shows Rs 1,904 lakh, 11.88 million scm, 23.06 GWh, 9.02 million scm saved and a 3.6 year payback. Its own workings do not produce any of those numbers; the figures above follow the workings. It also says turbine in places, but the equipment priced is gas engines."
+      ]
+    },
+    {
+      "h": "What changes in your carbon figures",
+      "ul": [
+        "Scope 2 from the grid falls to almost nothing; Scope 1 from gas rises by about 8,370 t.",
+        "Each kWh from the engines carries about 0.50 kg CO2, or about 0.30 kg once the dryer gas it replaces is credited, against 0.675 kg from the grid.",
+        "Gas engines also release a little unburnt methane, which a full inventory should include.",
+        "The case rests on the gas to power price ratio; redo it with today's gas and tariff before you order anything."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One plant, one year",
+    "lines": [
+      "Grid avoided: 16,695,360 kWh x 0.675 = 11,269 t",
+      "Dryer gas saved: 1,639,440 scm x 2.05 = 3,361 t",
+      "Engine gas burnt: 4,080,914 scm x 2.05 = 8,366 t",
+      "Net cut: 11,269 + 3,361, less 8,366 = about 6,264 t",
+      "The report says 7,405 t, using older grid factors"
+    ],
+    "note": "Natural gas at our factor of 2.05 kg CO2 a scm and grid at CEA's FY 2025-26 factor, both estimates."
+  },
+  "senseible": "Senseible reads gas bills and electricity bills into monthly records with CO2, so the move from Scope 2 to Scope 1 after cogeneration shows month by month. The green loan check shows what a lender asks for on a project this size.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Splitting CHP emissions: power and steam", "to": "/answers/chp-emissions-allocation-electricity-and-steam" },
+    { "label": "Gas engine cogeneration methane slip", "to": "/answers/natural-gas-engine-cogen-methane-slip" },
+    { "label": "Ceramic spray dryer CO2 per tonne", "to": "/answers/ceramic-spray-dryer-co2-per-tonne-powder" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: gas engine based co-generation technology, 2.72 MW, Morbi ceramic cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/MRV_CRM8.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report at 2010 prices, when gas cost Rs 15 a scm. Gas and power prices have changed a lot; redo the payback with current prices and a current quote."
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "tunnel-kiln-low-thermal-mass-car-gas-saving",
+  "q": "How much gas does a low thermal mass kiln car save in a tunnel kiln?",
+  "title": "Low thermal mass kiln cars: gas saved",
+  "short": "About 156 scm a day, 8.7% of the kiln's gas, in BEE's Morbi report for a 1,000 piece a day sanitaryware tunnel kiln. Cutting car furniture from 465 kg to 358 kg saves 50,076 scm and about 103 t CO2 a year. Cost Rs 21.96 lakh, payback 2.92 years at Rs 15 a scm.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sanitaryware makers in Morbi and Thangadh firing gas tunnel kilns with heavy refractory kiln cars",
+  "sections": [
+    {
+      "h": "Why heavy cars cost gas",
+      "p": [
+        "Every car is heated to about 1,210 C with the ware and cooled again on every trip. In the audited kiln 50 cars a day carry 1,000 pieces, 13.5 t, through a 14 hour cycle on 1,800 scm of gas. Only about 19% of that heat ends up in the ware. Each kilo of brick taken off the car is heat you stop buying."
+      ]
+    },
+    {
+      "h": "What gets changed on each car",
+      "ul": [
+        "Solid refractory pillars replaced by hollow, ceramic coated pipes.",
+        "A ceramic fibre blanket base in place of the brick base.",
+        "Hollow cordierite blocks to hold the ware in place of solid refractory.",
+        "Result: 465 kg down to 358 kg a car, 23% lighter, and room for a little more ware.",
+        "Cost: Rs 20 lakh material, Rs 1.00 lakh fitting, Rs 0.53 lakh interest while building, Rs 0.43 lakh other. About 4 weeks, done in phases because spare cars are few."
+      ]
+    },
+    {
+      "h": "Payback at your gas price",
+      "p": [
+        "The report priced gas at Rs 15 a scm and assumed 321 firing days. Payback is Rs 21.96 lakh divided by 50,076 scm times your price: at Rs 30 a scm about 1.5 years, at Rs 45 about 1 year. Use the price on your latest gas bill."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per piece and per year",
+    "lines": [
+      "Gas per piece: 1,800 / 1,000 = 1.80 scm before, 1.64 scm after",
+      "CO2 per piece: 1.80 x 2.05 = 3.69 kg before, 3.37 kg after",
+      "Gas saved: 156 scm x 321 days = 50,076 scm",
+      "CO2 saved: 50,076 x 2.05 = 102.7 t a year",
+      "Across Morbi's 43 sanitaryware units, about 4,400 t if all did it"
+    ],
+    "note": "Natural gas at our factor of 2.05 kg CO2 a scm, an estimate. The report's own figure is 103 t."
+  },
+  "senseible": "Senseible reads gas and electricity bills into monthly records with CO2, so gas per piece or per tonne can be tracked as cars are rebuilt. The green loan check shows what a lender asks for on kiln work.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Thangadh sanitaryware cluster energy", "to": "/answers/thangadh-sanitaryware-cluster-energy-and-carbon" },
+    { "label": "Tunnel kiln vs shuttle kiln emissions", "to": "/answers/tunnel-kiln-vs-shuttle-kiln-emissions" },
+    { "label": "Roller kiln waste heat recovery", "to": "/answers/roller-kiln-waste-heat-recovery-saving" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: use of low thermal mass cars in tunnel kiln, Morbi ceramic cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/MRV_CRM10.pdf" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs are at 2010 prices. Check today's gas price and a current quote for car materials."
+}

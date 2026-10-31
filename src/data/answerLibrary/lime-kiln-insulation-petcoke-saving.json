@@ -1,0 +1,82 @@
+{
+  "slug": "lime-kiln-insulation-petcoke-saving",
+  "q": "How much petcoke does better insulation save on a 50 tpd lime kiln?",
+  "title": "Lime kiln insulation: pet coke saved",
+  "short": "BEE's Jodhpur report expects better insulation on a 50 tpd lime kiln to cut pet coke from 4,000 to 3,860 t a year, 3.5%. At its Rs 7,000 a tonne that is Rs 9.8 lakh, not the Rs 9.0 lakh it prints, for Rs 3.4 lakh: payback about four months. Insulation needs yearly repair.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Quicklime and hydrated lime units around Jodhpur running vertical shaft kilns on pet coke",
+  "sections": [
+    {
+      "h": "Where the heat goes",
+      "p": [
+        "A 50 tpd kiln is about 29 m tall, 2.3 m inside and 3.4 m outside, firing at 1,000 to 1,200 °C. Radiation and surface losses take 15 to 20% of the heat supplied. BEE proposes insulating bricks, insulating castables and ceramic fibre blanket over damaged and thin zones. It also expects the burn to shorten from 13 hours to 11 or 12, with almost no unburnt pet coke."
+      ]
+    },
+    {
+      "h": "The numbers, checked",
+      "ul": [
+        "Saving: 4,000 t x 3.5% = 140 t of pet coke a year.",
+        "Money: 140 x Rs 7,000 = Rs 9.8 lakh; the report rounds this to 9.0 to 10.0.",
+        "Cost: Rs 3.0 lakh material, 0.2 erection, 0.2 other: Rs 3.4 lakh.",
+        "Payback: 3.4 / 9.8 = 0.35 years, about four months.",
+        "The report's summary also quotes Rs 5.5 lakh, 1,200 t of fuel and 5%; those mix in a smaller kiln. Table 3.1 is the 50 tpd case."
+      ]
+    },
+    {
+      "h": "What it does to your CO2",
+      "p": [
+        "The report gives no CO2 figure. At the IPCC pet coke default, 140 t is about 444 t CO2 a year. Per tonne of quicklime, at the report's 0.2 t of pet coke, 3.5% is 7 kg of pet coke, or 22 kg CO2. Quicklime carries about 1.34 t CO2 a tonne, mostly from the limestone itself, so insulation trims under 2% of the product's figure. Buyers asking for CO2 per tonne will still see the process share."
+      ]
+    },
+    {
+      "h": "Keep it working",
+      "ol": [
+        "Check shell temperatures with an infrared gun regularly, and log them.",
+        "Do a thermal imaging survey once a year, before and after repairs.",
+        "Repair hot spots during the annual shutdown.",
+        "Expect 4 to 5 years of life with spot repairs."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per tonne of quicklime (estimate)",
+    "lines": [
+      "Pet coke saved: 0.2 t x 3.5% = 7 kg",
+      "CO2 saved: 7 kg x 3.17 = 22 kg",
+      "Share of about 1,340 kg CO2 per tonne: 1.7%",
+      "Whole kiln: 140 t x 3.17 = 444 t CO2 a year"
+    ],
+    "note": "Pet coke at the IPCC 2006 default, 97,500 kg CO2 per TJ at 32.5 GJ per tonne, an estimate. The 1.34 t per tonne assumes 90% CaO; use your assay."
+  },
+  "senseible": "Senseible keeps your pet coke invoices and electricity bills as dated records linked to each bill. It has no built-in pet coke factor, so apply the IPCC figure above to the tonnes. The green loan check shows what a lender asks before funding kiln work.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Jodhpur lime kilns: pet coke and stone CO2",
+      "to": "/answers/jodhpur-lime-kiln-units-petcoke-carbon"
+    },
+    {
+      "label": "Pet coke emission factor",
+      "to": "/answers/petcoke-emission-factor-india"
+    },
+    {
+      "label": "Quicklime kiln CO2 per tonne",
+      "to": "/answers/quicklime-kiln-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: kiln insulation improvement for a 50 tpd kiln, Jodhpur lime kiln cluster (2011, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Jodhpur_lime_kiln_cluster/04_En_cost_saving_by_kiln_insulation_improvement_for_50tpd_kiln_Jodhpur_cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

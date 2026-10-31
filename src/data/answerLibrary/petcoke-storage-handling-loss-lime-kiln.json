@@ -1,0 +1,59 @@
+{
+  "slug": "petcoke-storage-handling-loss-lime-kiln",
+  "q": "How much petcoke is lost in open storage at a lime kiln, and what does covered storage save?",
+  "title": "Pet coke storage losses at a lime kiln",
+  "short": "About 1% of the pet coke you buy, in BEE's Jodhpur report. Open heaps lose 2 to 3%; hard floors and brick or concrete bays save roughly 22 t a year, Rs 1.5 lakh at Rs 7,000 a tonne, for a unit making 12,000 t of quicklime. Cost Rs 2.4 lakh, payback 1.6 years (2011 prices).",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Lime kiln owners in Jodhpur and other clusters who stock pet coke in open yards for months at a time",
+  "sections": [
+    {
+      "h": "Where the coke goes",
+      "ul": [
+        "Jodhpur units stock pet coke against supply and transport delays, mostly on bare ground in the open.",
+        "BEE's audit found large units (12,000 to 15,000 t of quicklime a year) losing about 2 to 3% of their coke, around Rs 4 lakh a year.",
+        "The losses come from three places: fines trodden into the ground under the heap (carpet loss, 1.5 to 2%), wind (0.5 to 1%), and slow oxidation, which lowers the heat value of what is left.",
+        "A vertical shaft kiln there burns 2.5 to 3 t of pet coke for about 15 t of quicklime, close to 0.2 t a tonne."
+      ]
+    },
+    {
+      "h": "What the report proposes",
+      "ol": [
+        "A hard, sealed floor under the stock so fines cannot sink into the soil.",
+        "Storage bays built from brick and concrete, so the heap has walls and a roof against wind and rain.",
+        "Less handling: every extra shift of the heap makes more fines.",
+        "Cost: Rs 2.0 lakh material, Rs 0.2 lakh erection, Rs 0.2 lakh other, Rs 2.4 lakh in all. The report's cover table shows Rs 2.0 lakh, but its own cost table and payback use Rs 2.4 lakh."
+      ]
+    },
+    {
+      "h": "The carbon point most units miss",
+      "p": [
+        "Better storage does not change what the kiln burns, so kiln CO2 per tonne of lime stays the same. What changes is the number on your purchase bills. If you work out Scope 1 from coke bought, a 2.5% yard loss adds about 55 t of coke, roughly 174 t CO2, that never reached the kiln. Count the coke fed to the kiln: purchases, less the change in stock, less losses you can show."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 12,000 t a year quicklime unit",
+    "lines": [
+      "Coke cost per tonne of lime in the report: Rs 1,280 at Rs 7,000 a tonne = 0.183 t coke",
+      "Coke a year: 12,000 x 0.183 = about 2,194 t",
+      "1% saved: about 22 t, Rs 1.54 lakh; the report rounds to Rs 1.5 lakh",
+      "Payback: 2.4 / 1.5 = 1.6 years",
+      "Fuel CO2 per tonne of lime: 0.183 x 3.17 = about 0.58 t, before process CO2 from the stone"
+    ],
+    "note": "Pet coke at the IPCC 2006 default of about 3.17 t CO2 a tonne (32.5 GJ a tonne x 97.5 kg CO2 a GJ), an estimate. Use your lab's calorific value and carbon content if you have them."
+  },
+  "senseible": "Senseible reads pet coke invoices and electricity bills into monthly records, with CO2 for the power. It has no pet coke factor, so apply the one above to the tonnes fed to the kiln, and keep a stock register so purchases and burn can be told apart.",
+  "links": [
+    { "label": "Your MSME carbon number", "to": "/msme-carbon-number" },
+    { "label": "Jodhpur lime kilns: pet coke and stone CO2", "to": "/answers/jodhpur-lime-kiln-units-petcoke-carbon" },
+    { "label": "Pet coke emission factor in India", "to": "/answers/petcoke-emission-factor-india" },
+    { "label": "Quicklime kiln CO2 per tonne", "to": "/answers/quicklime-kiln-co2-per-tonne" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: improved handling and storage of pet coke in large units, Jodhpur limestone cluster (2011, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/Jodhpur_lime_kiln_cluster/07_Improved_handling_storage_of_pet_coke_in_large_units_Jodhpur_cluster.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2011 prices. Check today's coke price and a current quote before you rely on the payback."
+}

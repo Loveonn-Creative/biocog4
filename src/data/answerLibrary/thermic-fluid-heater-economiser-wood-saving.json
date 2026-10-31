@@ -1,0 +1,59 @@
+{
+  "slug": "thermic-fluid-heater-economiser-wood-saving",
+  "q": "How much wood does an economiser on a thermic fluid heater save?",
+  "title": "Economiser on a wood thermic fluid heater",
+  "short": "BEE's Solapur report says 30 t of wood a year, about a fifth of a dyeing unit's 144 t, by cooling heater flue gas from 360 C to 120 C to make process hot water. Cost Rs 1.29 lakh, payback 1.7 years at Rs 2,500 a tonne (2010). Size it to your hot water use first.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Yarn dyeing and towel units in Solapur running wood-fired thermic fluid heaters for hot water",
+  "sections": [
+    {
+      "h": "The heater in the report",
+      "ul": [
+        "Thermic fluid heater of 3 lakh kcal an hour, fired on wood of about 3,200 kcal a kg, 8 hours a day, 240 days a year.",
+        "Efficiency 35 to 45%. Flue gas leaves at 330 to 360 C and carries 33 to 38% of the heat.",
+        "The unit burns 144 t of wood a year for 288 t of product.",
+        "Proposed: a shell and tube economiser in the flue, rated 2,500 litres a day, heating process water to 55 to 60 C, with flue gas leaving at about 120 C."
+      ]
+    },
+    {
+      "h": "Check the 30 tonnes against your water",
+      "p": [
+        "Heating 2,500 litres a day from 27 C to 55 C takes about 70,000 kcal. At the heater's 35 to 45% efficiency that replaces about 49 to 63 kg of wood a day, roughly 12 to 15 t a year. The report's 30 t needs about 5,000 to 6,400 litres of hot water a day from the economiser. If you use only 2,500 litres, expect the smaller saving and a payback nearer 4 years."
+      ]
+    },
+    {
+      "h": "Cost and fitting",
+      "ul": [
+        "Rs 1.25 lakh for the economiser, insulation, piping and tank; Rs 1.29 lakh in all.",
+        "About 2 days to fit; it can be done on a weekly holiday.",
+        "Saving in the report: 30 t x Rs 2,500 = Rs 0.75 lakh a year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "What it does to your carbon figures",
+    "lines": [
+      "Fossil CO2: no change; the saving is wood",
+      "Wood saved: 30 t x 3,200 kcal/kg x 4.1868 = about 402 GJ",
+      "Biogenic CO2 avoided: 402 GJ x 112 kg = about 45 t",
+      "The report's 42 t used 1.4 t CO2 a tonne of wood",
+      "Wood per kg of product: 0.50 kg falls to about 0.40 kg"
+    ],
+    "note": "Wood CO2 uses the IPCC 2006 default of 112 kg CO2 a GJ with the report's calorific value. It is biogenic and reported separately, outside Scopes 1 to 3."
+  },
+  "senseible": "Senseible reads your electricity bills into records with CO2. It has no factor for wood, so keep wood tonnes from purchase bills as a separate biogenic line; the green loan check shows what a lender asks for on heat recovery.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Solapur textiles: wood fuel and carbon", "to": "/answers/solapur-textile-cluster-wood-fuel-carbon" },
+    { "label": "Thermic fluid heater emissions", "to": "/answers/thermic-fluid-heater-emissions-scope-1" },
+    { "label": "Efficient wood hot water generator", "to": "/answers/efficient-hot-water-generator-wood-saving" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: waste heat recovery through economizer, 2,500 LPD, Solapur textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/fluid_heater.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Check today's wood price and your own hot water use."
+}

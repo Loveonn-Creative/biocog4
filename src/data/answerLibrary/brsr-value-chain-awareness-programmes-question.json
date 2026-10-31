@@ -1,0 +1,75 @@
+{
+  "slug": "brsr-value-chain-awareness-programmes-question",
+  "q": "What does a buyer report about sustainability training for its suppliers in BRSR?",
+  "title": "BRSR supplier awareness programmes question",
+  "short": "Principle 1 leadership indicator 1 asks a listed company how many awareness programmes it ran for value chain partners in the year, which principles they covered, and what share of partners attended, measured by value of business done with them. Your attendance moves your buyer's percentage.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "MSME suppliers invited to a listed buyer's supplier sustainability session",
+  "sections": [
+    {
+      "h": "The three columns",
+      "ul": [
+        "Total number of awareness programmes held.",
+        "Topics or principles covered.",
+        "Percentage of value chain partners covered, by value of business done with them."
+      ]
+    },
+    {
+      "h": "Why the share is by value",
+      "p": [
+        "A buyer with 400 suppliers, where 20 account for 70% of purchases, can report a high share by training those 20. So bigger suppliers are invited first, and a missed session by a large supplier shows in the buyer's figure. This is a different question from essential indicator 1, which covers the buyer's own board, managers, employees and workers."
+      ]
+    },
+    {
+      "h": "What to keep after a session",
+      "ol": [
+        "The invitation and agenda.",
+        "An attendance record or certificate with your company's name.",
+        "Which of the nine principles it covered, for example Principle 6 on environment.",
+        "What you changed afterwards, such as starting monthly energy records."
+      ]
+    },
+    {
+      "h": "Make the session pay for you",
+      "p": [
+        "These sessions are usually where a buyer's next data request starts. Ask what figures they will want, in which units and by when. Knowing that early costs less than rebuilding a year of records later."
+      ]
+    }
+  ],
+  "example": {
+    "title": "How your attendance counts",
+    "lines": [
+      "Buyer's purchases from all value chain partners: Rs 500 crore",
+      "Partners who attended a session: Rs 310 crore of that, so 62%",
+      "Your firm sells the buyer Rs 18 crore: attending adds 18 / 500 = 3.6 points"
+    ],
+    "note": "Figures invented to show the arithmetic."
+  },
+  "senseible": "If the session ends with a request for your energy and emissions figures, Senseible turns your electricity bills and fuel invoices into the Scope 1 and 2 records and evidence a buyer asks for.",
+  "links": [
+    {
+      "label": "BRSR data request to an MSME supplier",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Supplier questionnaire, field by field",
+      "to": "/answers/brsr-supplier-questionnaire-field-by-field"
+    },
+    {
+      "label": "Supplier evidence for buyers",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, 12 July 2023: BRSR Core and updated BRSR format",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI, updated BRSR format (Annexure II to the 12 July 2023 circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

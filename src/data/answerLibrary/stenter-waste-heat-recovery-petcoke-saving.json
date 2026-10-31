@@ -1,0 +1,65 @@
+{
+  "slug": "stenter-waste-heat-recovery-petcoke-saving",
+  "q": "How much petcoke does waste heat recovery on a stenter save?",
+  "title": "Stenter waste heat recovery: pet coke",
+  "short": "About a fifth of the stenter's fuel in BEE's Pali report: air to air heat recovery on the exhaust saves 75.2 t of residual pet coke a year on a stenter burning 376 t. That is about 223 to 238 t CO2. Cost Rs 10.25 lakh, saving Rs 5.64 lakh at Rs 7,500 a tonne, payback 1.8 years (2010).",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pali process houses running stenters on thermic fluid from pet coke fired thermopacs",
+  "sections": [
+    {
+      "h": "Where the stenter's heat goes",
+      "ul": [
+        "The audited stenter runs at 60 m a minute, 24 hours a day, 300 days: 86,400 m a day.",
+        "It takes 3 lakh kcal an hour as thermic fluid at 235 to 300 C, from a thermopac burning residual pet coke of about 8,200 kcal a kg: 52.2 kg an hour, 376 t a year.",
+        "Exhaust leaves at about 140 C in heat setting and 120 C in resin finishing, carrying 39% to 76% of the heat.",
+        "In most Pali units the exhaust fan is kept off and hot, moist air spills out at the fabric exit."
+      ]
+    },
+    {
+      "h": "The two ways to use the exhaust",
+      "ol": [
+        "Air to air: exhaust heats the fresh air going into the stenter. The report puts this at 12 to 15% of heat, up to 30% in dry heat setting.",
+        "Air to water: exhaust heats process or boiler feed water to as much as 90 C."
+      ]
+    },
+    {
+      "h": "How firm is the 20%?",
+      "p": [
+        "It is a maker's figure, not a trial in Pali: one stenter maker's brochure claims up to 35%, another's quotation 20%, and BEE took the lower one. Stenter exhaust carries oil mist and lint that coat heat exchangers, so a unit without easy cleaning access will drift below it. Ask the supplier for measured results on a stenter doing your finish."
+      ]
+    },
+    {
+      "h": "Cost",
+      "ul": [
+        "Rs 8 lakh heat recovery unit, Rs 2 lakh civil work and fitting, Rs 0.25 lakh interest while building: Rs 10.25 lakh.",
+        "Exhaust duct changes needed; about two days of downtime."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One stenter, one year",
+    "lines": [
+      "Coke: 52.2 kg x 24 h x 300 days = 376 t; 20% = 75.2 t",
+      "Money: 75.2 x Rs 7,500 = Rs 5.64 lakh; payback 10.25 / 5.64 = 1.8 years",
+      "Coke per metre: 376 t / 25.9 million m = 14.5 g, falling to about 11.6 g",
+      "CO2 at the IPCC default: 75.2 x 3.17 = 238 t",
+      "CO2 from Pali coke's 80.9% carbon: 75.2 x 2.97 = 223 t; the report says 200 t"
+    ],
+    "note": "IPCC 2006 default for pet coke is about 3.17 t CO2 a tonne. The 80.9% carbon content is from the fuel analysis in BEE's Pali air preheater report. Both are estimates."
+  },
+  "senseible": "Senseible reads pet coke invoices and electricity bills into monthly records, with CO2 for the power. It has no pet coke factor, so apply one of the figures above to the tonnes burnt; the green loan check shows what a lender asks for.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Stenter fuel and CO2 per metre", "to": "/answers/stenter-fuel-and-co2-per-metre-of-fabric" },
+    { "label": "Thermopac air preheater: pet coke saved", "to": "/answers/thermopac-air-preheater-petcoke-saving" },
+    { "label": "Pet coke emission factor in India", "to": "/answers/petcoke-emission-factor-india" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: waste heat recovery system in stenter, Pali textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/pali_new_1.pdf" },
+    { "label": "BEE, Detailed project report: air pre heater in thermopac, Pali textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/PAL_TXT1.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Check today's coke price and a current quote."
+}

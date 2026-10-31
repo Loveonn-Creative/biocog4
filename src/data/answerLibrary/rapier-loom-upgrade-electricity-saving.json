@@ -1,0 +1,59 @@
+{
+  "slug": "rapier-loom-upgrade-electricity-saving",
+  "q": "How much electricity do four rapier looms save over old looms in a powerloom unit?",
+  "title": "Rapier looms vs shuttle looms: power",
+  "short": "About 18,720 kWh a year, worth only Rs 47,000 at 2010 tariffs. In BEE's Solapur report four rapier looms replace sixteen shuttle looms, and most of the Rs 12.83 lakh yearly benefit is labour and better cloth, not power. Payback 2.15 years on Rs 27.68 lakh.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Terry towel and bedsheet weavers in Solapur running old shuttle powerlooms and asked for kWh per kg by buyers",
+  "sections": [
+    {
+      "h": "Old looms against one rapier",
+      "ul": [
+        "Four shuttle looms: 8.4 kWh a day each, 12 kg of cloth each, 48 kg a day in all on 33.6 kWh, four weavers.",
+        "One rapier loom: 18 kWh a day, 50 kg a day, one weaver.",
+        "Shuttle looms run at about 70 effective rpm; the rapier at about 200.",
+        "12 hours a day, 300 days. Solapur has about 1,200 shuttle looms, all old."
+      ]
+    },
+    {
+      "h": "Where the Rs 3.21 lakh per rapier comes from",
+      "ul": [
+        "Power: 15.6 kWh a day x 300 x Rs 2.50 = Rs 11,700.",
+        "Labour: three fewer weavers, Rs 13,000 a month = Rs 1.56 lakh.",
+        "Quality: Rs 9 a kg more for cloth with fewer weft faults, on 50 kg a day = Rs 1.35 lakh.",
+        "Maintenance: Rs 18,000 less.",
+        "On power alone, the four looms would take about 59 years to pay back. Judge the loom on output, labour and quality."
+      ]
+    },
+    {
+      "h": "What it does to the number your buyer asks for",
+      "p": [
+        "Towel and bedsheet buyers may ask suppliers for kWh and CO2 per kg. The rapier halves both for the weaving step. Keep the meter readings and kg woven for a month before and after; that pair is the evidence a buyer or auditor will want."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Weaving power per kg",
+    "lines": [
+      "Shuttle: 33.6 / 48 = 0.70 kWh a kg, x 0.675 = 0.47 kg CO2",
+      "Rapier: 18 / 50 = 0.36 kWh a kg, x 0.675 = 0.24 kg CO2",
+      "Four rapiers a year: 4 x 15.6 x 300 = 18,720 kWh",
+      "CO2 saved: 18,720 x 0.675 = 12.6 t; the report says 16 t on an older grid factor"
+    ],
+    "note": "Grid at CEA's FY 2025-26 factor of 0.675 kg CO2 a kWh, an estimate."
+  },
+  "senseible": "Senseible reads electricity bills into monthly records with CO2, and with kg woven from your production log it gives the kWh and CO2 per kg that towel and bedsheet buyers ask suppliers for.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Electricity and CO2 per metre of weaving", "to": "/answers/weaving-electricity-per-metre-of-fabric" },
+    { "label": "Powerloom vs airjet loom energy", "to": "/answers/powerloom-vs-airjet-loom-energy-per-metre" },
+    { "label": "Solapur textiles: wood fuel and carbon", "to": "/answers/solapur-textile-cluster-wood-fuel-carbon" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: auto loom or rapier loom (4 nos), Solapur textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/SLP_TXT1.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs, wages and tariffs are at 2010 levels. Check current loom quotes, wages and your tariff."
+}

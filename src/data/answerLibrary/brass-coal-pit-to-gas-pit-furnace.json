@@ -1,0 +1,67 @@
+{
+  "slug": "brass-coal-pit-to-gas-pit-furnace",
+  "q": "How much gas does a 200 kg gas-fired pit furnace use in place of coal for brass melting?",
+  "title": "Brass: coal pit to gas pit furnace",
+  "short": "About 104 Nm3 of gas per tonne of brass instead of 192 kg of coal, in BEE's Jamnagar report: 41,497 Nm3 a year replacing 76.86 t of coal for 400 t melted. Net CO2 falls about 45 t a year, not the report's 69 t. Cost Rs 12.65 lakh, payback 3.61 years (2010).",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Brass part and rod makers in Jamnagar melting scrap in coal-fired pit furnaces and pricing a switch to gas",
+  "sections": [
+    {
+      "h": "The two furnaces in the report",
+      "ul": [
+        "Coal pit furnace: measured at 9.7% and 12.8% efficiency in two units, 43 to 49 kg of coal for 255 to 295 kg melts, coal at 6,500 kcal a kg.",
+        "Gas pit furnace: 200 kg an hour, burner with air to fuel ratio control, waste heat recovery and automatic temperature control, rated at 17% efficiency.",
+        "Use: 2,000 hours a year, 400 t of brass.",
+        "Melting costs about Rs 28 a kg in a typical unit, around a fifth of its energy bill, and takes 1.2 to 1.5 hours a melt."
+      ]
+    },
+    {
+      "h": "Where the Rs 3.50 lakh comes from",
+      "ul": [
+        "Coal: 192.16 kg a tonne x Rs 18 = Rs 3,459.",
+        "Gas: 103.74 Nm3 a tonne x Rs 24 = Rs 2,490.",
+        "Fuel saving: Rs 969 a tonne, Rs 3.88 lakh on 400 t.",
+        "Less the 5 HP blower: 7,460 kWh at Rs 5 = Rs 0.37 lakh.",
+        "Cost: Rs 11.50 lakh furnace, Rs 1.15 lakh erection. One week of downtime."
+      ]
+    },
+    {
+      "h": "Before you choose a pit over a rotary",
+      "p": [
+        "The same BEE series has a 250 kg gas rotary furnace using 56.25 Nm3 a tonne, about half the pit furnace's gas, at Rs 8.80 lakh and a 1.27 year payback. The pit report also assumed gas at only 6,880 kcal per Nm3 (8,600 kcal a kg at 0.8 kg a cubic metre). Piped natural gas usually carries more heat than that, so ask your supplier for the calorific value on the bill; real gas use may be lower."
+      ]
+    },
+    {
+      "h": "CBAM does not apply to brass",
+      "p": [
+        "Copper alloy goods such as brass are not in CBAM's list of goods. The reason to track CO2 here is buyer requests and loan files, not an EU border charge."
+      ]
+    }
+  ],
+  "example": {
+    "title": "400 t of brass a year, before and after",
+    "lines": [
+      "Coal removed: 76.86 t x 1.76 = 135.3 t CO2",
+      "Gas added: 41,497 Nm3 x 2.05 = 85.1 t CO2",
+      "Blower power added: 7,460 kWh x 0.675 = 5.0 t CO2",
+      "Net cut: about 45 t a year, or 113 kg per tonne of brass",
+      "The report's 69 t counted coal at about 2 kg CO2 a kg and left out the blower"
+    ],
+    "note": "Indian coal at our factor of 1.76 kg CO2 a kg, natural gas at 2.05 kg a scm and grid at CEA's FY 2025-26 factor, all estimates."
+  },
+  "senseible": "Senseible reads coal invoices, gas bills and electricity bills into monthly records with CO2 for each, so the before and after per tonne of brass can be shown to a buyer or a lender. The green loan check shows what a lender asks for on a furnace loan.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Brass: coal pit to gas rotary furnace", "to": "/answers/brass-coal-furnace-to-gas-rotoberatory" },
+    { "label": "Jamnagar brass cluster energy and carbon", "to": "/answers/jamnagar-brass-cluster-energy-and-carbon-footprint" },
+    { "label": "Brass: efficient oil pit furnace", "to": "/answers/brass-oil-pit-furnace-efficient-saving" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: energy efficient gas fired pit furnace, 200 kg an hour, Jamnagar brass cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/Jamnagar_brass_cluster/DPR_on_Energy_Efficient_Gas_Fired_Pit_Furnace_200%20kg.pdf" },
+    { "label": "BEE, Detailed project report: energy efficient gas fired rotoberatory furnace, 250 kg, Jamnagar brass cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/Jamnagar_brass_cluster/DPR_Energy_Efficient_Gas_Fired_Rotoberatory_Furnace_250%20kg.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Coal and gas prices have moved a lot since; redo the payback with today's prices."
+}

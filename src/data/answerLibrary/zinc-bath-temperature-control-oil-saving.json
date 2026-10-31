@@ -1,0 +1,83 @@
+{
+  "slug": "zinc-bath-temperature-control-oil-saving",
+  "q": "How much fuel does automatic temperature control on a zinc bath save?",
+  "title": "Zinc bath temperature control: oil saved",
+  "short": "Holding a Howrah zinc bath at 500 °C instead of 520 °C with an automatic controller saves 4,442 litres of furnace oil a year in BEE's study, 3.8% of the furnace's 118,080 litres. That is 13.2 t CO2, not the report's 15 t. Cost Rs 2.34 lakh; payback 1.8 years at Rs 30 a litre.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Hot-dip galvanizers in Howrah and elsewhere firing zinc kettles on furnace oil",
+  "sections": [
+    {
+      "h": "Why baths run hot",
+      "p": [
+        "IS 2629:1985 suggests a zinc bath of 440 to 460 °C. Howrah units run 480 to 520 °C to keep output up and help the centrifuge shed excess zinc, and operators keep it high to be safe when job sizes change. BEE found 490 to 500 °C, held steady, enough for production. A hotter bath burns more oil and makes more dross and ash, so zinc is lost too."
+      ]
+    },
+    {
+      "h": "What the controller is",
+      "ul": [
+        "A thermocouple in the bath and a temperature controller.",
+        "A VFD panel on the 0.37 kW fuel pump and the 15 kW blower, so the firing rate follows bath temperature.",
+        "Air control is a separate project in BEE's series; this one sets the fuel rate only.",
+        "Cost: Rs 2.25 lakh for the system plus Rs 0.09 lakh other, Rs 2.34 lakh."
+      ]
+    },
+    {
+      "h": "How the 4,442 litres was worked out",
+      "p": [
+        "The unit galvanizes 2,399 t a year: 2,229 t of steel and 170 t of zinc. Heating that metal to 500 °C instead of 520 °C takes 5.13 million kcal less a year. Divided by the furnace's low efficiency, about 12%, that is 4,442 litres of oil, 3.8% of what it burns."
+      ]
+    },
+    {
+      "h": "Two checks on the report",
+      "ul": [
+        "Money: 4,442 x Rs 30 = Rs 1,33,260; Rs 2.34 lakh pays back in 1.76 years. At your oil price, the saving is 4,442 times the price per litre.",
+        "CO2: it claims 15 t at 3.24 t per tonne of oil, but 4,442 litres is 4,087 kg, and even its own factor gives 13.2 t. At 2.97 kg per litre it is also 13.2 t."
+      ]
+    },
+    {
+      "h": "Records that show it worked",
+      "ol": [
+        "The controller's bath temperature log.",
+        "Furnace oil per tonne galvanized, month by month.",
+        "Zinc bought per tonne galvanized, which should fall as dross falls."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One furnace, one year",
+    "lines": [
+      "Oil saved: 4,442 L x 2.97 = 13.2 t CO2",
+      "Oil before: 118,080 L x 2.97 = 350.7 t CO2",
+      "Share cut: 13.2 / 350.7 = 3.8%",
+      "Money at Rs 30 a litre: Rs 1,33,260; at Rs 60, Rs 2,66,520 and under a year to pay back"
+    ],
+    "note": "Furnace oil at 2.97 kg CO2 per litre. Oil price is the report's; use your own invoice price."
+  },
+  "senseible": "Senseible reads furnace oil invoices into monthly records at 2.97 kg CO2 per litre; add tonnes galvanized and the drop in oil per tonne shows month by month. The calculators give a quick CO2 figure.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Galvanizing furnace air preheater",
+      "to": "/answers/galvanizing-furnace-air-preheater-oil-saving"
+    },
+    {
+      "label": "Galvanizing energy per tonne benchmark",
+      "to": "/answers/galvanizing-plant-energy-per-tonne-benchmark"
+    },
+    {
+      "label": "Hot-dip galvanizing footprint",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: temperature control in zinc bath in galvanizing, Howrah galvanizing and wire drawing cluster (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/Howrah_galvinising/DPR_on_Temperature_Control_in_Zinc_Bath_in_Galvanizing.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "steam-pressure-reducing-turbine-power",
+  "q": "Can a back-pressure turbine on a process steam line generate power in a textile unit?",
+  "title": "Steam turbine instead of a PRV: real gain",
+  "short": "Yes. BEE's Surat report puts a 40 kW turbine beside the pressure reducing valve, taking 3 t an hour of steam from 10.5 to 3.5 kg/cm2 and making about 302,400 kWh a year. But the boiler must burn more coal to replace that energy, so CO2 falls about 40 to 50 t a year, not 257 t.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Surat dyeing and printing houses raising steam at 7 to 10.5 kg/cm2 on imported coal or lignite and throttling it for process use",
+  "sections": [
+    {
+      "h": "The setup in the report",
+      "ul": [
+        "Boilers raise steam at 7 to 10.5 kg/cm2; jiggers, jets and washers need 2.5 to 3. Today a PRV throws the pressure difference away.",
+        "A 40 kW turbine alternator sits in parallel with the PRV and takes 3 t an hour, running on saturated steam.",
+        "24 hours a day, 350 days, at 90% load: 302,400 kWh a year.",
+        "The typical unit: 4 t an hour of steam, 1,800 t of coal or lignite, 1,944 MWh of grid power and 105 lakh metres of cloth a year."
+      ]
+    },
+    {
+      "h": "The money as the report sees it",
+      "ul": [
+        "302,400 kWh at Rs 5.60 = Rs 16.93 lakh a year.",
+        "Cost: Rs 32 lakh turbine and generator, Rs 2.50 lakh panel and cabling, Rs 34.50 lakh in all.",
+        "Payback 2.04 years. The report says fuel use does not change."
+      ]
+    },
+    {
+      "h": "The power is not free",
+      "p": [
+        "A PRV keeps all the steam's heat for the process. A turbine turns part of it into power, so the steam reaching the process carries less heat and the boiler has to make it up. Per kWh sent out, roughly 1.1 kWh leaves the steam and, at 75% boiler efficiency, about 1.5 kWh of extra fuel heat goes in (both estimates). That is still cheap power, about 85 t of extra coal a year here, but it has to come off the saving and the CO2."
+      ]
+    },
+    {
+      "h": "Before you buy",
+      "ol": [
+        "Check steam flow through the PRV over a full week; the turbine earns only when steam passes.",
+        "Price the extra coal at today's rate and take it off the Rs 16.93 lakh.",
+        "First check whether the boiler can simply run at lower pressure; that saves fuel with no turbine at all."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per kWh from the turbine",
+    "lines": [
+      "Extra fuel heat: 1 kWh / 0.9 / 0.75 = 1.48 kWh = 5.33 MJ",
+      "On imported coal (96.1 kg CO2 a GJ): 0.51 kg CO2; on lignite (101 kg a GJ): 0.54 kg",
+      "Grid power avoided: 0.675 kg CO2",
+      "Net: 0.14 to 0.16 kg a kWh x 302,400 = about 41 to 49 t a year",
+      "The report's 257 t used 0.85 kg a kWh and ignored the extra coal"
+    ],
+    "note": "Generator efficiency 90% and boiler efficiency 75% are estimates; coal and lignite use IPCC 2006 defaults for sub-bituminous coal and lignite; grid at CEA's FY 2025-26 factor."
+  },
+  "senseible": "Senseible reads electricity bills into monthly records with CO2, so the fall in grid power shows. It has no factor for lignite, and its coal factor is for Indian coal, so work the extra boiler fuel as above; the green loan check shows what a lender asks for.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Lower steam pressure: fuel saving", "to": "/answers/lower-boiler-steam-pressure-fuel-saving" },
+    { "label": "Splitting CHP emissions: power and steam", "to": "/answers/chp-emissions-allocation-electricity-and-steam" },
+    { "label": "Surat processing house fuel per metre", "to": "/answers/surat-processing-house-fuel-per-metre" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: energy conservation turbine, 40 kW, Surat textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/surat_40kW.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and tariffs are at 2010 prices. Recheck the power tariff, coal price and steam flow before you rely on the payback."
+}

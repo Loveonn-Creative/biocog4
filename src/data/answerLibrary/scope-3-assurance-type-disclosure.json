@@ -1,0 +1,88 @@
+{
+  "slug": "scope-3-assurance-type-disclosure",
+  "q": "What does a Scope 3 report say about assurance, and is first-party assurance allowed?",
+  "title": "Scope 3 assurance: first or third party",
+  "short": "Assurance is optional under the GHG Protocol Scope 3 Standard. If you report it, state the type, first party or third party, the assurer's competencies and the opinion issued. First party assurance is allowed, by staff independent of the inventory work, but you should explain how conflicts of interest were avoided.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Companies publishing a Scope 3 inventory, and suppliers reading a buyer's report",
+  "sections": [
+    {
+      "h": "First party and third party",
+      "ul": [
+        "First party: people inside the company but independent of the inventory process check it. Independence comes from a different reporting line.",
+        "Third party: people from an organisation independent of the inventory process. Independence comes from being a different business."
+      ]
+    },
+    {
+      "h": "What the report should say",
+      "p": [
+        "Section 11.2 of the standard lists, as optional information when applicable:"
+      ],
+      "ul": [
+        "The type of assurance: first or third party.",
+        "The relevant competencies of the assurance provider.",
+        "The opinion the assurance provider issued.",
+        "For first party assurance, chapter 10 adds that the company should report how potential conflicts of interest were avoided."
+      ]
+    },
+    {
+      "h": "Is first party worth doing?",
+      "p": [
+        "The standard says third party assurance is likely to carry more weight with outside readers, but first party assurance can also build confidence and is a useful rehearsal before hiring a third party. Both should follow similar procedures: plan and scope, identify sources, gather evidence, evaluate, report a conclusion."
+      ]
+    },
+    {
+      "h": "What a competent assurer brings",
+      "ul": [
+        "Experience with assurance frameworks.",
+        "Knowledge of corporate GHG accounting or life cycle assessment, including the Scope 3 steps.",
+        "Knowledge of your activities and sector.",
+        "The ability to judge the size of possible errors and omissions.",
+        "Independence and the scepticism to challenge your data."
+      ]
+    },
+    {
+      "h": "When first party will not do",
+      "p": [
+        "The standard is voluntary, but a buyer programme, lender or regulator can demand third party assurance at a set level, limited or reasonable. SEBI's BRSR Core has its own assurance rules for listed companies. Check what your reader asks for before choosing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: a first party assurance line in a Scope 3 report",
+    "lines": [
+      "Type: first party, by the internal audit team, which reports to the audit committee and took no part in preparing the inventory",
+      "Competencies: two auditors trained in GHG accounting; sector experience in auto components",
+      "Conflicts: auditors did not build or review the inventory before the engagement",
+      "Opinion: limited, \"not aware of any material modifications\" needed for conformance with the Scope 3 Standard"
+    ],
+    "note": "Illustrative wording. The opinion follows the limited assurance example in table 10.2 of the standard."
+  },
+  "senseible": "Senseible does not give an opinion on your inventory and is not a third-party verifier; its Verified status means rule checks passed against the evidence. What it hands an assurer is the trail: each figure linked to the bill or invoice it came from.",
+  "links": [
+    {
+      "label": "How Senseible checks records",
+      "to": "/trust"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "What auditors check",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "BRSR Core: assurance or assessment",
+      "to": "/answers/brsr-core-assurance-or-assessment-which"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), chapter 10 and section 11.2",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

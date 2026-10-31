@@ -1,0 +1,68 @@
+{
+  "slug": "efficient-chulha-dyeing-wood-saving",
+  "q": "How much wood does an efficient chulha save in a small dyeing unit?",
+  "title": "Efficient chulha for hank dyeing: wood",
+  "short": "Half, in BEE's Solapur report. A smokeless chulha with a grate, air damper and chimney takes a small hank dyeing unit from 36 t to 18 t of wood a year. Cost Rs 0.53 lakh, saving Rs 0.45 lakh at Rs 2.50 a kg, payback 1.18 years (2010), and about two weeks to build.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Small yarn dyeing units in Solapur heating dye and soaping water over open wood chulhas",
+  "sections": [
+    {
+      "h": "The open chulha today",
+      "ul": [
+        "Open fired, with no grate, damper or chimney; the dye vessel sits over the flame.",
+        "BEE measured 6.25% efficiency; units across the cluster ran at 6 to 10%.",
+        "A typical unit makes about 94,000 kg a year on 36 t of wood and 103,500 kWh, so 0.38 kg of wood and 1.10 kWh per kg.",
+        "Dyeing takes 3 to 4 hours a day; the chulha also holds soaping water hot."
+      ]
+    },
+    {
+      "h": "What the efficient chulha adds",
+      "ul": [
+        "A bigger combustion space with a designed grate, so logs burn fully.",
+        "A damper to control air, and a chimney that takes smoke out of the shed.",
+        "Flue gas routed past the vessel before it leaves, plus a small pump to circulate hot water from a tank.",
+        "A trial chulha in a Solapur unit measured about 30% efficiency; the report rates it 25 to 30%."
+      ]
+    },
+    {
+      "h": "Cost and build",
+      "ul": [
+        "Rs 0.36 lakh chulha, chimney and wiring; Rs 0.10 lakh civil work; Rs 0.53 lakh in all.",
+        "About two weeks. Build it beside the old one and there is no lost dyeing time.",
+        "Life about 10 years."
+      ]
+    },
+    {
+      "h": "The saving is a cautious one",
+      "p": [
+        "Going from 6.25% to 25% efficiency should cut wood to about a quarter, near 9 t a year. The report books only half, 18 t. That leaves room for a poorer build or wetter wood. Weigh wood for a week before and after and compare kg of wood per kg of yarn."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One unit, one year",
+    "lines": [
+      "Wood saved: 36 less 18 = 18 t, x Rs 2,500 = Rs 0.45 lakh",
+      "Payback: 0.53 / 0.45 = 1.18 years",
+      "Wood per kg of yarn: 0.38 kg falls to 0.19 kg",
+      "Biogenic CO2 avoided: 18 t x 3,200 kcal/kg x 4.1868 = 241 GJ x 112 kg = about 27 t",
+      "The report's 25 t used 1.4 t CO2 a tonne of wood; fossil CO2 does not change"
+    ],
+    "note": "Wood CO2 uses the IPCC 2006 default of 112 kg CO2 a GJ with the report's calorific value of 3,200 kcal a kg. It is biogenic and reported separately, outside Scopes 1 to 3."
+  },
+  "senseible": "Senseible reads your electricity bills into records with CO2. It has no factor for wood, so keep wood tonnes from purchase bills as a separate biogenic line; the green loan check shows what a lender asks for, even on a small job.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Solapur textiles: wood fuel and carbon", "to": "/answers/solapur-textile-cluster-wood-fuel-carbon" },
+    { "label": "Efficient wood hot water generator", "to": "/answers/efficient-hot-water-generator-wood-saving" },
+    { "label": "Firewood by the quintal: emissions", "to": "/answers/firewood-by-quintal-emissions" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: energy efficient chulha, Solapur textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/dpr_chulha_b.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Check today's wood price."
+}

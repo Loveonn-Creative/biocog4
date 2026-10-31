@@ -1,0 +1,77 @@
+{
+  "slug": "scope-3-sampling-random-systematic-stratified",
+  "q": "Which sampling methods does the GHG Protocol accept when I can't collect data from every supplier or site?",
+  "title": "Scope 3 sampling: which methods count",
+  "short": "The GHG Protocol's Scope 3 guidance names three, simple random, systematic and stratified sampling, and allows other methods too. Choose one that fits your data, write down why, and scale the sample up to the whole category. Stratified sampling suits suppliers or sites that differ a lot by size or process.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Buyers, exporters and franchisors with too many suppliers, sites or outlets to survey one by one",
+  "sections": [
+    {
+      "h": "Where sampling fits",
+      "p": [
+        "Appendix A of the Technical Guidance allows sampling when collecting data from every activity in a category is impractical. Its examples: many leased buildings or franchises (Categories 8, 13 and 14), employee commuting (Category 7) and many distribution routes (Categories 4 and 9). The same logic applies to a long list of job workers in Category 1.",
+        "You must document and justify the choice. The guidance lists what should drive it: resources, number of data points, how alike they are, how spread out they are, how easy data is to collect, and time available."
+      ]
+    },
+    {
+      "h": "The three methods side by side",
+      "ul": [
+        "Simple random: every item has an equal chance of being picked. Easy to set up, but it needs a complete list, and a spread-out population may need a large sample.",
+        "Systematic: pick a random start, then every k-th item, where k = population size / sample size. The guidance's case: 20 of 100 farms gives an interval of 5; starting at farm 3, you sample farms 8, 13, 18 and so on to 98. Simple and even, but biased if the list has a repeating pattern.",
+        "Stratified: first group items that should have similar emissions (location, size, building type, process, age), then sample at random inside each group. It works best when items differ little within a group and a lot between groups, and it can cut the sample size."
+      ]
+    },
+    {
+      "h": "How big a sample",
+      "ul": [
+        "Four ways the guidance offers: copy the sample size of a similar inventory, preferably one that was externally verified, and justify the comparison; an online calculator; published tables; or a statistics formula, ideally with help from someone who knows statistics.",
+        "If you do not know how varied the population is, assume 50% variability (0.5). That is the maximum and the conservative choice.",
+        "Uncertainty is normally stated at 95% confidence: plus or minus 5% on 100 t means the true figure lies between 95 and 105 t."
+      ]
+    },
+    {
+      "h": "Where sampling does not belong",
+      "p": [
+        "Sampling is for value chain data you cannot collect in full. Your own Scope 1 and 2 come from every fuel invoice and electricity bill; there are few of them and they are the inventory."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: a Tiruppur exporter with 60 job-work units",
+    "lines": [
+      "Group by process: 6 dyeing units, 24 knitting units, 30 stitching units",
+      "Dyeing: high energy and few units, so survey all 6",
+      "Knitting: 6 picked at random; they processed 300 t and reported 270 t CO2e, or 0.9 t CO2e per tonne",
+      "All 24 knitting units processed 1,100 t: 1,100 x 0.9 = 990 t CO2e estimated",
+      "Stitching: systematic, interval 30 / 6 = 5, random start at unit 2: units 2, 7, 12, 17, 22, 27"
+    ],
+    "note": "Figures are illustrative. Report which units were measured and which were scaled up."
+  },
+  "senseible": "When sampled suppliers send their electricity bills and fuel invoices, Senseible reads them and keeps each supplier's figures with the documents behind them, so the sample you scale up from rests on records someone can check.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Read every invoice or a sample?",
+      "to": "/answers/read-all-invoices-or-a-sample-for-footprint"
+    },
+    {
+      "label": "Filling gaps in Scope 3 data",
+      "to": "/answers/how-to-fill-gaps-in-scope-3-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Appendix A: Sampling",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/AppendixA.pdf"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), introduction",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Intro_GHGP_Tech.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

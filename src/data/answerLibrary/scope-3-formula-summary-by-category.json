@@ -1,0 +1,87 @@
+{
+  "slug": "scope-3-formula-summary-by-category",
+  "q": "Is there one table of Scope 3 formulas, activity data and emission factors by category?",
+  "title": "Scope 3 formulas by category, in one table",
+  "short": "Yes. Appendix D of the GHG Protocol's Technical Guidance for Calculating Scope 3 Emissions lists, for all 15 categories and each method, the formula, the activity data and the emission factors needed. Use it as a checklist of what to collect before you calculate anything.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Anyone building a Scope 3 estimate who wants the arithmetic for every category in one place",
+  "sections": [
+    {
+      "h": "How the tables are laid out",
+      "p": [
+        "Each category gets a table with four columns: method, calculation formula, activity data needed and emission factors needed. Methods run from the most specific, supplier data, to the least, spend-based. Read the activity data column first: it tells you which records you have to find."
+      ]
+    },
+    {
+      "h": "The formulas a manufacturer uses most",
+      "ul": [
+        "Category 1, supplier-specific: sum of quantity purchased x the supplier's own product factor (kg CO2e per kg).",
+        "Category 1, average-data: sum of mass purchased x an average factor per kg, or units x a factor per piece.",
+        "Category 1, spend-based: sum of amount spent x a factor per unit of money.",
+        "Category 1, hybrid: the supplier's allocated Scope 1 and 2, plus its material inputs x cradle-to-gate factors, plus transport of those inputs to the supplier, plus its waste x waste factors.",
+        "Category 4, fuel-based: litres x fuel factor, plus kWh x grid factor for electric vehicles, plus refrigerant leaked x its GWP.",
+        "Category 4, distance-based: tonnes x km for each leg x a factor for the mode or vehicle type.",
+        "Category 5, waste-type-specific: tonnes of each waste x a factor for that waste type and treatment."
+      ]
+    },
+    {
+      "h": "Notes hidden in the tables",
+      "ul": [
+        "Category 1 hybrid: transport from the supplier to you is excluded, because it belongs in Category 4.",
+        "Category 4 with no fuel figures: litres can be worked out from fuel spend divided by the average fuel price, or from distance x vehicle fuel efficiency.",
+        "A shared truck: allocate fuel by your goods' share of the load, by mass or volume. Chargeable mass, the higher of actual and dimensional mass, may replace mass where you can show it fits better.",
+        "Empty return trips can optionally be added: unladen fuel efficiency x distance driven empty x fuel factor."
+      ]
+    },
+    {
+      "h": "Matching each input to an Indian record",
+      "ul": [
+        "Quantity and unit purchased: the line items on the GST tax invoice.",
+        "Distance and vehicle: the lorry receipt or e-way bill.",
+        "Transport fuel: the transporter's fuel slips, or fuel spend and price.",
+        "Waste tonnes and treatment: disposal invoices and waste manifests."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Category 4 fuel-based, with a shared truck",
+    "lines": [
+      "Truck used 380 litres of diesel on the trip; total load 20 t, your goods 8 t",
+      "Allocated fuel: 380 x 8 / 20 = 152 litres",
+      "Emissions: 152 x 2.645 = 402 kg CO2",
+      "Same trip by distance-based method needs tonnes x km x a mode factor, so get the distance from the lorry receipt"
+    ],
+    "note": "Trip figures are illustrative. 2.645 kg CO2 per litre of diesel is based on the IPCC 2006 carbon content at Indian density; Appendix D says Category 4 fuel factors may optionally include upstream, cradle-to-gate, fuel emissions."
+  },
+  "senseible": "Senseible reads quantities, units and HSN codes from invoices, bills and freight records, the activity data these formulas start from, and applies published factors where it has them. Where there is no factor, it shows no figure. The calculators cover the common cases.",
+  "links": [
+    {
+      "label": "Calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Hybrid method with supplier Scope 1 and 2",
+      "to": "/answers/hybrid-method-allocated-scope-1-2-from-suppliers"
+    },
+    {
+      "label": "Which emission factor to use first",
+      "to": "/answers/emission-factor-order-of-preference-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Appendix D: Calculation formula summary tables",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/AppendixD.pdf"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), introduction",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Intro_GHGP_Tech.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

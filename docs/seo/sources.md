@@ -347,6 +347,37 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://sameeeksha.org/pdf/clusterprofile/balasore-ricemills-odisha.pdf
 - https://sameeeksha.org/pdf/clusterprofile/ludhiana-bakeries-Punjab.pdf
 - https://sameeeksha.org/pdf/clusterprofile/rajkot-kitchenware.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/AppendixA.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/AppendixB.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/AppendixC.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/AppendixD.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/Chapter11.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/Chapter13.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/Chapter14.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/Chapter3.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/Chapter6.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/Chapter8.pdf
+- https://sameeeksha.org/pdf/Howrah_galvinising/DPR_on_LPG_Gas_Fired_Radiation_Furnace_for_Annealing.pdf
+- https://sameeeksha.org/pdf/Howrah_galvinising/DPR_on_Temperature_Control_in_Zinc_Bath_in_Galvanizing.pdf
+- https://sameeeksha.org/pdf/Jamnagar_brass_cluster/DPR_on_Energy_Efficient_Gas_Fired_Pit_Furnace_200%20kg.pdf
+- https://sameeeksha.org/pdf/Jamnagar_brass_cluster/DPR_on_Energy_Efficient_Oil_Fired_Pit_Furnace_150_kg.pdf
+- https://sameeeksha.org/pdf/dpr/Bhimavaram_ice_making_cluster/VFD_for_compresor_motor_60_HP_Bhimavrm_IMC.pdf
+- https://sameeeksha.org/pdf/dpr/Ganjam_rice_mill_cluster/06_Common_shaft_drive_system_10TPH_Ganjam_Rice_mill.pdf
+- https://sameeeksha.org/pdf/dpr/Jagadhri_brass_and_aluminium_cluster/03_Energy_Efficient_Pit_Furnace_600_kg_Jagadhri_cluster.pdf
+- https://sameeeksha.org/pdf/dpr/Jodhpur_lime_kiln_cluster/04_En_cost_saving_by_kiln_insulation_improvement_for_50tpd_kiln_Jodhpur_cluster.pdf
+- https://sameeeksha.org/pdf/dpr/Jodhpur_lime_kiln_cluster/07_Improved_handling_storage_of_pet_coke_in_large_units_Jodhpur_cluster.pdf
+- https://sameeeksha.org/pdf/dpr/Jorhat_tea_cluster/09_Tech_upgradn_with_automatic_airflow_variation_in_withering_system_Jorhat.pdf
+- https://sameeeksha.org/pdf/dpr/MRV_CRM10.pdf
+- https://sameeeksha.org/pdf/dpr/MRV_CRM13.pdf
+- https://sameeeksha.org/pdf/dpr/MRV_CRM8.pdf
+- https://sameeeksha.org/pdf/dpr/PAL_TXT1.pdf
+- https://sameeeksha.org/pdf/dpr/SLP_TXT1.pdf
+- https://sameeeksha.org/pdf/dpr/dpr_80000kCal.pdf
+- https://sameeeksha.org/pdf/dpr/dpr_chulha_b.pdf
+- https://sameeeksha.org/pdf/dpr/fluid_heater.pdf
+- https://sameeeksha.org/pdf/dpr/pali_new_1.pdf
+- https://sameeeksha.org/pdf/dpr/pali_thermopac.pdf
+- https://sameeeksha.org/pdf/dpr/surat_40kW.pdf
 
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org

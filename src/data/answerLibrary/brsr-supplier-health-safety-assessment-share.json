@@ -1,0 +1,71 @@
+{
+  "slug": "brsr-supplier-health-safety-assessment-share",
+  "q": "Why is my buyer assessing my factory's health and safety and working conditions for BRSR?",
+  "title": "Buyer safety audits for BRSR: what to expect",
+  "short": "Listed buyers report, under Principle 3 leadership indicators 5 and 6, the share of value chain partners by value of business assessed for health and safety practices and working conditions, and the corrective actions for significant risks found. Indicator 2 asks how they make sure partners deduct and deposit statutory dues.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Factory owners supplying listed Indian companies",
+  "sections": [
+    {
+      "h": "What your buyer has to report",
+      "ul": [
+        "Leadership indicator 5: percentage of value chain partners, by value of business, assessed for health and safety practices, and the same for working conditions.",
+        "Leadership indicator 6: corrective actions taken or under way for significant risks those assessments found.",
+        "Leadership indicator 2: measures to ensure value chain partners have deducted and deposited statutory dues."
+      ]
+    },
+    {
+      "h": "The same test the buyer applies to itself",
+      "p": [
+        "Essential indicator 14 asks the buyer what share of its own plants and offices were assessed on exactly these two heads. The leadership indicators extend the question to you. SEBI does not prescribe the method, so the buyer may send a questionnaire, a visit, or an auditor."
+      ]
+    },
+    {
+      "h": "Records to have ready",
+      "ul": [
+        "Factory licence and fire safety certificate, current.",
+        "Accident and first aid registers, with near misses if you record them.",
+        "Safety training and protective equipment issue records.",
+        "Working hours, overtime and leave registers.",
+        "Wage register, and provident fund and ESI challans showing deduction and deposit, for contract workers too."
+      ]
+    },
+    {
+      "h": "If a gap is found",
+      "p": [
+        "Agree a corrective action with a date, close it, and send proof such as a photo or invoice. Your buyer reports corrective actions in indicator 6, so a closed action helps both of you. An open one with no date is what puts a supplier at risk of being dropped."
+      ]
+    }
+  ],
+  "senseible": "Senseible covers the environmental side of the same buyer request: energy, fuel and emission records from your bills, with the evidence attached. Safety and wage records come from your own registers.",
+  "links": [
+    {
+      "label": "Human rights checks on suppliers",
+      "to": "/answers/brsr-supplier-human-rights-assessment-share"
+    },
+    {
+      "label": "Environmental assessment of partners",
+      "to": "/answers/brsr-value-chain-environment-assessment-share"
+    },
+    {
+      "label": "BRSR data request to an MSME supplier",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Supplier evidence for buyers",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, 12 July 2023: BRSR Core and updated BRSR format",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI, updated BRSR format (Annexure II to the 12 July 2023 circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

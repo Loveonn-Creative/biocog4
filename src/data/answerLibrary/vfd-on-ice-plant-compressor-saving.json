@@ -1,0 +1,79 @@
+{
+  "slug": "vfd-on-ice-plant-compressor-saving",
+  "q": "Is a VFD on a 60 HP ice plant compressor worth it?",
+  "title": "VFD on a 60 HP ice plant compressor",
+  "short": "On BEE's Bhimavaram figures, a VFD saves 11,690 kWh a year by slowing the compressor for two part-load hours a day: 16.7 kW less over 350 days. That is 7.9 t CO2 on today's grid, not the report's 9 t. Cost Rs 1.59 lakh; payback 3.6 years at 2010's Rs 3.75 tariff.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Block ice plant owners in Bhimavaram and other harbour clusters running 60 HP ammonia compressors",
+  "sections": [
+    {
+      "h": "Where the saving comes from",
+      "p": [
+        "While cans are pulled, refilled, and after the ice has formed, the compressor needs far less power, but in the plants BEE studied every cylinder kept running at full speed. BEE measured 37.1 kW at full load at Surya Ice Factory and 20.4 kW with only one cylinder working, and took that lower figure as what the motor would draw on a VFD. It counted two such hours a day. The other 22 hours do not change."
+      ]
+    },
+    {
+      "h": "Two slips in the report",
+      "ul": [
+        "One annexure row shows 14,280 kWh a year, but its own working, 33.4 kWh a day for 350 days, gives 11,690 kWh. The summary uses 11,690.",
+        "Its 9 t CO2 implies a grid factor near 0.77 kg per kWh. At CEA's FY 2025-26 factor of 0.675 the saving is 7.9 t."
+      ]
+    },
+    {
+      "h": "Will it pay at your tariff",
+      "p": [
+        "Every rupee of tariff per kWh is worth Rs 11,690 a year. At the report's Rs 3.75 that is Rs 43,838 and a 3.6 year payback; at twice that tariff, about 1.8 years. Part-load time decides the rest: three hours a day instead of two gives 16.7 x 3 x 350 = 17,535 kWh."
+      ]
+    },
+    {
+      "h": "Before you buy",
+      "ol": [
+        "Clamp-meter the compressor at full load and with cylinders unloaded.",
+        "Log part-load hours each day for a week.",
+        "Ask the supplier for kW at reduced speed at your suction pressure, in writing.",
+        "Confirm the compressor maker's minimum speed for lubrication and that the motor suits VFD duty."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The report's case, rechecked",
+    "lines": [
+      "Power cut at part load: 37.1 minus 20.4 = 16.7 kW",
+      "Per day: 16.7 x 2 h = 33.4 kWh; per year: 33.4 x 350 = 11,690 kWh",
+      "CO2: 11,690 x 0.675 = 7.9 t a year",
+      "Money at Rs 3.75 per kWh: Rs 43,838; payback 159,000 / 43,838 = 3.6 years"
+    ],
+    "note": "Figures from BEE's 2010 report. Grid factor CEA FY 2025-26; the tariff is the report's, so use your own."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 records, so the drop after a VFD goes in shows bill by bill. The calculators turn kWh into CO2 for a quick check.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Ice plant compressor swap",
+      "to": "/answers/ice-plant-new-refrigeration-compressor-kwh-saving"
+    },
+    {
+      "label": "Bhimavaram ice plants: kWh per tonne",
+      "to": "/answers/bhimavaram-ice-plants-electricity-per-tonne"
+    },
+    {
+      "label": "Ice plant kWh per tonne benchmark",
+      "to": "/answers/ice-plant-kwh-per-tonne-benchmark"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: VFD for compressor motor 60 HP, Bhimavaram ice making cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Bhimavaram_ice_making_cluster/VFD_for_compresor_motor_60_HP_Bhimavrm_IMC.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

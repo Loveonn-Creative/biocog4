@@ -1,0 +1,81 @@
+{
+  "slug": "franchisee-upstream-purchases-in-category-14",
+  "q": "Should a franchisor count its franchisees' purchases, like ingredients, in Scope 3?",
+  "title": "Franchisee purchases in franchisor Scope 3",
+  "short": "Yes, when they are significant. The minimum for Category 14 is your franchisees' Scope 1 and 2. The GHG Protocol's calculation guidance adds that a franchisor should include significant upstream emissions from what franchisees buy, and gives the example of a fast-food chain and the beef its restaurants purchase.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Franchisors in food, retail and services, and their sustainability teams",
+  "sections": [
+    {
+      "h": "What Category 14 must cover",
+      "p": [
+        "Category 14 applies to franchisors. Its minimum boundary is the Scope 1 and Scope 2 emissions of franchisees while they run the outlets: grid power, DG set diesel, kitchen LPG or PNG, refrigerant top-ups. The emissions from building or fitting out the outlets are optional."
+      ]
+    },
+    {
+      "h": "Where franchisee purchases come in",
+      "p": [
+        "The Technical Guidance goes one step further than the minimum: if significant upstream emissions result from goods and services that franchisees buy, the franchisor should include them in Category 14. Its example is a large fast-food franchise counting the upstream emissions of the beef its restaurants buy.",
+        "The same chapter lists franchisees' own Scope 3 data as optional to collect. Read the two together: you need not gather every franchisee's full Scope 3, but a large source such as meat, dairy or cooking oil bought by every outlet should be counted."
+      ]
+    },
+    {
+      "h": "Do not count the same kilo twice",
+      "ul": [
+        "If your central kitchen or warehouse buys the ingredient and supplies it to outlets, its upstream emissions are already in your Category 1 when you buy it. Leave it out of Category 14.",
+        "Count in Category 14 only what franchisees buy directly, for example from your approved vendors.",
+        "Franchisee travel, waste and packaging they buy locally can stay out unless they are large for your business; say what you left out and why."
+      ]
+    },
+    {
+      "h": "Getting the quantities",
+      "ol": [
+        "If you mandate approved vendors, ask them for quantities supplied per outlet per month. One report from a vendor beats a hundred franchisee replies.",
+        "Otherwise ask franchisees for kilograms or litres by item from their purchase invoices, not costs.",
+        "With many outlets, the guidance allows a representative sample, grouping outlets of similar type and size, then scaling up.",
+        "Multiply quantities by a cradle-to-gate factor per kilogram for each item, and state the factor source."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: 120 franchised outlets of a chicken restaurant chain",
+    "lines": [
+      "Outlet power: 120 x 4,000 kWh a month x 12 = 57,60,000 kWh x 0.675 = 3,888 t CO2 (minimum boundary)",
+      "Chicken bought direct from approved vendors: 120 x 900 kg a month x 12 = 12,96,000 kg, or 1,296 t",
+      "At an assumed 5 kg CO2e per kg: 1,296 x 5 = 6,480 t CO2e",
+      "Leaving purchases out would report 3,888 t when the larger source is 6,480 t"
+    ],
+    "note": "Outlet power and chicken quantities are illustrative, and 5 kg CO2e per kg is a placeholder chosen to show the method, not a published factor; use a cited factor for your sourcing region. 0.675 is the India grid factor for FY 2025-26 (CEA version 22.0)."
+  },
+  "senseible": "Senseible reads the electricity bills, LPG invoices and approved-vendor purchase invoices that franchisees share, and keeps purchase lines in a separate supplier evidence trail, so outlet energy and ingredient quantities stay apart and each traces to its document.",
+  "links": [
+    {
+      "label": "Collecting franchisee energy data",
+      "to": "/answers/franchisor-scope-3-category-14-data-collection"
+    },
+    {
+      "label": "What a franchisee reports",
+      "to": "/answers/franchisee-report-franchisor-emissions"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Category 14: Franchises",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter14.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), table 5.4",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

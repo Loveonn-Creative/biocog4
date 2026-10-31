@@ -1,0 +1,59 @@
+{
+  "slug": "brass-oil-pit-furnace-efficient-saving",
+  "q": "How much oil does an efficient 150 kg oil-fired pit furnace save in brass melting?",
+  "title": "Brass: efficient 150 kg oil pit furnace",
+  "short": "About 35 litres per tonne of brass. BEE's Jamnagar report has an efficient 150 kg oil-fired pit furnace using 95 litres a tonne instead of 130, saving 10,500 litres a year on 300 t. That is about 30 t CO2 on furnace oil. Cost Rs 2.64 lakh, payback 0.92 years (2010).",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Brass foundries in Jamnagar and similar clusters melting in locally built oil-fired pit furnaces",
+  "sections": [
+    {
+      "h": "What BEE found in the old furnaces",
+      "ul": [
+        "Locally made burners, often leaking oil at the joints, placed where the flame does not reach the crucible well.",
+        "Local blowers with no rated airflow, and no temperature measurement or control.",
+        "Measured: 19.5 litres an hour for 150 kg heated, 130 litres a tonne, about 6.5% efficiency."
+      ]
+    },
+    {
+      "h": "What the new furnace changes",
+      "ul": [
+        "Ceramic fibre blanket insulation with refractory brick at the base, for a crucible of 180 to 200 kg.",
+        "Burner with automatic or manual air to oil ratio control, rated to 1,050 C.",
+        "Result in the report: 14.25 litres an hour, 95 litres a tonne, about 10% efficiency.",
+        "Use: 2,000 hours, 300 t a year. A 1 HP blower adds about 1,492 kWh.",
+        "Cost: Rs 2.40 lakh furnace, Rs 0.24 lakh erection. One week of downtime."
+      ]
+    },
+    {
+      "h": "Which oil is it?",
+      "p": [
+        "The report calls the fuel furnace oil and prices it at Rs 28 a litre, but its specification sheet says diesel or LDO and its sums use a density of 0.88, nearer diesel than furnace oil. Check your own bills. On diesel the 10,500 litres are about 27.8 t CO2 (2.645 kg a litre). We have no factor for LDO, so do not count it as furnace oil without the supplier's data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "300 t of brass a year on furnace oil",
+    "lines": [
+      "Oil saved: 35 L x 300 t = 10,500 L",
+      "Money: 10,500 x Rs 28 = Rs 2.94 lakh, less Rs 0.07 lakh blower power = Rs 2.87 lakh",
+      "Payback: 2.64 / 2.87 = 0.92 years",
+      "CO2: 10,500 x 2.97 = 31.2 t, less 1,492 kWh x 0.675 = 1.0 t for the blower",
+      "Net cut about 30 t a year; per tonne of brass 386 kg falls to 282 kg"
+    ],
+    "note": "Furnace oil at our factor of 2.97 kg CO2 a litre and grid at CEA's FY 2025-26 factor, both estimates."
+  },
+  "senseible": "Senseible reads oil invoices and electricity bills into monthly records with CO2 for furnace oil, diesel and power, so oil per tonne of brass before and after the change is easy to show. The green loan check shows what a lender asks for on a furnace loan.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Brass melting: oil crucible or induction", "to": "/answers/brass-melting-oil-vs-induction-furnace-co2" },
+    { "label": "Brass: coal pit to gas pit furnace", "to": "/answers/brass-coal-pit-to-gas-pit-furnace" },
+    { "label": "Jamnagar brass cluster energy and carbon", "to": "/answers/jamnagar-brass-cluster-energy-and-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: energy efficient oil fired pit furnace, 150 kg, Jamnagar brass cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/Jamnagar_brass_cluster/DPR_on_Energy_Efficient_Oil_Fired_Pit_Furnace_150_kg.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Check today's oil price and a current quote."
+}

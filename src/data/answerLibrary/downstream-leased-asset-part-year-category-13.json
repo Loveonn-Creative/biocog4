@@ -1,0 +1,83 @@
+{
+  "slug": "downstream-leased-asset-part-year-category-13",
+  "q": "I leased out a machine for part of the year: how much goes into Category 13?",
+  "title": "Machine leased out part year: Category 13",
+  "short": "Only the months it was leased out. The GHG Protocol says a lessor that leases an asset for part of the reporting year accounts for emissions from that portion of the year. Months the machine ran in your own unit stay in your Scope 1 or 2; the leased months go in Category 13.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME owners and job shops that rent out machines, gensets or sheds for part of a year",
+  "sections": [
+    {
+      "h": "Split the year by who ran the machine",
+      "ol": [
+        "Write the lease start and end dates against your reporting year, usually April to March.",
+        "Months the machine ran in your own shop: its power is already on your electricity bill (Scope 2) and any diesel on your fuel invoices (Scope 1). Nothing goes in Category 13 for these months.",
+        "Months a customer ran it under the lease: these go in Category 13, unless your consolidation approach already puts the leased asset in your Scope 1 or 2.",
+        "Months it sat idle in your godown with no power drawn: nothing to count.",
+        "If a lease starts or ends mid-month, split that month by days so no day lands in both places."
+      ]
+    },
+    {
+      "h": "What to ask the lessee for",
+      "p": [
+        "The calculation guidance points lessors to the same methods as upstream leased assets and notes that you may need to request fuel or usage data from the lessee. For a machine, that means sub-meter kWh for the leased months, or litres of diesel for a genset or compressor.",
+        "If the lessee only knows the total for its whole unit, the share has to be allocated. The guidance's own example splits a lessee's 9,000 kg CO2e across two factories by floor space: 9,000 x 5,000 / 15,000 = 3,000 kg CO2e for the leased factory. For a single machine, hours run against the unit's total is a more natural basis; state the one you use."
+      ]
+    },
+    {
+      "h": "Leasing out many units? Category 11 is an option",
+      "p": [
+        "The Scope 3 Standard lets a company treat products it leases to customers the same way as products it sells: report the total expected lifetime emissions of all units leased out that year in Category 11, use of sold products. If you do that, leave those units out of Category 13, so the same emissions are not counted twice."
+      ]
+    },
+    {
+      "h": "Points to watch",
+      "ul": [
+        "A lease that runs across two financial years: each year carries only its own months.",
+        "The emissions from making the machine are optional in Category 13. The minimum is the lessee's Scope 1 and 2 from running it.",
+        "Keep the lease deed and the lessee's meter or fuel records for the leased months. They are the evidence for the Category 13 line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 15 kW VMC leased out from 1 August to 31 March, FY 2025-26",
+    "lines": [
+      "April to July, run in your own shop: 9,200 kWh on your bill x 0.675 = 6,210 kg CO2, already in your Scope 2",
+      "August to March, run by the lessee: 243 days on lease",
+      "Lessee's sub-meter for those 243 days: 18,500 kWh",
+      "Category 13: 18,500 x 0.675 = 12,487.5 kg, about 12.5 t CO2",
+      "Not 12.5 t plus a full-year estimate: the April to July months are counted once, in Scope 2"
+    ],
+    "note": "kWh figures are illustrative. 0.675 kg CO2 per kWh is the India grid factor for FY 2025-26 (CEA CO2 Baseline Database, version 22.0)."
+  },
+  "senseible": "Senseible reads the electricity bills and fuel invoices for the months the machine ran in your own unit, so your Scope 1 and 2 cover exactly those months. Keep the lessee's meter or fuel records for the leased months alongside them as your Category 13 evidence.",
+  "links": [
+    {
+      "label": "Rental businesses and Category 13",
+      "to": "/answers/equipment-lessor-category-13"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Leased factory: which scope",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Category 13: Downstream leased assets",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter13.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), section 5.5 and table 5.4",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

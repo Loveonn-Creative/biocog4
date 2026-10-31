@@ -1,0 +1,58 @@
+{
+  "slug": "tea-withering-automatic-airflow-saving",
+  "q": "How much power does automatic airflow control in tea withering troughs save?",
+  "title": "Tea withering fans on VFDs: power saved",
+  "short": "About 58,000 kWh a year in BEE's Jorhat report: VFDs and a PLC on 20 withering fans across 10 troughs slow the fans as the leaf loses moisture, instead of throttling with dampers. Payback 1.84 years on Rs 7.97 lakh (2010). On the grid the CO2 cut is about 39 t, not the report's 60 t.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tea factory managers in Assam running damper-controlled withering troughs on grid and DG power",
+  "sections": [
+    {
+      "h": "What happens in the trough now",
+      "ul": [
+        "Withering takes about 12 hours. The leaf needs about 5,000 cfm a trough for the first 4 to 5 hours, then about two thirds of that.",
+        "Airflow is cut by closing dampers, so the fan motors draw nearly the same power all day.",
+        "BEE measured 20 fans of 2.23 kW in ten factories: 1.88 kW each on average, 37.6 kW in all, 135,576 kWh a year at 12 hours and 300 days."
+      ]
+    },
+    {
+      "h": "What the VFDs change",
+      "ul": [
+        "Fan power falls with the cube of speed: 10% slower takes about 27% less power.",
+        "The PLC runs each fan 1 hour at full speed, 3 hours at 90%, 4 hours at 85% and 4 hours at 75%.",
+        "Report result: average draw falls to 21.5 kW, 77,400 kWh a year, saving 58,176 kWh.",
+        "At Rs 7.45 a kWh (70% grid at Rs 5.50, 30% DG at Rs 12), Rs 4.33 lakh a year.",
+        "Cost: Rs 7.25 lakh for 20 VFDs and the PLC panel, Rs 0.72 lakh contingency. Four days of downtime."
+      ]
+    },
+    {
+      "h": "Check the arithmetic before you sign",
+      "p": [
+        "Run the cube rule on the report's own schedule and each fan uses about 13.8 kWh a day, not 12.9. The 75% speed row is low. That gives about 52,900 kWh saved, Rs 3.94 lakh, and a payback near 2.0 years. Real savings are usually a little below the cube rule, because the leaf bed and the drive itself take some power. Meter one trough for a week before and after."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 from the report's 58,176 kWh",
+    "lines": [
+      "All grid: 58,176 x 0.675 = 39.3 t",
+      "With the report's 70/30 grid and DG split: 40,723 kWh x 0.675 = 27.5 t from the grid",
+      "DG share 17,453 kWh at about 3 kWh a litre = 5,800 L x 2.645 = 15.4 t",
+      "Total about 43 t; the report's 59.92 t used about 1.03 kg a kWh"
+    ],
+    "note": "Grid at CEA's FY 2025-26 factor and diesel at 2.645 kg a litre. The 3 kWh a litre DG figure is an estimate; use your DG log of litres and kWh."
+  },
+  "senseible": "Senseible reads electricity bills and diesel slips into monthly records with CO2, so the fall in withering power, and in DG litres, shows against kg of made tea. The green loan check shows what a lender asks for on a VFD loan.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "VFD savings on pumps and fans", "to": "/answers/vfd-pump-fan-energy-co2-savings" },
+    { "label": "Tea dryer gas burner saving", "to": "/answers/tea-dryer-efficient-gas-burner-saving" },
+    { "label": "Diesel generator fuel per kWh", "to": "/answers/diesel-generator-specific-fuel-consumption" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: automatic airflow variation in withering system, Jorhat tea cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/Jorhat_tea_cluster/09_Tech_upgradn_with_automatic_airflow_variation_in_withering_system_Jorhat.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Check today's tariff, DG cost and a current quote."
+}

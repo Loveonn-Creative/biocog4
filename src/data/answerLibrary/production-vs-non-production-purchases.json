@@ -1,0 +1,95 @@
+{
+  "slug": "production-vs-non-production-purchases",
+  "q": "Should I split purchases into production and non-production when building Category 1?",
+  "title": "Production vs non-production purchases",
+  "short": "It is optional, and usually worth doing. The GHG Protocol says splitting purchases into production-related items (materials, components, parts) and non-production items (office supplies, IT support, services) can follow how your purchase team already buys, which makes the data easier to organise and collect.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Manufacturers and exporters building a first Category 1 estimate",
+  "sections": [
+    {
+      "h": "What goes on each side",
+      "p": [
+        "Box 5.2 of the Scope 3 Standard draws the line like this:"
+      ],
+      "ul": [
+        "Production-related (often called direct procurement): materials, components and parts you process or build into your product; goods bought for resale, for traders and distributors only; and plant and equipment used to make the product.",
+        "Non-production-related (often called indirect procurement): office supplies, furniture, computers, phones, travel services, IT support, outsourced admin, consulting, housekeeping and gardening; plus maintenance, repair and operations items such as spare parts."
+      ]
+    },
+    {
+      "h": "The split organises data; it does not change categories",
+      "p": [
+        "Category 1 holds every purchase not reported in Categories 2 to 8. So machines and other capital goods still go to Category 2, upstream fuel and power losses to Category 3, freight you pay for to Category 4 and travel to Category 6, whichever side of the split they sit on."
+      ]
+    },
+    {
+      "h": "Why it helps a factory",
+      "ul": [
+        "Production purchases are usually a few vendors with tonnes or kilograms printed on the invoice: steel, granules, yarn, cartons. These suit quantity-based factors or supplier data.",
+        "Non-production purchases are many small vendors billed by value. A spend-based estimate is usually enough.",
+        "The Technical Guidance allows different methods for different activities within one category, so each side can use the method that fits it."
+      ]
+    },
+    {
+      "h": "How to split your purchase register",
+      "ol": [
+        "Raw material and packing material ledgers: production-related. Cartons and pallets that leave with your product count here.",
+        "Consumables, stationery, AMC, repairs, professional fees: non-production.",
+        "Spare parts for machines: non-production, as maintenance, repair and operations, even though they are used on the shop floor.",
+        "Check doubtful lines by HSN code, then keep the rule the same every year."
+      ]
+    },
+    {
+      "h": "Adding the non-production side later",
+      "p": [
+        "Many companies start with production purchases only. The Scope 3 Standard uses this exact case as an example: adding non-production procurement to Category 1 in a later year is a change in activities that can trigger a base year recalculation if the effect is significant. Note what you left out in year one so the change is easy to explain."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: a Ludhiana fastener maker's purchases for one year",
+    "lines": [
+      "Wire rod: 2,400 t, Rs 14.4 crore (production)",
+      "Plating chemicals: Rs 0.9 crore; cartons: Rs 0.6 crore (production)",
+      "Non-production: Rs 1.5 crore across 140 vendors",
+      "Total Rs 17.4 crore; production side 15.9 / 17.4 = 91% of spend from a handful of vendors, with tonnes on the invoice",
+      "Plan: quantity-based or supplier data for wire rod first; spend-based for the 140 small vendors"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "Senseible reads purchase invoices line by line with HSN code, quantity and unit, and keeps Scope 3 lines in a separate supplier evidence trail, so you can sort production materials from consumables before choosing a method for each.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Capital goods in Category 2",
+      "to": "/answers/capital-goods-scope-3-count-in-year-of-purchase"
+    },
+    {
+      "label": "Spend-based estimates and GST",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Which suppliers to ask first",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Category 1: Purchased goods and services",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter1.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), box 5.2 and section 9.3",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), introduction",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Intro_GHGP_Tech.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

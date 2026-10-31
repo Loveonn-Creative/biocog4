@@ -1,0 +1,83 @@
+{
+  "slug": "lpg-radiation-annealing-furnace-electricity-saving",
+  "q": "How much electricity does an LPG radiation annealing furnace save in wire drawing?",
+  "title": "LPG annealing furnace in place of electric",
+  "short": "BEE's Howrah report swaps a 66 kW electric annealing furnace for an LPG radiant one: 99,600 kWh a year becomes 600 kWh plus 5,400 kg of LPG. Net CO2 falls by about 51 t a year, not the 75 or 105 t the report states, because burning LPG adds 16 t.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Copper and aluminium wire drawing units in Howrah annealing in electric pot furnaces",
+  "sections": [
+    {
+      "h": "The furnace BEE measured",
+      "p": [
+        "A copper wire unit's electric pot furnace: twelve nichrome coils, 66 kW, 600 to 700 kg a batch at 500 °C, two batches a day for 300 days. At 166 kWh a batch it used 99,600 kWh a year, a third of the unit's 295,310 kWh. The report puts its efficiency at 21%."
+      ]
+    },
+    {
+      "h": "What replaces it",
+      "ul": [
+        "Two radiant gas heating elements in SS-310, 80 kW in all, in a ceramic-wool lined shell with automatic temperature control.",
+        "9 kg of LPG and 1 kWh per batch: 5,400 kg and 600 kWh a year.",
+        "Cost Rs 14.42 lakh: furnace 11.75, installation 0.75, taxes and other 1.92."
+      ]
+    },
+    {
+      "h": "Where the report goes wrong",
+      "ul": [
+        "CO2: it counts only the electricity avoided, at 1.05 kg per kWh in one place and as 75 t in another, and leaves out the CO2 from the LPG burnt.",
+        "kWh: one table shows 71,901 kWh saved, the annexure 99,600. Net of the new furnace's 600 kWh, it is 99,000.",
+        "LPG heat: it uses 6,100 kcal per kg, about half the IPCC value of 47.3 MJ per kg (about 11,300 kcal). The 9 kg a batch came from that figure. At LPG's real heat value, its 55% efficiency would need about 4.9 kg, so 9 kg is a cautious budget. Get kg per batch guaranteed in writing."
+      ]
+    },
+    {
+      "h": "Will it pay today",
+      "p": [
+        "Yearly saving = 99,000 kWh x your tariff, minus 5,400 kg x your LPG price. At the report's 2013 prices, Rs 8.17 per kWh and Rs 41 per kg, that is Rs 5.87 lakh and a payback of 2.5 years. Both prices have moved since 2013, so redo the sum with your latest bill and LPG invoice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Net CO2, worked properly",
+    "lines": [
+      "Electricity avoided: 99,600 minus 600 = 99,000 kWh x 0.675 = 66.8 t CO2",
+      "LPG added: 5,400 kg x 2.98 = 16.1 t CO2",
+      "Net cut: about 50.7 t CO2 a year",
+      "If the furnace holds 4.9 kg a batch: 2,940 kg x 2.98 = 8.8 t added; net cut about 58 t"
+    ],
+    "note": "Grid factor CEA FY 2025-26; LPG at 2.98 kg CO2 per kg. Furnace figures from BEE's report for the Howrah galvanizing and wire drawing cluster."
+  },
+  "senseible": "Senseible reads electricity bills and LPG invoices into monthly records, with LPG at 2.98 kg CO2 per kg and grid power at 0.675 kg per kWh, so both sides of this switch show up. The green loan check shows what a lender asks for on a furnace loan.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Howrah galvanizing and wire: fuel and CBAM",
+      "to": "/answers/howrah-galvanizing-wire-units-cbam-carbon"
+    },
+    {
+      "label": "Enamelled copper wire footprint",
+      "to": "/answers/enamelled-copper-wire-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Galvanizing furnace air preheater",
+      "to": "/answers/galvanizing-furnace-air-preheater-oil-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: LPG gas fired radiation furnace for annealing, Howrah galvanizing and wire drawing cluster (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/Howrah_galvinising/DPR_on_LPG_Gas_Fired_Radiation_Furnace_for_Annealing.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

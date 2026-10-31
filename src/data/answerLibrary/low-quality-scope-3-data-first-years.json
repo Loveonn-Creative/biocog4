@@ -1,0 +1,87 @@
+{
+  "slug": "low-quality-scope-3-data-first-years",
+  "q": "Is it acceptable to use rough Scope 3 data in the first year?",
+  "title": "Rough Scope 3 data in the first year",
+  "short": "Yes. The GHG Protocol's Scope 3 guidance expects companies to use relatively low quality data in their first years, then replace it with better data as it becomes available, starting where quality is low and emissions are high. Label what is rough, and say how you will improve it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Suppliers and exporters building a first Scope 3 estimate for a buyer, lender or BRSR",
+  "sections": [
+    {
+      "h": "What the standard accepts",
+      "p": [
+        "The Scope 3 Standard says higher uncertainty is acceptable as long as the data supports your goals and keeps the inventory relevant: good enough to see which activities are large and to track the trend year to year.",
+        "Two things are required in return: a description of data quality for each category, and the share of each category calculated from supplier or partner data."
+      ]
+    },
+    {
+      "h": "Grade each figure on five indicators",
+      "p": [
+        "Table 7.6 of the standard gives the checks. In Indian terms:"
+      ],
+      "ul": [
+        "Technology: does the factor match how the item is made? An electric arc furnace steel factor for blast furnace steel fails.",
+        "Time: is the factor or activity data from the right year? A decade-old factor scores poorly.",
+        "Geography: is it from the right country or site? A UK spend factor applied to rupee purchases in India scores poorly.",
+        "Completeness: how much of the activity does the data cover? Bills for 8 of 12 months is incomplete.",
+        "Reliability: how dependable are the sources and checks? A supplier's metered figure beats a guess from a phone call."
+      ]
+    },
+    {
+      "h": "What to improve first",
+      "p": [
+        "The Technical Guidance says to prioritise activities with relatively low data quality and relatively high emissions. In most factories that is the main raw material bought by spend. Moving it from rupees to tonnes, then to supplier data, does more than polishing a small line."
+      ]
+    },
+    {
+      "h": "When better data arrives",
+      "p": [
+        "If the better data changes the estimate significantly, the base year has to be recalculated with the new source so the trend compares like with like. If it cannot be applied to past years, say so in the report rather than mixing old and new methods silently."
+      ]
+    },
+    {
+      "h": "What rough does not mean",
+      "ul": [
+        "Not invented numbers: every estimate has a stated basis and factor source.",
+        "Not silent gaps: excluded categories are listed with a reason.",
+        "Not rough Scope 1 and 2: those come from your own bills and fuel invoices from day one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: one supplier's data replacing a spend estimate",
+    "lines": [
+      "Year 1 Category 1: 4,000 t CO2e, of which steel by spend = 2,600 t (low quality, high emissions)",
+      "Year 2: the steel supplier sends product data for the same year's purchases: 2,050 t",
+      "Change: 2,600 minus 2,050 = 550 t, or 550 / 4,000 = 13.75% of Category 1",
+      "Above a 10% significance threshold, so the base year is recalculated with the supplier data"
+    ],
+    "note": "Figures are illustrative. The 10% threshold is the example the Scope 3 Standard gives; your own policy sets yours."
+  },
+  "senseible": "Senseible reads quantities and units from purchase invoices, which moves a line from a spend estimate to quantity-based data, and labels any spend-based estimate as such, so the rough part of your Scope 3 stays visible to you and your buyer.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "When to recalculate a Scope 3 base year",
+      "to": "/answers/scope-3-base-year-significance-threshold"
+    },
+    {
+      "label": "Filling gaps without making numbers up",
+      "to": "/answers/how-to-fill-gaps-in-scope-3-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), introduction",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Intro_GHGP_Tech.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), section 7.3 and table 7.6",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

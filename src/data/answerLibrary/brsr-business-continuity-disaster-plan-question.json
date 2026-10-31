@@ -1,0 +1,75 @@
+{
+  "slug": "brsr-business-continuity-disaster-plan-question",
+  "q": "How should a company answer the BRSR question on business continuity and disaster management?",
+  "title": "BRSR business continuity plan question",
+  "short": "It is Principle 6 leadership indicator 5: does the company have a business continuity and disaster management plan, with details in 100 words or a web link. A useful answer names the hazards at each site, the recovery target, who owns the plan, and when it was last tested.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Company secretaries, risk and EHS teams at listed companies",
+  "sections": [
+    {
+      "h": "The question",
+      "p": [
+        "Does the entity have a business continuity and disaster management plan? Give details in 100 words/ web link."
+      ]
+    },
+    {
+      "h": "Why it sits under the environment principle",
+      "p": [
+        "It is in Principle 6, next to water stress, emissions and biodiversity. So cover the physical hazards your plants face, such as floods, cyclones, heat and water shortage, as well as fire, IT failure and loss of a key supplier. A plan that only describes data backup answers half the question."
+      ]
+    },
+    {
+      "h": "What fits in 100 words",
+      "ul": [
+        "Whether a plan exists, and which sites it covers.",
+        "The main hazards per site or region.",
+        "Recovery time target for critical operations.",
+        "Fallbacks: alternate site, second supplier, backup power or water.",
+        "Who owns it, and how often the board or a committee reviews it.",
+        "Date of the last drill or test, and what changed after it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 100 word answer (illustrative)",
+    "lines": [
+      "Yes. Our plan covers all four plants and the head office, and is reviewed yearly by the Risk Management Committee.",
+      "It addresses flooding at Plant 2 (coastal Gujarat), extreme heat and water shortage at Plants 1 and 3, fire, IT outage and loss of single-source suppliers.",
+      "Critical lines target restart within 72 hours. Plant 2 holds 15 days of raw material; two key inputs now have second suppliers.",
+      "Backup power covers process cooling at every plant.",
+      "The last drill, at Plant 2 in May 2025, led us to move the electrical panel above flood level."
+    ],
+    "note": "Company details are invented. Replace every fact with your own, or give a web link to the plan summary."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices for each site into dated records and prepares BRSR drafts from them. The continuity answer is your own text. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Essential vs leadership indicators",
+      "to": "/answers/brsr-essential-vs-leadership-indicators"
+    },
+    {
+      "label": "Free climate hazard data for a factory",
+      "to": "/answers/free-climate-hazard-data-india-factory"
+    },
+    {
+      "label": "Adverse impacts in the value chain",
+      "to": "/answers/brsr-value-chain-adverse-environmental-impact"
+    },
+    {
+      "label": "BRSR reporting",
+      "to": "/brsr-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, 12 July 2023: BRSR Core and updated BRSR format",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI, updated BRSR format (Annexure II to the 12 July 2023 circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

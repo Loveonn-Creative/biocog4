@@ -1,0 +1,65 @@
+{
+  "slug": "thermopac-air-preheater-petcoke-saving",
+  "q": "How much petcoke does an air preheater on a thermopac save?",
+  "title": "Thermopac air preheater: pet coke saved",
+  "short": "About 13.7 kg an hour, 5.5% of a 250 kg an hour pet coke thermopac, in BEE's Pali report: an air preheater cools flue gas from 250 C to 180 C, saving 82.46 t a year. Cost Rs 2.5 lakh, saving Rs 6.18 lakh, so payback is about 5 months, not the 1.8 years on the report's cover table.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Pali and Balotra process houses whose thermopacs were switched from lignite to residual pet coke without re-engineering",
+  "sections": [
+    {
+      "h": "Why Pali thermopacs run hot and lean",
+      "ul": [
+        "When lignite supply from Gujarat stopped, units moved to residual pet coke without changing the heaters.",
+        "Flue gas leaves at 250 to 300 C, and the audited unit ran at 150% excess air: about 27 kg of air per kg of coke against 10.8 kg needed.",
+        "Measured thermopac efficiency was about 68 to 70%.",
+        "The coke analysed at 80.9% carbon, 7.5% sulphur, 3.6% hydrogen, 7% moisture and 8,200 kcal a kg."
+      ]
+    },
+    {
+      "h": "Why the flue stops at 180 C",
+      "p": [
+        "With 7.5% sulphur, flue gas forms sulphuric acid if it is cooled too far, and that eats the preheater tubes and duct. The report holds the outlet at 180 C for that reason. Do not let a supplier promise a lower exit on this fuel."
+      ]
+    },
+    {
+      "h": "The saving and the payback",
+      "ul": [
+        "Heat recovered: 450.8 kcal per kg of coke x 250 kg an hour = 112,700 kcal an hour, returned in the burner air.",
+        "Coke saved: 112,700 / 8,200 = 13.74 kg an hour, x 6,000 hours = 82.46 t.",
+        "At Rs 7,500 a tonne, Rs 6.18 lakh a year.",
+        "Cost: Rs 2.22 lakh unit with tax and freight, Rs 0.28 lakh fitting. Six days of downtime.",
+        "Payback: 2.5 / 6.18 = 0.4 years, about 5 months. The body of the report says 5 months; its cover table's 1.8 years is a slip."
+      ]
+    },
+    {
+      "h": "Do the cheaper fix first",
+      "p": [
+        "At 150% excess air, much of the flue loss is air heated for nothing. Tuning the air damper and sealing leaks costs little and should come before or alongside the preheater. The report's rule of thumb, 1% fuel per 22 C of flue cooling, gives about 3.2% here; the heat sum gives 5.5%. Expect something between them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One thermopac, one year",
+    "lines": [
+      "Coke saved: 13.74 kg x 6,000 h = 82.46 t",
+      "CO2 from the coke's own carbon: 82.46 x 0.809 x 44/12 = 244.6 t",
+      "At the IPCC default of 3.17 t a tonne it would be 261 t",
+      "The report says 216.9 t"
+    ],
+    "note": "The carbon content comes from the fuel analysis in the report; 44/12 converts carbon to CO2. Estimates."
+  },
+  "senseible": "Senseible reads pet coke invoices and electricity bills into monthly records, with CO2 for the power. It has no pet coke factor, so apply the carbon based figure above to tonnes burnt; the green loan check shows what a lender asks for.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Boiler excess air and fuel saving", "to": "/answers/boiler-excess-air-fuel-saving" },
+    { "label": "Stenter waste heat recovery: pet coke", "to": "/answers/stenter-waste-heat-recovery-petcoke-saving" },
+    { "label": "Pet coke emission factor in India", "to": "/answers/petcoke-emission-factor-india" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: air pre heater in thermopac, Pali textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/PAL_TXT1.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Check today's coke price and a current quote."
+}

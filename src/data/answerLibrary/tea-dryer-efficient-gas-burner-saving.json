@@ -1,0 +1,61 @@
+{
+  "slug": "tea-dryer-efficient-gas-burner-saving",
+  "q": "How much gas does an efficient burner save on a tea factory dryer?",
+  "title": "Tea dryer gas burner: 10% less gas",
+  "short": "About 10%. BEE's Jorhat report puts an adjustable burner on a 200 kg an hour dryer at 0.46 scm of gas per kg of made tea instead of 0.51, saving 36,000 scm a year. That is about 74 t CO2, not the report's 79 t. Cost Rs 2.46 lakh, payback 0.82 years (2010).",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tea factory managers in Assam whose dryers run on piped natural gas through fixed ratio burners",
+  "sections": [
+    {
+      "h": "Why the old burner wastes gas",
+      "ul": [
+        "The dryer's ID fan pulls combustion air into the burner chamber while gas goes in at a fixed rate, whatever the draft. Nobody can adjust the air to gas ratio.",
+        "BEE measured 0.51 scm a kg of made tea. Taking 1.45 kg of water out of the leaf for each kg of made tea needs about 885 kcal, so only about 20% of the gas heat does useful drying.",
+        "The proposed burner has its own fan for combustion air and a knob on the gas line. The operator turns it until the flame goes bluish, then leaves it."
+      ]
+    },
+    {
+      "h": "The project in numbers",
+      "ul": [
+        "Dryer: 200 kg of made tea an hour, 12 hours a day, 300 days, 3,600 hours.",
+        "Gas: 367,200 scm a year before, 331,200 after, 10 scm an hour saved.",
+        "At Rs 8.30 a scm, Rs 2.99 lakh a year.",
+        "Cost: Rs 2.14 lakh burner, Rs 0.11 lakh fitting, Rs 0.21 lakh contingency, Rs 2.46 lakh in all. One day of downtime.",
+        "Efficiency moves only from about 19.8% to 22%; the dryer itself still loses most of the heat, so look at insulation and exhaust next."
+      ]
+    },
+    {
+      "h": "Prove it with your own bills",
+      "ol": [
+        "Before fitting, log gas scm and kg of made tea per dryer for two weeks.",
+        "After fitting, log the same for two weeks at similar leaf moisture.",
+        "Compare scm per kg, not monthly gas totals, which swing with the crop."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One dryer, one season",
+    "lines": [
+      "Made tea: 200 kg x 3,600 h = 720 t",
+      "Gas saved: 0.05 scm x 720,000 kg = 36,000 scm",
+      "CO2 saved: 36,000 x 2.05 = 73.8 t",
+      "Dryer gas CO2 per kg of made tea: 1.05 kg before, 0.94 kg after",
+      "The report's 79.43 t used 9,400 kcal a scm and 56.06 kg CO2 a GJ"
+    ],
+    "note": "Natural gas at our factor of 2.05 kg CO2 a scm, an estimate."
+  },
+  "senseible": "Senseible reads monthly gas bills in scm into records with CO2 at 2.05 kg a scm, so the drop after a burner change shows in the factory's monthly figure. The green loan check shows what a lender asks for on an equipment loan.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Jorhat tea factories: coal, gas and CO2", "to": "/answers/jorhat-tea-factories-coal-gas-drying-carbon" },
+    { "label": "Tea factory footprint per kg", "to": "/answers/tea-factory-carbon-footprint-per-kg-made-tea" },
+    { "label": "Tea withering fans on VFDs", "to": "/answers/tea-withering-automatic-airflow-saving" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: energy efficient natural gas burner for drier, Jorhat tea cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/Jorhat_tea_cluster/05_EE_Gas_Burner_Jorhat.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at 2010 prices. Check today's gas price before you rely on the payback."
+}

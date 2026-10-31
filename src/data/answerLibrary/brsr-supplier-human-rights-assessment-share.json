@@ -1,0 +1,74 @@
+{
+  "slug": "brsr-supplier-human-rights-assessment-share",
+  "q": "Which human rights topics does a BRSR value chain assessment of suppliers cover?",
+  "title": "BRSR human rights checks on suppliers",
+  "short": "Principle 5 leadership indicator 4 asks a listed company what share of its value chain partners, by value of business, it assessed for sexual harassment, discrimination at the workplace, child labour, forced or involuntary labour, wages, and any other topic. Indicator 5 asks for corrective actions on significant risks found.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "MSME suppliers facing a listed buyer's human rights questionnaire or audit",
+  "sections": [
+    {
+      "h": "The six rows",
+      "ul": [
+        "Sexual harassment",
+        "Discrimination at workplace",
+        "Child labour",
+        "Forced or involuntary labour",
+        "Wages",
+        "Others, which the buyer names"
+      ]
+    },
+    {
+      "h": "Evidence for each row",
+      "ul": [
+        "Sexual harassment: an Internal Committee under the POSH Act 2013 if you have 10 or more employees, its members displayed, and the annual report it files.",
+        "Discrimination: a written policy and a way for workers to complain that does not go through their own supervisor.",
+        "Child labour: age proof on file for every worker.",
+        "Forced labour: no identity documents or wages held back; advances recorded with repayment terms; workers free to leave.",
+        "Wages: wage register showing at least the state minimum wage for each category, paid on time."
+      ]
+    },
+    {
+      "h": "Contract and seasonal workers count",
+      "p": [
+        "Keep the same records for workers supplied by a contractor and for seasonal hands, not only payroll staff. Ask your labour contractor for their wage sheets and age records, because the buyer will treat them as your workers."
+      ]
+    },
+    {
+      "h": "How this differs from the buyer's own table",
+      "p": [
+        "Essential indicator 10 asks the buyer what share of its own plants and offices were assessed on the same topics. Leadership indicator 4 is the same list applied to partners like you, so the buyer's checks will mirror what its own auditors look for."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares the environmental part of a buyer's supplier file from your electricity bills and fuel invoices, with the evidence attached. Human rights records come from your own registers and policies.",
+  "links": [
+    {
+      "label": "Buyer safety audits for BRSR",
+      "to": "/answers/brsr-supplier-health-safety-assessment-share"
+    },
+    {
+      "label": "Environmental assessment of partners",
+      "to": "/answers/brsr-value-chain-environment-assessment-share"
+    },
+    {
+      "label": "Supplier questionnaire, field by field",
+      "to": "/answers/brsr-supplier-questionnaire-field-by-field"
+    },
+    {
+      "label": "Supplier evidence for buyers",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, 12 July 2023: BRSR Core and updated BRSR format",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI, updated BRSR format (Annexure II to the 12 July 2023 circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

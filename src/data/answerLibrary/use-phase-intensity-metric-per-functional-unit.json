@@ -1,0 +1,87 @@
+{
+  "slug": "use-phase-intensity-metric-per-functional-unit",
+  "q": "How do I express use-phase emissions per use, like per wash or per km?",
+  "title": "Use-phase emissions per wash, km or hour",
+  "short": "Divide your Category 11 total by the number of uses all products sold that year will deliver over their life. The GHG Protocol's example: 500,000 kg CO2e for 2,000 washing machines at 1,500 washes each is 3,000,000 washes, so 0.1667 kg CO2e per wash.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Makers of fans, pumps, motors, appliances and vehicles reporting Category 11",
+  "sections": [
+    {
+      "h": "Why a per-use figure matters",
+      "p": [
+        "Category 11 counts the whole expected lifetime of every product sold in the year. A fan that lasts longer therefore shows a bigger total, even if it uses less power per hour. The Scope 3 Standard says companies should also report product lifetimes and intensity metrics so durable products are not misread."
+      ]
+    },
+    {
+      "h": "Pick the unit your buyer compares on",
+      "p": [
+        "Appendix C of the Technical Guidance gives these examples:"
+      ],
+      "ul": [
+        "Can of cola: kg CO2e per 330 ml can",
+        "Washing machine: kg CO2e per wash",
+        "Television: kg CO2e per hour of viewing",
+        "Car: kg CO2e per km driven"
+      ]
+    },
+    {
+      "h": "The calculation",
+      "ol": [
+        "Take the Category 11 total for products sold in the year.",
+        "Uses delivered = lifetime uses per product x number sold in the year.",
+        "Per-use figure = Category 11 total / uses delivered."
+      ]
+    },
+    {
+      "h": "Report it beside the total, never instead",
+      "ul": [
+        "The Category 11 total stays the required figure; the per-use number adds context.",
+        "Use the same lifetime and use assumptions in both, and publish them.",
+        "Other metrics the standard mentions: annual emissions per product, energy efficiency per product, emissions per hour of use, per km or per functional unit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 4,000 ceiling fans sold in India (assumptions labelled)",
+    "lines": [
+      "Assumed use: 2,500 hours a year for 10 years = 25,000 hours per fan",
+      "60 W fan: 0.06 x 25,000 = 1,500 kWh per fan; 4,000 fans = 60,00,000 kWh",
+      "Category 11: 60,00,000 x 0.675 = 40,50,000 kg CO2, about 4,050 t",
+      "Hours delivered: 4,000 x 25,000 = 10,00,00,000 hours",
+      "Per hour of running: 40,50,000 / 10,00,00,000 = 0.0405 kg, about 41 g CO2",
+      "A 28 W model on the same assumptions: 0.028 x 0.675 = about 19 g CO2 per hour"
+    ],
+    "note": "Hours, life and wattage are assumptions for illustration. 0.675 kg CO2 per kWh is the India grid factor for FY 2025-26 (CEA version 22.0); use the grid of the country where the product runs."
+  },
+  "senseible": "Senseible reads your own bills and purchase invoices; it does not model how customers use the products you sell. Use-phase figures and their assumptions come from you, and can sit beside your Scope 1 and 2 evidence when a buyer asks.",
+  "links": [
+    {
+      "label": "Calculating Category 11",
+      "to": "/answers/use-of-sold-products-category-11-calculation"
+    },
+    {
+      "label": "Use-phase emissions for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Appendix C: Calculating emissions intensity metrics",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/AppendixC.pdf"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Category 11: Use of sold products",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter11.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

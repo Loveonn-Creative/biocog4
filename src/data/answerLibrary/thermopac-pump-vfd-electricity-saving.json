@@ -1,0 +1,58 @@
+{
+  "slug": "thermopac-pump-vfd-electricity-saving",
+  "q": "How much electricity does a VFD on a thermic fluid pump save in a textile processing house?",
+  "title": "VFD on a thermopac pump: power saved",
+  "short": "About 77,600 kWh a year, close to half the pump's power, in BEE's Pali report: a VFD trims a 23 kW thermic fluid pump from 120 to 96 m3 an hour. Cost Rs 1.75 lakh, saving Rs 3.57 lakh at Rs 4.60 a kWh, payback about 6 months (2010). CO2 falls about 52 t on today's grid.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pali and Balotra process houses running 10 or 20 lakh kcal an hour thermopacs for stenters and printing dryers",
+  "sections": [
+    {
+      "h": "Why the pump is oversized",
+      "ul": [
+        "The pump runs 24 hours to keep the fluid moving, so it is often the biggest single motor in a Pali process house: rated 20 or 30 kW, drawing 16 or 23 kW.",
+        "Stenters (rated 4 lakh kcal an hour, running near 3) and printing dryers take less heat than the thermopac can give, and their valves bypass hot fluid when a chamber is hot enough.",
+        "So the pump pushes more fluid than the load needs, all day. BEE found no VFD on any thermic fluid pump in Pali."
+      ]
+    },
+    {
+      "h": "The saving, step by step",
+      "ul": [
+        "Now: 23 kW x 24 hours x 300 days = 165,600 kWh.",
+        "With the VFD and PLC: flow 120 to 96 m3 an hour, 80%. Pump power falls with the cube of flow, 0.8 x 0.8 x 0.8 = 0.51, so 84,787 kWh.",
+        "The drive itself uses about 3,232 kWh. Net saving 77,578 kWh, Rs 3.57 lakh.",
+        "Cost: Rs 1.5 lakh drive and controls, Rs 0.25 lakh fitting. One to two days of downtime."
+      ]
+    },
+    {
+      "h": "Two checks before you fit it",
+      "ul": [
+        "Minimum flow: the heater coils need a minimum fluid velocity or the oil cracks and cokes. Get that figure from the thermopac maker and set it as the drive's floor.",
+        "The cube rule works when pipe friction is most of the pump's head. Where valves hold a fixed pressure, savings are lower. Meter the pump for a week after fitting."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One thermopac pump, one year",
+    "lines": [
+      "Saving: 165,600 less 84,787 less 3,232 = 77,578 kWh",
+      "Money: 77,578 x Rs 4.60 = Rs 3.57 lakh; payback 1.75 / 3.57 = 0.49 years",
+      "CO2: 77,578 x 0.675 = 52.4 t a year",
+      "The report's 65 t used an older grid factor"
+    ],
+    "note": "Grid at CEA's FY 2025-26 factor of 0.675 kg CO2 a kWh, an estimate."
+  },
+  "senseible": "Senseible reads electricity bills into monthly records with CO2, so a 77,000 kWh drop shows in the months after the drive goes in. The green loan check shows what a lender asks for on a VFD loan.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Green loans for VFDs on pumps and fans", "to": "/answers/green-loan-vfd-on-pumps-and-fans" },
+    { "label": "VFD savings on pumps and fans", "to": "/answers/vfd-pump-fan-energy-co2-savings" },
+    { "label": "Thermopac air preheater: pet coke saved", "to": "/answers/thermopac-air-preheater-petcoke-saving" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: VFD in thermic fluid pump of thermopac, Pali textile cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/pali_thermopac.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and tariffs are at 2010 prices. Check your tariff and a current quote."
+}

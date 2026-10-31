@@ -1,0 +1,89 @@
+{
+  "slug": "rice-mill-common-shaft-to-individual-drive-1tph",
+  "q": "How much electricity does a 1 tph rice mill save by replacing its common shaft drive?",
+  "title": "Rice mill: common shaft to separate motors",
+  "short": "BEE's Ganjam report says 13,634 kWh a year for a 1 tph mill: 45,680 kWh on the shaft against 32,046 with separate motors. But it runs the shaft 15 hours a day and the new motors 12. At equal hours the saving is about 5,620 kWh. Cost Rs 1.50 lakh.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Raw rice mill owners in Ganjam and other clusters still running one motor and a line shaft",
+  "sections": [
+    {
+      "h": "The mill BEE measured",
+      "p": [
+        "A 1.0 tph mill with a 30 HP main motor driving cleaner, sheller, cones, separator and elevators through long belts. The motor drew 12.43 kW at about 55% load, 15 hours a day for 245 days: 45,680 kWh for 2,938 t of rice, about 15.5 kWh a tonne."
+      ]
+    },
+    {
+      "h": "The separate motors",
+      "ul": [
+        "Elevators: three 1 HP motors.",
+        "Chaluni: two 1 HP motors.",
+        "Rubber sheller: 7.5 HP.",
+        "Cones: two 10 HP motors.",
+        "Separator: 2 HP.",
+        "Together they draw about 10.9 kW running, against 12.43 kW for the shaft."
+      ]
+    },
+    {
+      "h": "Same hours, smaller saving",
+      "p": [
+        "Per running hour the cut is 1.53 kW, about 12%, not the 30% the report quotes. The rest of its saving comes from running 12 hours instead of 15. That is real only if separate motors let you stop machines the shaft kept turning with no paddy. If your mill runs the same shift either way, plan on about 5,620 kWh."
+      ]
+    },
+    {
+      "h": "Payback both ways",
+      "ul": [
+        "Report basis: 13,634 x Rs 4.20 = Rs 57,263 a year; 1.50 lakh pays back in 2.6 years.",
+        "Equal hours at Rs 4.20: Rs 23,604 a year, 6.4 years.",
+        "Equal hours at Rs 8.40, twice the report's tariff: Rs 47,208, about 3.2 years."
+      ]
+    },
+    {
+      "h": "Check your own mill first",
+      "ol": [
+        "Clamp-meter the main motor while milling and while turning with no paddy.",
+        "Log how long the shaft runs idle each day; that is where separate motors save most.",
+        "Count belts and check their tension; slack flat belts waste power on either drive."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2, both ways",
+    "lines": [
+      "Report basis: 13,634 kWh x 0.675 = 9.2 t CO2 a year (the report prints 14 t in one place and 11 t in another)",
+      "Equal hours: 5,620 kWh x 0.675 = 3.8 t CO2 a year",
+      "Per tonne of rice at equal hours: 15.5 falls to about 13.6 kWh"
+    ],
+    "note": "From BEE's 2010 report for the Ganjam rice mill cluster (the file name says 10 TPH; the report is for 1.0 tph). Grid factor CEA FY 2025-26."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 records; add tonnes milled and you can see kWh per tonne before and after the change. The calculators give a quick CO2 figure.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Ganjam rice mills: power records",
+      "to": "/answers/ganjam-rice-mills-electricity-saving"
+    },
+    {
+      "label": "Rice mill energy per tonne",
+      "to": "/answers/rice-mill-energy-per-tonne-benchmark"
+    },
+    {
+      "label": "Cogged or synchronous belts",
+      "to": "/answers/cogged-or-synchronous-belt-energy-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: individual drive system replacing common shaft drive, 1.0 tph, Ganjam rice mill cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Ganjam_rice_mill_cluster/06_Common_shaft_drive_system_10TPH_Ganjam_Rice_mill.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0 (FY 2025-26 grid factor)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

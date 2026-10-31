@@ -1,0 +1,87 @@
+{
+  "slug": "brsr-water-stress-area-withdrawal-question",
+  "q": "What does BRSR ask about water drawn in water-stressed areas?",
+  "title": "BRSR water stress question, plant by plant",
+  "short": "Principle 6 leadership indicator 1 asks, for each plant in an area of water stress, the area's name, what the plant does, and its water withdrawal by source, consumption, intensity and discharge by destination and treatment, in kilolitres. SEBI's guidance counts groundwater blocks rated over-exploited or critical as water-stressed.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EHS and sustainability teams at listed manufacturers with plants on borewell water",
+  "sections": [
+    {
+      "h": "First, which plants are in",
+      "p": [
+        "SEBI's guidance note defines areas of water stress as places that cannot meet human and ecological demand for water, whether through availability, quality or access. Any area the Central Ground Water Board rates over-exploited or critical counts, so look up each plant's block in the latest CGWB groundwater assessment. The test is where the plant stands, not where its water comes from: a plant on municipal supply in a critical block still gets a row."
+      ]
+    },
+    {
+      "h": "What each plant's row needs",
+      "ul": [
+        "Name of the area and the nature of operations at the plant.",
+        "Withdrawal by source: surface water, groundwater, third party water, seawater or desalinated water, others; then the total.",
+        "Total consumption.",
+        "Water intensity per rupee of turnover, plus an optional intensity metric you choose, such as kL per tonne.",
+        "Discharge by destination (surface water, groundwater, seawater, third parties, others), each split into no treatment and with treatment, naming the treatment level; then the total.",
+        "Whether an external agency assessed or assured the figures, and its name."
+      ]
+    },
+    {
+      "h": "Where the kilolitres come from",
+      "ol": [
+        "Borewell flow meter readings. Without a meter, pump running hours times rated flow, marked as an estimate.",
+        "Water bills from the municipality or industrial area, and tanker invoices: both are third party water.",
+        "ETP outlet meter and the returns filed with the pollution control board, for discharge.",
+        "Consumption is withdrawal minus discharge, so it falls out of the first three."
+      ]
+    },
+    {
+      "h": "The turnover question",
+      "p": [
+        "The format asks for intensity per rupee of turnover for each plant but does not say whose turnover to use when a plant has no separate revenue. State the basis next to the figure, such as the plant's share of sales, and keep it the same every year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One plant in an over-exploited block (illustrative)",
+    "lines": [
+      "Groundwater 42,000 kL + tanker water 6,000 kL = 48,000 kL withdrawn",
+      "Sent to a common effluent treatment plant: 9,000 kL, with treatment",
+      "Consumption: 48,000 minus 9,000 = 39,000 kL",
+      "On plant sales of Rs 120 crore: 39,000 / 120 = 325 kL per Rs crore"
+    ],
+    "note": "All figures invented to show the arithmetic."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices into dated records for each site and prepares BRSR drafts from them, with the source on every line. The water rows for each stressed plant come from your meters and bills. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Water withdrawal vs consumption",
+      "to": "/answers/brsr-water-withdrawal-vs-consumption"
+    },
+    {
+      "label": "Check water stress at a location",
+      "to": "/answers/check-water-stress-at-supplier-location-india"
+    },
+    {
+      "label": "BRSR water discharge question",
+      "to": "/answers/brsr-water-discharge-by-destination-question"
+    },
+    {
+      "label": "BRSR reporting",
+      "to": "/brsr-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, 12 July 2023: BRSR Core and updated BRSR format",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI, updated BRSR format (Annexure II to the 12 July 2023 circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    },
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 17 (BRSR guidance note)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}
