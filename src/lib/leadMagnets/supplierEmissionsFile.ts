@@ -132,7 +132,7 @@ function methodLines(r: FileResult, basis: Basis): string[] {
     ...(r.scope2Kg !== null ? [`Scope 2, location-based: grid units multiplied by the CEA India grid average for ${r.grid.factorYear}${r.grid.billYear === r.grid.factorYear ? '' : `, the latest year published, applied to ${r.grid.billYear}`}. No market-based figure is given.`] : []),
     ...(basis === 'month' ? [`Quantities are one typical month's bill multiplied by ${r.months}, not the sum of each month's bill.`] : ['Quantities are the totals of the bills for the period.']),
     'Factors are CO2 only; methane and nitrous oxide from fuel add under 1%.',
-    'Sources not listed in the table are not included.',
+    'Emission sources not in the table are not included.',
   ];
 }
 

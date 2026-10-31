@@ -261,7 +261,7 @@ const SupplierEvidence = () => {
             <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">Type what your bills say. You get Scope 1 and Scope 2 for the period, each factor with its source, addressed to your buyer. No sign-up.</p>
             <div className="mt-10"><SupplierEmissionsTool /></div>
             <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
-              <p className="max-w-xl text-[15px] text-muted-foreground">Collecting from suppliers? Send them this link. Every reply comes back on the same page, in the same units.</p>
+              <p className="max-w-xl text-[15px] text-muted-foreground">Collecting from suppliers? Send them this link. Every reply comes back as the same one-page file, in the same units.</p>
               <SupplierToolLink />
             </div>
           </div>
@@ -370,7 +370,7 @@ const SupplierEvidence = () => {
       </main>
 
       <Footer />
-      <StickyCta label="Get my supplier evidence plan" onClick={toForm} hideWhenVisible="plan" />
+      <StickyCta label="Get my supplier evidence plan" onClick={toForm} hideWhenVisible={["plan", "supplier-file"]} />
     </div>
   );
 };

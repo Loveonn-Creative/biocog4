@@ -97,8 +97,8 @@ export function SupplierEmissionsTool() {
       <div className="space-y-6">
         <fieldset>
           <legend className="text-sm font-medium">Period</legend>
-          <div className="mt-2 grid grid-cols-3 gap-3">
-            <label className="block"><span className="sr-only">Financial year</span>
+          <div className="mt-2 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <label className="col-span-2 block sm:col-span-1"><span className="sr-only">Financial year</span>
               <select value={fy} onChange={(e) => setFy(Number(e.target.value))} className={selectCls}>
                 {years.map((y) => <option key={y} value={y}>FY {y}-{String(y + 1).slice(-2)}</option>)}
               </select>
@@ -133,7 +133,7 @@ export function SupplierEmissionsTool() {
           </div>
           <div>
             <label htmlFor="sf-diesel" className="block text-sm font-medium">Diesel, litres{per}</label>
-            <p className="mt-0.5 text-[13px] text-muted-foreground">Generators and own vehicles. 0 if none</p>
+            <p className="mt-0.5 text-[13px] text-muted-foreground">Generators and your own vehicles. Type 0 if none</p>
             <input id="sf-diesel" inputMode="decimal" value={diesel} onChange={(e) => setDiesel(e.target.value)} placeholder="1200" className={`mt-2 ${inputCls}`} />
             <Held id="sf-held-d" checked={held.diesel} onChange={(v) => setHeld((h) => ({ ...h, diesel: v }))} />
           </div>
@@ -205,7 +205,7 @@ export function SupplierEmissionsTool() {
                 </li>
               ))}
             </ol>
-            <p className="text-muted-foreground">Then the factor sources, the method, and a line saying these come from your own bills and have not been checked by a third party.</p>
+            <p className="text-muted-foreground">The file goes on to name each factor's source and the method, and says plainly that these are your own figures, not checked by a third party.</p>
           </div>
         </div>
 
