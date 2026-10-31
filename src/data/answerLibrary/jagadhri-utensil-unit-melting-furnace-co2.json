@@ -26,7 +26,7 @@
     "title": "Worked example",
     "lines": [
       "Furnace oil: 1,200 L x 2.97 kg = 3.56 t CO2",
-      "Electricity: 8,000 kWh x 0.710 (FY 2024-25 grid factor) kg = 5.68 t CO2",
+      "Electricity: 8,000 kWh x 0.710 kg (FY 2024-25) = 5.68 t CO2",
       "Output: 20,000 kg, so about 0.46 kg CO2 per kg before metal"
     ]
   },

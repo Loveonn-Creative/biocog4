@@ -18,7 +18,7 @@
       "h": "Building your own jute bag figure",
       "ul": [
         "Raw jute: farming inputs and retting, from supplier or published farm data.",
-        "Mill electricity for spinning, weaving and finishing: kWh x 0.710 (FY 2024-25 grid factor) kg CO2.",
+        "Mill electricity for spinning, weaving and finishing: kWh x 0.710 kg CO2 (FY 2024-25).",
         "Boiler or DG fuel at the mill: fuel quantity x its factor.",
         "Batching oil, sizing, dyes, printing, handles and lamination: purchased materials.",
         "Divide by the number of finished bags, or by kg if the buyer prefers."

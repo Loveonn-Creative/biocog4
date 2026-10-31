@@ -27,7 +27,7 @@
     "lines": [
       "Bill period 15 March to 14 April: 31 days, 9,300 kWh",
       "Days in March: 17, so 9,300 x 17 / 31 = 5,100 kWh in the year",
-      "5,100 kWh x 0.710 (FY 2024-25 grid factor) kg = 3,621 kg CO2"
+      "5,100 kWh x 0.710 kg (FY 2024-25) = 3,621 kg CO2"
     ]
   },
   "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",

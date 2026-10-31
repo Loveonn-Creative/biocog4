@@ -33,7 +33,7 @@
     "lines": [
       "Old: 0.95 kW per TR, new: 0.65 kW per TR, 200 TR load, 6,000 hours a year",
       "Saving: 0.30 x 200 x 6,000 = 360,000 kWh",
-      "360,000 kWh x 0.710 (FY 2024-25 grid factor) kg = 256 t CO2 a year"
+      "360,000 kWh x 0.710 kg (FY 2024-25) = 256 t CO2 a year"
     ]
   },
   "senseible": "Senseible measures your baseline from your own bills before the project and keeps measuring after it, so the saving you show a lender comes from documents, not a brochure. Lenders decide on the loan.",

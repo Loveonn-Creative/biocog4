@@ -1974,7 +1974,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "bhilwara-textile-mill-captive-thermal-power",
   "q": "A Bhilwara textile mill runs its own coal power plant: how does that change its footprint?",
   "title": "Bhilwara mills with captive coal power",
-  "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 (FY 2024-25 grid factor) kg, so the comparison is worth making.",
+  "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 kg (FY 2024-25), so the comparison is worth making.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -7390,7 +7390,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cotton-ginning-emissions-per-bale",
   "q": "How much CO2 does cotton ginning and pressing emit per bale?",
   "title": "Cotton ginning CO2 per bale",
-  "short": "Divide the season's ginning and pressing emissions by the bales produced: grid kWh times 0.710 (FY 2024-25 grid factor) kg CO2, plus DG diesel times 2.68 kg per litre. Then split the result between lint and cottonseed, by mass or by value. The split method can double the lint figure, so always state which one you used.",
+  "short": "Divide the season's ginning and pressing emissions by the bales produced: grid kWh times 0.710 kg CO2 (FY 2024-25), plus DG diesel times 2.68 kg per litre. Then split the result between lint and cottonseed, by mass or by value. The split method can double the lint figure, so always state which one you used.",
   "topic": "product",
   "reviewed": "2026-10-18"
  },
@@ -12934,7 +12934,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "hourly-grid-emission-factors-india",
   "q": "Are hourly grid emission factors available for India, and will Scope 2 need them?",
   "title": "Hourly grid emission factors in India",
-  "short": "No official hourly grid factors exist for India. The CEA publishes one annual factor, currently 0.710 kg CO2 per kWh for FY 2024-25, and the GHG Protocol accepts it. Hourly factors may matter later: the draft Scope 2 revision proposes hourly matching for market-based claims, but nothing is final.",
+  "short": "No official hourly grid factors exist for India. The CEA publishes one annual factor, 0.710 kg CO2 per kWh for FY 2024-25 and 0.675 for FY 2025-26, and the GHG Protocol accepts it. Hourly factors may matter later: the draft Scope 2 revision proposes hourly matching for market-based claims, but nothing is final.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -22190,7 +22190,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "silvassa-yarn-texturising-unit-electricity-co2",
   "q": "How does a yarn texturising unit in Silvassa work out carbon per kg?",
   "title": "Silvassa texturising unit: carbon per kg",
-  "short": "Texturising runs on electricity for heaters, godets and winders. Take kWh from the bill, multiply by 0.710 (FY 2024-25 grid factor) kg CO2, and divide by kg of textured yarn. For a buyer's full figure, add the partially oriented yarn you buy, from the supplier or a database factor, labelled as such.",
+  "short": "Texturising runs on electricity for heaters, godets and winders. Take kWh from the bill, multiply by 0.710 kg CO2 (FY 2024-25), and divide by kg of textured yarn. For a buyer's full figure, add the partially oriented yarn you buy, from the supplier or a database factor, labelled as such.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },

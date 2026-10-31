@@ -18,7 +18,7 @@
     {
       "h": "When the TRU has no separate fuel record",
       "p": [
-        "Some TRUs draw from the truck's main tank, and some log only engine hours. Use the manufacturer's fuel use per hour for your set point and ambient range, multiply by logged hours, and label it an estimate. Frozen loads at minus 18 degrees C in an Indian summer burn more than chilled loads at 2 to 8 degrees C, so do not use one rate for both. If the unit runs on shore power at the depot, that electricity is grid kWh x 0.710 (FY 2024-25 grid factor) kg CO2."
+        "Some TRUs draw from the truck's main tank, and some log only engine hours. Use the manufacturer's fuel use per hour for your set point and ambient range, multiply by logged hours, and label it an estimate. Frozen loads at minus 18 degrees C in an Indian summer burn more than chilled loads at 2 to 8 degrees C, so do not use one rate for both. If the unit runs on shore power at the depot, that electricity is grid kWh x 0.710 kg CO2 (FY 2024-25)."
       ]
     },
     {

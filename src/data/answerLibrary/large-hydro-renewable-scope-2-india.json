@@ -17,7 +17,7 @@
     {
       "h": "A hydro-heavy state does not lower location-based Scope 2",
       "p": [
-        "Location-based Scope 2 uses the average factor of the grid you draw from. In India that is the national grid factor in the CEA CO2 Baseline Database, currently 0.710 kg CO2 per kWh for FY 2024-25 in version 21.0. A factory in Himachal Pradesh or Uttarakhand uses the same factor as one in Gujarat, because the state's hydro output flows into one national grid and is already inside the average.",
+        "Location-based Scope 2 uses the average factor of the grid you draw from. In India that is the national grid factor in the CEA CO2 Baseline Database, 0.710 kg CO2 per kWh for FY 2024-25 (version 21.0) and 0.675 for FY 2025-26 (version 22.0). A factory in Himachal Pradesh or Uttarakhand uses the same factor as one in Gujarat, because the state's hydro output flows into one national grid and is already inside the average.",
         "Do not build your own state factor from the state's generation mix and report it as location-based. An auditor will ask where the factor was published."
       ]
     },
