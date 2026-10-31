@@ -49,7 +49,7 @@
     ],
     "note": "The 50:50 split is an assumption for the arithmetic; the cluster summary does not give one. Use your own bills."
   },
-  "senseible": "Senseible turns your bills and oil invoices into Scope 1 and 2 figures for a BRSR value chain request with the factor shown on each line, so the file you send a listed buyer can be traced back.",
+  "senseible": "Senseible turns your bills and oil invoices into BRSR-ready Scope 1 and 2 figures with the factor shown on each line, so the file you send a listed buyer can be traced back.",
   "links": [
     {
       "label": "BRSR reporting",
