@@ -77,7 +77,7 @@ export const PrivacyGate = () => {
       <ul className="mt-8 grid gap-3 border-t border-border pt-5 text-sm sm:grid-cols-3">
         <li className="font-medium">Bills never cross</li>
         <li className="text-muted-foreground">Totals, only after Share</li>
-        <li className="text-muted-foreground">Stop sharing any time</li>
+        <li className="text-muted-foreground">Supplier can stop any time</li>
       </ul>
     </div>
   );
