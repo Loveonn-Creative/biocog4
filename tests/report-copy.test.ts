@@ -267,3 +267,73 @@ describe('copy gate: CBAM message and data checklist (/cbam-authorised-declarant
     });
   }
 });
+
+describe('copy gate: supplier emissions file (/scope-3-supplier-evidence)', async () => {
+  const { drawSendable } = await import('../src/lib/leadMagnets/sendableFile');
+  const { supplierEmissions, supplierEmissionsFile, supplierEmissionsCsv, OTHER_FUELS } = await import('../src/lib/leadMagnets/supplierEmissionsFile');
+  const { FUEL_FACTORS, INDIA_GRID_BY_FY } = await import('../supabase/functions/_shared/emissionFactors');
+  const base = {
+    fy: 2025, from: 0, to: 11, basis: 'total' as const, kwh: 48000, diesel: 1200, other: null,
+    billsHeld: { electricity: true, diesel: false, other: false }, company: 'Shree Ganesh Castings', buyer: 'Bharat Forge', date: new Date('2026-10-30'),
+  };
+  const cases: Array<[string, any]> = [
+    ['full year, electricity and diesel', base],
+    ['typical month, part year, no names', { ...base, basis: 'month', from: 3, to: 8, company: undefined, buyer: undefined }],
+    ['FY 2026-27 uses the latest CEA year', { ...base, fy: 2026, to: 5 }],
+    ['FY 2024-25', { ...base, fy: 2024 }],
+    ['electricity only', { ...base, diesel: null }],
+    ['fuel only, all bills held', { ...base, kwh: null, billsHeld: { electricity: true, diesel: true, other: true } }],
+    ...OTHER_FUELS.map((f) => [`with ${f.name}`, { ...base, other: { fuel: f.id, unit: f.units[f.units.length - 1].id, qty: 3 } }] as [string, any]),
+  ];
+  for (const [name, input] of cases) {
+    it(name, () => {
+      captured.length = 0;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      const r = drawSendable(doc, supplierEmissionsFile(input));
+      expect(doc.getNumberOfPages()).toBe(1);
+      expect(r.fontSize).toBeGreaterThanOrEqual(8);
+      const text = captured.join(' ').replace(/\s+/g, ' ');
+      const calc = supplierEmissions(input);
+      expect(text).toContain('The sustainability and procurement team');
+      expect(text).toContain('They have not been checked by a third party.');
+      expect(text).toContain('senseible.earth/scope-3-supplier-evidence');
+      expect(text).toContain('30 October 2026');
+      for (const row of calc.rows) {
+        expect(text).toContain(Math.round(row.kg).toLocaleString('en-IN')); // figures pass through
+        expect(text).toContain(`${row.factor} kg CO2 per`);
+        expect(text).toContain(row.factorSource.split(' ').slice(0, 5).join(' '));
+      }
+      if (input.kwh !== null) {
+        const fy = input.fy >= 2025 ? INDIA_GRID_BY_FY.FY2025_26 : INDIA_GRID_BY_FY.FY2024_25;
+        expect(calc.rows[0].factor).toBe(fy.value);
+        expect(text).toContain('location-based');
+      }
+      if (input.diesel !== null) expect(calc.rows.find((x) => x.key === 'diesel')!.factor).toBe(FUEL_FACTORS.DIESEL.value);
+      if (input.company) expect(text).toContain(input.company); else expect(text).not.toContain('From:');
+      expect(text).not.toMatch(/\b(you|your|yourself)\b/i); // read by the buyer, written as "we"
+      expect(text).not.toMatch(/\b(ITR|income tax|bank statement|financial statement)/i);
+      check(`supplier emissions file: ${name}`, [...captured]);
+    });
+  }
+  it('sums: 48,000 kWh at 0.675 and 1,200 L at 2.645', () => {
+    const r = supplierEmissions(base);
+    expect(Math.round(r.scope2Kg!)).toBe(32400);
+    expect(Math.round(r.scope1Kg!)).toBe(3174);
+    const m = supplierEmissions({ ...base, basis: 'month', from: 0, to: 2 });
+    expect(Math.round(m.scope2Kg!)).toBe(97200); // a typical month times 3
+    expect(supplierEmissions({ ...base, diesel: null }).scope1Kg).toBeNull(); // not given is not zero
+    expect(supplierEmissions({ ...base, diesel: 0 }).scope1Kg).toBe(0);
+  });
+  it('CSV', () => {
+    const csv = supplierEmissionsCsv({ ...base, company: '=HYPERLINK("x")', buyer: '+cmd' });
+    expect(csv).toContain(`"'=HYPERLINK(""x"")"`); // a typed name never runs as a formula
+    const lines = csv.trim().split('\r\n');
+    expect(lines).toContain('Source,Scope,Quantity,Unit,Factor (kg CO2 per unit),Factor source,Emissions (kg CO2e),Evidence');
+    expect(lines.some((l) => l.startsWith('Grid electricity,"Scope 2, location-based",48000,kWh,0.675,'))).toBe(true);
+    expect(lines).toContain('Scope 1 and 2 (kg CO2e),35574');
+    for (const l of lines) expect(l).not.toMatch(/(^|,)[=+\-@]/);
+    const plain = supplierEmissionsCsv(base);
+    expect(plain).not.toMatch(/\b(you|your)\b/i);
+    check('supplier emissions CSV', plain.split('\r\n'));
+  });
+});

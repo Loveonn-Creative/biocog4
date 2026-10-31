@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
 import { getFunctionErrorMessage } from "@/lib/functionErrors";
 import { SupplierNetwork } from "@/components/lead/SupplierNetwork";
+import { SupplierEmissionsTool, SupplierToolLink } from "@/components/lead/SupplierEmissionsTool";
 import { Choice, CopyButton, LeadHeader, Scribble, StickyCta } from "@/components/lead/LeadKit";
 import { fmtInt, leadEvents } from "@/components/lead/leadEvents";
 import { CountUp, HashScramble, useTypewriter } from "@/components/lead/LeadMotion";
@@ -115,6 +116,9 @@ const SupplierEvidence = () => {
               <p className="mt-5 max-w-[36rem] text-lg leading-relaxed text-muted-foreground">
                 When assurance or a customer asks where a Category 1 figure came from, the spend-based estimate is the line that gets challenged. See what you can defend today, and what it takes to close the gap before you report.
               </p>
+              <a href="#supplier-file" onClick={() => leadEvents.cta(PAGE, "to_supplier_file")} className="mt-3 inline-block text-[15px] font-medium text-primary underline-offset-4 hover:underline">
+                Are you the supplier? Make the file your buyer asked for →
+              </a>
 
               <div className="mt-8 rounded-3xl border border-border bg-card p-5 shadow-[0_30px_60px_-45px_hsl(var(--foreground)/.4)] sm:p-6" onPointerDown={touch} onKeyDown={touch}>
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -249,6 +253,19 @@ const SupplierEvidence = () => {
           </div>
         </section>
 
+        {/* 5a. The supplier's side: their bills become the one page their buyer asked for */}
+        <section id="supplier-file" className="scroll-mt-6 border-t border-border">
+          <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+            <h2 className="max-w-3xl text-[2rem] font-semibold leading-[1.1] tracking-tight [text-wrap:balance] md:text-[2.75rem]">Your buyer asked for your emissions. Send one page today.</h2>
+            <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">Type what your bills say. You get Scope 1 and Scope 2 for the period, with the published source behind every number, addressed to your buyer. No sign-up.</p>
+            <div className="mt-10"><SupplierEmissionsTool /></div>
+            <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
+              <p className="max-w-xl text-[15px] text-muted-foreground">Collecting from suppliers? Send them this link. Every supplier sends you the same one-page file, in the same units.</p>
+              <SupplierToolLink />
+            </div>
+          </div>
+        </section>
+
         {/* 5b. Data protection, in the order a security review asks */}
         <section className="border-t border-border bg-secondary/40">
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
@@ -352,7 +369,7 @@ const SupplierEvidence = () => {
       </main>
 
       <Footer />
-      <StickyCta label="Get my supplier evidence plan" onClick={toForm} hideWhenVisible="plan" />
+      <StickyCta label="Get my supplier evidence plan" onClick={toForm} hideWhenVisible={["plan", "supplier-file"]} />
     </div>
   );
 };
