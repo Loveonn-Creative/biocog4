@@ -2,7 +2,7 @@
   "slug": "pune-die-casting-melting-energy-by-furnace",
   "q": "How much furnace oil, gas or power does it take to melt a tonne of aluminium in a die-casting unit?",
   "title": "Melting aluminium: oil, gas or kWh a tonne",
-  "short": "It depends on the furnace more than the fuel. In Pune, TERI found skalner furnaces use 90 to 110 litres of furnace oil or about 100 scm of gas per tonne melted, oil or gas crucibles 150 to 220 litres, and electric crucibles 500 to 550 kWh plus 50 to 100 kWh for holding.",
+  "short": "The furnace decides it more than the fuel. In Pune, TERI found skalner furnaces use 90 to 110 litres of furnace oil or about 100 scm of gas per tonne melted, oil or gas crucibles 150 to 220 litres, and electric crucibles 500 to 550 kWh plus 50 to 100 kWh for holding.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Melting and maintenance heads in aluminium die casting units choosing or tuning a furnace",
@@ -25,7 +25,7 @@
     {
       "h": "A typical skalner unit, whole plant",
       "p": [
-        "TERI's sample: 2,12,868 litres of furnace oil and 27,79,310 kWh for 2,391 t a year, 0.183 toe a tonne. On today's factors that is about 632 t CO2 from oil and 1,876 t from power, roughly 1.05 t CO2 per tonne. Melting is the visible fuel; holding, PDC machines and machining make power the larger share."
+        "TERI's sample: 2,12,868 litres of furnace oil and 27,79,310 kWh for 2,391 t a year, 0.183 toe a tonne. On FY 2025-26 factors that is about 632 t CO2 from oil and 1,876 t from power, roughly 1.05 t CO2 per tonne. Melting is the visible fuel; holding, PDC machines and machining make power the larger share."
       ]
     },
     {

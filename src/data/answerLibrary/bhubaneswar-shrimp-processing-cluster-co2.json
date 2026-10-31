@@ -2,7 +2,7 @@
   "slug": "bhubaneswar-shrimp-processing-cluster-co2",
   "q": "What is the carbon footprint of Bhubaneswar's shrimp export processing cluster?",
   "title": "Bhubaneswar shrimp processors: CO2",
-  "short": "About 36,000 t CO2 a year on today's factors, nearly all from grid power. TERI's 2015-16 profile counts 16 year-round plants making about 33,600 t of seafood, over 90% shrimp, using 50.1 million kWh and 890 kL of diesel: roughly 1.1 t CO2 per tonne processed.",
+  "short": "About 36,000 t CO2 a year on FY 2025-26 factors (estimate), nearly all from grid power. TERI's 2015-16 profile counts 16 year-round plants making about 33,600 t of seafood, over 90% shrimp, using 50.1 million kWh and 890 kL of diesel: roughly 1.1 t CO2 per tonne processed.",
   "topic": "product",
   "intent": "explain",
   "audience": "Shrimp processors and exporters in Patia, Mancheswar and Paradip answering buyer questionnaires",
@@ -33,7 +33,7 @@
     }
   ],
   "example": {
-    "title": "Cluster and plant figures on today's factors (estimate)",
+    "title": "Cluster and plant figures on FY 2025-26 factors (estimate)",
     "lines": [
       "Cluster grid: 50.1 million kWh x 0.675 kg = 33,818 t CO2",
       "Cluster diesel: 890 kL x 2.645 t = 2,354 t CO2",

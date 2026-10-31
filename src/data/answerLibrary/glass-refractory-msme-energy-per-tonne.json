@@ -2,7 +2,7 @@
   "slug": "glass-refractory-msme-energy-per-tonne",
   "q": "What is the energy use per tonne for MSME glass and refractory units by cluster?",
   "title": "Glass and refractory units: energy per tonne",
-  "short": "It depends mostly on what you make. BEE's energy mapping found 10.4 GJ per tonne across Firozabad glass, 25.3 GJ for Ambala's blown glass and 1.6 GJ for Jaipur's toughening, with Chirkunda refractories at 5.7 GJ and East and West Godavari at 6.7 GJ.",
+  "short": "Anywhere from 1.6 GJ to 25 GJ a tonne, set by what you make. BEE's study found 10.4 GJ per tonne across Firozabad glass, 25.3 GJ for Ambala's blown glass and 1.6 GJ for Jaipur's toughening, with Chirkunda refractories at 5.7 GJ and East and West Godavari at 6.7 GJ.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Glass, bangle, scientific glassware and refractory makers comparing their energy per tonne with their cluster",
@@ -31,7 +31,7 @@
     {
       "h": "What the study recommends",
       "p": [
-        "Glass used 276,777 toe and refractories 105,446 toe. The study lists automatic combustion control, better furnace and kiln insulation, waste heat recovery and switching from solid fuel to gas, then pot arching for glass, downdraft to tunnel kilns for refractories, electric furnaces, kilns and lehrs, and rooftop solar. It also proposes common facilities for bangle baking and refractory sintering."
+        "The study puts the glass sector's energy at 276,777 toe and refractories' at 105,446 toe. It lists automatic combustion control, better furnace and kiln insulation, waste heat recovery and switching from solid fuel to gas, then pot arching for glass, downdraft to tunnel kilns for refractories, electric furnaces, kilns and lehrs, and rooftop solar. It also proposes common facilities for bangle baking and refractory sintering."
       ]
     },
     {
@@ -43,14 +43,14 @@
     }
   ],
   "example": {
-    "title": "A Firozabad container glass unit, 20,000 t a year",
+    "title": "A Firozabad container glass unit, 20,000 t a year (estimate)",
     "lines": [
       "Gas: 4,000,000 scm x 0.0398 GJ (9,500 kcal per scm on the bill) = 159,200 GJ",
       "Power: 6,000,000 kWh x 0.0036 GJ = 21,600 GJ",
       "Energy per tonne: 180,800 / 20,000 = 9.0 GJ, about 17% above the 7.7 GJ container average",
       "Energy CO2: 4,000,000 x 2.05 = 8,200 t; 6,000,000 x 0.675 = 4,050 t; 0.61 t per tonne before batch CO2"
     ],
-    "note": "An example unit, not a measured one: use your own bills. Gas and grid factors are our estimates, the grid at CEA's FY 2025-26 figure."
+    "note": "An example unit, not a measured one: use your own bills. CO2 at 2.05 kg per scm of gas and CEA's FY 2025-26 grid factor."
   },
   "senseible": "Senseible reads your gas and electricity bills into yearly energy and CO2 records, each linked to its bill, which you divide by tonnes to compare with these cluster figures.",
   "links": [

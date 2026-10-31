@@ -51,7 +51,7 @@
     ],
     "note": "From TERI's May 2024 Giridih profile. The cluster average adds stages that feed each other, so use your own unit type."
   },
-  "senseible": "Senseible reads coal invoices and DVC bills into monthly records you can divide by tonnes; coke needs your supplier's factor. The CBAM pages show what a DRI or billet figure means for an EU buyer.",
+  "senseible": "Senseible reads coal invoices and DVC bills into monthly records you can divide by tonnes; it has no built-in coke factor. The CBAM pages show what a DRI or billet figure means for an EU buyer.",
   "links": [
     {
       "label": "CBAM for exporters",

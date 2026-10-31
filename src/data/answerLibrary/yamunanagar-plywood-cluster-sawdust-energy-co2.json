@@ -2,7 +2,7 @@
   "slug": "yamunanagar-plywood-cluster-sawdust-energy-co2",
   "q": "What is the carbon footprint of the Yamunanagar plywood cluster if sawdust is the main fuel?",
   "title": "Yamunanagar plywood: sawdust, power and CO2",
-  "short": "Grid power is the fossil line: 71.2 million kWh a year, about 48,000 t CO2 today. TERI's profile of 696 units also counts 414,600 t of sawdust, about 96% of the cluster's energy. That CO2 is biogenic and goes on a separate line, not into your total.",
+  "short": "About 48,000 t of fossil CO2 a year, all from 71.2 million kWh of grid power at the FY 2025-26 factor (estimate). TERI's profile of 696 units also counts 414,600 t of sawdust, about 96% of the energy; that CO2 is biogenic and goes on its own line.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Plywood, peeling and saw mill units in Yamunanagar, Haryana",
@@ -16,10 +16,11 @@
       ]
     },
     {
-      "h": "A typical unit in a year",
+      "h": "Where the cluster's 71.2 million kWh go",
       "ul": [
-        "Plywood: 1,71,160 kWh and 1,382 t of sawdust (457 toe). About 97% of its energy is heat.",
-        "Peeling: 50,281 kWh. Saw mill: 48,384 kWh.",
+        "Plywood units: 300 x 171,160 kWh = 51.3 million kWh, about 72%.",
+        "Peeling units: 356 x 50,281 kWh = 17.9 million kWh, about 25%.",
+        "Saw mills: 40 x 48,384 kWh = 1.9 million kWh, about 3%.",
         "Boilers are mostly 3 tph, hand-fired, about 55% efficient, without economisers or condensate recovery."
       ]
     },
@@ -28,21 +29,13 @@
       "p": [
         "The profile prints 6,976 t CO2 for 71.2 million kWh. That is under 0.1 kg per kWh, far below any Indian grid factor, so do not reuse it. Multiply your own kWh by 0.675."
       ]
-    },
-    {
-      "h": "Cheap savings TERI costed",
-      "ul": [
-        "Combustion air control: 5% of sawdust, 69 t a year, about Rs 1.4 lakh saved for Rs 0.7 lakh, six-month payback.",
-        "Pressure power pumps for condensate: about 6% of sawdust.",
-        "Sawdust-fired hot air generator for drying: 20% less sawdust and 15% less power, about Rs 8.2 lakh a year."
-      ]
     }
   ],
   "example": {
     "title": "Cluster and unit figures (estimate)",
     "lines": [
       "Grid: 71.2 million kWh x 0.675 kg = 48,060 t CO2",
-      "Typical plywood unit: 1,71,160 kWh x 0.675 kg = 116 t CO2 a year",
+      "Plywood units: 51.3 million kWh x 0.675 = 34,660 t; peeling units 12,080 t; saw mills 1,310 t",
       "Sawdust: 1,32,672 toe = 5,555 TJ x 112 t CO2 per TJ = about 622,000 t biogenic CO2",
       "Sawdust methane and nitrous oxide: 5,555 TJ x (30 kg x 27 + 4 kg x 273) = about 10,600 t CO2e, Scope 1"
     ],
@@ -55,11 +48,15 @@
       "to": "/msme-carbon-number"
     },
     {
-      "label": "Counting resin in Scope 3",
+      "label": "One plywood unit's sawdust and power",
+      "to": "/answers/yamunanagar-plywood-unit-sawdust-and-power"
+    },
+    {
+      "label": "Yamunanagar resin and Scope 3",
       "to": "/answers/yamunanagar-plywood-resin-scope-3"
     },
     {
-      "label": "Plywood footprint per cubic metre",
+      "label": "Plywood per cubic metre",
       "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
     }
   ],

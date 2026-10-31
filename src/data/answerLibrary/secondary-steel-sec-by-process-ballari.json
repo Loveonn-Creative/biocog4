@@ -51,7 +51,7 @@
     ],
     "note": "Ranges from TERI's 2025 Ballari study; factors India BUR-2 coal, IPCC 2006 coke and CEA FY 2025-26. Your own logs replace every number here."
   },
-  "senseible": "Senseible reads coal invoices and power bills into monthly records you can divide by tonnes made; coke has no built-in factor, so it needs your supplier's test figure. The CBAM pages show the direct-emissions view.",
+  "senseible": "Senseible reads coal invoices and power bills into monthly records you can divide by tonnes made; it has no built-in coke factor. The CBAM pages show the direct-emissions view.",
   "links": [
     {
       "label": "CBAM for exporters",

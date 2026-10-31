@@ -41,7 +41,7 @@
     ],
     "note": "Unit kWh, unit counts and output from TERI's Rajkot plastics profile; tonnes per unit are cluster output divided by units. Grid factor CEA FY 2025-26; oven fuel at IPCC 2006 factors."
   },
-  "senseible": "Senseible keeps your per-line electricity and fuel as the evidence behind each figure you send, in a Scope 3 supplier trail a buyer can check line by line.",
+  "senseible": "Senseible keeps your electricity and fuel bills as the evidence behind each figure you send, in a Scope 3 supplier trail a buyer can check line by line.",
   "links": [
     {
       "label": "Scope 3 supplier evidence",

@@ -43,11 +43,11 @@
     "title": "The exported share in tonnes of CO2 (estimate)",
     "lines": [
       "Exports: 20% x 4,00,000 t = about 80,000 t of castings a year",
-      "Cluster energy CO2: about 0.94 t per tonne of castings on today's factors",
-      "Energy CO2 riding on exports: 80,000 x 0.94 = about 75,000 t a year",
+      "Cluster energy CO2: about 0.95 t per tonne on FY 2025-26 factors",
+      "Energy CO2 riding on exports: 80,000 x 0.95 = about 76,000 t a year",
       "The alloy itself adds more, and differs by supplier"
     ],
-    "note": "Output and export share from TERI's profile and SAMEEEKSHA's summary (2015-16 data); CO2 per tonne from the cluster's fuel and power at CEA FY 2025-26 and IPCC 2006 factors."
+    "note": "Output and export share from TERI's profile and SAMEEEKSHA's summary (2015-16 data). CO2 per tonne is the cluster's fuel and power (about 377,300 t at CEA FY 2025-26 and IPCC 2006 factors) over its 3,95,500 t capacity, as on our energy mix page."
   },
   "senseible": "For a casting under a covered code, Senseible's CBAM cost calculator shows what your figure means for the importer from 2026 to 2034, and your fuel invoices and power bills read into monthly records give the numbers behind it.",
   "links": [

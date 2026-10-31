@@ -8,20 +8,17 @@
   "audience": "Parboiled rice mills in Bargarh district, Odisha, milling paddy for the state PDS",
   "sections": [
     {
-      "h": "The mills",
+      "h": "The cluster",
       "ul": [
-        "67 small mills at 2 tph: 3,43,855 t of rice a year.",
-        "19 medium mills at 4 tph: 1,95,022 t. 9 large mills at 10 tph: 2,30,947 t.",
-        "About 7.7 lakh t of rice from about 1.2 million t of paddy, all parboiled, mostly for the state's public distribution system.",
-        "Husk is about 23% of paddy; about 90% is burnt in the mill's own boiler and the rest sold."
+        "95 mills make about 7.7 lakh t of parboiled rice from about 1.2 million t of paddy, mostly for the state's public distribution system.",
+        "Husk is about 23% of paddy; about 90% is burnt in the mills' own boilers and the rest sold.",
+        "In a year: 241,445 t of husk (72,433 toe) and 50 million kWh (4,303 toe), 76,737 toe in all."
       ]
     },
     {
-      "h": "A typical mill in a year",
-      "ul": [
-        "2 tph: 1,610 t of husk and 3,33,590 kWh.",
-        "4 tph: 3,219 t of husk and 6,67,181 kWh.",
-        "10 tph: 8,048 t of husk and 16,67,952 kWh. Three such mills run 2 MW of cogeneration for their own use."
+      "h": "6% of the energy, half the bill",
+      "p": [
+        "Grid power is only 6% of the cluster's energy, yet TERI puts its cost at Rs 280 million against Rs 290 million for the husk. It is also the only fossil CO2 in the mills, so the kWh line carries both the money and the carbon number."
       ]
     },
     {
@@ -43,8 +40,7 @@
     "title": "Cluster and per tonne (estimate)",
     "lines": [
       "Grid: 50 million kWh x 0.675 kg = 33,750 t CO2",
-      "Per tonne of rice: 50 million kWh / 7.70 lakh t = 65 kWh = 44 kg CO2",
-      "Small mill: 3,33,590 kWh x 0.675 kg = 225 t CO2 a year",
+      "Per tonne of rice: 50 million kWh / 7.70 lakh t = 65 kWh = 44 kg CO2 (TERI's text says 43 kWh, but its own totals give 65)",
       "Husk: 72,433 toe = 3,033 TJ x 100 t CO2 per TJ = about 303,000 t biogenic CO2",
       "Husk methane and nitrous oxide: 3,033 TJ x (30 kg x 27 + 4 kg x 273) = about 5,800 t CO2e, Scope 1"
     ],
@@ -55,6 +51,10 @@
     {
       "label": "Your MSME carbon number",
       "to": "/msme-carbon-number"
+    },
+    {
+      "label": "One mill's husk and power by size",
+      "to": "/answers/bargarh-rice-mill-energy-by-capacity"
     },
     {
       "label": "Economiser: husk saved",

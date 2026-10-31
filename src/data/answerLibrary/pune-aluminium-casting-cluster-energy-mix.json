@@ -2,7 +2,7 @@
   "slug": "pune-aluminium-casting-cluster-energy-mix",
   "q": "What is the energy and fuel mix of the Pune aluminium casting cluster?",
   "title": "Pune aluminium casting: the energy mix",
-  "short": "Furnace oil and grid power, with little else. TERI's profile of Pune's 50 or so casting units counts 44,153 kL of furnace oil and 350 million kWh a year, about 77,500 toe in all: 61% thermal for melting, 39% electricity. On today's factors that is roughly 377,000 t CO2.",
+  "short": "Furnace oil and grid power, with little else. TERI's profile of Pune's 50 or so casting units counts 44,153 kL of furnace oil and 350 million kWh a year, about 77,500 toe in all: 61% thermal for melting, 39% electricity. On FY 2025-26 factors that is roughly 377,000 t CO2.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Aluminium die casting units in Pimpri-Chinchwad, Bhosari, Chakan and nearby estates around Pune",
@@ -39,7 +39,7 @@
     }
   ],
   "example": {
-    "title": "Cluster CO2 on today's factors (estimate)",
+    "title": "Cluster CO2 on FY 2025-26 factors (estimate)",
     "lines": [
       "Electricity: 350 million kWh x 0.675 kg = 236,250 t CO2",
       "Furnace oil: 44,153 kL x 2.97 t = 131,134 t CO2",

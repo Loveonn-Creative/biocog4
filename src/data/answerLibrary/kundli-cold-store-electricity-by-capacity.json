@@ -2,7 +2,7 @@
   "slug": "kundli-cold-store-electricity-by-capacity",
   "q": "How much electricity and CO2 does a cold store of under 2,500, 2,500-5,000 or over 5,000 tonnes use a year?",
   "title": "Cold store power by size: Kundli figures",
-  "short": "TERI's Kundli figures: about 220,500 kWh a year for a store under 2,500 t, 488,100 kWh for 2,500 to 5,000 t, and 855,700 kWh above 5,000 t. That is 149, 329 and 578 t CO2 on today's grid factor, and about 132 kWh per tonne of capacity in every band.",
+  "short": "TERI's Kundli figures: about 220,500 kWh a year for a store under 2,500 t, 488,100 kWh for 2,500 to 5,000 t, and 855,700 kWh above 5,000 t. That is 149, 329 and 578 t CO2 on the FY 2025-26 grid factor, and about 132 kWh per tonne of capacity in every band.",
   "topic": "product",
   "intent": "check",
   "audience": "Cold store owners, and traders or food brands who rent cold store space and must report it",
@@ -30,9 +30,9 @@
     }
   ],
   "example": {
-    "title": "Your share of a 3,000 t store (worked example)",
+    "title": "Your share of a 3,000 t store (estimate)",
     "lines": [
-      "Store's power: 3,000 t x 132 kWh = about 394,800 kWh = 266 t CO2 a year",
+      "Store's power: 3,000 t x 131.6 kWh = about 394,800 kWh = 266 t CO2 a year",
       "Store's occupancy: 2,400 t on average x 12 months = 28,800 tonne-months",
       "Your potatoes: 300 t x 6 months = 1,800 tonne-months, 6.25% of the total",
       "Your share: 266 t x 6.25% = about 16.7 t CO2"

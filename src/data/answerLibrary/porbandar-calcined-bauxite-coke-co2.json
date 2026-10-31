@@ -2,7 +2,7 @@
   "slug": "porbandar-calcined-bauxite-coke-co2",
   "q": "What is the carbon footprint of Porbandar's calcined bauxite and minerals units?",
   "title": "Porbandar calcined bauxite: coke and CO2",
-  "short": "Coke is about 98% of the energy, and calcined bauxite burns most of it. TERI counted 31,720 t of coke and 5.3 million kWh across Porbandar's 60 mineral units: 21,070 toe and about 97,522 t CO2 a year. The 20 calcined bauxite units use 16,884 toe, about 80%.",
+  "short": "Coke is about 98% of the energy, and calcined bauxite burns most of it. TERI counted 31,720 t of coke and 5.3 million kWh across Porbandar's 60 mineral units: 21,070 toe and 97,522 t CO2 a year. The 20 calcined bauxite units use 16,884 toe, about 80%.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Calcined bauxite, emery abrasive and chalk powder units in Porbandar and GIDC Dharampur, Gujarat",
@@ -12,7 +12,7 @@
       "ul": [
         "Chalk powder: 25 units, 90,000 t a year, electricity only, about 4.7 toe per unit.",
         "Emery abrasives: 15 units, 21,600 t, about 271 toe per unit: 265 toe of coke and 70,416 kWh.",
-        "Calcined bauxite: 20 units, 128,000 t, about 884 toe per unit: 832 toe of coke and 141,944 kWh.",
+        "Calcined bauxite: 20 units, 128,000 t, about 844 toe per unit: 832 toe of coke and 141,944 kWh.",
         "Calcined bauxite units sit on HT connections of 200 kVA or more; most chalk units are LT at about 100 kVA."
       ]
     },
@@ -45,20 +45,38 @@
       "Coke CO2: 1,280 t x 28.2 GJ x 107 kg CO2 per GJ = about 3,860 t",
       "Electricity: 141,944 kWh x 0.675 kg = 96 t",
       "Output: 128,000 t / 20 units = 6,400 t, so about 0.62 t CO2 per tonne",
-      "Cluster: 31,720 t coke x 3.02 = 95,700 t, plus 5.3 million kWh x 0.675 = 3,580 t"
+      "Cluster: 31,720 t coke x 3.02 = 95,800 t, plus 5.3 million kWh x 0.675 = 3,580 t"
     ],
     "note": "Fuel and output from TERI's Porbandar profile. Coke uses the IPCC 2006 default for coke oven coke; your supplier's carbon test may differ. Electricity uses the CEA factor for FY 2025-26."
   },
-  "senseible": "Senseible reads your power bills into a monthly record with CO2 at the CEA grid factor and keeps your coke invoices with them, dated and fingerprinted, so a refractory buyer can trace your figure to the documents.",
+  "senseible": "Senseible reads your power bills into a monthly record with CO2 at the CEA grid factor, each bill dated and fingerprinted, so a refractory buyer can trace your electricity line to the documents. It has no built-in coke factor.",
   "links": [
-    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
-    { "label": "Refractory brick CO2 per tonne", "to": "/answers/refractory-brick-carbon-footprint-per-tonne" },
-    { "label": "Wankaner refractories on petcoke", "to": "/answers/wankaner-refractory-tunnel-kiln-petcoke-carbon" }
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Refractory brick CO2 per tonne",
+      "to": "/answers/refractory-brick-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Wankaner refractories on petcoke",
+      "to": "/answers/wankaner-refractory-tunnel-kiln-petcoke-carbon"
+    }
   ],
   "sources": [
-    { "label": "TERI, Cluster profile: Porbandar mixed minerals processing industries (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/Porbandar-Mixed-Minerals-Industries-Gujarat.pdf" },
-    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+    {
+      "label": "TERI, Cluster profile: Porbandar mixed minerals processing industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Porbandar-Mixed-Minerals-Industries-Gujarat.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
   ],
   "reviewed": "2026-10-31"
 }

@@ -2,7 +2,7 @@
   "slug": "balasore-pipe-fittings-units-energy-share",
   "q": "Do pipe and fittings makers in Balasore use most of the cluster's energy?",
   "title": "Balasore plastics: who uses the energy",
-  "short": "Yes. Six pipe and fittings units use 1,755 of the cluster's 2,860 toe a year, over 60%, because they make 39,000 of its 62,600 t. Per tonne they are no hungrier than sack or household makers, about 0.045 toe each. Electricity is 84% of the cluster's energy.",
+  "short": "Over 60% of it, but only because they make most of the tonnes. Six pipe and fittings units use 1,755 of the cluster's 2,860 toe a year for 39,000 of its 62,600 t. Per tonne they are no hungrier than sack or household makers, about 0.045 toe each.",
   "topic": "product",
   "intent": "explain",
   "audience": "HDPE and PVC pipe, woven sack, film and moulded goods makers in Balasore, Odisha",
@@ -13,8 +13,7 @@
         "Pipes and fittings: 6 units, 39,000 t, 1,755 toe.",
         "Poly bags and sacks: 13 units, 10,500 t, 450 toe.",
         "Household items: 4 units, 4,800 t, 220 toe.",
-        "Others: 16 units, 8,300 t, 435 toe.",
-        "Fuels: 27.8 million kWh of grid power, 452 kL of diesel for generators, 36 t of LPG."
+        "Others: 16 units, 8,300 t, 435 toe."
       ]
     },
     {
@@ -43,25 +42,43 @@
     }
   ],
   "example": {
-    "title": "Cluster and one tonne of pipe (estimate)",
+    "title": "One tonne of pipe (estimate)",
     "lines": [
-      "Electricity: 27.8 million kWh x 0.675 kg = 18,765 t CO2",
-      "Diesel: 452 kL x 2.645 t = 1,196 t",
-      "LPG: 36 t x 2.98 t = 107 t",
-      "Total about 20,070 t on 62,600 t = about 0.32 t CO2 per tonne",
-      "Pipe units at the cluster's fuel mix: 61% of energy, about 12,300 t CO2 on 39,000 t = about 0.32 t per tonne"
+      "Pipe units' share: 1,755 / 2,860 toe = 61% of the cluster's energy",
+      "At the cluster's fuel mix: 61% x 20,070 t CO2 = about 12,300 t",
+      "Per tonne: 12,300 t / 39,000 t = about 0.32 t CO2",
+      "Sacks: 450 toe = 16% = about 3,160 t on 10,500 t = 0.30 t per tonne"
     ],
-    "note": "Energy and output from TERI's Balasore plastics profile. The profile does not split fuels by product, so the pipe line assumes the cluster mix. Factors: CEA FY 2025-26 grid factor and IPCC 2006 defaults."
+    "note": "Energy and output from TERI's Balasore plastics profile. The profile does not split fuels by product, so these lines assume the cluster's mix (20,070 t CO2 at the CEA FY 2025-26 grid factor and IPCC 2006 fuel defaults)."
   },
   "senseible": "Senseible reads power bills, generator diesel slips and LPG invoices into a monthly record and keeps a supplier evidence trail, so the per tonne figure you send a buyer traces to your own bills.",
   "links": [
-    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" },
-    { "label": "Plastic moulding electricity per kg", "to": "/answers/daman-plastic-moulding-unit-electricity-per-kg" }
+    {
+      "label": "Supplier evidence for buyers",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Balasore: grid share and CO2",
+      "to": "/answers/balasore-plastic-cluster-electricity-share-carbon"
+    },
+    {
+      "label": "Plastic moulding per kg",
+      "to": "/answers/daman-plastic-moulding-unit-electricity-per-kg"
+    }
   ],
   "sources": [
-    { "label": "TERI, Cluster profile: Balasore plastic industries (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/Balasore_Plastics_Orissa.pdf" },
-    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
-    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+    {
+      "label": "TERI, Cluster profile: Balasore plastic industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Balasore_Plastics_Orissa.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
   ],
   "reviewed": "2026-10-31"
 }

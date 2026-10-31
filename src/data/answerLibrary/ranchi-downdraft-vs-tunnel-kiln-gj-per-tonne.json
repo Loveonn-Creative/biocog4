@@ -39,7 +39,7 @@
     {
       "h": "Tunnel kiln owners: three checks",
       "ul": [
-        "Lighter kiln cars: cutting dead weight by about 30% saves about 3% of heat input, 64 toe a year on a typical kiln.",
+        "Lighter kiln cars: cutting dead weight by about 30% saves about 3% of heat input, 64 toe a year across the cluster's three tunnel kilns.",
         "Fibre blanket on hot firing zone surfaces.",
         "Run full: surface and car losses stay the same when the kiln is half loaded, so energy per tonne rises."
       ]
@@ -54,17 +54,38 @@
     ],
     "note": "Fuel and output from TERI's Ranchi profile. Petcoke uses the IPCC 2006 default (32.5 GJ per tonne, 97.5 kg CO2 per GJ) and coal India's BUR-2 factor. Petcoke carries more CO2 per tonne of fuel; the tunnel kiln wins because it needs far less fuel per tonne fired."
   },
-  "senseible": "The green loan check shows what a lender asks before funding a kiln change. Senseible reads coal and petcoke invoices and power bills into monthly records, so your before and after per tonne comes from your own documents.",
+  "senseible": "The green loan check shows what a lender asks before funding a kiln change. Senseible reads coal invoices and power bills into monthly records, so your before and after per tonne traces to your own documents; it has no built-in petcoke factor.",
   "links": [
-    { "label": "Green loan check", "to": "/green-loan-check" },
-    { "label": "Ranchi cluster fuel and CO2", "to": "/answers/ranchi-refractory-cluster-coal-petcoke-co2" },
-    { "label": "Refractory brick CO2 per tonne", "to": "/answers/refractory-brick-carbon-footprint-per-tonne" },
-    { "label": "Petcoke emission factor in India", "to": "/answers/petcoke-emission-factor-india" }
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Ranchi cluster fuel and CO2",
+      "to": "/answers/ranchi-refractory-cluster-coal-petcoke-co2"
+    },
+    {
+      "label": "Refractory brick CO2 per tonne",
+      "to": "/answers/refractory-brick-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Petcoke emission factor in India",
+      "to": "/answers/petcoke-emission-factor-india"
+    }
   ],
   "sources": [
-    { "label": "TERI, Cluster profile: Ranchi refractory industries (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/ranchi-refractory-industries-Jharkhand.pdf" },
-    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+    {
+      "label": "TERI, Cluster profile: Ranchi refractory industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/ranchi-refractory-industries-Jharkhand.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
   ],
   "reviewed": "2026-10-31"
 }

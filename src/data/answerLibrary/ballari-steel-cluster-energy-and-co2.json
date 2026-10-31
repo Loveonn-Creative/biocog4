@@ -48,7 +48,7 @@
     ],
     "note": "Production and CO2 from TERI's 2025 Ballari study, which excludes JSW's integrated plant."
   },
-  "senseible": "Senseible reads coal invoices (1.76 t CO2 a tonne Indian, 2.44 imported) and power bills into monthly records; electricity stays in the record for buyers' footprints even though CBAM leaves it out for steel. Coke needs your supplier's factor.",
+  "senseible": "Senseible reads coal invoices (1.76 t CO2 a tonne Indian, 2.44 imported) and power bills into monthly records; electricity stays in the record for buyers' footprints even though CBAM leaves it out for steel. It has no built-in coke factor.",
   "links": [
     {
       "label": "CBAM for exporters",

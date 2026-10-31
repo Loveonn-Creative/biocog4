@@ -52,18 +52,42 @@
     ],
     "note": "Energy and output from TERI's Red Hills and Villupuram profiles (2014-15). Biogenic CO2 uses IPCC 2006 defaults for solid biomass and for wood; the grid factor is CEA's for FY 2025-26."
   },
-  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 at the CEA factor and keeps firewood and husk bills in the same record, so the fossil figure a buyer asks for traces to your documents.",
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 at the CEA factor, so the fossil figure a rice buyer asks for traces to your documents.",
   "links": [
-    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
-    { "label": "Parboiled vs hulling mill energy", "to": "/answers/red-hills-parboiled-vs-hulling-mill-energy" },
-    { "label": "Villupuram firewood dryer swap", "to": "/answers/villupuram-rice-mill-firewood-dryer-gasifier" },
-    { "label": "Biomass boilers still have Scope 1", "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1" }
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Parboiled vs hulling mill energy",
+      "to": "/answers/red-hills-parboiled-vs-hulling-mill-energy"
+    },
+    {
+      "label": "Villupuram firewood dryer swap",
+      "to": "/answers/villupuram-rice-mill-firewood-dryer-gasifier"
+    },
+    {
+      "label": "Biomass boilers still have Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
   ],
   "sources": [
-    { "label": "TERI, Energy profile: Red Hills rice mill cluster (SAMEEEKSHA, 2014-15 data)", "url": "https://sameeeksha.org/pdf/clusterprofile/RedHills_RiceMills_TamilNadu.pdf" },
-    { "label": "TERI, Cluster profile: Villupuram rice mills (SAMEEEKSHA, 2014-15 data)", "url": "https://sameeeksha.org/pdf/clusterprofile/Villupuram_Rice_Mills_Tamil%20Nadu.pdf" },
-    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
-    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+    {
+      "label": "TERI, Energy profile: Red Hills rice mill cluster (SAMEEEKSHA, 2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/RedHills_RiceMills_TamilNadu.pdf"
+    },
+    {
+      "label": "TERI, Cluster profile: Villupuram rice mills (SAMEEEKSHA, 2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Villupuram_Rice_Mills_Tamil%20Nadu.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
   ],
   "reviewed": "2026-10-31"
 }

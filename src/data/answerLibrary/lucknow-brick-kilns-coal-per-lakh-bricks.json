@@ -2,7 +2,7 @@
   "slug": "lucknow-brick-kilns-coal-per-lakh-bricks",
   "q": "How much coal does a Lucknow brick kiln burn per lakh bricks, and what is the cluster's CO2?",
   "title": "Lucknow brick kilns: coal per lakh bricks",
-  "short": "About 16 to 17 t. TERI's Lucknow profile puts a typical Bull's trench kiln at 27,000 bricks a day for 180 days: 48.6 lakh bricks on 826 t of coal, roughly 1,450 t CO2 a season. The cluster's 230 or so kilns burn about 186,676 t of coal a year.",
+  "short": "About 17 t. TERI's Lucknow profile puts a typical Bull's trench kiln at 27,000 bricks a day for 180 days: 48.6 lakh bricks on 826 t of coal, roughly 1,450 t CO2 a season. The cluster's 230 or so kilns burn about 186,676 t of coal a year.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Brick kiln owners around Lucknow and the Lucknow Brick Kiln Association",
@@ -26,10 +26,9 @@
     {
       "h": "Two 10% savings TERI costed",
       "ul": [
-        "Feeding: crush coal to about 10 mm, feed small amounts every 20 minutes instead of every 45 to 60, use 750 to 1,000 g spoons, one fireman feeding, three or more lines at a time.",
-        "Sealing: close wickets with two-brick walls plastered both sides, close side flues, keep about 7 inches of ash on top of the setting.",
-        "Zigzag firing: a longer fire path and turbulent air through the stacking, about 10% less coal.",
-        "Each of these is worth about 18,678 t of coal a year across the cluster."
+        "Kiln practice, about 10%: crush coal to about 10 mm, feed small amounts every 20 minutes instead of every 45 to 60, use 750 to 1,000 g spoons, one fireman feeding, three or more lines at a time; seal wickets with two-brick walls plastered both sides, close side flues and keep about 7 inches of ash on top of the setting.",
+        "Zigzag firing, about 10%: a longer fire path and turbulent air through the stacking.",
+        "Each is worth about 18,678 t of coal a year across the cluster, by TERI's count."
       ]
     },
     {
@@ -55,14 +54,32 @@
   },
   "senseible": "Senseible reads coal invoices and weighbridge slips into season totals with CO2 at India's coal factor, so your tonnes per lakh comes from your own bills, not the cluster average.",
   "links": [
-    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
-    { "label": "Varanasi kilns: coal per kiln", "to": "/answers/varanasi-brick-kilns-coal-per-kiln" },
-    { "label": "Brick kiln CO2 per 1,000 bricks", "to": "/answers/brick-kiln-emissions-per-1000-bricks" },
-    { "label": "Zigzag conversion and credits", "to": "/answers/zigzag-kiln-conversion-carbon-credits" }
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Varanasi kilns: coal per kiln",
+      "to": "/answers/varanasi-brick-kilns-coal-per-kiln"
+    },
+    {
+      "label": "Brick kiln CO2 per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Zigzag conversion and credits",
+      "to": "/answers/zigzag-kiln-conversion-carbon-credits"
+    }
   ],
   "sources": [
-    { "label": "TERI, Cluster profile: Lucknow brick kilns (SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/Lucknow-Brick-Kilns-Uttar-Pradesh.pdf" },
-    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+    {
+      "label": "TERI, Cluster profile: Lucknow brick kilns (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Lucknow-Brick-Kilns-Uttar-Pradesh.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
   ],
   "reviewed": "2026-10-31"
 }

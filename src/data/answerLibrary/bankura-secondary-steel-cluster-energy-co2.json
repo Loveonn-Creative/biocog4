@@ -29,8 +29,8 @@
     {
       "h": "Cuts the profile prices",
       "ul": [
-        "Waste heat power on a 2 x 100 tpd DRI plant: about 5 MW, 23.5 million kWh a year and 16,685 t CO2 avoided, for about Rs 500 million.",
-        "Better kiln lining on a 100 tpd kiln: about 580 t of coal and 1,050 t CO2 a year.",
+        "Waste heat power on a 2 x 100 tpd DRI plant: about 5 MW and 23.5 million kWh a year, about 15,860 t CO2 at the FY 2025-26 grid factor, for about Rs 500 million.",
+        "Better kiln lining on a 100 tpd kiln: about 580 t of coal a year, 1,021 t CO2 on Indian coal.",
         "Clean, dry scrap and full-power melting in induction furnaces: 5 to 10% of electricity."
       ]
     },
@@ -48,22 +48,26 @@
       "Ferro alloy: 2.2 / 0.307 = 7.2 t CO2 per tonne (about 9,400 kWh)",
       "Induction furnace billet: 0.86 / 1.26 = 0.68 t CO2 per tonne (about 950 kWh)",
       "Re-rolling: 0.036 / 0.633 = 0.06 t CO2 per tonne (about 80 kWh)",
-      "Check: 1.61 million t coal x 1.76 + 4,246 million kWh x 0.675 = about 5.7 million t"
+      "Check at FY 2025-26 factors (estimate): 1.61 million t coal x 1.76 + 4,246 million kWh x 0.675 = about 5.7 million t"
     ],
     "note": "Quantities and CO2 from TERI's 2025 Bankura profile; the check uses India's coal factor and CEA FY 2025-26. A bar made from DRI melted in an induction furnace carries the stages it passed through."
   },
   "senseible": "Senseible reads coal invoices (1.76 t CO2 a tonne Indian, 2.44 imported) and DVC or WBSEDCL bills into monthly records; the CBAM pages show what a direct-emissions figure means for an EU buyer.",
   "links": [
     {
-      "label": "CBAM for exporters",
+      "label": "CBAM for Indian exporters",
       "to": "/cbam"
     },
     {
-      "label": "Is sponge iron covered by CBAM?",
+      "label": "DRI waste heat power: what 5 MW saves",
+      "to": "/answers/dri-kiln-waste-heat-power-saving-bankura"
+    },
+    {
+      "label": "Is sponge iron covered by CBAM",
       "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
     },
     {
-      "label": "Giridih steel cluster",
+      "label": "Giridih secondary steel compared",
       "to": "/answers/giridih-secondary-steel-cluster-energy-co2"
     }
   ],

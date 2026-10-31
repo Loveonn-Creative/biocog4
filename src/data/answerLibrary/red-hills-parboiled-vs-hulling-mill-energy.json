@@ -52,17 +52,38 @@
     ],
     "note": "Unit figures from TERI's Red Hills profile (2014-15). Biogenic CO2 uses the IPCC 2006 default for solid biomass; grid factor from CEA for FY 2025-26."
   },
-  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 at the CEA factor, which for a hulling unit is nearly the whole footprint, and keeps husk bills in the same record for a parboiled mill.",
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 at the CEA factor, which for a hulling unit is nearly the whole footprint and for a parboiled mill is its fossil line.",
   "links": [
-    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
-    { "label": "Red Hills vs Villupuram energy", "to": "/answers/red-hills-vs-villupuram-rice-mills-energy-co2" },
-    { "label": "Bargarh mills by size", "to": "/answers/bargarh-rice-mill-energy-by-capacity" },
-    { "label": "Rice mill energy benchmark", "to": "/answers/rice-mill-energy-per-tonne-benchmark" }
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Red Hills vs Villupuram energy",
+      "to": "/answers/red-hills-vs-villupuram-rice-mills-energy-co2"
+    },
+    {
+      "label": "Bargarh mills by size",
+      "to": "/answers/bargarh-rice-mill-energy-by-capacity"
+    },
+    {
+      "label": "Rice mill energy benchmark",
+      "to": "/answers/rice-mill-energy-per-tonne-benchmark"
+    }
   ],
   "sources": [
-    { "label": "TERI, Energy profile: Red Hills rice mill cluster (SAMEEEKSHA, 2014-15 data)", "url": "https://sameeeksha.org/pdf/clusterprofile/RedHills_RiceMills_TamilNadu.pdf" },
-    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
-    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+    {
+      "label": "TERI, Energy profile: Red Hills rice mill cluster (SAMEEEKSHA, 2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/RedHills_RiceMills_TamilNadu.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
   ],
   "reviewed": "2026-10-31"
 }

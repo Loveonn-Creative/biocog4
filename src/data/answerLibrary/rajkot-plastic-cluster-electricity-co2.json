@@ -2,7 +2,7 @@
   "slug": "rajkot-plastic-cluster-electricity-co2",
   "q": "What is the energy and CO2 footprint of Rajkot's plastic processing cluster?",
   "title": "Rajkot plastics cluster: energy and CO2",
-  "short": "Grid power is 96% of it. TERI's profile puts Rajkot's 300 or so plastic units at 7,417 toe a year for 196,210 t of product: 83 million kWh plus a little gas, LPG and diesel. On today's factors that is about 56,700 t CO2, or 0.29 t per tonne.",
+  "short": "Rajkot's 300 or so plastic units use 7,417 toe a year, 96% of it grid power, by TERI's profile: 83 million kWh plus a little gas, LPG and diesel, for 196,210 t of product. On FY 2025-26 factors that is about 56,700 t CO2, or 0.29 t per tonne (estimate).",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Pipe, sack, moulding and roll strap units in Rajkot and nearby GIDC estates",
@@ -37,7 +37,7 @@
     }
   ],
   "example": {
-    "title": "Cluster CO2 on today's factors (estimate)",
+    "title": "Cluster CO2 on FY 2025-26 factors (estimate)",
     "lines": [
       "Electricity: 83 million kWh x 0.675 kg = 56,025 t CO2",
       "Natural gas: 198,000 scm x 2.05 kg = 406 t CO2",

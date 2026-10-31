@@ -2,7 +2,7 @@
   "slug": "dri-kiln-waste-heat-power-saving-bankura",
   "q": "How much power and CO2 can waste heat recovery save in a 2 x 100 TPD DRI plant?",
   "title": "DRI waste heat power: what 5 MW saves",
-  "short": "About 23.5 million kWh of grid power a year. TERI's 2025 Bankura profile says a 2 x 100 TPD coal-based DRI plant can run a 5 MW waste heat power plant, costing about Rs 500 million, avoiding roughly 15,900 t CO2 at today's grid factor. Better kiln lining saves another 580 t of coal per kiln.",
+  "short": "About 23.5 million kWh of grid power a year. TERI's 2025 Bankura profile says a 2 x 100 TPD coal-based DRI plant can run a 5 MW waste heat power plant, costing about Rs 500 million, avoiding roughly 15,900 t CO2 at the FY 2025-26 grid factor. Better kiln lining saves another 580 t of coal per kiln.",
   "topic": "markets",
   "intent": "decision",
   "audience": "Coal-based sponge iron plants in Bankura, Durgapur and other West Bengal and Jharkhand clusters",
@@ -14,12 +14,10 @@
       ]
     },
     {
-      "h": "Bankura in numbers",
+      "h": "Bankura's DRI plants",
       "ul": [
-        "About 37 secondary steel units: DRI, ferro alloy, induction furnace melt shops and re-rolling mills, making about 3.6 million t a year.",
-        "10 DRI plants make 1,396,500 t a year on 1.53 million t of coal, 700,875 toe and 2.87 million t CO2 by TERI's count.",
-        "DRI is 48% of the cluster's energy; the whole cluster emits about 5.96 million t CO2.",
-        "Plants burn both domestic and imported coal."
+        "10 DRI plants make 1,396,500 t a year on 1.53 million t of domestic and imported coal: 700,875 toe and 2.87 million t CO2 by TERI's count.",
+        "That is about 64% of the cluster's energy (700,875 of 1,089,563 toe). TERI's text says 48%, but its own table gives 64%."
       ]
     },
     {
@@ -46,7 +44,7 @@
     }
   ],
   "example": {
-    "title": "Savings at today's factors (estimate)",
+    "title": "Savings at FY 2025-26 factors (estimate)",
     "lines": [
       "Waste heat power: 23.5 million kWh x 0.675 kg = about 15,860 t CO2 a year",
       "TERI's profile gives 16,685 t, using a slightly higher grid factor",
@@ -57,16 +55,44 @@
   },
   "senseible": "The green loan check shows what a lender asks before funding a waste heat plant. Senseible reads coal invoices and power bills into monthly records, so the grid power saved shows against your own baseline.",
   "links": [
-    { "label": "Green loan check", "to": "/green-loan-check" },
-    { "label": "Counting waste heat power", "to": "/answers/barbil-sponge-iron-plant-waste-heat-power" },
-    { "label": "Durgapur DRI belt carbon", "to": "/answers/durgapur-secondary-steel-cluster-dri-carbon" },
-    { "label": "Is sponge iron covered by CBAM?", "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam" }
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Bankura cluster: energy and CO2",
+      "to": "/answers/bankura-secondary-steel-cluster-energy-co2"
+    },
+    {
+      "label": "Counting waste heat power",
+      "to": "/answers/barbil-sponge-iron-plant-waste-heat-power"
+    },
+    {
+      "label": "Durgapur DRI belt carbon",
+      "to": "/answers/durgapur-secondary-steel-cluster-dri-carbon"
+    },
+    {
+      "label": "Is sponge iron covered by CBAM?",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    }
   ],
   "sources": [
-    { "label": "TERI, Energy profile: Bankura secondary steel cluster (2025)", "url": "https://sameeeksha.org/pdf/Bankura%20cluster%20profile.pdf" },
-    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
-    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "CBAM Regulation (EU) 2023/956, consolidated text", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
+    {
+      "label": "TERI, Energy profile: Bankura secondary steel cluster (2025)",
+      "url": "https://sameeeksha.org/pdf/Bankura%20cluster%20profile.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
   ],
   "reviewed": "2026-10-31"
 }
