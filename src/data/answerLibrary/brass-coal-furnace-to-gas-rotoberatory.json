@@ -1,0 +1,86 @@
+{
+  "slug": "brass-coal-furnace-to-gas-rotoberatory",
+  "q": "What gas use replaces coal in a 250 kg brass rotary furnace switch?",
+  "title": "Brass: coal pit to gas rotary furnace",
+  "short": "The rotary furnace burns 56.25 Nm3 of gas per tonne of brass in place of 192 kg of coal, in BEE's Jamnagar report: 18,750 Nm3 a year replacing 64 t of coal for 333 t melted. Fossil CO2 falls by about 73 t a year on Indian coal. Cost Rs 8.80 lakh, payback 1.27 years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Brass part and rod makers in Jamnagar melting in coal-fired pit furnaces",
+  "sections": [
+    {
+      "h": "The furnace BEE costed",
+      "ul": [
+        "A tilting rotary furnace, 250 kg a melt, 1.5 hours a melt, 2,000 hours and 333 t a year.",
+        "Operating at 1,050 C (1,350 C maximum), a burner for LPG, CNG or furnace oil, a 1 hp blower and a recuperator.",
+        "Gas at 40 to 45 kg a tonne, 56.25 m3 a tonne in the report's working; vendor efficiency 31%.",
+        "Fuel cost Rs 1,350 a tonne on gas at Rs 24 a m3, against Rs 3,459 on coal at Rs 18 a kg.",
+        "Electricity rises by about 1,492 kWh a year. Seven days of downtime."
+      ]
+    },
+    {
+      "h": "The CO2 on your fuel",
+      "p": [
+        "With Indian coal at 1.76 kg CO2 a kg, 64 t of coal is about 113 t of CO2. The gas adds 38 t and the blower 1 t, so the net cut is about 73 t. The report's 128 t assumed about 2.6 t of CO2 per tonne of coal. If your bills show imported coal, use 2.44 and the cut is about 117 t."
+      ]
+    },
+    {
+      "h": "Natural gas or LPG",
+      "p": [
+        "The report's gas train is a 20 cylinder bank, and the burner takes LPG too. On LPG at 45 kg a tonne the furnace emits about 134 kg of CO2 a tonne, against 115 kg on natural gas. Both are far below coal's 338 kg."
+      ]
+    },
+    {
+      "h": "Check first",
+      "ul": [
+        "Coal per tonne of brass on your pit furnace, weighed for a month.",
+        "Gas price and supply today, piped or in cylinders.",
+        "Which unit your gas is billed in: Nm3, scm or kg."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per tonne of brass melted",
+    "lines": [
+      "Coal pit furnace: 192.16 kg coal x 1.76 = 338 kg CO2",
+      "Rotary furnace on natural gas: 56.25 m3 x 2.05 = 115 kg CO2",
+      "On LPG instead: 45 kg x 2.98 = 134 kg CO2",
+      "Year on gas: 64 t coal (113 t CO2) out, 18,750 m3 (38 t) and 1,492 kWh (1 t) in, net about 73 t CO2"
+    ],
+    "note": "Our factors for Indian coal, natural gas and LPG, and CEA's FY 2025-26 grid factor; all estimates."
+  },
+  "senseible": "Senseible reads coal, gas and LPG invoices and power bills into monthly CO2 records linked to each bill, so the switch shows up per tonne once you add tonnes melted. The green loan check shows what a lender will ask for.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Jamnagar brass cluster footprint",
+      "to": "/answers/jamnagar-brass-cluster-energy-and-carbon-footprint"
+    },
+    {
+      "label": "Brass: coke pit to induction furnace",
+      "to": "/answers/brass-coke-pit-to-induction-furnace-co2"
+    },
+    {
+      "label": "Oil crucible or induction for brass",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: energy efficient gas fired rotoberatory furnace, 250 kg, Jamnagar brass cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/Jamnagar_brass_cluster/DPR_Energy_Efficient_Gas_Fired_Rotoberatory_Furnace_250%20kg.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

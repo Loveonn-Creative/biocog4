@@ -1,0 +1,76 @@
+{
+  "slug": "sponge-iron-kiln-fuel-economizer-coal-saving",
+  "q": "How much coal does a fuel economizer save on a 50 tpd sponge iron kiln?",
+  "title": "Sponge iron kiln fuel economiser: coal saved",
+  "short": "A fuel economiser that preheats ore and dolomite to 700 C with kiln exhaust saves 1,548 t of coal a year on a 50 tpd kiln, in BEE's Orissa report. That is about 2,724 t CO2 on India's average coal factor. Cost Rs 140 lakh against Rs 46.43 lakh a year saved, about three years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Coal-based sponge iron plants in Sundargarh and similar areas running 50 tpd rotary kilns",
+  "sections": [
+    {
+      "h": "How the economiser saves coal",
+      "ul": [
+        "It sits after the after-burning chamber, where flue gas leaves the kiln at about 950 C, some 12,000 Nm3 an hour.",
+        "The ore and dolomite feed, 3.75 t of ore an hour, is heated from 30 C to 700 C before they enter the kiln: 552,750 kcal an hour.",
+        "That heat no longer comes from coal in the kiln's preheating zone: 184 kg an hour of 3,000 kcal/kg coal.",
+        "24 hours, 350 days: 1,548 t a year, worth Rs 46.43 lakh at Rs 3,000 a tonne. No downtime to install. Against Rs 140 lakh that is about three years; the report states 42 months."
+      ]
+    },
+    {
+      "h": "The kiln it is measured against",
+      "ul": [
+        "About 18,500 t of coal a year on a 50 tpd kiln.",
+        "11,200 to 14,000 t of sponge iron a year, at 1.36 to 1.56 t of coal per tonne.",
+        "The report also claims at least 20% more output. Treat that as something to prove with your own production logs."
+      ]
+    },
+    {
+      "h": "CO2 and CBAM",
+      "p": [
+        "The report gives no CO2 figure. At 1.76 kg CO2 per kg, 1,548 t of coal is about 2,724 t. Coal at 3,000 kcal/kg probably carries less carbon than India's average, so a carbon analysis of your coal and char gives a better number.",
+        "Sponge iron is a CBAM good. Less coal per tonne lowers the embedded emissions your EU-facing buyer reports, if the saving shows up in a mass balance per tonne of DRI."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A kiln making 13,000 t of DRI a year",
+    "lines": [
+      "Before: 18,500 t coal / 13,000 = 1.42 t coal per tonne, x 1.76 = 2.50 t CO2 per tonne",
+      "After: 18,500 minus 1,548 = 16,952 t coal / 13,000 = 1.30 t, x 1.76 = 2.29 t CO2 per tonne",
+      "Year: 1,548 t x 1.76 = 2,724 t CO2 avoided",
+      "Any extra output would lower the per tonne figure further"
+    ],
+    "note": "13,000 t sits inside the report's range for a 50 tpd kiln. Coal at our Indian average factor, an estimate; dolomite CO2 is left out."
+  },
+  "senseible": "Senseible reads coal and power invoices into monthly CO2 records linked to each bill, and builds the CBAM data an EU buyer asks for from the same records. It does not replace a carbon mass balance of your kiln.",
+  "links": [
+    {
+      "label": "CBAM for Indian exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "Sponge iron CO2 per tonne",
+      "to": "/answers/coal-based-sponge-iron-co2-per-tonne"
+    },
+    {
+      "label": "Is sponge iron covered by CBAM?",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    },
+    {
+      "label": "Waste heat power at a sponge iron plant",
+      "to": "/answers/barbil-sponge-iron-plant-waste-heat-power"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: fuel economizer for 50 tpd kiln, Orissa sponge iron cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Orissa_sponge_iron_cluster/Fuel_economizer_50tpd_Orissa.pdf"
+    },
+    {
+      "label": "Regulation (EU) 2023/956, Carbon Border Adjustment Mechanism",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

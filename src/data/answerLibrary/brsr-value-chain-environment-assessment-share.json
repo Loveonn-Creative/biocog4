@@ -2,7 +2,7 @@
   "slug": "brsr-value-chain-environment-assessment-share",
   "q": "What does BRSR mean by the percentage of value chain partners assessed for environmental impacts?",
   "title": "Share of value chain partners assessed",
-  "short": "It is Principle 6 leadership indicator 9: the percentage of value chain partners, by value of business done with them, that were assessed for environmental impacts. Leadership indicator 8 asks for significant adverse environmental impacts from the value chain and the steps taken.",
+  "short": "It is Principle 6 leadership indicator 7: the percentage of value chain partners, by value of business done with them, that were assessed for environmental impacts. Leadership indicator 6 asks for significant adverse environmental impacts from the value chain and the steps taken.",
   "topic": "regulation",
   "intent": "explain",
   "audience": "Procurement and ESG teams at listed companies, and their suppliers",
@@ -35,7 +35,7 @@
       "Partners assessed with documents: Rs 260 crore.",
       "Share assessed = 260 / 400 = 65%."
     ],
-    "note": "Illustrative figures."
+    "note": "Example figures."
   },
   "senseible": "Senseible turns a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures for the financial year, with each bill linked to its line, so a customer's questionnaire can be answered from records. Figures are self-declared.",
   "links": [

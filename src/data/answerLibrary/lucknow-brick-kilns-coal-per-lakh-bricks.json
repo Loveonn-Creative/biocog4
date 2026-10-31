@@ -1,0 +1,85 @@
+{
+  "slug": "lucknow-brick-kilns-coal-per-lakh-bricks",
+  "q": "How much coal does a Lucknow brick kiln burn per lakh bricks, and what is the cluster's CO2?",
+  "title": "Lucknow brick kilns: coal per lakh bricks",
+  "short": "About 17 t. TERI's Lucknow profile puts a typical Bull's trench kiln at 27,000 bricks a day for 180 days: 48.6 lakh bricks on 826 t of coal, roughly 1,450 t CO2 a season. The cluster's 230 or so kilns burn about 186,676 t of coal a year.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Brick kiln owners around Lucknow and the Lucknow Brick Kiln Association",
+  "sections": [
+    {
+      "h": "The Lucknow kiln",
+      "ul": [
+        "About 230 kilns, almost all fixed chimney Bull's trench kilns; about 10 already fire zigzag.",
+        "Firing runs about six months, January to June, at 1,000 to 1,100 C; chimney gas leaves at 80 to 120 C.",
+        "Hand moulded solid bricks of 9 x 4 x 3 inch, about 3.0 kg each, sun dried before firing.",
+        "Class 1 is about 45% of output; Tamda 20%, Class 2, Class 3 and Tukda 10% each, Kali Peti 5%. Every broken or underfired brick burnt the same coal.",
+        "Coal is almost the whole energy bill. Diesel only runs the pump set for moulding water."
+      ]
+    },
+    {
+      "h": "Measure MJ per kg, not only tonnes per lakh",
+      "p": [
+        "Tonnes per lakh moves with brick weight and coal quality. TERI measured Lucknow kilns at 1.38 MJ per kg of fired brick, against 1.1 to 1.2 MJ for a well run kiln. Closing that gap is about one sixth of your coal."
+      ]
+    },
+    {
+      "h": "Two 10% savings TERI costed",
+      "ul": [
+        "Kiln practice, about 10%: crush coal to about 10 mm, feed small amounts every 20 minutes instead of every 45 to 60, use 750 to 1,000 g spoons, one fireman feeding, three or more lines at a time; seal wickets with two-brick walls plastered both sides, close side flues and keep about 7 inches of ash on top of the setting.",
+        "Zigzag firing, about 10%: a longer fire path and turbulent air through the stacking.",
+        "Each is worth about 18,678 t of coal a year across the cluster, by TERI's count."
+      ]
+    },
+    {
+      "h": "What to keep for a lender or buyer",
+      "ol": [
+        "Coal invoices and weighbridge slips for the season.",
+        "Bricks fired and sold, by class.",
+        "Green bricks lost to rain: TERI reports about 20% in an open yard.",
+        "Any wood or sawdust, on its own line as biogenic."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One Lucknow kiln, one season (estimate)",
+    "lines": [
+      "Coal: 826 t x 1.76 t CO2 = 1,454 t CO2",
+      "Per lakh bricks: 1,454 / 48.6 = 29.9 t, or about 300 kg per 1,000 bricks",
+      "Better feeding at 10%: 82.6 t coal = 145 t CO2 saved",
+      "From 1.38 down to 1.15 MJ per kg: about 138 t coal, 242 t CO2 saved",
+      "Cluster: 186,676 t x 1.76 = about 328,550 t CO2"
+    ],
+    "note": "Coal and output from TERI's Lucknow profile. TERI's own table shows 196,620 t CO2 for the cluster, which implies a lower factor than India's BUR-2 coal factor of 1.76 used here. If you have a lab test of your coal, use it."
+  },
+  "senseible": "Senseible reads coal invoices and weighbridge slips into season totals with CO2 at India's coal factor, so your tonnes per lakh comes from your own bills, not the cluster average.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Varanasi kilns: coal per kiln",
+      "to": "/answers/varanasi-brick-kilns-coal-per-kiln"
+    },
+    {
+      "label": "Brick kiln CO2 per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Zigzag conversion and credits",
+      "to": "/answers/zigzag-kiln-conversion-carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Lucknow brick kilns (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Lucknow-Brick-Kilns-Uttar-Pradesh.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

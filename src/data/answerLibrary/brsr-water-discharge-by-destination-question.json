@@ -1,0 +1,89 @@
+{
+  "slug": "brsr-water-discharge-by-destination-question",
+  "q": "How do I fill the BRSR water discharge table by destination and treatment level?",
+  "title": "BRSR water discharge table, filled in",
+  "short": "Kilolitres by where the water went: surface water, groundwater, seawater, third parties and others, each split into no treatment and with treatment, naming the level. That is Principle 6 essential indicator 4. Add the rows for total discharge; withdrawal minus that total gives consumption.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EHS and BRSR teams at listed companies and their plants",
+  "sections": [
+    {
+      "h": "The five destinations",
+      "ul": [
+        "Surface water: a river, drain or lake through your own outfall.",
+        "Groundwater: water returned below ground.",
+        "Seawater: a marine outfall.",
+        "Sent to third parties: a common effluent treatment plant, a municipal sewer, or another company that takes your water.",
+        "Others: anything that fits none of these; say what it is."
+      ],
+      "p": [
+        "Each row has two lines, no treatment and with treatment, and the second asks you to specify the level. A note asks whether an external agency assessed the figures."
+      ]
+    },
+    {
+      "h": "Levels of treatment",
+      "p": [
+        "SEBI's guidance note describes three. Primary removes solids that settle or float. Secondary removes what remains dissolved or suspended. Tertiary raises the water to a higher quality before discharge, for example removing heavy metals, nitrogen and phosphorus. Water clean enough to need no treatment can be reported as such, with an explanation."
+      ]
+    },
+    {
+      "h": "Where the numbers come from",
+      "ul": [
+        "Flow meter logs at the ETP outlet and at each outfall.",
+        "CETP invoices or statements in kL.",
+        "Sewer connection records for domestic sewage.",
+        "Your consent to operate for the permitted limits; but report metered actuals, not the limit."
+      ]
+    },
+    {
+      "h": "Mistakes that show up",
+      "ul": [
+        "Effluent that gets primary treatment before going to the CETP is \"with treatment, primary\", not \"no treatment\".",
+        "A zero liquid discharge plant that still sends domestic sewage to a sewer has discharge to report.",
+        "Total discharge larger than withdrawal, which usually means a meter or unit error.",
+        "Zero liquid discharge is the next question, essential indicator 5, not this one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a plant that withdrew 60,000 kL",
+    "lines": [
+      "(i) Surface water, with treatment (tertiary): 6,000 kL",
+      "(iv) Third parties, with treatment (primary), to the CETP: 30,000 kL",
+      "(iv) Third parties, no treatment, domestic sewage to the municipal sewer: 4,000 kL",
+      "Total discharged: 6,000 + 30,000 + 4,000 = 40,000 kL",
+      "Consumption: 60,000 minus 40,000 = 20,000 kL"
+    ],
+    "note": "Example figures."
+  },
+  "senseible": "Senseible's BRSR draft is built from the electricity bills and fuel invoices you upload, covering the energy and Scope 1 and 2 rows. The water table needs your meter logs and CETP records.",
+  "links": [
+    {
+      "label": "BRSR reporting",
+      "to": "/brsr-reporting"
+    },
+    {
+      "label": "Water withdrawal vs consumption",
+      "to": "/answers/brsr-water-withdrawal-vs-consumption"
+    },
+    {
+      "label": "The zero liquid discharge question",
+      "to": "/answers/brsr-zero-liquid-discharge-question"
+    },
+    {
+      "label": "Water intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR format updated July 2023 (Annexure II to the BRSR Core circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    },
+    {
+      "label": "SEBI, master circular of 11 July 2023, Annexures 16 and 17 (earlier BRSR format and guidance note)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

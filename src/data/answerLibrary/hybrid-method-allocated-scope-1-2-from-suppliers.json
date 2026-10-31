@@ -1,0 +1,80 @@
+{
+  "slug": "hybrid-method-allocated-scope-1-2-from-suppliers",
+  "q": "What does the hybrid method need from me as a supplier?",
+  "title": "Hybrid method: what a supplier sends",
+  "short": "Three kinds of data, as much as you have: your Scope 1 and 2 allocated to the goods you sold that buyer, the materials and fuel used to make them with how far the materials travelled to you, and the waste generated. The buyer applies factors and fills gaps with averages, so partial data still counts.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "MSME suppliers asked for activity data by a buyer, and buyer sustainability teams",
+  "sections": [
+    {
+      "h": "Why a buyer chooses it",
+      "p": [
+        "The GHG Protocol lists four ways to calculate purchased goods. Two need supplier data: the supplier-specific method, which takes your product footprint, and the hybrid method, which takes your activity data and fills the gaps with industry averages. A buyer uses the hybrid method when you have no product footprint but do have bills and production records."
+      ]
+    },
+    {
+      "h": "The data list",
+      "ul": [
+        "Allocated Scope 1 and Scope 2: electricity, fuel, and any process or fugitive emissions such as refrigerant top-ups, shared out to the goods you sold this buyer.",
+        "Mass or volume of material inputs, from your bill of materials, and of fuel inputs.",
+        "Distance from where each raw material came from to your plant. Leave out the trip from you to the buyer: the buyer counts that under upstream transport, Category 4.",
+        "Quantity of waste generated, and other emissions if any."
+      ]
+    },
+    {
+      "h": "If you can send only part of it",
+      "p": [
+        "The guidance shows a supplier that could give only its allocated Scope 1 and 2 and its waste. The buyer then took a database cradle-to-gate factor for the product and removed the manufacturing stage, so the supplier's own plant was not counted twice. If you send only those figures, say so plainly, so the buyer strips that stage out of its average."
+      ]
+    },
+    {
+      "h": "How to allocate",
+      "p": [
+        "In the guidance example the supplier allocated by physical output: its total output for the year against the quantity sold to the buyer. Use tonnes, pieces or metres, state the key, and keep it the same every year. Cover the same period as the buyer's inventory where you can; the guidance prefers assured data but does not require it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a knit fabric unit, 100 t of its 400 t output to one buyer",
+    "lines": [
+      "Grid electricity: 6,00,000 kWh x 0.675 kg CO2 per kWh = 405 t CO2",
+      "Indian coal for the boiler: 300 t x 1.76 t CO2 per t = 528 t CO2",
+      "Plant total 933 t; share for this buyer 933 x 100 / 400 = 233.25 t CO2",
+      "Materials for the 100 t: 104 t of yarn and 6 t of dyes and chemicals, from purchase invoices",
+      "Yarn inbound: 104 t over 55 km, from the lorry receipts",
+      "Waste: 3 t of ETP sludge sent to the treatment facility"
+    ],
+    "note": "Example figures. The buyer multiplies the yarn, chemicals, freight and sludge by its own factors; you send quantities, not their emissions."
+  },
+  "senseible": "Senseible reads your electricity bills, fuel invoices and freight records, so the allocated Scope 1 and 2 and inbound freight come with the document behind each figure. Material purchases sit in a separate supplier evidence trail with quantity and HSN code.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Allocating your emissions to one customer",
+      "to": "/answers/allocate-my-emissions-to-one-customer"
+    },
+    {
+      "label": "Double counting supplier Scope 1",
+      "to": "/answers/supplier-scope-1-double-counted-in-scope-3"
+    },
+    {
+      "label": "Freight: Category 4 or 9",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 1 (purchased goods and services)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter1.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

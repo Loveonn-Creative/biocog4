@@ -1,0 +1,78 @@
+{
+  "slug": "downdraft-kiln-waste-heat-recovery-coal-saving",
+  "q": "How much coal can waste heat recovery save on a 100 t refractory kiln?",
+  "title": "Kiln waste heat recovery: coal saved",
+  "short": "About 27% of the coal on a 100 t per batch downdraft kiln: 768.79 t a year, in BEE's Godavari study. On our Indian coal factor that is about 1,330 t CO2 after blower power. Cost Rs 15 lakh, payback under six months at 2010 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Refractory makers firing large downdraft kilns on coal",
+  "sections": [
+    {
+      "h": "Where the heat goes now",
+      "ul": [
+        "Flue gas leaves at 300 to 1,050 C during rapid firing, averaging 650 C, straight up the chimney.",
+        "140 t of coal a batch at 4,200 kcal/kg and 30% excess air: about 1,687 t of flue gas a batch.",
+        "Cooling that gas to 210 C through a heat exchanger at 75% effectiveness recovers about 161 million kcal a batch.",
+        "That equals 38.4 t of coal a batch, 768.79 t over 20 batches a year."
+      ]
+    },
+    {
+      "h": "How the heat gets used",
+      "p": [
+        "In the report's unit, hot air from the exchanger is blown into an old kiln that stood idle, preheating the next batch before it is loaded. The report also mentions preheating combustion air. Either way you need somewhere to put the heat at the right time: a spare chamber, or ducting to the burners."
+      ]
+    },
+    {
+      "h": "The money and the CO2",
+      "ul": [
+        "Coal saved at Rs 4,500 a tonne: Rs 34.60 lakh a year; blower power 28,646 kWh, Rs 1.07 lakh; net Rs 33.52 lakh against Rs 15 lakh invested.",
+        "CO2: 768.79 t x 1.76 = 1,353 t, less 19 t for the blower.",
+        "The report's own CO2 figure, 807 t, is lower than its coal saving supports."
+      ]
+    },
+    {
+      "h": "What to check",
+      "ul": [
+        "The study assumes every kcal recovered replaces a kcal of coal. Real savings depend on how much firing the preheated ware or air actually cuts.",
+        "Log coal per batch for three batches before and after, with the flue temperature after the exchanger."
+      ]
+    }
+  ],
+  "example": {
+    "title": "20 batches a year on a 100 t kiln",
+    "lines": [
+      "Coal saved: 38.44 t a batch x 20 = 768.79 t",
+      "CO2 avoided: 768.79 x 1.76 = 1,353 t",
+      "Blower: 28,646 kWh x 0.675 = 19 t CO2",
+      "Net: about 1,334 t CO2 a year, from 2,800 t of coal burned before"
+    ],
+    "note": "Coal at our Indian coal factor and grid at CEA's FY 2025-26 factor, both estimates."
+  },
+  "senseible": "Senseible reads coal and power invoices into monthly CO2 records tied to each bill, so coal per batch before and after a heat recovery job is on record, not remembered. The green loan check tells you what a lender wants to see.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Kiln exhaust heat for dryers",
+      "to": "/answers/kiln-exhaust-heat-to-dryer-fuel-saving"
+    },
+    {
+      "label": "10 TPD tunnel kiln vs downdraft",
+      "to": "/answers/refractory-tunnel-kiln-10-tpd-coal-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: waste heat recovery for preheating refractories, 100 t per batch kiln, East and West Godavari refractories cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/East_and_West_Godavari_refractories_cluster/10_WHR100Ton%20kiln_Godavari_Refr_cluster.pdf"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

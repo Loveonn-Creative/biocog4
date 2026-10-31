@@ -1,0 +1,80 @@
+{
+  "slug": "tea-dryer-coal-to-biomass-gasifier-co2",
+  "q": "How much coal and CO2 does a 250 kW biomass gasifier save in a tea dryer?",
+  "title": "Tea dryer: 250 kW biomass gasifier on coal",
+  "short": "BEE's Jorhat report counts 258 t of coal saved a year, about 453 t of fossil CO2, burning 342 t of garden wood. Only 173 t of that coal is the gasifier; 85 t comes from a better burner on the coal heater, which keeps running. Cost Rs 17.18 lakh, payback 3.70 years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tea factories in Jorhat and upper Assam drying on coal-fired air heaters with woody biomass from their own gardens",
+  "sections": [
+    {
+      "h": "The factory in the report",
+      "ul": [
+        "225 kg of made tea an hour at 950 kcal per kg; the coal heater runs at 19.81% efficiency and burns 240 kg an hour.",
+        "12 hours a day, 300 days: 3,600 hours and 863.2 t of coal a year at 4,500 kcal/kg and Rs 4.50 a kg.",
+        "A better burner lifts efficiency to 21.97%: 216 kg an hour, 84.9 t a year less.",
+        "The gasifier makes 250 kW of heat, 215,000 kcal an hour, as producer gas at about 1,000 kcal/m3, replacing 48 kg of coal an hour: 172.8 t a year.",
+        "Wood from the tea gardens at 95 kg an hour, 342 t a year at Rs 1.75 a kg."
+      ]
+    },
+    {
+      "h": "Most of the coal stays",
+      "p": [
+        "After both changes the factory still burns about 605 t of coal a year, 70% of what it burned before. A 250 kW gasifier supplies only part of the dryer's heat. Size it against your full heat demand if you want coal gone."
+      ]
+    },
+    {
+      "h": "CO2 counted properly",
+      "p": [
+        "257.67 t of coal x 1.76 = 453 t of fossil CO2 avoided. CO2 from the wood is biogenic and reported separately. The report's 468.12 t used a higher coal factor. Assam coal often carries more carbon than India's average, so use your supplier's calorific value or a lab analysis if you have one."
+      ]
+    },
+    {
+      "h": "One figure to get in writing",
+      "p": [
+        "The specification table rates the gasifier at 250 kg of wood an hour; the costing uses 95 kg. At 250 kg an hour, wood would cost Rs 15.75 lakh a year against Rs 11.59 lakh of coal saved, and the project would lose money. Ask the supplier to guarantee kg of wood per hour at 250 kW."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One season of 3,600 hours",
+    "lines": [
+      "Burner: 863.2 t x (1 minus 19.81 / 21.97) = 84.9 t coal",
+      "Gasifier: 48 kg an hour x 3,600 = 172.8 t coal",
+      "Total: 257.7 t coal x 1.76 = 453.5 t CO2 avoided",
+      "Coal still burned: 863.2 minus 257.7 = 605.5 t, about 1,066 t CO2"
+    ],
+    "note": "Coal at our Indian coal factor, an estimate. The report gives no figure for the gasifier's blower power."
+  },
+  "senseible": "Senseible reads coal invoices and electricity bills into monthly totals and CO2, each linked to its bill, so the coal a gasifier really saves shows up against the year before. The green loan check shows what a lender will want.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Jorhat tea factories: coal, gas and CO2",
+      "to": "/answers/jorhat-tea-factories-coal-gas-drying-carbon"
+    },
+    {
+      "label": "Biomass boilers: methane and N2O stay in Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Tea factory footprint per kg",
+      "to": "/answers/tea-factory-carbon-footprint-per-kg-made-tea"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: biomass gasifier for 250 kW thermal application replacing coal, Jorhat tea cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Jorhat_tea_cluster/01_Biomass_gasifier_for250kW_thermal_application_replacing_coal_Jorhat.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

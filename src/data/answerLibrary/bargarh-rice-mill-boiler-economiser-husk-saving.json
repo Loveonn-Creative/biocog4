@@ -1,0 +1,76 @@
+{
+  "slug": "bargarh-rice-mill-boiler-economiser-husk-saving",
+  "q": "How much husk would an economiser save in a Bargarh rice mill boiler?",
+  "title": "Bargarh rice mill economiser: husk saved",
+  "short": "About a tenth of your husk. TERI's rule of thumb: every 6 degrees of feedwater preheat saves 1% of fuel, and preheating to 90 degrees with better condensate return saves about 10%. For a 2 tph Bargarh mill burning 1,610 t of husk a year, that is about 160 t.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Owners of small and medium parboiling mills in Bargarh weighing a boiler upgrade or loan",
+  "sections": [
+    {
+      "h": "Why the boiler is the place to start",
+      "p": [
+        "Most Bargarh mills run three-pass husk boilers of about 4 tph at 10 kg/cm2, with no economiser beyond a locally made feedwater preheater and no instruments except a pressure gauge. Steam goes to hot water for soaking, direct steaming and the paddy dryer, so every percent of boiler loss shows up as husk you could have sold."
+      ]
+    },
+    {
+      "h": "Across the cluster",
+      "ul": [
+        "About 86 small and medium mills could fit waste heat recovery on their boilers.",
+        "Together they would save about 16,900 t of husk a year (5,070 toe), worth about Rs 20.3 million at the husk selling price.",
+        "Solar water heaters for soaking water would save about 20,000 t more.",
+        "Only 3 mills above 10 tph have cogeneration; the other 6 large mills could add about 6 MW."
+      ]
+    },
+    {
+      "h": "What it does for your carbon number",
+      "p": [
+        "Little, honestly. Husk CO2 is biogenic, so burning less husk barely moves the fossil figure a buyer sees; your grid kWh does that. The economiser's case is money: husk freed for sale, and steam you can measure. If you want the fossil line to fall too, pair it with efficient motors, plastic elevator buckets and pump upgrades."
+      ]
+    },
+    {
+      "h": "Evidence a lender will want",
+      "ol": [
+        "Husk burnt per tonne of paddy for a few months before, from your stock register.",
+        "The economiser quote and its rated outlet temperature.",
+        "Feedwater temperature and husk per tonne for the same months after."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Husk saved at 10% (estimate)",
+    "lines": [
+      "Husk value in the cluster: Rs 290 million / 2,41,445 t = about Rs 1,200 a tonne",
+      "2 tph mill: 1,610 t x 10% = 161 t, about Rs 1.9 lakh a year",
+      "4 tph mill: 3,219 t x 10% = 322 t, about Rs 3.9 lakh a year",
+      "10 tph mill: 8,048 t x 10% = 805 t, about Rs 9.7 lakh a year"
+    ],
+    "note": "Husk use per mill, the 10% saving and husk value from TERI's Bargarh profile (2014-15 prices). Today's husk price will differ; use yours."
+  },
+  "senseible": "Senseible's green loan readiness check shows what evidence a lender will look for, and your electricity bills read into monthly records give the before-and-after line for the motor and pump side of the upgrade.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Bargarh mills: husk, power and CO2",
+      "to": "/answers/bargarh-rice-mills-husk-energy-and-co2"
+    },
+    {
+      "label": "Rice mill energy benchmark",
+      "to": "/answers/rice-mill-energy-per-tonne-benchmark"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Bargarh rice mills (2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Bargarh_Rice_Mills_Orissa.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

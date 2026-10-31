@@ -1,0 +1,86 @@
+{
+  "slug": "bargarh-rice-mill-energy-by-capacity",
+  "q": "How much husk and power does a 2, 4 or 10 tph parboiling rice mill in Bargarh use a year?",
+  "title": "Bargarh rice mills: husk and power by size",
+  "short": "A 2 tph parboiling mill in Bargarh burns about 1,610 t of husk and uses 333,590 kWh a year. A 4 tph mill doubles both, and a 10 tph mill uses 8,048 t of husk and 1.67 million kWh. Every size works out to about 65 kWh per tonne of rice.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Parboiling rice mills in Bargarh district, Odisha, milling paddy for the public distribution system",
+  "sections": [
+    {
+      "h": "Bargarh's mills",
+      "ul": [
+        "About 95 mills, all making parboiled rice, mostly for the state's public distribution system.",
+        "67 small mills of 2 tph make 343,855 t of rice a year, 45% of output; 19 medium mills of 4 tph and 9 large mills of 10 tph make the rest.",
+        "Boilers average 4 tph at 10 kg per cm2, mostly three pass and without an economiser."
+      ]
+    },
+    {
+      "h": "A year's energy by mill size",
+      "ul": [
+        "2 tph: about 5,130 t of rice, 1,610 t husk, 333,590 kWh, 512 toe.",
+        "4 tph: about 10,260 t of rice, 3,219 t husk, 667,181 kWh, 1,023 toe.",
+        "10 tph: about 25,660 t of rice, 8,048 t husk, 1,667,952 kWh, 2,558 toe.",
+        "Husk is about 94% of the energy in every size; grid power is the other 6%."
+      ]
+    },
+    {
+      "h": "Why 65 kWh, not 43",
+      "p": [
+        "TERI's text gives 43 kWh per tonne, but its own mill and output tables divide to 65 (333,590 kWh over 5,132 t), so both our Bargarh pages use 65. The tables scale one mill pattern, so size alone does not change kWh per tonne in them. Your own bills are what show whether your mill beats it."
+      ]
+    },
+    {
+      "h": "Where size does change things",
+      "ul": [
+        "Only the 10 tph mills generate their own power: 3 run 2 MW of cogeneration, and the other 6 could add about 6 MW.",
+        "The 86 small and medium mills are where an economiser pays, about a tenth of their husk.",
+        "Husk you no longer burn can be sold. Husk CO2 is biogenic and reported apart; methane and nitrous oxide from burning it still count in Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Fossil and biogenic CO2 by mill size (estimate)",
+    "lines": [
+      "2 tph: 333,590 kWh x 0.675 kg = 225 t fossil; husk 483 toe x 41.868 GJ x 100 kg = about 2,020 t biogenic",
+      "4 tph: 667,181 kWh x 0.675 = 450 t fossil; about 4,040 t biogenic",
+      "10 tph: 1,667,952 kWh x 0.675 = 1,126 t fossil; about 10,110 t biogenic",
+      "Per tonne of rice: 65 kWh x 0.675 = 44 kg fossil CO2"
+    ],
+    "note": "Mill figures from TERI's Bargarh profile (2014-15); rice per mill is each size's output over its mill count. Husk energy is total toe less electricity at 11,630 kWh per toe; biogenic CO2 uses the IPCC 2006 default for solid biomass. Grid factor from CEA for FY 2025-26."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2 at the CEA factor and keeps husk purchase or sale bills in the same record, so the fossil figure you give a buyer is traceable.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Bargarh cluster: husk, power and CO2",
+      "to": "/answers/bargarh-rice-mills-husk-energy-and-co2"
+    },
+    {
+      "label": "Economiser: husk saved",
+      "to": "/answers/bargarh-rice-mill-boiler-economiser-husk-saving"
+    },
+    {
+      "label": "Burdwan rice mills per tonne",
+      "to": "/answers/burdwan-rice-mills-husk-and-power-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Bargarh rice mills (SAMEEEKSHA, 2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Bargarh_Rice_Mills_Orissa.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

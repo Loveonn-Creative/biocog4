@@ -1,0 +1,95 @@
+{
+  "slug": "ranchi-refractory-cluster-coal-petcoke-co2",
+  "q": "What is the fuel use and CO2 of the Ranchi refractory cluster?",
+  "title": "Ranchi refractories: coal, petcoke and CO2",
+  "short": "Coal carries most of it. TERI's 2016 profile counts 16,200 t of coal in downdraft kilns and 2,586 t of petcoke in tunnel kilns: 7,864 toe and 38,234 t CO2 a year. Electricity is under 1% of the energy. BEE's 2020-21 study counts 28 units making 64,100 t.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Refractory brick, block, castable and mortar makers around Ranchi, Tupudana and Ramgarh, Jharkhand",
+  "sections": [
+    {
+      "h": "Two kilns, two fuels",
+      "p": [
+        "Ranchi's refractory units fire acid and basic blocks, castables, mortar, burner quarls, bottom pouring sets, ladle bricks and silica bricks at 1,280 to 1,310 C. Downdraft kilns burn lump coal and are loaded by hand. Tunnel kilns burn pulverised petcoke fed automatically, soaking the ware for 1.5 to 2 hours near 1,300 C. More than 95% of the output is sold outside Jharkhand."
+      ],
+      "ul": [
+        "2016 profile: 23 units, 20 downdraft and 3 tunnel kilns, about 46,440 t a year.",
+        "2020-21 BEE study: 28 MSMEs, 23 downdraft and 5 tunnel, 64,100 t a year, 9,215 toe of which 71 toe is electricity."
+      ]
+    },
+    {
+      "h": "The 2016 energy table",
+      "ul": [
+        "Coal: 16,200 t, 5,670 toe, 29,419 t CO2.",
+        "Petcoke: 2,586 t, 2,121 toe, 8,061 t CO2.",
+        "Grid electricity: 0.75 million kWh, 64 toe, 731 t CO2.",
+        "Diesel for power cuts: 10.8 kL, 9 toe.",
+        "Coal is 72% of the energy and petcoke 27%; energy is 30 to 35% of production cost."
+      ]
+    },
+    {
+      "h": "Why the cluster figure is not yours",
+      "p": [
+        "A downdraft unit needs 8.9 GJ per tonne fired and a tunnel unit 4.6 GJ, so two Ranchi plants making the same brick can differ by more than double per tonne. Downdraft kilns also reject about 10% of what they fire, and a rejected brick has already burnt its coal. Send your own figure, built from your coal and petcoke bills and tonnes despatched."
+      ]
+    },
+    {
+      "h": "What a steel or cement buyer will ask for",
+      "ul": [
+        "Kg CO2 per tonne fired, with coal, petcoke and electricity on separate lines and the months covered.",
+        "Calorific value from your coal and petcoke test certificates.",
+        "Tonnes despatched after rejects, matched to sales invoices.",
+        "Any CO2 from carbonate raw materials such as magnesite or dolomite, as its own line, if your mix uses them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The same fuel at FY 2025-26 factors (estimate)",
+    "lines": [
+      "Coal: 16,200 t x 1.76 t CO2 = 28,512 t",
+      "Petcoke: 2,586 t x 32.5 GJ x 97.5 kg CO2 per GJ = 8,194 t",
+      "Electricity: 750,000 kWh x 0.675 kg = 506 t",
+      "Diesel: 10.8 kL x 2.645 t = 29 t",
+      "Total about 37,240 t on 46,440 t fired = about 0.80 t CO2 per tonne"
+    ],
+    "note": "Fuel quantities from TERI's 2016 Ranchi profile. Coal uses India's BUR-2 factor, petcoke the IPCC 2006 default, electricity the CEA factor for FY 2025-26. CO2 from carbonate raw materials is not included."
+  },
+  "senseible": "Senseible reads coal invoices, power bills and diesel slips into a monthly record with CO2 from published factors, so a buyer sees your kiln's figure instead of the cluster average. It has no built-in petcoke factor.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Downdraft vs tunnel kiln per tonne",
+      "to": "/answers/ranchi-downdraft-vs-tunnel-kiln-gj-per-tonne"
+    },
+    {
+      "label": "Are refractories covered by CBAM?",
+      "to": "/answers/are-refractories-covered-by-cbam"
+    },
+    {
+      "label": "Wankaner tunnel kilns on petcoke",
+      "to": "/answers/wankaner-refractory-tunnel-kiln-petcoke-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Ranchi refractory industries (SAMEEEKSHA, 2016 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/ranchi-refractory-industries-Jharkhand.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Ranchi refractory cluster summary (TERI for BEE, 2020-21 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=210&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

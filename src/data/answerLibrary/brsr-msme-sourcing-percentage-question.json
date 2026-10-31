@@ -1,0 +1,87 @@
+{
+  "slug": "brsr-msme-sourcing-percentage-question",
+  "q": "How does a listed buyer work out the share of inputs sourced directly from MSMEs for BRSR?",
+  "title": "BRSR share of inputs sourced from MSMEs",
+  "short": "Principle 8 essential indicator 4 asks what percentage of input material, by value, came directly from MSMEs or small producers, and directly from within India, for this year and last. Divide purchases from qualifying direct suppliers by total input purchases, and keep each supplier's proof of status.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed companies preparing BRSR, and MSME suppliers selling to them",
+  "sections": [
+    {
+      "h": "The question",
+      "p": [
+        "The table has two rows, each as a percentage of inputs to total inputs by value: directly sourced from MSMEs or small producers, and directly from within India, for the current and previous financial year. The original 2021 format asked about the district and neighbouring districts; the July 2023 format changed that row to within India."
+      ]
+    },
+    {
+      "h": "Who counts",
+      "p": [
+        "SEBI's guidance note defines small producers as those where the owner is also a worker, including informal producers such as self-help groups and home-based workers, and producer-owned bodies such as cooperatives and producer companies. For MSMEs it points to the Ministry of MSME definition by investment and turnover. Rely on each supplier's Udyam registration rather than your own guess at its size."
+      ]
+    },
+    {
+      "h": "Building the number",
+      "ol": [
+        "Take input material purchases for the year from the purchase register, and write down what you left out, such as capital goods or services.",
+        "Tag each vendor: Udyam number and category, or small producer evidence.",
+        "Add up purchases from tagged vendors and divide by total inputs.",
+        "For the India row, take out imports: purchases on your own bills of entry.",
+        "Use the same basis for both years."
+      ]
+    },
+    {
+      "h": "Watch for",
+      "ul": [
+        "Directly means the supplier you pay. If a trader stands between you and an MSME maker, the trader is your direct source.",
+        "Status can change: check it each year, not once.",
+        "Keep the certificates; an assessor will sample them."
+      ]
+    },
+    {
+      "h": "If you are the MSME supplier",
+      "p": [
+        "Send your Udyam registration certificate with your vendor form. It puts your sales in your customer's numerator, which is a reason to keep your status current."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Rs 800 crore of inputs",
+    "lines": [
+      "From Udyam-registered MSMEs: Rs 168 crore; from a producer cooperative: Rs 8 crore",
+      "MSME and small producer share: (168 + 8) / 800 = 22%",
+      "Imports on own bills of entry: Rs 240 crore",
+      "Directly from within India: (800 minus 240) / 800 = 70%"
+    ],
+    "note": "Example figures."
+  },
+  "senseible": "Senseible reads purchase invoices and keeps spend and HSN code by supplier in its supplier evidence trail, which gives you the totals by vendor. It does not check Udyam status, so tag MSME suppliers yourself.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Sustainable sourcing share in BRSR",
+      "to": "/answers/brsr-sustainable-sourcing-percentage-question"
+    },
+    {
+      "label": "BRSR value chain data from MSME suppliers",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Imported materials and bills of entry",
+      "to": "/answers/bill-of-entry-imported-materials-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR format updated July 2023 (Annexure II to the BRSR Core circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    },
+    {
+      "label": "SEBI, master circular of 11 July 2023, Annexures 16 and 17 (earlier BRSR format and guidance note)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

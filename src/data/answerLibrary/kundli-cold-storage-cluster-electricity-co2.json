@@ -1,0 +1,81 @@
+{
+  "slug": "kundli-cold-storage-cluster-electricity-co2",
+  "q": "What is the electricity use and CO2 of the Kundli cold storage cluster?",
+  "title": "Kundli cold stores: electricity and CO2",
+  "short": "About 19.7 million kWh a year, roughly 13,300 t CO2 on CEA's FY 2025-26 grid factor (estimate). TERI's 2014-15 profile covers 53 cold stores in Kundli, 665 to 8,600 t each, running ammonia plants on grid power; refrigeration takes 89 to 95% of each store's electricity.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cold store owners and managers in Kundli and Sonipat, Haryana",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 90 cold stores in Sonipat district, about 53 of them in Kundli.",
+        "27 stores up to 2,500 t, 23 between 2,500 and 5,000 t, 3 above 5,000 t; the average is 2,833 t.",
+        "Potatoes, apples, pulses and spices, mostly for the Delhi market; turnover about Rs 290 crore, almost all storage rent.",
+        "Many were built with the National Horticulture Board's 35% capital subsidy."
+      ]
+    },
+    {
+      "h": "Why the profile says 19,353 t and this page 13,300",
+      "p": [
+        "Same kWh, different factor: the profile used the grid factor of its time, and CEA's figure for FY 2025-26 is 0.675 kg per kWh. Its summary line also says 11.6 million kWh, but its own table and per-store figures add up to 19.7 million."
+      ]
+    },
+    {
+      "h": "Refrigerant",
+      "p": [
+        "Most Kundli plants run on ammonia, which has a global warming potential of zero, so top-ups add nothing to CO2e. A store on R134a or R404A must add kilograms topped up times the gas's GWP."
+      ]
+    },
+    {
+      "h": "Where the power is lost",
+      "ul": [
+        "Reciprocating compressors run at full load with manual control; only about three stores use screw compressors.",
+        "Standard-efficiency motors, many rewound.",
+        "Uninsulated valves, flanges and pipe runs, in new stores as well as old.",
+        "Strip curtains missing or torn at chamber doors."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster CO2 by store size (estimate)",
+    "lines": [
+      "Up to 2,500 t: 27 x 220,542 kWh = 5.95 million kWh = 4,019 t CO2",
+      "2,500 to 5,000 t: 23 x 488,085 kWh = 11.23 million kWh = 7,578 t CO2",
+      "Above 5,000 t: 3 x 855,710 kWh = 2.57 million kWh = 1,733 t CO2",
+      "Total 19.75 million kWh x 0.675 kg = about 13,330 t CO2"
+    ],
+    "note": "Store counts and kWh from TERI's Kundli profile (2014-15). Grid factor CEA FY 2025-26."
+  },
+  "senseible": "UHBVN bills Kundli stores per kVAh; Senseible uses the printed kWh, or kVAh times the printed power factor labelled as an estimate, and turns twelve bills into your store's carbon number.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Cold store power by size",
+      "to": "/answers/kundli-cold-store-electricity-by-capacity"
+    },
+    {
+      "label": "HFC top-ups in a cold store",
+      "to": "/answers/agra-cold-store-hfc-top-up-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Kundli cold storage cluster (2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Kundli_Cold_Storage.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC AR6 Working Group I (global warming potentials)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

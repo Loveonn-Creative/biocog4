@@ -1,0 +1,87 @@
+{
+  "slug": "dairy-effluent-methane-capture-fo-saving",
+  "q": "How much furnace oil can methane captured from dairy effluent replace?",
+  "title": "Dairy effluent biogas: furnace oil replaced",
+  "short": "Around 352,800 litres a year in BEE's Gujarat dairy report, from 1,000 m3 a day of effluent at 5,000 mg/L COD, plus 54,000 kWh of aeration power. That avoids about 1,084 t of fossil CO2. Project cost Rs 247.56 lakh, payback 2.34 years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dairy plants with high strength effluent and boilers or hot air generators on furnace oil",
+  "sections": [
+    {
+      "h": "How the report gets from effluent to oil",
+      "ol": [
+        "1,000 m3 a day at 5,000 mg/L COD is 5,000 kg of COD a day.",
+        "An anaerobic reactor removing 80% leaves 4,000 kg of COD broken down.",
+        "At 0.5 m3 of biogas per kg of COD removed: 2,000 m3 of biogas a day, 52 to 65% methane.",
+        "At 4,900 kcal/m3 that is 9.8 million kcal a day, the heat in 980 litres of furnace oil at 10,000 kcal per litre.",
+        "Over 360 days: 352,800 litres. Replacing the 120 hp surface aerator's work saves 54,000 kWh."
+      ]
+    },
+    {
+      "h": "Counting the CO2 properly",
+      "p": [
+        "Furnace oil saved: 352,800 litres x 2.97 = 1,048 t. Power saved: 54,000 kWh x 0.675 = 36 t. Total about 1,084 t a year. Burning biogas gives biogenic CO2, reported separately.",
+        "The report claims 3,535 t, which its own fuel figures do not support. It also says the old aerobic plant released methane; a well run aerobic plant releases very little, so do not claim avoided methane unless your old system had anaerobic tanks or lagoons. Methane leaking from the new reactor or gas holder is Scope 1."
+      ]
+    },
+    {
+      "h": "Check before you build",
+      "ul": [
+        "Your COD and flow, sampled over weeks: biogas scales directly with COD removed.",
+        "A gas flow meter on the biogas line, so the oil you claim to replace is measured, not calculated.",
+        "Burner changes on the boiler or hot air generator, gas cleaning for hydrogen sulphide, and 14 days of downtime.",
+        "The report costs oil at Rs 29 a litre and power at Rs 6.49 a kWh; redo the payback at today's prices."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One plant treating 1,000 m3 a day",
+    "lines": [
+      "Biogas: 4,000 kg COD removed x 0.5 = 2,000 m3 a day",
+      "Oil equivalent: 2,000 x 4,900 / 10,000 = 980 litres a day, 352,800 a year",
+      "CO2 from oil avoided: 352,800 x 2.97 = 1,047.8 t",
+      "CO2 from power saved: 54,000 x 0.675 = 36.5 t",
+      "Total: about 1,084 t CO2 a year"
+    ],
+    "note": "The report writes the oil both in kg and litres, treating them as equal; the heat arithmetic gives litres. Factors are our furnace oil factor and CEA's FY 2025-26 grid factor, both estimates."
+  },
+  "senseible": "Senseible reads furnace oil invoices and electricity bills into monthly CO2 records linked to each bill, so the fall in oil after a biogas plant starts shows up month by month. The green loan check shows what a lender asks for.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Methane from an ETP",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "Wastewater biogas and carbon credits",
+      "to": "/answers/food-factory-wastewater-biogas-carbon-credits"
+    },
+    {
+      "label": "Dairy plant emissions per litre",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: methane capture by anaerobic treatment of effluent, 1,000 m3, Gujarat dairy cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/Gujarat_dairy_cluster/DPR_on_Effulent_Methane_Capture_1000_CUBM.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines (Volume 5, Chapter 6, wastewater methane)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "rajkot-plastic-unit-electricity-by-product",
+  "q": "How much electricity does a plastic pipe, sack or moulding unit use a year?",
+  "title": "Plastic unit power: pipes, sacks, moulding",
+  "short": "From TERI's Rajkot profile, a typical unit a year: pipes and fittings 336,351 kWh, polybags and sacks 218,600 kWh, household moulding 391,743 kWh plus some gas or LPG for ovens, roll strap 179,692 kWh. Per tonne that is roughly 340, 470, 550 and 470 kWh.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Plastic processors filling a buyer's supplier form, and buyers checking the figure they receive",
+  "sections": [
+    {
+      "h": "Per unit and per tonne",
+      "ul": [
+        "Pipes and fittings: 95 units averaging about 995 t a year; 336,351 kWh, about 338 kWh a tonne.",
+        "Polybags and sacks: 65 units averaging about 466 t; 218,600 kWh, about 469 kWh a tonne.",
+        "Household moulding: 55 units averaging about 707 t; 391,743 kWh plus 4.75 toe of gas or LPG, about 554 kWh a tonne.",
+        "Roll strap and others: 85 units averaging about 382 t; 179,692 kWh, about 470 kWh a tonne."
+      ]
+    },
+    {
+      "h": "Why pipes come out lowest",
+      "p": [
+        "A pipe line extrudes continuously at high throughput, so heater and motor losses are spread over many tonnes. Sacks add tape stretching, looms and lamination; moulding works in cycles, often on hydraulic machines, and roto-moulding adds a gas or LPG oven."
+      ]
+    },
+    {
+      "h": "What to send a buyer",
+      "ol": [
+        "kWh per tonne for the product line they buy, not the plant average. If lines share one meter, split by machine hours or connected load and say so.",
+        "DG diesel and oven gas or LPG, if any.",
+        "The polymer itself as a separate line: its footprint comes from the resin supplier and is usually larger than your processing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne by product (estimate)",
+    "lines": [
+      "Pipes: 336,351 kWh x 0.675 = 227 t CO2 / 995 t = 228 kg per tonne",
+      "Sacks: 218,600 kWh x 0.675 = 148 t / 466 t = 317 kg per tonne",
+      "Moulding: 391,743 kWh x 0.675 = 264 t, plus about 12 t from oven gas, / 707 t = 390 kg per tonne",
+      "Roll strap: 179,692 kWh x 0.675 = 121 t / 382 t = 317 kg per tonne"
+    ],
+    "note": "Unit kWh, unit counts and output from TERI's Rajkot plastics profile; tonnes per unit are cluster output divided by units. Grid factor CEA FY 2025-26; oven fuel at IPCC 2006 factors."
+  },
+  "senseible": "Senseible keeps your electricity and fuel bills as the evidence behind each figure you send, in a Scope 3 supplier trail a buyer can check line by line.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Rajkot plastics cluster CO2",
+      "to": "/answers/rajkot-plastic-cluster-electricity-co2"
+    },
+    {
+      "label": "Plastic chair footprint",
+      "to": "/answers/plastic-chair-carbon-footprint-per-chair"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Rajkot plastic industries (2016)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/rajkot-plastics-gujarat.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

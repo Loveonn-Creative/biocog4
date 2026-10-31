@@ -1,0 +1,90 @@
+{
+  "slug": "glass-refractory-msme-energy-per-tonne",
+  "q": "What is the energy use per tonne for MSME glass and refractory units by cluster?",
+  "title": "Glass and refractory units: energy per tonne",
+  "short": "Anywhere from 1.6 GJ to 25 GJ a tonne, set by what you make. BEE's study found 10.4 GJ per tonne across Firozabad glass, 25.3 GJ for Ambala's blown glass and 1.6 GJ for Jaipur's toughening, with Chirkunda refractories at 5.7 GJ and East and West Godavari at 6.7 GJ.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Glass, bangle, scientific glassware and refractory makers comparing their energy per tonne with their cluster",
+  "sections": [
+    {
+      "h": "Cluster figures",
+      "ul": [
+        "Firozabad glass: 1,061,920 t a year, 249 kgoe (10.4 GJ) per tonne.",
+        "Jaipur glass: 31,098 t, 38 kgoe (1.6 GJ).",
+        "Ambala glass: 12,047 t, 605 kgoe (25.3 GJ).",
+        "Chirkunda refractories: 220,043 t, 135 kgoe (5.7 GJ).",
+        "East and West Godavari refractories: 62,530 t, 159 kgoe (6.7 GJ)."
+      ]
+    },
+    {
+      "h": "By product",
+      "ul": [
+        "Glass blowing, Ambala: 27.5 GJ per tonne.",
+        "Bangles, Firozabad: 19.2 GJ.",
+        "Decorative and other glass, Firozabad: 8.0 GJ.",
+        "Container glass, Firozabad: 7.7 GJ.",
+        "Toughened glass, Jaipur: 1.7 GJ, since it reheats bought sheet rather than melting batch.",
+        "Refractories: Chirkunda downdraft kilns 6.23 GJ and tunnel kilns 4.19 GJ; Godavari downdraft kilns 6.66 GJ."
+      ]
+    },
+    {
+      "h": "What the study recommends",
+      "p": [
+        "The study puts the glass sector's energy at 276,777 toe and refractories' at 105,446 toe. It lists automatic combustion control, better furnace and kiln insulation, waste heat recovery and switching from solid fuel to gas, then pot arching for glass, downdraft to tunnel kilns for refractories, electric furnaces, kilns and lehrs, and rooftop solar. It also proposes common facilities for bangle baking and refractory sintering."
+      ]
+    },
+    {
+      "h": "Before you compare",
+      "ul": [
+        "Fuel in GJ from your bills plus power at 3.6 MJ per kWh, divided by tonnes packed or fired in the same year.",
+        "These figures cover energy only. Soda ash, limestone and dolomite in a glass batch give off CO2 as they melt; add that from batch weights."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Firozabad container glass unit, 20,000 t a year (estimate)",
+    "lines": [
+      "Gas: 4,000,000 scm x 0.0398 GJ (9,500 kcal per scm on the bill) = 159,200 GJ",
+      "Power: 6,000,000 kWh x 0.0036 GJ = 21,600 GJ",
+      "Energy per tonne: 180,800 / 20,000 = 9.0 GJ, about 17% above the 7.7 GJ container average",
+      "Energy CO2: 4,000,000 x 2.05 = 8,200 t; 6,000,000 x 0.675 = 4,050 t; 0.61 t per tonne before batch CO2"
+    ],
+    "note": "An example unit, not a measured one: use your own bills. CO2 at 2.05 kg per scm of gas and CEA's FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible reads your gas and electricity bills into yearly energy and CO2 records, each linked to its bill, which you divide by tonnes to compare with these cluster figures.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Glass furnace gas per tonne of melt",
+      "to": "/answers/glass-furnace-gas-per-tonne-benchmark"
+    },
+    {
+      "label": "Batch carbonates and process CO2",
+      "to": "/answers/firozabad-glass-batch-carbonates-process-co2"
+    },
+    {
+      "label": "10 TPD tunnel kiln vs downdraft",
+      "to": "/answers/refractory-tunnel-kiln-10-tpd-coal-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy mapping of glass and refractory MSME clusters (brochure, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/brouchres/2.9%20Annex%20Glass%20RefractoryBrochure.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Benchmarks come from BEE's cluster mapping brochure, which gives no data year on the page. Recheck if BEE publishes the full cluster reports."
+}

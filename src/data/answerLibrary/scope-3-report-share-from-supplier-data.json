@@ -1,0 +1,75 @@
+{
+  "slug": "scope-3-report-share-from-supplier-data",
+  "q": "Why does my buyer have to report what share of Scope 3 comes from supplier data?",
+  "title": "Why buyers report their supplier data share",
+  "short": "Because the GHG Protocol Scope 3 Standard requires it. For every Scope 3 category, a company reporting under it shall publicly report the percentage of emissions calculated using data from suppliers or other value chain partners. Each supplier that sends real data moves that percentage up, in public.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Indian suppliers asked for emissions data, and buyers' sustainability teams",
+  "sections": [
+    {
+      "h": "The requirement",
+      "p": [
+        "Section 11.1 lists what a company shall report publicly. For each Scope 3 category that includes the types and sources of data used, with activity data, emission factors and GWP values; the data quality; the methods, allocation and assumptions; and the percentage of emissions calculated from supplier or value chain partner data. Chapter 7 repeats that companies are required to report that percentage."
+      ]
+    },
+    {
+      "h": "What counts toward it, and what does not",
+      "ul": [
+        "Counts: a product footprint the supplier provided, allocated Scope 1 and 2, or the supplier's own activity data used in the hybrid method.",
+        "Does not count: the buyer's spend times an industry average, or a database factor per tonne."
+      ]
+    },
+    {
+      "h": "Why it lands in your inbox",
+      "p": [
+        "The percentage sits in the buyer's public report next to its total. A low share tells investors and customers that most of the figure is averages. The standard also lets companies describe their efforts to get more suppliers to provide data. Each supplier answer is something the buyer can point to."
+      ]
+    },
+    {
+      "h": "Make your data count",
+      "ul": [
+        "Cover the buyer's reporting period.",
+        "Name your method and factor sources, so the buyer can describe them.",
+        "Give the allocation key, or your total output and their quantity.",
+        "Say whether the data is assured."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one supplier moves the share",
+    "lines": [
+      "Buyer's Category 1 total: 10,000 t CO2e, of which 3,500 t from supplier data: share 35.0%",
+      "Your line was 600 t from spend times an average factor",
+      "You send allocated data giving 450 t: new total 10,000 minus 600 plus 450 = 9,850 t",
+      "New share: (3,500 + 450) / 9,850 = 40.1%"
+    ],
+    "note": "Example figures. Your real figure can come out above or below the average; either way it counts as supplier data."
+  },
+  "senseible": "Senseible turns your bills into Scope 1 and 2 with the document and factor behind each line, the kind of supplier data a buyer can count in that percentage and describe in its methods note.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Hybrid method: what a supplier sends",
+      "to": "/answers/hybrid-method-allocated-scope-1-2-from-suppliers"
+    },
+    {
+      "label": "What a Scope 3 supplier questionnaire asks",
+      "to": "/answers/supplier-questionnaire-what-buyer-asks"
+    },
+    {
+      "label": "Primary data share on a product footprint",
+      "to": "/answers/primary-data-share-meaning"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard, chapter 7 (collecting data) and section 11.1 (required information)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

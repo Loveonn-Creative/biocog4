@@ -1,0 +1,79 @@
+{
+  "slug": "bhubaneswar-shrimp-plant-kwh-per-tonne",
+  "q": "How many kWh per tonne does a shrimp processing plant use, and how does it compare with the FAO figure?",
+  "title": "Shrimp plant kWh per tonne: Odisha vs FAO",
+  "short": "About 1,520 kWh per tonne on average in Bhubaneswar, TERI found: from 1,100 in a large plant in season to 2,850 in a small one off-season. With diesel, that is about 154 kg of oil equivalent a tonne, against the international 83 kgoe from FAO's 2015 figures that TERI cites.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plant managers and engineers in seafood processing units benchmarking their power use",
+  "sections": [
+    {
+      "h": "Why the same plant swings so much",
+      "p": [
+        "January to early April is off-season, with output as low as 25% of the yearly average; July to September runs near 160%. Cold stores, chillers and ice machines keep running either way, so kWh per tonne almost triples in a slow month. Average utilisation is only 40 to 60%."
+      ]
+    },
+    {
+      "h": "Typical plants in the cluster",
+      "ul": [
+        "600 t a year: 9,50,000 kWh and 20 kL of diesel, about 1,583 kWh a tonne.",
+        "1,800 t a year: 27,50,000 kWh and 55 kL, about 1,528 kWh a tonne.",
+        "9,000 t a year: 1,30,00,000 kWh and 200 kL, about 1,444 kWh a tonne.",
+        "DG sets are under 10% of energy."
+      ]
+    },
+    {
+      "h": "What closes the gap",
+      "ul": [
+        "Repair frosted pipe runs and insulation: 5 to 8% of power, payback under a year.",
+        "Automatic refrigeration controls and fan drives: about Rs 1.0 to 1.2 million, payback 1.5 to 2 years.",
+        "Drives on condenser fans: 20% less speed cuts fan power about half; payback under a year.",
+        "A desuperheater on the ammonia line recovers 12 to 15% of condenser heat as 70 degree water, for about Rs 1.5 to 2.5 million."
+      ]
+    },
+    {
+      "h": "How to benchmark your own plant",
+      "ol": [
+        "Monthly kWh from your bills, plus DG diesel.",
+        "Tonnes packed in the same month.",
+        "Compare each month with the same month last year, not with the yearly average."
+      ]
+    }
+  ],
+  "example": {
+    "title": "From kWh to CO2 per tonne (estimate)",
+    "lines": [
+      "Large plant in season: 1,100 kWh x 0.675 kg = 743 kg CO2",
+      "Cluster average: 1,520 kWh x 0.675 kg = 1,026 kg CO2",
+      "Small plant off-season: 2,850 kWh x 0.675 kg = 1,924 kg CO2",
+      "Gap to the international figure: 154 / 83 = 1.9 times the energy per tonne"
+    ],
+    "note": "kWh per tonne and the 83 kgoe comparison from TERI's Bhubaneswar profile (2015-16). Grid factor CEA FY 2025-26; DG diesel not included in these lines."
+  },
+  "senseible": "Senseible turns monthly bills and diesel invoices into the kWh and CO2 per tonne behind your supplier evidence, so a buyer sees your own figure rather than a regional default.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Bhubaneswar cluster CO2",
+      "to": "/answers/bhubaneswar-shrimp-processing-cluster-co2"
+    },
+    {
+      "label": "Kochi seafood freezer energy",
+      "to": "/answers/kochi-seafood-processors-freezer-energy-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Bhubaneswar seafood processing industries (2015-16 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/bhubaneshwar-seafood-processing-odisha.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

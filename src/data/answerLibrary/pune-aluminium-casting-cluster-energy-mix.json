@@ -1,0 +1,87 @@
+{
+  "slug": "pune-aluminium-casting-cluster-energy-mix",
+  "q": "What is the energy and fuel mix of the Pune aluminium casting cluster?",
+  "title": "Pune aluminium casting: the energy mix",
+  "short": "Furnace oil and grid power, with little else. TERI's profile of Pune's 50 or so casting units counts 44,153 kL of furnace oil and 350 million kWh a year, about 77,500 toe in all: 61% thermal for melting, 39% electricity. On FY 2025-26 factors that is roughly 377,000 t CO2.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Aluminium die casting units in Pimpri-Chinchwad, Bhosari, Chakan and nearby estates around Pune",
+  "sections": [
+    {
+      "h": "Eight large units set the number",
+      "ul": [
+        "12 micro units (up to 100 t a year) make about 1,500 t together.",
+        "30 small and medium units (100 to 5,000 t) make about 54,000 t.",
+        "8 large units (above 5,000 t) make about 3,40,000 t, close to 86% of the cluster's capacity of 3,95,500 t.",
+        "About 35 of the 50 units sit in Pimpri-Chinchwad-Bhosari MIDC and Chakan MIDC."
+      ]
+    },
+    {
+      "h": "Fuel by fuel, one year",
+      "ul": [
+        "Electricity: 350 million kWh (30,063 toe). It runs holding furnaces, PDC and GDC machines, core shooters, shot blasting, machining and compressors in every unit, whatever the melting furnace.",
+        "Furnace oil: 44,153 kL (43,579 toe), mostly in skalner, tower and crucible melting furnaces.",
+        "Diesel: 2,592 kL (2,536 toe), for DG sets during load shedding in Bhosari and Chakan.",
+        "Natural gas: 1.206 million scm (1,025 toe). LPG: 210 t (263 toe), partly for die heating on GDC and LPDC lines."
+      ]
+    },
+    {
+      "h": "Energy share and carbon share are not the same",
+      "p": [
+        "Electricity is 39% of the energy but close to two thirds of the CO2, because each kWh on India's grid carries more carbon than the oil that would give the same heat. A unit that melts in an oil skalner and does everything else on power usually finds its electricity bill, not its oil bill, drives the footprint its OEM sees."
+      ]
+    },
+    {
+      "h": "Using the cluster figure for your own unit",
+      "p": [
+        "Don't. A micro unit with an electric crucible and a large unit with a tower furnace have almost nothing in common. Add up your own furnace oil, gas, LPG, diesel and kWh for twelve months and divide by tonnes of good castings shipped."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster CO2 on FY 2025-26 factors (estimate)",
+    "lines": [
+      "Electricity: 350 million kWh x 0.675 kg = 236,250 t CO2",
+      "Furnace oil: 44,153 kL x 2.97 t = 131,134 t CO2",
+      "Diesel: 2,592 kL x 2.645 t = 6,856 t CO2",
+      "Natural gas: 1.206 million scm x 2.05 kg = 2,472 t CO2",
+      "LPG: 210 t x 2.98 = 626 t CO2",
+      "Total about 377,300 t, or about 0.95 t CO2 per tonne of capacity"
+    ],
+    "note": "Quantities from TERI's cluster profile (2014 data). Grid factor CEA FY 2025-26; fuels IPCC 2006. The aluminium you melt carries its own, much larger footprint and is not included."
+  },
+  "senseible": "If your castings go to the EU under a covered code, Senseible's CBAM tools work from the same furnace oil, gas and diesel invoices; your electricity bills are read into monthly records for the OEM footprint, which counts power.",
+  "links": [
+    {
+      "label": "CBAM for exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "Melting energy by furnace type",
+      "to": "/answers/pune-die-casting-melting-energy-by-furnace"
+    },
+    {
+      "label": "Are aluminium castings covered by CBAM?",
+      "to": "/answers/are-aluminium-castings-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Pune aluminium casting industries (2015)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Pune_Aluminium_Casting_Maharashtra.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Cluster summary: Pune aluminium casting cluster",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=179&Itemid=502"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

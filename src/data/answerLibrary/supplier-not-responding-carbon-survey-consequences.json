@@ -1,0 +1,83 @@
+{
+  "slug": "supplier-not-responding-carbon-survey-consequences",
+  "q": "What happens if I don't answer my buyer's carbon survey?",
+  "title": "Ignoring a buyer's carbon survey",
+  "short": "No Indian law makes you answer an ordinary Scope 3 survey, but your buyer is told to plan for silence. GHG Protocol guidance asks buyers to set consequences, follow-up and a requirement to provide data in future. Your line is then estimated from averages, and you lose any say in the number.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Indian MSME suppliers deciding whether to answer a buyer's emissions survey",
+  "sections": [
+    {
+      "h": "What your buyer has been told to do",
+      "p": [
+        "The GHG Protocol's supplier engagement guidance gives buyers five steps. The fourth is to have a clear strategy for suppliers that choose not to respond, including consequences, follow-up actions and a requirement to provide data in future. It warns that without clear consequences the whole exercise loses value.",
+        "The letter announcing the survey is meant to state any consequences of not taking part. Read it again: the answer is usually there, or in your supply contract."
+      ]
+    },
+    {
+      "h": "What happens to your figure",
+      "p": [
+        "The Scope 3 Standard tells buyers to use secondary data wherever supplier data is not collected. Your emissions become your spend or tonnage times an industry average. Whatever you have done, rooftop solar, a switch from coal to PNG, a more efficient furnace, is invisible in that number, and you cannot correct it."
+      ]
+    },
+    {
+      "h": "If you cannot answer everything",
+      "ol": [
+        "Reply before the deadline, even with a partial answer.",
+        "Send what you have: units from twelve electricity bills, litres of diesel, kg of LPG.",
+        "Say what is missing and when you will have it.",
+        "Ask for the training session or help desk the guidance tells buyers to offer.",
+        "Agree the period: financial year or calendar year."
+      ]
+    },
+    {
+      "h": "When it is more than a request",
+      "p": [
+        "If you export iron, steel, aluminium, cement, fertilisers or hydrogen to the EU, the importer has legal CBAM duties that depend on your emissions data. Treat that request as part of the sale, not a survey."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a minimum reply from one year of bills",
+    "lines": [
+      "Grid electricity: 2,40,000 kWh x 0.675 kg CO2 per kWh = 162.00 t CO2 (Scope 2)",
+      "DG set diesel: 3,000 L x 2.645 kg CO2 per L = 7.94 t CO2 (Scope 1)",
+      "Total: 169.94 t CO2 for FY 2025-26, with output of 1,200 t so the buyer can allocate"
+    ],
+    "note": "Example figures. Grid factor from the CEA database for FY 2025-26, an estimate."
+  },
+  "senseible": "If the survey is stuck because the numbers are spread across a year of bills, upload them to Senseible and get Scope 1 and 2 by month, each figure tied to its bill, ready for the buyer's form.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "CDP supply chain request: respond or not?",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "BRSR value chain data from MSME suppliers",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "CBAM for exporters",
+      "to": "/cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Supplier Engagement Guidance",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Supplier%20Engagement%20Guidance.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard, chapter 7 (collecting data) and section 11.1 (required information)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

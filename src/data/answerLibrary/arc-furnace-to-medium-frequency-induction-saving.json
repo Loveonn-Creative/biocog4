@@ -1,0 +1,76 @@
+{
+  "slug": "arc-furnace-to-medium-frequency-induction-saving",
+  "q": "How much power does replacing an arc furnace with a medium frequency induction furnace save?",
+  "title": "Arc furnace to medium frequency: kWh saved",
+  "short": "A medium frequency induction furnace saves about 120 kWh per tonne melted in BEE's Punjab foundry report: 720 kWh per tonne of cast iron in the arc furnace against 600. At 2,250 t a year that is 270 MWh, about 182 t CO2 on today's grid factor. Payback 2.23 years at 2011 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Foundry owners in Batala, Jalandhar, Ludhiana and elsewhere still melting cast iron in arc furnaces",
+  "sections": [
+    {
+      "h": "The numbers in BEE's report",
+      "ul": [
+        "250 melting days and 2,250 t a year.",
+        "Electricity for melting: 1,620 MWh a year in the arc furnace, 1,350 MWh in the medium frequency furnace.",
+        "Saving: 270 MWh and Rs 13.50 lakh a year at Rs 5 per kWh.",
+        "Project cost Rs 30.08 lakh: power unit Rs 16.75 lakh, melting furnace Rs 8.00 lakh, the rest options, duties and taxes. Downtime 14 days.",
+        "The report's 219 t of CO2 used an older grid factor. At 0.675 kg per kWh it is about 182 t."
+      ]
+    },
+    {
+      "h": "Where the arc furnace wastes power",
+      "p": [
+        "An arc furnace melts cold charge efficiently, but once the metal is down its heat efficiency during superheating is less than half an induction furnace's. A medium frequency furnace starts from cold without a molten heel, stirs the bath by itself and melts cleaner."
+      ]
+    },
+    {
+      "h": "Check these on your own floor",
+      "ul": [
+        "kWh per tonne from a meter on the furnace itself, over at least a month of melts, divided by tonnes tapped.",
+        "Whether your sanctioned load and contract demand cover the new power unit.",
+        "Power factor and harmonics the supplier guarantees, since your electricity bill will show both."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per tonne and per year at 2,250 t",
+    "lines": [
+      "Arc furnace: 720 kWh x 0.675 = 486 kg CO2 per tonne",
+      "Medium frequency: 600 kWh x 0.675 = 405 kg CO2 per tonne",
+      "Saved: 81 kg CO2 per tonne",
+      "Year: 270,000 kWh x 0.675 = 182 t CO2"
+    ],
+    "note": "Grid factor is CEA's for FY 2025-26, an estimate. Use your own kWh per tonne in place of the report's."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly kWh and CO2, each linked to its bill, which is the before and after record a lender asks for on a furnace loan. Start with the green loan check.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Mains or medium frequency furnace",
+      "to": "/answers/medium-vs-mains-frequency-induction-furnace"
+    },
+    {
+      "label": "Finance for an induction furnace upgrade",
+      "to": "/answers/green-loan-induction-furnace-upgrade-readiness"
+    },
+    {
+      "label": "Cupola or induction furnace",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: replacement of arc furnace with medium frequency induction furnace, Batala, Jalandhar and Ludhiana foundry cluster (2011, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/Batala_Jalandhar_Ludhiana_foundry_cluster/Replacement_of_arc_furnace_with_medium_frequency_induction_furnace_Batala_Jlndr_Ludh_Fdry_Cluster.pdf"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

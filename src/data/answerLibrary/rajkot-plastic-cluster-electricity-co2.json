@@ -1,0 +1,80 @@
+{
+  "slug": "rajkot-plastic-cluster-electricity-co2",
+  "q": "What is the energy and CO2 footprint of Rajkot's plastic processing cluster?",
+  "title": "Rajkot plastics cluster: energy and CO2",
+  "short": "Rajkot's 300 or so plastic units use 7,417 toe a year, 96% of it grid power, by TERI's profile: 83 million kWh plus a little gas, LPG and diesel, for 196,210 t of product. On FY 2025-26 factors that is about 56,700 t CO2, or 0.29 t per tonne (estimate).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Pipe, sack, moulding and roll strap units in Rajkot and nearby GIDC estates",
+  "sections": [
+    {
+      "h": "Four product groups",
+      "ul": [
+        "Pipes and fittings: 95 units, 94,500 t a year, 2,764 toe (about 37% of energy).",
+        "Polybags and woven or non-woven sacks: 65 units, 30,310 t, 1,225 toe.",
+        "Household moulding: 55 units, 38,900 t, 2,114 toe.",
+        "Roll strap and others: 85 units, 32,500 t, 1,314 toe.",
+        "About 10,000 jobs; most units turn over Rs 2 to 5 crore."
+      ]
+    },
+    {
+      "h": "How the units are supplied",
+      "p": [
+        "PGVCL supplies the power. Most units are LT at about 100 kVA; pipe and sack plants are HT at 300 kVA or more. Natural gas (198,000 scm) or LPG (79 t) heats roto-moulding ovens, and diesel (20 kL) runs DG sets only in rare outages."
+      ]
+    },
+    {
+      "h": "Why the profile says 81,962 t",
+      "p": [
+        "It used the grid factor of its time on the same 83 million kWh. On CEA's FY 2025-26 factor, electricity gives about 56,000 t."
+      ]
+    },
+    {
+      "h": "Next to Balasore",
+      "p": [
+        "Balasore's plastic cluster comes to about 0.32 t CO2 per tonne on the same factors, with pipes taking an even bigger share of its energy. In both, the barrel heaters, extruder motors and hydraulic moulding machines are where the savings sit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster CO2 on FY 2025-26 factors (estimate)",
+    "lines": [
+      "Electricity: 83 million kWh x 0.675 kg = 56,025 t CO2",
+      "Natural gas: 198,000 scm x 2.05 kg = 406 t CO2",
+      "LPG: 79 t x 2.98 = 235 t CO2",
+      "Diesel: 20 kL x 2.645 t = 53 t CO2",
+      "Total about 56,720 t / 196,210 t = 0.29 t CO2 per tonne; 423 kWh a tonne on average"
+    ],
+    "note": "Quantities from TERI's Rajkot plastics profile. Grid factor CEA FY 2025-26; fuels IPCC 2006."
+  },
+  "senseible": "Senseible reads your PGVCL bills and any gas or LPG invoices into monthly records, so your carbon number per tonne is your own, not the cluster's.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Unit power by product",
+      "to": "/answers/rajkot-plastic-unit-electricity-by-product"
+    },
+    {
+      "label": "Balasore plastics cluster",
+      "to": "/answers/balasore-plastic-cluster-electricity-share-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Rajkot plastic industries (2016)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/rajkot-plastics-gujarat.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

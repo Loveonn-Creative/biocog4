@@ -1,0 +1,99 @@
+{
+  "slug": "supplier-questionnaire-what-buyer-asks",
+  "q": "What exactly does a buyer's Scope 3 supplier questionnaire ask for under the GHG Protocol?",
+  "title": "What a Scope 3 supplier questionnaire asks",
+  "short": "The GHG Protocol's own list is short: your product's cradle-to-gate footprint, how you calculated it, including emission factors and GWP values, whether it was assured and how, and anything else useful, such as the share from primary data. Without a product figure, your Scope 1 and 2 for the year, plus a way to allocate it, comes next.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Indian suppliers filling a buyer's carbon questionnaire, and buyers drafting one",
+  "sections": [
+    {
+      "h": "The four items behind most questionnaires",
+      "p": [
+        "The GHG Protocol's guidance for purchased goods says a buyer may send each relevant supplier a questionnaire asking for:"
+      ],
+      "ol": [
+        "Product life cycle emissions following the GHG Protocol Product Standard, usually cradle-to-gate per kg or per piece.",
+        "How you calculated them, and your data sources, including the emission factors and GWP values you used.",
+        "Whether the data has been assured or verified, and if so, the type of assurance.",
+        "Any other relevant information, for example the percentage of the product footprint calculated from primary data."
+      ]
+    },
+    {
+      "h": "What the Scope 3 Standard adds",
+      "ul": [
+        "Your Scope 1 and Scope 2 for the reporting year, calculated under the GHG Protocol Corporate Standard.",
+        "Your own upstream Scope 3, or at least the activities upstream of you, such as the materials you buy.",
+        "The method you used to allocate emissions to the buyer, or the figures the buyer needs to do it: total output and the quantity sold to them."
+      ]
+    },
+    {
+      "h": "Send the most specific figure you can defend",
+      "p": [
+        "The standard ranks supplier data from most to least specific: product level, then process or production line, then facility, business unit and whole company. A unit that runs a forge line and a machining line for different buyers should not send one company-wide average. A single-product unit loses little by sending facility data with an allocation key."
+      ]
+    },
+    {
+      "h": "Match the period, and be plain about assurance",
+      "p": [
+        "The guidance asks that supplier data cover the same period as the buyer's inventory, and tells buyers to prefer verified data. If the buyer reports January to December and you keep April to March books, ask which period they want, and keep your figures by month so you can cut either.",
+        "If no independent body has checked your figures, write \"not assured; calculated from fuel invoices and electricity bills\". That is a valid answer. Ticking yes to a check that never happened is the answer that gets caught."
+      ]
+    },
+    {
+      "h": "Before you press send",
+      "ul": [
+        "Give units on every number: kg CO2e per kg, per piece or per metre.",
+        "Name each factor and its year, for example the CEA grid factor for the financial year.",
+        "Say which IPCC report your GWP values come from.",
+        "State the share from primary data, even if it is low.",
+        "Keep the bills behind each line; the next email asks for them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a fastener unit allocates its own emissions",
+    "lines": [
+      "Output for FY 2025-26: 600 t of fasteners; sold to this buyer: 120 t (20%)",
+      "Scope 1, diesel for DG set and forklifts: 18,000 L x 2.645 kg CO2 per L = 47.61 t CO2",
+      "Scope 2, grid electricity: 9,00,000 kWh x 0.675 kg CO2 per kWh = 607.5 t CO2",
+      "Total 655.11 t, or 655.11 / 600 = 1.09 kg CO2 per kg of fasteners",
+      "Buyer's share by mass: 655.11 x 20% = 131.02 t CO2"
+    ],
+    "note": "Example figures. This is gate-to-gate, your own plant only. A cradle-to-gate figure adds the wire rod and other inputs, which usually outweigh the plant."
+  },
+  "senseible": "Senseible reads your fuel invoices and electricity bills and gives Scope 1 and 2 by month, each line tied to its bill and factor, which answers the company-level and allocation questions. It is not a verifier, so the assurance answer stays \"not assured\".",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Primary data share on a product footprint",
+      "to": "/answers/primary-data-share-meaning"
+    },
+    {
+      "label": "Allocating your emissions to one customer",
+      "to": "/answers/allocate-my-emissions-to-one-customer"
+    },
+    {
+      "label": "Financial year or calendar year",
+      "to": "/answers/carbon-footprint-financial-or-calendar-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 1 (purchased goods and services)",
+      "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter1.pdf"
+    },
+    {
+      "label": "GHG Protocol, Corporate Value Chain (Scope 3) Standard, chapter 7 (collecting data) and section 11.1 (required information)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

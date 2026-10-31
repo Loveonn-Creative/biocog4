@@ -1,0 +1,98 @@
+{
+  "slug": "dri-kiln-waste-heat-power-saving-bankura",
+  "q": "How much power and CO2 can waste heat recovery save in a 2 x 100 TPD DRI plant?",
+  "title": "DRI waste heat power: what 5 MW saves",
+  "short": "About 23.5 million kWh of grid power a year. TERI's 2025 Bankura profile says a 2 x 100 TPD coal-based DRI plant can run a 5 MW waste heat power plant, costing about Rs 500 million, avoiding roughly 15,900 t CO2 at the FY 2025-26 grid factor. Better kiln lining saves another 580 t of coal per kiln.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Coal-based sponge iron plants in Bankura, Durgapur and other West Bengal and Jharkhand clusters",
+  "sections": [
+    {
+      "h": "Where the heat is",
+      "p": [
+        "Off gas leaves a DRI rotary kiln at 950 to 1,000 C. A waste heat boiler turns it into high pressure steam for a turbine; the power runs the plant and any surplus can go to the grid. The kiln shell itself runs at 180 to 250 C, and radiation from it is about 5% of the heat input."
+      ]
+    },
+    {
+      "h": "Bankura's DRI plants",
+      "ul": [
+        "10 DRI plants make 1,396,500 t a year on 1.53 million t of domestic and imported coal: 700,875 toe and 2.87 million t CO2 by TERI's count.",
+        "That is about 64% of the cluster's energy (700,875 of 1,089,563 toe). TERI's text says 48%, but its own table gives 64%."
+      ]
+    },
+    {
+      "h": "Is 5 MW worth it",
+      "p": [
+        "Rs 500 million for 23.5 million kWh a year is about Rs 21 of investment per kWh saved each year. Divide that by what you pay per kWh to get a rough payback before running costs. At an assumed Rs 7 per kWh it is about three years; use your own tariff and steam data."
+      ]
+    },
+    {
+      "h": "What it does to your carbon numbers",
+      "ul": [
+        "Kiln coal does not change, so direct emissions stay where they are.",
+        "Grid purchases fall, so your Scope 2 figure and the footprint a domestic buyer sees fall with them.",
+        "Do not put a grid factor on the waste heat power; its fuel is already counted in the kiln.",
+        "Sponge iron counts direct emissions only under CBAM, so waste heat power does not lower the CBAM figure. Coal burnt per tonne of sponge iron does."
+      ]
+    },
+    {
+      "h": "Two kiln changes in the same profile",
+      "ul": [
+        "Mullite-based low conductivity lining on a 100 TPD kiln: about 580 t of coal a year.",
+        "Pellets instead of 5 to 20 mm ore lumps: better yield, fewer fines, less coal per tonne."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Savings at FY 2025-26 factors (estimate)",
+    "lines": [
+      "Waste heat power: 23.5 million kWh x 0.675 kg = about 15,860 t CO2 a year",
+      "TERI's profile gives 16,685 t, using a slightly higher grid factor",
+      "Better lining: 580 t Indian coal x 1.76 = 1,021 t CO2; imported coal at 2.44 = 1,415 t",
+      "Payback: Rs 500 million / (23.5 million kWh x Rs 7) = about 3 years, before running costs"
+    ],
+    "note": "Plant figures from TERI's 2025 Bankura energy profile. The Rs 7 per kWh tariff is an assumption for the example. Grid factor from CEA for FY 2025-26."
+  },
+  "senseible": "The green loan check shows what a lender asks before funding a waste heat plant. Senseible reads coal invoices and power bills into monthly records, so the grid power saved shows against your own baseline.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Bankura cluster: energy and CO2",
+      "to": "/answers/bankura-secondary-steel-cluster-energy-co2"
+    },
+    {
+      "label": "Counting waste heat power",
+      "to": "/answers/barbil-sponge-iron-plant-waste-heat-power"
+    },
+    {
+      "label": "Durgapur DRI belt carbon",
+      "to": "/answers/durgapur-secondary-steel-cluster-dri-carbon"
+    },
+    {
+      "label": "Is sponge iron covered by CBAM?",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Bankura secondary steel cluster (2025)",
+      "url": "https://sameeeksha.org/pdf/Bankura%20cluster%20profile.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

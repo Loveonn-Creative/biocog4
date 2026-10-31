@@ -1,0 +1,78 @@
+{
+  "slug": "brsr-pat-designated-consumer-question",
+  "q": "What does the BRSR question on PAT designated consumers ask, and what if targets were missed?",
+  "title": "BRSR question on PAT designated consumers",
+  "short": "Whether any of your sites are designated consumers under the PAT scheme, whether their targets were achieved, and if not, what remedial action you took: that is Principle 6 essential indicator 2. A company with no designated consumer sites answers No, and the question ends there.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "BRSR teams at listed companies with energy-intensive plants",
+  "sections": [
+    {
+      "h": "What SEBI means by PAT",
+      "p": [
+        "SEBI's guidance note describes the Perform, Achieve and Trade scheme as run by the Bureau of Energy Efficiency under the National Mission for Enhanced Energy Efficiency, with certain sites identified as designated consumers and given targets for energy consumption. The question is about those notified sites, not about energy efficiency in general."
+      ]
+    },
+    {
+      "h": "Answering it site by site",
+      "ol": [
+        "Yes or No: list each site notified as a designated consumer, with its sector.",
+        "For each, name the PAT cycle and whether its target was achieved, going by the cycle's assessed result. If the result is not out yet, say so.",
+        "Where a target was missed, describe the remedial action actually taken, such as buying Energy Saving Certificates to cover the shortfall, or a named efficiency project with its expected saving.",
+        "The words \"if any\" mean none is an allowed answer, but an empty answer next to a missed target reads badly."
+      ]
+    },
+    {
+      "h": "Common slips",
+      "ul": [
+        "Answering Yes because a plant has an energy manager or an energy audit. Only notified designated consumers count.",
+        "Reporting a target as achieved before the cycle result is in.",
+        "Leaving out a site added in a later notification, or one in a group company you consolidate."
+      ]
+    },
+    {
+      "h": "Plants moving to the carbon market",
+      "p": [
+        "The BRSR question still names PAT. If a site has also been named an obligated entity under the Carbon Credit Trading Scheme, say so beside the PAT answer, so a reader sees both sets of targets."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example answer for three plants (a made-up case)",
+    "lines": [
+      "Designated consumers: Yes, plants A (cement) and B (textiles); plant C is not notified.",
+      "Plant A: cycle target achieved.",
+      "Plant B: target missed; shortfall covered by purchased Energy Saving Certificates, and a condensate recovery project commissioned in the following year."
+    ]
+  },
+  "senseible": "Senseible reads fuel invoices and electricity bills by plant and month, which gives the energy and Scope 1 and 2 behind each site. PAT targets and assessed results come from your BEE records, not from Senseible.",
+  "links": [
+    {
+      "label": "BRSR reporting",
+      "to": "/brsr-reporting"
+    },
+    {
+      "label": "Is my factory a designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "How ESCerts trading worked",
+      "to": "/answers/how-escerts-trading-worked-under-pat"
+    },
+    {
+      "label": "PAT and ESCerts after the CCTS",
+      "to": "/answers/pat-escerts-after-ccts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR format updated July 2023 (Annexure II to the BRSR Core circular)",
+      "url": "https://www.sebi.gov.in/sebi_data/commondocs/jul-2023/Annexure_II-Updated-BRSR_p.PDF"
+    },
+    {
+      "label": "SEBI, master circular of 11 July 2023, Annexures 16 and 17 (earlier BRSR format and guidance note)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

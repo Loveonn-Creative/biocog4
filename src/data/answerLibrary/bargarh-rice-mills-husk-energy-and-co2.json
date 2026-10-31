@@ -1,0 +1,91 @@
+{
+  "slug": "bargarh-rice-mills-husk-energy-and-co2",
+  "q": "What is the carbon footprint of the Bargarh rice mill cluster, given most energy is husk?",
+  "title": "Bargarh rice mills: husk, power and CO2",
+  "short": "The fossil part is grid power: about 33,750 t CO2 a year from 50 million kWh. TERI's 2014-15 profile of Bargarh's 95 mills also counts 241,445 t of husk, 94% of their energy. Husk CO2 is biogenic and reported separately; its methane and nitrous oxide belong in Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Parboiled rice mills in Bargarh district, Odisha, milling paddy for the state PDS",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "95 mills make about 7.7 lakh t of parboiled rice from about 1.2 million t of paddy, mostly for the state's public distribution system.",
+        "Husk is about 23% of paddy; about 90% is burnt in the mills' own boilers and the rest sold.",
+        "In a year: 241,445 t of husk (72,433 toe) and 50 million kWh (4,303 toe), 76,737 toe in all."
+      ]
+    },
+    {
+      "h": "6% of the energy, half the bill",
+      "p": [
+        "Grid power is only 6% of the cluster's energy, yet TERI puts its cost at Rs 280 million against Rs 290 million for the husk. It is also the only fossil CO2 in the mills, so the kWh line carries both the money and the carbon number."
+      ]
+    },
+    {
+      "h": "Three lines, not one",
+      "ol": [
+        "Scope 2: grid kWh x 0.675 kg CO2. This is the number most buyers and lenders compare.",
+        "Scope 1: methane and nitrous oxide from burning husk, small but real.",
+        "Biogenic CO2 from husk: reported separately, outside the scopes, never added to the total."
+      ]
+    },
+    {
+      "h": "About the profile's own figure",
+      "p": [
+        "The profile prints 4,903 t CO2 for the cluster without showing its factor. Work from your own kWh instead: it is the line you can prove with bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster and per tonne (estimate)",
+    "lines": [
+      "Grid: 50 million kWh x 0.675 kg = 33,750 t CO2",
+      "Per tonne of rice: 50 million kWh / 7.70 lakh t = 65 kWh = 44 kg CO2 (TERI's text says 43 kWh, but its own totals give 65)",
+      "Husk: 72,433 toe = 3,033 TJ x 100 t CO2 per TJ = about 303,000 t biogenic CO2",
+      "Husk methane and nitrous oxide: 3,033 TJ x (30 kg x 27 + 4 kg x 273) = about 5,800 t CO2e, Scope 1"
+    ],
+    "note": "Quantities from TERI's Bargarh profile. IPCC 2006 defaults for solid biomass (100 t CO2, 30 kg CH4, 4 kg N2O per TJ), AR6 GWPs, CEA FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly records with the CEA factor for each bill's year, which is the fossil line your carbon number per tonne of rice rests on.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "One mill's husk and power by size",
+      "to": "/answers/bargarh-rice-mill-energy-by-capacity"
+    },
+    {
+      "label": "Economiser: husk saved",
+      "to": "/answers/bargarh-rice-mill-boiler-economiser-husk-saving"
+    },
+    {
+      "label": "Burdwan rice mills compared",
+      "to": "/answers/burdwan-rice-mills-husk-and-power-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Bargarh rice mills (2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Bargarh_Rice_Mills_Orissa.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR6 Working Group I (global warming potentials)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

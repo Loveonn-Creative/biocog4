@@ -1,0 +1,91 @@
+{
+  "slug": "ranchi-downdraft-vs-tunnel-kiln-gj-per-tonne",
+  "q": "How much more energy does a downdraft refractory kiln use per tonne than a tunnel kiln?",
+  "title": "Downdraft vs tunnel kiln: energy per tonne",
+  "short": "Nearly twice as much. In Ranchi, TERI measured downdraft kilns at 2,114 kcal per kg of refractory, 8.9 GJ a tonne, against 1,109 kcal per kg, 4.6 GJ, for tunnel kilns. Per tonne fired, a coal downdraft kiln emits roughly 1.07 t CO2 and a petcoke tunnel kiln about 0.43 t (estimate).",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Refractory makers weighing a move from downdraft to tunnel kilns, in Ranchi and similar clusters",
+  "sections": [
+    {
+      "h": "Where the batch kiln loses heat",
+      "p": [
+        "A downdraft kiln is loaded, fired, cooled and unloaded by hand, so its walls, crown and floor are heated from cold every cycle along with the ware. Green bricks dry slowly in sheds first. A tunnel kiln never cools down: cars move the ware through a preheat zone to 700 to 800 C, a firing zone near 1,300 C, and out at 50 to 60 C, with flue heat drying the next batch. Both lose heat to dead weight: kiln furniture and car structure heated with every load."
+      ]
+    },
+    {
+      "h": "Typical Ranchi units, side by side",
+      "ul": [
+        "Downdraft: 1,080 t of coal, 30,060 kWh, 381 toe a year, about 150 t fired a month.",
+        "Tunnel: 862 t of petcoke, 3.6 kL of diesel, 98,496 kWh, 718 toe a year, about 540 t a month (18 t a day).",
+        "Cluster weighted average: 1,693 kcal per kg, 7.1 GJ per tonne, because most units still fire downdraft kilns."
+      ]
+    },
+    {
+      "h": "What TERI says a switch is worth",
+      "p": [
+        "At 0.211 toe per tonne for downdraft and 0.111 for tunnel kilns, moving existing downdraft output to tunnel kilns saves about 48% of the energy, around 2,715 toe a year across the cluster. Tunnel kilns also bring automatic fuel feed, steadier firing temperatures and fewer rejects."
+      ]
+    },
+    {
+      "h": "If you keep the downdraft kiln",
+      "ul": [
+        "Crush coal to 3/4 to 1 inch and feed small amounts often, so the chimney does not smoke black.",
+        "Fit temperature probes at three points at crown level and fire to the reading, not by eye.",
+        "Replace locally made dampers with ceramic board dampers that hold the draught.",
+        "Add insulating bricks and ceramic fibre blanket to the floor, side walls and crown."
+      ]
+    },
+    {
+      "h": "Tunnel kiln owners: three checks",
+      "ul": [
+        "Lighter kiln cars: cutting dead weight by about 30% saves about 3% of heat input, 64 toe a year across the cluster's three tunnel kilns.",
+        "Fibre blanket on hot firing zone surfaces.",
+        "Run full: surface and car losses stay the same when the kiln is half loaded, so energy per tonne rises."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One downdraft and one tunnel unit (estimate)",
+    "lines": [
+      "Downdraft: 1,080 t coal x 1.76 = 1,901 t, plus 30,060 kWh x 0.675 = 20 t: 1,921 t on about 1,800 t fired = 1.07 t CO2 per tonne",
+      "Tunnel: 862 t petcoke x 3.17 = 2,732 t, plus 98,496 kWh x 0.675 = 66 t and 3.6 kL diesel x 2.645 = 10 t: 2,808 t on about 6,480 t = 0.43 t per tonne",
+      "Moving 1,800 t a year from downdraft to tunnel: 1,800 x (1.07 minus 0.43) = about 1,140 t CO2 less"
+    ],
+    "note": "Fuel and output from TERI's Ranchi profile. Petcoke uses the IPCC 2006 default (32.5 GJ per tonne, 97.5 kg CO2 per GJ) and coal India's BUR-2 factor. Petcoke carries more CO2 per tonne of fuel; the tunnel kiln wins because it needs far less fuel per tonne fired."
+  },
+  "senseible": "The green loan check shows what a lender asks before funding a kiln change. Senseible reads coal invoices and power bills into monthly records, so your before and after per tonne traces to your own documents; it has no built-in petcoke factor.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Ranchi cluster fuel and CO2",
+      "to": "/answers/ranchi-refractory-cluster-coal-petcoke-co2"
+    },
+    {
+      "label": "Refractory brick CO2 per tonne",
+      "to": "/answers/refractory-brick-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Petcoke emission factor in India",
+      "to": "/answers/petcoke-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Ranchi refractory industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/ranchi-refractory-industries-Jharkhand.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

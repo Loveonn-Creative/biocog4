@@ -1,0 +1,91 @@
+{
+  "slug": "chemical-msme-energy-per-tonne-by-cluster",
+  "q": "What is a normal energy use per tonne for an MSME chemical unit?",
+  "title": "MSME chemical units: energy per tonne",
+  "short": "Overall 4.98 GJ, or 119 kgoe, per tonne, in BEE's study of five chemical MSME clusters, ranging from 0.44 GJ in Jamshedpur to 6.33 GJ in Ahmedabad. Product type matters more than place: averages were 9.8 GJ for API and pharma, 6.0 for dyes and pigments and 3.3 for pesticides.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Owners of small chemical, dye, pesticide and bulk drug units comparing their energy use with peers",
+  "sections": [
+    {
+      "h": "By cluster",
+      "ul": [
+        "Jamshedpur: 99,950 t a year, 11 kgoe (0.44 GJ) per tonne.",
+        "Thane: 532,198 t, 66 kgoe (2.76 GJ).",
+        "Karnal: 104,528 t, 47 kgoe (1.98 GJ).",
+        "Ahmedabad: 956,520 t, 151 kgoe (6.33 GJ).",
+        "Vapi: 728,908 t, 141 kgoe (5.88 GJ).",
+        "All five: 2,422,104 t, 119 kgoe (4.98 GJ)."
+      ]
+    },
+    {
+      "h": "By product, which is the fairer comparison",
+      "ul": [
+        "API and pharma: 9.8 GJ per tonne on average.",
+        "Dyes and pigments: 6.0 GJ.",
+        "Pesticides: 3.3 GJ.",
+        "Other chemicals: 2.1 GJ.",
+        "The spread inside each group is wide, so a batch drug unit at twice the average is not unusual."
+      ]
+    },
+    {
+      "h": "Work out yours",
+      "ol": [
+        "Add a year of fuel in GJ: gas scm x the heat value on your bill, coal tonnes x its calorific value, and so on.",
+        "Add electricity at 3.6 MJ per kWh, its heat value. Some auditors count power at the fuel burned to make it, so say which convention you used.",
+        "Divide by tonnes produced in the same year and compare with your product group, not just your cluster."
+      ]
+    },
+    {
+      "h": "Where the study sees savings",
+      "p": [
+        "Audits in 50 units found efficient boilers, thermic fluid heaters, air compressors and motors as the near-term fixes, and electric boilers, electric thermic fluid heaters, fluidised bed dryers in place of tray dryers and rooftop solar as the next step. It puts the sector's potential at 70,000 toe of energy and 270,000 t of CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A dyes and pigments unit making 3,000 t a year (estimate)",
+    "lines": [
+      "Gas: 400,000 scm x 0.0398 GJ (9,500 kcal per scm on the bill) = 15,920 GJ",
+      "Power: 900,000 kWh x 0.0036 GJ = 3,240 GJ",
+      "Energy per tonne: 19,160 / 3,000 = 6.4 GJ, close to the 6.0 average for dyes and pigments",
+      "CO2: 400,000 x 2.05 = 820 t; 900,000 x 0.675 = 608 t; total 1,428 t, or 0.48 t per tonne"
+    ],
+    "note": "An example unit, not a measured one: use your own bills. CO2 at 2.05 kg per scm of gas and CEA's FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible reads your gas, coal and electricity bills into yearly quantities and CO2, each linked to its bill; divide by your production and you have energy and carbon per tonne to put next to these figures.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Ahmedabad chemical cluster footprint",
+      "to": "/answers/ahmedabad-chemical-cluster-gas-carbon-footprint"
+    },
+    {
+      "label": "Karnal chemical units: coal and LDO",
+      "to": "/answers/karnal-chemical-units-coal-ldo-carbon"
+    },
+    {
+      "label": "BEE's MSME energy mapping study",
+      "to": "/answers/bee-msme-energy-mapping-study-clusters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy mapping of chemical MSME clusters (brochure, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/brouchres/2.9%20Annex%20ChemicalBrochure.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Benchmarks come from BEE's cluster mapping brochure, which gives no data year on the page. Recheck if BEE publishes the full cluster reports."
+}

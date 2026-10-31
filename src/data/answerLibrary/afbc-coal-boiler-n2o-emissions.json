@@ -1,0 +1,80 @@
+{
+  "slug": "afbc-coal-boiler-n2o-emissions",
+  "q": "Does a fluidised bed coal boiler emit more nitrous oxide than a stoker boiler?",
+  "title": "Fluidised bed coal boiler: N2O vs stoker",
+  "short": "Yes, by a wide margin. IPCC 2006 gives 61 kg of N2O per terajoule of coal for circulating or bubbling fluidised bed combustors, against 0.7 kg for overfeed and underfeed stokers. At the AR6 GWP of 273 that is about 16.7 t CO2e per TJ, adding roughly 15 to 18% to the coal's own CO2.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Plant engineers and owners with AFBC or CFBC boilers on coal, lignite or petcoke, and the auditors preparing their inventories",
+  "sections": [
+    {
+      "h": "IPCC's technology factors, kg per TJ of fuel",
+      "ul": [
+        "Bituminous or sub-bituminous coal, fluidised bed, circulating or bubbling: CH4 1, N2O 61.",
+        "Overfeed stoker: CH4 1, N2O 0.7.",
+        "Underfeed stoker: CH4 14, N2O 0.7.",
+        "Spreader stoker: CH4 1, N2O 0.7.",
+        "Lignite in an atmospheric fluidised bed (utility table): N2O 71.",
+        "The general default for coal in manufacturing is 1.5 kg of N2O per TJ. Using it for a fluidised bed boiler understates N2O about fortyfold."
+      ]
+    },
+    {
+      "h": "Where you meet these boilers",
+      "p": [
+        "In Pali's dyeing houses, BEE's study found boilers built for lignite or coal converted to bubbling fluidised bed when units switched to residual pet coke. IPCC's table has no petcoke line, so agree a factor with your auditor and say which one you used."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "ul": [
+        "N2O from your boiler is Scope 1, added to the CO2 from the coal.",
+        "The factors are for uncontrolled emissions; a stack measurement beats any default.",
+        "Use one GWP set across the whole inventory and name it: 273 for N2O under AR6, 265 under AR5."
+      ]
+    }
+  ],
+  "example": {
+    "title": "5,000 t of coal a year at 4,000 kcal/kg",
+    "lines": [
+      "Energy: 5,000 t x 4,000 kcal x 4.1868 = 83.7 TJ gross, about 79.5 TJ net (IPCC's factors are per net TJ, about 5% lower for coal)",
+      "Fluidised bed N2O: 79.5 x 61 = 4,850 kg x 273 = 1,324 t CO2e",
+      "Stoker N2O: 79.5 x 0.7 = 56 kg x 273 = 15 t CO2e",
+      "Coal CO2: 5,000 x 1.76 = 8,800 t. The fluidised bed adds about 15% on top"
+    ],
+    "note": "Coal CO2 at our Indian coal factor, an estimate; N2O from IPCC 2006 Table 2.7 and AR6 GWP."
+  },
+  "senseible": "Senseible reads coal invoices and gives the CO2 from each delivery with its factor named. Add the N2O line for a fluidised bed boiler from its heat input, as worked above, so the total your buyer or lender sees is complete.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "AR5 or AR6 GWP: which to use",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    },
+    {
+      "label": "Biomass boilers: methane and N2O stay in Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Coal, PNG or biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Chapter 2 Stationary Combustion, Tables 2.3, 2.6 and 2.7",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf"
+    },
+    {
+      "label": "BEE, Detailed project report: excess air control in boilers, Pali textile cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/PAL_TXT5.pdf"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

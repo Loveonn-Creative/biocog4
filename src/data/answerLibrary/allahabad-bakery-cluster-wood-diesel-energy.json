@@ -1,0 +1,90 @@
+{
+  "slug": "allahabad-bakery-cluster-wood-diesel-energy",
+  "q": "How much wood and diesel do Allahabad (Prayagraj) bakeries burn a year?",
+  "title": "Prayagraj bakeries: wood, diesel and CO2",
+  "short": "About 18,750 t of wood and 462 kL of diesel a year, by TERI's count for Allahabad's 130 or so bakeries in 2014-15, plus 1.335 million kWh. Wood is 5,625 of the cluster's 6,179 toe. Its CO2 is biogenic, so diesel and power make the fossil figure, about 2,120 t (estimate).",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Bakeries in Prayagraj (Allahabad) making biscuits, pastry, rusk, cake and paav",
+  "sections": [
+    {
+      "h": "Who bakes what",
+      "ul": [
+        "About 130 bakeries with about 250 ovens: 78 make biscuits and pastry, 32 rusk and cake, 20 paav.",
+        "About 90 have a turnover under Rs 1 lakh a month.",
+        "More than 80% bake in wood fired ovens; rotary ovens burn diesel.",
+        "Energy is about 25% of production cost, raw materials about 45%."
+      ]
+    },
+    {
+      "h": "A day's fuel in three oven types",
+      "ul": [
+        "Wood fired oven: 250 kg of wood and 4 kWh; 22.6 toe a year.",
+        "Rotary oven: 50 litres of diesel in the oven, 5 litres in the generator, 32 kWh; 16.5 toe a year.",
+        "High end rotary oven: 15 litres in the oven, 18 in the generator, 530 kWh; 23.1 toe a year.",
+        "Bread and buns bake near 250 C, cakes and pastry at 180 C, biscuits at 150 C."
+      ]
+    },
+    {
+      "h": "The wood oven looks clean on paper",
+      "p": [
+        "Because wood CO2 is biogenic, a wood oven's fossil figure is little more than its 4 kWh. Switching to a rotary oven, about Rs 4 lakh with about 150% more output, raises fossil CO2 per day while cutting fuel per kg baked. Show a buyer both numbers: fossil CO2, and wood burnt with its biogenic CO2. Methane and nitrous oxide from burning wood still count in Scope 1."
+      ]
+    },
+    {
+      "h": "Savings TERI listed",
+      "ul": [
+        "Biomass gasifier on wood ovens: up to 50% less wood.",
+        "Lighter racks with steel mesh trays: about 20% less dead weight, 5 to 10% less fuel.",
+        "Recuperative burners on diesel ovens, and hot face insulation keeping the outer surface within about 20 C of the room.",
+        "Thyristor control on electric ovens: 7 to 15%.",
+        "Direct coupled mixers, IE3 motors for 3 to 7%, and cogged V-belts."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One day per oven, and the cluster (estimate)",
+    "lines": [
+      "Wood oven: 4 kWh x 0.675 = 2.7 kg fossil CO2; 250 kg wood at 0.3 toe per tonne x 41.868 GJ x 112 kg = about 352 kg biogenic",
+      "Rotary oven: 55 L diesel x 2.645 = 145 kg, plus 32 kWh x 0.675 = 22 kg: about 167 kg fossil",
+      "High end rotary: 33 L x 2.645 = 87 kg, plus 530 kWh x 0.675 = 358 kg: about 445 kg fossil",
+      "Cluster: diesel 462 kL x 2.645 = 1,222 t, power 1.335 million kWh x 0.675 = 901 t: about 2,120 t fossil",
+      "Cluster wood: 5,625 toe x 41.868 GJ x 112 kg = about 26,380 t biogenic"
+    ],
+    "note": "Fuel figures from TERI's Allahabad bakery profile (2014-15). Wood CO2 uses the IPCC 2006 default for wood; diesel 2.645 kg per litre; grid factor from CEA for FY 2025-26."
+  },
+  "senseible": "Senseible reads diesel slips and power bills into monthly CO2 at published factors, which is your bakery's fossil figure, each line traced to its bill for a hotel or retail buyer.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Bakery oven CO2 per kg of bread",
+      "to": "/answers/bakery-oven-emissions-per-kg-bread"
+    },
+    {
+      "label": "Biomass gasifier vs LPG furnace",
+      "to": "/answers/biomass-gasifier-vs-lpg-furnace-emissions"
+    },
+    {
+      "label": "Biomass boilers still have Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Allahabad bakeries (SAMEEEKSHA, 2014-15 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Allahabad-Bakeries-Uttar-Pradesh.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

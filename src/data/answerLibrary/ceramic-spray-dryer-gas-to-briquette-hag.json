@@ -1,0 +1,81 @@
+{
+  "slug": "ceramic-spray-dryer-gas-to-briquette-hag",
+  "q": "How much natural gas does a briquette-fired hot air generator replace in a tile spray dryer?",
+  "title": "Spray dryer: briquette hot air for gas",
+  "short": "Only about 12% of the spray dryer's gas. BEE's Morbi report preheats combustion air to 300 C with a briquette fired hot air generator, saving 2,096 of 18,000 scm a day, plus 143 scm on the tile dryer: 671,700 scm, about 1,377 t CO2 a year if the briquettes are biomass. Payback 1.47 years at 2010 prices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Morbi tile makers running spray dryers and tile dryers on natural gas",
+  "sections": [
+    {
+      "h": "How the report's set-up works",
+      "ul": [
+        "A 10 lakh kcal briquette fired hot air generator heats combustion air from 40 C to 300 C for the spray dryer and the tile dryer; the gas burners stay.",
+        "80% efficiency, briquettes at 4,000 kcal/kg: 5,765 kg a day for the spray dryer and 393 kg for the dryer.",
+        "Gas saved: 2,096 and 143 scm a day, over 24 hours and 300 days: 671,700 scm a year, using 1,847.4 t of briquettes.",
+        "A unit making about 21,600 m2 a day on 19 million scm a year; spray dryer at about 40 scm per tonne of powder.",
+        "Gas at Rs 15 a scm and briquettes at Rs 3.5 a kg: Rs 36.08 lakh a year against Rs 53.01 lakh invested, 5 days of downtime."
+      ]
+    },
+    {
+      "h": "The CO2, and the briquette question",
+      "p": [
+        "671,700 scm x 2.05 = 1,377 t of fossil CO2 a year avoided, if the briquettes are made from biomass such as sawdust or crop residue: their CO2 is biogenic and reported separately. The report calls briquettes renewable but does not say what they are made of.",
+        "If they are coal or lignite fines, the answer flips. 1,847 t at our Indian coal factor is about 3,251 t of CO2, so the change would add about 1,874 t a year."
+      ]
+    },
+    {
+      "h": "Before you buy",
+      "ul": [
+        "Get the briquette maker to state the material on every invoice.",
+        "You burn more heat than you save: on the spray dryer, about 961,000 kcal an hour of briquettes replaces about 769,000 kcal of gas. Only the price gap makes it pay, so redo the sums at today's gas and briquette prices.",
+        "Insulated ducting from the generator to both burners, and a blower whose power the report does not give."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One year at 300 days",
+    "lines": [
+      "Gas saved: (2,096 + 143) scm x 300 = 671,700 scm",
+      "CO2 avoided: 671,700 x 2.05 = 1,377 t",
+      "Biomass briquettes: 1,847.4 t, CO2 reported separately as biogenic",
+      "If coal briquettes: 1,847.4 t x 1.76 = 3,251 t CO2, a net rise of about 1,874 t"
+    ],
+    "note": "Our natural gas and Indian coal factors, both estimates. The coal line assumes briquettes with the same carbon as average Indian coal; check yours."
+  },
+  "senseible": "Senseible reads gas bills into monthly CO2 records with the factor named, and keeps briquette invoices as tonnes, since it applies no briquette factor. A buyer or lender can see which fuel moved. The green loan check shows what a lender asks for.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Spray dryer CO2 per tonne of powder",
+      "to": "/answers/ceramic-spray-dryer-co2-per-tonne-powder"
+    },
+    {
+      "label": "Morbi ceramic cluster footprint",
+      "to": "/answers/morbi-ceramic-cluster-carbon-footprint"
+    },
+    {
+      "label": "Evidence for biomass fuel",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed project report: briquette fired hot air generator, Morbi ceramic cluster (2010, SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/dpr/MRV_CRM1.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Report figures are from a BEE SME programme project report; costs and paybacks are at the report year's prices. Check today's fuel and power prices before you rely on the payback."
+}

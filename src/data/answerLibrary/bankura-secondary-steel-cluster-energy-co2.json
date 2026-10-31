@@ -1,0 +1,93 @@
+{
+  "slug": "bankura-secondary-steel-cluster-energy-co2",
+  "q": "What is the energy use and CO2 of the Bankura secondary steel cluster in West Bengal?",
+  "title": "Bankura secondary steel: energy and CO2",
+  "short": "About 5.96 million t CO2 a year, by TERI's 2025 profile. Bankura's 37 or so units (sponge iron, ferro alloy, induction furnace and re-rolling) burn 1.61 million t of coal and use 4,246 million kWh, about 1.09 million toe, for some 3.6 million t of product.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Sponge iron, ferro alloy, steel melting and re-rolling units in Bankura district, West Bengal",
+  "sections": [
+    {
+      "h": "Four kinds of unit",
+      "ul": [
+        "Sponge iron (DRI): 10 units, 13,96,500 t a year, coal-fired rotary kilns.",
+        "Ferro alloy: 11 units, 3,06,740 t, submerged arc furnaces.",
+        "Induction furnace steel melting: 11 units, 12,63,600 t of ingots and billets.",
+        "Re-rolling: 5 units, 6,32,966 t of TMT bars, rods and angles.",
+        "Power comes from DVC or WBSEDCL; coal is both domestic and imported."
+      ]
+    },
+    {
+      "h": "Where the carbon sits",
+      "ul": [
+        "DRI: 1.53 million t of coal, 2.87 million t CO2. Coal is 66% of the cluster's energy, almost all of it in the kilns.",
+        "Ferro alloy: 2,883 million kWh, two thirds of the cluster's electricity, and 2.2 million t CO2 from only 8% of the output.",
+        "Induction furnaces: 1,200 million kWh, 0.86 million t CO2.",
+        "Re-rolling: 51 million kWh, 0.036 million t CO2."
+      ]
+    },
+    {
+      "h": "Cuts the profile prices",
+      "ul": [
+        "Waste heat power on a 2 x 100 tpd DRI plant: about 5 MW and 23.5 million kWh a year, about 15,860 t CO2 at the FY 2025-26 grid factor, for about Rs 500 million.",
+        "Better kiln lining on a 100 tpd kiln: about 580 t of coal a year, 1,021 t CO2 on Indian coal.",
+        "Clean, dry scrap and full-power melting in induction furnaces: 5 to 10% of electricity."
+      ]
+    },
+    {
+      "h": "If billets or DRI go abroad",
+      "p": [
+        "DRI, billets and bars are CBAM goods. For iron and steel, CBAM counts direct emissions only, so kiln coal decides a DRI figure and an induction furnace's power is left out, though both still count in a buyer's own footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne by unit type (from the profile)",
+    "lines": [
+      "DRI: 2.87 million t CO2 / 1.40 million t = 2.06 t CO2 per tonne (about 1.1 t coal and 80 kWh)",
+      "Ferro alloy: 2.2 / 0.307 = 7.2 t CO2 per tonne (about 9,400 kWh)",
+      "Induction furnace billet: 0.86 / 1.26 = 0.68 t CO2 per tonne (about 950 kWh)",
+      "Re-rolling: 0.036 / 0.633 = 0.06 t CO2 per tonne (about 80 kWh)",
+      "Check at FY 2025-26 factors (estimate): 1.61 million t coal x 1.76 + 4,246 million kWh x 0.675 = about 5.7 million t"
+    ],
+    "note": "Quantities and CO2 from TERI's 2025 Bankura profile; the check uses India's coal factor and CEA FY 2025-26. A bar made from DRI melted in an induction furnace carries the stages it passed through."
+  },
+  "senseible": "Senseible reads coal invoices (1.76 t CO2 a tonne Indian, 2.44 imported) and DVC or WBSEDCL bills into monthly records; the CBAM pages show what a direct-emissions figure means for an EU buyer.",
+  "links": [
+    {
+      "label": "CBAM for Indian exporters",
+      "to": "/cbam"
+    },
+    {
+      "label": "DRI waste heat power: what 5 MW saves",
+      "to": "/answers/dri-kiln-waste-heat-power-saving-bankura"
+    },
+    {
+      "label": "Is sponge iron covered by CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    },
+    {
+      "label": "Giridih secondary steel compared",
+      "to": "/answers/giridih-secondary-steel-cluster-energy-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Bankura secondary steel cluster (2025)",
+      "url": "https://sameeeksha.org/pdf/Bankura%20cluster%20profile.pdf"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}
