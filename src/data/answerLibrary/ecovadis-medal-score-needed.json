@@ -2,15 +2,17 @@
   "slug": "ecovadis-medal-score-needed",
   "q": "What EcoVadis score do I need for a bronze, silver or gold medal?",
   "title": "EcoVadis medal: what score do you need?",
-  "short": "There is no fixed score. Medals go by percentile against every company EcoVadis rated in the previous 12 months, across all industries: Bronze is the top 35%, Silver top 15%, Gold top 5%, Platinum top 1%. Any one of the four theme scores below 30 rules out a medal, whatever your total.",
+  "short": "For scorecards published in October 2026: Platinum 88, Gold 82, Silver 75, Bronze 66. EcoVadis sets these each month from percentiles, so the month your scorecard is published decides the cut-off, not the day you submitted. A theme score below 30 rules out a medal, whatever your total.",
   "topic": "regulation",
   "intent": "explain",
   "audience": "Indian MSME exporters whose buyer asks for an EcoVadis medal",
   "sections": [
     {
-      "h": "Why nobody can give you a cut-off number",
+      "h": "The cut-off moves every month",
       "p": [
-        "Your percentile is worked out on the day your scorecard is published, against all companies rated in the 12 months before it. The same score can win Silver one year and Bronze the next if other companies improve. Anyone quoting a fixed score for Gold is guessing.",
+        "Medals go by percentile rank against every company EcoVadis rated in the previous 12 months, across all industries: Bronze is the top 35%, Silver top 15%, Gold top 5%, Platinum top 1%. On the first day of each month EcoVadis turns those percentiles into minimum scores and publishes them.",
+        "October 2026, from data taken on 1 October: Platinum 88, Gold 82, Silver 75, Bronze 66. Scorecards published later in the month can need a slightly different score, because new assessments keep arriving.",
+        "Your scorecard is usually published 6 to 8 weeks after you submit, so a questionnaire sent in early September is judged against October's thresholds. A medal, once awarded, stays valid for 12 months even if the thresholds rise later.",
         "The score itself is absolute, 0 to 100, and EcoVadis gives it a label: Insufficient 0 to 24, Partial 25 to 44, Good 45 to 64, Advanced 65 to 84, Outstanding 85 to 100."
       ]
     },
@@ -48,12 +50,13 @@
     "title": "A 70-person auto parts supplier in Pune",
     "lines": [
       "Overall score 52, after EcoVadis weights the themes for your industry: label Good.",
+      "Against October 2026 thresholds, 52 is 14 points short of Bronze at 66.",
       "Theme scores: Environment 66, Ethics 52, Sustainable Procurement 41, Labor and Human Rights 28.",
-      "Labor and Human Rights is below 30, so no medal, whatever the percentile.",
+      "Labor and Human Rights is below 30, so no medal even with a higher total.",
       "Score 52 is above 45, so the Committed badge is open, if the other badge rules are met.",
       "Fix for next time: a dated health and safety policy, training records and an incident log could lift Labor above 30."
     ],
-    "note": "Scores are invented to show how the rules combine; EcoVadis applies them at publication."
+    "note": "Scores are invented to show how the rules combine; EcoVadis applies them, with that month's thresholds, at publication."
   },
   "senseible": "Senseible cannot promise a medal, and its checks are not third-party verification. It can calculate each energy and emissions figure from a bill you attach, and its team can draft your Environment answers from those records for you to review and submit.",
   "links": [
@@ -73,9 +76,16 @@
       "label": "When a scorecard and medal expire",
       "to": "/answers/ecovadis-scorecard-expiry-reassessment"
     },
-    { "label": "Questionnaire support", "to": "/esg-ratings" }
+    {
+      "label": "Questionnaire support",
+      "to": "/esg-ratings"
+    }
   ],
   "sources": [
+    {
+      "label": "EcoVadis Help Center, Update on Monthly Medal Thresholds (October 2026)",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/39606014723090-Update-on-Monthly-Medal-Thresholds"
+    },
     {
       "label": "EcoVadis, Sustainability Rating methodology disclosure document (2026)",
       "url": "https://ecovadis.com/wp-content/uploads/2026/04/EcoVadis-Sustainability-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
@@ -85,6 +95,6 @@
       "url": "https://ecovadis.com/suppliers/ecovadis-medals-and-badges/"
     }
   ],
-  "reviewed": "2026-10-29",
-  "reviewNote": "EcoVadis can change medal percentiles, eligibility rules and size factors with each methodology edition; re-check the methodology document and medals page every six months."
+  "reviewed": "2026-10-30",
+  "reviewNote": "EcoVadis publishes new medal thresholds on the first of each month; update the figures monthly from its Help Center article. Re-check eligibility rules and size factors with each methodology edition."
 }

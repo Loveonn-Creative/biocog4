@@ -10,7 +10,7 @@
     {
       "h": "Which castings are covered",
       "p": [
-        "Cast articles of iron or steel under 7325, and some under 7326, are CBAM goods. Engine and pump parts declared under chapter 84 are not in Annex I today. Check the code your EU buyer declares."
+        "Most castings are not CBAM goods today: other cast articles under 7325, and engine and pump parts declared under chapter 84, are outside Annex I. Cast iron pipes under 7303 and cast tube or pipe fittings under 7307 are covered. Check the code your EU buyer declares; the rest of this page applies to covered codes."
       ]
     },
     {
@@ -29,14 +29,14 @@
     }
   ],
   "example": {
-    "title": "Worked example: one tonne of good castings (illustrative inputs)",
+    "title": "Worked example: one tonne of good castings (example inputs)",
     "lines": [
       "Cupola coke: 0.16 t x 3.02 t CO2 per t = 0.483 t CO2",
       "Limestone flux: 0.04 t x 0.44 = 0.018 t CO2",
       "Pig iron charged: 0.33 t x 2.00 t CO2e per t (supplier figure) = 0.66 t CO2e",
       "Embedded emissions: 0.483 + 0.018 + 0.66 = 1.161 t CO2e per tonne of good castings"
     ],
-    "note": "Quantities and the pig iron figure are illustrative. Coke factor: 107 t CO2 per TJ x 28.2 GJ per t, IPCC 2006 defaults. Limestone: 44.01 / 100.09 = 0.44."
+    "note": "Quantities and the pig iron figure are examples. Coke factor: 107 t CO2 per TJ x 28.2 GJ per t, IPCC 2006 defaults. Limestone: 44.01 / 100.09 = 0.44."
   },
   "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
   "links": [

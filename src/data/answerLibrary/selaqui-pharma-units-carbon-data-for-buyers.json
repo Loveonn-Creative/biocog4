@@ -1,0 +1,68 @@
+{
+  "slug": "selaqui-pharma-units-carbon-data-for-buyers",
+  "q": "What carbon data do listed pharma companies ask Selaqui formulation units for?",
+  "title": "Selaqui pharma units: buyer carbon data",
+  "short": "Usually your Scope 1 and 2 for April to March, and a figure per batch or per thousand tablets for their products. SEBI made value chain reporting voluntary from FY 2025-26, so requests come by choice or contract. TERI's 2015 profile gives the benchmark: 52 units, 8,074 toe a year, 63% of it electricity.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Formulation and job-work units in Selaqui Pharma City, Dehradun, making tablets, capsules and sachets for larger pharma companies",
+  "sections": [
+    {
+      "h": "Selaqui in TERI's profile",
+      "ul": [
+        "About 52 units, more than 30 small and about 5 large, set up from 2003-04 under the special industrial package for Uttarakhand.",
+        "32 hold WHO-GMP certification; one has US FDA and one UK MHRA approval. Many export.",
+        "Most buy APIs and do job work for larger pharma companies. Bulk drug making is restricted in the Doon valley.",
+        "About 379 million tablets, 106 million capsules and 11.5 million sachets a year."
+      ]
+    },
+    {
+      "h": "Where your footprint sits",
+      "ul": [
+        "Electricity, 59.6 million kWh a year for the cluster: HVAC with 20 to 75 TR chillers, air compressors and process machines.",
+        "HSD and LDO, 1,573 kL, and LPG, 1,365 t: mostly 1 tph coil boilers running 8 to 12 hours a day, plus DG sets.",
+        "Condensate from dryers is drained at 85 to 95 °C, about 15 to 20% of the boiler's heat input, in most units."
+      ]
+    },
+    {
+      "h": "Why the request reaches a job-work unit",
+      "p": [
+        "SEBI's March 2025 circular defines a value chain partner as one making up 2% or more of a listed company's purchases or sales by value, and lets the company stop once it covers 75%. Disclosure is voluntary for the top 250 listed companies from FY 2025-26, with assurance voluntary from FY 2026-27. Nothing in SEBI's rules obliges you to answer, but a supply agreement can, and a customer that chooses to report will want figures for what it buys from you."
+      ]
+    },
+    {
+      "h": "What to send",
+      "ol": [
+        "Annual totals by fuel and for grid power, each with the emission factor and its source.",
+        "A figure per thousand tablets, per batch or per pack for that customer's products, with the allocation basis stated: machine hours, floor area under HVAC or output.",
+        "What you left out, such as transport or packaging.",
+        "The bills behind each line, offered for inspection rather than handed over."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the cluster at today's factors",
+    "lines": [
+      "Electricity: 59.6 million kWh x 0.675 = 40,230 t CO2",
+      "HSD and LDO: 1,573 kL x 2.645 kg per litre = 4,161 t CO2",
+      "LPG: 1,365 t x 2.98 = 4,068 t CO2",
+      "Total 48,459 t, 83% of it electricity, over 496.7 million tablets, capsules and sachets",
+      "Average: 48,459,000 kg / 496,700,000 = about 98 g CO2 per piece, or 98 kg per thousand"
+    ],
+    "note": "TERI's 2015 quantities with Senseible's factors; HSD and LDO both at the diesel factor. A cluster average hides big gaps between a tablet line and a liquid orals line, so allocate your own."
+  },
+  "senseible": "Senseible turns a year of power bills, diesel and LPG invoices into the Scope 1 and 2 lines a listed customer's BRSR value chain request asks for, each with its factor, its source and the bill behind it.",
+  "links": [
+    { "label": "BRSR reporting", "to": "/brsr-reporting" },
+    { "label": "BRSR value chain requests", "to": "/answers/brsr-value-chain-data-request-msme-supplier" },
+    { "label": "Footprint per 1,000 tablets", "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets" },
+    { "label": "Allocating cleanroom HVAC", "to": "/answers/pharma-cleanroom-hvac-emissions-allocation" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Dehradun pharmaceutical industries (SAMEEEKSHA, 2015)", "url": "https://sameeeksha.org/pdf/clusterprofile/Deharadun-Pharmaceuticals-Uttarakhand.pdf" },
+    { "label": "SAMEEEKSHA, Dehradun pharmaceutical cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=174&Itemid=499" },
+    { "label": "SEBI circular of 28 March 2025 on assurance or assessment, value chain ESG disclosures and green credits", "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2015. Recheck SEBI value chain rules for any later circular."
+}

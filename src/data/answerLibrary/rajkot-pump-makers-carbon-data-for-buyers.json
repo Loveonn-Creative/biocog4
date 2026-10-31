@@ -1,0 +1,65 @@
+{
+  "slug": "rajkot-pump-makers-carbon-data-for-buyers",
+  "q": "Rajkot pump makers run almost wholly on electricity: what carbon data can they give pump buyers?",
+  "title": "Rajkot pump makers: carbon data for buyers",
+  "short": "Give the plant's monthly kWh and DG diesel, Scope 1 and 2 totals, and a figure per pump model split by machine hours, not a flat average. Rajkot's roughly 1,000 pump makers used 70 million kWh and only 170 kL of diesel in 2014 to 15, so power is 97% of their energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Submersible, monoblock and centrifugal pump makers in Rajkot, Shapar and Metoda selling to pump brands, distributors and tender buyers",
+  "sections": [
+    {
+      "h": "The cluster in TERI's 2015 profile",
+      "ul": [
+        "About 1,000 pump makers, up from 10 in 1994 and about 350 in 2010.",
+        "About 50 large units make 3,500 pump sets a month, about 200 medium units 1,000, and the rest around 500.",
+        "About 30,000 pump sets a day, roughly 9 million a year. About 80% of the submersibles have water-filled motors; V6 8-stage 7.5 hp and V6 10-stage 10 hp are the commonest models.",
+        "Some makers in other pump clusters, Coimbatore among them, buy components from Rajkot."
+      ]
+    },
+    {
+      "h": "Where a pump unit's power goes",
+      "ul": [
+        "Machining: about 50%. Hydraulic presses: about 20%. Assembly and testing: about 20%. Compressed air and lighting: the rest.",
+        "A unit making 500 pump sets a month uses about 30,000 kWh a year, one making 3,500 about 200,000: roughly 5 kWh per pump set.",
+        "Across the cluster, 70 million kWh for 9 million pump sets is nearer 8 kWh each, so work out your own figure rather than borrow the typical one.",
+        "Diesel runs DG sets only during cuts: 170 kL for the whole cluster in a year."
+      ]
+    },
+    {
+      "h": "What to send a buyer",
+      "ol": [
+        "Twelve months of PGVCL bills and DG diesel slips, totalled by month.",
+        "Scope 2 (grid power) and Scope 1 (diesel) in tonnes CO2e, with factors named.",
+        "Pump sets made by model each month.",
+        "A figure per model, allocated by machine hours, with the method written down.",
+        "For a product footprint: castings, stampings, copper winding wire and motor laminations from your suppliers, which usually outweigh your own power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a medium unit, 1,000 pump sets a month, two models",
+    "lines": [
+      "Plant: 60,000 kWh x 0.675 = 40.5 t; DG 170 L x 2.645 = 0.45 t; total 40.95 t CO2 a year",
+      "Flat average: 40.95 t / 12,000 pump sets = 3.4 kg each",
+      "Machine hours: 4,000 V6 submersibles x 3 h + 8,000 monoblocks x 1 h = 20,000 h; 40.95 t / 20,000 h = 2.05 kg per hour",
+      "V6 submersible: 3 h x 2.05 = 6.1 kg CO2 each",
+      "Monoblock: 1 h x 2.05 = 2.0 kg CO2 each, not the 3.4 a flat average would give"
+    ],
+    "note": "Power use is TERI's typical medium unit. The 170 L is the cluster's diesel spread across about 1,000 units, an estimate; the model mix and hours are examples."
+  },
+  "senseible": "Senseible keeps every PGVCL bill and diesel slip as a dated record, so the monthly Scope 1 and 2 behind your per-model split is there when a buyer asks where a number came from.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Splitting emissions by machine hours", "to": "/answers/allocate-plant-emissions-by-machine-hours" },
+    { "label": "Coimbatore pump cluster footprint", "to": "/answers/coimbatore-pump-cluster-carbon-footprint" },
+    { "label": "Electric motor manufacturing footprint", "to": "/answers/electric-motor-carbon-footprint-per-unit" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Rajkot pump set industries (SAMEEEKSHA, 2015; data 2014 to 15)", "url": "https://sameeeksha.org/pdf/clusterprofile/Rajkot_Pumpsets_Gujarat.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Product Standard (allocation)", "url": "https://ghgprotocol.org/standards" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2014 to 15. Update if a newer Rajkot pump set profile is published."
+}

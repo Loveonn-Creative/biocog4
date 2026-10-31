@@ -1,0 +1,65 @@
+{
+  "slug": "agra-foundry-cluster-cupola-vs-induction-carbon",
+  "q": "Agra has 50 cupola and 30 induction foundries: what does the cluster emit, and where is the saving?",
+  "title": "Agra foundries: cupola vs induction carbon",
+  "short": "TERI put Agra's 80 working foundries at 10,310 toe and 77,743 t CO2 in 2017-18, about 90% of it from 85 million kWh of electricity. The 30 induction units make 65% of the castings, so the biggest saving sits in their old SCR furnaces: about 680 kWh a tonne, against 540 for IGBT.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Foundry owners in Rambagh, Nunhai and Foundrynagar, Agra, and their associations",
+  "sections": [
+    {
+      "h": "The cluster in TERI's 2017-18 study",
+      "ul": [
+        "Over 100 foundries once, about 80 working now: 40 micro, 23 small, 15 medium and 2 large.",
+        "About 360 t of castings a day, roughly 0.11 million t a year, for DG sets, automotive, air compressors and general engineering.",
+        "50 cupola foundries make about 35% of the output; 30 induction foundries make the other 65%.",
+        "Most cupolas here burn piped natural gas, 60 to 70 SCM per tonne of molten metal, not coke. The small ones melt once or twice a week."
+      ]
+    },
+    {
+      "h": "Where the CO2 comes from",
+      "ul": [
+        "Electricity, 85 million kWh: 69,700 t CO2 on TERI's factor.",
+        "Natural gas, 2.229 million SCM: 3,902 t.",
+        "Graphite for the cupola bed, 1,422 t: 4,141 t.",
+        "Melting takes about 90% of a cupola unit's energy and 75 to 80% of an induction unit's."
+      ]
+    },
+    {
+      "h": "Why the induction shops hold the saving",
+      "p": [
+        "About 95% of the 30 induction furnaces are SCR type, roughly a decade old, run without standard operating procedures at around 680 kWh per tonne of metal. An IGBT furnace brings that to about 540, a 15 to 25% cut, and TERI's costing showed a Rs 40 lakh furnace paying back in about 1.1 years at 250 t a month. A lid on the open crucible, which loses 6 to 8% of the energy as radiation, saves up to 3% more and paid back in about 7 months."
+      ]
+    },
+    {
+      "h": "Before you take the upgrade to a lender",
+      "ul": [
+        "Twelve months of power bills and your monthly melt in tonnes, so kWh per tonne is your own figure, not TERI's average.",
+        "The IGBT supplier's quotation with the kWh per tonne it commits to.",
+        "A note of whether the old furnace will be scrapped or kept as standby, because a lender will ask."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 250 t a month induction shop moves to IGBT",
+    "lines": [
+      "Saving: 680 minus 540 = 140 kWh per tonne of metal",
+      "Per year: 140 x 250 x 12 = 420,000 kWh",
+      "CO2 at the FY 2025-26 grid factor: 420,000 x 0.675 = about 284 t a year",
+      "If all 30 induction units switched, on their 70,000 t of castings: 140 x 70,000 = 9.8 million kWh, about 6,615 t CO2"
+    ],
+    "note": "TERI's furnace figures with Senseible's grid factor of 0.675 kg per kWh; TERI's own CO2 figures used an older, higher factor. Metal melted exceeds castings shipped, so the cluster line is a low estimate."
+  },
+  "senseible": "Upload a year of power bills and gas invoices and Senseible turns them into dated monthly records; divide by the tonnes in your melting log for your own kWh per tonne. Its green loan check then shows what evidence a lender will want before funding an IGBT furnace.",
+  "links": [
+    { "label": "Check your green loan readiness", "to": "/green-loan-check" },
+    { "label": "Induction furnace upgrade loans", "to": "/answers/green-loan-induction-furnace-upgrade-readiness" },
+    { "label": "Induction kWh per tonne benchmark", "to": "/answers/induction-furnace-kwh-per-tonne-benchmark" },
+    { "label": "Cupola vs induction emissions", "to": "/answers/cupola-vs-induction-furnace-emissions" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Agra foundry cluster (SAMEEEKSHA, 2018; data 2017-18)", "url": "https://sameeeksha.org/pdf/clusterprofile/Agra-Foundry-Cluster.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2017-18. Recheck if a newer Agra foundry profile is published."
+}

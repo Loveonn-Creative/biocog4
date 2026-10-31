@@ -1,0 +1,67 @@
+{
+  "slug": "ahmedabad-foundry-cluster-coke-cupola-carbon",
+  "q": "What is the Ahmedabad foundry cluster's footprint, and what do textile machinery and pump buyers ask?",
+  "title": "Ahmedabad foundries: coke, power and buyers",
+  "short": "About 394,640 t CO2 a year: Ahmedabad's 450 working foundries used 58,325 toe in TERI's 2016 profile, from 270 million kWh, 52,250 t of coke and 1.25 million SCM of gas, for about 1,770 t of castings a day. Half goes into textile machinery, a fifth into pumps and valves.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Foundry owners in Naroda, Odhav, Vatva, Tribhuvan and Rakhial estates, Ahmedabad, supplying loom, pump and valve makers",
+  "sections": [
+    {
+      "h": "Where the 1,770 tonnes a day go",
+      "ul": [
+        "Textile machinery, about 50%: components for nearly 7,000 power looms serving Surat and Bhiwandi.",
+        "Pump and valve bodies, about 20%, including castings for Rajkot's pump makers.",
+        "Agricultural machinery about 10%, sanitary castings about 10%, mostly for the domestic market.",
+        "About 600 foundries in all, 450 working: 250 cupola units make about 70% of the output; 150 induction and about 50 pit furnace units make the rest; 25 do lost wax casting."
+      ]
+    },
+    {
+      "h": "Coke makes the cupola's footprint, power makes the cluster's",
+      "p": [
+        "Most cupolas here are 18 to 24 inch single blast or crude divided blast designs using 80 to 130 kg of coke per tonne of molten metal. Induction furnaces use 600 to 770 kWh per tonne. Even with cupolas making most of the castings, TERI attributed 240,300 t of the cluster's CO2 to electricity and 154,340 t to coke and gas, because induction metal is so power hungry."
+      ]
+    },
+    {
+      "h": "What a pump or loom maker will ask you",
+      "ul": [
+        "Tonnes of castings you supplied them in the year, by part if you can.",
+        "Your Scope 1 and Scope 2 for the same period, with the coke and power bills behind them.",
+        "A figure per tonne of castings, and whether the metal came from your cupola or an induction furnace.",
+        "When a pump or loom maker is asked by its own customers, the question comes down to you, so one well kept answer can serve several buyers."
+      ]
+    },
+    {
+      "h": "The two upgrades TERI costed",
+      "ul": [
+        "A properly designed divided blast cupola at about 80 kg of coke per tonne against 130 kg now: 25 to 35% less coke, paid back from coke alone.",
+        "IGBT induction furnaces at about 550 kWh per tonne against about 700 for the SCR furnaces 95% of units run: 15 to 25% less power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 500 t a month cupola foundry",
+    "lines": [
+      "TERI's typical large cupola unit: 150,000 kWh and 475 t of coke a year, 6,000 t of castings",
+      "Coke: 475 x 3.02 = 1,435 t CO2",
+      "Power: 150,000 x 0.675 = 101 t CO2",
+      "Total 1,536 t, or 1,536 / 6,000 = 0.256 t CO2 per tonne of castings",
+      "A 25% coke cut, the low end for a well designed divided blast cupola: 475 x 0.25 = about 119 t of coke and 359 t CO2 a year"
+    ],
+    "note": "TERI's 2015-16 typical unit, with coke at the IPCC 2006 default (28.2 GJ per t x 107 kg CO2 per GJ) and power at Senseible's FY 2025-26 grid factor. TERI's own figure for this unit was 1,520 t. Pig iron charged is not included."
+  },
+  "senseible": "Senseible turns a year of power and coke purchase bills into one carbon number for your foundry, each line traceable to its bill. Divide it by the tonnes in your dispatch register and you have the figure per tonne of castings a pump or loom maker asks for.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "Footprint per tonne of good casting", "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting" },
+    { "label": "Are cast iron castings in CBAM", "to": "/answers/are-cast-iron-castings-covered-by-cbam" },
+    { "label": "Cupola vs induction emissions", "to": "/answers/cupola-vs-induction-furnace-emissions" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Ahmedabad foundry cluster (SAMEEEKSHA, 2016; data 2015-16)", "url": "https://sameeeksha.org/pdf/clusterprofile/AhmedabadFoundryCluster.pdf" },
+    { "label": "SAMEEEKSHA, Ahmedabad foundry cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=188&Itemid=502" },
+    { "label": "IPCC 2006 Guidelines, Volume 2, Chapter 1, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2015-16. Recheck if a newer Ahmedabad foundry profile is published."
+}

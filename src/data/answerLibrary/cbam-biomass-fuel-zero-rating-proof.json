@@ -1,0 +1,78 @@
+{
+  "slug": "cbam-biomass-fuel-zero-rating-proof",
+  "q": "We burn biomass or rice husk. What does the CBAM verifier need to zero-rate it?",
+  "title": "Biomass fuel in CBAM: proof to zero-rate it",
+  "short": "Biomass burnt as fuel counts at zero only if it meets the EU Renewable Energy Directive's sustainability and greenhouse gas savings criteria. Your monitoring plan needs a written procedure showing how, and the verifier looks for Proofs of Sustainability from a RED II certification scheme the Commission recognises. Without them, the CO2 counts in full.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian CBAM goods producers firing rice husk, wood chips, bagasse or briquettes in boilers, kilns or furnaces",
+  "sections": [
+    {
+      "h": "Fuel or reductant: the rule is different",
+      "p": [
+        "CBAM follows the EU ETS here. Biomass used as a process input, such as charcoal as a reducing agent or for electrodes, is zero-rated. Biomass burnt for energy, solid, liquid or gaseous, is counted unless it meets the sustainability and greenhouse gas savings criteria of Directive (EU) 2018/2001, known as RED II. Which criteria apply depends on the type of biomass.",
+        "Rice husk in a boiler, wood chips in a reheating furnace and agro briquettes in a kiln are all fuel use. They need the proof."
+      ]
+    },
+    {
+      "h": "What the verifier looks for in your monitoring plan",
+      "ul": [
+        "A written procedure describing how you make sure the RED II criteria are met for each biomass fuel.",
+        "Whether you will obtain Proofs of Sustainability from a RED II certification scheme recognised by the Commission. The Commission puts exactly this question in its example checklist for verifiers.",
+        "For each fuel, how the quantity is measured and how the net calorific value, emission factor and biomass fraction are determined."
+      ]
+    },
+    {
+      "h": "What it checks during verification",
+      "p": [
+        "The Commission names evidence for zero-rating biomass as one of the specific issues a verifier checks, next to precursor verification reports and data gaps. It also tests the biomass fraction like any other calculation factor. Verifiers must be competent in judging whether biomass meets the requirements for zero-rating, so expect detailed questions, not a glance at invoices."
+      ]
+    },
+    {
+      "h": "Mixed fuels count only their qualifying share",
+      "p": [
+        "The calculation starts from an emission factor that treats the whole fuel as fossil, then removes the zero-ratable biomass fraction. Briquettes bound with coal fines, or husk mixed with petcoke in the same feeder, keep their fossil share in your emissions. Only the biomass share that meets the criteria comes off."
+      ]
+    },
+    {
+      "h": "Power from a biomass plant",
+      "p": [
+        "If you report actual indirect emissions from electricity, the figure must come from a verified report of the plant that supplies it. Plants that emit nothing, such as solar, wind or hydro, can have site visits waived more often. Biomass and waste power plants do not get that treatment: they emit CO2, and a verifier must check how much of their biomass may be zero-rated."
+      ]
+    },
+    {
+      "h": "Set this up before the year starts",
+      "ol": [
+        "List every biomass fuel you fire and the tonnes per month.",
+        "Ask each supplier whether they can supply under a RED II certification scheme the Commission recognises and issue Proofs of Sustainability.",
+        "Write the procedure into the monitoring plan, fuel by fuel.",
+        "Keep invoices, weighbridge slips and stock counts that reconcile to the tonnes fired.",
+        "Where no proof is available, report that biomass CO2 as emissions rather than claim zero. An unsupported claim is a misstatement the verifier will ask you to correct."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a kiln firing coal and rice husk, 15,000 t of product a year",
+    "lines": [
+      "Fossil fuel and process CO2: 48,000 t",
+      "CO2 from burning rice husk: 6,000 t",
+      "Without proof of sustainability: (48,000 + 6,000) / 15,000 = 3.60 t CO2 per tonne",
+      "With proof covering all the husk: 48,000 / 15,000 = 3.20 t CO2 per tonne",
+      "On 2,000 t sold to the EU: 2,000 x (3.60 minus 3.20) = 800 t CO2 less embedded in your buyer's declaration"
+    ],
+    "note": "Example figures, direct emissions only. Process CO2, such as calcination in cement, does not change with the fuel."
+  },
+  "senseible": "Senseible reads your fuel invoices and fuel slips into tonnes per fuel, and its CBAM Suite builds the operator emissions report from those records. It does not issue Proofs of Sustainability; those come from your supplier's recognised scheme. We build it from your records, check every figure in-house, and an accredited verifier we partner with signs it off. Have your own verifier? Send it to them.",
+  "links": [
+    { "label": "CBAM Suite", "to": "/cbam-suite" },
+    { "label": "Proving boiler biomass is crop residue", "to": "/answers/biomass-fuel-supplier-evidence" },
+    { "label": "What a CBAM verifier checks at a cement plant", "to": "/answers/what-cbam-verifier-checks-cement-plant-india" },
+    { "label": "Documents to give your CBAM verifier", "to": "/answers/cbam-documents-to-give-your-verifier" }
+  ],
+  "sources": [
+    { "label": "European Commission, CBAM Questions and Answers (updated 15 October 2026), question 4.27", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation, monitoring plan checklist, site visits and verifier competence", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Recheck the Commission's list of recognised RED II certification schemes and any CBAM guidance on biomass evidence for non-EU suppliers."
+}

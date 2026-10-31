@@ -1,0 +1,68 @@
+{
+  "slug": "chennai-forging-units-auto-buyer-carbon-data",
+  "q": "Chennai forging units mostly make auto parts: what carbon data do OEMs and EU buyers want?",
+  "title": "Chennai forgings: carbon data for OEMs",
+  "short": "A figure per tonne of good forgings, with furnace oil, diesel and grid power shown separately and the steel bar you bought listed beside it. TERI's 2016 profile gives the cluster benchmark: about 50 units making 193,200 t a year on 24 million kWh, 7,140 kL of furnace oil and 340 kL of diesel.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Forging units in Thirumudivakkam SIDCO, Ambattur, Thirumazhisai and Ponneri, Chennai, supplying vehicle and engineering OEMs",
+  "sections": [
+    {
+      "h": "The cluster benchmark",
+      "ul": [
+        "About 50 units: 46 MSMEs and 4 large. Around 70% of output is auto parts such as axle and gear parts, connecting rods, camshaft parts and bearing races; 30% valve, switchgear and motor parts.",
+        "Output by size: 10 micro units 7,200 t, 30 small 43,200 t, 6 medium 18,000 t, 4 large 124,800 t a year.",
+        "9,440 toe in 2014-15. Heating billets for forging takes about 74% of a unit's energy, heat treatment about 20%.",
+        "Box and pusher furnaces burn 100 to 180 L of furnace oil per tonne for forging and 80 to 100 L for heat treatment; induction heaters use 450 to 500 kWh."
+      ]
+    },
+    {
+      "h": "What an OEM's supplier request usually covers",
+      "ol": [
+        "The reporting year, usually April to March.",
+        "Scope 1: furnace oil, diesel for DG sets, any LPG, in litres or kg with the factor used.",
+        "Scope 2: grid kWh from your power bills.",
+        "Tonnes of good forgings despatched, and a figure per part allocated by mass.",
+        "Steel bar bought, by grade and mill, because that is the OEM's next question."
+      ]
+    },
+    {
+      "h": "EU buyers and CBAM",
+      "p": [
+        "Most Chennai forgings are vehicle and machine parts, and CBAM coverage follows the CN code your EU buyer declares, not the fact that the part is forged steel. Where a forging does fall under a covered code, CBAM counts the bar at the mill's verified figure or the default, plus your furnace fuel, and leaves out electricity, because iron and steel goods count direct emissions only."
+      ]
+    },
+    {
+      "h": "Where the figure comes down",
+      "ul": [
+        "An induction billet heater replaces 120 to 150 L of oil per tonne with about 400 kWh, for Rs 15 to 50 lakh and a one to three year payback.",
+        "A recuperator on an oil furnace saves 8 to 15% of fuel for Rs 1 to 4 lakh.",
+        "Ceramic insulation in box furnaces saves 4 to 6%, thyristor control on electric heat treatment furnaces 7 to 15%."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the cluster at today's factors, then one tonne",
+    "lines": [
+      "Electricity: 24 million kWh x 0.675 = 16,200 t CO2",
+      "Furnace oil: 7,140 kL x 2.97 kg per litre = 21,206 t CO2",
+      "Diesel: 340 kL x 2.645 kg per litre = 899 t CO2",
+      "Total 38,305 t over 193,200 t = about 0.198 t CO2 per tonne of forgings, before the steel bar",
+      "One tonne moved from oil to induction: 135 L x 2.97 = 401 kg, against 400 kWh x 0.675 = 270 kg"
+    ],
+    "note": "TERI's 2014-15 quantities with Senseible's factors; TERI's own total was 45,107 t on an older grid factor. 135 L is the middle of TERI's 120 to 150 L. The bar's own figure, from the mill, comes on top."
+  },
+  "senseible": "One set of numbers for every OEM: Senseible reads furnace oil, diesel and TANGEDCO bills into monthly records with the bill behind each line, ready to divide by the tonnes of forgings you despatched.",
+  "links": [
+    { "label": "Supplier evidence for OEMs", "to": "/scope-3-supplier-evidence" },
+    { "label": "Induction heater vs oil furnace", "to": "/answers/induction-billet-heater-vs-oil-fired-forging-furnace" },
+    { "label": "Mill certificate CO2 for a forging", "to": "/answers/steel-mill-certificate-co2-for-forged-part" },
+    { "label": "Chennai auto supplier OEM data", "to": "/answers/chennai-auto-component-supplier-oem-data" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Chennai forging industry cluster (SAMEEEKSHA, 2016; data 2014-15)", "url": "https://sameeeksha.org/pdf/clusterprofile/ChennaiForgingCluster.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1 and 9.2.3", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2014-15. Recheck if a newer Chennai forging profile is published."
+}

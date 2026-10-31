@@ -267,12 +267,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "agra-footwear-components-cluster-carbon",
+  "q": "What does Agra's footwear component cluster use in energy, and which product uses most?",
+  "title": "Agra footwear components: energy and CO2",
+  "short": "Plastic soles: 5,429 of the 8,624 toe that Agra's 205 or so component units used in 2014-15, by TERI's count, about 63%. The cluster drew 59 million kWh of power, 2,880 kL of diesel and 1.2 million scm of gas, roughly 50,000 t CO2 a year on today's factors, mostly from electricity.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "agra-footwear-unit-diesel-genset-scope-1",
   "q": "Is diesel for an Agra footwear unit's generator Scope 1?",
   "title": "Agra footwear units: generator diesel",
   "short": "Yes. Diesel burned in a generator you own or control is Scope 1. Take litres from the fuel bills and multiply by 2.68 kg CO2 per litre, the IPCC 2006 default for diesel. The grid units on your electricity bill stay in Scope 2.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "agra-foundry-cluster-cupola-vs-induction-carbon",
+  "q": "Agra has 50 cupola and 30 induction foundries: what does the cluster emit, and where is the saving?",
+  "title": "Agra foundries: cupola vs induction carbon",
+  "short": "TERI put Agra's 80 working foundries at 10,310 toe and 77,743 t CO2 in 2017-18, about 90% of it from 85 million kWh of electricity. The 30 induction units make 65% of the castings, so the biggest saving sits in their old SCR furnaces: about 680 kWh a tonne, against 540 for IGBT.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "agra-shoe-unit-electricity-per-pair",
@@ -313,6 +329,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A typical dyes and pigments unit in Vatva uses about 532 toe a year, close to 1,540 t CO2, nearly three-quarters of it from natural gas. Across Ahmedabad's 750 chemical units, TERI's BEE study counted 144,624 toe in 2020-21, roughly 488,000 t CO2 at today's factors (estimate).",
   "topic": "accounting",
   "reviewed": "2026-10-29"
+ },
+ {
+  "slug": "ahmedabad-foundry-cluster-coke-cupola-carbon",
+  "q": "What is the Ahmedabad foundry cluster's footprint, and what do textile machinery and pump buyers ask?",
+  "title": "Ahmedabad foundries: coke, power and buyers",
+  "short": "About 394,640 t CO2 a year: Ahmedabad's 450 working foundries used 58,325 toe in TERI's 2016 profile, from 270 million kWh, 52,250 t of coke and 1.25 million SCM of gas, for about 1,770 t of castings a day. Half goes into textile machinery, a fifth into pumps and valves.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "ai-api-and-gpu-usage-emissions",
@@ -1833,6 +1857,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A product footprint per kg of casting: your melting energy, coke or electricity, sand and binders, and the metal charge, divided by good castings. Iron castings are mostly outside CBAM, so this is a buyer request, not a legal filing, but the buyer will use it in its own declarations.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "belgaum-foundry-cluster-adeetie-energy-loan",
+  "q": "Belgaum foundries are on the ADEETIE list: what saving and records does an energy loan need?",
+  "title": "Belgaum foundries: ADEETIE loan records",
+  "short": "The project must save at least 10% energy, proven by an investment grade audit from an empanelled auditor, and you need a bank loan for it. In Belgaum, where 90% of castings come from induction furnaces, replacing a furnace using 750 kWh a tonne or more with one near 550 usually clears 10% on its own.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "belgian-importer-cbam-indian-supplier",
@@ -3491,6 +3523,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "can-cbam-verifier-outsource-work-to-indian-branch",
+  "q": "Can an EU CBAM verifier send staff from an Indian branch to verify us?",
+  "title": "CBAM verifier using an Indian branch",
+  "short": "Partly. An accredited CBAM verifier may outsource some verification work to another body, such as a local branch or subsidiary, with your consent and a binding contract. It keeps full responsibility and may not outsource the independent review or the issuing of the report. Hiring an individual expert is not outsourcing.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "can-cbam-verifier-waive-site-visit",
   "q": "Can a CBAM verifier skip the site visit entirely?",
   "title": "Can a CBAM site visit be waived",
@@ -3513,6 +3553,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. SEBI lets a registered ESG rating provider act as independent reviewer for social, sustainability and sustainability-linked bonds if it meets the independence, conflict-free fee and expertise conditions. But for any client group an ESG rater may offer either ESG ratings or green debt certification, or audit and assurance, not both.",
   "topic": "markets",
   "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "can-eu-authorities-see-cbam-verifier-working-papers",
+  "q": "Can EU authorities see the CBAM verifier's working papers on our plant?",
+  "title": "Can the EU see our CBAM verifier's file?",
+  "short": "Yes. On request, the verifier must give the Commission, or the national authority reviewing your buyer's CBAM declaration, access to its internal verification documentation. That file holds your data, the samples it took and the judgements it made. The verifier's accreditation body also checks it, as routine surveillance.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "can-ghg-verification-be-done-remotely",
@@ -3920,7 +3968,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Emission factor for imported Li-ion cells",
   "short": "Use the cell maker's own product carbon footprint in kg CO2e per kWh first. If it has none, use a published figure for the same chemistry (LFP or NMC) and producing country, label it as an estimate, and multiply by the kWh of cells you bought. It goes in Scope 3 Category 1.",
   "topic": "product",
-  "reviewed": "2026-10-17"
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "carbon-footprint-sensitivity-analysis",
@@ -4243,6 +4291,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "cbam-biomass-fuel-zero-rating-proof",
+  "q": "We burn biomass or rice husk. What does the CBAM verifier need to zero-rate it?",
+  "title": "Biomass fuel in CBAM: proof to zero-rate it",
+  "short": "Biomass burnt as fuel counts at zero only if it meets the EU Renewable Energy Directive's sustainability and greenhouse gas savings criteria. Your monitoring plan needs a written procedure showing how, and the verifier looks for Proofs of Sustainability from a RED II certification scheme the Commission recognises. Without them, the CO2 counts in full.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "cbam-carbon-price-paid-what-proof-is-needed",
   "q": "What proof does an EU importer need to deduct a carbon price paid in the producer's country?",
   "title": "CBAM carbon price deduction: the proof",
@@ -4328,7 +4384,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "CBAM CN 7208: hot-rolled coil and plate",
   "short": "Yes. Flat-rolled iron or non-alloy steel, hot-rolled, 600 mm or wider, is CN 7208 and covered under the Chapter 72 line of Annex I. Direct emissions only. A rolling mill that buys slabs passes on the slab maker's figure as a precursor and adds its own reheating fuel.",
   "topic": "regulation",
-  "reviewed": "2026-10-23"
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "cbam-cn-7210-galvanised-ppgi-tinplate",
@@ -5131,6 +5187,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-25"
  },
  {
+  "slug": "cbam-verifier-checks-default-values-for-precursors",
+  "q": "We use default values for bought precursors. Does the CBAM verifier still check them?",
+  "title": "Does the verifier check precursor defaults?",
+  "short": "Yes. Choosing defaults does not take a precursor out of the verification. The verifier checks you used the value for the right CN code, country of origin and production year, that your precursor quantities balance, and that precursors counted as zero are still listed. A default for the wrong country is a non-conformity.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "cbam-verifier-checks-precursor-supplier-report",
   "q": "What does a CBAM verifier check on my supplier's verification report?",
   "title": "CBAM: checks on a supplier's report",
@@ -5143,6 +5207,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Our records are in Hindi or Gujarati. Can a CBAM verifier work with them, and in what language is the report?",
   "title": "CBAM verifier language and your records",
   "short": "Yes. Every CBAM verification team must include at least one auditor who can communicate in your language, or use an interpreter at the verifier's own risk. The lead auditor and the independent reviewer work in English, and the verification report is issued in English. Only the English version counts for your EU buyer.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "cbam-verifier-must-be-registered-to-issue-report",
+  "q": "Why can't our accredited verifier issue the CBAM report yet?",
+  "title": "Accredited but not yet able to issue",
+  "short": "Accreditation alone is not enough. A verifier can generate a CBAM verification report only once it is registered in the CBAM Registry, and must apply within two months of accreditation to the authority in its accreditation body's country. Until then, or if its accreditation lapses, the report cannot be issued.",
   "topic": "regulation",
   "reviewed": "2026-10-30"
  },
@@ -5161,6 +5233,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "First a strategic analysis of your plant: size, processes, sources, meters, precursors, electricity and control system. Then a risk analysis of inherent and control risks. These set the verification plan: a programme of activities, a test plan for your controls and a data sampling plan. Manual data transfers and weak checking raise the work.",
   "topic": "regulation",
   "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "cbam-verifier-tests-invoices-and-accounts-data",
+  "q": "How does a CBAM verifier test our fuel invoices and purchase records?",
+  "title": "How a CBAM verifier tests your invoices",
+  "short": "By picking samples and following them from the invoice to the emissions report and back. The rules name five tests: trace to the primary source, cross-check with other records, reconcile, check thresholds and recalculate. The verifier also walks through your purchase, stock and fuel systems and tests who checks the data before it moves on.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "cbam-virtual-site-visit-when-allowed",
@@ -5712,7 +5792,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "CDP supply chain request: respond or not?",
   "short": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. If only customers requested you, CDP generally charges you no admin fee. The fee applies if an investor group also requested you or you disclose on your own.",
   "topic": "regulation",
-  "reviewed": "2026-10-29"
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "cdp-supply-chain-who-sees-my-response",
@@ -5915,6 +5995,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "chandigarh-fastener-units-cbam-carbon-data",
+  "q": "Chandigarh fastener makers: does CBAM cover their bolts and nuts, and what does the cluster use in energy?",
+  "title": "Chandigarh fasteners: CBAM and energy",
+  "short": "Yes. Bolts, nuts, screws and washers under 7318 are CBAM goods. Chandigarh's 220 or so fastener units run mostly on grid power, which CBAM ignores for steel, so their CBAM figure is almost all wire rod plus any furnace oil burnt in hardening or galvanising.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "chandrapur-cement-plant-local-coal-records",
   "q": "What records does a Chandrapur cement plant need for coal from nearby mines?",
   "title": "Chandrapur cement: local coal records",
@@ -6059,6 +6147,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "chennai-aluminium-die-casting-cluster-cbam",
+  "q": "Chennai aluminium die casters: what is the cluster's energy use, and do CBAM rules reach their parts?",
+  "title": "Chennai die casters: energy and CBAM",
+  "short": "About 12,340 toe a year in TERI's 2015 profile: 110 million kWh and 3,200 kL of diesel for roughly 60,000 t of castings. CBAM reaches a casting only if your EU buyer declares it under a covered aluminium code, and even then your electricity is left out; only fuel and the alloy you melt count.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "chennai-auto-component-supplier-oem-data",
   "q": "How should a Chennai auto component supplier give carbon data to an OEM?",
   "title": "Chennai auto suppliers: data for OEMs",
@@ -6081,6 +6177,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "In proportion to the share of electricity covered by contracted wind with its certificates or attributes retired for you. If 60% of facility power is wind under green open access, market-based Scope 2 falls by about 60%, while the location-based figure stays at the grid factor.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "chennai-forging-units-auto-buyer-carbon-data",
+  "q": "Chennai forging units mostly make auto parts: what carbon data do OEMs and EU buyers want?",
+  "title": "Chennai forgings: carbon data for OEMs",
+  "short": "A figure per tonne of good forgings, with furnace oil, diesel and grid power shown separately and the steel bar you bought listed beside it. TERI's 2016 profile gives the cluster benchmark: about 50 units making 193,200 t a year on 24 million kWh, 7,140 kL of furnace oil and 340 kL of diesel.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "chhattisgarh-silico-manganese-carbon-per-tonne",
@@ -6697,6 +6801,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Divide the month's electricity emissions, plus any LPG used for annealing or soldering, by kilograms of chain produced. Chain machines, rolling mills and annealing furnaces draw most of the power, so meter them if you can.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "coimbatore-pump-cluster-carbon-footprint",
+  "q": "Coimbatore makes about 10.5 million pump sets a year: what is the cluster's carbon footprint?",
+  "title": "Coimbatore pump cluster carbon footprint",
+  "short": "Only 2 to 3 kg per pump set from the makers' own energy: about 28,000 t CO2 a year on today's grid factor, from 40 million kWh of power and 500 kL of DG diesel across roughly 600 units. The castings, stampings and copper inside each pump carry far more.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "coimbatore-pump-exporter-epd-for-buyers",
@@ -8691,6 +8803,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "durgapur-secondary-steel-cluster-dri-carbon",
+  "q": "How much of Durgapur's secondary steel energy goes into DRI, and what does CBAM ask of those units?",
+  "title": "Durgapur DRI units: energy and CBAM",
+  "short": "Over 77%. TERI's 2023 study puts the belt's secondary steel units, around 100 of them, at 2.18 Mtoe a year, of which DRI kilns use 1.68 Mtoe and emit 5.82 of the cluster's 9.66 Mt CO2. For CBAM, sponge iron counts direct emissions only: kiln coal by mass balance, not the power bill.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "durgapur-steel-products-cbam-figure",
   "q": "What CBAM figure should a buyer use for steel from a Durgapur blast furnace plant?",
   "title": "Durgapur steel: the CBAM figure",
@@ -8851,6 +8971,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-30"
  },
  {
+  "slug": "ecovadis-document-upload-limit",
+  "q": "How many documents can I upload to EcoVadis, and which ones count?",
+  "title": "EcoVadis 55-document limit: what counts",
+  "short": "Each assessment takes up to 55 new documents, whatever your size, and files from earlier assessments do not count toward it. Only evidence linked to the right answer earns credit. EcoVadis rejects files merged just to fit the limit and documents written only for the questionnaire.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "ecovadis-energy-ghg-95-percent-coverage",
   "q": "Why did EcoVadis not credit our energy and emissions figures?",
   "title": "EcoVadis: why energy figures got no credit",
@@ -8867,12 +8995,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-30"
  },
  {
+  "slug": "ecovadis-lost-medal-same-score",
+  "q": "We kept the same EcoVadis score but lost our medal. Why?",
+  "title": "Same EcoVadis score, medal lost: why",
+  "short": "Because medals follow your percentile, not your score. On the first of every month EcoVadis sets the score each medal needs, from all ratings in the past 12 months. In October 2026 Bronze needed 66 and Silver 75. When other companies improve, last year's score can fall short.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "ecovadis-medal-score-needed",
   "q": "What EcoVadis score do I need for a bronze, silver or gold medal?",
   "title": "EcoVadis medal: what score do you need?",
-  "short": "There is no fixed score. Medals go by percentile against every company EcoVadis rated in the previous 12 months, across all industries: Bronze is the top 35%, Silver top 15%, Gold top 5%, Platinum top 1%. Any one of the four theme scores below 30 rules out a medal, whatever your total.",
+  "short": "For scorecards published in October 2026: Platinum 88, Gold 82, Silver 75, Bronze 66. EcoVadis sets these each month from percentiles, so the month your scorecard is published decides the cut-off, not the day you submitted. A theme score below 30 rules out a medal, whatever your total.",
   "topic": "regulation",
-  "reviewed": "2026-10-29"
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "ecovadis-or-cdp-which-first",
+  "q": "Two buyers want EcoVadis and CDP. Which should a small supplier do first?",
+  "title": "EcoVadis and CDP both asked: which first",
+  "short": "Let the calendar decide. CDP opens once a year, from June to October in 2026, while EcoVadis takes submissions any time and publishes about 6 to 8 weeks later. Build your Scope 1 and 2 figures first: they serve both, and EcoVadis accepts a CDP response as evidence for them.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "ecovadis-pcf-request-from-buyer",
+  "q": "My buyer asked for product carbon footprints through EcoVadis. What do I send?",
+  "title": "Buyer wants your PCF through EcoVadis",
+  "short": "A footprint for the named product, in kg CO2e per unit, shared through EcoVadis's Carbon Product Data exchange, which follows the PACT framework. Sharing costs rated companies nothing extra. With no footprint yet, the EcoVadis PCF Calculator is free for invited or subscribed suppliers and gives a cradle-to-gate figure.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "ecovadis-questionnaire-deadline",
@@ -8899,10 +9051,26 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-29"
  },
  {
+  "slug": "ecovadis-share-scorecard-outside-network",
+  "q": "Can I show my EcoVadis scorecard to a buyer that does not use EcoVadis?",
+  "title": "Show an EcoVadis scorecard to a non-member",
+  "short": "Only on a Premium, Corporate or Select plan. Those plans let you email a secure link to any address or download the scorecard as a PDF. On Basic or the Carbon Rating, you can share only with companies already on EcoVadis, found through its network search.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "ecovadis-vitals-questionnaire",
   "q": "My buyer sent an EcoVadis Vitals questionnaire, not a full rating. What is it?",
   "title": "EcoVadis Vitals questionnaire explained",
   "short": "Vitals is EcoVadis's free, short risk questionnaire. It covers Environment, Labor and Human Rights, Ethics and Sustainable Procurement, takes about 30 minutes, and gives your buyer a risk level, not a score or a medal. Your answers stay confidential; the buyer sees the risk level and the documents you attach.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "ecovadis-vs-sedex-difference",
+  "q": "One buyer wants EcoVadis, another Sedex. What is the difference for a supplier?",
+  "title": "EcoVadis or Sedex: what changes for you",
+  "short": "EcoVadis rates you: its analysts score your documents against 21 criteria in four themes and publish a scorecard valid for 12 months. Sedex is a yearly membership, priced per site, where you fill a self-assessment questionnaire, share it with any number of customers, and add a SMETA audit only if a customer asks.",
   "topic": "regulation",
   "reviewed": "2026-10-30"
  },
@@ -10209,6 +10377,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "You can expect it, but report it honestly. India plans a much larger share of non-fossil power, so the CEA grid factor should fall over time. Your Scope 2 will drop even if you do nothing. Show how much of each year's fall came from the grid factor and how much from your own actions.",
   "topic": "accounting",
   "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "faridabad-engineering-cluster-carbon-footprint",
+  "q": "What does Faridabad's engineering cluster use in energy, and what do auto OEMs ask its suppliers for?",
+  "title": "Faridabad engineering: energy and OEM asks",
+  "short": "Grid power, backed by a DG set in almost every unit, plus furnace oil, LPG, pet coke, wood and gas, across about 12,015 MSMEs, 35% of them making auto parts. The 5,347 units surveyed used 426,167 toe a year. OEMs ask each vendor for monthly fuel and power, Scope 1 and 2, and a figure per part.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "faridabad-forging-unit-furnace-oil-to-png",
@@ -12096,7 +12272,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Reporting group captive solar in Scope 2",
   "short": "Report both ways. Location-based Scope 2 applies the grid factor to all the electricity you consume, including the wheeled solar. Market-based Scope 2 can treat the solar units adjusted on your bill as zero, if your contract gives you their renewable attributes and nobody sold RECs for them.",
   "topic": "accounting",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "gst-e-invoice-fields-for-carbon-accounting",
@@ -13299,6 +13475,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "howrah-galvanizing-wire-units-cbam-carbon",
+  "q": "Howrah galvanizers and wire drawers: what do they burn, and does CBAM cover galvanized wire?",
+  "title": "Howrah galvanizing and wire: fuel and CBAM",
+  "short": "Galvanizers fire zinc kettles on furnace oil, coal or wood; wire drawers run on electricity, with LPG for annealing. Galvanized wire in coils (7217 20), bolts and nuts (7318) and tower parts (7308) are CBAM goods. Galvanized nails (7317) are not.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "hpht-diamond-press-electricity-per-carat",
   "q": "How do I work out electricity carbon per carat for an HPHT diamond press?",
   "title": "HPHT diamond press: carbon per carat",
@@ -14131,6 +14315,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-29"
  },
  {
+  "slug": "ireda-biomass-steam-heating-project-loan",
+  "q": "Can I get an IREDA loan for a biomass boiler that sells steam to factories?",
+  "title": "IREDA loan for a biomass steam supply plant",
+  "short": "Yes, under IREDA's scheme for biomass heating projects, if you hold a valid agreement to supply steam to a buyer or use it yourself. IREDA lends up to 70% of project cost, minimum ₹50 lakh, repaid over up to 8 years after a moratorium of up to 12 months, and funds only one such project within 50 km.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "ireda-compressed-biogas-loan-satat-conditions",
   "q": "What does IREDA need to fund a compressed biogas plant under SATAT?",
   "title": "IREDA loan for a CBG plant under SATAT",
@@ -14321,6 +14513,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. Grain oriented electrical steel coil is flat-rolled alloy steel under 7225 11 or 7226 11, and chapter 72 is in Annex I. Cut laminations and finished transformer cores are usually declared as transformer parts under 8504, which is not covered today.",
   "topic": "regulation",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "is-eu-importer-liable-for-cbam-verifier-error",
+  "q": "Is the EU importer liable if the CBAM verification report is wrong?",
+  "title": "Is the importer liable for a verifier's error?",
+  "short": "Yes. The Commission says the declarant is the only person legally responsible for the CBAM declaration, and the verification report is part of it. If an error changes the number of certificates to surrender, the declarant may have to pay a penalty. Where a third party such as the verifier caused the error, the authority may reduce it.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "is-flux-limestone-co2-counted-in-steel-cbam",
@@ -14651,6 +14851,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "jagadhri-brass-aluminium-cluster-wood-coke-carbon",
+  "q": "Jagadhri brass and aluminium units burn wood, coke and furnace oil: what is the cluster footprint?",
+  "title": "Jagadhri brass and aluminium: fuels and CO2",
+  "short": "Wood leads by energy, but the fossil CO2, roughly 58,000 t a year, comes from furnace oil, coke and power. BEE counted about 175 units, 100 brass and 75 aluminium, using 32,090 toe: wood 18,880, furnace oil 6,500, imported coke 4,560 and 25 GWh of power. Aluminium sheet and circles fall under CBAM; utensils and brass do not.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "jagadhri-utensil-unit-melting-furnace-co2",
   "q": "How does a utensil maker in Jagadhri work out CO2 per kg?",
   "title": "Jagadhri utensil unit: CO2 per kg",
@@ -14675,6 +14883,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "jaipur-foundry-cluster-export-castings-carbon",
+  "q": "Jaipur's 110 foundries: what does the cluster emit, and what carbon data do export buyers expect?",
+  "title": "Jaipur foundries: export carbon data",
+  "short": "Jaipur's 110 foundries, nine of them export-oriented, made about 216,000 t of castings on 20,630 toe a year in TERI's 2016 profile: 163 million kWh, 9,200 t of coke and 330 t of LPG. An export buyer wants a figure per tonne of good castings, split by melting route, with coke and power records behind it.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "jaipur-gemstone-cutting-carbon-per-carat",
   "q": "How does a Jaipur coloured gemstone cutting unit work out carbon per carat?",
   "title": "Gemstone cutting carbon per carat",
@@ -14689,6 +14905,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually the workshop's Scope 1 and 2 emissions and a figure per piece or per gram for what they buy. Precious metal dominates the footprint, so buyers care most about where gold and silver come from and whether recycled content is backed by supplier documents.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "jaipur-toughened-glass-units-electricity-carbon",
+  "q": "Jaipur toughened and laminated glass units run on electricity: what carbon data can they give builders?",
+  "title": "Jaipur toughened glass: power and CO2 data",
+  "short": "Jaipur's 19 operating safety glass MSMEs processed about 31,098 t in 2019-20 using 1,185 toe, almost all grid power. A typical toughening unit used about 1.09 million kWh for 2,275 t: about 480 kWh and 325 kg CO2 per tonne. Builders also need the float glass maker's figure, which you pass on.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "jakarta-data-centre-coal-grid-scope-2",
@@ -14777,6 +15001,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Only for a price effectively paid. Japan's GX emissions trading becomes mandatory for large emitters from 2026, with allowances largely free at first. Until a plant pays for allowances beyond its allocation, there is little to deduct. Keep the evidence ready.",
   "topic": "regulation",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "jetpur-dyeing-printing-cluster-thermal-fuel",
+  "q": "Jetpur's dyeing and printing units get 84% of their energy from heat: what does the cluster burn?",
+  "title": "Jetpur printers: what the cluster burns",
+  "short": "Mostly biomass briquettes and lignite. TERI's 2015 profile puts Jetpur's 1,120 dyeing and printing units at 101,387 toe a year: 140,880 t of briquettes, 90,000 t of lignite, 6,420 t of wood and 111.7 million kWh. Lignite and grid power are the fossil CO2; briquettes and wood are biogenic.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "jetpur-dyeing-printing-unit-coal-boiler-co2",
@@ -14913,6 +15145,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "DAP under CN 3105 is a CBAM good, and ammonia is its precursor. Multiply the ammonia consumed, about 0.22 t per tonne of DAP at 18% nitrogen, by the ammonia supplier's embedded emissions, then add your own direct and indirect emissions. Phosphoric and sulphuric acid are not CBAM goods.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "jorhat-tea-factories-coal-gas-drying-carbon",
+  "q": "Jorhat tea factories dry leaf on coal or gas: how much, and what does a buyer's carbon figure need?",
+  "title": "Jorhat tea factories: coal, gas and CO2",
+  "short": "A large Jorhat factory drying on coal burns about 0.72 kg of coal per kg of made tea; on gas, about 0.32 scm. On today's factors that is about 1.85 kg CO2 per kg of made tea on coal and 1.06 on gas. A buyer needs your season's fuel, power and DG diesel divided by kg made.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "jubail-ammonium-nitrate-cbam-precursors",
@@ -15059,6 +15299,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "karnal-basmati-rice-mills-husk-carbon",
+  "q": "Karnal rice mills burn their own husk: what does the cluster use, and what goes in a rice buyer's figure?",
+  "title": "Karnal rice mills: husk, power and CO2",
+  "short": "Mostly husk, and its CO2 is biogenic, so it stays out of the fossil figure. About 178 mills around Karnal milled 4.45 million tonnes of paddy in 2017-18, and husk gave 241,936 of their 268,921 toe. A rice buyer's fossil figure comes mainly from the cluster's 313 million kWh of grid power.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "karnataka-green-tariff-bescom-factories",
   "q": "Can a factory on BESCOM or another Karnataka discom buy power at the green tariff, and what does it add to the bill?",
   "title": "Karnataka green tariff for factories",
@@ -15187,6 +15435,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "khurja-pottery-cluster-fuels-and-green-loan-route",
+  "q": "Khurja potteries fire on LDO, RPO and piped gas: what does the cluster use, and which loan pays for a better kiln?",
+  "title": "Khurja potteries: fuels and a kiln loan",
+  "short": "About 400 units fire 156 kilns mostly on LDO and rubber process oil, burning about 19,000 kL a year, with about 10 units on piped gas. Khurja is on BEE's ADEETIE ceramic cluster list, which cuts interest on an energy loan if the project saves at least 10%. A shuttle kiln upgrade clears that easily.",
+  "topic": "markets",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "khurja-pottery-coal-to-gas-saving",
   "q": "How much CO2 does a Khurja pottery unit save moving its kiln from coal to gas?",
   "title": "Khurja pottery: coal to gas saving",
@@ -15257,6 +15513,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Cement is one of the goods where CBAM counts indirect emissions. Multiply the electricity used to make each tonne of clinker and cement by the emission factor the CBAM rules allow, usually the default for the country's grid, then add it to direct emissions from calcination and kiln fuel.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "kochi-seafood-processors-freezer-energy-carbon",
+  "q": "Compressors carry most of the load in Kochi seafood plants: what is the cluster's carbon footprint?",
+  "title": "Kochi seafood plants: freezer power and CO2",
+  "short": "Kochi's 35 or so seafood processors run almost entirely on grid power: about 30,000 MWh a year, 2,574 toe. Refrigeration compressors are 73% of connected load and freezing about 75% of electricity. At today's grid factor that is roughly 20,000 t CO2 a year, or 0.25 to 0.57 t per tonne of product.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "kolhapur-foundry-castings-buyer-carbon-data",
@@ -16683,6 +16947,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "mohali-tractor-parts-cluster-carbon",
+  "q": "What is the Mohali tractor and auto parts cluster's footprint, and what do OEMs want?",
+  "title": "Mohali tractor parts: carbon and OEMs",
+  "short": "Mohali's 900 engineering MSMEs used 20,969 toe a year in TERI's 2015 profile, 84% of it grid electricity, and tractor and auto parts makers used three quarters of it. For an OEM's supplier request, your own power is often the smaller number: the steel you buy, about 300 t a year for an average unit, can outweigh it.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "monoblock-pump-carbon-footprint-per-unit",
   "q": "How do I calculate the carbon footprint of a monoblock pump?",
   "title": "Monoblock pump carbon footprint per unit",
@@ -17131,6 +17403,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "muzaffarnagar-paper-mills-steam-power-benchmark",
+  "q": "How far are Muzaffarnagar paper mills from the energy benchmark, and what does closing the gap do to carbon?",
+  "title": "Muzaffarnagar paper mills vs the benchmark",
+  "short": "Some by a long way. BEE measured 10.1 to 18.2 GJ of fuel and 550 to 1,080 kWh per tonne of paper across about 29 mills, against IPPTA kraft norms of about 9.9 to 17.6 GJ of steam and 550 to 650 kWh. Its 15 projects would save about 22,800 t CO2 a year.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "mvr-evaporator-vs-steam-evaporator-co2",
   "q": "Does an MVR evaporator cut emissions compared with a steam evaporator?",
   "title": "MVR evaporator vs steam evaporator",
@@ -17545,6 +17825,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not for the CBAM charge on aluminium. Power from a captive coal plant is indirect emissions under the CBAM Regulation, and Annex II lists aluminium for direct emissions only. Anode consumption and perfluorocarbons from anode effects do count, and the captive plant's emissions still matter for buyers counting Scope 3.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "odisha-sponge-iron-cluster-coal-kiln-carbon",
+  "q": "Odisha's sponge iron units: how much coal do they burn, and what CBAM data do their buyers need?",
+  "title": "Odisha sponge iron cluster: coal and CO2",
+  "short": "About 9.5 million tonnes of coal a year, across roughly 107 coal-based units, most in Sundargarh and Keonjhar, by BEE's count. In the 30 plants audited, coal was 99.8% of energy, about 1.6 t per tonne of DRI. For CBAM, a steel buyer needs your mass balance figure, not a coal invoice total.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "office-ac-replacement-co2-savings",
@@ -18209,6 +18497,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add three parts per board: the components, where integrated circuits usually dominate, from supplier data or a licensed database; the bare board by area and layer count; and your assembly energy, plant kWh and DG diesel per board times their factors. Assembly is usually a small share, so component data decides the result.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "pcf-include-transport-to-buyer",
+  "q": "Should my product carbon footprint include transport to the buyer?",
+  "title": "Should a PCF include transport to the buyer?",
+  "short": "Not inside the cradle-to-gate figure. Under the Catena-X PCF Rulebook, version 4, your footprint ends at your outbound gate, whoever pays the freight. If you contract or run the delivery, report its emissions separately, next to the PCF. If the buyer arranges it, the buyer counts it.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "peanut-butter-carbon-footprint-per-kg",
@@ -19603,12 +19899,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-30"
  },
  {
+  "slug": "rajkot-auto-component-units-oem-carbon-data",
+  "q": "What carbon data do OEMs ask Rajkot's auto component units for?",
+  "title": "Rajkot auto components: OEM carbon data",
+  "short": "Monthly kWh and Scope 2 for the plant, a figure per part number, and the CO2 in the forging, casting or bar each part starts from. Rajkot's 160 or so auto component units run almost only on grid power, about 30 million kWh a year, so their own share per part is small; the blank is most of it.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "rajkot-bearing-cluster-electricity-carbon",
+  "q": "How much energy and CO2 do Rajkot bearing makers use, and which stage uses most?",
+  "title": "Rajkot bearing cluster: power and CO2",
+  "short": "Grinding and assembly. Rajkot's 150 or so bearing units, 90 assembly, 35 rolling element and 25 cage makers, used 3,903 toe a year in TERI's profile, 91% of it 41.3 million kWh of electricity. Assembly units took about 53%, rolling elements 34%. On today's grid factor that is roughly 28,800 t CO2 a year.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "rajkot-engine-parts-exporter-cbam-check",
   "q": "Do engine parts exported from Rajkot fall under EU CBAM?",
   "title": "Rajkot engine parts and CBAM",
   "short": "Usually not. CBAM covers iron and steel goods in chapters 72 and 73 of the EU tariff, plus aluminium, cement, fertilisers, hydrogen and electricity. Finished engine parts classed in chapter 84 are outside it, but a plain casting or forging in chapter 73 may be in.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "rajkot-engineering-units-energy-savings-proof",
+  "q": "Rajkot engineering units saved real energy under a cluster programme: how does a unit prove its own saving?",
+  "title": "Rajkot foundries: proving your own saving",
+  "short": "The programme's totals belong to the cluster, not to you. Prove your own saving with kWh or fuel per tonne melted, for the same months before and after the change, read from bills and your melting log. A buyer or bank will accept a per-tonne drop it can trace; it will not accept the cluster's 12,700 tonnes.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "rajkot-forging-cluster-closed-die-energy-cbam",
@@ -19633,6 +19953,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add CO2 from cupola coke, about 3.02 t CO2 per tonne of coke on IPCC defaults, and any limestone flux, to the embedded emissions of pig iron or other covered precursors charged, then divide by tonnes of good castings. Scrap carried none under the transitional rules, and electricity is not counted.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "rajkot-investment-casting-units-lpg-and-power",
+  "q": "How much LPG and power do Rajkot investment casting units use, and what goes in a buyer's carbon figure?",
+  "title": "Rajkot investment casting: LPG and power",
+  "short": "Rajkot's 110 or so investment casting units used 184 million kWh, 2,610 t of LPG and 8.9 million scm of gas in 2014 to 15 for about 48,000 t of castings. That is about 3 t CO2 per tonne from energy alone, mostly power. A buyer's figure adds the alloy you melt.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "rajkot-pump-makers-carbon-data-for-buyers",
+  "q": "Rajkot pump makers run almost wholly on electricity: what carbon data can they give pump buyers?",
+  "title": "Rajkot pump makers: carbon data for buyers",
+  "short": "Give the plant's monthly kWh and DG diesel, Scope 1 and 2 totals, and a figure per pump model split by machine hours, not a flat average. Rajkot's roughly 1,000 pump makers used 70 million kWh and only 170 kL of diesel in 2014 to 15, so power is 97% of their energy.",
+  "topic": "product",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "ras-al-khair-aluminium-smelter-cbam-figure",
@@ -20787,6 +21123,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "sbti-net-zero-standard-v2-suppliers",
+  "q": "What does SBTi's Corporate Net-Zero Standard V2 mean for suppliers?",
+  "title": "SBTi Net-Zero Standard V2: supplier impact",
+  "short": "Version 2.0 was released in June 2026 and applies from 1 February 2027. It lets your large customers meet their Scope 3 target by raising the share of tier 1 suppliers, measured by emissions or spend, that are in transition or net-zero aligned. Expect them to ask where you stand, every year.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "sbti-sme-route-eligibility",
   "q": "Is my company eligible for the SBTi SME target route?",
   "title": "Who qualifies for the SBTi SME route?",
@@ -21035,6 +21379,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-29"
  },
  {
+  "slug": "sedex-membership-who-pays-per-site",
+  "q": "My buyer asked us to join Sedex. Who pays, and is it per factory?",
+  "title": "Sedex membership: who pays, per factory?",
+  "short": "Supplier membership is your own subscription, priced per site and billed annually. It lasts 12 months from the day you join. There are two supplier tiers, Standard and Supplier Plus; buyers have separate plans. Once a site is on Sedex, you can share its data with any number of customers at no extra cost.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "sedex-smeta-environment-carbon-questions",
   "q": "What carbon and energy evidence does a SMETA audit ask for under the environment pillar?",
   "title": "SMETA environment pillar: carbon evidence",
@@ -21057,6 +21409,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, for the location-based figure. Electricity drawn in an SEZ is still Indian grid power, so use 0.710 kg CO2 per kWh. A lower market-based figure needs contractual instruments, such as renewable certificates or a green tariff, in your name.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "selaqui-pharma-units-carbon-data-for-buyers",
+  "q": "What carbon data do listed pharma companies ask Selaqui formulation units for?",
+  "title": "Selaqui pharma units: buyer carbon data",
+  "short": "Usually your Scope 1 and 2 for April to March, and a figure per batch or per thousand tablets for their products. SEBI made value chain reporting voluntary from FY 2025-26, so requests come by choice or contract. TERI's 2015 profile gives the benchmark: 52 units, 8,074 toe a year, 63% of it electricity.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "self-adhesive-label-carbon-footprint-per-square-metre",
@@ -22003,6 +22363,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "solapur-textile-cluster-wood-fuel-carbon",
+  "q": "Solapur textile units burn wood for their steam and hot water: what is the cluster's carbon footprint?",
+  "title": "Solapur textiles: wood fuel and carbon",
+  "short": "Small in fossil CO2, large in wood. A 2011 SAMEEEKSHA profile counts about 600 units with 12,000 looms burning 32,000 t of wood and groundnut husk briquettes and using 7.4 million kWh a year. That power is about 5,000 t CO2 at today's grid factor; the wood's CO2 is reported apart, as biogenic.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "solapur-textile-unit-steam-boiler-co2",
   "q": "How does a Solapur textile unit work out CO2 from the steam boiler used for dyeing and sizing?",
   "title": "Solapur textile boiler CO2",
@@ -22811,6 +23179,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "sundergarh-steel-units-pat-designated-consumers",
+  "q": "52 of Sundergarh's 87 secondary steel units are PAT designated consumers: what does that mean for the rest?",
+  "title": "Sundergarh steel: PAT and the other 35",
+  "short": "Steel units using 20,000 toe a year or more are designated consumers under BEE's PAT scheme. The other 35 in Sundergarh, mostly smaller sponge iron, induction furnace and rerolling units, sit outside it. They still need per-tonne CO2 figures for CBAM if their goods reach the EU, and for the PAT plants that buy from them.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "supermarket-display-freezer-electricity",
   "q": "How do I calculate the emissions of supermarket display freezers and chillers?",
   "title": "Supermarket freezer electricity",
@@ -22937,6 +23313,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the month's billed kWh by 0.710 kg CO2 per kWh and divide by the kilograms of zari thread produced that month. Keep metallic and polyester zari separate if they run on different machines, because their power use per kg can differ.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "surendranagar-ceramic-units-gas-and-co2-per-tonne",
+  "q": "How much gas and CO2 per tonne do Surendranagar's ceramic units use?",
+  "title": "Surendranagar ceramics: gas and CO2 per tonne",
+  "short": "TERI's 2017-18 profile of 26 Wadhwan and Joravarnagar units, mostly electrical porcelain, found 4.26 million scm of gas and 4.14 million kWh a year, 0.128 to 0.176 toe per tonne. On today's factors that is about 11,500 t CO2, roughly 0.42 t per tonne of product. Gas is about three quarters of it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "surgical-gloves-carbon-footprint-per-1000",
@@ -23345,6 +23729,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "It can. Thailand has introduced utility green tariffs that attach renewable electricity to your supply. If the attributes are retired for you, cover the same year and meet the GHG Protocol Scope 2 quality criteria, the matching kWh carry a renewable factor in your market based total. Check current terms with your utility.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "thangadh-sanitaryware-cluster-energy-and-carbon",
+  "q": "How much energy does the Thangadh sanitaryware cluster use, and what is CO2 per tonne of ware?",
+  "title": "Thangadh sanitaryware: energy and CO2 a tonne",
+  "short": "In 2009 the cluster used 33,644 toe a year, 83% of it natural gas, and averaged 0.091 toe and 0.27 t CO2 per tonne of product. Sanitaryware units ranged from 0.074 to 0.105 toe per tonne. Recalculated on today's factors, the cluster's fossil CO2 comes to about 0.22 t per tonne.",
+  "topic": "accounting",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "thangadh-sanitaryware-kiln-gas-per-piece",
@@ -23875,6 +24267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "two-plants-one-cbam-verification-report",
+  "q": "We have two plants. Can one CBAM verification cover both?",
+  "title": "Two plants, one CBAM verification?",
+  "short": "No. CBAM verification works per installation, and the verifier issues one verification report for each. Two plants mean two emissions reports, two verification reports and two installation IDs, even under one company and one CIN. The same verifier can do both, as separate engagements, if its accreditation covers each plant's goods.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
   "slug": "two-wheeler-delivery-fleet-emissions",
   "q": "How do I calculate emissions for a petrol two-wheeler delivery fleet per km and per order?",
   "title": "Two-wheeler delivery fleet: CO2 per order",
@@ -24257,6 +24657,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh the inner and outer stainless steel walls, the cap and the seal per flask and multiply by supplier figures. Add drawing, welding, vacuum brazing, polishing and coating energy, then divide the plant's energy by flasks made.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "vadodara-glass-cluster-toughened-and-blown-glass-carbon",
+  "q": "What do Vadodara's toughened glass and glass blowing units use in energy, and what is CO2 per tonne?",
+  "title": "Vadodara glass units: energy and CO2 per tonne",
+  "short": "Electricity is 56% of the energy but about three quarters of the CO2. Vadodara's 33 glass MSMEs, 15 toughening and 18 glass blowing, processed 42,670 t on 3,377 toe in 2020-21, the rest being LPG and diesel. That is roughly 18,800 to 19,500 t CO2, about 0.44 to 0.46 t per tonne.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "vanderbijlpark-coated-steel-zinc-cbam",
@@ -24667,6 +25075,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "virudhachalam-ceramic-refractory-kiln-fuel-carbon",
+  "q": "Virudhachalam ceramic and refractory kilns burn firewood, coal, petcoke and RPO: what is the cluster's footprint?",
+  "title": "Virudhachalam kilns: four fuels, one footprint",
+  "short": "Firewood is the biggest, then imported coal, petcoke and rubber process oil. About 300 small and micro units near Virudhachalam made about 60,000 t a year on 10,079 toe in 2015, 99% of it kiln fuel. Fossil CO2 comes to roughly 23,000 t, about 0.39 t per tonne, with wood CO2 reported separately.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "viscose-fabric-carbon-footprint-per-metre",
   "q": "How do I calculate the carbon footprint of viscose fabric?",
   "title": "Viscose fabric carbon footprint per metre",
@@ -24715,6 +25131,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "volkswagen-s-rating-supplier",
+  "q": "What is Volkswagen's S-Rating, and how does it affect an Indian supplier?",
+  "title": "Volkswagen S-Rating for Indian suppliers",
+  "short": "The S-Rating is how Volkswagen checks that a direct supplier meets its sustainability requirements. Since the 2025 revision it is either positive or negative. A negative rating means evidence is missing or a requirement is breached, and in principle it makes you ineligible for new contracts.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "voltage-optimiser-servo-stabiliser-savings",
   "q": "Do voltage optimisers or servo stabilisers really cut electricity and emissions?",
   "title": "Voltage optimisers: real savings?",
@@ -24753,6 +25177,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "You report goals and results for actions that cut or avoid emissions, grouped under areas such as energy, packaging, waste and transportation, through Walmart's Sustainability Hub. Walmart's calculators turn your activity data, such as kWh saved or solar kWh generated, into avoided emissions. It is a reduction report, not a full inventory.",
   "topic": "regulation",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "wankaner-refractory-tunnel-kiln-petcoke-carbon",
+  "q": "Wankaner refractory units fire petcoke in tunnel kilns: what is the cluster's carbon footprint?",
+  "title": "Wankaner refractories: petcoke and CO2",
+  "short": "Almost all of it is the kiln. Wankaner's 36 refractory MSMEs used 18,089 toe in 2020-21 to make about 198,600 t: 18,014 toe of kiln heat, mainly petcoke, and only 75 toe of electricity. That is roughly 74,000 t CO2 a year, about 0.37 t per tonne, over 99% of it from the kiln.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "wardha-steel-galvanising-unit-cbam-figure",
@@ -25071,6 +25503,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "What does a CBAM verifier check during the site visit?",
   "title": "What a CBAM verifier checks on site",
   "short": "That your plant matches your monitoring plan: the installation boundary, each production process, every fuel, material and emission source, and the links between them. The verifier watches meters and weighbridges working, interviews the people who record data, and traces sample figures from a reading or lab result through to the report.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "what-cbam-verifier-checks-fertiliser-plant-india",
+  "q": "What does a CBAM verifier check at an Indian fertiliser plant?",
+  "title": "CBAM verifier checks at a fertiliser plant",
+  "short": "Nitric acid N2O from continuous stack monitoring, the nitrogen content behind every tonne sold, how your CN codes were grouped, ammonia and hydrogen bought in as precursors, CO2 sent to the urea plant, and electricity, which counts for fertilisers. The verifier needs scope IV, plus II or III where you make ammonia or nitric acid, each with LII.",
   "topic": "regulation",
   "reviewed": "2026-10-30"
  },
@@ -25507,6 +25947,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "which-year-cbam-verification-report-for-imported-goods",
+  "q": "Which year's verification report does the EU importer use for our goods?",
+  "title": "Which year's CBAM report covers an import",
+  "short": "The report for the year your goods were made. By default that is presumed to be the year they clear EU customs. With evidence of the real production date, your buyer may use the earlier year instead. For anything imported in 2026, the year is 2026 by law, whenever it was made.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "white-label-products-who-reports-emissions",
   "q": "We sell products made for us under our brand by another factory. Who reports their emissions?",
   "title": "White-label products: who reports what",
@@ -25521,6 +25969,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Nobody approves it in advance. No EU or Indian authority signs off a CBAM plan. Your accredited CBAM verifier assesses the plan against the EU Methodology Act, usually as the first step of verification, and records the result in the verification report or a separate assessment report you can show later verifiers.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
+ },
+ {
+  "slug": "who-arranges-cbam-verification-exporter-or-importer",
+  "q": "Who arranges and pays for CBAM verification: the Indian exporter or the EU importer?",
+  "title": "Who arranges CBAM verification?",
+  "short": "The Indian plant arranges it. The Commission says the operator of the installation must contract the accredited verifier, and only the operator can decide to have its figures verified; if it does not, the importer uses default values. No EU rule says who pays. That is settled in your contract with the buyer.",
+  "topic": "regulation",
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "who-at-msme-should-face-the-verifier",

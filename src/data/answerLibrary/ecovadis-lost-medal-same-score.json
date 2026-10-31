@@ -1,0 +1,75 @@
+{
+  "slug": "ecovadis-lost-medal-same-score",
+  "q": "We kept the same EcoVadis score but lost our medal. Why?",
+  "title": "Same EcoVadis score, medal lost: why",
+  "short": "Because medals follow your percentile, not your score. On the first of every month EcoVadis sets the score each medal needs, from all ratings in the past 12 months. In October 2026 Bronze needed 66 and Silver 75. When other companies improve, last year's score can fall short.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian MSME suppliers whose EcoVadis reassessment came back without a medal",
+  "sections": [
+    {
+      "h": "Find the month that judged you",
+      "p": [
+        "The threshold that applies is the one for the month your scorecard was published, not the month you submitted. Publication usually comes 6 to 8 weeks after submission, so a questionnaire sent in August is often judged against September or October numbers. The required score can also drift a little during the month as new ratings come in.",
+        "EcoVadis now publishes each month's starting thresholds. For October 2026 they were:"
+      ],
+      "ul": [
+        "Platinum, top 1%: 88.",
+        "Gold, top 5%: 82.",
+        "Silver, top 15%: 75.",
+        "Bronze, top 35%: 66."
+      ]
+    },
+    {
+      "h": "If the threshold is not the reason",
+      "ul": [
+        "One theme fell below 30. Environment, Labor and Human Rights, Ethics and Sustainable Procurement each need at least 30, whatever your total.",
+        "A 360 Watch finding: negative news about your company can block a medal.",
+        "A methodology change: a reassessment follows any methodology update made before it started, so the same answers can score differently.",
+        "You are comparing with a scorecard from 2023 or earlier. From January 2024 EcoVadis narrowed Silver from the top 25% to the top 15%, and Bronze from the top 50% to the top 35%."
+      ]
+    },
+    {
+      "h": "What you keep in the meantime",
+      "p": [
+        "A medal stays valid for 12 months from the scorecard it was earned on; later threshold changes do not take it away. Without a medal, a score of 45 or more earns the Committed badge, and a score of 34 to 44 earns Fast Mover if it rose at least 6 points on your previous assessment within 18 months."
+      ]
+    },
+    {
+      "h": "Getting it back",
+      "ol": [
+        "Work out the gap: your score against the threshold for your publication month.",
+        "Read your improvement areas and pick the theme with the most room, rather than adding points where you are already strong.",
+        "Fix the evidence, not just the answer: undocumented claims earn nothing.",
+        "Plan for a moving target. Aim a few points above the latest published threshold, because it shifts as other companies improve.",
+        "Tell your buyer what changed and when your next scorecard is due. Some buyers set a minimum score rather than a medal, and you may still meet it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Two points short, with the same score",
+    "lines": [
+      "2025 scorecard: 64, Bronze. The Bronze threshold that month was at or below 64.",
+      "Questionnaire submitted mid-August 2026; scorecard published in October 2026, 64 again.",
+      "October 2026 Bronze threshold: 66. Gap: 66 minus 64 = 2 points.",
+      "Result: no medal, but 64 is above 45, so the Committed badge still applies if the other eligibility rules are met."
+    ],
+    "note": "The scores are invented; the thresholds and badge rules are EcoVadis's."
+  },
+  "senseible": "Senseible cannot change your percentile. It can make the energy and greenhouse gas part of your environment evidence quicker to produce: a year of fuel and power bills turned into Scope 1 and 2 figures, each tied to its bill.",
+  "links": [
+    { "label": "Turn your bills into carbon evidence", "to": "/msme-carbon-number" },
+    { "label": "What score wins a medal", "to": "/answers/ecovadis-medal-score-needed" },
+    { "label": "Corrective action plans and your score", "to": "/answers/ecovadis-corrective-action-plan-score" },
+    { "label": "Carbon evidence EcoVadis asks for", "to": "/answers/ecovadis-carbon-questions-what-evidence" }
+  ],
+  "sources": [
+    { "label": "EcoVadis Help Center, Update on Monthly Medal Thresholds", "url": "https://support.ecovadis.com/hc/en-us/articles/39606014723090-Update-on-Monthly-Medal-Thresholds" },
+    { "label": "EcoVadis, Medals methodology disclosure (2026)", "url": "https://ecovadis.com/wp-content/uploads/2026/06/EcoVadis-Medals-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf" },
+    { "label": "EcoVadis, medals and badges", "url": "https://ecovadis.com/suppliers/ecovadis-medals-and-badges/" },
+    { "label": "EcoVadis, medal benchmark changes from January 2024", "url": "https://ecovadis.com/blog/raising-the-bar-as-sustainability-performance-accelerates-we-re-adapting-our-benchmarks/" },
+    { "label": "EcoVadis Help Center, Getting ready to start a reassessment", "url": "https://support.ecovadis.com/hc/en-us/articles/360031507871-Getting-ready-to-start-a-reassessment" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Thresholds change monthly; update the October 2026 figures from the EcoVadis monthly thresholds article."
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "durgapur-secondary-steel-cluster-dri-carbon",
+  "q": "How much of Durgapur's secondary steel energy goes into DRI, and what does CBAM ask of those units?",
+  "title": "Durgapur DRI units: energy and CBAM",
+  "short": "Over 77%. TERI's 2023 study puts the belt's secondary steel units, around 100 of them, at 2.18 Mtoe a year, of which DRI kilns use 1.68 Mtoe and emit 5.82 of the cluster's 9.66 Mt CO2. For CBAM, sponge iron counts direct emissions only: kiln coal by mass balance, not the power bill.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Sponge iron, melt shop and rerolling units in Angadpur, Andal, Bamunara, Jamuria and Raniganj around Durgapur",
+  "sections": [
+    {
+      "h": "The belt, industry by industry",
+      "ul": [
+        "DRI: 1.68 Mtoe and 5.82 Mt CO2 a year.",
+        "Steel melting in induction furnaces: 0.20 Mtoe, all electricity, and 1.80 Mt CO2.",
+        "Ferro alloys: 0.20 Mtoe and 1.41 Mt. Rerolling mills: 0.07 Mtoe and 0.49 Mt.",
+        "Wire drawing and foundries: 0.02 Mtoe each, 0.06 and 0.08 Mt.",
+        "Thermal energy 1.78 Mtoe (82%), electricity 0.40 Mtoe (18%). Durgapur Steel Plant itself is not included."
+      ]
+    },
+    {
+      "h": "Why power matters less for CBAM than for the cluster total",
+      "p": [
+        "Electricity is 18% of the belt's energy, and the melt shops, which run entirely on it, account for 1.80 Mt CO2 on their own. CBAM leaves electricity out for iron and steel goods. A billet's CBAM figure is built mainly from the sponge iron and other inputs charged into the furnace, at their own figures, so a melt shop's EU buyers end up depending on the DRI kiln upstream. Buyers' product footprints and BRSR requests, on the other hand, count the power in full."
+      ]
+    },
+    {
+      "h": "What a DRI unit needs ready for CBAM",
+      "ol": [
+        "Coal in, by weighbridge, with lab carbon content for each lot or a sampling plan.",
+        "Iron ore lumps or pellets in. Pellets are a precursor with their own figure.",
+        "Char or dolochar out, weighed, with its carbon content.",
+        "Sponge iron out, weighed, with its carbon content.",
+        "A verifier accredited for activity group V when your EU buyers ask for verified figures."
+      ]
+    },
+    {
+      "h": "The savings TERI found",
+      "ul": [
+        "DRI kilns: waste heat recovery for power, better coal combustion, partly replacing coal with gas, pellets instead of lump ore.",
+        "Rerolling mills: continuous casting in place of a reheating furnace, PLC automation, furnace lining and recuperator care.",
+        "Wire units: induction heating for annealing and zinc baths instead of furnace oil."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month's mass balance at a 100 tpd kiln",
+    "lines": [
+      "Coal in: 3,000 t x 45% carbon = 1,350 t of carbon",
+      "Dolochar out: 750 t x 25% carbon = 187.5 t of carbon",
+      "Sponge iron out: 3,000 t x 0.2% carbon = 6 t of carbon",
+      "Carbon emitted: 1,350 minus 187.5 minus 6 = 1,156.5 t; x 44/12 = 4,240.5 t CO2",
+      "Per tonne of sponge iron: 4,240.5 / 3,000 = about 1.41 t CO2, plus any pellets at their own figure; the kiln's power adds nothing for CBAM"
+    ],
+    "note": "Example tonnages and carbon contents; use your own weighbridge records and lab results. Dolochar later burnt in a boiler is counted as fuel where it is burnt."
+  },
+  "senseible": "Senseible's CBAM Suite calculates the kiln's mass balance from your coal, ore, char and sponge iron quantities and their lab carbon contents, and Senseible's in-house review traces a sample of inputs to their weighbridge slips and invoices before your verifier sees them.",
+  "links": [
+    { "label": "CBAM for Indian exporters", "to": "/cbam" },
+    { "label": "Waste heat power at a DRI plant", "to": "/answers/barbil-sponge-iron-plant-waste-heat-power" },
+    { "label": "Dolochar power and CO2", "to": "/answers/raigarh-sponge-iron-dolochar-power-co2" },
+    { "label": "Durgapur blast furnace steel", "to": "/answers/durgapur-steel-products-cbam-figure" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA newsletter, December 2023, Profile of Durgapur secondary steel cluster (TERI)", "url": "https://sameeeksha.org/newsletter/SAMEEEKSHA%20December_2023-final.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1, 2.2 and 9.2.3, Table 11", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI's study dates from 2023. Recheck if the full Durgapur cluster report is published."
+}

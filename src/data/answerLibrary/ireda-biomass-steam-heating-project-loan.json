@@ -1,0 +1,97 @@
+{
+  "slug": "ireda-biomass-steam-heating-project-loan",
+  "q": "Can I get an IREDA loan for a biomass boiler that sells steam to factories?",
+  "title": "IREDA loan for a biomass steam supply plant",
+  "short": "Yes, under IREDA's scheme for biomass heating projects, if you hold a valid agreement to supply steam to a buyer or use it yourself. IREDA lends up to 70% of project cost, minimum ₹50 lakh, repaid over up to 8 years after a moratorium of up to 12 months, and funds only one such project within 50 km.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Promoters planning a biomass boiler that sells steam to nearby factories, and units replacing a coal boiler with captive biomass steam",
+  "sections": [
+    {
+      "h": "The terms in IREDA's norms updated to 1 October 2026",
+      "ul": [
+        "Who qualifies: an applicant with a valid third-party agreement to supply steam to a consumer, or a project for captive use.",
+        "Minimum loan: ₹50 lakh.",
+        "Loan share: up to 70% of total project cost; the promoter brings at least 30%.",
+        "Repayment: at most 8 years, set by the project's cash flows and debt service coverage, counted after implementation and a moratorium of up to 12 months from the commercial operation date.",
+        "Interest: the rate IREDA applies to the biomass sector for your internal rating, at the rate in force on each disbursement date, plus 0.50% until the project is commissioned."
+      ]
+    },
+    {
+      "h": "Check the 50 km rule before you pay for a project report",
+      "p": [
+        "IREDA finances no more than one biomass heating project for commercial use within a 50 km radius, counting projects funded by IREDA or by other lenders. If another steam supplier near your industrial estate already has a loan, your application can fail on location alone. Ask IREDA this question first."
+      ]
+    },
+    {
+      "h": "Your steam contract carries the loan",
+      "ul": [
+        "Steam sale revenue must run through a trust and retention account, with a charge on it in IREDA's favour.",
+        "Security is a charge on the project land by mortgage and on plant and machinery by hypothecation. If the land cannot be mortgaged, IREDA takes a corporate guarantee or letter of comfort from the company buying your steam.",
+        "IREDA may add pledged shares, collateral or corporate and personal guarantees.",
+        "So the buyer's signature matters twice: once as your revenue, once as your security."
+      ]
+    },
+    {
+      "h": "Conditions that catch first-time borrowers",
+      "ul": [
+        "You bear IREDA's inspection and monitoring costs, including the visit before sanction.",
+        "Equipment must be bought through a transparent, competitive bidding process you can document.",
+        "IREDA may place a nominee director on your board and appoint concurrent engineers or auditors.",
+        "Proprietorships and partnership firms are considered only against a bank guarantee or pledged fixed deposit covering the whole loan. Companies and LLPs apply directly."
+      ]
+    },
+    {
+      "h": "What persuades a factory to sign",
+      "p": [
+        "The factory is replacing its own coal or oil boiler. It signs a long contract when your steam is cheaper or steadier, and when it can show its own fuel emissions falling. Its coal invoices give the before figure. After the switch, the CO2 from burning biomass is reported separately as biogenic, while the methane and nitrous oxide still count in its Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A ₹8 crore steam plant serving one dyeing unit (assumed figures)",
+    "lines": [
+      "Loan: 70% x ₹8 crore = up to ₹5.6 crore; promoter share at least ₹2.4 crore",
+      "Repayment window: moratorium up to 12 months from COD, then up to 8 years, so the last instalment falls no later than 9 years after COD",
+      "The buyer's coal today: 7,500 t a year at 4,000 kcal per kg (its supplier's test report) = 7,500 x 16.75 GJ = about 1,25,600 GJ",
+      "CO2 from that coal: 1,25,600 GJ x 94.6 kg per GJ (IPCC default for other bituminous coal) = about 11,880 t a year",
+      "That is the fossil CO2 the buyer stops emitting if your steam replaces its whole boiler"
+    ],
+    "note": "Project cost, coal tonnage and calorific value are assumptions; use the buyer's invoices and coal test certificates for the real figures."
+  },
+  "senseible": "Senseible does not lend. It turns the coal and fuel invoices of the factory you plan to supply into monthly tonnes of CO2, a before figure that the buyer and IREDA can both check against the original bills.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "IREDA loans for proprietorships",
+      "to": "/answers/ireda-loan-for-proprietorship-or-partnership"
+    },
+    {
+      "label": "IREDA loan for a pellet plant",
+      "to": "/answers/ireda-biomass-pellet-plant-loan-terms"
+    },
+    {
+      "label": "Biomass boiler methane and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IREDA, Financing Norms and Schemes, Issue 35, updated to 1 October 2026: section 3 (eligible entities) and section 12 (XXII), Scheme for Financing of Biomass projects for heating applications for commercial use",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    },
+    {
+      "label": "IPCC, 2006 Guidelines for National Greenhouse Gas Inventories, Volume 2 Energy: default CO2 factor for other bituminous coal, 94,600 kg per TJ",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard: biogenic CO2 from biomass combustion reported separately from the scopes",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "IREDA reissues its Financing Norms and Schemes; re-check section 12 (XXII) when a new issue appears."
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "sedex-membership-who-pays-per-site",
+  "q": "My buyer asked us to join Sedex. Who pays, and is it per factory?",
+  "title": "Sedex membership: who pays, per factory?",
+  "short": "Supplier membership is your own subscription, priced per site and billed annually. It lasts 12 months from the day you join. There are two supplier tiers, Standard and Supplier Plus; buyers have separate plans. Once a site is on Sedex, you can share its data with any number of customers at no extra cost.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Indian exporters and MSME suppliers invited to Sedex by a customer",
+  "sections": [
+    {
+      "h": "What the per-site charge means",
+      "p": [
+        "Sedex prices supplier membership per site. Each site you put on Sedex is billed, so count the sites before you sign up. Ask your customer which sites it wants linked; it may need only the plant that makes its goods.",
+        "Membership runs 12 months from the date you join. Renew it, or your data stops being active and visible to customers. Prices are on Sedex's supplier membership page, in pounds sterling, and local taxes may apply."
+      ]
+    },
+    {
+      "h": "Standard or Supplier Plus",
+      "ul": [
+        "Both include the Self-Assessment Questionnaire, the Environment Self-Assessment Questionnaire, unlimited users, sharing SMETA and non-SMETA audits, closing non-compliances, and supplier benchmarking.",
+        "Supplier Plus adds visibility for winning new buyers: priority placement in the Supplier Directory, contact details new customers can see, a Supplier Plus badge and certificate, and discounts on paid courses.",
+        "If you are joining because an existing buyer asked, Standard covers the questionnaires and sharing it will look for."
+      ]
+    },
+    {
+      "h": "What membership does not include",
+      "p": [
+        "You do not need an audit to join. A SMETA audit is needed only if a customer asks for one, and Sedex is not an audit company: the audit is booked with an audit firm and is not part of membership. Ask your buyer early whether it wants an audit this year, because that is the bigger piece of work."
+      ]
+    },
+    {
+      "h": "Before you pay",
+      "ol": [
+        "Get the buyer's request in writing, with the sites it wants on Sedex.",
+        "Confirm whether it needs the Environment questionnaire, which asks for Scope 1, 2 and 3 emissions.",
+        "Ask whether a SMETA audit is expected, and by when.",
+        "Gather twelve months of electricity bills and fuel invoices for each site before you start the questionnaires."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two plants and a warehouse",
+    "lines": [
+      "Your sites: knitting plant, dyeing and finishing plant, finished goods warehouse",
+      "Buyer asks for the two plants that make its orders",
+      "Sites to register: 2, so two per-site Standard memberships",
+      "A second buyer asks for the same plants: share the same two sites, no extra membership"
+    ],
+    "note": "An example. Check the site list with each buyer before adding sites, because each one is billed."
+  },
+  "senseible": "Senseible is not part of Sedex and does not sell memberships or audits. For the Environment questionnaire's emissions questions, it turns each site's electricity bills and fuel invoices into Scope 1 and 2 figures, each tied to its source document.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "EcoVadis or Sedex: the difference", "to": "/answers/ecovadis-vs-sedex-difference" },
+    { "label": "Sedex Environment questionnaire, carbon part", "to": "/answers/sedex-environment-saq-ghg-questions" },
+    { "label": "What a SMETA auditor checks on carbon", "to": "/answers/sedex-smeta-environment-carbon-questions" },
+    { "label": "Do you have to pay for EcoVadis?", "to": "/answers/do-i-have-to-pay-for-ecovadis" }
+  ],
+  "sources": [
+    { "label": "Sedex, Supplier membership: tiers, per-site annual billing, FAQs", "url": "https://www.sedex.com/become-a-member/supplier-membership/" },
+    { "label": "Sedex, Environment Self-Assessment Questionnaire", "url": "https://www.sedex.com/blog/elevate-your-environmental-performance-with-sedexs-environment-self-assessment-questionnaire/" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Sedex changes tiers and features; re-check the supplier membership page yearly."
+}

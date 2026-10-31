@@ -1,0 +1,61 @@
+{
+  "slug": "volkswagen-s-rating-supplier",
+  "q": "What is Volkswagen's S-Rating, and how does it affect an Indian supplier?",
+  "title": "Volkswagen S-Rating for Indian suppliers",
+  "short": "The S-Rating is how Volkswagen checks that a direct supplier meets its sustainability requirements. Since the 2025 revision it is either positive or negative. A negative rating means evidence is missing or a requirement is breached, and in principle it makes you ineligible for new contracts.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian auto component suppliers quoting to Volkswagen Group brands",
+  "sections": [
+    {
+      "h": "Who gets rated, and when",
+      "p": [
+        "Volkswagen has run the S-Rating across the Group since 2019. It applies to direct suppliers with a high sustainability risk and a matching company size. Volkswagen first sorts suppliers into low, medium or high risk on human rights and environmental factors. A low-risk supplier whose site sits in a higher-risk country is moved up to medium.",
+        "The rating is checked each time a new contract is due to be awarded, so it is a question at every sourcing round, not a one-off. Separately, before you quote you must confirm Volkswagen's Code of Conduct for Business Partners, and confirm it again after twelve months if you want to keep quoting."
+      ]
+    },
+    {
+      "h": "How the rating is built",
+      "ol": [
+        "You fill a self-assessment questionnaire recording your documented processes, management systems and supporting documents.",
+        "An external provider validates your answers and adjusts for country risk, then sends you recommendations.",
+        "Some suppliers are also audited by a service provider Volkswagen selects.",
+        "An audit score under 100% means a binding action plan, carried out within a fixed time and checked by desktop audit.",
+        "A score under 50%, or any zero-tolerance nonconformity, means a second audit once the actions are done."
+      ]
+    },
+    {
+      "h": "Negative usually means missing paper",
+      "p": [
+        "Volkswagen reported 16,218 direct suppliers with an S-Rating in 2025, and 16,178 of them positive. A negative rating is rare, and by Volkswagen's own definition it covers both a breach and evidence not yet submitted. If yours comes back negative, first check whether a document was simply never uploaded.",
+        "The stakes are rising: Volkswagen's target was 85% of procurement volume from relevant direct suppliers with a positive rating for 2025 (it reported 87%), and over 95% by 2040."
+      ]
+    },
+    {
+      "h": "Other things that move your rating",
+      "ul": [
+        "A case raised through Volkswagen's Supply Chain Grievance Mechanism, which workers, unions and NGOs can use.",
+        "Requirements in a specific contract's specifications, such as raw material due diligence.",
+        "Social audit findings, which have counted in S-Rating screening since 2025. Completing the action plan is a precondition for a positive rating.",
+        "Your own suppliers: Volkswagen requires you to pass its Code of Conduct requirements on to your direct business partners."
+      ]
+    },
+    {
+      "h": "Where carbon fits",
+      "p": [
+        "Volkswagen describes the S-Rating mainly in terms of working conditions and human rights. The questionnaire records processes and documents; it is not an emissions form. Because the risk analysis also covers the environment, keep your environmental policy, consent to operate and energy records in the same evidence folder. A buyer team asking for your energy use or carbon footprint is a separate request, so answer it separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not fill the S-Rating questionnaire or prepare you for its audits. When a Volkswagen buyer, or any other customer, also asks for your energy use and Scope 1 and 2 emissions, Senseible reads your fuel invoices and electricity bills into emission records, each tied to its source document.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "Auto supplier decarbonisation roadmap", "to": "/answers/auto-supplier-decarbonisation-roadmap-for-oem" },
+    { "label": "Answer a Catena-X PCF request", "to": "/answers/answer-a-catena-x-pcf-request-auto-parts" }
+  ],
+  "sources": [
+    { "label": "Volkswagen Group, Annual Report 2025, Sustainability Report: Sustainability in the Supply Chain (S-Rating, risk analysis, 2025 metrics)", "url": "https://annualreport2025.volkswagen-group.com/sustainability-report/social-information/sustainability-in-the-supplychain.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Volkswagen revised the S-Rating in 2025; re-check the next annual report's supply chain section for changes to the process and targets."
+}

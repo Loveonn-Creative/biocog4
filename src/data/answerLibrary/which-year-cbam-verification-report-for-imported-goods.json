@@ -1,0 +1,75 @@
+{
+  "slug": "which-year-cbam-verification-report-for-imported-goods",
+  "q": "Which year's verification report does the EU importer use for our goods?",
+  "title": "Which year's CBAM report covers an import",
+  "short": "The report for the year your goods were made. By default that is presumed to be the year they clear EU customs. With evidence of the real production date, your buyer may use the earlier year instead. For anything imported in 2026, the year is 2026 by law, whenever it was made.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian CBAM goods exporters and their EU importers matching shipments to verification reports",
+  "sections": [
+    {
+      "h": "The default: the year of import",
+      "p": [
+        "Your buyer must declare actual verified emissions for the year the goods were produced. To spare everyone from proving a production date for every tonne, the Commission presumes the production year is the import year. Import means the day EU customs accepts the declaration releasing the goods for free circulation, not the day you shipped or invoiced.",
+        "So coil cleared on 1 January 2026 is treated as 2026 production, and your buyer needs your 2026 verified figures in the declaration due by 30 September 2027."
+      ]
+    },
+    {
+      "h": "When the earlier year can be used",
+      "p": [
+        "If there is enough evidence to show when the goods were actually made, the buyer may use that year instead. The Commission's own example: goods imported on 1 January 2027 but produced on 30 November 2026. The buyer can either take your 2027 verified figures, the presumption, or show the production date and take your 2026 figures.",
+        "The choice is the buyer's, but the evidence has to come from you. The Q&A does not list which documents count, so send what ties the shipment to a date: the heat or batch number, the mill test certificate and the dispatch record."
+      ]
+    },
+    {
+      "h": "2026 is the exception",
+      "p": [
+        "Every CBAM good imported during 2026 uses 2026 as its reporting period, even if it was made in 2025 or earlier. Actual figures for production before 1 January 2026 are not possible, because no CBAM verification or accredited verifier existed then. If no verified 2026 figures exist for those goods, the buyer must use default values.",
+        "In practice: 2025 stock sold into the EU in 2026 is covered by your 2026 verification report, or by defaults. Nothing older can be offered."
+      ]
+    },
+    {
+      "h": "Why your verification calendar depends on it",
+      "ul": [
+        "A year's verification cannot be concluded before January of the next year, because the verifier needs data up to 31 December.",
+        "Importers file by 30 September and the Commission's guidance says they will want verification reports by mid-August at the latest.",
+        "December production cleared in January is where the rule bites. With dated records, your buyer can use the 2026 report you already have. Without them, those tonnes wait on your 2027 report.",
+        "If your 2026 and 2027 figures differ, the production date decides which one your buyer pays on."
+      ]
+    },
+    {
+      "h": "Put this on every year-end shipment",
+      "ul": [
+        "Production date, not just invoice date, on the invoice or packing list.",
+        "Heat, batch or lot number that matches the mill test certificate.",
+        "A line naming the verification report year you expect the buyer to use.",
+        "The same documents filed on your side by shipment, so you can answer a buyer's question in minutes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Timeline: coil rolled 30 November 2026, cleared by EU customs 8 January 2027",
+    "lines": [
+      "30 November 2026: coil rolled, heat number printed on the mill test certificate",
+      "8 January 2027: EU customs accepts the release for free circulation",
+      "Presumed production year: 2027, the year of import",
+      "With the dated certificate: the buyer may use your 2026 verified figures instead",
+      "By mid-August 2027: your 2026 verification report should reach the buyer",
+      "30 September 2028: the declaration covering this 2027 import is due"
+    ],
+    "note": "Dates are an example. Without the production evidence, the buyer would need your 2027 verified figures or default values."
+  },
+  "senseible": "Senseible's CBAM Suite builds your calendar-year operator emissions report from your plant records, so each production year has its own figures ready when a buyer asks which one applies. We build it from your records, check every figure in-house, and an accredited verifier we partner with signs it off. Have your own verifier? Send it to them.",
+  "links": [
+    { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
+    { "label": "Proving a precursor's production year", "to": "/answers/cbam-precursor-production-year-evidence" },
+    { "label": "When to start verification", "to": "/answers/cbam-verification-when-to-start-timeline" },
+    { "label": "April to March accounts and CBAM periods", "to": "/answers/indian-fiscal-year-vs-cbam-reporting-period" }
+  ],
+  "sources": [
+    { "label": "European Commission, CBAM Questions and Answers (updated 15 October 2026), questions 5.17 and 5.20", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation, timeline of verification", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "The Commission revises the Q&A often; recheck questions 5.17 and 5.20 at each update."
+}

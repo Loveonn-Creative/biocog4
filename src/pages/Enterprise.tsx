@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { LedgerHero } from "@/components/enterprise/LedgerHero";
 import { RecordTransform } from "@/components/enterprise/RecordTransform";
 import { StatusBadge } from "@/components/enterprise/StatusBadge";
+import { PrivacyGate } from "@/components/enterprise/PrivacyGate";
 import { SectionNav } from "@/components/enterprise/suite/SectionNav";
 import { DataToDecision } from "@/components/enterprise/suite/DataToDecision";
 import {
@@ -272,6 +273,7 @@ const Enterprise = () => {
 
       {/* Beat 3: suppliers stay in control */}
       <Beat id="ent-control" n="10" title={t("ent.b3.title", "The supplier keeps its data")} line={t("ent.b3.line", "Figures and proof travel to the buyer. Invoices stay with the supplier.")}>
+        <div className="mb-10"><PrivacyGate /></div>
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
           <div className="rounded-3xl border border-border p-5 sm:p-6">
             <div className="flex items-center gap-3">

@@ -13,6 +13,7 @@ import platformOg from "@/assets/og/platform.jpg";
 import { Reveal, SectionHead } from "@/components/platform/Reveal";
 import { WhySwitcher } from "@/components/platform/WhySwitcher";
 import { AudienceHub } from "@/components/platform/AudienceHub";
+import { PrivacyVault } from "@/components/platform/PrivacyVault";
 import { CreditToken, DecarbPath, FinanceDial, ReportSheets } from "@/components/doodles/Doodles";
 
 const OUTCOME_ART: Record<string, () => JSX.Element> = { report: ReportSheets, finance: FinanceDial, decarbonize: DecarbPath, monetize: CreditToken };
@@ -257,6 +258,13 @@ const Platform = () => {
                 <EvidenceSeal title={t("platform.seal.title", "Every claim, with its source.")} />
               </Suspense>
             </div>
+          </div>
+        </section>
+
+        {/* Privacy by design: what stays in the account, what may leave. */}
+        <section className="py-20 md:py-28 border-b border-border">
+          <div className="container max-w-4xl mx-auto px-6">
+            <PrivacyVault />
           </div>
         </section>
 

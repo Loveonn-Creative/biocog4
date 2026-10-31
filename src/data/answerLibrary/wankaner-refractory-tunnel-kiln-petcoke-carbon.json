@@ -1,0 +1,59 @@
+{
+  "slug": "wankaner-refractory-tunnel-kiln-petcoke-carbon",
+  "q": "Wankaner refractory units fire petcoke in tunnel kilns: what is the cluster's carbon footprint?",
+  "title": "Wankaner refractories: petcoke and CO2",
+  "short": "Almost all of it is the kiln. Wankaner's 36 refractory MSMEs used 18,089 toe in 2020-21 to make about 198,600 t: 18,014 toe of kiln heat, mainly petcoke, and only 75 toe of electricity. That is roughly 74,000 t CO2 a year, about 0.37 t per tonne, over 99% of it from the kiln.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Refractory brick, castable, mortar and bottom pouring set makers in the Wankaner cluster, Morbi district, Gujarat",
+  "sections": [
+    {
+      "h": "A footprint that is almost all kiln",
+      "p": [
+        "Wankaner's units fire refractory bricks, bottom pouring sets, castables, mortar and refractory cement in tunnel kilns, with petcoke as the main fuel and electricity only for raw material processing. Electricity is 75 of 18,089 toe, about 0.4%. So the usual first move for a small factory, cutting power, does almost nothing here. Every percent of petcoke saved is worth more than all the electricity put together."
+      ]
+    },
+    {
+      "h": "What moves the number",
+      "ul": [
+        "Tonnes of petcoke per tonne fired, month by month, from purchase invoices and stock change.",
+        "Kiln car and furniture weight: dead weight is heated and cooled with every car.",
+        "Air to fuel control at the burners and how much hot air from the cooling zone goes back to drying and preheat.",
+        "Yield: a rejected brick has burnt its petcoke already."
+      ]
+    },
+    {
+      "h": "What to send a steel or cement buyer",
+      "ul": [
+        "Kg CO2 per tonne of product, petcoke and electricity shown separately, with the months covered.",
+        "Petcoke tonnes and calorific value from supplier test certificates; a lab test of your own lot is better.",
+        "Any CO2 from carbonates in your raw mix, if you use them, as its own line.",
+        "Refractory bricks and shapes are not CBAM goods. Calcium aluminate cement is, so if you sell refractory cement abroad, check its CN code."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: cluster CO2 and a 1% petcoke saving",
+    "lines": [
+      "Kiln heat: 18,014 toe x 41.868 GJ x 97.5 kg CO2 per GJ (IPCC petcoke default) = about 73,500 t",
+      "Electricity: 75 toe x 11,630 kWh = about 872,000 kWh x 0.675 = about 590 t",
+      "Total about 74,100 t on 198,600 t = about 0.37 t CO2 per tonne",
+      "1% less petcoke saves about 735 t, more than all the cluster's power-related CO2"
+    ],
+    "note": "An estimate that treats all thermal energy as petcoke, using IPCC 2006 defaults and the CEA FY 2025-26 grid factor. Process CO2 from carbonates is not included. Use your own invoices."
+  },
+  "senseible": "Senseible reads petcoke purchase invoices and power bills into a monthly record for your plant and works out CO2 per tonne fired from the output you enter, so a buyer gets your kiln's figure, not the cluster's.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Are refractories covered by CBAM?", "to": "/answers/are-refractories-covered-by-cbam" },
+    { "label": "Refractory kiln CO2 per tonne", "to": "/answers/asansol-refractory-plant-kiln-co2-per-tonne" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA, Wankaner refractory cluster summary (TERI for BEE, energy and resource mapping of MSME clusters, 2020-21 data)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=319&Itemid=502" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated text, Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Only the SAMEEEKSHA summary is published for this cluster. Add kiln-level figures if the full TERI report is released."
+}

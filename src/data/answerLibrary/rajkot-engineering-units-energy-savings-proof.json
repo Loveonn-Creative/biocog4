@@ -1,0 +1,61 @@
+{
+  "slug": "rajkot-engineering-units-energy-savings-proof",
+  "q": "Rajkot engineering units saved real energy under a cluster programme: how does a unit prove its own saving?",
+  "title": "Rajkot foundries: proving your own saving",
+  "short": "The programme's totals belong to the cluster, not to you. Prove your own saving with kWh or fuel per tonne melted, for the same months before and after the change, read from bills and your melting log. A buyer or bank will accept a per-tonne drop it can trace; it will not accept the cluster's 12,700 tonnes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Foundry owners in Rajkot, Shapar, Metoda and Aji who fitted energy measures under the TERI and REA programme or since",
+  "sections": [
+    {
+      "h": "What the Rajkot programme did (2015 to 17)",
+      "ul": [
+        "TERI audited about 110 of Rajkot's roughly 700 foundries in detail, with the Rajkot Engineering Association and IIF Rajkot.",
+        "About 1,040 measures were found: 242 needed no investment and 463 paid back within a year.",
+        "By December 2017, 757 measures were in place, saving 1,409 toe a year and over 12,700 t CO2, and about Rs 11.3 crore a year.",
+        "Typical measures: induction furnace lids, VFD screw compressors, fixing air leaks, recuperators, relined shell baking furnaces, efficient induction furnaces and divided blast cupolas."
+      ]
+    },
+    {
+      "h": "Why the cluster figure does not prove yours",
+      "p": [
+        "The 12,700 tonnes is a total across 110 units, worked out by the programme. Your bank, your buyer or a carbon credit reviewer needs your own before and after, from your own meters and bills. A lower power bill alone proves nothing: output may simply have fallen."
+      ]
+    },
+    {
+      "h": "Build the proof in five steps",
+      "ol": [
+        "Pick the measure and its date: the day the lid, compressor or furnace went live.",
+        "Pull at least three months of bills and melting logs either side of that date, the same season if you can.",
+        "Work out kWh (or coke, oil or gas) per tonne melted for each month. Use tonnes melted for melting measures and tonnes of good castings for whole-plant ones.",
+        "Take the drop per tonne, multiply by a normal year's tonnes, then by the emission factor.",
+        "Keep the invoice for the equipment, its commissioning note and the audit report with the bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a lid on a 500 kg induction furnace",
+    "lines": [
+      "Before, three months: 780 kWh per tonne melted",
+      "After, three months: 735 kWh per tonne melted",
+      "Drop: 45 kWh per tonne, about 5.8%, inside the 4 to 6% TERI expects for a lid",
+      "Normal year: 1,800 t melted x 45 kWh = 81,000 kWh saved",
+      "CO2: 81,000 x 0.675 kg = about 55 t a year"
+    ],
+    "note": "Readings are an example. The 4 to 6% range for furnace lids is from TERI's Belgaum foundry profile. Grid factor is CEA's for FY 2025-26."
+  },
+  "senseible": "Senseible reads every monthly bill into a dated record tied to the original file, so the before and after months are ready to set against your melting log, with every bill attached for a lender's green loan file.",
+  "links": [
+    { "label": "Check green loan readiness", "to": "/green-loan-check" },
+    { "label": "Proving energy savings to your bank", "to": "/answers/how-to-prove-energy-savings-to-a-lender" },
+    { "label": "Rajkot foundry cluster footprint", "to": "/answers/rajkot-foundry-cluster-carbon-footprint" },
+    { "label": "Carbon baseline before a green loan", "to": "/answers/carbon-baseline-before-green-loan-application" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA, 'Deep dive' approach helps promote cluster-wide energy efficiency in Rajkot engineering cluster (TERI, SDC and REA, 2015 to 17)", "url": "https://sameeeksha.org/pdf/Deep-Dive-approach-Rajkot-engg-cluster.pdf" },
+    { "label": "TERI, Cluster profile: Belgaum foundries (SAMEEEKSHA, 2016), furnace lid saving", "url": "https://sameeeksha.org/pdf/clusterprofile/Belgaum_Foundries_Karnataka.pdf" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Programme results are as of December 2017."
+}

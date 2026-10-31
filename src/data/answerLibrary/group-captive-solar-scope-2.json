@@ -47,6 +47,23 @@
         "The energy account from the state load despatch centre or the generator.",
         "A declaration from the generator that no RECs were issued or sold for your units."
       ]
+    },
+    {
+      "h": "Where it goes in BRSR",
+      "p": [
+        "Principle 6, Essential Indicator 1 of the BRSR format asks for energy in joules or multiples, split by source. Enter the solar units adjusted at your meter as renewable and the rest as non-renewable, converting at 3.6 GJ per MWh:"
+      ],
+      "ul": [
+        "From renewable sources, total electricity consumption (A): the adjusted group captive or open access units.",
+        "From non-renewable sources, total electricity consumption (D): the units still drawn from the discom grid.",
+        "Essential Indicator 7, total Scope 2 emissions in metric tonnes of CO2 equivalent: BRSR names no method, so say in a note whether the figure is location-based or market-based, and keep the same choice every year."
+      ]
+    },
+    {
+      "h": "A method note you can adapt",
+      "p": [
+        "\"Scope 2 is reported on both bases. Location-based applies the CEA CO2 Baseline Database [version] weighted average for [financial year], [factor] t CO2 per MWh, to all electricity consumed. Market-based counts [X] MWh of solar, adjusted at our meter under a [group captive / open access] agreement that assigns the renewable attributes to us, as zero, and applies the same CEA average to the remaining [Y] MWh as a proxy, because India publishes no residual mix factor. No RECs or carbon credits were sold for the claimed units.\""
+      ]
     }
   ],
   "example": {
@@ -55,7 +72,8 @@
       "Total consumption: 1,000 MWh, of which 600 MWh adjusted as group captive solar",
       "Location-based: 1,000 MWh x 0.710 t CO2 per MWh = 710 t CO2",
       "Market-based: solar 600 MWh at zero; grid 400 MWh x 0.710 = 284 t CO2",
-      "Report both: 710 t CO2 location-based and 284 t CO2 market-based, with the residual mix proxy disclosed"
+      "Report both: 710 t CO2 location-based and 284 t CO2 market-based, with the residual mix proxy disclosed",
+      "BRSR energy table: renewable 600 x 3.6 = 2,160 GJ; non-renewable 400 x 3.6 = 1,440 GJ; renewable share 60 percent"
     ],
     "note": "The 284 t figure holds only if the solar attributes are contractually yours and not sold as RECs."
   },
@@ -76,6 +94,10 @@
     {
       "label": "Residual mix factor for India",
       "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "BRSR renewable and non-renewable energy",
+      "to": "/answers/brsr-renewable-vs-non-renewable-energy"
     }
   ],
   "sources": [
@@ -90,8 +112,12 @@
     {
       "label": "CEA CO2 Baseline Database",
       "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "SEBI circular on BRSR Core and the updated BRSR format, 12 July 2023 (Annexure II, Principle 6, Essential Indicators 1 and 7)",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "The GHG Protocol is revising its Scope 2 guidance and Rule 3 of the Electricity Rules was amended in 2026; check both before the next report."
+  "reviewed": "2026-10-30",
+  "reviewNote": "The GHG Protocol is revising its Scope 2 guidance, Rule 3 of the Electricity Rules was amended in 2026 and SEBI revises the BRSR format from time to time; check all three before the next report."
 }

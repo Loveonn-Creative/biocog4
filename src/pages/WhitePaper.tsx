@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer';
 import { SEOHead } from '@/components/SEOHead';
 import { STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { MathExpr, Prose } from '@/components/whitepaper/MathText';
-import { DataModelFigure, FlowFigure, UncertaintyFigure } from '@/components/whitepaper/WhitePaperFigures';
+import { DataModelFigure, FlowFigure, SupplierFlowFigure, UncertaintyFigure } from '@/components/whitepaper/WhitePaperFigures';
 import { HashWidget, ProrationWidget, RoundingWidget, Scope2Widget } from '@/components/whitepaper/WhitePaperWidgets';
 import {
   WP_CONTACT, WP_NUMBERS, WP_PATH, WP_PUBLISHED, WP_SECTIONS, WP_TAGLINE, WP_TITLE,
@@ -20,7 +20,7 @@ import './whitePaper.css';
 // uncertainty floor, rounding check, hash chain, data flow). The hero traces
 // one figure back to its source. Reduced motion: the trace is drawn, still.
 
-const FIGURES: Record<WPFigure, () => JSX.Element> = { uncertainty: UncertaintyFigure, datamodel: DataModelFigure, flow: FlowFigure };
+const FIGURES: Record<WPFigure, () => JSX.Element> = { uncertainty: UncertaintyFigure, datamodel: DataModelFigure, flow: FlowFigure, supplierflow: SupplierFlowFigure };
 const WIDGETS: Record<WPWidget, () => JSX.Element | null> = { scope2: Scope2Widget, proration: ProrationWidget, rounding: RoundingWidget, hash: HashWidget };
 
 const EQ_COUNT = WP_NUMBERS.eq.size;
@@ -81,7 +81,7 @@ function Block({ b }: { b: WPBlock }): ReactNode {
       </div>
     );
   }
-  if ('plain' in b) return <p className="wp-plain"><span className="wp-plain-k">In plain English.</span> <Prose text={b.plain} /></p>;
+  if ('plain' in b) return <p className="wp-plain"><span className="wp-plain-k">What it means.</span> <Prose text={b.plain} /></p>;
   if ('example' in b) return <div className="wp-example"><p className="wp-callout-k">{b.label ?? 'Example'}</p><p><Prose text={b.example} /></p></div>;
   if ('note' in b) return <div className="wp-note"><p className="wp-callout-k">{b.label ?? 'Note'}</p><p><Prose text={b.note} /></p></div>;
   if ('table' in b) return <Table {...b.table} />;
@@ -188,7 +188,7 @@ export default function WhitePaper() {
           <h1 className="wp-h1">Senseible {WP_TITLE}</h1>
           <p className="wp-tagline">{WP_TAGLINE}</p>
           <Trace />
-          <p className="wp-meta">Published {PUBLISHED_LABEL} · 12 sections · {EQ_COUNT} equations, each explained in plain English · about {READ_MINUTES} min read</p>
+          <p className="wp-meta">Published {PUBLISHED_LABEL} · 12 sections · {EQ_COUNT} equations, each explained in words · about {READ_MINUTES} min read</p>
           <div className="wp-actions wp-noprint">
             <a href="#intended-use" className="wp-btn wp-btn-primary">Start reading</a>
             <button type="button" className="wp-btn" onClick={() => window.print()}><Printer className="h-4 w-4" aria-hidden="true" />Print or save as PDF</button>

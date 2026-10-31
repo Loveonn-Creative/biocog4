@@ -1,0 +1,70 @@
+{
+  "slug": "sundergarh-steel-units-pat-designated-consumers",
+  "q": "52 of Sundergarh's 87 secondary steel units are PAT designated consumers: what does that mean for the rest?",
+  "title": "Sundergarh steel: PAT and the other 35",
+  "short": "Steel units using 20,000 toe a year or more are designated consumers under BEE's PAT scheme. The other 35 in Sundergarh, mostly smaller sponge iron, induction furnace and rerolling units, sit outside it. They still need per-tonne CO2 figures for CBAM if their goods reach the EU, and for the PAT plants that buy from them.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Secondary steel units in Rourkela, Kalunga, Mandiakudar, Rajganjpur and Sundergarh that are not PAT designated consumers",
+  "sections": [
+    {
+      "h": "Who is in and who is out, 2023-24",
+      "ul": [
+        "Sponge iron: 41 units, 25 designated consumers, 16 not.",
+        "Induction furnace steel melting: 25 units, 16 in, 9 out.",
+        "Steel rerolling: 16 units, 7 in, 9 out.",
+        "Blast furnace: 2 units, 1 in, 1 out. The one pellet plant and both ferro alloy units are in.",
+        "In all 87 units, 40 composite and 47 stand-alone; 52 designated consumers and 35 outside PAT."
+      ]
+    },
+    {
+      "h": "The 16 sponge iron units outside PAT are the medium kilns",
+      "p": [
+        "TERI counts 25 large DRI units of 200 tpd or more, all of them designated consumers, and 16 medium units below 200 tpd. The medium units make about 0.5 million t of the cluster's 2.5 million t of sponge iron a year. Their kilns burn 0.95 to 1.05 t of non-coking coal per tonne of sponge iron, within the range TERI gives for the whole cluster; they sit outside PAT because their total energy use is smaller."
+      ]
+    },
+    {
+      "h": "The cluster's energy and CO2",
+      "ul": [
+        "1.85 million toe and 8.46 million t CO2 a year; thermal energy about 93% of the energy.",
+        "DRI units: 1.27 million toe (69%) and 5.41 million t CO2 (64%).",
+        "Coal: 3.19 million t a year, 2.50 million t of it in DRI kilns.",
+        "Blast furnaces 1.88 million t CO2, induction furnaces 0.79 million t, pellets 0.13, rerolling 0.15, ferro alloys 0.10."
+      ]
+    },
+    {
+      "h": "What staying outside PAT does not change",
+      "ul": [
+        "CBAM: sponge iron, pig iron, crude steel and steel products are CBAM goods. An EU importer of your billets or bars, or of goods made from them, needs your figure or uses the default.",
+        "Your buyers: a designated consumer melt shop or rolling mill buying your sponge iron or billets tracks its own energy intensity and may ask for yours.",
+        "For iron and steel goods CBAM counts direct emissions only, so your coal and fuel matter and the power bill does not. Pellets are different: electricity counts for them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 100 tpd sponge iron kiln",
+    "lines": [
+      "Output: 100 t a day x 330 days = 33,000 t of sponge iron a year",
+      "Coal at 1.0 t per tonne: 33,000 t; at 5,000 kcal per kg that is 33,000 x 5,000,000 / 10,000,000 = 16,500 toe, below the 20,000 toe line",
+      "CO2 from coal: 90.6 g per MJ x 20.93 MJ per kg = 1.897 kg per kg; 33,000 x 1.897 = about 62,600 t",
+      "Per tonne of sponge iron: about 1.90 t CO2 from coal, before carbon left in the char and product is deducted",
+      "Power at 75 kWh per tonne: counted in your buyers' footprints, not in CBAM"
+    ],
+    "note": "Example kiln. Coal use, calorific value and power are TERI's 2023-24 figures for the cluster; the coal factor is the CEA rate on gross calorific value that Senseible applies when a bill states it. A CBAM figure uses a mass balance with your own lab carbon contents."
+  },
+  "senseible": "Send Senseible your coal purchase bills, weighbridge slips and power bills, and its CBAM tools turn them into a figure per tonne of sponge iron or billet that a PAT plant buying from you, or an EU importer, can use.",
+  "links": [
+    { "label": "CBAM for Indian exporters", "to": "/cbam" },
+    { "label": "Sponge iron CO2 per tonne", "to": "/answers/coal-based-sponge-iron-co2-per-tonne" },
+    { "label": "Kiln coal lab testing records", "to": "/answers/sponge-iron-kiln-coal-lab-testing-records" },
+    { "label": "Supplying a CCTS obligated plant", "to": "/answers/msme-supplier-to-ccts-obligated-plant" },
+    { "label": "Draft CCTS targets for steel", "to": "/answers/ccts-iron-steel-draft-targets-2026" }
+  ],
+  "sources": [
+    { "label": "TERI, Situational analysis of Sundergarh secondary steel cluster (SAMEEEKSHA, 2024; data 2023-24), sections 1.3, 1.5, 3.1 and 3.4", "url": "https://sameeeksha.org/pdf/Cluster%20Profile%20report%20-%20Sundergarh%20sec%20steel%20cluster.pdf" },
+    { "label": "SAMEEEKSHA, Sundergarh secondary steel cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=314&Itemid=502" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1 and 9.2.3, Table 11", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Recheck how India's CCTS targets for iron and steel treat units below the PAT designated consumer threshold."
+}

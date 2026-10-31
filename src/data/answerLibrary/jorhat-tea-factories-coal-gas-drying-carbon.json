@@ -1,0 +1,65 @@
+{
+  "slug": "jorhat-tea-factories-coal-gas-drying-carbon",
+  "q": "Jorhat tea factories dry leaf on coal or gas: how much, and what does a buyer's carbon figure need?",
+  "title": "Jorhat tea factories: coal, gas and CO2",
+  "short": "A large Jorhat factory drying on coal burns about 0.72 kg of coal per kg of made tea; on gas, about 0.32 scm. On today's factors that is about 1.85 kg CO2 per kg of made tea on coal and 1.06 on gas. A buyer needs your season's fuel, power and DG diesel divided by kg made.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Estate and bought leaf tea factories in Jorhat and Golaghat districts selling to packers, brands and auction buyers",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 150 factories, estate and bought leaf, making CTC and orthodox black tea.",
+        "About 100,000 tonnes of made tea and 68,838 toe a year in the cluster summary (data 2010 to 11).",
+        "Grid power runs withering fans, CTC machines and dryer blowers. Coal or natural gas fires the dryers, and DG sets cover outages.",
+        "The season runs from March or April to October or November; factories stand idle for two to three months in winter."
+      ]
+    },
+    {
+      "h": "What BEE's 2010 audits found per kg of made tea",
+      "ul": [
+        "Large factories: 0.55 kWh, 0.72 kg coal or 0.32 scm gas, 0.07 L diesel.",
+        "Medium factories: 0.65 kWh, 0.82 kg coal or 0.39 scm gas, 0.08 L diesel.",
+        "Small factories: 0.85 kWh, 1.02 kg coal or 0.51 scm gas, 0.09 L diesel.",
+        "On gas, the dryer burners take about 90% of the heat. Fixed air to gas burners waste fuel; an adjustable burner was estimated to cut gas by about 10%, from 0.51 to 0.46 scm per kg."
+      ]
+    },
+    {
+      "h": "What to send a packer or brand",
+      "ol": [
+        "Season totals: coal in tonnes (with its calorific value if the supplier gives one), gas in scm, grid kWh and DG diesel in litres.",
+        "Kg of made tea for the same season, by grade if the buyer asks.",
+        "The figure per kg of made tea, with factors named.",
+        "For bought leaf factories: kg of green leaf bought, so the buyer can add the garden side.",
+        "Any firewood, reported as biogenic CO2 outside the scopes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two large factories from BEE's audit, one on coal, one on gas",
+    "lines": [
+      "Coal factory, 1,900 t made tea: 1,457.6 t coal x 1.76 = 2,565 t; 862,897 kWh x 0.675 = 582 t; 136.4 kL diesel x 2.645 = 361 t",
+      "Coal total: 3,509 t CO2, or 1.85 kg per kg of made tea",
+      "Gas factory, 2,100 t made tea: 629,896 scm x 2.05 = 1,291 t; 805,999 kWh x 0.675 = 544 t; 145 kL diesel x 2.645 = 384 t",
+      "Gas total: 2,219 t CO2, or 1.06 kg per kg of made tea",
+      "Same size of factory, about 43% less CO2 per kg on gas"
+    ],
+    "note": "Fuel and output from BEE's 2010 audit tables. Coal uses India's default of 1.76 kg CO2 per kg; Assam coal often has more carbon, so use your supplier's calorific value where it is on the bill. Grid factor is CEA's for FY 2025-26."
+  },
+  "senseible": "Senseible reads a season of coal, gas, power and diesel bills into records per factory, so the figure per kg of made tea you send a packer traces back to each bill.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Tea factory footprint per kg", "to": "/answers/tea-factory-carbon-footprint-per-kg-made-tea" },
+    { "label": "Tea estate fertiliser emissions", "to": "/answers/tea-estate-fertiliser-emissions-per-kg-made-tea" }
+  ],
+  "sources": [
+    { "label": "BEE, Detailed project report: energy efficient natural gas burner for drier, Jorhat tea cluster (2010, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/dpr/Jorhat_tea_cluster/05_EE_Gas_Burner_Jorhat.pdf" },
+    { "label": "SAMEEEKSHA, Jorhat tea cluster summary (data 2010 to 11, BEE SME programme)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=153&Itemid=499" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Audit data is from 2010. Update if BEE or SAMEEEKSHA publish newer Jorhat tea figures."
+}
