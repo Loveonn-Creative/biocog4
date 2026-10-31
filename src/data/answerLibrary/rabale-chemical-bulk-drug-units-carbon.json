@@ -2,7 +2,7 @@
   "slug": "rabale-chemical-bulk-drug-units-carbon",
   "q": "What do Rabale's chemical and bulk drug units use in energy, and what do listed pharma buyers ask?",
   "title": "Rabale bulk drug units: energy and buyer asks",
-  "short": "Rabale's 70 or so chemical and bulk drug units, inside TTC-MIDC, use 20,501 toe a year on electricity and furnace oil for about 421,000 t of output. A listed pharma buyer may ask for your Scope 1 and 2 if you supply 2% or more of its purchases.",
+  "short": "A listed pharma buyer may ask for your Scope 1 and 2 once you supply 2% or more of its purchases. Rabale's 70 or so chemical and bulk drug units, inside TTC-MIDC, use 20,501 toe a year on electricity and furnace oil for about 421,000 t of output.",
   "topic": "regulation",
   "intent": "how-to",
   "audience": "Chemical and bulk drug suppliers in Rabale and TTC-MIDC, Navi Mumbai",
@@ -49,7 +49,7 @@
     ],
     "note": "The 50:50 split is an assumption for the arithmetic; the cluster summary does not give one. Use your own bills."
   },
-  "senseible": "Senseible turns your bills and oil invoices into BRSR-ready Scope 1 and 2 figures with the factor shown on each line, so the file you send a listed buyer can be traced back.",
+  "senseible": "Senseible turns your bills and oil invoices into Scope 1 and 2 figures for a BRSR value chain request with the factor shown on each line, so the file you send a listed buyer can be traced back.",
   "links": [
     {
       "label": "BRSR reporting",

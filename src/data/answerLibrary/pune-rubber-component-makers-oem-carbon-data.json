@@ -2,7 +2,7 @@
   "slug": "pune-rubber-component-makers-oem-carbon-data",
   "q": "What does the Pune rubber component cluster use in energy, and what do auto OEMs ask?",
   "title": "Pune rubber parts makers: energy for OEMs",
-  "short": "Pune's 80 or so rubber component units used 42.3 million kWh, 536 t of LDO and 75 t of diesel in 2017-18. Electricity is 87% of the energy and about 94% of the CO2, so an OEM's carbon request is mostly answered from your power bills and parts output.",
+  "short": "Your power bills answer most of an OEM's carbon request. Pune's 80 or so rubber component units used 42.3 million kWh, 536 t of LDO and 75 t of diesel in 2017-18, so electricity is 87% of their energy and about 94% of their CO2. Add your parts output and you have a per kg figure.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Seal, hose, bush and anti-vibration part makers in Pimpri Chinchwad, Chakan, Sanaswadi and Ranjangaon",
@@ -45,7 +45,7 @@
     "title": "Cluster and a medium unit (estimate)",
     "lines": [
       "Electricity: 42.3 million kWh x 0.675 = 28,553 t CO2",
-      "LDO: 536 t x 3.19 t = 1,708 t CO2; diesel: 75 t x 3.19 = 239 t",
+      "LDO: 536 t x 3.186 = 1,708 t CO2; diesel: 75 t x 3.186 = 239 t",
       "Total about 30,500 t; power is 94% of it",
       "Medium unit: 2.4 million kWh x 0.675 = 1,620 t CO2 a year from power"
     ],

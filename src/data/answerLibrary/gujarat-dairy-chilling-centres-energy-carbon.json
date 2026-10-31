@@ -2,7 +2,7 @@
   "slug": "gujarat-dairy-chilling-centres-energy-carbon",
   "q": "How much energy do Gujarat's milk chilling centres and dairies use, and what is the carbon per litre?",
   "title": "Gujarat dairies and chilling centres: CO2",
-  "short": "Gujarat's cooperative dairy units used about 9,344 toe a year: 84% in dairies, 16% in chilling centres. Chilling uses about 0.003 toe per tonne of milk, roughly 0.02 kg CO2 per litre. Dairies use 0.084 to 0.097 toe per tonne, so processing, not chilling, carries most of the carbon.",
+  "short": "Chilling is the small part: about 0.003 toe per tonne of milk, roughly 0.02 kg CO2 per litre. Dairies use 0.084 to 0.097 toe per tonne and took 84% of the 9,344 toe Gujarat's cooperative dairy units used a year, so processing, not chilling, carries most of the carbon.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "District milk unions, chilling centres and dairy plants in Gujarat",
@@ -44,8 +44,8 @@
     "lines": [
       "Electricity: 27,607,940 kWh x 0.675 = 18,635 t CO2",
       "Furnace oil: 113,485 GJ x 77.4 kg = 8,784 t; gas: 108,919 GJ x 56.1 kg = 6,110 t",
-      "Dairies total about 33,700 t CO2 for about 7,890 toe, 4.27 t per toe",
-      "0.084 x 4.27 = 0.36 t and 0.097 x 4.27 = 0.41 t CO2 per tonne of milk"
+      "18,635 + 8,784 + 6,110 = about 33,500 t CO2 (small LDO and diesel left out) for about 7,890 toe, 4.25 t per toe",
+      "0.084 x 4.25 = 0.36 t and 0.097 x 4.25 = 0.41 t CO2 per tonne of milk"
     ],
     "note": "From the Gujarat dairy cluster profile (BEE SME programme data, 2011 and 2012) with IPCC 2006 defaults and the CEA FY 2025-26 grid factor. Wood CO2 is biogenic and left out."
   },

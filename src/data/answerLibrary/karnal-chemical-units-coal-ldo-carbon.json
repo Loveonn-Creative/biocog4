@@ -2,7 +2,7 @@
   "slug": "karnal-chemical-units-coal-ldo-carbon",
   "q": "Karnal's chemical units run mostly on coal and LDO: what is the footprint per tonne?",
   "title": "Karnal chemical units: CO2 per tonne",
-  "short": "About 0.2 t CO2 per tonne of product on average. Karnal's 91 working chemical units make about 104,528 t a year using 7,007 t of coal, 1,171 kL of oil and 8.7 million kWh, roughly 21,300 t CO2 on today's factors. Coal alone is close to 58% of it.",
+  "short": "Coal decides most of it: close to 58% of the CO2. Karnal's 91 working chemical units make about 104,528 t a year from 7,007 t of coal, 1,171 kL of oil and 8.7 million kWh, roughly 21,300 t CO2 on today's factors, or about 0.2 t per tonne of product.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Soap, detergent, paint, resin and pharma units in the Karnal chemical cluster",

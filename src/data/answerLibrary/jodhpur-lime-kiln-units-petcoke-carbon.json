@@ -52,7 +52,7 @@
     ],
     "note": "Pet coke use and kWh from BEE's Jodhpur limestone cluster manual. The 90% CaO is an assumption; use your assay. Hydrated lime assumes pure calcium hydroxide."
   },
-  "senseible": "Senseible reads pet coke invoices and electricity bills into your carbon number and keeps process CO2 as its own line, entered from your assay, so the split stays visible.",
+  "senseible": "Senseible reads your pet coke invoices and electricity bills into dated records, each traced to its document, so the fuel and power behind your figure are on file when a buyer asks. The limestone CO2 comes from your CaO assay, as above.",
   "links": [
     {
       "label": "Your MSME carbon number",
