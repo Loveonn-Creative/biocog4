@@ -177,7 +177,7 @@ describe('SEO wiring', () => {
     const text = JSON.stringify(c.blocks);
     for (const s of WP_SECTIONS) expect(text).toContain(s.title);
     expect(text).toContain('Equation (1): E = A × EF');
-    expect(text).toContain('In plain English.');
+    expect(text).toContain('What it means.');
     expect(text).not.toMatch(/\{eq:|\$[A-Za-z\\]/);
   });
   test('inline math is written out in plain text', () => {

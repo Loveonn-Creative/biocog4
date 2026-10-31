@@ -27,7 +27,7 @@
 //   5.4 supplier questions      supabase/functions/enterprise-intelligence/index.ts (RULES)
 //   8 guest uploads             supabase/functions/_shared/guestScan.ts (GUEST_DAILY_SCANS), src/lib/guestResults.ts
 
-export type WPFigure = 'uncertainty' | 'datamodel' | 'flow';
+export type WPFigure = 'uncertainty' | 'datamodel' | 'flow' | 'supplierflow';
 export type WPWidget = 'scope2' | 'proration' | 'rounding' | 'hash';
 
 export type WPBlock =
@@ -67,7 +67,7 @@ export const WP_SECTIONS: WPSection[] = [
         ['A data-preparation aid for customers reporting under carbon-border and disclosure regimes', 'A substitute for installation-level monitoring plans and accredited verification where a regime requires them'],
       ] } },
       { p: 'All reports are self-declared by the customer. Acceptance by any regulator, lender, investor or buyer is not guaranteed.' },
-      { note: 'Where this paper uses a formula, the sentence or paragraph right after it explains it in plain English. Numbers in worked examples are illustrative round values chosen to show the arithmetic. They are not published emission factors. Symbols are listed in Appendix A and sources in Appendix B.', label: 'How to read the equations' },
+      { note: 'Where this paper uses a formula, the sentence or paragraph right after it explains what it means. Numbers in worked examples are illustrative round values chosen to show the arithmetic. They are not published emission factors. Symbols are listed in Appendix A and sources in Appendix B.', label: 'How to read the equations' },
     ],
   },
   {
@@ -263,6 +263,7 @@ export const WP_SECTIONS: WPSection[] = [
         ['8', 'Review and storage', 'Flagged lines reviewed; results stored with the full trail.'],
       ] } },
       { h3: '7.1 Supplier request flow', id: 'supplier-flow' },
+      { figure: 'supplierflow', id: 'supplierflow', title: 'What crosses from supplier to enterprise', caption: 'Supplier request flow. Bills and records stay on the supplier side; only the shared snapshot reaches the enterprise.' },
       { table: { head: ['Step', 'Stage', 'Behaviour'], rows: [
         ['1', 'Request', 'The enterprise pastes its supplier list: name, email or GSTIN, what it buys and share of purchases. Each request gets a random link; only the link\'s SHA-256 hash is stored, and each link sets an expiry no more than 90 days ahead.'],
         ['2', 'Open', 'The supplier opens the link and signs in or creates a free account. The first account to open the link claims the request, so a forwarded link works; the named account (confirmed email or GSTIN) can also open it from its own requests. After that, no other account can open it. The enterprise sees when it was opened, and by which email if it was forwarded.'],
@@ -287,7 +288,7 @@ export const WP_SECTIONS: WPSection[] = [
         '**Secrets and origins.** Service credentials exist only in server-side environments. Cross-origin access is restricted to Senseible\'s own domains.',
         '**Payments.** Payment signatures are verified server-side and matched to the authenticated user. Card data is handled by the payment processor.',
         '**Logging.** Security events go to an access-restricted audit log. Logs do not record document contents.',
-        '**Supplier data boundary.** This is the one exception to own-records-only access. An enterprise cannot read a supplier\'s documents, line items or records. It receives only the totals computed on the server when the supplier presses Share: emissions by scope and category, the part backed by verified bills, any own figure and its note, the energy units on the bills, the number of bills and each bill\'s fingerprint. The bills and their amounts stay in the supplier\'s account.',
+        '**Supplier data boundary.** An enterprise cannot read a supplier\'s documents, line items or records. It receives only the totals computed on the server when the supplier presses Share: emissions by scope and category, the part backed by verified bills, any own figure and its note, the energy units on the bills, the number of bills and each bill\'s fingerprint. The bills and their amounts stay in the supplier\'s account.',
         '**Supplier links and consent.** Request links carry a random 256-bit token, stored only as its SHA-256 hash; each link or reminder sets an expiry no more than 90 days ahead. Each share records the consent version and the hash of the exact consent text the supplier agreed to.',
         '**Guest uploads.** Documents read for visitors who are not signed in are not stored on the server. Their results stay in the visitor\'s browser for 24 hours, and guest reads are limited to 30 per device per day, enforced on the server.',
         '**Restricted files.** Restricted resources are delivered only through a signed link that expires, or to a signed-in account with a confirmed email.',
@@ -346,7 +347,6 @@ export const WP_SECTIONS: WPSection[] = [
         'Range calculations use first-order error propagation and assume independent activity errors; they describe stated factor and input uncertainty, not unknown or unreported errors.',
         'A hash chain detects alteration after the fact. It does not prove that the original document was truthful.',
         'Factor coverage varies by country. Where no primary factor exists, no figure is produced.',
-        'A proof grade shows how much of a supplier\'s figure is backed by bills that passed the rule checks. It is not independent assurance of the supplier\'s emissions, and a supplier\'s own figure without bills is shared marked as such.',
       ] },
     ],
   },
