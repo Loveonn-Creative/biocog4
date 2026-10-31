@@ -243,6 +243,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "afbc-coal-boiler-n2o-emissions",
+  "q": "Does a fluidised bed coal boiler emit more nitrous oxide than a stoker boiler?",
+  "title": "Fluidised bed coal boiler: N2O vs stoker",
+  "short": "Yes, by a wide margin. IPCC 2006 gives 61 kg of N2O per terajoule of coal for circulating or bubbling fluidised bed combustors, against 0.7 kg for overfeed and underfeed stokers. At the AR6 GWP of 273 that is about 16.7 t CO2e per TJ, adding roughly 15 to 18% to the coal's own CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "afolu-non-permanence-risk-rating",
   "q": "How is the non-permanence risk rating for a forestry or agroforestry project scored?",
   "title": "How the AFOLU risk rating is scored",
@@ -507,6 +515,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "allahabad-bakery-cluster-wood-diesel-energy",
+  "q": "How much wood and diesel do Allahabad (Prayagraj) bakeries burn a year?",
+  "title": "Prayagraj bakeries: wood, diesel and CO2",
+  "short": "About 18,750 t of wood and 462 kL of diesel a year, by TERI's count for Allahabad's 130 or so bakeries in 2014-15, plus 1.335 million kWh. Wood is 5,625 of the cluster's 6,179 toe. Its CO2 is biogenic, so diesel and power make the fossil figure, about 2,120 t (estimate).",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "allocate-my-emissions-to-one-customer",
   "q": "A customer asks for the emissions linked to what I sold them. How do I allocate my footprint to one customer?",
   "title": "Allocate my footprint to one customer",
@@ -659,6 +675,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "aluminium-melting-oil-to-wood-gasifier",
+  "q": "Can an aluminium melting furnace on furnace oil switch to a wood gasifier?",
+  "title": "Aluminium melting: furnace oil to wood gas",
+  "short": "Yes, and it cuts fossil CO2 by about 221 t a year on BEE's Jagadhri figures: 76.8 kL of furnace oil replaced by 268.8 t of wood and 10,933 kWh. The report lists the CO2 cut as Nil; wood CO2 is biogenic and reported separately. Payback 1.69 years at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "aluminium-scrap-melting-fuel-per-tonne",
   "q": "How much fuel and CO2 does melting aluminium scrap take per tonne?",
   "title": "Aluminium scrap melting: fuel per tonne",
@@ -787,6 +811,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "ankleshwar-chemical-cluster-energy-gas-power",
+  "q": "How much gas and electricity does the Ankleshwar chemical MSME cluster use?",
+  "title": "Ankleshwar chemical cluster: gas and power",
+  "short": "Ankleshwar's 750 chemical MSMEs used 26,637 toe in 2020-21, by TERI's study for BEE: 15,195 toe of heat from natural gas and LDO, and 11,442 toe of electricity, about 133 million kWh. At FY 2025-26 factors electricity carries roughly 70% of the CO2, about 125,000 t a year (estimate).",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "annaba-blast-furnace-steel-cbam-figure",
   "q": "What CBAM figure does an EU buyer need for steel from the Annaba blast furnace works?",
   "title": "Annaba blast furnace steel: the CBAM figure",
@@ -873,6 +905,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the GWP set your reporting framework names. UNFCCC national inventories under the Paris rules use AR5 100-year values. The GHG Protocol asks for the most recent IPCC values, now AR6. If nobody specifies, use AR6 100-year values, say so, and keep one set for the whole inventory and its base year.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "arc-furnace-to-medium-frequency-induction-saving",
+  "q": "How much power does replacing an arc furnace with a medium frequency induction furnace save?",
+  "title": "Arc furnace to medium frequency: kWh saved",
+  "short": "A medium frequency induction furnace saves about 120 kWh per tonne melted in BEE's Punjab foundry report: 720 kWh per tonne of cast iron in the arc furnace against 600. At 2,250 t a year that is 270 MWh, about 182 t CO2 on today's grid factor. Payback 2.23 years at 2011 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "are-aluminium-castings-covered-by-cbam",
@@ -1443,6 +1483,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-31"
  },
  {
+  "slug": "balasore-pipe-fittings-units-energy-share",
+  "q": "Do pipe and fittings makers in Balasore use most of the cluster's energy?",
+  "title": "Balasore plastics: who uses the energy",
+  "short": "Over 60% of it, but only because they make most of the tonnes. Six pipe and fittings units use 1,755 of the cluster's 2,860 toe a year for 39,000 of its 62,600 t. Per tonne they are no hungrier than sack or household makers, about 0.045 toe each.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "balasore-plastic-cluster-electricity-share-carbon",
+  "q": "How much energy does the Balasore plastic cluster use, and what share is grid power?",
+  "title": "Balasore plastics: grid power share and CO2",
+  "short": "84% of the energy, and more of the carbon. TERI's 2015 profile puts Balasore's 40 or so plastic units at 2,860 toe a year: 27.8 million kWh of grid power, 452 kL of diesel and 36 t of LPG. On FY 2025-26 factors that is about 20,000 t CO2, 93% of it from electricity.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "ball-bearing-carbon-footprint-per-bearing",
   "q": "How do I calculate the carbon footprint of a ball bearing?",
   "title": "Ball bearing carbon footprint per bearing",
@@ -1473,6 +1529,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add fuel burnt in the induration furnace or grate, such as coal, coke breeze, furnace oil or gas, to process CO2 from limestone and dolomite additives, then divide by tonnes of pellets. Pellets are covered by CBAM, and for them electricity is reported but not charged.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "ballari-steel-cluster-energy-and-co2",
+  "q": "What is the total energy use and CO2 of the Ballari iron and steel cluster outside the integrated plant?",
+  "title": "Ballari steel cluster: energy and CO2",
+  "short": "Leaving out JSW's integrated plant, TERI's 2025 study counts 42 iron and steel plants in Ballari making 8.71 million t a year, using 1.84 Mtoe and emitting 8.34 million t CO2. Sponge iron is most of it: 27 plants and 5.64 million t CO2, about two thirds.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "ballari-steel-slag-sold-to-cement-plants",
@@ -1587,6 +1651,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "bankura-secondary-steel-cluster-energy-co2",
+  "q": "What is the energy use and CO2 of the Bankura secondary steel cluster in West Bengal?",
+  "title": "Bankura secondary steel: energy and CO2",
+  "short": "About 5.96 million t CO2 a year, by TERI's 2025 profile. Bankura's 37 or so units (sponge iron, ferro alloy, induction furnace and re-rolling) burn 1.61 million t of coal and use 4,246 million kWh, about 1.09 million toe, for some 3.6 million t of product.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "banquet-hall-wedding-carbon-footprint",
   "q": "How does a banquet hall work out the carbon footprint of a wedding?",
   "title": "Banquet hall wedding carbon footprint",
@@ -1617,6 +1689,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Power from a waste heat recovery boiler on the kiln adds no new fuel, because the coal is already counted in the kiln. Do not add a grid factor for it. Count the kiln coal once, by mass balance, and treat waste heat power as your own zero-fuel supply that cuts grid purchases.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "bargarh-rice-mill-boiler-economiser-husk-saving",
+  "q": "How much husk would an economiser save in a Bargarh rice mill boiler?",
+  "title": "Bargarh rice mill economiser: husk saved",
+  "short": "About a tenth of your husk. TERI's rule of thumb: every 6 degrees of feedwater preheat saves 1% of fuel, and preheating to 90 degrees with better condensate return saves about 10%. For a 2 tph Bargarh mill burning 1,610 t of husk a year, that is about 160 t.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "bargarh-rice-mill-energy-by-capacity",
+  "q": "How much husk and power does a 2, 4 or 10 tph parboiling rice mill in Bargarh use a year?",
+  "title": "Bargarh rice mills: husk and power by size",
+  "short": "A 2 tph parboiling mill in Bargarh burns about 1,610 t of husk and uses 333,590 kWh a year. A 4 tph mill doubles both, and a 10 tph mill uses 8,048 t of husk and 1.67 million kWh. Every size works out to about 65 kWh per tonne of rice.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "bargarh-rice-mills-husk-energy-and-co2",
+  "q": "What is the carbon footprint of the Bargarh rice mill cluster, given most energy is husk?",
+  "title": "Bargarh rice mills: husk, power and CO2",
+  "short": "The fossil part is grid power: about 33,750 t CO2 a year from 50 million kWh. TERI's 2014-15 profile of Bargarh's 95 mills also counts 241,445 t of husk, 94% of their energy. Husk CO2 is biogenic and reported separately; its methane and nitrous oxide belong in Scope 1.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "barite-grinding-drilling-grade-co2-per-tonne",
@@ -2024,6 +2120,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Bhubaneswar brass: a better melting furnace",
   "short": "About two thirds of the coke. BEE's audit found every melting furnace below 5% efficient. A redesigned 100 kg furnace with a recuperator, at about 15%, cuts the hard coke for three units' melting from 30,240 kg to 9,375 kg a year, about 63 t CO2 avoided.",
   "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "bhubaneswar-shrimp-plant-kwh-per-tonne",
+  "q": "How many kWh per tonne does a shrimp processing plant use, and how does it compare with the FAO figure?",
+  "title": "Shrimp plant kWh per tonne: Odisha vs FAO",
+  "short": "About 1,520 kWh per tonne on average in Bhubaneswar, TERI found: from 1,100 in a large plant in season to 2,850 in a small one off-season. With diesel, that is about 154 kg of oil equivalent a tonne, against the international 83 kgoe from FAO's 2015 figures that TERI cites.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "bhubaneswar-shrimp-processing-cluster-co2",
+  "q": "What is the carbon footprint of Bhubaneswar's shrimp export processing cluster?",
+  "title": "Bhubaneswar shrimp processors: CO2",
+  "short": "About 36,000 t CO2 a year on FY 2025-26 factors (estimate), nearly all from grid power. TERI's 2015-16 profile counts 16 year-round plants making about 33,600 t of seafood, over 90% shrimp, using 50.1 million kWh and 890 kL of diesel: roughly 1.1 t CO2 per tonne processed.",
+  "topic": "product",
   "reviewed": "2026-10-31"
  },
  {
@@ -2547,6 +2659,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "brass-coal-furnace-to-gas-rotoberatory",
+  "q": "What gas use replaces coal in a 250 kg brass rotary furnace switch?",
+  "title": "Brass: coal pit to gas rotary furnace",
+  "short": "The rotary furnace burns 56.25 Nm3 of gas per tonne of brass in place of 192 kg of coal, in BEE's Jamnagar report: 18,750 Nm3 a year replacing 64 t of coal for 333 t melted. Fossil CO2 falls by about 73 t a year on Indian coal. Cost Rs 8.80 lakh, payback 1.27 years at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "brass-coke-pit-to-induction-furnace-co2",
+  "q": "What does moving brass melting from a coke pit furnace to a 500 kg induction furnace do to CO2?",
+  "title": "Brass: coke pit furnace to induction, CO2",
+  "short": "CO2 falls by about 166 kg for every tonne of brass melted, on today's grid. BEE's Jagadhri report has a pit furnace burning 80 kg of coke per 600 kg melt and a 500 kg induction furnace using 175 kWh per melt. Cost Rs 17.05 lakh, payback 1.67 years at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "brass-component-carbon-footprint-per-kg",
   "q": "What is the carbon footprint per kg of brass components from Jamnagar?",
   "title": "Carbon footprint per kg of brass parts",
@@ -2819,6 +2947,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "brsr-msme-sourcing-percentage-question",
+  "q": "How does a listed buyer work out the share of inputs sourced directly from MSMEs for BRSR?",
+  "title": "BRSR share of inputs sourced from MSMEs",
+  "short": "Principle 8 essential indicator 4 asks what percentage of input material, by value, came directly from MSMEs or small producers, and directly from within India, for this year and last. Divide purchases from qualifying direct suppliers by total input purchases, and keep each supplier's proof of status.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "brsr-pat-designated-consumer-question",
+  "q": "What does the BRSR question on PAT designated consumers ask, and what if targets were missed?",
+  "title": "BRSR question on PAT designated consumers",
+  "short": "Whether any of your sites are designated consumers under the PAT scheme, whether their targets were achieved, and if not, what remedial action you took: that is Principle 6 essential indicator 2. A company with no designated consumer sites answers No, and the question ends there.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "brsr-principle-6-worked-example-from-bills",
   "q": "How do I work out BRSR environment energy and emissions from a year of bills?",
   "title": "BRSR energy and emissions from bills",
@@ -2859,6 +3003,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "brsr-scope-3-intensity-per-rupee-turnover",
+  "q": "How is Scope 3 intensity per rupee of turnover reported in BRSR?",
+  "title": "BRSR Scope 3 intensity per rupee",
+  "short": "Divide total Scope 3 emissions, in tonnes of CO2e, by total turnover in rupees for the same year. It sits in Principle 6 leadership indicator 2, which also asks for a gas break-up if available, an optional intensity metric you choose, both years, and whether an external agency assessed the figure.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "brsr-supplier-questionnaire-field-by-field",
   "q": "How do I fill a customer's BRSR supplier questionnaire field by field?",
   "title": "BRSR supplier questionnaire, field by field",
@@ -2883,6 +3035,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "brsr-value-chain-adverse-environmental-impact",
+  "q": "What does BRSR mean by a significant adverse environmental impact from the value chain?",
+  "title": "BRSR: adverse impact from the value chain",
+  "short": "Whatever you can show is significant by a stated test, since neither the format nor SEBI's guidance note defines the word. Principle 6 leadership indicator 6 asks for significant adverse environmental impacts from your value chain and the mitigation or adaptation steps taken. Apply your test to suppliers and customers, and say what it was.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "brsr-value-chain-data-request-msme-supplier",
   "q": "My listed customer asked for BRSR value chain data. Am I required to give it, and what do they need from an MSME supplier?",
   "title": "BRSR value chain data from MSME suppliers",
@@ -2902,7 +3062,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "brsr-value-chain-environment-assessment-share",
   "q": "What does BRSR mean by the percentage of value chain partners assessed for environmental impacts?",
   "title": "Share of value chain partners assessed",
-  "short": "It is Principle 6 leadership indicator 9: the percentage of value chain partners, by value of business done with them, that were assessed for environmental impacts. Leadership indicator 8 asks for significant adverse environmental impacts from the value chain and the steps taken.",
+  "short": "It is Principle 6 leadership indicator 7: the percentage of value chain partners, by value of business done with them, that were assessed for environmental impacts. Leadership indicator 6 asks for significant adverse environmental impacts from the value chain and the steps taken.",
   "topic": "regulation",
   "reviewed": "2026-10-23"
  },
@@ -2947,6 +3107,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "brsr-water-discharge-by-destination-question",
+  "q": "How do I fill the BRSR water discharge table by destination and treatment level?",
+  "title": "BRSR water discharge table, filled in",
+  "short": "Kilolitres by where the water went: surface water, groundwater, seawater, third parties and others, each split into no treatment and with treatment, naming the level. That is Principle 6 essential indicator 4. Add the rows for total discharge; withdrawal minus that total gives consumption.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "brsr-water-withdrawal-vs-consumption",
   "q": "What is the difference between water withdrawal and water consumption in BRSR?",
   "title": "Water withdrawal vs consumption",
@@ -2966,7 +3134,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "brsr-zero-liquid-discharge-question",
   "q": "What does BRSR ask about zero liquid discharge, and how do we answer it?",
   "title": "BRSR zero liquid discharge question",
-  "short": "Principle 6 essential indicator 4 asks whether the company has a mechanism for zero liquid discharge, and if yes, for details of its coverage and implementation. Answer site by site: which plants run ZLD, since when, what the system treats, and how much water it recovers.",
+  "short": "Principle 6 essential indicator 5 asks whether the company has a mechanism for zero liquid discharge, and if yes, for details of its coverage and implementation. Answer site by site: which plants run ZLD, since when, what the system treats, and how much water it recovers.",
   "topic": "regulation",
   "reviewed": "2026-10-23"
  },
@@ -6011,6 +6179,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "ceramic-spray-dryer-gas-to-briquette-hag",
+  "q": "How much natural gas does a briquette-fired hot air generator replace in a tile spray dryer?",
+  "title": "Spray dryer: briquette hot air for gas",
+  "short": "Only about 12% of the spray dryer's gas. BEE's Morbi report preheats combustion air to 300 C with a briquette fired hot air generator, saving 2,096 of 18,000 scm a day, plus 143 scm on the tile dryer: 671,700 scm, about 1,377 t CO2 a year if the briquettes are biomass. Payback 1.47 years at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "ceramic-tile-carbon-footprint-per-square-metre",
   "q": "How do I calculate the carbon footprint of ceramic or vitrified tiles per square metre for an export buyer?",
   "title": "Tile carbon footprint per square metre",
@@ -6185,6 +6361,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Most of cheese comes from the milk: multiply the litres of milk per kg of cheese by the milk's farm figure, then add pasteurising, cooking, pressing, ripening and cold store energy. Divide the plant's energy by kg of cheese made.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "chemical-msme-energy-per-tonne-by-cluster",
+  "q": "What is a normal energy use per tonne for an MSME chemical unit?",
+  "title": "MSME chemical units: energy per tonne",
+  "short": "Overall 4.98 GJ, or 119 kgoe, per tonne, in BEE's study of five chemical MSME clusters, ranging from 0.44 GJ in Jamshedpur to 6.33 GJ in Ahmedabad. Product type matters more than place: averages were 9.8 GJ for API and pharma, 6.0 for dyes and pigments and 3.3 for pesticides.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "chemical-park-common-steam-supplier-scope-2",
@@ -7715,6 +7899,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "dairy-effluent-methane-capture-fo-saving",
+  "q": "How much furnace oil can methane captured from dairy effluent replace?",
+  "title": "Dairy effluent biogas: furnace oil replaced",
+  "short": "Around 352,800 litres a year in BEE's Gujarat dairy report, from 1,000 m3 a day of effluent at 5,000 mg/L COD, plus 54,000 kWh of aeration power. That avoids about 1,084 t of fossil CO2. Project cost Rs 247.56 lakh, payback 2.34 years at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "dairy-enteric-methane-emissions-india",
   "q": "How do I estimate enteric methane from dairy cattle and buffalo in India?",
   "title": "Enteric methane from dairy cattle",
@@ -8051,6 +8243,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "dhanbad-coke-oven-cluster-energy-co2",
+  "q": "What is the total energy and CO2 of the Dhanbad hard coke cluster?",
+  "title": "Dhanbad coke ovens: cluster energy and CO2",
+  "short": "TERI's 2016 profile puts Dhanbad's 100 or so coke units at 208,254 toe and about 858,894 t CO2 a year. Almost 99% is heat from coal volatiles burning inside non-recovery ovens; grid power is 30.24 million kWh. A typical unit uses 2,083 toe, 0.220 toe per tonne of hard coke.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "dhanbad-hard-coke-plant-co2-per-tonne",
   "q": "How much CO2 does a Dhanbad hard coke plant emit per tonne of coke?",
   "title": "Dhanbad hard coke: CO2 per tonne",
@@ -8209,6 +8409,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. Purchased cooling is Scope 2, like purchased electricity and steam. Ask the provider for the emissions per unit of cooling, usually per TR-hour or kWh of cooling, based on their electricity and fuel. Without it, estimate from their chiller efficiency and the grid factor, and label it an estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "divided-blast-cupola-coke-co2-saving",
+  "q": "How much CO2 does converting a foundry cupola to divided blast save?",
+  "title": "Divided blast cupola: coke and CO2 saved",
+  "short": "Roughly 75 t of CO2 a year in BEE's Batala, Jalandhar and Ludhiana report: fuel per 2.14 t melt drops from 500 kg to 400 kg, or 25 t over 250 melts. The report's own 25 t CO2 figure undercounts. Cost Rs 6.64 lakh, saving Rs 3.95 lakh a year, payback 1.68 years (2011).",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "division-sold-mid-year-carbon-inventory",
@@ -8747,6 +8955,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "downdraft-kiln-waste-heat-recovery-coal-saving",
+  "q": "How much coal can waste heat recovery save on a 100 t refractory kiln?",
+  "title": "Kiln waste heat recovery: coal saved",
+  "short": "About 27% of the coal on a 100 t per batch downdraft kiln: 768.79 t a year, in BEE's Godavari study. On our Indian coal factor that is about 1,330 t CO2 after blower power. Cost Rs 15 lakh, payback under six months at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "downstream-warehousing-category-9",
   "q": "Do I have to count my distributor's warehouse and retail storage in my Scope 3?",
   "title": "Distributor storage in Scope 3 Category 9",
@@ -8761,6 +8977,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Grid power in the DRC is almost all hydro, so its Scope 2 is low. Diesel for gensets, haul trucks and processing is Scope 1 at about 2.68 kg CO2 per litre. When the grid falls short and gensets run, diesel quickly becomes the largest number.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "dri-kiln-waste-heat-power-saving-bankura",
+  "q": "How much power and CO2 can waste heat recovery save in a 2 x 100 TPD DRI plant?",
+  "title": "DRI waste heat power: what 5 MW saves",
+  "short": "About 23.5 million kWh of grid power a year. TERI's 2025 Bankura profile says a 2 x 100 TPD coal-based DRI plant can run a 5 MW waste heat power plant, costing about Rs 500 million, avoiding roughly 15,900 t CO2 at the FY 2025-26 grid factor. Better kiln lining saves another 580 t of coal per kiln.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "dried-fish-processing-emissions-per-kg",
@@ -9601,6 +9825,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the gelatin or HPMC, colourants and water per kg of capsules using supplier figures, then the dipping, drying and printing energy. Climate-controlled drying rooms usually take much of it, so divide the plant's energy by kg of good capsules.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "empty-return-truck-backhaul-scope-3",
+  "q": "Do I have to count the empty return trip of a hired truck in Scope 3?",
+  "title": "Empty return trip of a hired truck",
+  "short": "No. GHG Protocol guidance for upstream transport says companies may optionally count unladen backhaul, the empty vehicle's return. If you do, take the fuel burned on the empty leg: empty distance divided by empty fuel efficiency, times the fuel's emission factor. Check first that your factor does not already include it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "enamelled-copper-wire-carbon-footprint-per-kg",
@@ -11491,6 +11723,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "gas-hot-air-generator-replacing-wood-dryer-co2",
+  "q": "How much CO2 does a chemical dryer save by switching a wood-fired hot air generator to gas?",
+  "title": "Wood to gas hot air generator: CO2 effect",
+  "short": "It raises your reported fossil CO2, by about 35 t a year on BEE's Ahmedabad figures. A 30,000 kcal/h gas unit replaces 130 t of wood with 14,940 Nm3 of gas and adds 6,040 kWh. Wood CO2 is biogenic and reported separately, so the report's 93 t cut does not belong in Scope 1.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "gas-meter-reading-vs-png-bill-emissions",
   "q": "Our gas meter reading does not match the PNG bill. Which do we use?",
   "title": "Gas meter reading or PNG bill",
@@ -11707,6 +11947,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "giridih-secondary-steel-cluster-energy-co2",
+  "q": "What is the energy use and CO2 of the Giridih secondary steel cluster in Jharkhand?",
+  "title": "Giridih secondary steel: energy and CO2",
+  "short": "TERI's May 2024 profile puts Giridih's steel units at 1.49 million t of coal and 1,095 million kWh a year, about 0.88 million toe, and 3.93 million t CO2. Sponge iron is half of it: 1.97 million t CO2 from 0.75 million t of DRI.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "giridih-sponge-iron-kiln-cbam-figure",
   "q": "How does a sponge iron unit in Giridih work out its CBAM figure?",
   "title": "Giridih sponge iron CBAM figure",
@@ -11785,6 +12033,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the float glass per square metre by its supplier figure, then add the silvering and protective coatings and the line's electricity and water heating. Divide the unit's energy by square metres of mirror made, stated by thickness.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "glass-refractory-msme-energy-per-tonne",
+  "q": "What is the energy use per tonne for MSME glass and refractory units by cluster?",
+  "title": "Glass and refractory units: energy per tonne",
+  "short": "Anywhere from 1.6 GJ to 25 GJ a tonne, set by what you make. BEE's study found 10.4 GJ per tonne across Firozabad glass, 25.3 GJ for Ambala's blown glass and 1.6 GJ for Jaipur's toughening, with Chirkunda refractories at 5.7 GJ and East and West Godavari at 6.7 GJ.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "glass-tumbler-carbon-footprint-per-piece",
@@ -13699,6 +13955,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "hybrid-method-allocated-scope-1-2-from-suppliers",
+  "q": "What does the hybrid method need from me as a supplier?",
+  "title": "Hybrid method: what a supplier sends",
+  "short": "Three kinds of data, as much as you have: your Scope 1 and 2 allocated to the goods you sold that buyer, the materials and fuel used to make them with how far the materials travelled to you, and the waste generated. The buyer applies factors and fills gaps with averages, so partial data still counts.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "hyderabad-pharma-api-unit-boiler-co2",
   "q": "How does a Hyderabad pharma API unit count CO2 from boilers and solvent incineration?",
   "title": "Hyderabad API unit boiler and solvent CO2",
@@ -14241,6 +14505,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Divide the furnace's own metered kWh by tonnes of liquid metal tapped in the same period, then compare it with a measured range from a BEE foundry study and with the physical minimum, roughly 350 to 400 kWh per tonne, which is an estimate from the heat needed to melt iron. The gap shows your losses.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "induction-furnace-superheat-kwh-per-tonne",
+  "q": "How much extra power does superheating molten metal by 50 C cost in an induction furnace?",
+  "title": "Induction furnace superheat: kWh per tonne",
+  "short": "About 25 kWh per tonne for every 50 C above what the pour needs, says TERI's 2025 Bankura profile. On a furnace melting 100,000 t a year that is 2.5 million kWh, roughly 1,690 t CO2 at India's grid factor. An open crucible loses another 4 to 6% as radiation.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "induction-hardening-vs-furnace-hardening-co2",
@@ -15843,6 +16115,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "kundli-cold-storage-cluster-electricity-co2",
+  "q": "What is the electricity use and CO2 of the Kundli cold storage cluster?",
+  "title": "Kundli cold stores: electricity and CO2",
+  "short": "About 19.7 million kWh a year, roughly 13,300 t CO2 on CEA's FY 2025-26 grid factor (estimate). TERI's 2014-15 profile covers 53 cold stores in Kundli, 665 to 8,600 t each, running ammonia plants on grid power; refrigeration takes 89 to 95% of each store's electricity.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "kundli-cold-store-electricity-by-capacity",
+  "q": "How much electricity and CO2 does a cold store of under 2,500, 2,500-5,000 or over 5,000 tonnes use a year?",
+  "title": "Cold store power by size: Kundli figures",
+  "short": "TERI's Kundli figures: about 220,500 kWh a year for a store under 2,500 t, 488,100 kWh for 2,500 to 5,000 t, and 855,700 kWh above 5,000 t. That is 149, 329 and 578 t CO2 on the FY 2025-26 grid factor, and about 132 kWh per tonne of capacity in every band.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "kundli-cold-store-re-piping-power-saving",
+  "q": "When should an old cold store be re-piped, and how much power does pressure drop cost?",
+  "title": "Cold store re-piping: when and what it saves",
+  "short": "Re-pipe if the store was built before 2005 or loses more than 0.2 bar between evaporator and condenser, says TERI's Kundli profile. Each 0.1 bar of drop costs almost 2 C of suction and about 7% more power. New pipe, insulation and valves cut electricity 5 to 8%, paid back within a year.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "kurta-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of a kurta?",
   "title": "Kurta carbon footprint per piece",
@@ -16451,6 +16747,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "lucknow-brick-kilns-coal-per-lakh-bricks",
+  "q": "How much coal does a Lucknow brick kiln burn per lakh bricks, and what is the cluster's CO2?",
+  "title": "Lucknow brick kilns: coal per lakh bricks",
+  "short": "About 17 t. TERI's Lucknow profile puts a typical Bull's trench kiln at 27,000 bricks a day for 180 days: 48.6 lakh bricks on 826 t of coal, roughly 1,450 t CO2 a season. The cluster's 230 or so kilns burn about 186,676 t of coal a year.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "ludhiana-bicycle-maker-cbam-check",
   "q": "Do bicycles and parts exported from Ludhiana fall under EU CBAM?",
   "title": "Ludhiana bicycles and CBAM",
@@ -16473,6 +16777,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Ask the tube maker for kg CO2e per tonne of tube, with the steel route behind it, the year and the boundary. Steel tube is usually most of a steel frame's footprint, so a real supplier figure matters more than your own welding and painting, which come from your bills.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "ludhiana-fastener-sheet-metal-cluster-energy",
+  "q": "What is the energy use of Ludhiana's fastener and sheet metal cluster?",
+  "title": "Ludhiana fasteners and sheet metal: energy",
+  "short": "Small next to the steel inside the parts. SAMEEEKSHA puts Ludhiana's 1,000 fastener and 700 sheet metal units at 14,073 toe a year, on electricity and diesel, for 591,000 t of product. That is about 24 kg of oil equivalent a tonne; the wire rod and sheet you buy carry far more.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "ludhiana-forging-cbam-figure-steel-bar-share",
@@ -16905,6 +17217,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Compare emissions per tonne-km before and after, using diesel litres for emissions and a fixed distance per delivery for tonne-km. Then multiply the drop in intensity by the tonne-km you moved after the change. Using actual kilometres driven for tonne-km would hide the very saving you are trying to show.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "medium-vs-mains-frequency-induction-furnace",
+  "q": "How much does a medium frequency furnace save over a mains frequency induction furnace?",
+  "title": "Mains vs medium frequency induction furnace",
+  "short": "Expect about 90 kWh less per tonne of molten metal. BEE's Punjab foundry report puts 50 Hz mains frequency furnaces at 680 to 690 kWh per tonne and medium frequency furnaces, above 500 Hz, at 590 to 600. For 2,250 t a year that is 202.5 MWh and about 137 t CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "meerut-scissors-unit-carbon-footprint",
@@ -19363,6 +19683,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "porbandar-calcined-bauxite-coke-co2",
+  "q": "What is the carbon footprint of Porbandar's calcined bauxite and minerals units?",
+  "title": "Porbandar calcined bauxite: coke and CO2",
+  "short": "Coke is about 98% of the energy, and calcined bauxite burns most of it. TERI counted 31,720 t of coke and 5.3 million kWh across Porbandar's 60 mineral units: 21,070 toe and 97,522 t CO2 a year. The 20 calcined bauxite units use 16,884 toe, about 80%.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "porcelain-insulator-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of porcelain insulators?",
   "title": "Porcelain insulator footprint per kg",
@@ -19859,12 +20187,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "pune-aluminium-casting-cluster-energy-mix",
+  "q": "What is the energy and fuel mix of the Pune aluminium casting cluster?",
+  "title": "Pune aluminium casting: the energy mix",
+  "short": "Furnace oil and grid power, with little else. TERI's profile of Pune's 50 or so casting units counts 44,153 kL of furnace oil and 350 million kWh a year, about 77,500 toe in all: 61% thermal for melting, 39% electricity. On FY 2025-26 factors that is roughly 377,000 t CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "pune-aluminium-castings-export-share-buyers",
+  "q": "How much of Pune's aluminium casting output is exported, and who buys it?",
+  "title": "Pune aluminium castings: exports and buyers",
+  "short": "Almost 20% is exported. TERI puts Pune at about 4,00,000 t of castings a year, some 22% of India's aluminium casting output. Most units cast for vehicle makers such as Tata, Mahindra, Bajaj Auto and Honda, and for electrical firms such as Siemens and Crompton Greaves.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "pune-chakan-hosur-auto-supplier-carbon-data",
   "q": "What carbon data should an auto component supplier in Chakan or Hosur keep ready for OEMs?",
   "title": "Auto supplier carbon data for OEMs",
   "short": "Scope 1 and 2 totals for each plant from bills, a footprint per part or per kg for your main parts, the steel, aluminium and plastic weights per part with supplier figures where you have them, and your renewable power share. OEM questionnaires usually ask for these.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "pune-die-casting-melting-energy-by-furnace",
+  "q": "How much furnace oil, gas or power does it take to melt a tonne of aluminium in a die-casting unit?",
+  "title": "Melting aluminium: oil, gas or kWh a tonne",
+  "short": "The furnace decides it more than the fuel. In Pune, TERI found skalner furnaces use 90 to 110 litres of furnace oil or about 100 scm of gas per tonne melted, oil or gas crucibles 150 to 220 litres, and electric crucibles 500 to 550 kWh plus 50 to 100 kWh for holding.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "pune-forging-cluster-fuel-mix-carbon",
@@ -19880,6 +20232,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Pune rubber parts makers: energy for OEMs",
   "short": "Your power bills answer most of an OEM's carbon request. Pune's 80 or so rubber component units used 42.3 million kWh, 536 t of LDO and 75 t of diesel in 2017-18, so electricity is 87% of their energy and about 94% of their CO2. Add your parts output and you have a per kg figure.",
   "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "punjab-dairy-cluster-energy-co2-per-tonne-milk",
+  "q": "What is the energy and CO2 per tonne of milk in Punjab's dairy plants?",
+  "title": "Punjab dairies: energy and CO2 per tonne",
+  "short": "About 0.06 t CO2 per tonne of milk. TERI's brief for UNIDO puts Punjab's dairy plants at 112,155 toe a year: furnace oil 47%, diesel 26%, electricity 27%. Audits found 0.44 to 0.57 GJ per tonne of milk, and about 0.54 million t CO2 in all.",
+  "topic": "accounting",
   "reviewed": "2026-10-31"
  },
  {
@@ -20219,12 +20579,44 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-31"
  },
  {
+  "slug": "rajkot-plastic-cluster-electricity-co2",
+  "q": "What is the energy and CO2 footprint of Rajkot's plastic processing cluster?",
+  "title": "Rajkot plastics cluster: energy and CO2",
+  "short": "Rajkot's 300 or so plastic units use 7,417 toe a year, 96% of it grid power, by TERI's profile: 83 million kWh plus a little gas, LPG and diesel, for 196,210 t of product. On FY 2025-26 factors that is about 56,700 t CO2, or 0.29 t per tonne (estimate).",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "rajkot-plastic-unit-electricity-by-product",
+  "q": "How much electricity does a plastic pipe, sack or moulding unit use a year?",
+  "title": "Plastic unit power: pipes, sacks, moulding",
+  "short": "From TERI's Rajkot profile, a typical unit a year: pipes and fittings 336,351 kWh, polybags and sacks 218,600 kWh, household moulding 391,743 kWh plus some gas or LPG for ovens, roll strap 179,692 kWh. Per tonne that is roughly 340, 470, 550 and 470 kWh.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "rajkot-pump-makers-carbon-data-for-buyers",
   "q": "Rajkot pump makers run almost wholly on electricity: what carbon data can they give pump buyers?",
   "title": "Rajkot pump makers: carbon data for buyers",
   "short": "Give the plant's monthly kWh and DG diesel, Scope 1 and 2 totals, and a figure per pump model split by machine hours, not a flat average. Rajkot's roughly 1,000 pump makers used 70 million kWh and only 170 kL of diesel in 2014 to 15, so power is 97% of their energy.",
   "topic": "product",
   "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "ranchi-downdraft-vs-tunnel-kiln-gj-per-tonne",
+  "q": "How much more energy does a downdraft refractory kiln use per tonne than a tunnel kiln?",
+  "title": "Downdraft vs tunnel kiln: energy per tonne",
+  "short": "Nearly twice as much. In Ranchi, TERI measured downdraft kilns at 2,114 kcal per kg of refractory, 8.9 GJ a tonne, against 1,109 kcal per kg, 4.6 GJ, for tunnel kilns. Per tonne fired, a coal downdraft kiln emits roughly 1.07 t CO2 and a petcoke tunnel kiln about 0.43 t (estimate).",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "ranchi-refractory-cluster-coal-petcoke-co2",
+  "q": "What is the fuel use and CO2 of the Ranchi refractory cluster?",
+  "title": "Ranchi refractories: coal, petcoke and CO2",
+  "short": "Coal carries most of it. TERI's 2016 profile counts 16,200 t of coal in downdraft kilns and 2,586 t of petcoke in tunnel kilns: 7,864 toe and 38,234 t CO2 a year. Electricity is under 1% of the energy. BEE's 2020-21 study counts 28 units making 64,100 t.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "ras-al-khair-aluminium-smelter-cbam-figure",
@@ -20467,6 +20859,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "red-hills-parboiled-vs-hulling-mill-energy",
+  "q": "How different is the energy use of a parboiled rice mill and a hulling-only mill?",
+  "title": "Parboiled vs hulling rice mill: energy",
+  "short": "Roughly 25 times. In Red Hills, a medium parboiled mill uses 384 toe a year, mostly husk or wood for steam, plus 545,460 kWh. A hulling unit that only removes husk and polishes uses 180,000 kWh, 15 toe, about 40 kWh per tonne of rice. Soaking, steaming and drying make the gap.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "red-hills-vs-villupuram-rice-mills-energy-co2",
+  "q": "How do the Red Hills and Villupuram rice mill clusters in Tamil Nadu compare on energy, firewood and CO2?",
+  "title": "Red Hills vs Villupuram rice mills: energy",
+  "short": "Red Hills, near Chennai, used 19,118 toe in 2014-15 for about 279,000 t of rice; Villupuram used 11,305 toe for 76,000 t. Villupuram's small mills dry paddy on firewood, 20% of its heat, and need about 0.15 toe per tonne of rice against Red Hills' 0.07. Grid power carries the fossil CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "reefer-container-emissions-food-exporters",
   "q": "How do I add reefer (refrigerated container) emissions to my export shipment footprint?",
   "title": "Adding reefer emissions to a shipment",
@@ -20515,12 +20923,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "refractory-kiln-coal-to-biomass-gasifier-co2",
+  "q": "What changes in coal and CO2 when a refractory kiln switches to a biomass gasifier?",
+  "title": "Refractory kiln: coal to biomass gasifier",
+  "short": "Coal goes to zero and fossil CO2 falls by about 2,360 t a year in BEE's Godavari report: 1,350 t of coal out, 2,160 t of wood in, plus some fan power. The wood's own CO2 is biogenic and reported separately. Project cost Rs 17.00 lakh, payback 2.73 years at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "refractory-maker-carbon-per-tonne",
   "q": "How does a refractory maker supplying steel plants work out CO2 per tonne of bricks?",
   "title": "Refractory bricks: CO2 per tonne",
   "short": "Add kiln fuel, electricity and process CO2 from carbonate raw materials such as magnesite or dolomite, then divide by tonnes fired. Process CO2 can be as large as the fuel. Steel plant buyers increasingly ask for this as part of their own Scope 3, so keep the raw material and fuel records per batch.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "refractory-tunnel-kiln-10-tpd-coal-saving",
+  "q": "How much coal does a 10 TPD tunnel kiln save over downdraft firing for refractories?",
+  "title": "10 TPD tunnel kiln vs downdraft: coal saved",
+  "short": "It roughly halves coal per tonne fired. BEE's Godavari report puts downdraft kilns at 1.5 t of coal per tonne of refractories and a 10 TPD tunnel kiln at 0.78, saving 646 t of coal and about 1,137 t CO2 a year. Cost Rs 91 lakh, payback 3.30 years at 2011 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "refrigerant-blend-gwp-calculation",
@@ -21475,6 +21899,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "scope-3-report-share-from-supplier-data",
+  "q": "Why does my buyer have to report what share of Scope 3 comes from supplier data?",
+  "title": "Why buyers report their supplier data share",
+  "short": "Because the GHG Protocol Scope 3 Standard requires it. For every Scope 3 category, a company reporting under it shall publicly report the percentage of emissions calculated using data from suppliers or other value chain partners. Each supplier that sends real data moves that percentage up, in public.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "scope-3-verification-what-evidence",
   "q": "What evidence does a verifier want for Scope 3 figures?",
   "title": "Evidence verifiers want for Scope 3",
@@ -21633,6 +22065,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add CO2 from the coke or anthracite used as reductant, the soda ash flux, furnace and kettle fuel, and electricity, then divide by tonnes of lead produced. Work it out from your own invoices and production register rather than a generic figure.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "secondary-steel-sec-by-process-ballari",
+  "q": "What is the typical kWh and coal per tonne for DRI, induction furnace, re-rolling and ferro alloy units?",
+  "title": "Ballari steel: kWh and coal per tonne",
+  "short": "TERI's 2025 Ballari study: sponge iron takes 1,000 to 1,200 kg of coal and 70 to 80 kWh a tonne, an induction furnace with continuous casting 850 to 950 kWh, rolling 80 to 120 kWh plus 90 to 120 kg of coal to reheat, and ferro manganese 3,500 to 4,500 kWh with 450 to 550 kg of coke.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "section-43b-h-msme-payment-45-days",
@@ -22995,6 +23435,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "sponge-iron-kiln-fuel-economizer-coal-saving",
+  "q": "How much coal does a fuel economizer save on a 50 tpd sponge iron kiln?",
+  "title": "Sponge iron kiln fuel economiser: coal saved",
+  "short": "A fuel economiser that preheats ore and dolomite to 700 C with kiln exhaust saves 1,548 t of coal a year on a 50 tpd kiln, in BEE's Orissa report. That is about 2,724 t CO2 on India's average coal factor. Cost Rs 140 lakh against Rs 46.43 lakh a year saved, about three years at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "sprinkler-irrigation-energy-per-acre",
   "q": "Does sprinkler irrigation use more or less energy than flood irrigation?",
   "title": "Sprinkler vs flood irrigation energy",
@@ -23475,6 +23923,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "supplier-carbon-survey-format-contents",
+  "q": "What should a buyer's supplier carbon survey format contain?",
+  "title": "What a supplier carbon survey should contain",
+  "short": "Twelve items, in the GHG Protocol's supplier engagement guidance: emission sources and scope, boundary, reporting period, activity data and emissions in CO2e, comparability with earlier methods, emission factors and sources, uncertainties, trends, progress to targets, events affecting the data, ratio indicators for allocation, and anything else relevant.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "supplier-closes-mid-year-scope-3-data",
   "q": "A supplier shut down mid-year before sending carbon data. What do we use?",
   "title": "Supplier closed before sending data",
@@ -23507,12 +23963,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "supplier-not-responding-carbon-survey-consequences",
+  "q": "What happens if I don't answer my buyer's carbon survey?",
+  "title": "Ignoring a buyer's carbon survey",
+  "short": "No Indian law makes you answer an ordinary Scope 3 survey, but your buyer is told to plan for silence. GHG Protocol guidance asks buyers to set consequences, follow-up and a requirement to provide data in future. Your line is then estimated from averages, and you lose any say in the number.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "supplier-price-includes-delivery-category-4",
   "q": "My supplier's price includes delivery to my factory. Do I still count that transport in Category 4?",
   "title": "Delivered price: is the freight Category 4?",
   "short": "Yes. Transport of purchased goods from a tier 1 supplier to your site, in vehicles you do not own, is Category 4 even when the freight is built into a delivered price and never invoiced separately. The only exception is when the supplier footprint you already use in Category 1 includes delivery to your site.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "supplier-questionnaire-what-buyer-asks",
+  "q": "What exactly does a buyer's Scope 3 supplier questionnaire ask for under the GHG Protocol?",
+  "title": "What a Scope 3 supplier questionnaire asks",
+  "short": "The GHG Protocol's own list is short: your product's cradle-to-gate footprint, how you calculated it, including emission factors and GWP values, whether it was assured and how, and anything else useful, such as the share from primary data. Without a product figure, your Scope 1 and 2 for the year, plus a way to allocate it, comes next.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "supplier-scope-1-double-counted-in-scope-3",
@@ -23849,6 +24321,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add CNG at 2.69 kg CO2 per kg, diesel at 2.68 and petrol at 2.31 kg per litre from fuel records, plus charging electricity for EVs at 0.710 kg per kWh for FY 2024-25. Divide by fleet km from trip logs. Corporate clients report their trips in Scope 3.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "tea-dryer-coal-to-biomass-gasifier-co2",
+  "q": "How much coal and CO2 does a 250 kW biomass gasifier save in a tea dryer?",
+  "title": "Tea dryer: 250 kW biomass gasifier on coal",
+  "short": "BEE's Jorhat report counts 258 t of coal saved a year, about 453 t of fossil CO2, burning 342 t of garden wood. Only 173 t of that coal is the gasifier; 85 t comes from a better burner on the coal heater, which keeps running. Cost Rs 17.18 lakh, payback 3.70 years at 2010 prices.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "tea-estate-fertiliser-emissions-per-kg-made-tea",
@@ -25339,6 +25819,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "villupuram-rice-mill-firewood-dryer-gasifier",
+  "q": "Can a small Villupuram rice mill replace its firewood paddy dryer with a gasifier, and what does it save?",
+  "title": "Villupuram rice mills: firewood dryer swap",
+  "short": "It can, and TERI's Villupuram profile estimates that a biomass gasifier making hot air from husk or wood saves 30 to 50% of dryer fuel. Fitted to the district's 40 or so 2 tph mills, it would save about 900 toe a year, roughly 56 t of firewood equivalent per mill (estimate).",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "vinyl-chloride-monomer-plant-emissions",
   "q": "What drives emissions at an EDC and vinyl chloride plant?",
   "title": "EDC and vinyl chloride plant emissions",
@@ -26627,12 +27115,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "yamunanagar-plywood-cluster-sawdust-energy-co2",
+  "q": "What is the carbon footprint of the Yamunanagar plywood cluster if sawdust is the main fuel?",
+  "title": "Yamunanagar plywood: sawdust, power and CO2",
+  "short": "About 48,000 t of fossil CO2 a year, all from 71.2 million kWh of grid power at the FY 2025-26 factor (estimate). TERI's profile of 696 units also counts 414,600 t of sawdust, about 96% of the energy; that CO2 is biogenic and goes on its own line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "yamunanagar-plywood-resin-scope-3",
   "q": "How does a Yamunanagar plywood unit count the resin it uses in Scope 3?",
   "title": "Yamunanagar plywood: resin in Scope 3",
   "short": "Urea formaldehyde and phenolic resins are made from fossil feedstocks, so they carry a real upstream footprint. Multiply kilograms of resin bought by a per kg factor from the supplier or a database, and keep it separate from timber, which is mostly biogenic carbon.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "yamunanagar-plywood-unit-sawdust-and-power",
+  "q": "How much sawdust and electricity does a typical plywood unit use compared with a peeling unit or saw mill?",
+  "title": "Yamunanagar plywood: sawdust and power",
+  "short": "Far more. A typical Yamunanagar plywood unit burns 1,382 t of sawdust and uses 171,160 kWh a year, 457 toe, against about 4 toe for a peeling unit (50,281 kWh) or a saw mill (48,384 kWh). Sawdust is 97% of a plywood unit's energy, and its CO2 is biogenic.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "yarn-doubling-twisting-electricity-per-kg",
