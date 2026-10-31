@@ -255,8 +255,8 @@ const SupplierEvidence = () => {
 
         {/* 5a. The supplier's side: their bills become the one page their buyer asked for */}
         <section id="supplier-file" className="scroll-mt-6 border-t border-border">
-            <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-primary">For suppliers</p>
-            <h2 className="mt-3 max-w-3xl text-[2rem] font-semibold leading-[1.1] tracking-tight [text-wrap:balance] md:text-[2.75rem]">Your buyer asked for your emissions. Send one page today.</h2>
+          <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+            <h2 className="max-w-3xl text-[2rem] font-semibold leading-[1.1] tracking-tight [text-wrap:balance] md:text-[2.75rem]">Your buyer asked for your emissions. Send one page today.</h2>
             <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">Type what your bills say. You get Scope 1 and Scope 2 for the period, with the published source behind every number, addressed to your buyer. No sign-up.</p>
             <div className="mt-10"><SupplierEmissionsTool /></div>
             <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
