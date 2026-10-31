@@ -22,7 +22,7 @@ export const prefersReducedMotion = () =>
 /** Once-only flag that turns true when the element first comes into view. */
 export function useSeen<T extends Element>(threshold = 0.35) {
   const ref = useRef<T>(null);
-  const [seen, setSeen] = useState(false);
+  const [seen, setSeen] = useState(prefersReducedMotion);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;

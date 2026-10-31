@@ -24,6 +24,8 @@ export const PrivacyVault = () => {
         <svg viewBox="0 0 640 230" className="w-full h-auto" role="img" aria-label="Your bill goes into a locked vault in your account and stays there. Only its total comes out.">
           {/* Vault */}
           <rect x="236" y="36" width="168" height="168" rx="20" className="fill-secondary stroke-foreground/30" strokeWidth="2" />
+          {/* Where the bill started: a dashed outline once it has moved in */}
+          <rect x="34" y="64" width="84" height="109" rx="4" fill="none" className="stroke-foreground/30" strokeWidth="1.5" strokeDasharray="5 5" style={{ opacity: into }} />
           {/* Bill (drawn before the door so it sits inside) */}
           <BillArt x={bill.x} y={bill.y} width={bill.w} height={bill.w * 1.3} />
           {/* Door: closes from the top, translucent so the bill stays visible inside */}
