@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { COUNTRY_CONFIGS } from "@/lib/countryConfig";
+import { PrivacySequence } from "@/components/trust/PrivacySequence";
 import { LedgerFanOut, LockDoodle, PipelineTrack, ScanLine, SealChain } from "@/components/trust/TrustVisuals";
 import { ClaimGauntlet, detectMarket, Glyph, SafeguardReader, Scope3Explorer, ScoreComposer } from "@/components/trust/TrustInteractives";
 import {
@@ -678,6 +679,13 @@ const Trust = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Privacy by design: a bill's journey, ticked off step by step */}
+        <section id="privacy" className="py-20 border-b border-border">
+          <div className="container max-w-5xl mx-auto px-6">
+            <PrivacySequence />
           </div>
         </section>
 
