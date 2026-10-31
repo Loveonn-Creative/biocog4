@@ -49,7 +49,7 @@
       "Wire at the default: 1.03 t per tonne x 4.270 = 4.40 t; total 4.51 t CO2e per tonne",
       "Default for 7217 20 with the 2026 mark-up: 4.270 x 1.10 = 4.697 t, only 0.19 t above your figure"
     ],
-    "note": "Tonnes are estimated from the manual's average heat per tonne; the 1.03 yield is illustrative. With the wire at its default, your own data barely beats the default; a steel maker's actual figure is what makes the gap worth having."
+    "note": "Tonnes are estimated from the manual's average heat per tonne; the 1.03 yield is an example. With the wire at its default, your own data barely beats the default; a steel maker's actual figure is what makes the gap worth having."
   },
   "senseible": "Senseible reads furnace oil, coal, LPG and power bills into monthly records per unit, and its CBAM tools turn them, with the wire supplier's figure, into a per-tonne number for each CN code you ship.",
   "links": [

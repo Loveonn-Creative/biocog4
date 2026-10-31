@@ -45,7 +45,7 @@
       "V6 submersible: 3 h x 2.05 = 6.1 kg CO2 each",
       "Monoblock: 1 h x 2.05 = 2.0 kg CO2 each, not the 3.4 a flat average would give"
     ],
-    "note": "Power use is TERI's typical medium unit. The 170 L is the cluster's diesel spread across about 1,000 units, an estimate; the model mix and hours are illustrative."
+    "note": "Power use is TERI's typical medium unit. The 170 L is the cluster's diesel spread across about 1,000 units, an estimate; the model mix and hours are examples."
   },
   "senseible": "Senseible keeps every PGVCL bill and diesel slip as a dated record, so the monthly Scope 1 and 2 behind your per-model split is there when a buyer asks where a number came from.",
   "links": [

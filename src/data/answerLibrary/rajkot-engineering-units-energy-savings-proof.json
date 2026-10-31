@@ -44,7 +44,7 @@
     ],
     "note": "Readings are an example. The 4 to 6% range for furnace lids is from TERI's Belgaum foundry profile. Grid factor is CEA's for FY 2025-26."
   },
-  "senseible": "Senseible lines up your monthly bills against tonnes melted, so the before and after per tonne sits on one page with every bill attached, ready for a lender's green loan file.",
+  "senseible": "Senseible reads every monthly bill into a dated record tied to the original file, so the before and after months are ready to set against your melting log, with every bill attached for a lender's green loan file.",
   "links": [
     { "label": "Check green loan readiness", "to": "/green-loan-check" },
     { "label": "Proving energy savings to your bank", "to": "/answers/how-to-prove-energy-savings-to-a-lender" },

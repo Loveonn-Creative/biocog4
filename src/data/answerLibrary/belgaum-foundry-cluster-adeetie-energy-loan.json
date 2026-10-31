@@ -45,9 +45,9 @@
       "Saving: 360,000 kWh, about 25% of the unit's power, well over the 10% bar",
       "CO2 saved: 360,000 x 0.675 kg = 243 t a year; at the profile's Rs 7 per kWh, about Rs 25 lakh a year"
     ],
-    "note": "Melt ratio, old furnace figure and other load are illustrative; use your own meter readings. Rs 7 per kWh is the 2015 to 16 price in TERI's profile; use your current tariff."
+    "note": "Melt ratio, old furnace figure and other load are examples; use your own meter readings. Rs 7 per kWh is the 2015 to 16 price in TERI's profile; use your current tariff."
   },
-  "senseible": "Senseible reads your HESCOM bills and coke invoices into kWh and coke per tonne by month, the baseline an energy auditor and the bank ask for first.",
+  "senseible": "Senseible reads your HESCOM bills and coke invoices into monthly kWh, coke and CO2, each traced to its bill. Set those against the tonnes in your melting log and you have the per-tonne baseline an energy auditor and the bank ask for first.",
   "links": [
     { "label": "MSME green loan schemes", "to": "/msme-green-loan-schemes" },
     { "label": "ADEETIE application steps", "to": "/answers/adeetie-application-steps" },

@@ -52,9 +52,9 @@
       "Neither mill has a verification report, so all 13,500 t carry India's 2026 default for the billet CN code, with that year's mark-up",
       "If the year-end count had shown 900 t, the 200 t gap would be the first thing the verifier asks about"
     ],
-    "note": "Tonnages are illustrative. Look up the default for your precursor's exact CN code in the Commission's default values act."
+    "note": "Tonnages are examples. Look up the default for your precursor's exact CN code in the Commission's default values act."
   },
-  "senseible": "Senseible's CBAM Suite reconciles precursor quantities and applies the year's default with its mark-up wherever no verified supplier report exists. Senseible checks each choice in-house, and an accredited verifier, your own or Senseible's partner, signs off.",
+  "senseible": "Senseible's CBAM Suite applies the year's default, with its mark-up, to every precursor that has no verified supplier report, and Senseible's in-house review checks that precursor quantities reconcile. An accredited verifier, your own or Senseible's partner, then signs off.",
   "links": [
     {
       "label": "Prepare your CBAM file",

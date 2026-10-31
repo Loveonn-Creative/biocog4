@@ -2,7 +2,7 @@
   "slug": "jaipur-foundry-cluster-export-castings-carbon",
   "q": "Jaipur's 110 foundries: what does the cluster emit, and what carbon data do export buyers expect?",
   "title": "Jaipur foundries: export carbon data",
-  "short": "TERI's 2016 profile counts 110 foundries, nine export-oriented, making about 216,000 t of castings on 20,630 toe a year: 163 million kWh, 9,200 t of coke and 330 t of LPG. An export buyer wants a figure per tonne of good castings, split by melting route, with coke and power records behind it.",
+  "short": "Jaipur's 110 foundries, nine of them export-oriented, made about 216,000 t of castings on 20,630 toe a year in TERI's 2016 profile: 163 million kWh, 9,200 t of coke and 330 t of LPG. An export buyer wants a figure per tonne of good castings, split by melting route, with coke and power records behind it.",
   "topic": "product",
   "intent": "explain",
   "audience": "Foundry owners in Vishwakarma, Jhotwara and Jetpura industrial areas, Jaipur, especially those selling castings abroad",
@@ -52,7 +52,7 @@
     ],
     "note": "Coke at the IPCC 2006 default for coke oven coke (28.2 GJ per t x 107 kg CO2 per GJ); power at Senseible's FY 2025-26 grid factor. Furnace ranges are TERI's 2016 figures. Blower power, runners and risers, and the pig iron charged are left out."
   },
-  "senseible": "Senseible reads your coke bills, JVVNL power bills and despatch records and turns them into the per-tonne figure, by melting route, that an export buyer's supplier form asks for, each line traceable to its bill.",
+  "senseible": "Senseible reads your coke and JVVNL power bills into monthly records, each traceable to its bill. Coke is your cupola's and power mostly your induction furnace's, so with tonnes from your despatch register you can give an export buyer a figure per tonne for each melting route.",
   "links": [
     { "label": "Supplier evidence for buyers", "to": "/scope-3-supplier-evidence" },
     { "label": "Are cast iron castings in CBAM", "to": "/answers/are-cast-iron-castings-covered-by-cbam" },

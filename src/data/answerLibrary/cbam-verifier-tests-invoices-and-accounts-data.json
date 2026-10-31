@@ -65,7 +65,7 @@
     ],
     "note": "Example tonnages. Which figure is used for emissions depends on what your monitoring plan names as the primary source."
   },
-  "senseible": "Senseible reads each coal, gas and power invoice into a dated record tied to the original file. Its CBAM Suite then reconciles fuel purchases with stock changes and reruns the calculation before the verifier arrives; the sign-off stays with an accredited verifier, Senseible's partner or yours.",
+  "senseible": "Senseible reads each coal, gas and power invoice into a dated record tied to the original file. Before the verifier arrives, Senseible's in-house review in its CBAM Suite checks fuel quantities against purchases and stock changes, and every figure carries its formula so it can be rerun; the sign-off stays with an accredited verifier, Senseible's partner or yours.",
   "links": [
     { "label": "Build your verifier-ready file", "to": "/cbam-suite" },
     { "label": "How verifiers spot unusual figures", "to": "/answers/cbam-verifier-analytical-procedures-unusual-figures" },

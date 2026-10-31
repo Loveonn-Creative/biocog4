@@ -55,7 +55,7 @@
     ],
     "note": "Energy use is TERI's typical unit. Gas uses the IPCC natural gas default per GJ. The yield line assumes melting power scales with metal melted per good tonne: 45 / 55 = 0.82."
   },
-  "senseible": "Send Senseible your PGVCL bills and gas or LPG invoices, and it builds the energy per tonne of castings a buyer asks for; the alloy figures come from your metal suppliers and sit beside it.",
+  "senseible": "Send Senseible your PGVCL bills and gas or LPG invoices and it builds the monthly energy and CO2 records; divided by the tonnes you dispatched, that is the energy per tonne a buyer asks for. The alloy figures come from your metal suppliers and sit beside it.",
   "links": [
     { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
     { "label": "Investment casting footprint per kg", "to": "/answers/investment-casting-carbon-footprint-per-kg" },

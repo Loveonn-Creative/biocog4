@@ -44,7 +44,7 @@
       "Default for 7318 15 with the 2026 mark-up: 5.720 x 1.10 = 6.292 t",
       "Gap on 100 t: (6.292 minus 4.70) x 100 = about 159 t CO2e the importer does not have to cover"
     ],
-    "note": "The 1.08 yield and 30 L per tonne are illustrative; use your own. Even with the rod at its default, a cold-forming shop's own figure here comes in below the bolt default."
+    "note": "The 1.08 yield and 30 L per tonne are examples; use your own. Even with the rod at its default, a cold-forming shop's own figure here comes in below the bolt default."
   },
   "senseible": "Senseible turns your wire rod invoices and furnace fuel bills into dated monthly records, and its CBAM tools work out a figure per tonne by CN code for your EU buyer. Your buyer still confirms the code and files the declaration.",
   "links": [

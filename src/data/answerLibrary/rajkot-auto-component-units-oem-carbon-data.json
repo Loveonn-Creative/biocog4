@@ -45,7 +45,7 @@
       "Tappets: 3.06 t / 50,000 = 61 g each",
       "Forged rod blank: 2.0 kg x 2.9 kg CO2 per kg = 5.8 kg, about 50 times the machining share"
     ],
-    "note": "Plant power is TERI's typical small unit spread over 12 months. Piece counts, the hours split, the blank weight and the forger's 2.9 kg per kg are illustrative; ask your forging supplier for its own figure."
+    "note": "Plant power is TERI's typical small unit spread over 12 months. Piece counts, the hours split, the blank weight and the forger's 2.9 kg per kg are examples; ask your forging supplier for its own figure."
   },
   "senseible": "Senseible reads your PGVCL bills into dated Scope 2 records and keeps your forging and casting suppliers' figures in a separate supplier trail, so the sheet you send an OEM shows which number came from where.",
   "links": [

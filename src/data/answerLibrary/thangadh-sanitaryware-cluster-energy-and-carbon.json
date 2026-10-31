@@ -52,7 +52,7 @@
     ],
     "note": "The month's quantities are an example. Count gas for rejected pieces in the total, but only good ware in the tonnes."
   },
-  "senseible": "Senseible reads your gas, power and diesel bills each month and gives CO2 per tonne of ware you can set against the cluster figure here, without a spreadsheet.",
+  "senseible": "Senseible reads your gas, power and diesel bills each month into CO2 records; divide by tonnes of good ware fired for a figure you can set against the cluster's here, without building a spreadsheet of bills.",
   "links": [
     { "label": "Your MSME carbon number", "to": "/msme-carbon-number" },
     { "label": "Kiln gas CO2 per piece", "to": "/answers/thangadh-sanitaryware-kiln-gas-per-piece" },

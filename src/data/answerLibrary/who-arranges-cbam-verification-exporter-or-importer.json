@@ -55,7 +55,7 @@
       "Shares: 3,000 / 6,000 = 50%, 2,000 / 6,000 = 33%, 1,000 / 6,000 = 17%",
       "Each buyer pays that share of the final verifier invoice, whatever the number of days billed"
     ],
-    "note": "Tonnages are illustrative. Splitting by tonnage is one option; a flat share per buyer is another."
+    "note": "Tonnages are examples. Splitting by tonnage is one option; a flat share per buyer is another."
   },
   "senseible": "Senseible prepares the verifier-ready file from your fuel, power and production records and checks every figure in-house first, so the verifier's days go on testing, not chasing documents. An accredited verifier signs it off: Senseible's partner, or your own.",
   "links": [

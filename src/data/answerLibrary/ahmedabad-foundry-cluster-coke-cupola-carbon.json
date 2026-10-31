@@ -2,7 +2,7 @@
   "slug": "ahmedabad-foundry-cluster-coke-cupola-carbon",
   "q": "What is the Ahmedabad foundry cluster's footprint, and what do textile machinery and pump buyers ask?",
   "title": "Ahmedabad foundries: coke, power and buyers",
-  "short": "TERI's 2016 profile puts Ahmedabad's 450 working foundries at 58,325 toe and 394,640 t CO2 a year, from 270 million kWh, 52,250 t of coke and 1.25 million SCM of gas, for about 1,770 t of castings a day. Half goes into textile machinery, a fifth into pumps and valves.",
+  "short": "About 394,640 t CO2 a year: Ahmedabad's 450 working foundries used 58,325 toe in TERI's 2016 profile, from 270 million kWh, 52,250 t of coke and 1.25 million SCM of gas, for about 1,770 t of castings a day. Half goes into textile machinery, a fifth into pumps and valves.",
   "topic": "product",
   "intent": "explain",
   "audience": "Foundry owners in Naroda, Odhav, Vatva, Tribhuvan and Rakhial estates, Ahmedabad, supplying loom, pump and valve makers",
@@ -50,7 +50,7 @@
     ],
     "note": "TERI's 2015-16 typical unit, with coke at the IPCC 2006 default (28.2 GJ per t x 107 kg CO2 per GJ) and power at Senseible's FY 2025-26 grid factor. TERI's own figure for this unit was 1,520 t. Pig iron charged is not included."
   },
-  "senseible": "Senseible turns a year of power and coke purchase bills into one carbon number for your foundry and a figure per tonne of castings, which is what a pump or loom maker's supplier request needs, with each line traceable to its bill.",
+  "senseible": "Senseible turns a year of power and coke purchase bills into one carbon number for your foundry, each line traceable to its bill. Divide it by the tonnes in your dispatch register and you have the figure per tonne of castings a pump or loom maker asks for.",
   "links": [
     { "label": "Get your carbon number", "to": "/msme-carbon-number" },
     { "label": "Footprint per tonne of good casting", "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting" },

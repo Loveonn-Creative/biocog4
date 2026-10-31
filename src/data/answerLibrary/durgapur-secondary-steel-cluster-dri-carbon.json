@@ -53,7 +53,7 @@
     ],
     "note": "Example tonnages and carbon contents; use your own weighbridge records and lab results. Dolochar later burnt in a boiler is counted as fuel where it is burnt."
   },
-  "senseible": "Senseible's CBAM Suite runs the monthly mass balance from your coal, ore, char and sponge iron quantities and their lab carbon contents, and checks each input against its weighbridge slip or invoice in-house before your verifier sees it.",
+  "senseible": "Senseible's CBAM Suite calculates the kiln's mass balance from your coal, ore, char and sponge iron quantities and their lab carbon contents, and Senseible's in-house review traces a sample of inputs to their weighbridge slips and invoices before your verifier sees them.",
   "links": [
     { "label": "CBAM for Indian exporters", "to": "/cbam" },
     { "label": "Waste heat power at a DRI plant", "to": "/answers/barbil-sponge-iron-plant-waste-heat-power" },

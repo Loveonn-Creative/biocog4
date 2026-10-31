@@ -46,7 +46,7 @@
       "Total: 34.5 t CO2 for 180 t of pressings shipped, about 0.19 t CO2 per tonne from the plant's own energy",
       "The steel sheet comes on top. At 1.15 t of sheet per tonne of pressings, the mill's figure per tonne of sheet matters far more than your power bill"
     ],
-    "note": "Quantities are an example. Factors: CEA grid factor for FY 2025-26 and IPCC 2006 fuel defaults. Use your mill's figure for the sheet; the 1.15 yield is illustrative."
+    "note": "Quantities are an example. Factors: CEA grid factor for FY 2025-26 and IPCC 2006 fuel defaults. Use your mill's figure for the sheet; the 1.15 yield is an example."
   },
   "senseible": "Upload a year of DHBVN bills, DG diesel slips and furnace fuel invoices, and Senseible returns the monthly Scope 1 and 2 figures an OEM form asks for, each line linked to the bill it came from.",
   "links": [

@@ -52,7 +52,7 @@
     ],
     "note": "TERI's 2014-15 quantities with Senseible's factors; TERI's own total was 45,107 t on an older grid factor. 135 L is the middle of TERI's 120 to 150 L. The bar's own figure, from the mill, comes on top."
   },
-  "senseible": "One set of numbers for every OEM: Senseible reads furnace oil, diesel and TANGEDCO bills into monthly records and works them out per tonne of forgings, with the bill behind each line.",
+  "senseible": "One set of numbers for every OEM: Senseible reads furnace oil, diesel and TANGEDCO bills into monthly records with the bill behind each line, ready to divide by the tonnes of forgings you despatched.",
   "links": [
     { "label": "Supplier evidence for OEMs", "to": "/scope-3-supplier-evidence" },
     { "label": "Induction heater vs oil furnace", "to": "/answers/induction-billet-heater-vs-oil-fired-forging-furnace" },

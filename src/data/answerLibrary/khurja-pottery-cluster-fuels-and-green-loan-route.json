@@ -45,7 +45,7 @@
     ],
     "note": "The 64 toe is TERI's typical shuttle kiln unit. Litres use diesel's IPCC calorific value at 0.83 kg per litre; LDO is a little denser, and RPO has no IPCC default of its own, so treat both as estimates."
   },
-  "senseible": "Before the energy audit, Senseible can turn a year of LDO, RPO, gas and power bills into the monthly baseline per tonne fired that the auditor and the bank will start from.",
+  "senseible": "Before the energy audit, Senseible can turn a year of LDO, RPO, gas and power bills into the monthly baseline, each figure tied to its bill, that the auditor and the bank start from; your firing log supplies the tonnes.",
   "links": [
     { "label": "MSME green loan schemes", "to": "/msme-green-loan-schemes" },
     { "label": "ADEETIE eligible clusters", "to": "/answers/adeetie-eligible-clusters-list" },

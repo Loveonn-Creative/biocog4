@@ -50,7 +50,7 @@
     ],
     "note": "TERI's furnace figures with Senseible's grid factor of 0.675 kg per kWh; TERI's own CO2 figures used an older, higher factor. Metal melted exceeds castings shipped, so the cluster line is a low estimate."
   },
-  "senseible": "Upload a year of power bills and gas invoices and Senseible turns them into dated records and kWh per tonne for your shop; its green loan check then shows what evidence a lender will want before funding an IGBT furnace.",
+  "senseible": "Upload a year of power bills and gas invoices and Senseible turns them into dated monthly records; divide by the tonnes in your melting log for your own kWh per tonne. Its green loan check then shows what evidence a lender will want before funding an IGBT furnace.",
   "links": [
     { "label": "Check your green loan readiness", "to": "/green-loan-check" },
     { "label": "Induction furnace upgrade loans", "to": "/answers/green-loan-induction-furnace-upgrade-readiness" },
