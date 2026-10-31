@@ -2,7 +2,7 @@
   "slug": "pali-textile-dyeing-unit-coal-boiler-co2",
   "q": "How does a Pali dyeing and printing unit count CO2 from its boiler?",
   "title": "Pali dyeing unit boiler CO2",
-  "short": "Multiply the coal, lignite or wood used each month by its emission factor: coal and lignite in full in Scope 1, wood with its CO2 reported as biogenic. Add electricity at 0.710 kg CO2 per kWh. Divide by metres or kilograms processed.",
+  "short": "Multiply the coal, lignite or wood used each month by its emission factor: coal and lignite in full in Scope 1, wood with its CO2 reported as biogenic. Add electricity at 0.710 kg CO2 per kWh for FY 2024-25. Divide by metres or kilograms processed.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Textile dyeing and printing units in Pali and Balotra, Rajasthan",

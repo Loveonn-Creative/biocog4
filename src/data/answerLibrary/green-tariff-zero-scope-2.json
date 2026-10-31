@@ -49,7 +49,7 @@
       "Report both: 71.0 t location-based, 28.4 t market-based"
     ]
   },
-  "senseible": "Senseible shows location-based Scope 2 from your bills at 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0) and can show market-based alongside it when you record the green tariff as an instrument with its quantity, period and evidence document. It does not confirm with your discom that the attributes were not claimed elsewhere.",
+  "senseible": "Senseible shows location-based Scope 2 from your bills at 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database, version 21.0) and can show market-based alongside it when you record the green tariff as an instrument with its quantity, period and evidence document. It does not confirm with your discom that the attributes were not claimed elsewhere.",
   "links": [
     { "label": "Market vs location-based Scope 2", "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide" },
     { "label": "Green energy open access in India", "to": "/climate-intelligence/green-energy-open-access-india" },

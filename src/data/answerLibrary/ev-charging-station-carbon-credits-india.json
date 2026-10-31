@@ -40,7 +40,7 @@
   "example": {
     "title": "Worked estimate: ten chargers for car fleets",
     "lines": [
-      "Energy delivered: 300,000 kWh a year; project emissions 300,000 x 0.710 = 213,000 kg CO2",
+      "Energy delivered: 300,000 kWh a year; project emissions 300,000 x 0.710 (FY 2024-25 grid factor) = 213,000 kg CO2",
       "At 0.15 kWh per km, that is 300,000 / 0.15 = 2,000,000 km",
       "Diesel car baseline at 15 km per litre: 2,000,000 / 15 = 133,333 litres x 2.68 = 357,333 kg CO2",
       "Reduction: 357,333 minus 213,000 = 144,333 kg, about 144 tonnes CO2 a year"

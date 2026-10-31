@@ -2,7 +2,7 @@
   "slug": "college-hostel-carbon-footprint-per-student",
   "q": "How do I calculate the carbon footprint of a college hostel per student?",
   "title": "College hostel carbon per student",
-  "short": "Add hostel electricity at 0.710 kg CO2 per kWh, mess LPG at 2.98 kg per kg, and generator diesel at 2.68 kg per litre, then divide by resident students. Sub-meter the hostel if it shares a campus supply, or label the split an estimate.",
+  "short": "Add hostel electricity at 0.710 kg CO2 per kWh for FY 2024-25, mess LPG at 2.98 kg per kg, and generator diesel at 2.68 kg per litre, then divide by resident students. Sub-meter the hostel if it shares a campus supply, or label the split an estimate.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Colleges, universities and hostel operators",
@@ -39,7 +39,7 @@
     ],
     "note": "Inputs are illustrative; use your own bills and occupancy."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "School carbon footprint",

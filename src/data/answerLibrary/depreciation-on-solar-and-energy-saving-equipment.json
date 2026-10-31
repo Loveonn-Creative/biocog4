@@ -54,7 +54,7 @@
     ],
     "note": "Both normal and additional depreciation reduce the written down value carried forward. Illustrative only, not tax advice; the asset sits in the block with any other 40% assets you own."
   },
-  "senseible": "Senseible does not compute tax depreciation. It reads the electricity bills before and after the solar or efficiency project, so the change in units and the emissions avoided at 0.710 kg CO2 per kWh are on record for a lender or buyer.",
+  "senseible": "Senseible does not compute tax depreciation. It reads the electricity bills before and after the solar or efficiency project, so the change in units and the emissions avoided at 0.710 kg CO2 per kWh for FY 2024-25 are on record for a lender or buyer.",
   "links": [
     { "label": "Rooftop solar payback for a factory", "to": "/answers/rooftop-solar-payback-for-a-factory" },
     { "label": "Energy transition savings calculator", "to": "/calculators/energy-transition-savings" },

@@ -25,7 +25,7 @@
     {
       "h": "Extrusion energy",
       "p": [
-        "Count the high speed mixer and cooler, extruders, vacuum sizing tanks, haul-offs, cutters, the chiller and the compressor. A month of plant kWh divided by kg of good pipe is a fair start; a sub-meter per line is better when pipe sizes differ a lot. Multiply by 0.710 kg CO2 per kWh, and add diesel for DG sets at 2.68 kg CO2 per litre if they ran."
+        "Count the high speed mixer and cooler, extruders, vacuum sizing tanks, haul-offs, cutters, the chiller and the compressor. A month of plant kWh divided by kg of good pipe is a fair start; a sub-meter per line is better when pipe sizes differ a lot. Multiply by 0.710 kg CO2 per kWh for FY 2024-25, and add diesel for DG sets at 2.68 kg CO2 per litre if they ran."
       ]
     },
     {
@@ -47,7 +47,7 @@
     ],
     "note": "All material factors and the pipe weight are illustrative. Use the edition of the eco-profile you cite or your supplier's footprint."
   },
-  "senseible": "Senseible reads resin, filler, additive and electricity invoices, calculates plant Scope 2 at 0.710 kg CO2 per kWh, and classifies resin lines under HSN chapter 39 into the Scope 3 evidence trail with quantities. Product reports are self-declared drafts built from your recipe and output data.",
+  "senseible": "Senseible reads resin, filler, additive and electricity invoices, calculates plant Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, and classifies resin lines under HSN chapter 39 into the Scope 3 evidence trail with quantities. Product reports are self-declared drafts built from your recipe and output data.",
   "links": [
     {
       "label": "Resin emission factors: PP, HDPE, PVC",

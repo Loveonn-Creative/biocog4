@@ -2,7 +2,7 @@
   "slug": "heat-treatment-emissions-per-tonne",
   "q": "How do I calculate emissions per tonne for a heat treatment shop?",
   "title": "Heat treatment emissions per tonne",
-  "short": "Add a month's furnace electricity, LPG or PNG and any methanol carrier gas, convert each to CO2 with its factor, and divide by the tonnes treated that month. Electricity at 0.710 kg CO2 per kWh and LPG at 2.98 kg CO2 per kg usually make up nearly all of it.",
+  "short": "Add a month's furnace electricity, LPG or PNG and any methanol carrier gas, convert each to CO2 with its factor, and divide by the tonnes treated that month. Electricity at 0.710 kg CO2 per kWh for FY 2024-25 and LPG at 2.98 kg CO2 per kg usually make up nearly all of it.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Captive and job heat treatment shops doing carburising, hardening and annealing",

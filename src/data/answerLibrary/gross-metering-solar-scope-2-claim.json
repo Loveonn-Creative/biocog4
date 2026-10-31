@@ -43,7 +43,7 @@
       "Note outside Scope 2: 15,000 kWh of solar generated and sold to the discom"
     ]
   },
-  "senseible": "Senseible reads the consumption units on your electricity bill and applies 0.710 kg CO2 per kWh for location-based Scope 2; exported units are not subtracted. Market-based Scope 2 needs your instrument data, such as an agreement that keeps the solar attributes with you.",
+  "senseible": "Senseible reads the consumption units on your electricity bill and applies 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2; exported units are not subtracted. Market-based Scope 2 needs your instrument data, such as an agreement that keeps the solar attributes with you.",
   "links": [
     {
       "label": "Rooftop solar with net metering",

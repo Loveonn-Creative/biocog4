@@ -49,7 +49,7 @@
     ],
     "note": "Factors other than the grid factor are placeholders. Replace the tannery figure with your supplier's, with its allocation rule."
   },
-  "senseible": "Senseible reads your factory's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and diesel invoices (IPCC 2006 default, 2.68 kg CO2 per litre) into a fingerprinted Scope 1 and 2 record for the per jacket factory share. Reports are self-declared drafts; the leather figure comes from your tannery.",
+  "senseible": "Senseible reads your factory's electricity bills (0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0) and diesel invoices (IPCC 2006 default, 2.68 kg CO2 per litre) into a fingerprinted Scope 1 and 2 record for the per jacket factory share. Reports are self-declared drafts; the leather figure comes from your tannery.",
   "links": [
     {
       "label": "Tannery footprint per square foot",

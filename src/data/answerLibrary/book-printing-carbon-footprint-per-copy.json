@@ -2,7 +2,7 @@
   "slug": "book-printing-carbon-footprint-per-copy",
   "q": "How do I calculate the carbon footprint of printing one book?",
   "title": "Book printing carbon per copy",
-  "short": "Weigh the book, multiply the paper and cover board by the mills' factors, and add the printing and binding energy at 0.710 kg CO2 per kWh divided by copies. Paper weight, stock choice and print run waste all move the figure.",
+  "short": "Weigh the book, multiply the paper and cover board by the mills' factors, and add the printing and binding energy at 0.710 kg CO2 per kWh for FY 2024-25 divided by copies. Paper weight, stock choice and print run waste all move the figure.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Book printers and publishers",

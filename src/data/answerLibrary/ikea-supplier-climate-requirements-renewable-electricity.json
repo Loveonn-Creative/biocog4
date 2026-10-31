@@ -39,7 +39,7 @@
   "example": {
     "title": "Worked example: what a supplier shows for one year (illustrative)",
     "lines": [
-      "Grid electricity: 12,00,000 kWh x 0.710 = 8,52,000 kg CO2 location-based",
+      "Grid electricity: 12,00,000 kWh x 0.710 (FY 2024-25 grid factor) = 8,52,000 kg CO2 location-based",
       "Rooftop solar used on site: 3,00,000 kWh, not drawn from the grid",
       "Renewable share: 3,00,000 / (12,00,000 + 3,00,000) = 20 percent",
       "Coal boiler: 800 t x 2.42 kg CO2 per kg = 19,36,000 kg CO2 Scope 1, the item to plan out"

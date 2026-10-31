@@ -44,7 +44,7 @@
     "lines": [
       "Annual consumption from discom bills: 600,000 kWh = 600 MWh",
       "Certificates to cover it fully: 600",
-      "Location-based Scope 2: 600,000 x 0.710 = 426,000 kg CO2 = 426 t, unchanged by RECs",
+      "Location-based Scope 2: 600,000 x 0.710 (FY 2024-25 grid factor) = 426,000 kg CO2 = 426 t, unchanged by RECs",
       "Market-based Scope 2 for the covered units: reported as zero, with the redemption record as evidence"
     ]
   },

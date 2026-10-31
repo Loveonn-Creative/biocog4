@@ -22,7 +22,7 @@
         "Coal per 1,000 bricks (kg) = coal used (kg) / bricks fired x 1,000.",
         "CO2 per 1,000 bricks (kg) = coal per 1,000 bricks x 2.42 kg CO2 per kg.",
         "If your coal supplier gives a gross calorific value (GCV), a factor built from that GCV is more precise than the 2.42 default for Indian coal, which varies widely in quality.",
-        "Add diesel at 2.68 kg CO2 per litre and grid electricity at 0.710 kg CO2 per kWh, divided by the same bricks, if they are in scope."
+        "Add diesel at 2.68 kg CO2 per litre and grid electricity at 0.710 kg CO2 per kWh for FY 2024-25, divided by the same bricks, if they are in scope."
       ],
       "p": [
         "Coal combustion is Scope 1 for the kiln owner. For a builder buying the bricks, the same figure is part of the bricks' embodied carbon in Scope 3."

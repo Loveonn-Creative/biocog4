@@ -45,7 +45,7 @@
       "Diesel saved by moving a generator load to grid power: 5,000 litres a year",
       "Fuel saving at an illustrative ₹90 per litre: 5,000 x 90 = ₹4,50,000",
       "Emissions avoided from diesel: 5,000 x 2.68 = 13,400 kg CO2, about 13.4 tonnes",
-      "The grid power that replaces it adds its own Scope 2 at 0.710 kg CO2 per kWh, so net savings are smaller"
+      "The grid power that replaces it adds its own Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, so net savings are smaller"
     ],
     "note": "Diesel price is an illustration. Count the new grid kWh before claiming a net reduction to a buyer."
   },

@@ -45,7 +45,7 @@
     "lines": [
       "Previous reading 45,210, current reading 48,390, multiplying factor 10",
       "(48,390 minus 45,210) x 10 = 3,180 x 10 = 31,800 kWh, matching units billed",
-      "31,800 x 0.710 kg CO2 per kWh = 22,578 kg CO2, about 22.6 t for the month"
+      "31,800 x 0.710 kg CO2 per kWh for FY 2024-25 = 22,578 kg CO2, about 22.6 t for the month"
     ],
     "note": "Had the multiplying factor been missed, the figure would read 3,180 kWh and the emissions would be ten times too low."
   },

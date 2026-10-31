@@ -45,7 +45,7 @@
       "Baseline year: 14,40,000 kWh for 3,600 t of castings = 400 kWh per t",
       "Target set in the energy plan: 5 percent lower, so 380 kWh per t",
       "At the same 3,600 t output: 3,600 x (400 minus 380) = 72,000 kWh saved",
-      "CO2 avoided: 72,000 x 0.710 kg CO2 per kWh = 51,120 kg, about 51 t a year"
+      "CO2 avoided: 72,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 51,120 kg, about 51 t a year"
     ],
     "note": "Illustrative figures. ISO 50001 expects the EnPI to be normalised for output, so a drop in production is not counted as an energy saving."
   },

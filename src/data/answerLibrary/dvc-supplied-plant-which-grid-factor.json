@@ -2,7 +2,7 @@
   "slug": "dvc-supplied-plant-which-grid-factor",
   "q": "Which grid factor should a factory supplied by DVC or any one state utility use?",
   "title": "DVC or state supply: which grid factor",
-  "short": "Use the national figure. India's grids are one synchronised system, and the CEA CO2 Baseline Database publishes a single weighted average, 0.710 kg CO2 per kWh in version 21.0, for all grid power. There is no official utility specific factor for location based reporting, whichever company bills you.",
+  "short": "Use the national figure. India's grids are one synchronised system, and the CEA CO2 Baseline Database publishes a single weighted average, 0.710 kg CO2 per kWh for FY 2024-25 in version 21.0, for all grid power. There is no official utility specific factor for location based reporting, whichever company bills you.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Steel, cement and sponge iron units in West Bengal and Jharkhand buying from Damodar Valley Corporation, and factories anywhere in India unsure which factor to use",
@@ -26,7 +26,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads your electricity bills and applies 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, so each kWh and its emissions trace back to the bill.",
+  "senseible": "Senseible reads your electricity bills and applies 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database version 21.0, so each kWh and its emissions trace back to the bill.",
   "links": [
     {
       "label": "Open access green power on the bill",

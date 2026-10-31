@@ -50,7 +50,7 @@
     ],
     "note": "Figures are illustrative. No refrigerant top-up was recorded that year; if one was, add it in kg CO2e and say the total includes other gases."
   },
-  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2. It reads DG diesel invoices with litres and applies the IPCC 2006 default of 2.68 kg CO2 per litre, keeping each bill as evidence.",
+  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0, for location-based Scope 2. It reads DG diesel invoices with litres and applies the IPCC 2006 default of 2.68 kg CO2 per litre, keeping each bill as evidence.",
   "links": [
     {
       "label": "BEE star rating for offices",

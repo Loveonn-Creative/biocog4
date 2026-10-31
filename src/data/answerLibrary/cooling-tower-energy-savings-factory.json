@@ -36,7 +36,7 @@
     {
       "h": "Turning the saving into kWh and CO2",
       "p": [
-        "kWh saved = (kW before minus kW after) x hours at that condition, for each motor. CO2 saved = kWh saved x 0.710 kg CO2 per kWh, the CEA grid factor, for grid power. Re-measure after the change at similar weather and load, because wet bulb swings with the season."
+        "kWh saved = (kW before minus kW after) x hours at that condition, for each motor. CO2 saved = kWh saved x 0.710 kg CO2 per kWh for FY 2024-25, the CEA grid factor, for grid power. Re-measure after the change at similar weather and load, because wet bulb swings with the season."
       ]
     }
   ],
@@ -51,7 +51,7 @@
     ],
     "note": "All kW, hours and the 40 percent off time are illustrative. Use your own measured values before and after."
   },
-  "senseible": "Senseible reads the units on your electricity bills and applies 0.710 kg CO2 per kWh, so a saving shows up month by month in your Scope 2 record. The kW measurements on the tower itself come from your power analyser or energy auditor.",
+  "senseible": "Senseible reads the units on your electricity bills and applies 0.710 kg CO2 per kWh for FY 2024-25, so a saving shows up month by month in your Scope 2 record. The kW measurements on the tower itself come from your power analyser or energy auditor.",
   "links": [
     {
       "label": "VFD on a pump or fan: kWh and CO2 saved",

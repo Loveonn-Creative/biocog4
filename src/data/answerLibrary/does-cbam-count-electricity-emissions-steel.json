@@ -43,13 +43,13 @@
     "title": "Illustration: electricity in an EAF rolling route",
     "lines": [
       "Assumed electricity use: 500 kWh per tonne of steel (illustrative, not a benchmark)",
-      "Indirect emissions: 500 x 0.710 kg CO2/kWh = 355 kg CO2 per tonne",
+      "Indirect emissions: 500 x 0.710 kg CO2/kWh for FY 2024-25 = 355 kg CO2 per tonne",
       "CBAM definitive period: these 355 kg are not counted for steel",
       "For a buyer's full footprint they are: report them separately with the CEA source"
     ],
     "note": "Cement and fertiliser exporters would include the same indirect figure in CBAM embedded emissions."
   },
-  "senseible": "Senseible reads kWh from your electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh, so the indirect figure is ready if a buyer or a later rule change asks for it. It does not produce the verified CBAM embedded emissions report for an installation.",
+  "senseible": "Senseible reads kWh from your electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, so the indirect figure is ready if a buyer or a later rule change asks for it. It does not produce the verified CBAM embedded emissions report for an installation.",
   "links": [
     {
       "label": "CBAM compliance for Indian exporters",

@@ -46,7 +46,7 @@
     "lines": [
       "Heat per day: 2,000 x 4.186 x 35 = 2,93,020 kJ = 81.4 kWh",
       "Solar carries the load on 300 days (assumed): 81.4 x 300 = 24,418 kWh of heat a year",
-      "Replacing electric geysers at 95%: 24,418 / 0.95 = 25,704 kWh; x 0.710 = 18,249 kg CO2, about 18.2 t",
+      "Replacing electric geysers at 95%: 24,418 / 0.95 = 25,704 kWh; x 0.710 (FY 2024-25 grid factor) = 18,249 kg CO2, about 18.2 t",
       "Replacing a diesel boiler at 80%: 24,418 / 0.80 / 10.0 = 3,052 litres; x 2.68 = 8,180 kg CO2",
       "Replacing LPG at 85%: 24,418 / 0.85 / 13.14 = 2,186 kg; x 2.98 = 6,515 kg CO2"
     ],

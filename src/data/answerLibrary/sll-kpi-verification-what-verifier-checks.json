@@ -44,7 +44,7 @@
   "example": {
     "title": "Worked example: one error found in a sample check",
     "lines": [
-      "Reported electricity: 2,050,000 kWh, so 2,050,000 x 0.710 = 1,455.5 t CO2",
+      "Reported electricity: 2,050,000 kWh, so 2,050,000 x 0.710 (FY 2024-25 grid factor) = 1,455.5 t CO2",
       "Sampled bill shows 60,000 kVAh entered as kWh; printed power factor 0.95, so true kWh = 60,000 x 0.95 = 57,000",
       "Overstatement: 3,000 kWh x 0.710 = 2.13 t CO2",
       "Share of a 2,375.1 t CO2 total: 2.13 / 2,375.1 = 0.09%, well under a 5% materiality threshold, but corrected anyway"

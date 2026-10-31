@@ -10,7 +10,7 @@
     {
       "h": "What the CEA database covers",
       "p": [
-        "The CEA CO2 Baseline Database is, as its name says, a CO2 baseline. CEA calculates each station's emissions from the fuel it burns and the electricity it sends out, and publishes the factors in tonnes of CO2 per MWh. It gives no methane or nitrous oxide figure. That is why the weighted average reads 0.710 kg CO2 per kWh in version 21.0, not kg CO2e."
+        "The CEA CO2 Baseline Database is, as its name says, a CO2 baseline. CEA calculates each station's emissions from the fuel it burns and the electricity it sends out, and publishes the factors in tonnes of CO2 per MWh. It gives no methane or nitrous oxide figure. That is why the weighted average reads 0.710 kg CO2 per kWh for FY 2024-25 in version 21.0, not kg CO2e."
       ]
     },
     {
@@ -43,7 +43,7 @@
     ],
     "note": "Estimate from IPCC 2006 Table 2.2 coal defaults and AR5 GWPs, applied to the whole factor as if all fossil generation were coal."
   },
-  "senseible": "Senseible applies 0.710 kg CO2 per kWh from CEA version 21.0 for location-based Scope 2 and labels it as CO2 on every line.",
+  "senseible": "Senseible applies 0.710 kg CO2 per kWh for FY 2024-25 from CEA version 21.0 for location-based Scope 2 and labels it as CO2 on every line.",
   "links": [
     {
       "label": "Which CEA factor version for which year?",

@@ -58,7 +58,7 @@
       "PA66 connector housings: 0.15 kg x 7.0 (illustrative input) = 1.05 kg CO2e",
       "Brass terminals: 0.05 kg x 3.0 (illustrative input) = 0.15 kg CO2e",
       "Materials total: 3.20 + 0.60 + 1.05 + 0.15 = 5.00 kg CO2e",
-      "Plant electricity: 50,000 kWh x 0.710 = 35,500 kg CO2 over 1,00,000 harnesses = 0.355 kg CO2 each",
+      "Plant electricity: 50,000 kWh x 0.710 (FY 2024-25 grid factor) = 35,500 kg CO2 over 1,00,000 harnesses = 0.355 kg CO2 each",
       "Total: 5.00 + 0.355 = about 5.36 kg CO2e per harness; copper is 3.20 / 5.355 = about 60 percent"
     ],
     "note": "The material factors are illustrative inputs for the arithmetic, not published values. Replace each with your supplier's figure or a named database value, and apply your copper scrap ratio to the conductor line."

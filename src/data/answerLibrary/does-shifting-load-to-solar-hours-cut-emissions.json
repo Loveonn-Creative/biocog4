@@ -10,7 +10,7 @@
     {
       "h": "What changes and what does not",
       "ul": [
-        "Location-based Scope 2: unchanged. Total kWh x 0.710 kg CO2 per kWh, whatever the hour.",
+        "Location-based Scope 2: unchanged. Total kWh x 0.710 kg CO2 per kWh for FY 2024-25, whatever the hour.",
         "Electricity bill: lower if you move load into cheaper slots.",
         "Market-based Scope 2: lower only where it changes how many units your renewable contract or certificates cover.",
         "Real grid emissions: may fall when midday supply is solar heavy, but no official Indian factor captures that today."
@@ -35,7 +35,7 @@
       ]
     }
   ],
-  "senseible": "Senseible applies the annual CEA grid factor, 0.710 kg CO2 per kWh, to the kWh on your bills, so moving production hours changes your cost but not your location-based Scope 2. Market-based results follow the renewable units you record.",
+  "senseible": "Senseible applies the annual CEA grid factor, 0.710 kg CO2 per kWh for FY 2024-25, to the kWh on your bills, so moving production hours changes your cost but not your location-based Scope 2. Market-based results follow the renewable units you record.",
   "links": [
     {
       "label": "Time of day tariff for factories",

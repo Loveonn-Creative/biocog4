@@ -25,7 +25,7 @@
     {
       "h": "What cuts the real saving",
       "ul": [
-        "Pump power for the drain and fresh water circuits: subtract kWh x 0.710 kg CO2.",
+        "Pump power for the drain and fresh water circuits: subtract kWh x 0.710 (FY 2024-25 grid factor) kg CO2.",
         "Lint and fibre filters need daily cleaning; a fouled exchanger loses effectiveness.",
         "Preheated water used where cold water would do saves nothing.",
         "Low production days and holidays."

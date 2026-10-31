@@ -2,7 +2,7 @@
   "slug": "genome-valley-pharma-cold-room-electricity",
   "q": "How does a Genome Valley pharma unit count its cold room electricity?",
   "title": "Pharma cold rooms: electricity count",
-  "short": "Cold room power is part of your Scope 2: kWh times 0.710 kg CO2 per kWh. If the cold room has its own meter, report it separately so you can see what storage costs per pallet or per batch.",
+  "short": "Cold room power is part of your Scope 2: kWh times 0.710 kg CO2 per kWh for FY 2024-25. If the cold room has its own meter, report it separately so you can see what storage costs per pallet or per batch.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Vaccine and biologics makers in the Genome Valley cluster near Hyderabad, Telangana",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Pharma cold chain passive shippers",

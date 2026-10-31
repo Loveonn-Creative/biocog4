@@ -10,7 +10,7 @@
     {
       "h": "Step 1: get the site total",
       "ul": [
-        "Grid electricity from the warehouse's discom bills, at 0.710 kg CO2 per kWh.",
+        "Grid electricity from the warehouse's discom bills, at 0.710 kg CO2 per kWh for FY 2024-25.",
         "Diesel for DG sets and diesel forklifts, at 2.68 kg CO2 per litre (IPCC 2006 default); LPG forklifts at 2.98 kg CO2 per kg.",
         "Refrigerant top-ups for cold rooms, in kg of gas times its GWP, reported as CO2e.",
         "Rooftop solar used on site adds no grid emissions; exclude exported units."

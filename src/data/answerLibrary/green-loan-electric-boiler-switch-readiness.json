@@ -2,7 +2,7 @@
   "slug": "green-loan-electric-boiler-switch-readiness",
   "q": "Is switching from a coal or oil boiler to an electric boiler a green loan project?",
   "title": "Electric boiler switch: green loan readiness",
-  "short": "It can be, but show the numbers both ways. Fuel emissions disappear from Scope 1, while electricity adds Scope 2 at 0.710 kg CO2 per kWh on the Indian grid. With grid power alone the net cut may be small or negative; with solar or green open access it is large.",
+  "short": "It can be, but show the numbers both ways. Fuel emissions disappear from Scope 1, while electricity adds Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25 on the Indian grid. With grid power alone the net cut may be small or negative; with solar or green open access it is large.",
   "topic": "markets",
   "intent": "check",
   "audience": "Units replacing fuel-fired boilers or thermic heaters",

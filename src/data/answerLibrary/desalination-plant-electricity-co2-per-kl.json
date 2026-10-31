@@ -2,7 +2,7 @@
   "slug": "desalination-plant-electricity-co2-per-kl",
   "q": "How much CO2 does a desalination plant emit per kL of water?",
   "title": "Desalination CO2 per kL",
-  "short": "Divide the plant's electricity by kL of product water and multiply by 0.710 kg CO2 per kWh. Seawater reverse osmosis uses far more energy than brackish water treatment, and energy recovery devices cut it. Use your plant meter, not a textbook figure.",
+  "short": "Divide the plant's electricity by kL of product water and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Seawater reverse osmosis uses far more energy than brackish water treatment, and energy recovery devices cut it. Use your plant meter, not a textbook figure.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Desalination plant operators and industries buying desalinated water",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "RO plant electricity per kL",

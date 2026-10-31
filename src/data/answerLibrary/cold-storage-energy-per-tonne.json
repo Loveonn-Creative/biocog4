@@ -35,7 +35,7 @@
     {
       "h": "Turning the units into emissions",
       "p": [
-        "Grid units go to Scope 2 at the CEA factor of 0.710 kg CO2 per kWh. Diesel for backup generators is Scope 1 at 2.68 kg CO2 per litre. Refrigerant top-ups in HFC plants are a separate Scope 1 source, counted in CO2e; ammonia has a global warming potential of zero."
+        "Grid units go to Scope 2 at the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25. Diesel for backup generators is Scope 1 at 2.68 kg CO2 per litre. Refrigerant top-ups in HFC plants are a separate Scope 1 source, counted in CO2e; ammonia has a global warming potential of zero."
       ]
     }
   ],
@@ -50,7 +50,7 @@
     ],
     "note": "All figures are hypothetical. Compare like months and like stock levels before concluding that efficiency changed."
   },
-  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load and units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh, and converts diesel bills at the IPCC default. It does not read stock registers or set an energy benchmark for your store.",
+  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load and units) and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 to the kWh, and converts diesel bills at the IPCC default. It does not read stock registers or set an energy benchmark for your store.",
   "links": [
     {
       "label": "Cold chain refrigerant leaks and carbon",

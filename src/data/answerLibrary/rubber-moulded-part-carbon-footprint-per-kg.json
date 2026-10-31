@@ -24,7 +24,7 @@
     {
       "h": "Energy for mixing, moulding and curing",
       "ul": [
-        "Internal mixer, mill, extruders and presses: kWh per kg from sub-meters, or plant kWh split by machine hours. Multiply by 0.710 kg CO2 per kWh.",
+        "Internal mixer, mill, extruders and presses: kWh per kg from sub-meters, or plant kWh split by machine hours. Multiply by 0.710 kg CO2 per kWh for FY 2024-25.",
         "Steam for autoclaves or press platens: boiler fuel per kg. PNG at 2.05 kg CO2 per scm, coal at 2.42 per kg, furnace oil at 2.97 per litre.",
         "Metal inserts in bushes and mounts: their own mass x the metal's factor. Do not count them as rubber."
       ]
@@ -47,7 +47,7 @@
     ],
     "note": "Energy and scrap figures are illustrative. The materials line is often larger than energy, so get supplier factors for carbon black and synthetic rubber first."
   },
-  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a part footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps rubber, carbon black and chemical purchases in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a part footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25) and keeps rubber, carbon black and chemical purchases in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
   "links": [
     { "label": "EUDR data for coffee and rubber exporters", "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide" },
     { "label": "Scrap sold for recycling in Scope 3", "to": "/answers/scrap-sold-for-recycling-scope-3" },

@@ -16,7 +16,7 @@
         "Proposed measures: equipment, ratings, vendor quotations, installation schedule.",
         "Savings: kWh and fuel saved a year, with the formula and assumptions on hours and load.",
         "Financials: project cost, means of finance, savings in rupees, simple payback, and repayment from savings.",
-        "CO2 reduction: kWh saved x 0.710 plus fuel saved x its factor, with sources.",
+        "CO2 reduction: kWh saved x 0.710 (FY 2024-25 grid factor) plus fuel saved x its factor, with sources.",
         "Measurement plan: meters, baseline adjustment for production, and reporting dates after commissioning."
       ]
     },

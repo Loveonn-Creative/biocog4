@@ -2,7 +2,7 @@
   "slug": "tamil-nadu-mill-own-windmill-scope-2",
   "q": "How does a Tamil Nadu mill report power from its own windmills in Scope 2?",
   "title": "Own windmills: Scope 2 reporting",
-  "short": "Report twice. Location based, every kWh you take from the grid uses 0.710 kg CO2 per kWh, including wheeled wind units. Market based, the wind units credited to your bill count as zero if you keep the renewable attributes and do not sell them as certificates. Keep the wheeling and banking statements.",
+  "short": "Report twice. Location based, every kWh you take from the grid uses 0.710 kg CO2 per kWh for FY 2024-25, including wheeled wind units. Market based, the wind units credited to your bill count as zero if you keep the renewable attributes and do not sell them as certificates. Keep the wheeling and banking statements.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Spinning, weaving and home textile mills around Coimbatore, Tiruppur, Karur and Tirunelveli that own wind turbines",
@@ -28,7 +28,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, so the location based figure traces back to each bill; wind adjustments come from your statements.",
+  "senseible": "Senseible reads electricity bills at 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database version 21.0, so the location based figure traces back to each bill; wind adjustments come from your statements.",
   "links": [
     {
       "label": "Wind open access Scope 2",

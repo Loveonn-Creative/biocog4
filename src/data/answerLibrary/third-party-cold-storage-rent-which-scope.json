@@ -47,7 +47,7 @@
     ],
     "note": "Illustrative figures. Add your share of DG diesel and refrigerant if the operator provides them."
   },
-  "senseible": "Senseible reads purchase invoices; where only the storage charge is available it gives a spend-based estimate labelled with wider uncertainty, and if the operator shares its electricity bills it applies 0.710 kg CO2 per kWh to them.",
+  "senseible": "Senseible reads purchase invoices; where only the storage charge is available it gives a spend-based estimate labelled with wider uncertainty, and if the operator shares its electricity bills it applies 0.710 kg CO2 per kWh for FY 2024-25 to them.",
   "links": [
     {
       "label": "Rented warehouse electricity: Scope 2 or 3",

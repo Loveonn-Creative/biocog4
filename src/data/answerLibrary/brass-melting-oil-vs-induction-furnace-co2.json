@@ -13,7 +13,7 @@
         "Oil-fired crucible: litres of furnace oil per kg melted x 2.97 kg CO2 per litre, plus blower electricity x 0.710.",
         "Coal or coke pit furnace: kg fuel per kg melted x its factor, for example 2.42 kg CO2 per kg of coal.",
         "LPG crucible: kg LPG per kg melted x 2.98 kg CO2 per kg.",
-        "Induction: kWh per kg melted x 0.710 kg CO2 per kWh on grid power, or the lower market-based factor if you buy renewable power with evidence."
+        "Induction: kWh per kg melted x 0.710 kg CO2 per kWh for FY 2024-25 on grid power, or the lower market-based factor if you buy renewable power with evidence."
       ]
     },
     {
@@ -45,7 +45,7 @@
     ],
     "note": "Fuel and kWh per kg are illustrative assumptions, not cluster benchmarks. Use your own furnace logs."
   },
-  "senseible": "Senseible applies 2.97 kg CO2 per litre to the furnace oil on your invoices and 0.710 kg CO2 per kWh to your electricity bills, so a furnace switch shows up in your own records, month against month.",
+  "senseible": "Senseible applies 2.97 kg CO2 per litre to the furnace oil on your invoices and 0.710 kg CO2 per kWh for FY 2024-25 to your electricity bills, so a furnace switch shows up in your own records, month against month.",
   "links": [
     {
       "label": "Cupola or induction for iron",

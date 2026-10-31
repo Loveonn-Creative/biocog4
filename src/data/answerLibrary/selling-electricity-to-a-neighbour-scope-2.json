@@ -26,7 +26,7 @@
     "title": "The subtraction",
     "lines": [
       "Main bill: 60,000 kWh; neighbour sub-meter: 8,000 kWh",
-      "Your Scope 2: 52,000 kWh x 0.710 kg = 36,920 kg CO2"
+      "Your Scope 2: 52,000 kWh x 0.710 (FY 2024-25 grid factor) kg = 36,920 kg CO2"
     ]
   },
   "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",

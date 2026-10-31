@@ -47,7 +47,7 @@
     ],
     "note": "Allocating by floor area instead of seats can give a different answer; state the basis."
   },
-  "senseible": "Senseible reads an operator invoice that prints kWh and applies the CEA factor of 0.710 kg CO2 per kWh. For an all-inclusive desk fee, enter your allocated kWh and the line is marked Entered by you.",
+  "senseible": "Senseible reads an operator invoice that prints kWh and applies the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25. For an all-inclusive desk fee, enter your allocated kWh and the line is marked Entered by you.",
   "links": [
     {
       "label": "Leased factory: which scope",

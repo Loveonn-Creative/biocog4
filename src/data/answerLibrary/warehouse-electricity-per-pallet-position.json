@@ -2,7 +2,7 @@
   "slug": "warehouse-electricity-per-pallet-position",
   "q": "How do I calculate warehouse emissions per pallet position?",
   "title": "Warehouse emissions per pallet position",
-  "short": "Add the warehouse electricity at 0.710 kg CO2 per kWh, generator and forklift diesel at 2.68 kg per litre, and refrigerant top-ups, then divide by pallet positions. Ambient and cold warehouses differ widely, so report each type separately and share by occupied positions.",
+  "short": "Add the warehouse electricity at 0.710 kg CO2 per kWh for FY 2024-25, generator and forklift diesel at 2.68 kg per litre, and refrigerant top-ups, then divide by pallet positions. Ambient and cold warehouses differ widely, so report each type separately and share by occupied positions.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Warehouse operators, 3PLs and their clients",
@@ -38,7 +38,7 @@
     ],
     "note": "Inputs are illustrative; use the warehouse meter and position count."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Warehouse emissions allocation (3PL)",

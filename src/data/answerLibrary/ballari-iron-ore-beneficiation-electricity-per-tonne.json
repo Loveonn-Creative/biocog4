@@ -2,7 +2,7 @@
   "slug": "ballari-iron-ore-beneficiation-electricity-per-tonne",
   "q": "How does a Ballari ore beneficiation plant work out electricity carbon per tonne?",
   "title": "Ballari ore beneficiation: carbon per tonne",
-  "short": "Divide the plant's metered kWh for crushing, grinding, screening and pumping by tonnes of concentrate produced, and multiply by 0.710 kg CO2 per kWh. Report per tonne of concentrate and per tonne of feed, because yield varies with ore grade.",
+  "short": "Divide the plant's metered kWh for crushing, grinding, screening and pumping by tonnes of concentrate produced, and multiply by 0.710 kg CO2 per kWh for FY 2024-25. Report per tonne of concentrate and per tonne of feed, because yield varies with ore grade.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Iron ore beneficiation and washing plants in the Ballari and Hospet region",
@@ -28,7 +28,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Ballari pellet plant CO2",

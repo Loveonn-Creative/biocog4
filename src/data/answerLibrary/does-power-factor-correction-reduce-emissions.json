@@ -33,7 +33,7 @@
       "ol": [
         "Estimate present internal distribution losses from cable lengths, sizes and currents, or from an energy audit.",
         "Scale them by (old power factor / new power factor) squared for the sections where current falls.",
-        "Multiply the kWh saved by 0.710 kg CO2 per kWh, and label it an engineering estimate."
+        "Multiply the kWh saved by 0.710 kg CO2 per kWh for FY 2024-25, and label it an engineering estimate."
       ]
     }
   ],
@@ -47,7 +47,7 @@
     ],
     "note": "The 2 percent loss figure is an assumption for illustration; measure or calculate your own."
   },
-  "senseible": "On kVAh bills Senseible uses the printed kWh, and otherwise kVAh times the printed power factor labelled an estimate, so a better power factor does not show up as lower consumption that never happened. The CEA grid factor of 0.710 kg CO2 per kWh is applied to the kWh.",
+  "senseible": "On kVAh bills Senseible uses the printed kWh, and otherwise kVAh times the printed power factor labelled an estimate, so a better power factor does not show up as lower consumption that never happened. The CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 is applied to the kWh.",
   "links": [
     {
       "label": "Power factor rebate and penalty",

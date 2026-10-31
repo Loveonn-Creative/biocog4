@@ -30,7 +30,7 @@
     {
       "h": "Converting each stream",
       "ul": [
-        "Grid kWh x 0.710 kg CO2 per kWh, the CEA weighted average for India.",
+        "Grid kWh x 0.710 kg CO2 per kWh for FY 2024-25, the CEA weighted average for India.",
         "DG kWh x (2.68 kg CO2 per litre divided by the DG's kWh per litre). Without the DG log, a reasonable estimate needs the month's diesel litres and total DG units from the facility manager.",
         "TR-hours x kW per TR x 0.710 for an electric chiller plant. A vapour absorption plant fired on gas or waste heat needs its own factor."
       ]
@@ -46,7 +46,7 @@
     ],
     "note": "Chilled water is more than half of this tenant's Scope 2, and it is missed when only the electricity line of the CAM bill is counted. The kW per TR is an assumption; use your plant's figure."
   },
-  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. Ask the facility manager for the monthly kWh, DG units and diesel litres in writing, and keep them with the CAM invoices.",
+  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. Ask the facility manager for the monthly kWh, DG units and diesel litres in writing, and keep them with the CAM invoices.",
   "links": [
     {
       "label": "Rented warehouse electricity: which scope?",

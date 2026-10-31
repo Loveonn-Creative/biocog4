@@ -2,7 +2,7 @@
   "slug": "hotel-swimming-pool-heating-emissions",
   "q": "How do I calculate the emissions of heating a hotel swimming pool?",
   "title": "Hotel pool heating emissions",
-  "short": "Count the fuel or electricity used to heat the pool: LPG or diesel for a boiler at their default factors, or the heat pump's electricity at 0.710 kg CO2 per kWh. Add the filtration pump. A pool cover cuts evaporation, which is where most of the heat is lost.",
+  "short": "Count the fuel or electricity used to heat the pool: LPG or diesel for a boiler at their default factors, or the heat pump's electricity at 0.710 kg CO2 per kWh for FY 2024-25. Add the filtration pump. A pool cover cuts evaporation, which is where most of the heat is lost.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Hotels, resorts and clubs with heated pools",
@@ -37,7 +37,7 @@
     ],
     "note": "Fuel and electricity use are illustrative; a heat pump's actual use depends on climate and cover use."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Hotel carbon per occupied room",

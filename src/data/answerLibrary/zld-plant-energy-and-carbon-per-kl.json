@@ -29,7 +29,7 @@
     {
       "h": "Turning the meter readings into CO2",
       "p": [
-        "Electricity: kWh x 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0). Steam: tonnes of steam x boiler fuel per tonne of steam x the fuel factor, such as 2.42 kg CO2 per kg coal or 2.97 kg CO2 per litre furnace oil (IPCC 2006 defaults). Wood or briquette firing produces biogenic CO2, which is reported separately rather than in the Scope 1 total.",
+        "Electricity: kWh x 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database, version 21.0). Steam: tonnes of steam x boiler fuel per tonne of steam x the fuel factor, such as 2.42 kg CO2 per kg coal or 2.97 kg CO2 per litre furnace oil (IPCC 2006 defaults). Wood or briquette firing produces biogenic CO2, which is reported separately rather than in the Scope 1 total.",
         "Divide by kL of effluent treated for an intensity you can track, or by kL of water recovered if you want to compare ZLD water with fresh water."
       ]
     },

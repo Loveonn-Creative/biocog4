@@ -2,7 +2,7 @@
   "slug": "call-centre-emissions-per-seat",
   "q": "How do I calculate the carbon footprint of a call centre per seat?",
   "title": "Call centre emissions per seat",
-  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by production seats. Night shifts and 24-hour cooling raise use per seat, and employee cabs are a separate Scope 1 or Scope 3 line.",
+  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre, then divide by production seats. Night shifts and 24-hour cooling raise use per seat, and employee cabs are a separate Scope 1 or Scope 3 line.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "BPO and contact centre operators",
@@ -38,7 +38,7 @@
     ],
     "note": "Inputs are illustrative; use your bills and seat count."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Night-shift cab emissions",

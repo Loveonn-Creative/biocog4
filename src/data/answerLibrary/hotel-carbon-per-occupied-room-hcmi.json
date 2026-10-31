@@ -33,7 +33,7 @@
       "h": "What a corporate client will check",
       "ol": [
         "The period, ideally the latest full year.",
-        "Grid factor and source, here 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database.",
+        "Grid factor and source, here 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database.",
         "Whether rooftop solar or green tariff power was netted out, and on what basis.",
         "That the figure is per occupied room night and follows HCMI."
       ]
@@ -51,7 +51,7 @@
     ],
     "note": "Areas and consumption are invented for the arithmetic. Add outsourced laundry and refrigerants before you publish your own figure."
   },
-  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. That gives the hotel total; the meeting space split and room nights come from your own records.",
+  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. That gives the hotel total; the meeting space split and room nights come from your own records.",
   "links": [
     {
       "label": "Hotel stay emissions per night (traveller)",

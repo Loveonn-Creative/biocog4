@@ -48,7 +48,7 @@
     ],
     "note": "All quantities, the diesel per m3 and the resin factor are illustrative. Dividing by the 11,200 m2 sawn instead would understate the figure by 5 percent."
   },
-  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a slab footprint, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh, and keeps block and resin purchases in a Scope 3 evidence trail. Product reports are self-declared drafts.",
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a slab footprint, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, and keeps block and resin purchases in a Scope 3 evidence trail. Product reports are self-declared drafts.",
   "links": [
     {
       "label": "How scrap rate affects carbon per unit",

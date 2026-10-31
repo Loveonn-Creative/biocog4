@@ -2,7 +2,7 @@
   "slug": "hydro-reservoir-methane-emissions",
   "q": "Do hydropower reservoirs emit greenhouse gases?",
   "title": "Hydro reservoir methane",
-  "short": "They can: flooded vegetation and soils decompose and release methane, especially in warm, shallow reservoirs. Grid emission factors count only combustion, so reservoir methane is not in the 0.710 figure. Hydro operators can estimate it using IPCC guidance on flooded land.",
+  "short": "They can: flooded vegetation and soils decompose and release methane, especially in warm, shallow reservoirs. Grid emission factors count only combustion, so reservoir methane is not in the 0.710 (FY 2024-25 grid factor) figure. Hydro operators can estimate it using IPCC guidance on flooded land.",
   "topic": "markets",
   "intent": "explain",
   "audience": "Hydropower operators and buyers of hydro power",

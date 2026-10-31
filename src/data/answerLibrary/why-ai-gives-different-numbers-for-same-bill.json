@@ -43,7 +43,7 @@
   "example": {
     "title": "Illustration: one bill, two readings",
     "lines": [
-      "Correct reading: 42,000 kWh x 0.710 kg CO2 per kWh = 29,820 kg CO2",
+      "Correct reading: 42,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 29,820 kg CO2",
       "A reading that drops a zero: 4,200 kWh x 0.710 = 2,982 kg CO2",
       "Gap between the two: 26,838 kg CO2, about 26.8 tonnes, from one digit"
     ],

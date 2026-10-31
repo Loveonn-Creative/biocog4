@@ -45,7 +45,7 @@
       "Effluent by IPCC defaults: 300 x 9 = 2,700 m3; 2,700 x 10 = 27,000 kg COD",
       "Deep open lagoon, MCF 0.8: 27,000 x 0.25 x 0.8 = 5,400 kg CH4; x 27 (AR6, non-fossil) = 1,45,800 kg CO2e",
       "Dryer coal: 45,000 kg x 2.42 = 1,08,900 kg CO2",
-      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Electricity: 60,000 kWh x 0.710 (FY 2024-25 grid factor) = 42,600 kg CO2",
       "Plant total: 1,45,800 + 1,08,900 + 42,600 = 2,97,300 kg; per kg: 2,97,300 / 3,00,000 = 0.99 kg CO2e, before the roots",
       "With 4,000 kg of methane captured and burnt: (5,400 minus 4,000) x 27 = 37,800 kg CO2e, a cut of 1,08,000 kg"
     ],

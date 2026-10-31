@@ -40,7 +40,7 @@
     "title": "Worked example: 100 leased laptops in an office",
     "lines": [
       "Average draw 30 W (assumption), 2,000 hours a year: 100 x 0.030 kW x 2,000 h = 6,000 kWh",
-      "6,000 x 0.710 = 4,260 kg CO2, already inside your Scope 2 from the office bill",
+      "6,000 x 0.710 (FY 2024-25 grid factor) = 4,260 kg CO2, already inside your Scope 2 from the office bill",
       "Lease rental: reported in Category 1 with a spend-based factor on the GST-exclusive rental, labelled spend-based"
     ],
     "note": "The 30 W figure is an illustrative assumption. The Scope 2 part is not added again in Scope 3."

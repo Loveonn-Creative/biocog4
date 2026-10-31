@@ -44,7 +44,7 @@
   "example": {
     "title": "Worked example: a forging unit's corrected figure (illustrative)",
     "lines": [
-      "Sent to buyer: 9 months of bills, 540,000 kWh x 0.710 = 383,400 kg CO2 for 1,800 t of forgings = 213 kg CO2 per t",
+      "Sent to buyer: 9 months of bills, 540,000 kWh x 0.710 (FY 2024-25 grid factor) = 383,400 kg CO2 for 1,800 t of forgings = 213 kg CO2 per t",
       "Added: 3 missing months, 180,000 kWh x 0.710 = 127,800 kg CO2",
       "Added: DG diesel 18,000 L x 2.68 = 48,240 kg CO2",
       "Added: furnace oil for heating billets 60,000 L x 2.97 = 178,200 kg CO2",

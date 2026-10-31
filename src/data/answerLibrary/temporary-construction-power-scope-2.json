@@ -46,7 +46,7 @@
       "Site DG diesel you bought: 2,000 litres x 2.68 = 5,360 kg CO2 in Scope 1"
     ]
   },
-  "senseible": "Senseible reads a temporary connection bill like any other electricity bill, taking billing period, tariff category, sanctioned load and units, and applies 0.710 kg CO2 per kWh for location-based Scope 2. Site diesel invoices you hold are read at 2.68 kg CO2 per litre.",
+  "senseible": "Senseible reads a temporary connection bill like any other electricity bill, taking billing period, tariff category, sanctioned load and units, and applies 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2. Site diesel invoices you hold are read at 2.68 kg CO2 per litre.",
   "links": [
     {
       "label": "Manufacturing Scope 2 emissions in India",

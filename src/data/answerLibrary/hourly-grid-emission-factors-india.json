@@ -2,7 +2,7 @@
   "slug": "hourly-grid-emission-factors-india",
   "q": "Are hourly grid emission factors available for India, and will Scope 2 need them?",
   "title": "Hourly grid emission factors in India",
-  "short": "No official hourly grid factors exist for India. The CEA publishes one annual factor, currently 0.710 kg CO2 per kWh, and the GHG Protocol accepts it. Hourly factors may matter later: the draft Scope 2 revision proposes hourly matching for market-based claims, but nothing is final.",
+  "short": "No official hourly grid factors exist for India. The CEA publishes one annual factor, currently 0.710 kg CO2 per kWh for FY 2024-25, and the GHG Protocol accepts it. Hourly factors may matter later: the draft Scope 2 revision proposes hourly matching for market-based claims, but nothing is final.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Indian companies buying renewable power; data teams",
@@ -46,7 +46,7 @@
     ],
     "note": "In practice hourly coverage would be lower still on cloudy days and in low-sun months."
   },
-  "senseible": "Senseible uses the annual CEA weighted average (0.710 kg CO2 per kWh, database version 21.0) for location-based Scope 2, and shows market-based Scope 2 separately once you add instrument data. No official hourly Indian factors exist for it to apply, and it does not run hourly matching.",
+  "senseible": "Senseible uses the annual CEA weighted average (0.710 kg CO2 per kWh for FY 2024-25, database version 21.0) for location-based Scope 2, and shows market-based Scope 2 separately once you add instrument data. No official hourly Indian factors exist for it to apply, and it does not run hourly matching.",
   "links": [
     {
       "label": "GHG Protocol revision: what is changing",

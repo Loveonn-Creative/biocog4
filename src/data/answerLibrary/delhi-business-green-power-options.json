@@ -37,7 +37,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads your BSES, Tata Power-DDL or NDMC bill for billing period, tariff category, sanctioned load and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh (CEA, version 21.0). It reports market-based Scope 2 alongside when you record the green units or retired RECs with their certificate.",
+  "senseible": "Senseible reads your BSES, Tata Power-DDL or NDMC bill for billing period, tariff category, sanctioned load and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25 (CEA, version 21.0). It reports market-based Scope 2 alongside when you record the green units or retired RECs with their certificate.",
   "links": [
     {
       "label": "Does a green tariff make Scope 2 zero?",

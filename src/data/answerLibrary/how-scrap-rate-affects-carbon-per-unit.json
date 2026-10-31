@@ -40,7 +40,7 @@
     "lines": [
       "Parts forged: 100,000; good parts after inspection: 95,000",
       "Steel bought: 100,000 x 2.5 kg = 250,000 kg x 2.0 kg CO2e per kg (illustrative) = 500,000 kg CO2e",
-      "Electricity: 300,000 kWh x 0.710 kg CO2 per kWh = 213,000 kg CO2",
+      "Electricity: 300,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 213,000 kg CO2",
       "Total: 500,000 + 213,000 = 713,000 kg CO2e",
       "Per good part: 713,000 / 95,000 = 7.51 kg CO2e",
       "If all 100,000 parts were good: 713,000 / 100,000 = 7.13 kg CO2e",

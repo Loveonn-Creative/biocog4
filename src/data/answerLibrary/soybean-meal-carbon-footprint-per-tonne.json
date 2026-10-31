@@ -40,7 +40,7 @@
     "lines": [
       "Farm stage: 300 kg CO2e (assumed, from farm records including N2O); bean transport: 20 kg CO2 (assumed)",
       "Boiler coal: 60 kg x 2.42 kg CO2 per kg = 145.2 kg CO2",
-      "Electricity: 40 kWh x 0.710 = 28.4 kg CO2",
+      "Electricity: 40 kWh x 0.710 (FY 2024-25 grid factor) = 28.4 kg CO2",
       "Total: 300 + 20 + 145.2 + 28.4 = 493.6 kg CO2e per tonne of beans",
       "Economic share of meal (assumed yields and prices): 0.80 t x Rs 40,000 = Rs 32,000 against oil 0.18 t x Rs 1,00,000 = Rs 18,000, so 32,000 / 50,000 = 64%",
       "Meal: 493.6 x 0.64 / 0.80 = 394.9 kg CO2e per tonne of meal"

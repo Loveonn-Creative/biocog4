@@ -2,7 +2,7 @@
   "slug": "baddi-pharma-plant-grid-factor-hydro-state",
   "q": "Can a Baddi pharma plant use a lower grid factor because Himachal runs on hydro?",
   "title": "Baddi plant: hydro state, grid factor",
-  "short": "No. India publishes one national grid factor, 0.710 kg CO2 per kWh in CEA v21.0, and the location based method uses it for every state. Himachal hydro feeds the shared grid. To report lower Scope 2, buy renewable power or certificates and show it under the market based method.",
+  "short": "No. India publishes one national grid factor, 0.710 kg CO2 per kWh for FY 2024-25 in CEA v21.0, and the location based method uses it for every state. Himachal hydro feeds the shared grid. To report lower Scope 2, buy renewable power or certificates and show it under the market based method.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Pharma, FMCG and packaging plants in Baddi, Barotiwala and Nalagarh",

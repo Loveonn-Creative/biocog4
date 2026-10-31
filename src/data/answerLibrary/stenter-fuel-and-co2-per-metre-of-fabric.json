@@ -13,7 +13,7 @@
         "Best: a heat meter on the stenter's thermic fluid line, giving flow x specific heat x supply minus return temperature. Its share of all heat metered is its share of fuel.",
         "Next best: hours run and average valve opening for each consumer on the heater, labelled an estimate.",
         "Gas-fired stenters with burners in each chamber: a gas sub-meter gives the figure directly.",
-        "Add the stenter's own electricity for circulation fans, exhaust fans and drives from a sub-meter, at 0.710 kg CO2 per kWh."
+        "Add the stenter's own electricity for circulation fans, exhaust fans and drives from a sub-meter, at 0.710 kg CO2 per kWh for FY 2024-25."
       ]
     },
     {

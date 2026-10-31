@@ -24,7 +24,7 @@
     {
       "h": "The formula for the extra energy",
       "p": [
-        "Extra kWh a year = output kW x running hours x (1 / efficiency after rewind minus 1 / efficiency of the new motor). Output kW is the motor's rated kW times its load factor. Multiply the extra kWh by 0.710 kg CO2 per kWh for Scope 2, and by your tariff for cost."
+        "Extra kWh a year = output kW x running hours x (1 / efficiency after rewind minus 1 / efficiency of the new motor). Output kW is the motor's rated kW times its load factor. Multiply the extra kWh by 0.710 kg CO2 per kWh for FY 2024-25 for Scope 2, and by your tariff for cost."
       ]
     },
     {
@@ -46,7 +46,7 @@
     ],
     "note": "The 1.5 point loss is an illustrative assumption, not a default; a good rewind may lose little or nothing."
   },
-  "senseible": "Senseible converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh, so a more efficient motor shows up as lower Scope 2 in the records it builds from your electricity bills.",
+  "senseible": "Senseible converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, so a more efficient motor shows up as lower Scope 2 in the records it builds from your electricity bills.",
   "links": [
     {
       "label": "IE2 to IE4 motor replacement savings",

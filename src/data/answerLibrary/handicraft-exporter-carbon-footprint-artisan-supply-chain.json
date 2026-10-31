@@ -30,7 +30,7 @@
       "h": "Fuels artisans use",
       "ul": [
         "LPG for brazing, soldering and gas kilns: kg x 2.98 kg CO2.",
-        "Grid power for polishing motors and lights: kWh x 0.710 kg CO2.",
+        "Grid power for polishing motors and lights: kWh x 0.710 (FY 2024-25 grid factor) kg CO2.",
         "Firewood and dung cakes in pottery kilns: the CO2 is biogenic and reported separately; CH4 and N2O from burning still count in CO2e.",
         "Coal in some metal clusters: kg x 2.42 kg CO2."
       ]

@@ -18,7 +18,7 @@
       "h": "Furnace fuel and electricity",
       "ul": [
         "Fuel: litres, kg or scm of natural gas, furnace oil or LPG burnt in the furnace, feeders, forehearths and annealing lehrs, times the fuel factor. Scope 1.",
-        "Electricity: kWh from the discom bill for compressors, IS machines, batch house and any electric boosting, times the grid factor (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0). Scope 2.",
+        "Electricity: kWh from the discom bill for compressors, IS machines, batch house and any electric boosting, times the grid factor (0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0). Scope 2.",
         "Keep process CO2 and fuel CO2 as separate lines. A fuel switch cuts only the fuel line."
       ]
     },
@@ -45,13 +45,13 @@
       "Dolomite: 150 t x 0.47732 = 71.60 t CO2",
       "Batch carbonate total: 296.46 t CO2",
       "PNG: 390,000 scm x 2.05 kg CO2 per scm = 799.50 t CO2",
-      "Electricity: 600,000 kWh x 0.710 kg CO2 per kWh = 426.00 t CO2",
+      "Electricity: 600,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 426.00 t CO2",
       "Total: 296.46 + 799.50 + 426.00 = 1,521.96 t CO2",
       "Per tonne of good glass: 1,521.96 / 2,700 = 0.56 t CO2"
     ],
     "note": "Batch quantities, gas and power use are assumptions for the arithmetic, with carbonates taken as pure. Use your own batch sheets and assays. Raw material production upstream is not included."
   },
-  "senseible": "Senseible reads your PNG, furnace oil, LPG and coal invoices (PNG 2.05 kg CO2 per scm, furnace oil 2.97 kg per litre) and your electricity bills at 0.710 kg CO2 per kWh, with the factor and source on each line. Work out the batch carbonate CO2 from your batch records and assays with the IPCC factors above, and keep it as its own line.",
+  "senseible": "Senseible reads your PNG, furnace oil, LPG and coal invoices (PNG 2.05 kg CO2 per scm, furnace oil 2.97 kg per litre) and your electricity bills at 0.710 kg CO2 per kWh for FY 2024-25, with the factor and source on each line. Work out the batch carbonate CO2 from your batch records and assays with the IPCC factors above, and keep it as its own line.",
   "links": [
     {
       "label": "Process CO2 from limestone calcination",

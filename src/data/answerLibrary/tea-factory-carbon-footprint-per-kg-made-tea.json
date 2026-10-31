@@ -2,7 +2,7 @@
   "slug": "tea-factory-carbon-footprint-per-kg-made-tea",
   "q": "What is the carbon footprint per kg of made tea from an Indian tea factory?",
   "title": "Carbon footprint per kg of made tea",
-  "short": "Add up the factory's fuel and electricity emissions for the season and divide by kg of made tea. In formula: (coal kg x 2.42 + gas scm x 2.05 + kWh x 0.710 + DG diesel litres x 2.68) / kg made tea. Report firewood CO2 separately as biogenic, and add green leaf if you buy it.",
+  "short": "Add the season's fuel and electricity emissions and divide by kg of made tea: (coal kg x 2.42 + gas scm x 2.05 + kWh x 0.710 (FY 2024-25 grid factor) + DG diesel litres x 2.68) / kg made tea. Report firewood CO2 separately as biogenic, and add green leaf if you buy it.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Tea estates and bought-leaf factories in Assam, West Bengal and Nilgiris selling to UK and EU",

@@ -51,7 +51,7 @@
       "Assumed average draw: 3 W per vCPU, including memory (illustrative assumption, label it)",
       "40 x 730 x 3 = 87,600 Wh = 87.6 kWh at the server",
       "Assumed PUE: 1.2, so 87.6 x 1.2 = 105.12 kWh at the facility",
-      "Location-based factor: 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0)",
+      "Location-based factor: 0.710 kg CO2 per kWh for FY 2024-25 (CEA CO2 Baseline Database, version 21.0)",
       "105.12 x 0.710 = 74.6 kg CO2 for the month, about 0.9 tonnes a year"
     ],
     "note": "This leaves out the embodied emissions of the hardware. Replace the assumed draw and PUE with provider figures where they are published."

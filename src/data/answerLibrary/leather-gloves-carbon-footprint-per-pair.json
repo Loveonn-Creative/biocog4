@@ -31,7 +31,7 @@
     {
       "h": "Factory energy per pair",
       "p": [
-        "Take the factory's electricity and DG diesel for the period, convert with 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre, and divide by pairs produced in the same period. Glove stitching is light work, so this line is usually small next to leather."
+        "Take the factory's electricity and DG diesel for the period, convert with 0.710 kg CO2 per kWh for FY 2024-25 and 2.68 kg CO2 per litre, and divide by pairs produced in the same period. Glove stitching is light work, so this line is usually small next to leather."
       ]
     }
   ],
@@ -48,7 +48,7 @@
     ],
     "note": "Tannery, lining and packaging factors are assumptions. Leather is about 74% of this total, so a better cutting yield moves the figure most."
   },
-  "senseible": "Senseible reads the glove factory's electricity bills (0.710 kg CO2 per kWh, CEA version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the factory share of a per pair figure. The tannery figure and pairs produced come from you, and product reports are self-declared drafts.",
+  "senseible": "Senseible reads the glove factory's electricity bills (0.710 kg CO2 per kWh for FY 2024-25, CEA version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the factory share of a per pair figure. The tannery figure and pairs produced come from you, and product reports are self-declared drafts.",
   "links": [
     {
       "label": "Leather footprint per square foot",

@@ -42,7 +42,7 @@
       ]
     }
   ],
-  "senseible": "Senseible already reports location-based and market-based Scope 2 separately, using the CEA factor of 0.710 kg CO2 per kWh for location-based; market-based needs your instrument data. It does not apply hourly matching or interpret draft standards before they are final.",
+  "senseible": "Senseible already reports location-based and market-based Scope 2 separately, using the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25 for location-based; market-based needs your instrument data. It does not apply hourly matching or interpret draft standards before they are final.",
   "links": [
     { "label": "Market vs location-based Scope 2", "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide" },
     { "label": "Does a green tariff make Scope 2 zero?", "to": "/answers/green-tariff-zero-scope-2" },

@@ -2,7 +2,7 @@
   "slug": "gold-refinery-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of a gold refinery per kilogram?",
   "title": "Gold refinery carbon per kg",
-  "short": "Add the refinery electricity at 0.710 kg CO2 per kWh and any LPG or gas for melting at its default factor, then divide by kilograms refined. That is the refining stage only; the origin of the gold, mined or recycled, is a separate part of the full footprint and must be added from the supplier.",
+  "short": "Add the refinery electricity at 0.710 kg CO2 per kWh for FY 2024-25 and any LPG or gas for melting at its default factor, then divide by kilograms refined. That is the refining stage only; the origin of the gold, mined or recycled, is a separate part of the full footprint and must be added from the supplier.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Gold refiners, bullion dealers and jewellery manufacturers",

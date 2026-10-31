@@ -44,7 +44,7 @@
     "title": "Worked example: one 100 MW solar loan in India",
     "lines": [
       "Bank outstanding Rs 200 crore; project equity and debt Rs 500 crore; attribution 200 / 500 = 0.4",
-      "Auxiliary grid import: 600,000 kWh x 0.710 kg CO2 per kWh = 426,000 kg, 426 t CO2",
+      "Auxiliary grid import: 600,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 426,000 kg, 426 t CO2",
       "Financed emissions: 0.4 x 426 = 170.4 t CO2",
       "Separate line, avoided: 100 MW x 8,760 h x 18% = 157,680 MWh; 157,680 x 0.710 t per MWh = 111,952.8 t; bank share 0.4 x 111,952.8 = 44,781 t CO2",
       "Reported: 170.4 t financed, and 44,781 t avoided shown apart, not netted"

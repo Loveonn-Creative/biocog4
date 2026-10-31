@@ -47,7 +47,7 @@
       "FY2026-27: 14 days, 12,000 x 14 / 30 = 5,600 kWh, x 0.710 = 3,976 kg CO2",
       "Check: 6,400 + 5,600 = 12,000 kWh; 4,544 + 3,976 = 8,520 kg CO2"
     ],
-    "note": "Uses the CEA weighted average factor of 0.710 kg CO2 per kWh (version 21.0) for both parts."
+    "note": "Uses the CEA weighted average factor of 0.710 kg CO2 per kWh for FY 2024-25 (version 21.0) for both parts."
   },
   "senseible": "Senseible reads the billing period from each bill and splits the kWh by days across reporting years, April to March for India, and across factor validity periods, as described in its white paper. It splits by days only, so if you have interim meter readings, split that bill by readings in your own working.",
   "links": [

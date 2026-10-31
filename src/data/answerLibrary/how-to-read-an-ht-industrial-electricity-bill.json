@@ -41,12 +41,12 @@
     "lines": [
       "Contract demand 500 kVA; recorded maximum demand 380 kVA; minimum billing at 75% of contract demand = 375 kVA; billing demand = 380 kVA",
       "Energy: 1,20,000 kWh, split into peak, normal and solar hour blocks for ToD",
-      "Carbon: 1,20,000 kWh x 0.710 kg CO2 per kWh = 85,200 kg CO2, about 85.2 tonnes",
+      "Carbon: 1,20,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 85,200 kg CO2, about 85.2 tonnes",
       "Demand, ToD, power factor, FPPCA and duty lines change the rupee total but not the CO2"
     ],
     "note": "Use the percentages and rates in your own state commission's current tariff order; they differ by state and year."
   },
-  "senseible": "Senseible reads only the billing details from an electricity bill: billing period, tariff category, sanctioned load and units. It applies the CEA grid factor of 0.710 kg CO2 per kWh to kWh units, gives kVAh lines no factor, and does not check your tariff charges or demand calculation.",
+  "senseible": "Senseible reads only the billing details from an electricity bill: billing period, tariff category, sanctioned load and units. It applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 to kWh units, gives kVAh lines no factor, and does not check your tariff charges or demand calculation.",
   "links": [
     {
       "label": "Can AI read an electricity bill?",

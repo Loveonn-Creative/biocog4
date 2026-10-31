@@ -27,7 +27,7 @@
       "ol": [
         "Take the number of deliveries and the average distance per delivery, including the pickup leg, from app or GPS logs.",
         "Total km x a per-km factor for the vehicle type. For a petrol two-wheeler, the factor is 2.31 kg CO2 per litre divided by km per litre.",
-        "For electric two-wheelers, use kWh per km x 0.710 kg CO2 per kWh.",
+        "For electric two-wheelers, use kWh per km x 0.710 kg CO2 per kWh for FY 2024-25.",
         "Count only trips made for you. A rider working for several platforms is shared."
       ]
     }

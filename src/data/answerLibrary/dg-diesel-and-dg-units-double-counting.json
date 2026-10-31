@@ -44,7 +44,7 @@
     ],
     "note": "2.68 kg CO2 per litre is the IPCC 2006 default for diesel."
   },
-  "senseible": "Senseible reads diesel quantities from fuel invoices and slips at 2.68 kg CO2 per litre for Scope 1, and discom electricity bills at 0.710 kg CO2 per kWh for Scope 2, so DG power stays in Scope 1 through its fuel. Keep the DG log alongside as supporting evidence.",
+  "senseible": "Senseible reads diesel quantities from fuel invoices and slips at 2.68 kg CO2 per litre for Scope 1, and discom electricity bills at 0.710 kg CO2 per kWh for FY 2024-25 for Scope 2, so DG power stays in Scope 1 through its fuel. Keep the DG log alongside as supporting evidence.",
   "links": [
     {
       "label": "Diesel generator: Scope 1 or Scope 2",

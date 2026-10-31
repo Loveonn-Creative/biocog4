@@ -2,7 +2,7 @@
   "slug": "pump-efficiency-test-and-replacement-savings",
   "q": "How do I test a pump's efficiency and work out the CO2 saved by replacing it?",
   "title": "Pump efficiency test and replacement CO2",
-  "short": "Measure flow, total head and input power at the pump's normal duty. Hydraulic power in kW is flow (m3/s) x head (m) x 1,000 x 9.81 / 1,000; divide it by input power for wire-to-water efficiency. The saving from a new pump is the input power difference at the same duty x hours x 0.710 kg CO2 per kWh.",
+  "short": "Measure flow, total head and input power at the pump's normal duty. Hydraulic power in kW is flow (m3/s) x head (m) x 1,000 x 9.81 / 1,000; divide it by input power for wire-to-water efficiency. The saving from a new pump is the input power difference at the same duty x hours x 0.710 kg CO2/kWh (FY 2024-25).",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Plant engineers and utility managers",

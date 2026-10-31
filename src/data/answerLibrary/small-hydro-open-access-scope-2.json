@@ -2,7 +2,7 @@
   "slug": "small-hydro-open-access-scope-2",
   "q": "Can we claim zero Scope 2 if we buy small hydro power through open access?",
   "title": "Small hydro via open access: Scope 2",
-  "short": "Under the market-based method, yes for the units covered, if the contract and documents prove you alone claim that power. Under the location-based method you still use the grid factor, 0.710 kg CO2 per kWh. Report both.",
+  "short": "Under the market-based method, yes for the units covered, if the contract and documents prove you alone claim that power. Under the location-based method you still use the grid factor, 0.710 kg CO2 per kWh for FY 2024-25. Report both.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "Factories buying renewable power through open access",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Biomass power via open access",

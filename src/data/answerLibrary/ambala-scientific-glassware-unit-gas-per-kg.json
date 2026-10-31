@@ -2,7 +2,7 @@
   "slug": "ambala-scientific-glassware-unit-gas-per-kg",
   "q": "How do I calculate CO2 per kg of glassware at an Ambala scientific glassware unit?",
   "title": "Ambala glassware: CO2 per kg",
-  "short": "LPG burnt in lampworking burners and lehrs × 2.98 kg CO2 per kg of LPG, plus electricity × 0.710, divided by kg of good glassware. Bought borosilicate tubing carries its own footprint in Scope 3, often larger than your direct emissions.",
+  "short": "LPG burnt in lampworking burners and lehrs × 2.98 kg CO2 per kg of LPG, plus electricity × 0.710 (FY 2024-25 grid factor), divided by kg of good glassware. Bought borosilicate tubing carries its own footprint in Scope 3, often larger than your direct emissions.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Scientific and laboratory glassware makers in Ambala",

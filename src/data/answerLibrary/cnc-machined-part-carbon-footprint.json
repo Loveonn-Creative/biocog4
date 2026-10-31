@@ -43,13 +43,13 @@
     "title": "Worked example: a steel shaft",
     "lines": [
       "Bar input: 1.6 kg (1.0 kg finished + 0.6 kg chips) x 2.5 kg CO2e per kg (illustrative steel factor) = 4.000 kg CO2e",
-      "Machining: 10 kW x 0.6 load x 0.5 h = 3.0 kWh x 0.710 kg CO2 per kWh = 2.130 kg CO2",
+      "Machining: 10 kW x 0.6 load x 0.5 h = 3.0 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 2.130 kg CO2",
       "Heat treatment: 1.0 kg x 0.5 kWh per kg = 0.5 kWh x 0.710 = 0.355 kg CO2",
       "Total: 4.000 + 2.130 + 0.355 = 6.485, about 6.5 kg CO2e per part"
     ],
     "note": "The steel factor, machine power, load, cycle time and heat treatment energy are illustrative; use the mill's figure and your own measurements. Material is about 62 percent of this part's footprint, so cutting chip mass by a better bar size helps more than shaving cycle time."
   },
-  "senseible": "Senseible reads the electricity, fuel and freight invoices behind the machine energy, at the CEA grid factor of 0.710 kg CO2 per kWh, and keeps bar and billet purchases in a Scope 3 evidence trail. Product reports are self-declared drafts; the input mass per part comes from your routing data.",
+  "senseible": "Senseible reads the electricity, fuel and freight invoices behind the machine energy, at the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, and keeps bar and billet purchases in a Scope 3 evidence trail. Product reports are self-declared drafts; the input mass per part comes from your routing data.",
   "links": [
     {
       "label": "How scrap rate affects carbon per unit",

@@ -49,7 +49,7 @@
   "example": {
     "title": "Worked example: one master figure, three formats",
     "lines": [
-      "Master set, FY 2025-26: 2,40,000 kWh x 0.710 kg CO2 per kWh = 170.4 t CO2 (Scope 2)",
+      "Master set, FY 2025-26: 2,40,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 170.4 t CO2 (Scope 2)",
       "Diesel: 8,000 L x 2.68 kg CO2 per litre = 21.44 t CO2 (Scope 1)",
       "Buyer A wants tonnes: 191.84 t CO2; Buyer B wants kg: 191,840 kg CO2",
       "Buyer C wants electricity in GJ: 240 MWh x 3.6 = 864 GJ"

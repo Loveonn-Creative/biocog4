@@ -48,7 +48,7 @@
     "lines": [
       "CBG sold: 5 tonnes a day x 330 days = 1,650 tonnes a year",
       "Fossil fuel displaced, using the CNG factor of 2.69 kg CO2 per kg: 16,50,000 x 2.69 = 44,38,500 kg, about 4,439 t CO2",
-      "Grid electricity: 12,00,000 kWh x 0.710 kg CO2 per kWh = 8,52,000 kg, 852 t CO2",
+      "Grid electricity: 12,00,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 8,52,000 kg, 852 t CO2",
       "Before methane avoided and leakage: 4,439 minus 852 = 3,587 t CO2 a year"
     ],
     "note": "All plant figures are assumptions. The methodology and its tools set the factors to use in a real project, and the methane avoided and leakage terms usually change the result a lot."

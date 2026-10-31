@@ -10,7 +10,7 @@
     {
       "h": "Why the category does not change the factor",
       "p": [
-        "The GHG Protocol Scope 2 Guidance builds location-based Scope 2 from the average emission intensity of the grid where you use the power. In India that is one national figure, 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0. A unit billed under HT industrial, LT commercial or a peak-hour slab comes from the same grid, so it carries the same factor. Tariff categories set prices, not the source of the power."
+        "The GHG Protocol Scope 2 Guidance builds location-based Scope 2 from the average emission intensity of the grid where you use the power. In India that is one national figure, 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database version 21.0. A unit billed under HT industrial, LT commercial or a peak-hour slab comes from the same grid, so it carries the same factor. Tariff categories set prices, not the source of the power."
       ]
     },
     {
@@ -40,7 +40,7 @@
     ],
     "note": "The market-based line applies the grid factor to the 30,000 kWh not covered by the green tariff. Where no residual mix factor is published, say in the report which factor you used for those units."
   },
-  "senseible": "Senseible reads the tariff category and units from your bill and calculates location-based Scope 2 as kWh x 0.710 kg CO2 per kWh, whatever the tariff. A green tariff shows only in market-based Scope 2, when you record it as an instrument with its quantity, period and evidence.",
+  "senseible": "Senseible reads the tariff category and units from your bill and calculates location-based Scope 2 as kWh x 0.710 kg CO2 per kWh for FY 2024-25, whatever the tariff. A green tariff shows only in market-based Scope 2, when you record it as an instrument with its quantity, period and evidence.",
   "links": [
     {
       "label": "Green tariff and zero Scope 2",

@@ -2,7 +2,7 @@
   "slug": "pharma-brine-chilling-plant-emissions",
   "q": "How do I calculate emissions from a pharma plant's brine chilling system running below zero?",
   "title": "Brine chilling plant emissions in pharma",
-  "short": "Multiply the brine plant's kWh, from a sub-meter or measured kW per TR x TR x hours, by 0.710 kg CO2 per kWh, then add refrigerant topped up in kg times its GWP. Expect kW per TR well above a normal chiller, because compressors work harder at sub-zero evaporator temperatures.",
+  "short": "Multiply the brine plant's kWh, from a sub-meter or measured kW per TR x TR x hours, by 0.710 kg CO2 per kWh for FY 2024-25, then add refrigerant topped up in kg times its GWP. Expect kW per TR well above a normal chiller, because compressors work harder at sub-zero evaporator temperatures.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "API and intermediate manufacturers",
@@ -50,7 +50,7 @@
     ],
     "note": "Load, hours, kW per TR and the top-up are illustrative. HFC-134a only shows the arithmetic; use the gas named on your service invoices."
   },
-  "senseible": "Senseible applies 0.710 kg CO2 per kWh to plant electricity from bills, and to brine plant kWh from a meter feed where one is set up with the Senseible team. Refrigerant top-ups are recorded as Scope 1 when the gas and kilograms charged are given.",
+  "senseible": "Senseible applies 0.710 kg CO2 per kWh for FY 2024-25 to plant electricity from bills, and to brine plant kWh from a meter feed where one is set up with the Senseible team. Refrigerant top-ups are recorded as Scope 1 when the gas and kilograms charged are given.",
   "links": [
     {
       "label": "Chiller plant emissions per TR-hour",

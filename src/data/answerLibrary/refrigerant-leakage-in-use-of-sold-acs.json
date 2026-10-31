@@ -48,7 +48,7 @@
       "Charge 1.0 kg, leak rate 4% a year, life 10 years (assumed, inside the IPCC ranges)",
       "Refrigerant leaked: 10,000 x 1.0 x 0.04 x 10 = 4,000 kg of R-32",
       "Leakage emissions: 4,000 x 771 = 3,084,000 kg CO2e, about 3,084 t CO2e",
-      "Electricity, for comparison: 1.2 kW x 1,200 hours a year x 10 years = 14,400 kWh per unit; x 0.710 = 10,224 kg CO2 per unit; x 10,000 = about 102,240 t CO2",
+      "Electricity, for comparison: 1.2 kW x 1,200 hours a year x 10 years = 14,400 kWh per unit; x 0.710 (FY 2024-25 grid factor) = 10,224 kg CO2 per unit; x 10,000 = about 102,240 t CO2",
       "Leakage is about 3% of this model's use-phase total; on R-410A the leakage line would be about 2.9 times larger"
     ],
     "note": "Charge, leak rate, running hours and life are illustrative. Use your nameplate data and field service records."

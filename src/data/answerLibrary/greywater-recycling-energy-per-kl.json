@@ -2,7 +2,7 @@
   "slug": "greywater-recycling-energy-per-kl",
   "q": "How do I calculate the energy and CO2 per kL of recycled greywater?",
   "title": "Greywater recycling energy per kL",
-  "short": "Divide the recycling plant's electricity, from a sub-meter, by kL treated and reused, then multiply by 0.710 kg CO2 per kWh. Compare it with the energy per kL of the fresh water it replaces to see whether reuse also saves emissions.",
+  "short": "Divide the recycling plant's electricity, from a sub-meter, by kL treated and reused, then multiply by 0.710 kg CO2 per kWh for FY 2024-25. Compare it with the energy per kL of the fresh water it replaces to see whether reuse also saves emissions.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Housing societies, hotels, offices and campuses",
@@ -37,7 +37,7 @@
     ],
     "note": "Inputs are illustrative; use the plant sub-meter and flow meter."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Sewage treatment plant electricity per kL",

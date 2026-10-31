@@ -41,7 +41,7 @@
       "Entity A runs a captive plant; its fuel gives 1,500 t CO2, all in A's Scope 1",
       "A sells 2,000 MWh to Entity B; B also buys 5,000 MWh from the grid",
       "Group Scope 1 includes A's 1,500 t once",
-      "Group Scope 2: only grid power, 5,000,000 kWh x 0.710 = 3,550 t",
+      "Group Scope 2: only grid power, 5,000,000 kWh x 0.710 (FY 2024-25 grid factor) = 3,550 t",
       "Group Scope 1 and 2: 1,500 + 3,550 = 5,050 t, with B's purchase from A eliminated"
     ]
   },

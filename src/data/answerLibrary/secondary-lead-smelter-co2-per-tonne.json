@@ -13,7 +13,7 @@
         "Reductant: coke or anthracite in the rotary furnace; its carbon leaves as CO2, so CO2 = tonnes x carbon share x 44/12.",
         "Flux and desulphurisation: soda ash releases about 0.415 t CO2 per tonne used, the IPCC carbonate factor for sodium carbonate.",
         "Fuel for the furnace and refining kettles: furnace oil at 2.97 kg CO2 per litre or PNG at 2.05 kg per scm.",
-        "Electricity for battery breaking, fans and bag filters: kWh x 0.710 kg CO2, reported as Scope 2."
+        "Electricity for battery breaking, fans and bag filters: kWh x 0.710 (FY 2024-25 grid factor) kg CO2, reported as Scope 2."
       ]
     },
     {

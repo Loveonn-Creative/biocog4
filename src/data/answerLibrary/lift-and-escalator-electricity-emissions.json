@@ -2,7 +2,7 @@
   "slug": "lift-and-escalator-electricity-emissions",
   "q": "How do I calculate the emissions from lifts and escalators in a building?",
   "title": "Lift and escalator emissions",
-  "short": "Sub-meter the lifts and escalators, or estimate from rated motor power and run hours, then multiply kWh by 0.710 kg CO2 per kWh. They sit inside the building's Scope 2, so report them as a sub-figure when planning regenerative drives or escalator sleep modes.",
+  "short": "Sub-meter the lifts and escalators, or estimate from rated motor power and run hours, then multiply kWh by 0.710 kg CO2 per kWh for FY 2024-25. They sit inside the building's Scope 2, so report them as a sub-figure when planning regenerative drives or escalator sleep modes.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Building managers, malls and office landlords",
@@ -37,7 +37,7 @@
     ],
     "note": "Inputs are illustrative; use sub-meter readings where you have them."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Coworking space: Scope 2 or Category 8?",

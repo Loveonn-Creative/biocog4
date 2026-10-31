@@ -2,7 +2,7 @@
   "slug": "port-handling-emissions-per-teu",
   "q": "How do I calculate container handling emissions per TEU at a port or terminal?",
   "title": "Port handling emissions per TEU",
-  "short": "Add the terminal's electricity for cranes and reefers at 0.710 kg CO2 per kWh and diesel for straddle carriers, reach stackers and yard tractors at 2.68 kg per litre. Divide by TEU handled. Shippers using the terminal report their share in Scope 3 through the GLEC Framework.",
+  "short": "Add the terminal's electricity for cranes and reefers at 0.710 kg CO2 per kWh for FY 2024-25 and diesel for straddle carriers, reach stackers and yard tractors at 2.68 kg per litre. Divide by TEU handled. Shippers using the terminal report their share in Scope 3 through the GLEC Framework.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Port terminals, container freight stations and inland depots",

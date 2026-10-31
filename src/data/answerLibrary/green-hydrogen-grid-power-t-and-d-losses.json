@@ -41,7 +41,7 @@
     ],
     "note": "CEA's version 22.0 gives 0.675 kg per kWh for FY 2025-26; use the figure for the year you certify."
   },
-  "senseible": "Senseible reads grid units from your electricity bills each month and applies the CEA grid factor of 0.710 kg CO2 per kWh for Scope 2. It does not apply the GHCI loss adjustment, so treat its Scope 2 figure as an input, not your certified intensity.",
+  "senseible": "Senseible reads grid units from your electricity bills each month and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 for Scope 2. It does not apply the GHCI loss adjustment, so treat its Scope 2 figure as an input, not your certified intensity.",
   "links": [
     {
       "label": "Renewable power proof",

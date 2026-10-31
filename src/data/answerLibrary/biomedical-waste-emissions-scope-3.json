@@ -39,7 +39,7 @@
     "title": "Worked example: one month at a 150-bed hospital",
     "lines": [
       "Yellow, incinerated: 1.2 t x 0.65 x 0.60 x 0.40 x 1.0 x 44/12 = 0.686 t CO2 (dry matter, carbon, fossil share and oxidation are placeholder values)",
-      "Red, autoclaved and shredded: 800 kg x 0.3 kWh per kg (assumed operator figure) x 0.710 = 170.4 kg CO2",
+      "Red, autoclaved and shredded: 800 kg x 0.3 kWh per kg (assumed operator figure) x 0.710 (FY 2024-25 grid factor) = 170.4 kg CO2",
       "White and blue: small, left out unless the CBWTF gives a figure",
       "Total: 686.4 + 170.4 = 856.8 kg CO2, about 0.86 tonnes for the month"
     ],

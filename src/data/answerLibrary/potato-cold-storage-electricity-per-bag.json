@@ -2,7 +2,7 @@
   "slug": "potato-cold-storage-electricity-per-bag",
   "q": "How do I calculate the emissions of storing potatoes in cold storage per bag?",
   "title": "Potato cold storage emissions per bag",
-  "short": "Take the cold store's electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre for the storage season, then divide by bag-months stored. A full store spreads the same refrigeration load over more bags, so occupancy changes the figure per bag.",
+  "short": "Take the cold store's electricity at 0.710 kg CO2 per kWh for FY 2024-25 and generator diesel at 2.68 kg per litre for the storage season, then divide by bag-months stored. A full store spreads the same refrigeration load over more bags, so occupancy changes the figure per bag.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Cold storage owners, potato farmers and traders",
@@ -39,7 +39,7 @@
     ],
     "note": "Inputs are illustrative; use the store's bills and stock register."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Cold storage emissions per tonne",

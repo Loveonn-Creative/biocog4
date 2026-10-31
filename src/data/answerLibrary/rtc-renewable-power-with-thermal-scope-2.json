@@ -46,7 +46,7 @@
     ],
     "note": "A coal plant's own rate is usually above the grid average, so using 0.710 for the thermal share understates market-based Scope 2; say which you used."
   },
-  "senseible": "Senseible gives location-based Scope 2 from the metered units on your bill at 0.710 kg CO2 per kWh. The market-based split uses the renewable and thermal units and any supplier rate from your supplier's statement, which you provide.",
+  "senseible": "Senseible gives location-based Scope 2 from the metered units on your bill at 0.710 kg CO2 per kWh for FY 2024-25. The market-based split uses the renewable and thermal units and any supplier rate from your supplier's statement, which you provide.",
   "links": [
     {
       "label": "Open access green power on the bill",

@@ -45,7 +45,7 @@
     "title": "Illustrative example: one factory, two reports, a 28% gap",
     "lines": [
       "Diesel in both: 20,000 L x 2.68 kg CO2/L = 53.6 t CO2",
-      "Report A electricity: 300,000 kWh x 0.710 (CEA v21.0) = 213.0 t CO2",
+      "Report A electricity: 300,000 kWh x 0.710 (FY 2024-25 grid factor, CEA v21.0) = 213.0 t CO2",
       "Report B electricity: 300,000 kWh x 0.80 (assumed older factor, illustrative) = 240.0 t CO2",
       "Report A steel: 200 t x 2.0 t CO2e/t (assumed material factor) = 400 t CO2e",
       "Report B steel: Rs 1.6 crore x 0.035 kg CO2e per rupee (assumed spend factor) = 560 t CO2e",

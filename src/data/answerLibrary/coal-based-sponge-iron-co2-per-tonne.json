@@ -42,7 +42,7 @@
       "Net carbon: 7,500 minus 15 minus 900 = 6,585 t C; x 44/12 = 24,145 t CO2",
       "Dolomite: 500 t x 0.477 = 238.5 t CO2",
       "Direct total: 24,145 + 238.5 = 24,383.5 t CO2, so 2.44 t CO2 per tonne of DRI",
-      "Grid power for inventory Scope 2: 9,00,000 kWh x 0.710 = 639 t CO2, reported separately"
+      "Grid power for inventory Scope 2: 9,00,000 kWh x 0.710 (FY 2024-25 grid factor) = 639 t CO2, reported separately"
     ],
     "note": "All inputs are assumed for illustration. Use measured coal, char and DRI analyses."
   },

@@ -2,7 +2,7 @@
   "slug": "container-terminal-rtg-crane-electrification-co2",
   "q": "How much CO2 does electrifying container yard cranes save?",
   "title": "Electric yard cranes: CO2 saving",
-  "short": "A diesel rubber-tyred gantry crane burns diesel at 2.68 kg CO2 per litre. An electrified one uses grid power at 0.710 kg CO2 per kWh. Compare litres per box moved before with kWh per box after. The saving is the difference times boxes handled.",
+  "short": "A diesel rubber-tyred gantry crane burns diesel at 2.68 kg CO2 per litre. An electrified one uses grid power at 0.710 kg CO2 per kWh for FY 2024-25. Compare litres per box moved before with kWh per box after. The saving is the difference times boxes handled.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Container terminal operators",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Electric forklift vs diesel",

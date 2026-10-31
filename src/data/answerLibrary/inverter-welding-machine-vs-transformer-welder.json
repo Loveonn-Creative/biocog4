@@ -28,7 +28,7 @@
         "Note arc time from the operator or the machine counter, and idle time as switched-on time minus arc time.",
         "Read idle power with the machine on and no arc.",
         "Repeat with the inverter set on the same job, or use its datasheet efficiency and idle power.",
-        "Work out the yearly kWh difference and multiply by 0.710 kg CO2 per kWh for grid power."
+        "Work out the yearly kWh difference and multiply by 0.710 kg CO2 per kWh for FY 2024-25 for grid power."
       ]
     },
     {

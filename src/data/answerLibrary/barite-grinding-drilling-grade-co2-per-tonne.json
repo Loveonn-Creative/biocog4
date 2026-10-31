@@ -2,7 +2,7 @@
   "slug": "barite-grinding-drilling-grade-co2-per-tonne",
   "q": "How much CO2 does grinding barite for drilling mud emit per tonne?",
   "title": "Barite grinding CO2 per tonne",
-  "short": "Grinding to drilling grade fineness is most of it: mill electricity times 0.710 kg CO2 per kWh, divided by tonnes. Add mining diesel and freight to the buyer. Barite is not a CBAM good, but oilfield buyers increasingly ask for a figure.",
+  "short": "Grinding to drilling grade fineness is most of it: mill electricity times 0.710 kg CO2 per kWh for FY 2024-25, divided by tonnes. Add mining diesel and freight to the buyer. Barite is not a CBAM good, but oilfield buyers increasingly ask for a figure.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Barite miners and grinding units supplying oilfield services",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
   "links": [
     {
       "label": "Stone crusher per tonne",

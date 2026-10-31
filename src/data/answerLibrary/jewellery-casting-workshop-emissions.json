@@ -2,7 +2,7 @@
   "slug": "jewellery-casting-workshop-emissions",
   "q": "How do I calculate the emissions of a jewellery casting workshop?",
   "title": "Jewellery casting workshop emissions",
-  "short": "Add the electricity for burnout ovens, casting machines and polishing at 0.710 kg CO2 per kWh, and LPG for torches and melting at 2.98 kg per kilogram. Divide by pieces or grams cast. Add the metal separately, per gram, from the supplier.",
+  "short": "Add the electricity for burnout ovens, casting machines and polishing at 0.710 kg CO2 per kWh for FY 2024-25, and LPG for torches and melting at 2.98 kg per kilogram. Divide by pieces or grams cast. Add the metal separately, per gram, from the supplier.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Jewellery manufacturers and karigar workshops",
@@ -38,7 +38,7 @@
     ],
     "note": "Inputs are illustrative; use the workshop bill and LPG cylinder records."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Gold jewellery per gram",

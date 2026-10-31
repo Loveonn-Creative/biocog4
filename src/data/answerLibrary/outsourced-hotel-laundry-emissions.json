@@ -38,7 +38,7 @@
   "example": {
     "title": "Worked example: one month, vendor data shared",
     "lines": [
-      "Vendor month: 18,000 kWh x 0.710 = 12,780 kg CO2",
+      "Vendor month: 18,000 kWh x 0.710 (FY 2024-25 grid factor) = 12,780 kg CO2",
       "Vendor PNG: 4,000 scm x 2.05 = 8,200 kg CO2",
       "Vendor total: 20,980 kg CO2 for 120,000 kg of linen, so 0.175 kg CO2 per kg",
       "Your share: 9,000 kg of linen, 9,000 / 120,000 = 7.5%",

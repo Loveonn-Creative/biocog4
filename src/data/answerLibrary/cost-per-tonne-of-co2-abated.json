@@ -11,7 +11,7 @@
       "h": "The formula",
       "p": [
         "Abatement cost (rupees per tonne) = (capital cost + extra running cost over the life minus energy cost saved over the life) divided by tonnes of CO2 cut over the life.",
-        "Tonnes cut = energy saved x emission factor. For grid electricity in India use 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database; for fuels use the IPCC 2006 defaults, such as 2.68 kg CO2 per litre of diesel or 2.05 kg CO2 per scm of PNG."
+        "Tonnes cut = energy saved x emission factor. For grid electricity in India use 0.710 kg CO2 per kWh for FY 2024-25 from the CEA CO2 Baseline Database; for fuels use the IPCC 2006 defaults, such as 2.68 kg CO2 per litre of diesel or 2.05 kg CO2 per scm of PNG."
       ]
     },
     {

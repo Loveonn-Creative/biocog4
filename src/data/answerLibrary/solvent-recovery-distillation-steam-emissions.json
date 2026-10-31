@@ -2,7 +2,7 @@
   "slug": "solvent-recovery-distillation-steam-emissions",
   "q": "How do I calculate the emissions of a solvent recovery distillation plant?",
   "title": "Solvent recovery plant emissions",
-  "short": "Take the steam the recovery columns use, from the steam meter, and give them that share of the boiler fuel. Add the electricity for pumps and condensers at 0.710 kg CO2 per kWh, then divide by kilograms of solvent recovered. Report boiler fuel as Scope 1 and grid power as Scope 2.",
+  "short": "Take the steam the recovery columns use, from the steam meter, and give them that share of the boiler fuel. Add the electricity for pumps and condensers at 0.710 kg CO2 per kWh for FY 2024-25, then divide by kilograms of solvent recovered. Report boiler fuel as Scope 1 and grid power as Scope 2.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Pharma, API and specialty chemical plants that recover solvents on site",
@@ -40,7 +40,7 @@
     ],
     "note": "Fuel, steam and output are illustrative; use your boiler log, steam meter and recovery register."
   },
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
   "links": [
     {
       "label": "Thermic fluid heater emissions",

@@ -37,7 +37,7 @@
   "example": {
     "title": "Worked example: how big is 25,000 tonnes?",
     "lines": [
-      "Grid electricity alone to reach 25,000 t: 25,000,000 kg / 0.710 = about 3.52 crore kWh a year",
+      "Grid electricity alone to reach 25,000 t: 25,000,000 kg / 0.710 (FY 2024-25 grid factor) = about 3.52 crore kWh a year",
       "A typical MSME plant: 30,00,000 kWh x 0.710 = 2,130 t CO2, plus 2,00,000 L diesel x 2.68 = 536 t CO2",
       "Total: 2,130 + 536 = 2,666 t CO2, about a tenth of the IFC threshold and about 13 percent of ADB's 20,000 t"
     ],

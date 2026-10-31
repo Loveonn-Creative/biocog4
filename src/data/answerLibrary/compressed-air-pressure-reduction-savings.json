@@ -2,7 +2,7 @@
   "slug": "compressed-air-pressure-reduction-savings",
   "q": "How much energy does lowering compressed air pressure save, and how do I work out the CO2?",
   "title": "Lower compressor pressure: energy and CO2",
-  "short": "Lowering compressor delivery pressure by 1 bar cuts compressor power by roughly 6 to 10 percent, according to the BEE guide book on electrical utilities. Multiply your compressor's annual kWh by that share for the saving, then by 0.710 kg CO2 per kWh for grid electricity.",
+  "short": "Lowering compressor delivery pressure by 1 bar cuts compressor power by roughly 6 to 10 percent, according to the BEE guide book on electrical utilities. Multiply your compressor's annual kWh by that share for the saving, then by 0.710 kg CO2 per kWh for FY 2024-25 for grid electricity.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Plant engineers in engineering, textile and plastics units",
@@ -49,7 +49,7 @@
     ],
     "note": "Both cases sit inside the BEE 6 to 10 percent band; 8 percent is used as the upper case to stay cautious. Metered kWh decides the figure you report."
   },
-  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh for FY 2024-25, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
   "links": [
     {
       "label": "Compressed air leaks: cost and CO2",

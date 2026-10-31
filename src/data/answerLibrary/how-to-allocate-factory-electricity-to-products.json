@@ -46,7 +46,7 @@
   "example": {
     "title": "Worked example: two product lines, one month",
     "lines": [
-      "Bill: 120,000 kWh x 0.710 kg CO2/kWh = 85,200 kg CO2",
+      "Bill: 120,000 kWh x 0.710 kg CO2/kWh for FY 2024-25 = 85,200 kg CO2",
       "Line A paint shop is sub-metered: 45,000 kWh, all to Line A",
       "Shared 75,000 kWh split by machine hours (600 h Line A, 900 h Line B): 30,000 kWh to A, 45,000 kWh to B",
       "Line A: 75,000 kWh x 0.710 = 53,250 kg CO2; over 25,000 units = 2.13 kg CO2 per unit",
@@ -55,7 +55,7 @@
     ],
     "note": "Splitting the same bill by mass alone would have given Line B part of the paint shop it never uses."
   },
-  "senseible": "Senseible reads the kWh from each electricity bill and applies the CEA factor of 0.710 kg CO2 per kWh, giving the bill total you allocate. The split between products by sub-meter, machine hours or mass is your own calculation.",
+  "senseible": "Senseible reads the kWh from each electricity bill and applies the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, giving the bill total you allocate. The split between products by sub-meter, machine hours or mass is your own calculation.",
   "links": [
     {
       "label": "Footprint from an electricity bill",

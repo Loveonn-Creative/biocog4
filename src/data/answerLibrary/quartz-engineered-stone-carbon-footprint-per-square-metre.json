@@ -48,7 +48,7 @@
     ],
     "note": "The resin share, both material factors and the plant figures are illustrative; your recipe, supplier data and bills replace them."
   },
-  "senseible": "Senseible reads the plant's electricity bills at 0.710 kg CO2 per kWh and fuel invoices at IPCC 2006 defaults, such as PNG at 2.05 kg CO2 per scm, into a fingerprinted Scope 1 and 2 record that gives the energy part of a per square metre figure. Resin and grit purchases sit in the Scope 3 supplier evidence trail; product reports are self-declared drafts.",
+  "senseible": "Senseible reads the plant's electricity bills at 0.710 kg CO2 per kWh for FY 2024-25 and fuel invoices at IPCC 2006 defaults, such as PNG at 2.05 kg CO2 per scm, into a fingerprinted Scope 1 and 2 record that gives the energy part of a per square metre figure. Resin and grit purchases sit in the Scope 3 supplier evidence trail; product reports are self-declared drafts.",
   "links": [
     {
       "label": "How to get an EPD for Indian exports",

@@ -2,7 +2,7 @@
   "slug": "reclaimed-rubber-carbon-footprint-per-kg",
   "q": "What is the carbon footprint of reclaimed rubber per kg?",
   "title": "Reclaimed rubber per kg",
-  "short": "Reclaimed rubber is made by grinding scrap tyres and devulcanising the crumb with heat, steam and oils. Its own footprint is the electricity for grinding and refining, at 0.710 kg CO2 per kWh, and the boiler fuel. It avoids making new rubber, but report that saving separately.",
+  "short": "Reclaimed rubber is made by grinding scrap tyres and devulcanising the crumb with heat, steam and oils. Its own footprint is the electricity for grinding and refining, at 0.710 kg CO2 per kWh for FY 2024-25, and the boiler fuel. It avoids making new rubber, but report that saving separately.",
   "topic": "product",
   "intent": "explain",
   "audience": "Rubber reclaimers and tyre and footwear makers",
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
   "links": [
     {
       "label": "Tyre retreading",

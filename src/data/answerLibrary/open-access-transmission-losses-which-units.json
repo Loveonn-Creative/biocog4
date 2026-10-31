@@ -24,7 +24,7 @@
     {
       "h": "When the open access units fall short",
       "p": [
-        "If you contracted enough generation for all your load but losses cut what was delivered, the gap was supplied by the discom. Those units carry the CEA grid factor, 0.710 kg CO2 per kWh, in market-based Scope 2 as well, because India does not publish a residual mix. Paying for the injected units does not change that."
+        "If you contracted enough generation for all your load but losses cut what was delivered, the gap was supplied by the discom. Those units carry the CEA grid factor, 0.710 kg CO2 per kWh for FY 2024-25, in market-based Scope 2 as well, because India does not publish a residual mix. Paying for the injected units does not change that."
       ]
     },
     {
@@ -45,7 +45,7 @@
     ],
     "note": "The 7% loss rate is an assumption; use the rate in your energy account. The market-based figure assumes the attributes are contractually yours and no RECs were sold for these units."
   },
-  "senseible": "Senseible reads the adjusted open access units printed on the bill and reports location-based Scope 2 at 0.710 kg CO2 per kWh, with market-based when you record the energy account and contract evidence.",
+  "senseible": "Senseible reads the adjusted open access units printed on the bill and reports location-based Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25, with market-based when you record the energy account and contract evidence.",
   "links": [
     {
       "label": "Open access green power on an HT bill",

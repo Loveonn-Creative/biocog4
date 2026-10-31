@@ -2,7 +2,7 @@
   "slug": "shade-net-carbon-footprint-per-square-metre",
   "q": "What is the carbon footprint of agricultural shade net per square metre?",
   "title": "Shade net per square metre",
-  "short": "Shade nets are knitted from HDPE monofilament, so the polymer is most of the footprint. Extruding and knitting add electricity at 0.710 kg CO2 per kWh. Weigh grams per square metre and multiply by an HDPE factor, then add process energy.",
+  "short": "Shade nets are knitted from HDPE monofilament, so the polymer is most of the footprint. Extruding and knitting add electricity at 0.710 kg CO2 per kWh for FY 2024-25. Weigh grams per square metre and multiply by an HDPE factor, then add process energy.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Shade net makers and polyhouse farmers",

@@ -2,7 +2,7 @@
   "slug": "grid-electricity-hydrogen-carbon-intensity",
   "q": "What is the carbon intensity of hydrogen made with Indian grid electricity?",
   "title": "Carbon intensity of grid-powered hydrogen",
-  "short": "About 37 kg CO2 per kg of hydrogen, if the electrolyser uses about 52 kWh per kg and all power comes from the grid at 0.710 kg CO2 per kWh. That is more than 18 times India's 2 kg CO2e per kg green hydrogen threshold, so grid power can only be a small share.",
+  "short": "About 37 kg CO2 per kg of hydrogen, if the electrolyser uses about 52 kWh per kg and all power comes from the grid at 0.710 kg CO2 per kWh for FY 2024-25. That is more than 18 times India's 2 kg CO2e per kg green hydrogen threshold, so grid power can only be a small share.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Developers and buyers testing electrolyser projects",
@@ -12,7 +12,7 @@
       "ol": [
         "Electricity per kg of hydrogen: the electrolyser system's consumption, including power electronics and balance of plant. About 50 to 55 kWh per kg is a common planning range; 52 is used here as an assumption.",
         "Grid share: the fraction of that electricity not matched by renewable supply.",
-        "Intensity from power: kWh per kg x grid share x 0.710 kg CO2 per kWh.",
+        "Intensity from power: kWh per kg x grid share x 0.710 kg CO2 per kWh for FY 2024-25.",
         "Add other emissions inside the boundary, such as water treatment, compression and any fuel use."
       ]
     },
@@ -42,7 +42,7 @@
     ],
     "note": "52 kWh per kg is an assumption for illustration; use your electrolyser supplier's system figure."
   },
-  "senseible": "Senseible does not calculate hydrogen carbon intensity. Green hydrogen status comes from the national scheme's accredited process, not from Senseible. It reads kWh from electricity bills at 0.710 kg CO2 per kWh, which covers the grid share of a plant's power use.",
+  "senseible": "Senseible does not calculate hydrogen carbon intensity. Green hydrogen status comes from the national scheme's accredited process, not from Senseible. It reads kWh from electricity bills at 0.710 kg CO2 per kWh for FY 2024-25, which covers the grid share of a plant's power use.",
   "links": [
     {
       "label": "India's 2 kg green hydrogen threshold",

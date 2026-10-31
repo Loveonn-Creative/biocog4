@@ -2,7 +2,7 @@
   "slug": "gajraula-chemical-unit-coal-boiler-co2",
   "q": "How does a chemical plant in Gajraula count CO2 from its coal boiler and captive power?",
   "title": "Gajraula chemical plant boiler CO2",
-  "short": "Coal burnt for steam and captive power is Scope 1. Work it out from coal tonnes, calorific value and factor, using lab analysis where available. If the captive plant supplies power to other units, split its emissions by energy delivered, and count grid imports separately at 0.710 kg CO2 per kWh.",
+  "short": "Coal burnt for steam and captive power is Scope 1. Work it out from coal tonnes, calorific value and factor, using lab analysis where available. If the captive plant supplies power to other units, split its emissions by energy delivered, and count grid imports separately at 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Chemical and allied units in Gajraula and western Uttar Pradesh",

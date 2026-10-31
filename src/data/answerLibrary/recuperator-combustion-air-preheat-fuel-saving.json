@@ -26,7 +26,7 @@
         "Fuel per tonne of stock, over at least a few weeks of similar product mix and furnace hours.",
         "Flue gas temperature at the furnace exit and after the recuperator.",
         "Combustion air temperature at the burner, and flue O2, since excess air often creeps up after a retrofit.",
-        "Extra fan power if the recuperator needs a bigger blower, which you subtract as kWh x 0.710."
+        "Extra fan power if the recuperator needs a bigger blower, which you subtract as kWh x 0.710 (FY 2024-25 grid factor)."
       ]
     },
     {

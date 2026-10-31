@@ -34,7 +34,7 @@
     "lines": [
       "Before: 18,000 kWh a month on compressors",
       "After: 13,500 kWh a month for the same output",
-      "Saving: 4,500 kWh x 0.710 kg = 3.2 t CO2 a month, about 38 t a year"
+      "Saving: 4,500 kWh x 0.710 (FY 2024-25 grid factor) kg = 3.2 t CO2 a month, about 38 t a year"
     ],
     "note": "Illustrative. Use your own sub-meter or bill figures."
   },

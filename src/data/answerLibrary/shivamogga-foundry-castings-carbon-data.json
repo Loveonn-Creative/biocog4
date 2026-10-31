@@ -25,7 +25,7 @@
   "example": {
     "title": "Worked example",
     "lines": [
-      "Induction melting: 650 kWh per tonne melted x 0.710 kg = 462 kg CO2",
+      "Induction melting: 650 kWh per tonne melted x 0.710 (FY 2024-25 grid factor) kg = 462 kg CO2",
       "Yield: 0.70 t good castings per tonne melted",
       "About 660 kg CO2 per tonne of good castings from melting"
     ]

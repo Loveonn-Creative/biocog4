@@ -46,7 +46,7 @@
       "Consumption = 19,874.1 minus 18,452.6 = 1,421.5 kWh",
       "Scope 2 = 1,421.5 x 0.710 = 1,009.3 kg CO2, about 1 tonne"
     ],
-    "note": "0.710 kg CO2 per kWh is the CEA weighted average grid factor, version 21.0, for location-based Scope 2."
+    "note": "0.710 kg CO2 per kWh for FY 2024-25 is the CEA weighted average grid factor, version 21.0, for location-based Scope 2."
   },
   "senseible": "Senseible reads electricity bills, and a photo showing two meter readings gives the units as their difference, which suits prepaid meters. It also takes hardware and meter feeds, set up with the Senseible team for each customer rather than as a self-serve integration.",
   "links": [

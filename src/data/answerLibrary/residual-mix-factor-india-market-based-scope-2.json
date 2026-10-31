@@ -2,7 +2,7 @@
   "slug": "residual-mix-factor-india-market-based-scope-2",
   "q": "What residual mix factor should I use for market-based Scope 2 in India?",
   "title": "Residual mix factor for India",
-  "short": "India has no official residual mix factor, so use the CEA grid weighted average, 0.710 kg CO2 per kWh (CO2 Baseline Database version 21.0), for electricity not covered by certificates or contracts. Say in your report that it is a grid average used because no residual mix is published.",
+  "short": "India has no official residual mix factor, so use the CEA grid weighted average, 0.710 kg CO2 per kWh for FY 2024-25 (CO2 Baseline Database version 21.0), for electricity not covered by certificates or contracts. Say in your report that it is a grid average used because no residual mix is published.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Companies reporting dual Scope 2 for CDP, BRSR or EU buyers",
@@ -29,7 +29,7 @@
     {
       "h": "What to write in the report",
       "ol": [
-        "Location-based: total kWh x 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0.",
+        "Location-based: total kWh x 0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0.",
         "Market-based: kWh covered by each instrument, with the instrument type, vintage and retirement proof, at that instrument's factor.",
         "Uncovered kWh in market-based: the same CEA grid average, labelled as used in the absence of a published residual mix for India."
       ]
@@ -44,7 +44,7 @@
       "Note in report: uncovered kWh use the CEA grid average because no Indian residual mix is published"
     ]
   },
-  "senseible": "Senseible reports location-based Scope 2 with the CEA factor, 0.710 kg CO2 per kWh, and market-based Scope 2 when you supply instrument data such as certificates. It does not calculate or publish a residual mix for India.",
+  "senseible": "Senseible reports location-based Scope 2 with the CEA factor, 0.710 kg CO2 per kWh for FY 2024-25, and market-based Scope 2 when you supply instrument data such as certificates. It does not calculate or publish a residual mix for India.",
   "links": [
     {
       "label": "Market vs location-based Scope 2",

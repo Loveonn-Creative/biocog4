@@ -41,7 +41,7 @@
       "LPG agency: 100,000 cylinders of 14.2 kg = 1,420,000 kg = 1,420 t; 1,420,000 x 2.98 = 4,231,600 kg, about 4,232 t CO2",
       "Diesel dealer: 2,000,000 litres x 2.68 = 5,360,000 kg, about 5,360 t CO2",
       "Coal trader: 50,000 t x 2.42 = 121,000 t CO2",
-      "Diesel dealer's own electricity: 60,000 kWh x 0.710 = 42,600 kg, about 42.6 t CO2",
+      "Diesel dealer's own electricity: 60,000 kWh x 0.710 (FY 2024-25 grid factor) = 42,600 kg, about 42.6 t CO2",
       "Sold fuel versus own electricity: 5,360 / 42.6 = about 126 times"
     ],
     "note": "Coal factors vary widely with grade; replace 2.42 with a factor from tested GCV where you have it."

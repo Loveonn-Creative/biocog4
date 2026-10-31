@@ -2,7 +2,7 @@
   "slug": "bhadohi-carpet-wool-dyeing-emissions",
   "q": "How do I calculate dyeing emissions per kg of wool in a Bhadohi carpet unit?",
   "title": "Bhadohi wool dyeing: CO2 per kg",
-  "short": "Add the fuel burned to heat the dye vats, from wood, coal, diesel or gas invoices converted to CO2, and the electricity for pumps and dryers at 0.710 kg CO2 per kWh. Divide by kg of wool dyed in the same month. Wood is biogenic, so report its CO2 separately.",
+  "short": "Add the fuel burned to heat the dye vats, from wood, coal, diesel or gas invoices converted to CO2, and the electricity for pumps and dryers at 0.710 kg CO2 per kWh for FY 2024-25. Divide by kg of wool dyed in the same month. Wood is biogenic, so report its CO2 separately.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Carpet and rug dyeing units in Bhadohi, Mirzapur and Varanasi",

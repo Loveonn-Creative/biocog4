@@ -2,7 +2,7 @@
   "slug": "oragadam-auto-supplier-carbon-data",
   "q": "Our Oragadam plant supplies carmakers near Chennai. What carbon data should we have ready?",
   "title": "Oragadam auto supplier carbon data",
-  "short": "Have a year of electricity bills, diesel and LPG invoices, and production by part, giving Scope 1 and 2 and a figure per part. Grid power at 0.710 kg CO2 per kWh is usually the biggest own source; purchased steel and aluminium are larger still.",
+  "short": "Have a year of electricity bills, diesel and LPG invoices, and production by part, giving Scope 1 and 2 and a figure per part. Grid power at 0.710 kg CO2 per kWh for FY 2024-25 is usually the biggest own source; purchased steel and aluminium are larger still.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Automotive suppliers in Oragadam, Sriperumbudur and the Chennai auto corridor",
@@ -18,7 +18,7 @@
     {
       "h": "Factors",
       "p": [
-        "Use the CEA grid factor of 0.710 kg CO2 per kWh and IPCC fuel defaults, stating both."
+        "Use the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25 and IPCC fuel defaults, stating both."
       ]
     },
     {

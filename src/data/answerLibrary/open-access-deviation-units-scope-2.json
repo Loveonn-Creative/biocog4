@@ -26,7 +26,7 @@
     "title": "One month",
     "lines": [
       "Total drawal 500,000 kWh; renewable settled 380,000 kWh",
-      "Grid share 120,000 kWh x 0.710 kg = 85,200 kg CO2"
+      "Grid share 120,000 kWh x 0.710 (FY 2024-25 grid factor) kg = 85,200 kg CO2"
     ]
   },
   "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",

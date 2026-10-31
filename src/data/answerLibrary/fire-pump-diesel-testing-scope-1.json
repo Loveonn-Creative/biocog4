@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh for FY 2024-25), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
   "links": [
     {
       "label": "Fire extinguisher refills",

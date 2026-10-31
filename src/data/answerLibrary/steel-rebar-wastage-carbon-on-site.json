@@ -36,7 +36,7 @@
       "Wastage: 500 minus 470 = 30 t, which is 6.0% of purchases",
       "Bought per tonne placed: 500 / 470 = 1.064 t",
       "Carbon of the waste: 30 t x the mill's factor per tonne, from its EPD or published data",
-      "Cutting and bending power: 1,900 kWh x 0.710 = 1,349 kg CO2"
+      "Cutting and bending power: 1,900 kWh x 0.710 (FY 2024-25 grid factor) = 1,349 kg CO2"
     ],
     "note": "Quantities are illustrative; use purchase invoices, the bar bending schedule and the mill's published factor."
   },

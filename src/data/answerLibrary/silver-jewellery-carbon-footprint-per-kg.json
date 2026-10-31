@@ -49,7 +49,7 @@
     ],
     "note": "All mine figures, prices and workshop inputs are invented to show the arithmetic. Use a published silver dataset and copy its stated method."
   },
-  "senseible": "Senseible reads your workshop's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and LPG invoices (IPCC 2006 default, 2.98 kg CO2 per kg) into a fingerprinted Scope 1 and 2 record for the per kg workshop share. Reports are self-declared drafts; the silver factor comes from the dataset you choose.",
+  "senseible": "Senseible reads your workshop's electricity bills (0.710 kg CO2 per kWh for FY 2024-25, CEA CO2 Baseline Database version 21.0) and LPG invoices (IPCC 2006 default, 2.98 kg CO2 per kg) into a fingerprinted Scope 1 and 2 record for the per kg workshop share. Reports are self-declared drafts; the silver factor comes from the dataset you choose.",
   "links": [
     {
       "label": "Allocating emissions between co-products",

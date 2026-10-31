@@ -40,7 +40,7 @@
   "example": {
     "title": "Illustrative example: 40 remanufactured engines for a fleet",
     "lines": [
-      "Remanufacturing electricity reported by the supplier: 150 kWh per engine; x 0.710 = 106.5 kg CO2",
+      "Remanufacturing electricity reported by the supplier: 150 kWh per engine; x 0.710 (FY 2024-25 grid factor) = 106.5 kg CO2",
       "New components fitted, from the supplier's footprint: 60 kg CO2e per engine (illustrative)",
       "Per engine: 106.5 + 60 = 166.5 kg CO2e",
       "Fleet purchase: 166.5 x 40 = 6,660 kg, about 6.7 tonnes CO2e in Category 1"

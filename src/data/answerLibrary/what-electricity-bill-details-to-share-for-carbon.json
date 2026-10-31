@@ -50,7 +50,7 @@
       "Period: 1 June to 30 June",
       "Tariff category: HT industrial; contract demand 300 kVA",
       "Units: 36,500 kWh",
-      "Scope 2, location-based: 36,500 x 0.710 = 25,915 kg CO2, about 25.9 t"
+      "Scope 2, location-based: 36,500 x 0.710 (FY 2024-25 grid factor) = 25,915 kg CO2, about 25.9 t"
     ],
     "note": "Nothing in this record identifies a person or the connection."
   },

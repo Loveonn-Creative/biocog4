@@ -2,7 +2,7 @@
   "slug": "gym-carbon-footprint-per-member",
   "q": "How do I calculate the carbon footprint of a gym per member?",
   "title": "Gym carbon footprint per member",
-  "short": "Read the gym electricity bill at 0.710 kg CO2 per kWh, add LPG or diesel for hot water or backup at their default factors, then divide by active members. Air conditioning, powered machines and hot water are the main loads, so report per member each month.",
+  "short": "Read the gym electricity bill at 0.710 kg CO2 per kWh for FY 2024-25, add LPG or diesel for hot water or backup at their default factors, then divide by active members. Air conditioning, powered machines and hot water are the main loads, so report per member each month.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Gym and fitness centre owners",
@@ -40,7 +40,7 @@
     ],
     "note": "Inputs are illustrative; use your own bills and member count."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Office carbon per square foot",

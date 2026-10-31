@@ -45,7 +45,7 @@
     "title": "Worked example: how much of a mill's footprint is coal",
     "lines": [
       "Coal: 6,000 t a year x 2.42 kg CO2 per kg = 14,520 t CO2",
-      "Grid electricity: 30,00,000 kWh x 0.710 = 2,130 t CO2",
+      "Grid electricity: 30,00,000 kWh x 0.710 (FY 2024-25 grid factor) = 2,130 t CO2",
       "Coal share of Scope 1 and 2: 14,520 / (14,520 + 2,130) = 87%"
     ],
     "note": "Quantities are illustrative. The coal figure uses a flat IPCC-based factor; a GCV-based figure for lower grade coal would be lower."

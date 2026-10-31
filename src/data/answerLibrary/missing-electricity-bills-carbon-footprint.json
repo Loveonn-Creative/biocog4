@@ -47,12 +47,12 @@
       "Ten bills held: 450,000 kWh in total; January 40,000 kWh, April 44,000 kWh; February and March missing",
       "Estimate for each missing month: (40,000 + 44,000) / 2 = 42,000 kWh, so 84,000 kWh for the gap",
       "Year total: 450,000 + 84,000 = 534,000 kWh",
-      "Scope 2 (location-based): 534,000 x 0.710 kg CO2 per kWh = 379,140 kg CO2, about 379.1 tonnes",
+      "Scope 2 (location-based): 534,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 379,140 kg CO2, about 379.1 tonnes",
       "Estimated share: 84,000 / 534,000 = 15.7% of the year's kWh, disclosed as estimated"
     ],
     "note": "If the April bill showed a previous reading, the actual February to March kWh would replace both estimates."
   },
-  "senseible": "Senseible reads the billing period and kWh from each bill you upload and applies the CEA factor of 0.710 kg CO2 per kWh, so a month with no bill shows as missing rather than as zero. It does not invent figures for missing months; any estimate you add is your own working and is not marked Verified.",
+  "senseible": "Senseible reads the billing period and kWh from each bill you upload and applies the CEA factor of 0.710 kg CO2 per kWh for FY 2024-25, so a month with no bill shows as missing rather than as zero. It does not invent figures for missing months; any estimate you add is your own working and is not marked Verified.",
   "links": [
     { "label": "Footprint from an electricity bill", "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills" },
     { "label": "Documents needed for carbon verification", "to": "/climate-intelligence/documents-needed-carbon-verification" },

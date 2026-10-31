@@ -53,7 +53,7 @@
     "lines": [
       "Customer's annual purchases: Rs 2,000 crore; your sales to it: Rs 45 crore",
       "Share: 45 / 2,000 = 2.25%, so above the 2% test",
-      "Grid electricity: 1,20,000 kWh x 0.710 kg CO2 per kWh = 85.2 t CO2 (Scope 2)",
+      "Grid electricity: 1,20,000 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 85.2 t CO2 (Scope 2)",
       "Diesel for DG set and forklifts: 6,000 L x 2.68 kg CO2 per L = 16.08 t CO2 (Scope 1)",
       "Scope 1 and 2 total: 101.28 t CO2 for the financial year"
     ]

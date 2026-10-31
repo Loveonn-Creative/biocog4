@@ -42,7 +42,7 @@
     "title": "Worked example: a foundry's baseline and a 10 percent target",
     "lines": [
       "Last 12 months: 1,800,000 kWh for 1,200 t of castings = 1,500 kWh per tonne",
-      "Grid CO2 per tonne: 1,500 x 0.710 = 1,065 kg CO2",
+      "Grid CO2 per tonne: 1,500 x 0.710 (FY 2024-25 grid factor) = 1,065 kg CO2",
       "10 percent saving: 150 kWh per tonne, or 180,000 kWh a year at the same output",
       "CO2 avoided: 180,000 x 0.710 = 127,800 kg, about 128 t a year"
     ],

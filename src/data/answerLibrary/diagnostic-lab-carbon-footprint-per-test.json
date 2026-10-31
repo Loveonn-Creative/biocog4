@@ -51,7 +51,7 @@
     ],
     "note": "Illustrative figures. Refrigerant leaks would be added in kg CO2e; Scope 3 is reported as a second per test figure."
   },
-  "senseible": "Senseible reads the lab's electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, and reads diesel invoices with litres at the IPCC 2006 default of 2.68 kg CO2 per litre. Reagent and consumable purchases can get a spend-based estimate, labelled as such.",
+  "senseible": "Senseible reads the lab's electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0, and reads diesel invoices with litres at the IPCC 2006 default of 2.68 kg CO2 per litre. Reagent and consumable purchases can get a spend-based estimate, labelled as such.",
   "links": [
     {
       "label": "Hospital footprint per bed",

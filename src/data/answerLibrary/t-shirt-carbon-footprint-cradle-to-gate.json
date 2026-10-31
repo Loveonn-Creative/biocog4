@@ -11,7 +11,7 @@
       "h": "The stages inside the boundary",
       "ol": [
         "Cotton fibre: growing and ginning, from your yarn supplier's data or a published dataset, per kg of fibre.",
-        "Spinning: electricity per kg of yarn from the mill's bills, converted at 0.710 kg CO2 per kWh, plus any DG diesel.",
+        "Spinning: electricity per kg of yarn from the mill's bills, converted at 0.710 kg CO2 per kWh for FY 2024-25, plus any DG diesel.",
         "Knitting: the knitting unit's kWh per kg of fabric.",
         "Dyeing and finishing: boiler fuel for steam and hot water, plus electricity, per kg of fabric. Among the factory stages this is often the largest, because of the heat it needs.",
         "Cutting, stitching and packing: your own unit's energy per piece.",

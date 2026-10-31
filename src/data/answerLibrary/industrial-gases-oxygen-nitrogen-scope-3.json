@@ -2,7 +2,7 @@
   "slug": "industrial-gases-oxygen-nitrogen-scope-3",
   "q": "How do I estimate Scope 3 emissions from purchased oxygen, nitrogen or argon?",
   "title": "Scope 3 from oxygen, nitrogen and argon",
-  "short": "Purchased oxygen, nitrogen and argon go in Scope 3 Category 1. Estimate them as cubic metres bought x the electricity the supplier's plant uses per cubic metre x the grid factor, 0.710 kg CO2 per kWh in India. Ask the supplier for its kWh per cubic metre; label any assumed figure as an estimate.",
+  "short": "Purchased oxygen, nitrogen and argon go in Scope 3 Category 1. Estimate them as cubic metres bought x the electricity the supplier's plant uses per cubic metre x the grid factor, 0.710 kg CO2 per kWh for FY 2024-25 in India. Ask the supplier for its kWh per cubic metre; label any assumed figure as an estimate.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Foundries, fabricators, pharma and food plants buying industrial gases",
@@ -46,7 +46,7 @@
       "Purchased: 50,000 m3 of liquid oxygen in a year",
       "Assumed power use: 0.9 kWh per m3 (an estimate for liquid supply; replace with the supplier's figure)",
       "Electricity: 50,000 x 0.9 = 45,000 kWh",
-      "45,000 x 0.710 kg CO2 per kWh = 31,950 kg CO2, about 32 t CO2, Scope 3 Category 1"
+      "45,000 x 0.710 kg CO2 per kWh for FY 2024-25 = 31,950 kg CO2, about 32 t CO2, Scope 3 Category 1"
     ],
     "note": "If the supplier states 0.6 kWh per m3 for the same product, the figure drops to 21.3 t CO2. The kWh per m3 is the number that matters."
   },

@@ -2,7 +2,7 @@
   "slug": "powerloom-vs-airjet-loom-energy-per-metre",
   "q": "Is a shuttle powerloom or an airjet loom lower carbon per metre of fabric?",
   "title": "Shuttle powerloom or airjet: CO2 per metre",
-  "short": "Neither wins by default. An airjet loom draws much more power per hour, mostly for compressed air, but it also weaves far more metres an hour, so per metre the gap can be small or reversed. Compare kWh per metre of the same fabric, compressor included, then multiply by 0.710 kg CO2 per kWh.",
+  "short": "Neither wins by default. An airjet loom draws much more power per hour, mostly for compressed air, but it also weaves far more metres an hour, so per metre the gap can be small or reversed. Compare kWh per metre of the same fabric, compressor included, then multiply by 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Weavers in Bhiwandi, Malegaon, Erode and Komarapalayam, fabric buyers",
@@ -48,7 +48,7 @@
     ],
     "note": "Readings are illustrative, not benchmarks. A shed with a leaking compressor or a heavier quality can reverse the result, so use your own sub-meter data."
   },
-  "senseible": "Senseible reads loom-shed electricity bills, using the printed kWh on kVAh bills or kVAh times the printed power factor as a labelled estimate, and turns them into Scope 2 at 0.710 kg CO2 per kWh. Metres woven and sub-meter splits come from your own registers.",
+  "senseible": "Senseible reads loom-shed electricity bills, using the printed kWh on kVAh bills or kVAh times the printed power factor as a labelled estimate, and turns them into Scope 2 at 0.710 kg CO2 per kWh for FY 2024-25. Metres woven and sub-meter splits come from your own registers.",
   "links": [
     {
       "label": "Electricity and CO2 per metre of weaving",

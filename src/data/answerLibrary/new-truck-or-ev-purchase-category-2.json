@@ -47,7 +47,7 @@
       "Diesel version in Category 2: 2.9 to 3.9 t CO2e",
       "EV battery: 30 kWh x 60 to 120 kg CO2e per kWh (illustrative range; replace with a named study) = 1.8 to 3.6 t CO2e, so the EV shows 4.7 to 7.5 t CO2e",
       "Running 20,000 km a year (assumed): diesel at 10 km per litre = 2,000 litres x 2.68 = 5,360 kg CO2 in Scope 1",
-      "EV at 0.15 kWh per km (assumed) = 3,000 kWh x 0.710 = 2,130 kg CO2 in Scope 2",
+      "EV at 0.15 kWh per km (assumed) = 3,000 kWh x 0.710 (FY 2024-25 grid factor) = 2,130 kg CO2 in Scope 2",
       "Operating saving: 5,360 minus 2,130 = 3,230 kg a year, so the extra 1.8 to 3.6 t from the battery is matched in about 0.6 to 1.1 years"
     ],
     "note": "The battery range, allowance and running figures are placeholders for the arithmetic, not recommended values. Use the maker's figure and your own fuel and charging records when you have them."

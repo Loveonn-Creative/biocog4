@@ -43,7 +43,7 @@
     "lines": [
       "20 outlets report electricity: 96,000 kWh in the year, so 96,000 / 20 = 4,800 kWh per outlet",
       "30 outlets estimated: 30 x 4,800 = 144,000 kWh; network total 96,000 + 144,000 = 240,000 kWh",
-      "Electricity: 240,000 x 0.710 = 170,400 kg CO2, about 170.4 t",
+      "Electricity: 240,000 x 0.710 (FY 2024-25 grid factor) = 170,400 kg CO2, about 170.4 t",
       "Pickup vans at the 20 reporting outlets: 6,000 L diesel, 300 L per outlet; 30 x 300 = 9,000 L estimated; total 15,000 L",
       "Diesel: 15,000 x 2.68 = 40,200 kg CO2, about 40.2 t",
       "Category 14 total: 170.4 + 40.2 = 210.6 t CO2, of which 60% of the outlets are estimated"

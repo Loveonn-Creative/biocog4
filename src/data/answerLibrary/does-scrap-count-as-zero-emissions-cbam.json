@@ -45,7 +45,7 @@
       "Direct emissions at the plant: 0.10 t CO2 per tonne of steel (illustrative, from electrodes, charge carbon and gas)",
       "Ferromanganese: 0.01 t x 1.5 t CO2e per t (illustrative supplier figure) = 0.015 t CO2e",
       "Embedded emissions counted: 0.10 + 0.015 = 0.115 t CO2e per tonne",
-      "Electricity: 500 kWh x 0.710 kg CO2 per kWh = 355 kg CO2, reported but not counted toward certificates for steel"
+      "Electricity: 500 kWh x 0.710 kg CO2 per kWh for FY 2024-25 = 355 kg CO2, reported but not counted toward certificates for steel"
     ],
     "note": "Replace every illustrative figure with your own measured data or the official default values."
   },

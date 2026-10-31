@@ -35,11 +35,11 @@
     "lines": [
       "Sub-meter: 12,400 to 15,100, so 2,700 kWh",
       "Charged at Rs 9.50 per kWh: 2,700 x 9.50 = Rs 25,650",
-      "Emissions: 2,700 x 0.710 kg CO2 per kWh = 1,917 kg CO2, about 1.9 t, location-based Scope 2",
+      "Emissions: 2,700 x 0.710 kg CO2 per kWh for FY 2024-25 = 1,917 kg CO2, about 1.9 t, location-based Scope 2",
       "If only Rs 25,650 were shown: 25,650 / 9.50 = 2,700 kWh, labelled an estimate"
     ]
   },
-  "senseible": "Senseible can read a landlord invoice that shows kWh and apply the India grid factor of 0.710 kg CO2 per kWh. If the invoice shows only a rupee amount with no units, it produces no figure until you supply the kWh.",
+  "senseible": "Senseible can read a landlord invoice that shows kWh and apply the India grid factor of 0.710 kg CO2 per kWh for FY 2024-25. If the invoice shows only a rupee amount with no units, it produces no figure until you supply the kWh.",
   "links": [
     { "label": "Rented warehouse: Scope 2 or 3", "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3" },
     { "label": "Leased factory emissions: which scope", "to": "/answers/leased-factory-emissions-which-scope" },

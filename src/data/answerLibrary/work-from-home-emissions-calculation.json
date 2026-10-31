@@ -2,7 +2,7 @@
   "slug": "work-from-home-emissions-calculation",
   "q": "Do I have to report work-from-home emissions for hybrid staff in India, and how do I estimate them?",
   "title": "Estimate work-from-home emissions in India",
-  "short": "Usually not: the GHG Protocol treats teleworking as optional, so you report it by choice or because a client asks. To estimate it, multiply remote working days by the extra electricity used per day at home, then by the grid factor of 0.710 kg CO2 per kWh.",
+  "short": "Usually not: the GHG Protocol treats teleworking as optional, so you report it by choice or because a client asks. To estimate it, multiply remote working days by the extra electricity used per day at home, then by the grid factor of 0.710 kg CO2 per kWh for FY 2024-25.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "IT, BPO and services firms with hybrid staff",
@@ -35,7 +35,7 @@
     {
       "h": "Step 4: apply the grid factor and label it",
       "p": [
-        "Multiply total kWh by 0.710 kg CO2 per kWh, the CEA grid factor, version 21.0. Use the grid factor even if some staff have rooftop solar, unless you collect their solar share. Report the figure inside Category 7 next to commuting, marked as an estimate built from assumed wattage and hours."
+        "Multiply total kWh by 0.710 kg CO2 per kWh for FY 2024-25, the CEA grid factor, version 21.0. Use the grid factor even if some staff have rooftop solar, unless you collect their solar share. Report the figure inside Category 7 next to commuting, marked as an estimate built from assumed wattage and hours."
       ]
     }
   ],
@@ -50,7 +50,7 @@
     ],
     "note": "Wattages, AC hours and the 30% AC share are assumptions; a one-question survey on AC use improves the figure more than anything else."
   },
-  "senseible": "Senseible reads the electricity bills of your offices and applies 0.710 kg CO2 per kWh, so you can see whether office units fell as hybrid work grew. Home electricity of staff is outside those bills, so this estimate is one you add yourself.",
+  "senseible": "Senseible reads the electricity bills of your offices and applies 0.710 kg CO2 per kWh for FY 2024-25, so you can see whether office units fell as hybrid work grew. Home electricity of staff is outside those bills, so this estimate is one you add yourself.",
   "links": [
     { "label": "Work from home in Scope 3 Category 7", "to": "/answers/work-from-home-emissions-category-7" },
     { "label": "Commuting emissions from a staff survey", "to": "/answers/employee-commuting-emissions-survey" },

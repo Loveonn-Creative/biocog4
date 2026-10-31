@@ -45,7 +45,7 @@
   "example": {
     "title": "Worked example: a 100-room hotel, one month",
     "lines": [
-      "Grid electricity: 90,000 kWh x 0.710 = 63,900 kg CO2",
+      "Grid electricity: 90,000 kWh x 0.710 (FY 2024-25 grid factor) = 63,900 kg CO2",
       "DG diesel: 1,500 L x 2.68 = 4,020 kg CO2",
       "Kitchen LPG: 2,000 kg x 2.98 = 5,960 kg CO2",
       "Total: 73,880 kg CO2 over 2,400 occupied room nights = 30.8 kg CO2 per occupied room night"

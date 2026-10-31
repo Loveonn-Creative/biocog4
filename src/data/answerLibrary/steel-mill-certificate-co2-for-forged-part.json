@@ -45,7 +45,7 @@
     "lines": [
       "Bar issued per good part: 1.40 kg, for a finished part of 1.00 kg",
       "Mill EPD: 2.2 kg CO2e per kg of bar (illustrative); steel: 1.40 x 2.2 = 3.08 kg CO2e",
-      "Line energy for the month: 1,80,000 kWh x 0.710 = 1,27,800 kg CO2 over 2,00,000 good parts = 0.639 kg CO2 per part",
+      "Line energy for the month: 1,80,000 kWh x 0.710 (FY 2024-25 grid factor) = 1,27,800 kg CO2 over 2,00,000 good parts = 0.639 kg CO2 per part",
       "Part footprint: 3.08 + 0.639 = 3.72 kg CO2e, cradle to gate",
       "Using finished weight instead: 1.00 x 2.2 + 0.639 = 2.84 kg CO2e, which understates the part by about a quarter"
     ],

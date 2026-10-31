@@ -2,7 +2,7 @@
   "slug": "car-wash-carbon-footprint-per-car",
   "q": "How do I calculate the carbon footprint of a car wash per car?",
   "title": "Car wash carbon footprint per car",
-  "short": "Take the car wash electricity, from a sub-meter or its share of the site bill, multiply by 0.710 kg CO2 per kWh, and divide by cars washed. Add water heating fuel if used, and keep water tanker or supply bills as Scope 3 evidence.",
+  "short": "Take the car wash electricity, from a sub-meter or its share of the site bill, multiply by 0.710 kg CO2 per kWh for FY 2024-25, and divide by cars washed. Add water heating fuel if used, and keep water tanker or supply bills as Scope 3 evidence.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Car wash operators, fuel stations and dealer workshops",
@@ -38,7 +38,7 @@
     ],
     "note": "Readings are illustrative; use the sub-meter and the wash counter."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Water tanker purchases scope",

@@ -2,7 +2,7 @@
   "slug": "seed-processing-plant-emissions-per-tonne",
   "q": "How do I calculate a seed processing plant's emissions per tonne?",
   "title": "Seed processing plant per tonne",
-  "short": "Add electricity for cleaning, grading, treating and packing lines at 0.710 kg CO2 per kWh, dryer fuel and cold store power, then divide by tonnes of seed processed. Seed grown by contract farmers is a bought-in input, counted in Scope 3.",
+  "short": "Add electricity for cleaning, grading, treating and packing lines at 0.710 kg CO2 per kWh for FY 2024-25, dryer fuel and cold store power, then divide by tonnes of seed processed. Seed grown by contract farmers is a bought-in input, counted in Scope 3.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Seed companies and seed processing units",
@@ -38,7 +38,7 @@
     ],
     "note": "Inputs are illustrative; use the plant meter and processing records."
   },
-  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh for FY 2024-25, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
   "links": [
     {
       "label": "Grain dryer emissions per tonne",

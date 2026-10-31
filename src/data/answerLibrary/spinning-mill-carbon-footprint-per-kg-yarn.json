@@ -2,7 +2,7 @@
   "slug": "spinning-mill-carbon-footprint-per-kg-yarn",
   "q": "What is the carbon footprint per kg of cotton yarn from an Indian spinning mill?",
   "title": "Carbon footprint per kg of cotton yarn",
-  "short": "Divide the mill's yearly Scope 1 and 2 emissions by kg of yarn produced. Electricity dominates: kWh per kg of yarn times 0.710 kg CO2 per kWh. A mill using 3.2 kWh per kg gets about 2.27 kg CO2 per kg from grid power alone, before adding cotton fibre.",
+  "short": "Divide the mill's yearly Scope 1 and 2 emissions by kg of yarn produced. Electricity dominates: kWh per kg of yarn times 0.710 kg CO2 per kWh for FY 2024-25. A mill using 3.2 kWh per kg gets about 2.27 kg CO2 per kg from grid power alone, before adding cotton fibre.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Spinning mills supplying weavers and knitters who sell to EU and UK brands",
@@ -10,7 +10,7 @@
     {
       "h": "What goes into the mill figure",
       "ul": [
-        "Grid electricity from HT bills: kWh x 0.710 kg CO2 per kWh (CEA, version 21.0).",
+        "Grid electricity from HT bills: kWh x 0.710 kg CO2 per kWh for FY 2024-25 (CEA, version 21.0).",
         "DG diesel during outages: litres x 2.68 kg CO2.",
         "Any boiler or heating fuel, for example coal at 2.42 kg CO2 per kg.",
         "Divide the total by kg of yarn packed in the same period."

@@ -2,7 +2,7 @@
   "slug": "dg-set-emissions-per-kwh-vs-grid",
   "q": "How many kg of CO2 does a diesel generator emit per kWh, and is DG power cleaner or dirtier than grid power in India?",
   "title": "DG set kg CO2 per kWh versus the grid",
-  "short": "A DG set emits about 0.67 to 0.80 kg CO2 per kWh near full load and over 1.0 kg at light load, from litres per kWh x 2.68. The India grid is 0.710 kg CO2 per kWh, so a DG set is roughly level with the grid at best and clearly dirtier at part load.",
+  "short": "A DG set emits about 0.67 to 0.80 kg CO2 per kWh near full load and over 1.0 kg at light load, from litres per kWh x 2.68. The India grid is 0.710 kg CO2 per kWh for FY 2024-25, so a DG set is roughly level with the grid at best and clearly dirtier at part load.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Plant heads and MSME owners running DG sets for backup or peak load",
@@ -52,7 +52,7 @@
     ],
     "note": "The litres and kWh are illustrative; the factor 2.68 kg CO2 per litre is the IPCC 2006 diesel default and covers CO2 only."
   },
-  "senseible": "Senseible reads litres from diesel invoices and fuel slips at 2.68 kg CO2 per litre for Scope 1, and kWh from electricity bills at 0.710 kg CO2 per kWh, showing the factor and source on every line. It does not meter DG output, so kg per kWh needs your DG meter reading.",
+  "senseible": "Senseible reads litres from diesel invoices and fuel slips at 2.68 kg CO2 per litre for Scope 1, and kWh from electricity bills at 0.710 kg CO2 per kWh for FY 2024-25, showing the factor and source on every line. It does not meter DG output, so kg per kWh needs your DG meter reading.",
   "links": [
     {
       "label": "Grid electricity factor for India",

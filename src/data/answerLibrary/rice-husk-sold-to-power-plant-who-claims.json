@@ -48,7 +48,7 @@
     "lines": [
       "Husk sold in the year: 2,000 t x 11.6 GJ per t = 23,200 GJ",
       "Power generated at an assumed 25% efficiency: 5,800 GJ, or 1,611 MWh",
-      "Reference of grid power at 0.710 t CO2 per MWh: 1,611 x 0.710 = 1,144 t CO2 avoided",
+      "Reference of grid power at 0.710 t CO2 per MWh for FY 2024-25: 1,611 x 0.710 = 1,144 t CO2 avoided",
       "Your mill's Scope 1 and 2 stay exactly as calculated from your bills"
     ],
     "note": "11.6 GJ per tonne is the IPCC 2006 default for other primary solid biomass. The efficiency is an assumption, and carbon credit methods use a different grid reference (the combined margin)."

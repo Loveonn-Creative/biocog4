@@ -2,7 +2,7 @@
   "slug": "rayagada-paper-mill-coal-boiler-co2",
   "q": "How does a Rayagada paper mill separate coal boiler CO2 from biogenic CO2?",
   "title": "Rayagada paper mill coal and biogenic CO2",
-  "short": "Count coal and any oil in full in Scope 1. Report CO2 from black liquor, bark and other wood residues as biogenic, outside the Scope 1 total, with their methane and N2O inside it. Add bought electricity at 0.710. Divide by tonnes of paper.",
+  "short": "Count coal and any oil in full in Scope 1. Report CO2 from black liquor, bark and other wood residues as biogenic, outside the Scope 1 total, with their methane and N2O inside it. Add bought electricity at 0.710 (FY 2024-25 grid factor). Divide by tonnes of paper.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Integrated pulp and paper mills in Rayagada and southern Odisha",

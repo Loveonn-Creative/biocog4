@@ -48,7 +48,7 @@
     ],
     "note": "Materials and packaging are added on top of this energy figure for the full cradle to gate result."
   },
-  "senseible": "Senseible reads the tunnel and shuttle kiln gas invoices and the plant electricity bills, converts each with its stated factor (2.05 kg CO2 per scm of PNG, 0.710 kg CO2 per kWh) and keeps every bill as evidence. Clay, glaze and packaging purchases go to the supplier evidence trail; piece weights and dispatch figures come from your production records.",
+  "senseible": "Senseible reads the tunnel and shuttle kiln gas invoices and the plant electricity bills, converts each with its stated factor (2.05 kg CO2 per scm of PNG, 0.710 kg CO2 per kWh for FY 2024-25) and keeps every bill as evidence. Clay, glaze and packaging purchases go to the supplier evidence trail; piece weights and dispatch figures come from your production records.",
   "links": [
     {
       "label": "Ceramic tile footprint per m2",

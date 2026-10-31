@@ -52,7 +52,7 @@
       "Furnace oil to PNG: burner capex Rs 10,00,000, 10 years, so Rs 1,62,700 a year. 1,00,000 L of oil at Rs 55 (Rs 55,00,000) replaced by 1,08,000 scm of PNG at Rs 50 (Rs 54,00,000), saving Rs 1,00,000. Net: Rs 62,700. Cut: 297.0 minus 221.4 = 75.6 t CO2 (2.97 kg per litre, 2.05 kg per scm). About Rs 830 per tonne",
       "Curve order: LED (0 to 42.6 t), solar (42.6 to 241.4 t), PNG (241.4 to 317.0 t)"
     ],
-    "note": "Prices, savings and the 1.08 scm of PNG per litre of oil are illustrative assumptions; use quotes, your tariff and a burner trial. Factors: CEA grid 0.710 kg CO2 per kWh and IPCC 2006 fuel defaults."
+    "note": "Prices, savings and the 1.08 scm of PNG per litre of oil are illustrative assumptions; use quotes, your tariff and a burner trial. Factors: CEA grid 0.710 kg CO2 per kWh for FY 2024-25 and IPCC 2006 fuel defaults."
   },
   "senseible": "Senseible builds the baseline from your invoices and bills, by fuel and site, with the CEA and IPCC factors shown on each line, and its energy transition savings calculator helps size individual options. It does not draw the MACC or hold project costs for you.",
   "links": [

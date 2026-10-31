@@ -40,7 +40,7 @@
   "example": {
     "title": "Illustrative year for a plant using 10,000 MWh",
     "lines": [
-      "Location-based: 10,000,000 kWh x 0.710 = 7,100,000 kg CO2, 7,100 tonnes",
+      "Location-based: 10,000,000 kWh x 0.710 (FY 2024-25 grid factor) = 7,100,000 kg CO2, 7,100 tonnes",
       "RECs transferred and retired from the virtual PPA project: 6,000 (1 REC = 1 MWh)",
       "Market-based: remaining 4,000,000 kWh x 0.710 = 2,840,000 kg CO2, 2,840 tonnes",
       "Report both figures and name the certificate type and project"

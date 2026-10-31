@@ -44,7 +44,7 @@
       "Saving: 2,50,000 kWh a year x ₹8 = ₹20,00,000 a year",
       "Cover ratio: 20,00,000 / 10,08,089 = 1.98",
       "Stress test, savings 30% lower: ₹14,00,000 / 10,08,089 = 1.39, still above 1.3",
-      "CO2 avoided: 2,50,000 x 0.710 = 1,77,500 kg, about 177.5 t a year"
+      "CO2 avoided: 2,50,000 x 0.710 (FY 2024-25 grid factor) = 1,77,500 kg, about 177.5 t a year"
     ],
     "note": "Interest rate and tariff are illustrative. Use the rate in your sanction letter and your own tariff."
   },

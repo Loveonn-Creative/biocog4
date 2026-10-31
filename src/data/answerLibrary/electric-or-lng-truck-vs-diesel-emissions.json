@@ -2,7 +2,7 @@
   "slug": "electric-or-lng-truck-vs-diesel-emissions",
   "q": "Is an electric or LNG truck lower carbon than a diesel truck for Indian freight, per tonne-km?",
   "title": "Electric or LNG truck vs diesel per tonne-km",
-  "short": "Not by much on India's grid average. On labelled estimates, an electric truck charged at 0.710 kg CO2 per kWh comes out level with diesel to about 30 percent higher per tonne-km, and clearly lower only with renewable power. An LNG truck cuts tailpipe CO2 by roughly 10 to 15 percent, but methane slip can cancel much of that.",
+  "short": "Not by much on India's grid average. On labelled estimates, an electric truck charged at 0.710 kg CO2/kWh (FY 2024-25) comes out level with diesel to about 30 percent higher per tonne-km, and clearly lower only with renewable power. An LNG truck cuts tailpipe CO2 by roughly 10 to 15 percent, but methane slip can cancel much of that.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Logistics companies and shippers considering new truck types",

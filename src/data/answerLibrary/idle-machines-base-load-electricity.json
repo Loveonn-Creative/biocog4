@@ -35,7 +35,7 @@
     {
       "h": "Turning base load into kWh, rupees and CO2",
       "p": [
-        "Idle kWh = base load kW x idle hours in the month. Multiply by your energy charge for rupees and by 0.710 kg CO2 per kWh for location-based Scope 2. Then compare base load with your average running load: the bigger the share, the more there is to switch off."
+        "Idle kWh = base load kW x idle hours in the month. Multiply by your energy charge for rupees and by 0.710 kg CO2 per kWh for FY 2024-25 for location-based Scope 2. Then compare base load with your average running load: the bigger the share, the more there is to switch off."
       ]
     }
   ],
