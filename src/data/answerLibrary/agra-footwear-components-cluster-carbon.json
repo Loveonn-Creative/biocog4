@@ -2,7 +2,7 @@
   "slug": "agra-footwear-components-cluster-carbon",
   "q": "What does Agra's footwear component cluster use in energy, and which product uses most?",
   "title": "Agra footwear components: energy and CO2",
-  "short": "TERI counted about 205 component units in Agra using 8,624 toe in 2014-15: 59 million kWh of power, 2,880 kL of diesel and 1.2 million scm of gas. The 150 plastic sole units used 5,429 toe, about 63%. On today's factors the cluster emits roughly 50,000 t CO2 a year, mostly from electricity.",
+  "short": "Plastic soles: 5,429 of the 8,624 toe that Agra's 205 or so component units used in 2014-15, by TERI's count, about 63%. The cluster drew 59 million kWh of power, 2,880 kL of diesel and 1.2 million scm of gas, roughly 50,000 t CO2 a year on today's factors, mostly from electricity.",
   "topic": "product",
   "intent": "explain",
   "audience": "Plastic sole, heel, last and shoe sheet makers in Foundry Nagar and Sikandra, Agra, and the shoe brands that buy from them",
@@ -45,7 +45,7 @@
     "title": "Worked example: cluster CO2 and one pair of soles",
     "lines": [
       "Electricity: 59 million kWh x 0.675 kg CO2 per kWh = about 39,800 t",
-      "Diesel: 2,880 kL x 2.68 kg CO2 per litre = about 7,700 t",
+      "Diesel: 2,880 kL x 2.645 kg CO2 per litre = about 7,600 t",
       "Gas: 1.2 million scm x 2.05 kg CO2 per scm = about 2,500 t; total about 50,000 t a year",
       "A 0.4 kg pair of soles at an assumed 1.4 kWh per kg: 0.56 kWh x 0.675 = about 0.38 kg CO2 from moulding power"
     ],

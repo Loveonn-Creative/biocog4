@@ -60,7 +60,7 @@
       "Allocated to GSK: 3,369.6 x 15% = about 505 t CO2",
       "Heat share: 534.6 / 3,369.6 = about 16% of the plant's Scope 1 and 2"
     ],
-    "note": "Illustrative plant. Allocating by output mass works when products use similar energy per tonne; if GSK's product needs far more reactor or drying time, allocate by machine hours and say so. Scope 3 is extra and is usually reported as a separate, wider estimate."
+    "note": "Example plant. Allocating by output mass works when products use similar energy per tonne; if GSK's product needs far more reactor or drying time, allocate by machine hours and say so. Scope 3 is extra and is usually reported as a separate, wider estimate."
   },
   "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source document for each line, so the plant total and the share you allocate to GSK can be traced. It does not set or validate SBTi targets.",
   "links": [

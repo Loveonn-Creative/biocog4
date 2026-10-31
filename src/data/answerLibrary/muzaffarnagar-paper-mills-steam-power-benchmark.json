@@ -2,7 +2,7 @@
   "slug": "muzaffarnagar-paper-mills-steam-power-benchmark",
   "q": "How far are Muzaffarnagar paper mills from the energy benchmark, and what does closing the gap do to carbon?",
   "title": "Muzaffarnagar paper mills vs the benchmark",
-  "short": "BEE's study of about 29 mills found 10.1 to 18.2 GJ of fuel and 550 to 1,080 kWh per tonne of paper, against IPPTA norms of about 9.9 to 17.6 GJ of steam and 550 to 650 kWh for kraft. Its 15 listed projects would save 9.5 million kWh and 397,000 GJ of heat, about 22,800 t CO2 a year.",
+  "short": "Some by a long way. BEE measured 10.1 to 18.2 GJ of fuel and 550 to 1,080 kWh per tonne of paper across about 29 mills, against IPPTA kraft norms of about 9.9 to 17.6 GJ of steam and 550 to 650 kWh. Its 15 projects would save about 22,800 t CO2 a year.",
   "topic": "markets",
   "intent": "check",
   "audience": "Kraft, duplex board and writing paper mills on Bhopa Road, Jansath Road and Shamli in the Muzaffarnagar cluster, Uttar Pradesh",
@@ -47,7 +47,7 @@
       "If half that heat came from coal: 30,000 GJ x 94.6 kg CO2 per GJ = about 2,840 t CO2 a year less",
       "Biomass half: no fossil CO2 saved, but husk or bagasse freed to sell or stock"
     ],
-    "note": "An estimate: the mill size, current and target figures are assumptions for illustration. Coal factor is the IPCC 2006 default for bituminous coal. Use your own fuel records."
+    "note": "An estimate: the mill size, current and target figures are assumed. Coal factor is the IPCC 2006 default for bituminous coal. Use your own fuel records."
   },
   "senseible": "Senseible reads coal and biomass purchase invoices and power bills into a monthly record, so a mill can show fuel and power per tonne before and after a project. Whether a loan is approved is the lender's decision.",
   "links": [

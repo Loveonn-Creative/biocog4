@@ -48,7 +48,7 @@
       "Per flange: 1,005 / 9,000 = about 0.11 kg CO2",
       "Send: PCF 6.1 kg CO2e, plus a separate line of 0.11 kg CO2 per flange for delivery"
     ],
-    "note": "Illustrative figures; the diesel factor is the IPCC-based 2.645 kg CO2 per litre. With mixed loads, split by mass. If the buyer's truck collects, send only the 6.1."
+    "note": "Example figures; the diesel factor is the IPCC-based 2.645 kg CO2 per litre. With mixed loads, split by mass. If the buyer's truck collects, send only the 6.1."
   },
   "senseible": "Senseible reads fuel slips and freight invoices into dated transport records next to your plant's fuel and electricity, so you can show the delivery figure from its source document. It does not certify a PCF against the Catena-X rules.",
   "links": [

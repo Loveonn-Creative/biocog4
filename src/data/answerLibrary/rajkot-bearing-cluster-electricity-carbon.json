@@ -2,7 +2,7 @@
   "slug": "rajkot-bearing-cluster-electricity-carbon",
   "q": "How much energy and CO2 do Rajkot bearing makers use, and which stage uses most?",
   "title": "Rajkot bearing cluster: power and CO2",
-  "short": "TERI counted about 150 bearing units in Rajkot: 90 assembly, 35 rolling element and 25 cage makers. They used 3,903 toe a year, 91% of it electricity, 41.3 million kWh. Assembly units used about 53%, rolling elements 34%. On today's grid factor that is roughly 28,700 t CO2 a year.",
+  "short": "Grinding and assembly. Rajkot's 150 or so bearing units, 90 assembly, 35 rolling element and 25 cage makers, used 3,903 toe a year in TERI's profile, 91% of it 41.3 million kWh of electricity. Assembly units took about 53%, rolling elements 34%. On today's grid factor that is roughly 28,800 t CO2 a year.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Bearing assembly, roller and ball makers and cage makers in Aji, Metoda (Lodhika) and Shapar-Veraval, Rajkot",
@@ -46,7 +46,7 @@
       "Power: 1,228,411 kWh x 0.675 kg CO2 per kWh = about 829 t",
       "Thermal: 33.4 toe x 41.868 GJ x 56.1 kg CO2 per GJ (taken as natural gas) = about 78 t",
       "Own Scope 1 and 2: about 907 t a year",
-      "Cluster: 41.3 million kWh x 0.675 = about 27,900 t, plus gas and diesel, about 28,700 t"
+      "Cluster: 41.3 million kWh x 0.675 = about 27,900 t, plus gas and diesel, about 28,800 t"
     ],
     "note": "Typical unit figures from TERI's profile. The thermal fuel is assumed to be gas. Grid factor: CEA FY 2025-26, version 22.0. Bought components are extra, in Scope 3."
   },
