@@ -191,7 +191,7 @@ Email us with your request and sufficient information to identify your account. 
     title: 'Privacy Policy',
     slug: 'privacy',
     effectiveDate: '27 August 2024',
-    lastUpdated: '21 October 2026',
+    lastUpdated: '31 October 2026',
     sections: [
       {
         title: '0. Introduction & Legal Identity',
@@ -285,6 +285,7 @@ Controls include:
 - authenticated and role-scoped access,
 - tenant-scoped database policies,
 - private document storage,
+- encryption in transit and at rest on the managed infrastructure,
 - evidence fingerprints and audit references,
 - monitoring and incident-response procedures.
 
