@@ -1,0 +1,88 @@
+{
+  "slug": "coimbatore-bakery-cluster-fuels-carbon",
+  "q": "Coimbatore's bakeries burn LPG, wood and diesel: what should a bakery record?",
+  "title": "Coimbatore bakeries: what to record",
+  "short": "Four things: LPG in kg, oven diesel in litres, wood in tonnes and the monthly power bill. Across Coimbatore's 700 or so bakeries wood is close to half the energy but biogenic; LPG and diesel make up over half of the fossil CO2, roughly 11,300 t a year in all.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Retail and standalone bakeries in Coimbatore district",
+  "sections": [
+    {
+      "h": "Who bakes on what",
+      "ul": [
+        "Over 700 bakeries, about 370 in the city; 95% are micro or small.",
+        "Most bake in the back and sell in the front; standalone units supply shops.",
+        "Standalone units mostly fire diesel ovens with mono-block burners of 5 to 8 litres an hour; retail bakeries use wood fired brick ovens; a few use electric ovens.",
+        "A micro or small bakery uses about 15 toe a year, a medium one about 33."
+      ]
+    },
+    {
+      "h": "The records",
+      "ol": [
+        "LPG: kg from each bill, not cylinder count alone.",
+        "Diesel: litres bought for the oven, separate from any generator.",
+        "Wood: tonnes bought, on a biogenic line of its own.",
+        "Electricity: kWh from each month's bill.",
+        "Output: you likely count pieces, so weigh a tray of each product once and convert to kg."
+      ]
+    },
+    {
+      "h": "Oven fixes",
+      "ul": [
+        "Recuperative burners in place of mono-block burners that keep blowing air after the fuel cuts off.",
+        "Wood ovens: bake bread at 250 C, then use the falling heat for cakes at 180 C.",
+        "Thyristor control on electric ovens: 7 to 15%.",
+        "Steel mesh trays in place of heavy mild steel plates, which are about 90% of a trolley's weight: 5 to 10%.",
+        "A wood gasifier: up to 50% less wood."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The average bakery and the cluster (estimate)",
+    "lines": [
+      "Cluster: 7.0 million kWh, 1,140 kL diesel, 1,200 t LPG, 9,000 t wood a year",
+      "Per bakery (divided by 700): 10,000 kWh x 0.675 = 6.8 t; 1,629 L diesel x 2.645 = 4.3 t; 1,714 kg LPG x 2.98 = 5.1 t",
+      "Fossil total about 16.2 t a year; 12.9 t of wood gives about 22.5 t biogenic CO2, reported separately",
+      "Cluster fossil CO2: 4,725 + 3,015 + 3,576 = about 11,300 t"
+    ],
+    "note": "Energy from TERI's cluster profile of Coimbatore bakeries (2015-16). A cluster average; a wood oven shop and a diesel oven plant look very different."
+  },
+  "senseible": "The calculators take your LPG, diesel and kWh and give the fossil figure; Senseible can read those bills each month so you are not adding them by hand.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Bakery oven CO2 per kg of bread",
+      "to": "/answers/bakery-oven-emissions-per-kg-bread"
+    },
+    {
+      "label": "Biomass gasifier vs LPG",
+      "to": "/answers/biomass-gasifier-vs-lpg-furnace-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Coimbatore bakery industries",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/coimbatore-bakery-industries.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Coimbatore bakery industries cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=209&Itemid=502"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

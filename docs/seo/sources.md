@@ -278,6 +278,34 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://ghgprotocol.org/sites/default/files/2022-12/Supplier%20Engagement%20Guidance.pdf
 - https://sameeeksha.org/pdf/dpr/Jorhat_tea_cluster/01_Biomass_gasifier_for250kW_thermal_application_replacing_coal_Jorhat.pdf
 - https://sameeeksha.org/pdf/clusterprofile/YamunaNagarPlywood.pdf
+- https://sameeeksha.org/pdf/dpr/Alwar_Oil%20Mill.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=157&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/balakati-brass-Odisha.pdf
+- https://sameeeksha.org/pdf/Bhubaneshwar_brass_cluster/DPR_on_Energy_Efficient_Melting_Furncae_100kg.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Chirkunda%20Refractory%20Cluster%20Profile.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=239&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/coimbatore-bakery-industries.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=209&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/Coimbatore-Compressor-Cluster.pdf
+- https://sameeeksha.org/pdf/clusterprofile/ganjam-rice-mills.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Ghazipur_brick-cluster.pdf
+- https://sameeeksha.org/index.php?Itemid=499&id=261&option=com_content&view=article
+- https://sameeeksha.org/pdf/clusterprofile/East%20&%20West%20Godavari%20Cluster%20Profile.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=146&Itemid=502
+- https://sameeeksha.org/pdf/Hooghly%20Cold%20Storage%20Cluster%20Profile.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=310&Itemid=502
+- https://sameeeksha.org/pdf/Hooghly%20mixed%20cluster.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=309&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/Jamshedpur%20chemical%20cluster.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=305&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/ludhiana-brick-cluster.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Mehsana-Mixed-Industries-Gujarat.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=242&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/Saharanpur-Foundries-Uttar-Pradesh.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=180&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/Vellore_Rice_Millling.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=152&Itemid=502
+- https://sameeeksha.org/pdf/dpr/Warangal_Rice.pdf
 
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org

@@ -606,6 +606,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much electricity per quintal of seed do Alwar mustard oil mills use?",
+  "text": "10 to 15 kWh per quintal of mustard seed, BEE's study found: about 186 lakh kWh for 12.4 lakh quintals across roughly 50 mills in Alwar and Sawai Madhopur. At 15 kWh that is about 10 kg CO2 per quintal crushed, or roughly 0.29 kg per kg of kolhu and expeller oil.",
+  "url": "https://senseible.earth/answers/alwar-mustard-oil-mills-electricity-per-quintal"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate CO2 per kg of glassware at an Ambala scientific glassware unit?",
   "text": "LPG burnt in lampworking burners and lehrs × 2.98 kg CO2 per kg of LPG, plus electricity × 0.710 (FY 2024-25 grid factor), divided by kg of good glassware. Bought borosilicate tubing carries its own footprint in Scope 3, often larger than your direct emissions.",
   "url": "https://senseible.earth/answers/ambala-scientific-glassware-unit-gas-per-kg"
@@ -1158,6 +1164,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Balakati's brass and bell metal units burn coal and charcoal: how is that counted?",
+  "text": "As two numbers. A Balakati unit with a 25 kg crucible emits about 25 t of fossil CO2 a year from coal and power, roughly 3.4 kg per kg of brass. Its charcoal adds about 40 t of biogenic CO2, reported beside that total, not in it.",
+  "url": "https://senseible.earth/answers/balakati-brass-bell-metal-cluster-coal-charcoal"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of a ball bearing?",
   "text": "Weigh the rings, balls, cage and seals per bearing and multiply by the bearing steel and other suppliers' figures. Add forging or turning, heat treatment, grinding and assembly energy, then divide the plant's energy by bearings made.",
   "url": "https://senseible.earth/answers/ball-bearing-carbon-footprint-per-bearing"
@@ -1587,6 +1599,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Bhiwandi powerloom unit work out electricity CO2 per metre?",
   "text": "Multiply the month's electricity bill in kWh by 0.710 kg CO2 per kWh for FY 2024-25 and divide by metres woven. Read metres from the loom counters or the production register. Yarn bought in is Scope 3 and is usually reported separately from weaving.",
   "url": "https://senseible.earth/answers/bhiwandi-powerloom-electricity-per-metre"
+ },
+ {
+  "kind": "answer",
+  "title": "Bhubaneswar brass units melt on hard coke at under 5% furnace efficiency: what does a better furnace save?",
+  "text": "About two thirds of the coke. BEE's audit found every melting furnace below 5% efficient. A redesigned 100 kg furnace with a recuperator, at about 15%, cuts the hard coke for three units' melting from 30,240 kg to 9,375 kg a year, about 63 t CO2 avoided.",
+  "url": "https://senseible.earth/answers/bhubaneswar-brass-cluster-melting-furnace-efficiency"
  },
  {
   "kind": "answer",
@@ -4848,6 +4866,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What do Chirkunda's refractory units near Dhanbad burn, and what does the cluster emit?",
+  "text": "Coal in the 52 downdraft kilns, pet coke in the 9 tunnel kilns. Chirkunda's 68 refractory units used 29,774 toe in 2019-20, 99% of it kiln fuel, to make about 220,000 t. That is roughly 117,000 t CO2. A tunnel kiln emits about a third less per tonne, even on pet coke.",
+  "url": "https://senseible.earth/answers/chirkunda-refractory-cluster-coal-petcoke-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "How does a Chittorgarh cement plant count CO2 from alternative fuels in the kiln?",
   "text": "Split each fuel into fossil and biomass carbon. Plastic rich refuse derived fuel is largely fossil, so its CO2 counts in Scope 1. Biomass such as agricultural residue is biogenic: report it separately, outside the fossil total. Use fuel tests, not supplier labels.",
   "url": "https://senseible.earth/answers/chittorgarh-cement-plant-alternative-fuel-co2"
@@ -5211,6 +5235,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Do cogged or synchronous belts save energy over standard V-belts?",
   "text": "Yes, a little. The US Department of Energy's motor tip sheet puts cogged (notched) belts about 2 percent more efficient than standard V-belts, and synchronous belts at a steady 98 percent because they do not slip. On a motor running long hours, that is a cheap saving of a few thousand kWh a year.",
   "url": "https://senseible.earth/answers/cogged-or-synchronous-belt-energy-saving"
+ },
+ {
+  "kind": "answer",
+  "title": "Coimbatore's bakeries burn LPG, wood and diesel: what should a bakery record?",
+  "text": "Four things: LPG in kg, oven diesel in litres, wood in tonnes and the monthly power bill. Across Coimbatore's 700 or so bakeries wood is close to half the energy but biogenic; LPG and diesel make up over half of the fossil CO2, roughly 11,300 t a year in all.",
+  "url": "https://senseible.earth/answers/coimbatore-bakery-cluster-fuels-carbon"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the Coimbatore air compressor cluster's energy use and carbon footprint?",
+  "text": "An assembler's footprint is its power bill, about 50 kWh per compressor. A component maker with a paint oven is different: LPG and diesel are over 80% of its CO2. The 300 or so units used 2,255 toe in 2017-18, roughly 9,600 t CO2.",
+  "url": "https://senseible.earth/answers/coimbatore-compressor-makers-carbon-footprint"
  },
  {
   "kind": "answer",
@@ -8640,6 +8676,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Ganjam rice mills run on grid power: which records cut cost and carbon?",
+  "text": "Grid electricity is the only energy a Ganjam mill uses, so its power bill is its whole footprint. BEE's study of about 250 mills found 11 to 20 kWh per tonne milled. Logging kWh and tonnes each month shows which machine to fix first: shared shaft drives, separators or paddy cleaners.",
+  "url": "https://senseible.earth/answers/ganjam-rice-mills-electricity-saving"
+ },
+ {
+  "kind": "answer",
   "title": "How should a garment exporter estimate end-of-life emissions for clothing sold in the EU?",
   "text": "Take the tonnes of garments you ship to the EU, split them by fibre, apply an EU disposal mix (incineration, landfill, collection for reuse or recycling), and multiply each share by a route factor. Report it as Scope 3 Category 12 and label the disposal mix as an estimate.",
   "url": "https://senseible.earth/answers/garment-end-of-life-emissions-eu-market"
@@ -8772,6 +8814,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does the Ghazipur brick cluster use in energy each season?",
+  "text": "A typical Ghazipur kiln burns 788 t of coal for 44 lakh bricks, 18 t per lakh, at 1.51 MJ per kg of fired brick: 26 to 37% more than a well run fixed chimney kiln. Across some 380 kilns fired in 2017-18 that came to about 302,600 t of coal.",
+  "url": "https://senseible.earth/answers/ghazipur-brick-kiln-cluster-energy"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of ghee per kg?",
   "text": "Take the farm footprint of the milk that goes into the ghee, allocated to it by the milk solids it contains, and add your plant's fuel and electricity per kg of ghee. Because ghee is almost pure milk fat, the farm milk dominates, and the allocation method you choose moves the answer more than anything else.",
   "url": "https://senseible.earth/answers/ghee-carbon-footprint-per-kg"
@@ -8901,6 +8949,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much methane do goats and sheep emit per head?",
   "text": "IPCC Tier 1 defaults give 5 kg of enteric methane per head a year for goats, and 5 kg for sheep in developing countries. Multiply by head count and by 27, the AR6 GWP for non-fossil methane. Manure methane is a separate, smaller line.",
   "url": "https://senseible.earth/answers/goat-and-sheep-enteric-methane-per-head"
+ },
+ {
+  "kind": "answer",
+  "title": "How coal-heavy are East and West Godavari refractory units, and is there a loan route?",
+  "text": "Coal is 9,882 of the cluster's 9,940 toe, burned in downdraft kilns: roughly 40,000 t CO2 a year, about 0.64 t per tonne of refractory. Both districts are on BEE's ADEETIE list, so a loan for a kiln upgrade that saves at least 10% energy can earn interest subvention.",
+  "url": "https://senseible.earth/answers/godavari-refractory-cluster-coal-kiln-carbon"
  },
  {
   "kind": "answer",
@@ -9678,9 +9732,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much power does the Hooghly cold storage cluster use?",
+  "text": "Roughly 76,000 t CO2 a year: 110.9 million kWh and 0.5 million litres of diesel across some 150 potato cold stores in 2022-23. Size matters most. A store under 10,000 t uses about 89 kWh per tonne of capacity; one above 20,000 t uses 46.",
+  "url": "https://senseible.earth/answers/hooghly-cold-storage-cluster-electricity"
+ },
+ {
+  "kind": "answer",
   "title": "How do I work out the carbon footprint per tonne of hessian or sacking from a jute mill?",
   "text": "Add the mill's electricity and any boiler fuel over a period, convert them with the right factors, and divide by tonnes of finished goods. Grid power at 0.710 kg CO2 per kWh for FY 2024-25 usually dominates, since spinning and weaving are electric. Raw jute farming is a separate, upstream figure.",
   "url": "https://senseible.earth/answers/hooghly-jute-mill-energy-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "What does the Hooghly mixed industries cluster use in energy?",
+  "text": "The power bill, for most units. Hooghly's 950 MSMEs and 50 large units used 853 million kWh in 2022-23, about 576,000 t CO2 at the FY 2025-26 grid factor, against 46,300 t of coal, furnace oil, LDO and LSHS: 105,800 toe in all.",
+  "url": "https://senseible.earth/answers/hooghly-mixed-industries-cluster-carbon"
  },
  {
   "kind": "answer",
@@ -11388,6 +11454,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Jamshedpur's chemical units get 76% of their energy from biomass: how is that reported?",
+  "text": "About 14 kg of fossil CO2 per tonne of product, once the biomass is set aside on its own biogenic line. The cluster emits about 1,400 t fossil CO2 a year for 99,950 t, and grid power carries over 60% of it, though biomass is three quarters of the energy.",
+  "url": "https://senseible.earth/answers/jamshedpur-chemical-units-biomass-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "What CBAM data should a Jamshedpur or Kalinganagar steel exporter send its EU buyer?",
   "text": "Send verified specific embedded emissions per CN code for each installation, in tonnes CO2e per tonne, with the production route, the precursors used and their emissions, and the verifier's report. For steel, only direct emissions count, so blast furnace coal and coke dominate the figure.",
   "url": "https://senseible.earth/answers/jamshedpur-kalinganagar-steel-cbam-data-for-eu-buyers"
@@ -12360,6 +12432,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much coal and energy per brick do Ludhiana brick kilns use?",
+  "text": "About 140 g of coal per brick: 14 t per lakh in Ludhiana's fixed chimney kilns, or 1.27 MJ per kg of fired brick against 1.1 to 1.2 MJ for a well run kiln. At India's coal factor that is about 0.25 kg CO2 per brick; the coal's implied heat value points nearer 0.34 kg.",
+  "url": "https://senseible.earth/answers/ludhiana-brick-kilns-coal-energy-per-brick"
+ },
+ {
+  "kind": "answer",
   "title": "What carbon data should a Ludhiana cycle maker get from its steel tube supplier?",
   "text": "Ask the tube maker for kg CO2e per tonne of tube, with the steel route behind it, the year and the boundary. Steel tube is usually most of a steel frame's footprint, so a real supplier figure matters more than your own welding and painting, which come from your bills.",
   "url": "https://senseible.earth/answers/ludhiana-cycle-frame-steel-tube-carbon-data"
@@ -12693,6 +12771,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Meerut scissors maker work out the carbon footprint per pair?",
   "text": "Weigh the steel in each pair, often from scrap or sheet, and apply a steel factor, then add electricity for grinding and polishing and any furnace fuel for hardening. Scissors fall under HS chapter 82, which CBAM does not cover, but EU buyers may still ask for a figure.",
   "url": "https://senseible.earth/answers/meerut-scissors-unit-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "What does the Mehsana mixed industries cluster use in energy, and what should a plastics unit record?",
+  "text": "kWh per tonne, from your monthly bill and output, because grid power is a plastics unit's whole energy. An average Mehsana plastics unit uses about 273,000 kWh a year, roughly 0.36 t CO2 per tonne at the FY 2025-26 grid factor. The cluster's 3,400 toe (2016) was 79% electricity.",
+  "url": "https://senseible.earth/answers/mehsana-plastics-engineering-cluster-carbon"
  },
  {
   "kind": "answer",
@@ -15876,6 +15960,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Saharanpur foundries cast hand pumps on coke: what is the cluster's footprint?",
+  "text": "Roughly 0.9 t CO2 per tonne of castings, about 18,700 t a year in all. Saharanpur's 50 working foundries made about 21,000 t from 4,100 t of coke and 9.3 million kWh. Coke gives two thirds of the CO2, and the smallest cupola units run far higher per tonne.",
+  "url": "https://senseible.earth/answers/saharanpur-foundry-hand-pump-castings-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "What is the carbon footprint of a wood carving unit in Saharanpur?",
   "text": "A carving unit's own emissions are mostly electricity for saws, lathes, sanders and spray guns, at 0.710 kg CO2 per kWh for FY 2024-25. Timber, polish and lacquer are bought-in Scope 3. Carbon stored in the wood is reported separately, not subtracted from your total.",
   "url": "https://senseible.earth/answers/saharanpur-wood-carving-unit-emissions"
@@ -18798,6 +18888,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What fuels do Vellore rice mill boilers burn, and what is the cluster's footprint?",
+  "text": "Mostly firewood, then groundnut shell and rice husk, in boilers running at only 25 to 40% efficiency. All three are biogenic, so the fossil footprint of Vellore's 340 or so mills is the power bill: about 79 million kWh, roughly 53,500 t CO2 a year.",
+  "url": "https://senseible.earth/answers/vellore-rice-mill-cluster-boiler-fuels"
+ },
+ {
+  "kind": "answer",
   "title": "How does a Veraval fish processing and ice plant count its emissions?",
   "text": "Electricity for freezing, cold storage and ice making is usually the largest part, at 0.710 kg CO2 per kWh for FY 2024-25. Add diesel for generators and refrigerant leaks topped up during the year. Divide by tonnes of fish processed.",
   "url": "https://senseible.earth/answers/veraval-fish-processing-ice-plant-electricity"
@@ -19101,6 +19197,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Wankaner refractory units fire petcoke in tunnel kilns: what is the cluster's carbon footprint?",
   "text": "Almost all of it is the kiln. Wankaner's 36 refractory MSMEs used 18,089 toe in 2020-21 to make about 198,600 t: 18,014 toe of kiln heat, mainly petcoke, and only 75 toe of electricity. That is roughly 74,000 t CO2 a year, about 0.37 t per tonne, over 99% of it from the kiln.",
   "url": "https://senseible.earth/answers/wankaner-refractory-tunnel-kiln-petcoke-carbon"
+ },
+ {
+  "kind": "answer",
+  "title": "How much electricity does the Warangal rice mill cluster use, and what does one mill's share look like?",
+  "text": "The 110 mills in Warangal town used 17.65 million kWh for about 6 lakh t of rice, roughly 12,000 t CO2 a year. A 1 t an hour raw rice mill uses 38.6 kWh per tonne, well above the 17 to 23 kWh benchmark; a 2 t an hour mill uses 23.1.",
+  "url": "https://senseible.earth/answers/warangal-rice-mill-cluster-electricity"
  },
  {
   "kind": "answer",

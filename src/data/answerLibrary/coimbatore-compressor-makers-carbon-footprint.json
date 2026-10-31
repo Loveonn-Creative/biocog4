@@ -1,0 +1,81 @@
+{
+  "slug": "coimbatore-compressor-makers-carbon-footprint",
+  "q": "What is the Coimbatore air compressor cluster's energy use and carbon footprint?",
+  "title": "Coimbatore compressor cluster: energy, CO2",
+  "short": "An assembler's footprint is its power bill, about 50 kWh per compressor. A component maker with a paint oven is different: LPG and diesel are over 80% of its CO2. The 300 or so units used 2,255 toe in 2017-18, roughly 9,600 t CO2.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Reciprocating air compressor makers and their component suppliers in Peelamedu and Pappanaickenpalayam",
+  "sections": [
+    {
+      "h": "Two kinds of unit",
+      "ul": [
+        "100 assemblers build about 57,000 reciprocating compressors a year: 10 medium units at about 250 a month, 60 small at 30, 30 micro at 15.",
+        "Small units build up to 5 hp, medium units up to 20 hp. None of the MSMEs makes screw compressors.",
+        "200 component makers supply foundation plates, engine cases, pistons, air receivers, sheet metal parts and connecting rods; castings and forgings come from the city's foundries and forges."
+      ]
+    },
+    {
+      "h": "Where the energy goes",
+      "ul": [
+        "Machining takes about 80% of a unit's electricity, welding 10% and the shop's own air compressors 5 to 10%.",
+        "Component units cure paint in LPG or diesel ovens at about 200 C, 500 kg to 5 t a batch for 45 to 60 minutes. Ovens are often oversized and run part empty.",
+        "Diesel also runs DG sets in the rare power cuts."
+      ]
+    },
+    {
+      "h": "Most of a compressor's footprint is bought in",
+      "p": [
+        "An assembler's own power is about 34 kg CO2 per compressor. The castings, steel and motor in it weigh far more in a product figure. Those are Scope 3 purchased goods: ask each supplier for a per kg or per part figure and keep the reply with the order."
+      ]
+    },
+    {
+      "h": "Quick wins",
+      "ul": [
+        "Insulate paint ovens and cut the heated volume to match the load.",
+        "Cogged V-belts at 95 to 98% transmission efficiency, against 90 to 92% for flat belts.",
+        "IE3 motors on lathes and honing machines, and plugged air leaks."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Unit and cluster figures (estimate)",
+    "lines": [
+      "Assembler: 28,800 kWh x 0.675 = 19.4 t CO2 a year",
+      "Per compressor: 2.88 million kWh / 57,000 = 50.5 kWh x 0.675 = 34 kg CO2",
+      "Typical component unit with a paint oven: 26,000 kWh = 17.6 t; 16,364 kg LPG x 2.98 = 48.8 t; 13,043 L diesel x 2.645 = 34.5 t; total 100.8 t",
+      "Cluster: 8.08 million kWh = 5,454 t; 818 t LPG = 2,438 t; 652 kL diesel = 1,725 t; about 9,600 t"
+    ],
+    "note": "Energy and output from TERI's 2017-18 cluster energy profile; factors from CEA and IPCC. Castings, steel and motors bought in are not included."
+  },
+  "senseible": "Enter your kWh, LPG and diesel in the calculators to see which one drives your figure; Senseible can read the gas, fuel and power bills themselves into monthly records once you need them on file.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Coimbatore pump cluster footprint",
+      "to": "/answers/coimbatore-pump-cluster-carbon-footprint"
+    },
+    {
+      "label": "Coimbatore foundry energy per tonne",
+      "to": "/answers/coimbatore-foundry-cluster-energy-per-tonne-castings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Coimbatore compressor cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Coimbatore-Compressor-Cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

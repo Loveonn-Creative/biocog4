@@ -1,0 +1,91 @@
+{
+  "slug": "chirkunda-refractory-cluster-coal-petcoke-carbon",
+  "q": "What do Chirkunda's refractory units near Dhanbad burn, and what does the cluster emit?",
+  "title": "Chirkunda refractories: coal, pet coke, CO2",
+  "short": "Coal in the 52 downdraft kilns, pet coke in the 9 tunnel kilns. Chirkunda's 68 refractory units used 29,774 toe in 2019-20, 99% of it kiln fuel, to make about 220,000 t. That is roughly 117,000 t CO2. A tunnel kiln emits about a third less per tonne, even on pet coke.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Refractory brick, block and castable makers around Chirkunda, Mugma, Kumardhubi and Maithan",
+  "sections": [
+    {
+      "h": "Two kilns, two fuels",
+      "ul": [
+        "Downdraft kilns: batch firing of about 130 t over 5 to 7 days at 1,150 to 1,300 C. Coal is fed by hand at set intervals, unweighed, with no temperature reading.",
+        "Tunnel kilns: continuous, 18.5 to 22.5 t a day, mainly on pet coke, with a DG set to keep the cars moving in a power cut.",
+        "Downdraft kilns make 73% of the output but use 80% of the energy; tunnel kilns make 22% on 16%.",
+        "Coal arrives at about 4,514 kcal per kg, pet coke at about 8,340."
+      ]
+    },
+    {
+      "h": "A typical unit's year",
+      "ul": [
+        "Downdraft unit: 1,010 t of coal and 29,423 kWh, 450 toe in all.",
+        "Tunnel kiln unit: 617 t of pet coke, 4.4 kL of diesel and 97,679 kWh, 527 toe.",
+        "Firing takes 6.23 GJ per tonne in a downdraft kiln and 4.19 GJ in a tunnel kiln."
+      ]
+    },
+    {
+      "h": "What a steel plant buyer needs from you",
+      "p": [
+        "Over 95% of Chirkunda's output leaves Jharkhand, much of it to steel plants within 200 km. When one asks for your figure, send CO2 per tonne fired, split into coal or pet coke and electricity, with the kiln type and the factors named. A cluster average hides the gap between the two kilns."
+      ]
+    },
+    {
+      "h": "Where the coal goes down",
+      "ul": [
+        "Downdraft: tighter dampers, coal crushed to the right size and fed in smaller lots, a temperature indicator, and flue gas used to preheat green ware.",
+        "Tunnel: low thermal mass cars and kiln furniture, and better insulation.",
+        "Chirkunda is on BEE's ADEETIE list for glass and refractory, so a loan for a kiln upgrade that saves at least 10% energy can carry interest subvention."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne by kiln type (estimate)",
+    "lines": [
+      "Downdraft unit: 1,010 t coal x 1.76 = 1,778 t; 29,423 kWh x 0.675 = 20 t; total 1,798 t",
+      "Output per downdraft unit: 160,056 t / 52 = 3,078 t, so 0.58 t CO2 per tonne",
+      "Tunnel unit: 617 t pet coke x 3.17 = 1,956 t; 4.4 kL diesel x 2.645 = 12 t; 97,679 kWh x 0.675 = 66 t; total 2,034 t",
+      "Output per tunnel unit: 47,723 t / 9 = 5,303 t, so 0.38 t CO2 per tonne",
+      "Cluster: about 117,000 t CO2 / 220,043 t = 0.53 t per tonne"
+    ],
+    "note": "Fuel, power and output from the cluster profile (2019-20). Coal at India's BUR-2 factor, pet coke at the IPCC default; your own invoices decide your figure."
+  },
+  "senseible": "Senseible reads your coal invoices and electricity bills into dated records with their CO2. It has no pet coke factor, so pet coke lines get no figure there; a tunnel kiln's pet coke at 3.17 t CO2 per tonne, as above, sits beside them.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Pet coke emission factor",
+      "to": "/answers/petcoke-emission-factor-india"
+    },
+    {
+      "label": "ADEETIE cluster list",
+      "to": "/answers/adeetie-eligible-clusters-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI for BEE, Cluster profile report: Chirkunda refractory cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Chirkunda%20Refractory%20Cluster%20Profile.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Chirkunda refractory industries cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=239&Itemid=502"
+    },
+    {
+      "label": "BEE, ADEETIE scheme booklet (eligible clusters and technologies)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}
