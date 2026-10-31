@@ -2,7 +2,7 @@
   "slug": "coimbatore-compressor-makers-carbon-footprint",
   "q": "What is the Coimbatore air compressor cluster's energy use and carbon footprint?",
   "title": "Coimbatore compressor cluster: energy, CO2",
-  "short": "About 2,255 toe and roughly 9,600 t CO2 a year across some 300 units in 2017-18. The 100 assemblers use only electricity, about 50 kWh per compressor. The 200 component makers also burn LPG and diesel, and that fuel, not machining, is over 80% of a typical component unit's CO2.",
+  "short": "An assembler's footprint is its power bill, about 50 kWh per compressor. A component maker with a paint oven is different: LPG and diesel are over 80% of its CO2. The 300 or so units used 2,255 toe in 2017-18, roughly 9,600 t CO2.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Reciprocating air compressor makers and their component suppliers in Peelamedu and Pappanaickenpalayam",
@@ -43,7 +43,7 @@
     "lines": [
       "Assembler: 28,800 kWh x 0.675 = 19.4 t CO2 a year",
       "Per compressor: 2.88 million kWh / 57,000 = 50.5 kWh x 0.675 = 34 kg CO2",
-      "Component unit: 26,000 kWh = 17.6 t; 16,364 kg LPG x 2.98 = 48.8 t; 13,043 L diesel x 2.645 = 34.5 t; total 100.9 t",
+      "Typical component unit with a paint oven: 26,000 kWh = 17.6 t; 16,364 kg LPG x 2.98 = 48.8 t; 13,043 L diesel x 2.645 = 34.5 t; total 100.8 t",
       "Cluster: 8.08 million kWh = 5,454 t; 818 t LPG = 2,438 t; 652 kL diesel = 1,725 t; about 9,600 t"
     ],
     "note": "Energy and output from TERI's 2017-18 cluster energy profile; factors from CEA and IPCC. Castings, steel and motors bought in are not included."

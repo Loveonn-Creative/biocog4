@@ -2,7 +2,7 @@
   "slug": "ghazipur-brick-kiln-cluster-energy",
   "q": "What does the Ghazipur brick cluster use in energy each season?",
   "title": "Ghazipur brick kilns: a season's coal",
-  "short": "About 302,600 t of coal, 181,632 toe, across some 380 kilns fired in 2017-18. A typical Ghazipur kiln burns 788 t for 44 lakh bricks, 18 t per lakh, at 1.51 MJ per kg of fired brick: a quarter to a third more than a well run fixed chimney kiln needs.",
+  "short": "A typical Ghazipur kiln burns 788 t of coal for 44 lakh bricks, 18 t per lakh, at 1.51 MJ per kg of fired brick: 26 to 37% more than a well run fixed chimney kiln. Across some 380 kilns fired in 2017-18 that came to about 302,600 t of coal.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Brick kiln owners in Ghazipur district",
@@ -45,7 +45,7 @@
       "At India's coal factor: 788 t x 1.76 = 1,387 t CO2, 315 kg per 1,000 bricks",
       "The profile implies coal near 6,000 kcal per kg; at about 2.26 t CO2 per tonne: 1,781 t, 405 kg per 1,000",
       "Reaching 1.2 MJ per kg: 162 t less coal, 285 to 366 t CO2 a season",
-      "Cluster: 302,592 t coal, at least 532,600 t CO2"
+      "Cluster: 302,592 t coal, about 532,600 to 683,900 t CO2"
     ],
     "note": "Coal, output and energy from TERI's Ghazipur brick cluster profile (2017-18). The higher factor applies the IPCC bituminous default to the implied heat value; your coal's GCV decides."
   },

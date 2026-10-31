@@ -50,7 +50,7 @@
     ],
     "note": "Fuel, power and output from the cluster profile (2019-20). Coal at India's BUR-2 factor, pet coke at the IPCC default; your own invoices decide your figure."
   },
-  "senseible": "Senseible reads your coal invoices and electricity bills into dated records with their CO2. It has no pet coke factor, so a tunnel kiln's pet coke has to be added at 3.17 t CO2 per tonne, as above.",
+  "senseible": "Senseible reads your coal invoices and electricity bills into dated records with their CO2. It has no pet coke factor, so pet coke lines get no figure there; a tunnel kiln's pet coke at 3.17 t CO2 per tonne, as above, sits beside them.",
   "links": [
     {
       "label": "Your MSME carbon number",

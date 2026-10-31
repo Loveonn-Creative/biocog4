@@ -2,7 +2,7 @@
   "slug": "hooghly-mixed-industries-cluster-carbon",
   "q": "What does the Hooghly mixed industries cluster use in energy?",
   "title": "Hooghly mixed cluster: energy and CO2",
-  "short": "About 105,800 toe a year in 2022-23: 853 million kWh of electricity and 46,300 t of coal, furnace oil, LDO and LSHS, across 950 MSMEs and 50 large units. At today's grid factor the electricity alone is about 576,000 t CO2, so for most Hooghly units the power bill sets the footprint.",
+  "short": "The power bill, for most units. Hooghly's 950 MSMEs and 50 large units used 853 million kWh in 2022-23, about 576,000 t CO2 at the FY 2025-26 grid factor, against 46,300 t of coal, furnace oil, LDO and LSHS: 105,800 toe in all.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Foundries, rolling mills, engineering and chemical units in Konnagar, Serampore, Dankuni, Bhadreswar and Chandannagar",
@@ -47,10 +47,10 @@
     "lines": [
       "Electricity: 853 million kWh x 0.675 = about 575,800 t CO2",
       "Fuel: 46,300 t at 1.76 (all Indian coal) = 81,500 t, or at 3.13 (all furnace oil) = 144,900 t",
-      "Medium unit: 1.55 million kWh = 1,048 t, plus 1,471 t of fuel = 2,590 to 4,600 t",
+      "Medium unit: 1.55 million kWh = 1,046 t, plus 1,471 t of fuel at 2,589 to 4,604 t: about 3,640 to 5,650 t in all",
       "One tonne melted in an induction furnace at 700 kWh: 473 kg CO2"
     ],
-    "note": "Energy from TERI's 2022-23 energy profile of the cluster. The fuel is a mix the profile does not split, so its CO2 is shown as a range; your own fuel bills fix it."
+    "note": "Energy from TERI's 2022-23 energy profile of the cluster. The fuel is a mix the profile does not split, so its CO2 is shown as a range; your own fuel bills fix it. Electricity at the CEA FY 2025-26 factor."
   },
   "senseible": "Senseible reads your electricity bills and coal, furnace oil and diesel invoices into dated records with their CO2, so a medium unit sees its power and fuel lines side by side.",
   "links": [

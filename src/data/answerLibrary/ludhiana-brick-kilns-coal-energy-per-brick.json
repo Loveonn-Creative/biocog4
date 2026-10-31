@@ -44,7 +44,7 @@
     ],
     "note": "Coal, output and energy from TERI's Ludhiana brick cluster energy profile. Which factor applies depends on the coal you buy."
   },
-  "senseible": "Senseible reads coal invoices at 1.76 t CO2 per tonne for Indian coal and 2.44 for imported, so the origin printed on the invoice changes your number; bricks fired give the per brick figure.",
+  "senseible": "Senseible reads your coal invoices into season totals, at 1.76 t CO2 per tonne for Indian coal and 2.44 for imported, the two factors above; divide by bricks fired for the per brick figure.",
   "links": [
     {
       "label": "Your MSME carbon number",

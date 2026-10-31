@@ -2,7 +2,7 @@
   "slug": "balakati-brass-bell-metal-cluster-coal-charcoal",
   "q": "Balakati's brass and bell metal units burn coal and charcoal: how is that counted?",
   "title": "Balakati brass: counting coal and charcoal",
-  "short": "Coal goes in your total; charcoal's CO2 goes on a separate biogenic line. On that basis a Balakati unit with a 25 kg crucible emits about 25 t of fossil CO2 a year, roughly 3.4 kg per kg of brass, plus about 40 t of biogenic CO2 from charcoal reported beside it.",
+  "short": "As two numbers. A Balakati unit with a 25 kg crucible emits about 25 t of fossil CO2 a year from coal and power, roughly 3.4 kg per kg of brass. Its charcoal adds about 40 t of biogenic CO2, reported beside that total, not in it.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Brass artisan units in Balakati, Bainchua, Hirapur and Rathijema near Bhubaneswar, and the traders who buy from them",
@@ -49,7 +49,7 @@
     ],
     "note": "Fuel and output from TERI's 2016 cluster profile. Coal at India's BUR-2 factor; charcoal at the IPCC default. Brass scrap and its own footprint are not included."
   },
-  "senseible": "The calculators turn your coal and electricity into fossil CO2 in a minute; keep the charcoal tonnes beside it as the biogenic line.",
+  "senseible": "The calculators turn your coal and electricity into fossil CO2; keep the charcoal tonnes beside it as the biogenic line.",
   "links": [
     {
       "label": "Carbon calculators",

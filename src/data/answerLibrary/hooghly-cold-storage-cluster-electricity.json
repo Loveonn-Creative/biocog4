@@ -2,7 +2,7 @@
   "slug": "hooghly-cold-storage-cluster-electricity",
   "q": "How much power does the Hooghly cold storage cluster use?",
   "title": "Hooghly cold stores: power per tonne",
-  "short": "About 110.9 million kWh and 0.5 million litres of diesel a year across some 150 potato cold stores, 10,073 toe in 2022-23, or roughly 76,000 t CO2. Bigger stores use less per tonne held: about 89 kWh per tonne of capacity below 10,000 t, 46 kWh above 20,000 t.",
+  "short": "Roughly 76,000 t CO2 a year: 110.9 million kWh and 0.5 million litres of diesel across some 150 potato cold stores in 2022-23. Size matters most. A store under 10,000 t uses about 89 kWh per tonne of capacity; one above 20,000 t uses 46.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Potato cold store owners in Hooghly district",
