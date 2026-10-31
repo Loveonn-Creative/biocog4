@@ -1,0 +1,85 @@
+{
+  "slug": "bangalore-machine-tool-units-grid-power-saving",
+  "q": "Bangalore machine tool units take 96% of their energy from the grid: where is the saving?",
+  "title": "Bangalore machine tool units: power savings",
+  "short": "In heat treatment and compressed air. In BEE's study of Bangalore's machine tool cluster, heat treatment units were about 14% of units but used 67.5% of the energy. Furnace insulation there saved about 39,758 kWh a year and paid back in under four months; screw compressors saved 34,718 kWh.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Machine tool, accessory, special purpose machine and heat treatment units in Peenya and around Bangalore",
+  "sections": [
+    {
+      "h": "What the study found",
+      "ul": [
+        "About 100 units in the cluster; 30 were audited under BEE's SME programme.",
+        "95.9% of energy from the BESCOM grid, 4.1% from diesel generators.",
+        "Cluster total about 2.27 crore kWh and 99,376 litres of diesel a year.",
+        "Heat treatment units used 1.6 crore of those kWh."
+      ]
+    },
+    {
+      "h": "Typical units",
+      "ul": [
+        "Components: 77,891 kWh and 1,757 litres of diesel a year.",
+        "Accessories: 114,863 kWh.",
+        "Machines: 34,704 kWh.",
+        "Heat treatment: 1,141,109 kWh, more than all the others put together."
+      ]
+    },
+    {
+      "h": "Measures with the fastest payback",
+      "ul": [
+        "Furnace insulation (heat treatment): 39,758 kWh a year, Rs 0.6 lakh, 0.3 years.",
+        "Contract demand optimisation and an MD controller: 0.3 years.",
+        "Reciprocating to screw compressor: 34,718 kWh a year, Rs 3 lakh, 1.9 years.",
+        "Energy efficient motors: 10,502 kWh a year, Rs 1.2 lakh, 2.5 years.",
+        "CNC turn-mill and 5-axis machines save mostly labour and time, not power, with paybacks of 4 to 6 years."
+      ]
+    },
+    {
+      "h": "Using it for a loan",
+      "p": [
+        "A bank's green or energy efficiency loan will ask how many kWh the new equipment saves. Twelve months of bills before, the equipment's rated savings, and bills after are the evidence. Heat treatment units have the most to show."
+      ]
+    }
+  ],
+  "example": {
+    "title": "What the savings are worth in CO2 (estimate)",
+    "lines": [
+      "Furnace insulation: 39,758 kWh x 0.675 = 26.8 t CO2 a year",
+      "Screw compressor: 34,718 kWh x 0.675 = 23.4 t CO2 a year",
+      "Typical heat treatment unit: 1,141,109 kWh x 0.675 = 770 t CO2 a year",
+      "Cluster: 2,26,79,100 kWh x 0.675 = 15,308 t plus 99,376 litres x 2.645 kg = 263 t"
+    ],
+    "note": "kWh figures from BEE's Bangalore machine tool cluster manual, prepared by PCRA; CO2 uses the CEA FY 2025-26 grid factor."
+  },
+  "senseible": "The green loan check shows what a lender will want; Senseible reads each BESCOM bill so the before and after kWh come from your own documents.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Compressed air upgrade loans",
+      "to": "/answers/green-loan-compressed-air-system-upgrade"
+    },
+    {
+      "label": "Machining kWh per tonne",
+      "to": "/answers/machining-kwh-per-tonne-benchmark"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, Manual on energy conservation measures in Bangalore machine tool cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Bangalore_machine_tools_pcra.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "cbam-activity-level-off-spec-scrap-packaging",
+  "q": "Which tonnes count as production in a CBAM verification?",
+  "title": "Which tonnes count as CBAM production",
+  "short": "Only goods that meet the specification for sale, or go on to another process, and only those under the CN codes of that production process. Off-spec goods, scrap and waste are left out, and so is packaging material, although emissions from a packaging step such as shrink foiling stay in.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Production and dispatch heads at Indian steel, aluminium, cement and fertiliser plants whose output figure goes into a CBAM emissions report",
+  "sections": [
+    {
+      "h": "Why the divisor gets checked",
+      "p": [
+        "Your figure per tonne is the process's emissions divided by its production, which the rules call the activity level. Count tonnes that should not be there and the figure per tonne drops, which understates what your buyer declares. The verifier checks this line as closely as the fuel figures."
+      ]
+    },
+    {
+      "h": "Counted and left out",
+      "ul": [
+        "Counted: goods that meet sale specifications, and goods that go on to another production process.",
+        "Left out: off-spec goods, scrap, waste and similar.",
+        "Left out: goods whose CN code is not CBAM, or belongs to a different production process.",
+        "Left out: the weight of packaging material.",
+        "Kept in the emissions: fuel or power for a packaging step, such as a gas-fired tunnel shrinking foil round bundles. The rule is that every emission source needed to make the good saleable sits inside the boundary."
+      ]
+    },
+    {
+      "h": "Tonnes, clinker or nitrogen",
+      "p": [
+        "For most goods the unit is tonnes produced under the same 8-digit CN code. Cement, other than aluminous cement, is counted in tonnes of clinker contained in it. Fertilisers are counted in kilograms of nitrogen. Convert with your clinker-to-cement ratio or kilograms of nitrogen per tonne of product, and write the conversion into your monitoring plan."
+      ]
+    },
+    {
+      "h": "Inside the calendar year",
+      "p": [
+        "The verifier also confirms the goods were produced between 1 January and 31 December. It may accept a cut-off up to one or two working days off 31 December, such as 30 December at 18:00, if you fix that time, measure production and stocks as close to it as you reasonably can, document it, and start next year from the same point."
+      ]
+    },
+    {
+      "h": "Records that make this easy to check",
+      "ul": [
+        "A production register that splits each month's output into released goods, rejects and scrap, by CN code.",
+        "Quality release records showing which lots passed specification.",
+        "Transfers of goods to another of your own processes, kept separate from sales.",
+        "The cut-off time and the stock count taken at it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Counting rejects and scrap by mistake",
+    "lines": [
+      "Emissions attributed to the process, precursors included: 18,000 t CO2e",
+      "Released goods 10,000 t; off-spec 400 t; scrap 300 t",
+      "Right: 18,000 / 10,000 = 1.800 t CO2e per tonne",
+      "Wrong, all tonnes counted: 18,000 / 10,700 = 1.682 t CO2e per tonne",
+      "Understatement: (1.800 minus 1.682) / 1.800 = 6.6%, above the 5% materiality level"
+    ],
+    "note": "Example figures. An error this size alone would have to be corrected before a positive statement."
+  },
+  "senseible": "Senseible keeps production by CN code next to the fuel and power records for the same period, so the tonnes behind your figure are visible to anyone checking them. We build it from your records, check every figure in-house, and an accredited verifier we partner with signs it off. Have your own verifier? Send it to them.",
+  "links": [
+    { "label": "Prepare your CBAM file", "to": "/cbam-suite" },
+    { "label": "Specific embedded emissions explained", "to": "/answers/cbam-specific-embedded-emissions-explained" },
+    { "label": "Production records a verifier wants", "to": "/answers/verifier-asks-production-records-format" },
+    { "label": "Does the verifier check CN codes?", "to": "/answers/cbam-verifier-checks-cn-codes-production-processes" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.2.2, 6.2 and 7.7 (with footnote 103)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-31"
+}

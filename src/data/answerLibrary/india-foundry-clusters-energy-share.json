@@ -1,0 +1,88 @@
+{
+  "slug": "india-foundry-clusters-energy-share",
+  "q": "Which Indian foundry clusters did the national energy study cover, and where does my foundry fit?",
+  "title": "India's foundry clusters: energy use",
+  "short": "India has about 5,000 foundries, around 3,680 operating, using 0.9 Mtoe a year. A national study of 14 clusters, from Agra to Shivamogga, found they use about 0.4 Mtoe, roughly 45% of it, at 3.2 to 5.0 GJ per tonne. Work out your own GJ per tonne to see where you sit.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Foundry owners and associations comparing their energy use with other clusters",
+  "sections": [
+    {
+      "h": "The 14 clusters studied",
+      "p": [
+        "Agra, Ahmedabad, Batala-Jalandhar-Ludhiana, Belagavi, Coimbatore, Faridabad, Indore, Kolhapur, Howrah, Jaipur, Rajkot, Samalkha, Shivamogga and Saharanpur. Ahmedabad and Rajkot were picked for detailed energy audits."
+      ]
+    },
+    {
+      "h": "The national picture",
+      "ul": [
+        "Foundries: about 0.9 Mtoe and 6.6 million t CO2 a year.",
+        "Cupolas on coke melt about 69% of liquid metal, induction furnaces about 31%.",
+        "The 14 clusters average about 28,600 toe each, so clusters differ widely. Indore used 5,516 toe in 2007-08 and Samalkha 3,300 toe in 2015."
+      ]
+    },
+    {
+      "h": "Place your foundry",
+      "ol": [
+        "Add a year's electricity: kWh x 0.0036 gives GJ.",
+        "Add coke: tonnes x 28.2 GJ (IPCC default), plus any oil or gas from its invoices.",
+        "Divide by tonnes of saleable castings.",
+        "Compare with 3.2 to 5.0 GJ per tonne. Above 5, look first at yield, rejections and melting."
+      ]
+    },
+    {
+      "h": "Energy is not carbon",
+      "p": [
+        "Two foundries at the same GJ per tonne can emit very different CO2. A GJ of grid electricity carries about 0.19 t CO2 at 0.675 kg per kWh; a GJ of coke about 0.11 t. Report both figures."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 600 t a year cupola foundry (estimate)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.0036 = 216 GJ",
+      "Coke: 75 t x 28.2 = 2,115 GJ",
+      "Total 2,331 GJ / 600 t = about 3.9 GJ per tonne, inside the study's range",
+      "CO2: 75 x 3.02 + 60,000 x 0.000675 = 227 + 41 = about 268 t, 0.45 t per tonne"
+    ],
+    "note": "Inputs are the Samalkha profile's typical unit. Studies may convert fuels differently, so compare ranges, not decimals."
+  },
+  "senseible": "Senseible turns your bills and fuel invoices into a carbon number per tonne, labelled with the factors used, so the comparison with your cluster rests on your own records.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Indore foundries and the grid",
+      "to": "/answers/indore-foundry-cluster-electricity-share-carbon"
+    },
+    {
+      "label": "Foundry CO2 per tonne of good casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA newsletter, March 2023 (secondary steel sector study)",
+      "url": "https://sameeeksha.org/newsletter/SAMEEEKSHA_March_2023.pdf"
+    },
+    {
+      "label": "UNIDO and TERI, Indore foundry cluster profile",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/IndoreFoundryClusterBrief.pdf"
+    },
+    {
+      "label": "TERI, Cluster profile: Samalkha foundries (2015)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Samalkha-Foundries-Haryana.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

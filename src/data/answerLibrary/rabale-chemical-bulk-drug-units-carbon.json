@@ -1,0 +1,86 @@
+{
+  "slug": "rabale-chemical-bulk-drug-units-carbon",
+  "q": "What do Rabale's chemical and bulk drug units use in energy, and what do listed pharma buyers ask?",
+  "title": "Rabale bulk drug units: energy and buyer asks",
+  "short": "A listed pharma buyer may ask for your Scope 1 and 2 once you supply 2% or more of its purchases. Rabale's 70 or so chemical and bulk drug units, inside TTC-MIDC, use 20,501 toe a year on electricity and furnace oil for about 421,000 t of output.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Chemical and bulk drug suppliers in Rabale and TTC-MIDC, Navi Mumbai",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 70 chemical and bulk drug units inside TTC-MIDC, which has over 4,000 units in all.",
+        "Products: tablets, ointments, oral drugs, process oils, paints and solvents, for India and export.",
+        "20,501 toe a year, which works out to about 0.049 toe, or 2.0 GJ, per tonne of output.",
+        "Main energy: grid electricity and furnace oil."
+      ]
+    },
+    {
+      "h": "Why the split decides your CO2",
+      "p": [
+        "The cluster summary gives no split between power and oil, and it changes the answer by more than double. If all 20,501 toe were electricity, it would be about 160,900 t CO2; if all furnace oil, about 66,400 t. Your own figure needs kWh and litres, not a total energy bill."
+      ]
+    },
+    {
+      "h": "What a listed buyer can ask",
+      "ul": [
+        "SEBI's BRSR value chain rules cover partners that each make up 2% or more of a top 250 listed company's purchases or sales.",
+        "The disclosure is voluntary from FY 2025-26, with assessment or assurance voluntary from FY 2026-27, so requests vary by buyer.",
+        "Typical asks: Scope 1 and 2 for the year, energy used, and the basis of each figure."
+      ]
+    },
+    {
+      "h": "What to send",
+      "ol": [
+        "Electricity: kWh from twelve months of bills, times 0.675 kg CO2.",
+        "Furnace oil: litres from invoices, times 2.97 kg CO2; boiler diesel at 2.645 kg.",
+        "Total, with the factors named, and tonnes produced, so the buyer can pro-rate to what it bought."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A unit making 6,000 t a year at the cluster average (estimate)",
+    "lines": [
+      "Energy: 6,000 t x 0.049 toe = about 292 toe",
+      "If half is power: 146 toe = about 1,700 MWh x 0.675 = 1,150 t CO2",
+      "Other half as furnace oil: 146 toe x 41.868 GJ x 77.4 kg = 473 t CO2",
+      "Total about 1,620 t CO2, or 0.27 t per tonne"
+    ],
+    "note": "The 50:50 split is an assumption for the arithmetic; the cluster summary does not give one. Use your own bills."
+  },
+  "senseible": "Senseible turns your bills and oil invoices into BRSR-ready Scope 1 and 2 figures with the factor shown on each line, so the file you send a listed buyer can be traced back.",
+  "links": [
+    {
+      "label": "BRSR reporting",
+      "to": "/brsr-reporting"
+    },
+    {
+      "label": "BRSR value chain timeline",
+      "to": "/answers/brsr-core-value-chain-assurance-timeline"
+    },
+    {
+      "label": "Thane chemical cluster",
+      "to": "/answers/thane-chemical-cluster-biomass-energy-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Rabale chemicals and drugs industries summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=252&Itemid=499"
+    },
+    {
+      "label": "SEBI circular, March 2025: ESG disclosures for value chain",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

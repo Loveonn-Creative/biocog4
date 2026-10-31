@@ -1499,6 +1499,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "bangalore-machine-tool-units-grid-power-saving",
+  "q": "Bangalore machine tool units take 96% of their energy from the grid: where is the saving?",
+  "title": "Bangalore machine tool units: power savings",
+  "short": "In heat treatment and compressed air. In BEE's study of Bangalore's machine tool cluster, heat treatment units were about 14% of units but used 67.5% of the energy. Furnace insulation there saved about 39,758 kWh a year and paid back in under four months; screw compressors saved 34,718 kWh.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "bangladesh-garment-factory-rooftop-solar-scope-2",
   "q": "How does rooftop solar change a Bangladesh garment factory's Scope 2?",
   "title": "Rooftop solar at Bangladesh factories",
@@ -1969,6 +1977,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 kg, so the comparison is worth making.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "bhimavaram-ice-plants-electricity-per-tonne",
+  "q": "How much power per tonne of ice do Bhimavaram's ice plants use?",
+  "title": "Bhimavaram ice plants: kWh per tonne",
+  "short": "102 kWh per tonne on average. Bhimavaram's 80 block ice plants used 38.41 million kWh and 762 kL of diesel for about 376,000 t of ice a year. Plants observed ranged from 87 to 120 kWh per tonne; tube ice plants run at 55 to 65.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "bhiwadi-rolling-mill-png-reheating-furnace-co2",
@@ -2953,6 +2969,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work it out from the heat removed: litres x 1.03 kg per litre x 3.93 kJ per kg per degree x the temperature drop, divided by the COP and by 3,600 for kWh. Chilling 1,000 litres from 35 C to 4 C at a COP of 2.5 takes about 14 kWh, or about 9.9 kg CO2 on grid power.",
   "topic": "product",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "burdwan-rice-mills-husk-and-power-per-tonne",
+  "q": "How much husk and power do Burdwan's rice mills use per tonne of rice?",
+  "title": "Burdwan rice mills: husk and power per tonne",
+  "short": "Per tonne of rice, 0.28 t of husk and 106 kWh. In 2024-25 the cluster's 500 or so mills burnt about 2.03 million t of husk and used 773 million kWh to turn 11.3 million t of paddy into 7.27 million t of rice. Husk CO2 is biogenic; grid power carries the fossil CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "bursa-auto-supplier-steel-parts-cbam",
@@ -4243,6 +4267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "cbam-activity-level-off-spec-scrap-packaging",
+  "q": "Which tonnes count as production in a CBAM verification?",
+  "title": "Which tonnes count as CBAM production",
+  "short": "Only goods that meet the specification for sale, or go on to another process, and only those under the CN codes of that production process. Off-spec goods, scrap and waste are left out, and so is packaging material, although emissions from a packaging step such as shrink foiling stay in.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "cbam-actual-emissions-need-verification-importer",
   "q": "Do actual emissions in a CBAM declaration need to be verified?",
   "title": "CBAM actual emissions: verification",
@@ -4907,6 +4939,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-25"
  },
  {
+  "slug": "cbam-misstatement-vs-non-conformity",
+  "q": "What is the difference between a misstatement and a non-conformity in CBAM verification?",
+  "title": "CBAM misstatement vs non-conformity",
+  "short": "A non-conformity is something you did differently from your monitoring plan or the Methodology Act, such as weighing fuel on a scale the plan does not list. A misstatement is a wrong number in your reported data, such as a typo or a formula error. One can cause the other, and you must correct both, whatever their size.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "cbam-monitoring-methodology-document-contents",
   "q": "What goes into a CBAM monitoring methodology document?",
   "title": "CBAM monitoring document: what goes in",
@@ -4921,6 +4961,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A non-EU installation reporting actual emissions in the CBAM definitive period needs a written monitoring plan, in English, covering at least the elements in Annex II, point A.5 of Implementing Regulation (EU) 2025/2547: the installation, goods by CN code, boundaries, source streams, methods, precursors and data controls. Keep every version.",
   "topic": "regulation",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "cbam-monitoring-plan-checklist-verifiers-use",
+  "q": "What checklist does a CBAM verifier use on our monitoring plan?",
+  "title": "The checklist a CBAM verifier uses on a plan",
+  "short": "The Commission gives verifiers an example checklist, not a fixed form. It asks whether your plan draws the installation boundary, covers every source stream, stockpile and tank, uses the best available data sources, puts every CN code in exactly one production process, and has written procedures for new products, supplier verification reports, lab work and calibration.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "cbam-monitoring-plan-minimum-elements-list",
@@ -5160,7 +5208,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "What a CBAM verification report contains",
   "short": "One central verification statement, positive or negative, followed by the findings behind it: misstatements, non-conformities and recommendations still open when the report was signed. It must be issued in English, created in the CBAM Registry, and reaches unregistered plants as an electronically signed PDF that your EU buyer uploads.",
   "topic": "regulation",
-  "reviewed": "2026-10-30"
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "cbam-verification-when-to-start-timeline",
@@ -5176,7 +5224,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "CBAM verifier scopes: does yours fit?",
   "short": "It needs your sector. CBAM verifiers are accredited for numbered activity groups, such as I for cement or VIII for iron, steel and aluminium products. A verifier without the group covering your goods may not verify your plant, and other verifiers check this scope before relying on its report.",
   "topic": "regulation",
-  "reviewed": "2026-10-29"
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "cbam-verifier-analytical-procedures-unusual-figures",
@@ -5185,6 +5233,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The verifier runs analytical procedures at three stages: on totals before the work starts, on the data behind them, and on the final totals. They compare years, production against emissions, and nameplate capacity. Any outlier needs your explanation plus evidence, and can lead to wider testing.",
   "topic": "accounting",
   "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "cbam-verifier-checks-cn-codes-production-processes",
+  "q": "Does the CBAM verifier check our CN codes?",
+  "title": "Does a CBAM verifier check your CN codes?",
+  "short": "Yes. A CBAM verifier checks that each good and interim product carries the right CN code, that goods sit in production processes with no gaps or double counting, that no non-CBAM goods are inside a process boundary, and that products added during the year went to the right process.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "cbam-verifier-checks-default-values-for-precursors",
@@ -5232,7 +5288,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "CBAM verifier: strategic and risk analysis",
   "short": "First a strategic analysis of your plant: size, processes, sources, meters, precursors, electricity and control system. Then a risk analysis of inherent and control risks. These set the verification plan: a programme of activities, a test plan for your controls and a data sampling plan. Manual data transfers and weak checking raise the work.",
   "topic": "regulation",
-  "reviewed": "2026-10-25"
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "cbam-verifier-tests-invoices-and-accounts-data",
@@ -8473,6 +8529,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. A February 2024 amendment, now built into ISO 14001:2026, requires you to decide whether climate change is a relevant issue for your organisation, and notes that interested parties can have climate requirements. It does not require a carbon footprint or a target, but auditors check that the question was considered.",
   "topic": "regulation",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "does-meter-uncertainty-count-in-cbam-materiality",
+  "q": "Does weighbridge or meter uncertainty count against the 5% CBAM materiality level?",
+  "title": "Meter uncertainty and CBAM materiality",
+  "short": "No. The uncertainty accepted in your assessed monitoring plan is not a misstatement and plays no part in the 5% materiality test. It counts only when you break the plan: a meter less accurate than the plan states, or one not installed, maintained or calibrated as the plan says. That is a non-conformity, and it can become a misstatement.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "does-my-company-need-sbti-flag-target",
@@ -12307,6 +12371,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "gujarat-dairy-chilling-centres-energy-carbon",
+  "q": "How much energy do Gujarat's milk chilling centres and dairies use, and what is the carbon per litre?",
+  "title": "Gujarat dairies and chilling centres: CO2",
+  "short": "Chilling is the small part: about 0.003 toe per tonne of milk, roughly 0.02 kg CO2 per litre. Dairies use 0.084 to 0.097 toe per tonne and took 84% of the 9,344 toe Gujarat's cooperative dairy units used a year, so processing, not chilling, carries most of the carbon.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "gujarat-discom-green-tariff-industries",
   "q": "How does the green power tariff work for factories on DGVCL, MGVCL, PGVCL or UGVCL in Gujarat?",
   "title": "Gujarat discom green power tariff",
@@ -13811,6 +13883,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "india-foundry-clusters-energy-share",
+  "q": "Which Indian foundry clusters did the national energy study cover, and where does my foundry fit?",
+  "title": "India's foundry clusters: energy use",
+  "short": "India has about 5,000 foundries, around 3,680 operating, using 0.9 Mtoe a year. A national study of 14 clusters, from Agra to Shivamogga, found they use about 0.4 Mtoe, roughly 45% of it, at 3.2 to 5.0 GJ per tonne. Work out your own GJ per tonne to see where you sit.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "india-green-hydrogen-standard-2kg-threshold",
   "q": "What does India's Green Hydrogen Standard require (the 2 kg CO2e per kg limit)?",
   "title": "India's green hydrogen 2 kg CO2e limit",
@@ -14025,6 +14105,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the embedded emissions of the precursors you buy, such as slab, hot rolled coil, nickel pig iron or ferro-chromium, to the direct emissions of your own steps, then divide by tonnes of coil. In an integrated Morowali plant the nickel and melt shop sit inside your boundary, so their emissions are your own direct ones.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "indore-foundry-cluster-electricity-share-carbon",
+  "q": "Indore foundries run mostly on electricity: what does that mean for their carbon figure?",
+  "title": "Indore foundries: electricity and CO2",
+  "short": "Electricity was 87% of the energy Indore's 45 or so foundries used, 56 million kWh in 2007-08. On today's grid factor that power carries about 94% of the cluster's fossil CO2, so a foundry here cuts carbon mainly through kWh per tonne and the source of its power.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "indore-soybean-solvent-plant-steam-co2",
@@ -15107,6 +15195,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "jodhpur-lime-kiln-units-petcoke-carbon",
+  "q": "Jodhpur lime units burn pet coke: what is their CO2, including what comes from the limestone?",
+  "title": "Jodhpur lime kilns: pet coke and stone CO2",
+  "short": "Close to 1.34 t CO2 per tonne of quicklime at 90% CaO: roughly 0.7 t from the limestone itself and 0.63 t from the 0.2 t of pet coke a Jodhpur kiln burns per tonne. Hydrating adds only 14 to 16 kWh a tonne. The stone's share cannot be cut by better firing.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "johor-data-centre-customer-scope-3-share",
   "q": "How does a customer count its share of a Johor data centre's emissions?",
   "title": "Johor data centres: a customer's share",
@@ -15304,6 +15400,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Karnal rice mills: husk, power and CO2",
   "short": "Mostly husk, and its CO2 is biogenic, so it stays out of the fossil figure. About 178 mills around Karnal milled 4.45 million tonnes of paddy in 2017-18, and husk gave 241,936 of their 268,921 toe. A rice buyer's fossil figure comes mainly from the cluster's 313 million kWh of grid power.",
   "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
+  "slug": "karnal-chemical-units-coal-ldo-carbon",
+  "q": "Karnal's chemical units run mostly on coal and LDO: what is the footprint per tonne?",
+  "title": "Karnal chemical units: CO2 per tonne",
+  "short": "Coal decides most of it: close to 58% of the CO2. Karnal's 91 working chemical units make about 104,528 t a year from 7,007 t of coal, 1,171 kL of oil and 8.7 million kWh, roughly 21,300 t CO2 on today's factors, or about 0.2 t per tonne of product.",
+  "topic": "accounting",
   "reviewed": "2026-10-31"
  },
  {
@@ -17419,6 +17523,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "nagaur-hand-tools-forging-furnace-oil-carbon",
+  "q": "Nagaur's plier and hammer makers heat on furnace oil: what is the footprint per tonne?",
+  "title": "Nagaur pliers and hammers: CO2 per tonne",
+  "short": "Roughly 1.15 t CO2 per tonne of hand tools on today's factors. Nagaur's 55 or so units burn about 12 lakh litres of furnace oil a year, 86% of their energy, and use 1.9 million kWh to make about 4,200 t of tools, mostly pliers and hammers.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "nairobi-data-centre-geothermal-grid-scope-2",
   "q": "Is a Nairobi data centre's grid power low carbon for Scope 2?",
   "title": "Nairobi data centres: grid Scope 2",
@@ -18265,6 +18377,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Pakistan's grid mixes hydro, gas, imported and local coal, nuclear and furnace oil, which puts it roughly around 0.4 to 0.5 kg CO2 per kWh. Use the official or IEA figure for the reporting year and cite it. Gas or diesel generators you run on site are Scope 1, not part of this figure.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "pali-hand-vs-power-process-units-energy",
+  "q": "Pali's hand process and power process units use very different energy: which records matter for each?",
+  "title": "Pali hand vs power process: energy records",
+  "short": "A Pali power process unit burns about 5 to 7 t of pet coke a day and uses around 3,000 kWh, so its boiler fuel log decides its carbon. A hand process unit heats dye pots over wood or briquettes with little power, so the fuel type and weight matter more than the meter.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "pali-textile-dyeing-unit-coal-boiler-co2",
@@ -19643,6 +19763,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-30"
  },
  {
+  "slug": "pune-rubber-component-makers-oem-carbon-data",
+  "q": "What does the Pune rubber component cluster use in energy, and what do auto OEMs ask?",
+  "title": "Pune rubber parts makers: energy for OEMs",
+  "short": "Your power bills answer most of an OEM's carbon request. Pune's 80 or so rubber component units used 42.3 million kWh, 536 t of LDO and 75 t of diesel in 2017-18, so electricity is 87% of their energy and about 94% of their CO2. Add your parts output and you have a per kg figure.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "purchase-order-or-invoice-for-scope-3",
   "q": "Should I calculate Scope 3 purchased goods from purchase orders, goods receipt notes or invoices?",
   "title": "PO, GRN or invoice for Scope 3?",
@@ -19793,6 +19921,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, if it sits inside your boundary and you control it. Pilot plants, test rigs and labs use fuel and electricity like any unit. Being non-commercial is not a reason to leave them out. You can show them as a separate line so buyers see production emissions on their own.",
   "topic": "accounting",
   "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "rabale-chemical-bulk-drug-units-carbon",
+  "q": "What do Rabale's chemical and bulk drug units use in energy, and what do listed pharma buyers ask?",
+  "title": "Rabale bulk drug units: energy and buyer asks",
+  "short": "A listed pharma buyer may ask for your Scope 1 and 2 once you supply 2% or more of its purchases. Rabale's 70 or so chemical and bulk drug units, inside TTC-MIDC, use 20,501 toe a year on electricity and furnace oil for about 421,000 t of output.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "radiator-carbon-footprint-per-unit",
@@ -19961,6 +20097,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Rajkot's 110 or so investment casting units used 184 million kWh, 2,610 t of LPG and 8.9 million scm of gas in 2014 to 15 for about 48,000 t of castings. That is about 3 t CO2 per tonne from energy alone, mostly power. A buyer's figure adds the alloy you melt.",
   "topic": "product",
   "reviewed": "2026-10-30"
+ },
+ {
+  "slug": "rajkot-machine-tool-makers-carbon-footprint",
+  "q": "What is the Rajkot machine tool cluster's energy use, and what should a unit record?",
+  "title": "Rajkot machine tool cluster: energy and CO2",
+  "short": "Little of a Rajkot machine's footprint is on the maker's own meter. A typical lathe or press maker uses about 20,000 kWh a year; the cluster's 400 or so units used 2,374 toe in 2015-16, mostly 20.5 million kWh of grid power. Most of the footprint sits in the castings and bought parts.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "rajkot-pump-makers-carbon-data-for-buyers",
@@ -20969,6 +21113,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "For the product footprint, yes if the smelter shows its electricity really comes from hydropower and gives a cradle to gate figure that includes alumina. For CBAM it changes nothing: electricity is not charged for aluminium, so the certificates depend on anode and perfluorocarbon emissions only.",
   "topic": "markets",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "samalkha-foundry-cluster-coke-cupola-saving",
+  "q": "Samalkha foundries melt on coke for chaff cutter castings: how much CO2, and does a divided blast cupola help?",
+  "title": "Samalkha foundries: coke, CO2, DBC savings",
+  "short": "Yes. A divided blast cupola takes coke from 150 to 200 kg per tonne of liquid metal to about 100 kg; the cluster profile counts on 25 to 30% less coke, paid back within a year. Samalkha's 30 working foundries burn about 4,560 t of coke a year, roughly 13,800 t CO2, for 36,000 t of castings.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "same-invoice-uploaded-twice-double-count",
@@ -23731,6 +23883,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "thane-chemical-cluster-biomass-energy-carbon",
+  "q": "Thane's chemical units burn more biomass than any other fuel: what does that do to their carbon figure?",
+  "title": "Thane chemical cluster: biomass and CO2",
+  "short": "Biomass briquettes give 34% of the Thane chemical cluster's 36,590 toe but none of its fossil CO2, which is reported separately. Grid power, only 23% of the energy, carries about 60% of the cluster's estimated 109,000 to 112,000 t fossil CO2. So kWh, not the boiler, drives most units' figures.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "thangadh-sanitaryware-cluster-energy-and-carbon",
   "q": "How much energy does the Thangadh sanitaryware cluster use, and what is CO2 per tonne of ware?",
   "title": "Thangadh sanitaryware: energy and CO2 a tonne",
@@ -24729,6 +24889,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, when the heat is genuine waste that would otherwise be lost: you save most of the electric chiller's kWh and pay only for pumps and a bigger cooling tower. If a boiler burns fuel to make that heat, a good electric chiller usually emits less: absorption gives only 0.7 to 1.2 units of cooling per unit of heat.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "varanasi-brick-kilns-coal-per-kiln",
+  "q": "How much coal does a Varanasi brick kiln burn, and how much does a vertical shaft or zigzag kiln save?",
+  "title": "Varanasi brick kilns: coal per kiln",
+  "short": "A typical Varanasi Bull's trench kiln burns about 720 t of coal a season for 40 lakh bricks, 18 t per lakh. BEE's project report puts a vertical shaft kiln at 10.5 t per lakh, saving 300 t of coal a year. Zigzag firing sits between the two.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "vatva-dye-intermediate-unit-boiler-co2",
@@ -25848,7 +26016,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "EU bodies accrediting non-EU CBAM verifiers",
   "short": "As of the Commission's 21 October 2026 update, seven of the 24 national accreditation bodies offering CBAM accreditation accept verifiers based outside the EU: COFRAC (France), ESYD (Greece), Accredia (Italy), RvA (Netherlands), PCA (Poland), SNAS (Slovakia) and Swedac (Sweden). An Indian verifier's CBAM certificate should come from one of them.",
   "topic": "regulation",
-  "reviewed": "2026-10-29"
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "which-ngfs-scenario-should-i-use",

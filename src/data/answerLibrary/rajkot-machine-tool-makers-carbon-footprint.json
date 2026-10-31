@@ -1,0 +1,87 @@
+{
+  "slug": "rajkot-machine-tool-makers-carbon-footprint",
+  "q": "What is the Rajkot machine tool cluster's energy use, and what should a unit record?",
+  "title": "Rajkot machine tool cluster: energy and CO2",
+  "short": "Little of a Rajkot machine's footprint is on the maker's own meter. A typical lathe or press maker uses about 20,000 kWh a year; the cluster's 400 or so units used 2,374 toe in 2015-16, mostly 20.5 million kWh of grid power. Most of the footprint sits in the castings and bought parts.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Machine tool makers in Shapar, Aji, Metoda, Kothariya and nearby, and their export buyers",
+  "sections": [
+    {
+      "h": "What the cluster runs on",
+      "ul": [
+        "Electricity: 20.5 million kWh a year, 1,760 of the cluster's 2,374 toe.",
+        "Natural gas: 712,500 scm a year, 606 toe.",
+        "Diesel: 8,845 litres a year for generators, because outages are rare.",
+        "About 200 units make metal cutting machines, 120 metal forming machines and 80 accessories such as chucks and lead screws.",
+        "Energy is only 1 to 2% of the cost of a finished machine."
+      ]
+    },
+    {
+      "h": "A typical unit's own figure",
+      "p": [
+        "The cluster profile puts a typical metal cutting unit at 22,686 kWh and 50 litres of diesel a year, a metal forming unit at 20,005 kWh and an accessories unit at 15,836 kWh. Machining and crane motors take about 85% of that power, welding 8% and compressed air 5%. Heat treatment is outsourced, so it does not show up on your bill."
+      ]
+    },
+    {
+      "h": "Where the real footprint is",
+      "p": [
+        "In a metal cutting machine, about 70% of the raw material is castings: the bed, pillar, slides and tailstock. Raw material is about 60% of production cost. A buyer asking for a product footprint will find most of it in those castings, the motors and the CNC panel, which are your Scope 3, purchased goods."
+      ]
+    },
+    {
+      "h": "What to record each month",
+      "ol": [
+        "Units from each electricity bill, and generator diesel bought.",
+        "Gas scm from the supplier invoice, if you use it.",
+        "Weight and supplier of every casting and forging bought, and whether it was made in a cupola or an induction furnace.",
+        "Machines dispatched, by model, so the energy can be split per machine.",
+        "Heat treatment job-work invoices with weight treated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A typical metal cutting unit, one year (estimate)",
+    "lines": [
+      "Electricity: 22,686 kWh x 0.675 kg CO2 per kWh = 15.3 t CO2",
+      "Diesel: 50 litres x 2.645 kg = 0.13 t CO2",
+      "Own Scope 1 and 2: about 15.4 t CO2",
+      "Cluster: 20.5 million kWh x 0.675 = 13,838 t, gas 712,500 scm x 2.05 kg = 1,461 t, diesel 23 t, total about 15,320 t CO2"
+    ],
+    "note": "Estimates from the cluster profile's 2015-16 figures with the CEA FY 2025-26 grid factor. Your own bills replace them."
+  },
+  "senseible": "Senseible reads your electricity bills, gas invoices and casting purchase invoices into one record, so your own energy and the castings behind each machine sit side by side when a buyer asks.",
+  "links": [
+    {
+      "label": "Footprint of a lathe or CNC machine",
+      "to": "/answers/machine-tool-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Rajkot foundry cluster",
+      "to": "/answers/rajkot-foundry-cluster-carbon-footprint"
+    },
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Rajkot machine tools cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=191&Itemid=502"
+    },
+    {
+      "label": "TERI, Energy profile: Rajkot machine tools cluster (2015-16 data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/MachineTool_Rajkot.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

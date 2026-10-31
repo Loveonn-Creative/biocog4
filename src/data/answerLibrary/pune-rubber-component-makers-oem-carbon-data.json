@@ -1,0 +1,92 @@
+{
+  "slug": "pune-rubber-component-makers-oem-carbon-data",
+  "q": "What does the Pune rubber component cluster use in energy, and what do auto OEMs ask?",
+  "title": "Pune rubber parts makers: energy for OEMs",
+  "short": "Your power bills answer most of an OEM's carbon request. Pune's 80 or so rubber component units used 42.3 million kWh, 536 t of LDO and 75 t of diesel in 2017-18, so electricity is 87% of their energy and about 94% of their CO2. Add your parts output and you have a per kg figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Seal, hose, bush and anti-vibration part makers in Pimpri Chinchwad, Chakan, Sanaswadi and Ranjangaon",
+  "sections": [
+    {
+      "h": "The cluster (2017-18)",
+      "ul": [
+        "About 80 units: 25 micro (20 to 100 t of raw material a year), 45 small (100 to 500 t), 10 medium (500 to 1,000 t).",
+        "The 10 medium units use 59% of the energy; a typical one uses 2.4 million kWh a year.",
+        "Some units burn LDO in boilers for autoclave curing steam; diesel only for standby generators.",
+        "Natural rubber is 25 to 40% of raw material; synthetic rubbers such as NBR and EPDM are largely imported."
+      ]
+    },
+    {
+      "h": "What an OEM asks",
+      "ul": [
+        "Scope 1 and 2 for your plant, for a stated year.",
+        "Energy by type: kWh, litres or tonnes of fuel.",
+        "Often a per part or per kg figure for what you supply them.",
+        "Sometimes raw material footprints, which you get from your rubber suppliers."
+      ]
+    },
+    {
+      "h": "Getting to per kg",
+      "ol": [
+        "Twelve months of kWh from bills, LDO and diesel from invoices.",
+        "Total CO2 with factors named.",
+        "Divide by kg of compound processed or kg of parts dispatched; say which.",
+        "Allocate to one OEM by its share of your kg, unless a press line runs only its parts."
+      ]
+    },
+    {
+      "h": "Biggest cuts",
+      "p": [
+        "Servo drives on injection moulding machines save 20 to 30% of their power. Better insulation on heated platens and thyristor heater control also help. On 94% grid CO2, these show up in the next OEM figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster and a medium unit (estimate)",
+    "lines": [
+      "Electricity: 42.3 million kWh x 0.675 = 28,553 t CO2",
+      "LDO: 536 t x 3.186 = 1,708 t CO2; diesel: 75 t x 3.186 = 239 t",
+      "Total about 30,500 t; power is 94% of it",
+      "Medium unit: 2.4 million kWh x 0.675 = 1,620 t CO2 a year from power"
+    ],
+    "note": "From the TERI energy profile of the Pune rubber cluster (2017-18) with IPCC 2006 defaults for diesel oils and the CEA FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible builds supplier evidence from your bills and fuel invoices, with the factor on every line, so the figure you send an OEM can be checked.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Pune, Chakan, Hosur auto supplier data",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Moulded rubber part CO2 per kg",
+      "to": "/answers/rubber-moulded-part-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Pune rubber cluster summary (2017-18 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=266&Itemid=499"
+    },
+    {
+      "label": "TERI, Energy profile: Pune rubber cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Pune-Rubber-Cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

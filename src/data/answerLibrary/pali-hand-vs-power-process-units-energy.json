@@ -1,0 +1,88 @@
+{
+  "slug": "pali-hand-vs-power-process-units-energy",
+  "q": "Pali's hand process and power process units use very different energy: which records matter for each?",
+  "title": "Pali hand vs power process: energy records",
+  "short": "A Pali power process unit burns about 5 to 7 t of pet coke a day and uses around 3,000 kWh, so its boiler fuel log decides its carbon. A hand process unit heats dye pots over wood or briquettes with little power, so the fuel type and weight matter more than the meter.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Dyeing and printing units in Pali's industrial areas and Mandia Road",
+  "sections": [
+    {
+      "h": "Two kinds of unit",
+      "ul": [
+        "Power process: jet dyeing, stenters and boilers or thermopacks, mostly for man-made fibre. 40,000 to 50,000 metres a day.",
+        "Hand process: fabric soaked and heated in pots over wood or briquettes, mostly manual. 10,000 to 15,000 metres a day.",
+        "Most of the cluster's more than 350 member units are hand process.",
+        "The whole cluster turned out about 55 lakh metres a day and used over 51 crore kWh in 2007-08."
+      ]
+    },
+    {
+      "h": "Power process: what to keep",
+      "ul": [
+        "Pet coke (residual pet coke) receipts and daily boiler feed, in tonnes. Units moved to it when Gujarat lignite stopped.",
+        "Electricity bills: a typical unit used over 75,000 kWh a month.",
+        "Generator diesel, if any.",
+        "Metres or kg processed per day, from the dispatch register."
+      ]
+    },
+    {
+      "h": "Hand process: what to keep",
+      "ul": [
+        "Weight of wood, briquettes or coal bought, and which it was. Smaller units burn 1,000 to 1,500 kg a day.",
+        "Wood and briquettes count as biogenic CO2, reported separately; coal counts in full.",
+        "Printing units' power: 160 to 500 kWh a day.",
+        "Metres processed, even if only from job cards."
+      ]
+    },
+    {
+      "h": "Why the split matters to a buyer",
+      "p": [
+        "A garment brand asking for kg CO2 per metre will get very different answers from the two kinds of unit. Report fuel by type, not as one fuel bill total, so a biogenic fire is not counted as coal."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One day in each kind of unit (estimate)",
+    "lines": [
+      "Power process: 6 t pet coke x 3.17 = 19.0 t CO2, plus 3,000 kWh x 0.675 = 2.0 t",
+      "21.0 t / 45,000 metres = about 0.47 kg CO2 per metre",
+      "Smaller unit on 1.25 t of coal: 1.25 x 1.76 = 2.2 t CO2 a day",
+      "Same unit on 1.25 t of wood: fossil CO2 near zero; the wood's CO2 goes in a separate biogenic line"
+    ],
+    "note": "Daily quantities from BEE's Pali cluster manual (2007-09 data); pet coke and coal factors from IPCC 2006 and India's BUR-2. Your own logs replace them."
+  },
+  "senseible": "Senseible reads pet coke, coal and wood invoices by fuel type and keeps biogenic fuel on its own line, so your carbon number per metre separates the two.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Pali dyeing unit boiler CO2",
+      "to": "/answers/pali-textile-dyeing-unit-coal-boiler-co2"
+    },
+    {
+      "label": "Pet coke emission factor",
+      "to": "/answers/petcoke-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, Cluster manual: Pali textile cluster",
+      "url": "https://sameeeksha.org/pdf/dpr/Pali_Textile.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

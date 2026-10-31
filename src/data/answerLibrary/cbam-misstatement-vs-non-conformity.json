@@ -1,0 +1,86 @@
+{
+  "slug": "cbam-misstatement-vs-non-conformity",
+  "q": "What is the difference between a misstatement and a non-conformity in CBAM verification?",
+  "title": "CBAM misstatement vs non-conformity",
+  "short": "A non-conformity is something you did differently from your monitoring plan or the Methodology Act, such as weighing fuel on a scale the plan does not list. A misstatement is a wrong number in your reported data, such as a typo or a formula error. One can cause the other, and you must correct both, whatever their size.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian CBAM goods producers reading their verifier's findings list for the first time",
+  "sections": [
+    {
+      "h": "Non-conformity: the method broke the rules",
+      "p": [
+        "The Verification Principles Act defines it as any act or omission by the operator that does not meet the monitoring plan or the Methodology Act. It covers a plan that breaks the Act, and a report or day-to-day monitoring that does not follow the plan. The Commission's examples:"
+      ],
+      "ul": [
+        "Fuel quantities taken from different instruments, or by other methods, than the plan lists.",
+        "Emission factors other than those in the plan, used without justification.",
+        "Meters not maintained or calibrated as the plan requires, or used outside the maker's specifications.",
+        "A fuel in the emissions report that the plan does not list.",
+        "A default value for the wrong country of origin.",
+        "Actual figures for a precursor with no verification report from the plant that made it."
+      ]
+    },
+    {
+      "h": "Misstatement: the number is wrong",
+      "p": [
+        "The same Act defines a misstatement as an omission, misrepresentation or error in your reported data, leaving aside the normal uncertainty of meters and lab analyses. Typical ones: a typo when copying from the shift log to the spreadsheet, a broken formula, a missing day of readings, or the diesel factor applied to furnace oil."
+      ]
+    },
+    {
+      "h": "When one becomes the other",
+      "p": [
+        "If a non-conformity puts a wrong figure into your report, it is also a misstatement. Using the default value for the wrong country is a non-conformity in method, and the wrong figure it produces is a misstatement as well."
+      ]
+    },
+    {
+      "h": "Material or not",
+      "p": [
+        "Misstatements are material when, alone or added together, they exceed 5% of the specific embedded emissions per tonne for a good's CN code, or of its specific embedded free allocation. The verifier can also judge a smaller one material because of its nature. For both misstatements and non-conformities it weighs:"
+      ],
+      "ul": [
+        "Can it be corrected, and do you refuse to correct it?",
+        "How likely is it to happen again, and how long has it gone on?",
+        "Was it deliberate?",
+        "Does it breach the Methodology Act itself?"
+      ]
+    },
+    {
+      "h": "Errors that cancel out still count",
+      "p": [
+        "The verifier converts every error into emissions before adding them up, so a fuel error and a factor error are compared in the same unit. Where some errors overstate and others understate, it also adds them as absolute values, because a near-zero net can hide a report full of mistakes."
+      ]
+    },
+    {
+      "h": "How they end up in your report",
+      "ul": [
+        "Corrected during the verification: nothing left to report on that point. You are expected to correct every one, not only the large ones.",
+        "Left open but not material: the statement can still be positive, listed as verified with comments, and you fix them before next year.",
+        "Non-conformities left uncorrected year after year: can be escalated to material later.",
+        "Material misstatements not corrected before the report is issued: a negative statement, and your buyers fall back to default values."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Two errors that nearly cancel, on a reported 2.000 t CO2e per tonne",
+    "lines": [
+      "Error 1, furnace oil quantity overstated: +0.060 t CO2e per tonne",
+      "Error 2, emission factor understated: minus 0.050 t CO2e per tonne",
+      "Net: 0.060 minus 0.050 = 0.010, or 0.010 / 2.000 = 0.5%",
+      "Absolute: 0.060 + 0.050 = 0.110, or 0.110 / 2.000 = 5.5%",
+      "The net looks small; the absolute total shows the report holds sizeable errors, and both must be corrected"
+    ],
+    "note": "Example figures. The verifier decides materiality using both the 5% level and its own judgement."
+  },
+  "senseible": "Senseible ties each figure to its invoice, bill or log, so a misstatement can be traced to its source line and fixed during the verification rather than after it. We build it from your records, check every figure in-house, and an accredited verifier we partner with signs it off. Have your own verifier? Send it to them.",
+  "links": [
+    { "label": "Prepare your CBAM file", "to": "/cbam-suite" },
+    { "label": "The 5% materiality level", "to": "/answers/cbam-verification-materiality-5-percent" },
+    { "label": "What the verification report contains", "to": "/answers/cbam-verification-report-what-it-contains" },
+    { "label": "If the statement is negative", "to": "/answers/cbam-negative-verification-statement-what-next" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.15 (Table 6), 6.1, 6.2 and 6.4", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-31"
+}

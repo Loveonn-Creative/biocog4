@@ -217,6 +217,25 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://sameeeksha.org/pdf/clusterprofile/rajkot-bearing.pdf
 - https://sameeeksha.org/pdf/dpr/Muzaffarnagar_Paper.pdf
 - https://supplier.gsk.com/SupplierCollaboation
+- https://sameeeksha.org/pdf/clusterprofile/Bangalore_machine_tools_pcra.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Bhimavaram_Ice_Making.pdf
+- https://sameeeksha.org/pdf/Burdwan%20cluster%20profile.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Gujarat_dairy_cluster.pdf
+- https://sameeeksha.org/newsletter/SAMEEEKSHA_March_2023.pdf
+- https://sameeeksha.org/pdf/clusterprofile/IndoreFoundryClusterBrief.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Samalkha-Foundries-Haryana.pdf
+- https://sameeeksha.org/pdf/dpr/Jodhpur.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Karnal%20chemical%20cluster.pdf
+- https://sameeeksha.org/pdf/clusterprofile/NagaurHandToolsClusterBrief.pdf
+- https://sameeeksha.org/pdf/dpr/Pali_Textile.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=266&Itemid=499
+- https://sameeeksha.org/pdf/clusterprofile/Pune-Rubber-Cluster.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=252&Itemid=499
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=191&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/MachineTool_Rajkot.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=306&Itemid=499
+- https://sameeeksha.org/pdf/clusterprofile/Thane%20chemical%20cluster.pdf
+- https://sameeeksha.org/pdf/dpr/Varanasi_brick_cluster/Vertical_shaft_brick_kiln_firing_16000_brick_per_day_Varanasi.pdf
 
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org

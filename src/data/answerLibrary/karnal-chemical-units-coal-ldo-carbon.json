@@ -1,0 +1,87 @@
+{
+  "slug": "karnal-chemical-units-coal-ldo-carbon",
+  "q": "Karnal's chemical units run mostly on coal and LDO: what is the footprint per tonne?",
+  "title": "Karnal chemical units: CO2 per tonne",
+  "short": "Coal decides most of it: close to 58% of the CO2. Karnal's 91 working chemical units make about 104,528 t a year from 7,007 t of coal, 1,171 kL of oil and 8.7 million kWh, roughly 21,300 t CO2 on today's factors, or about 0.2 t per tonne of product.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Soap, detergent, paint, resin and pharma units in the Karnal chemical cluster",
+  "sections": [
+    {
+      "h": "Two very different kinds of unit",
+      "ul": [
+        "Pharma and API units are about 53% of units but only 13,578 t of output. A typical one uses 6.82 toe a year, all electricity.",
+        "Other chemicals (soaps, detergents, paints, resins, surfactants) make 90,949 t. A typical one uses 114.92 toe, 88% of it thermal, on coal and diesel.",
+        "So an average for the cluster fits neither: work out your own."
+      ]
+    },
+    {
+      "h": "Cluster energy (cluster profile)",
+      "ul": [
+        "107 MSMEs, about 91 operating; 4,947 toe a year.",
+        "Coal 64% of energy, oil (LDO, furnace oil, diesel) 21%, electricity 15 to 18%.",
+        "Coal of 4,200 to 4,800 kcal per kg goes mostly into boilers for process steam."
+      ]
+    },
+    {
+      "h": "Work out your own per tonne",
+      "ol": [
+        "Coal tonnes from purchase bills, adjusted for stock, x 1.76 t CO2 (Indian coal) or 2.44 (imported).",
+        "Oil: litres x 2.645 kg for diesel or LDO, 2.97 kg for furnace oil.",
+        "Electricity: kWh x 0.675 kg.",
+        "Divide by tonnes dispatched in the same months."
+      ]
+    },
+    {
+      "h": "Where to cut",
+      "p": [
+        "Condensate recovery, flue gas loss reduction and insulation in the steam system, and screw compressors. Karnal is on BEE's first-phase ADEETIE list for chemicals, so a loan for listed technologies can carry an interest subvention."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster footprint on today's factors (estimate)",
+    "lines": [
+      "Coal: 7,007 t x 1.76 = 12,332 t CO2",
+      "Oil: 1,171 kL x 2.645 = 3,097 t CO2 (higher if much of it is furnace oil)",
+      "Electricity: 8.7 million kWh x 0.675 = 5,873 t CO2",
+      "Total about 21,300 t / 104,528 t = 0.20 t CO2 per tonne",
+      "Typical pharma unit: 6.82 toe = about 79,300 kWh x 0.675 = 54 t CO2 a year"
+    ],
+    "note": "Quantities from the cluster profile. Coal at India's BUR-2 factor, oil at diesel's; your own invoices decide the real figure."
+  },
+  "senseible": "The calculators give a quick per tonne figure from your coal, oil and power; Senseible can then read the invoices behind it into monthly records.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Coal invoice: what to read",
+      "to": "/answers/coal-invoice-what-to-read-for-emissions"
+    },
+    {
+      "label": "ADEETIE cluster list",
+      "to": "/answers/adeetie-eligible-clusters-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI for BEE, Cluster profile report: Karnal chemical cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Karnal%20chemical%20cluster.pdf"
+    },
+    {
+      "label": "BEE, ADEETIE scheme booklet (eligible clusters and technologies)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

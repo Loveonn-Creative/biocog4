@@ -1,0 +1,85 @@
+{
+  "slug": "jodhpur-lime-kiln-units-petcoke-carbon",
+  "q": "Jodhpur lime units burn pet coke: what is their CO2, including what comes from the limestone?",
+  "title": "Jodhpur lime kilns: pet coke and stone CO2",
+  "short": "Close to 1.34 t CO2 per tonne of quicklime at 90% CaO: roughly 0.7 t from the limestone itself and 0.63 t from the 0.2 t of pet coke a Jodhpur kiln burns per tonne. Hydrating adds only 14 to 16 kWh a tonne. The stone's share cannot be cut by better firing.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Quicklime and hydrated lime units around Borunda, Gotan Road, Pipar City and Jodhpur",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 115 lime units, mostly general shift and not mechanised; mines within 8 to 10 km.",
+        "Fire brick vertical kilns of 10 to 15 t of quicklime a day.",
+        "A kiln takes about 30 t of limestone and 2.5 to 3.0 t of pet coke a day.",
+        "About 10 large units above 15,000 t a year; capacity around 6 lakh t of quicklime.",
+        "Energy is 50 to 60% of the cost of making lime."
+      ]
+    },
+    {
+      "h": "Two sources of CO2",
+      "ul": [
+        "Process: every tonne of CaO formed from limestone releases 0.785 t of CO2. Multiply by your CaO assay.",
+        "Fuel: pet coke at the IPCC default of 3.17 t CO2 per tonne.",
+        "Electricity for crushing and hydration, at 0.675 kg per kWh.",
+        "Firewood used to start or top up a kiln is biogenic and goes on a separate line."
+      ]
+    },
+    {
+      "h": "What a buyer wants",
+      "p": [
+        "Steel, sugar and chemical buyers want the figure split into process and fuel CO2, with the CaO assay and fuel factor named. The fuel part is the one you can cut, and better pet coke handling and kiln insulation are where the cluster manual starts."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ol": [
+        "Pet coke bought, by tonne, and stock.",
+        "Limestone fed and quicklime drawn per kiln.",
+        "A CaO assay for each lot sold.",
+        "Electricity bills and tonnes of hydrated lime made."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Per tonne of product (estimate)",
+    "lines": [
+      "Process: 0.785 x 0.90 CaO = 0.706 t CO2 per tonne of quicklime",
+      "Fuel: 0.2 t pet coke x 3.17 = 0.634 t",
+      "Quicklime: about 1.34 t CO2 per tonne",
+      "Hydrated lime needs about 0.84 t of that quicklime per tonne: 0.84 x 1.34 = 1.13 t, plus 15 kWh x 0.675 = 0.01 t"
+    ],
+    "note": "Pet coke use and kWh from BEE's Jodhpur limestone cluster manual. The 90% CaO is an assumption; use your assay. Hydrated lime assumes pure calcium hydroxide."
+  },
+  "senseible": "Senseible reads your pet coke invoices and electricity bills into dated records, each traced to its document, so the fuel and power behind your figure are on file when a buyer asks. The limestone CO2 comes from your CaO assay, as above.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Lime kiln CO2 per tonne",
+      "to": "/answers/quicklime-kiln-co2-per-tonne"
+    },
+    {
+      "label": "Pet coke emission factor",
+      "to": "/answers/petcoke-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, Manual on energy conservation measures in Jodhpur limestone cluster",
+      "url": "https://sameeeksha.org/pdf/dpr/Jodhpur.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

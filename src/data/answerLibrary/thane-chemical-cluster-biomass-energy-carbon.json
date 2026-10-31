@@ -1,0 +1,90 @@
+{
+  "slug": "thane-chemical-cluster-biomass-energy-carbon",
+  "q": "Thane's chemical units burn more biomass than any other fuel: what does that do to their carbon figure?",
+  "title": "Thane chemical cluster: biomass and CO2",
+  "short": "Biomass briquettes give 34% of the Thane chemical cluster's 36,590 toe but none of its fossil CO2, which is reported separately. Grid power, only 23% of the energy, carries about 60% of the cluster's estimated 109,000 to 112,000 t fossil CO2. So kWh, not the boiler, drives most units' figures.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Bulk drug, resin, dye and solvent units in the Thane chemical cluster",
+  "sections": [
+    {
+      "h": "The cluster's energy (2019-20)",
+      "ul": [
+        "More than 325 units; over 80% make bulk drugs, the rest solvent distillation, resins, dyes, pigments and cosmetic chemicals.",
+        "Biomass: 33,048 t a year, 12,314 toe.",
+        "Light diesel, furnace oil and diesel: 10,081 kL, 8,889 toe.",
+        "Electricity: 97.4 million kWh, 8,375 toe.",
+        "Natural gas: 8 million scm, 7,012 toe, mainly in boilers."
+      ]
+    },
+    {
+      "h": "A typical unit",
+      "p": [
+        "The profile puts an API or pharmaceutical unit at 190.6 toe a year, of which 78.1 toe is electricity and 112.4 toe thermal. An other chemicals unit uses 150.2 toe, with only 21.6 toe electricity. Thermal energy is 73% of a unit's use, so the boiler fuel you choose sets your thermal CO2 and your power bill sets the rest."
+      ]
+    },
+    {
+      "h": "How to report biomass",
+      "ul": [
+        "Briquettes and wood: report the CO2 as biogenic, outside Scope 1, with tonnes and supplier.",
+        "Methane and nitrous oxide from burning them do count in Scope 1, a small amount.",
+        "Gas, oil and coal: Scope 1 in full.",
+        "Keep briquette invoices by weight; a bill in rupees alone cannot be converted."
+      ]
+    },
+    {
+      "h": "Scheme to check",
+      "p": [
+        "Thane is on BEE's first-phase ADEETIE list for chemicals, which supports efficient boilers, motors and other listed technologies with an interest subvention on a bank loan."
+      ]
+    }
+  ],
+  "example": {
+    "title": "An API unit's own CO2 (estimate)",
+    "lines": [
+      "Electricity: 78.1 toe = about 908 MWh x 0.675 = 613 t CO2",
+      "Thermal 112.4 toe on natural gas: 4,706 GJ x 56.1 kg = 264 t CO2, total about 877 t",
+      "Same thermal on briquettes: fossil total about 613 t, plus about 470 t biogenic reported separately",
+      "Cluster: gas 16,400 t, oil 26,700 to 29,900 t, power 65,745 t; biomass about 51,600 t biogenic"
+    ],
+    "note": "From the 2019-20 cluster profile with IPCC 2006 defaults (oil between diesel and furnace oil, biomass 100 kg CO2 per GJ) and the CEA FY 2025-26 grid factor."
+  },
+  "senseible": "Senseible reads briquette, gas and oil invoices and electricity bills into one record and keeps biomass CO2 on its own line, so your carbon number shows both.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "ADEETIE cluster list",
+      "to": "/answers/adeetie-eligible-clusters-list"
+    },
+    {
+      "label": "Coal to biomass boiler loans",
+      "to": "/answers/green-loan-coal-to-biomass-boiler-readiness"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SAMEEEKSHA, Thane chemical cluster summary (2019-20 data)",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=306&Itemid=499"
+    },
+    {
+      "label": "TERI for BEE, Cluster profile report: Thane chemical cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Thane%20chemical%20cluster.pdf"
+    },
+    {
+      "label": "BEE, ADEETIE scheme booklet (eligible clusters and technologies)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

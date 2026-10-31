@@ -1,0 +1,77 @@
+{
+  "slug": "indore-foundry-cluster-electricity-share-carbon",
+  "q": "Indore foundries run mostly on electricity: what does that mean for their carbon figure?",
+  "title": "Indore foundries: electricity and CO2",
+  "short": "Electricity was 87% of the energy Indore's 45 or so foundries used, 56 million kWh in 2007-08. On today's grid factor that power carries about 94% of the cluster's fossil CO2, so a foundry here cuts carbon mainly through kWh per tonne and the source of its power.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Foundries in Indore, Pithampur, Dewas, Ujjain and Sanwer, and their automotive and railway buyers",
+  "sections": [
+    {
+      "h": "The cluster in numbers",
+      "ul": [
+        "About 45 foundries: around 30 near Indore city, 6 in Pithampur, 6 to 7 in Dewas, 3 to 4 in Ujjain.",
+        "About 42,000 tonnes of castings a year.",
+        "Energy 5,516 toe a year: electricity 4,816 toe, coke 625 t, firewood 450 t, diesel 95 kL, gas 60,000 scm.",
+        "About 30 small units still melt in cupolas, but they make only 20% of the castings. Induction furnaces make the other 80%."
+      ]
+    },
+    {
+      "h": "Why the grid sets your figure",
+      "p": [
+        "Induction furnaces in the cluster use 560 to 750 kWh per tonne, about 700 on average. At 0.675 kg CO2 per kWh, 700 kWh is about 0.47 t CO2 per tonne at the melt alone. A cupola at 2.0 to 5.4 GJ of coke per tonne gives about 0.21 to 0.58 t. So moving from cupola to induction does not by itself cut CO2 on the Indian grid; cutting kWh per tonne, or buying renewable power, does."
+      ]
+    },
+    {
+      "h": "Where the kWh go",
+      "ul": [
+        "Melting takes about 70% of a foundry's energy.",
+        "Furnaces run about 10% above good design values, so an efficient furnace saves at least 10%.",
+        "Better charging, ladle preheating and melt temperature control save about 5% more.",
+        "Rejections around 10% could come down to 4 to 5%, and every rejected casting is metal melted twice.",
+        "Capacity use of 70 to 85% raises kWh per tonne; full heats lower it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Cluster CO2 on today's factors (estimate)",
+    "lines": [
+      "Electricity: 56 million kWh x 0.675 = 37,800 t CO2",
+      "Coke: 625 t x 3.02 = 1,888 t CO2",
+      "Diesel: 95 kL x 2.645 = 251 t CO2; gas: 60,000 scm x 2.05 kg = 123 t CO2",
+      "Fossil total: about 40,060 t CO2, or 0.95 t per tonne of castings",
+      "Firewood: 450 t, about 790 t CO2, reported separately as biogenic"
+    ],
+    "note": "Uses the cluster brief's 2007-08 quantities with current factors; firewood at IPCC defaults. A unit's own bills replace these."
+  },
+  "senseible": "Senseible reads each electricity bill's units and period and your melt records, so kWh per tonne of good castings comes from your own documents every month.",
+  "links": [
+    {
+      "label": "Induction furnace kWh per tonne",
+      "to": "/answers/induction-furnace-kwh-per-tonne-benchmark"
+    },
+    {
+      "label": "Cupola or induction: which emits less",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    },
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UNIDO and TERI, Indore foundry cluster profile (2007-08 energy data)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/IndoreFoundryClusterBrief.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

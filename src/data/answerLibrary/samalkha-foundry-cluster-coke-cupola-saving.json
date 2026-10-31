@@ -1,0 +1,87 @@
+{
+  "slug": "samalkha-foundry-cluster-coke-cupola-saving",
+  "q": "Samalkha foundries melt on coke for chaff cutter castings: how much CO2, and does a divided blast cupola help?",
+  "title": "Samalkha foundries: coke, CO2, DBC savings",
+  "short": "Yes. A divided blast cupola takes coke from 150 to 200 kg per tonne of liquid metal to about 100 kg; the cluster profile counts on 25 to 30% less coke, paid back within a year. Samalkha's 30 working foundries burn about 4,560 t of coke a year, roughly 13,800 t CO2, for 36,000 t of castings.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Cupola foundries in Samalkha making chaff cutters, cane crushers and pump parts",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 50 foundries, of which about 30 operate, along GT Road and in the HSIDC estate.",
+        "About 22 units make around 120 t a month of chaff cutters and cane crushers; about 8 make around 50 t a month of motor casings, impellers and pump parts.",
+        "Chaff cutters are about 70% of output, cane crushers 15%.",
+        "Only two foundries melt in induction furnaces. About 10 cupolas are already divided blast.",
+        "Coke is about 90% of the cluster's 3,300 toe; electricity is 4.1 million kWh."
+      ]
+    },
+    {
+      "h": "Your unit's CO2 per tonne",
+      "p": [
+        "The profile's typical unit makes 600 t of saleable castings with 75 t of coke and 60,000 kWh. Coke at 3.02 t CO2 per tonne gives 227 t, power at 0.675 kg per kWh gives 41 t: about 0.45 t CO2 per tonne of castings. The larger 1,440 t unit lands at about the same, so cutting coke is the only lever that moves the figure much."
+      ]
+    },
+    {
+      "h": "What else cuts coke",
+      "ul": [
+        "A blower sized to the cupola's inner diameter: about 5% less coke. Most local blowers are not.",
+        "Standard cupola operating practice: 5 to 10%.",
+        "Rejections of 10 to 15% brought below 5%, with little spending.",
+        "Shot blasting sand off runners and risers before remelting.",
+        "Testing coke ash: low ash coke sold at 12% often runs above 15%."
+      ]
+    },
+    {
+      "h": "Funding the switch",
+      "p": [
+        "Samalkha is not on the first-phase ADEETIE cluster list, so a bank's energy efficiency or green loan is the usual route. A lender will want your coke per tonne before and after, from purchase bills and melt logs, not the cluster average."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 120 t a month unit moving to a divided blast cupola (estimate)",
+    "lines": [
+      "Coke now: 180 t a year for 1,440 t of castings, 544 t CO2",
+      "25% saving: 45 t coke a year, about 136 t CO2 less",
+      "At the profile's coke prices of Rs 11,000 to 20,000 a tonne: Rs 4.95 to 9 lakh a year saved",
+      "Cluster coke: 4,560 t x 3.02 = 13,771 t CO2; electricity 4.1 million kWh x 0.675 = 2,768 t"
+    ],
+    "note": "Quantities and prices from the 2015 cluster profile; the saving is the profile's lower bound. Your own coke bills decide it."
+  },
+  "senseible": "The green loan check shows what a lender will ask about your unit; Senseible reads coke bills and electricity bills into monthly figures you can put before and after the change.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Batala cupola CO2 per tonne",
+      "to": "/answers/batala-foundry-cupola-coke-per-tonne"
+    },
+    {
+      "label": "ADEETIE cluster list",
+      "to": "/answers/adeetie-eligible-clusters-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Samalkha foundries (2015)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Samalkha-Foundries-Haryana.pdf"
+    },
+    {
+      "label": "BEE, ADEETIE scheme booklet (eligible clusters and technologies)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}
