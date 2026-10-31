@@ -1,0 +1,86 @@
+{
+  "slug": "balakati-brass-bell-metal-cluster-coal-charcoal",
+  "q": "Balakati's brass and bell metal units burn coal and charcoal: how is that counted?",
+  "title": "Balakati brass: counting coal and charcoal",
+  "short": "Coal goes in your total; charcoal's CO2 goes on a separate biogenic line. On that basis a Balakati unit with a 25 kg crucible emits about 25 t of fossil CO2 a year, roughly 3.4 kg per kg of brass, plus about 40 t of biogenic CO2 from charcoal reported beside it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Brass artisan units in Balakati, Bainchua, Hirapur and Rathijema near Bhubaneswar, and the traders who buy from them",
+  "sections": [
+    {
+      "h": "How the cluster works",
+      "ul": [
+        "Close to 100 artisan units, but only about 15 work through the year; each melts on roughly 50 days.",
+        "About 141 t of plates, cups, temple bells and handicrafts a year, turned over at about Rs 9.8 crore.",
+        "Middlemen supply brass scrap and pay a conversion rate per kg, so energy is about 11% of a unit's cost and metal 76%.",
+        "Scrap melts in coal fired pit furnaces in 25, 34 or 50 kg crucibles, at 1,100 to 1,200 C though brass melts near 900 to 940 C. Castings are then heated on charcoal at 350 to 400 C for shaping."
+      ]
+    },
+    {
+      "h": "Which line each fuel goes on",
+      "ul": [
+        "Coal: fossil, in Scope 1. About 60 to 65% of a unit's energy.",
+        "Charcoal: its CO2 is biogenic and reported separately, outside the scope totals. The methane and nitrous oxide from the fire stay in Scope 1.",
+        "Electricity for the blower and polishing: Scope 2, about 5% of energy.",
+        "Some cluster studies add charcoal CO2 into one total. If a buyer compares your figure with one of those, say which way yours is counted."
+      ]
+    },
+    {
+      "h": "Charcoal has a hidden upstream cost",
+      "p": [
+        "Making charcoal in kilns releases methane, which is not biogenic CO2. It sits upstream of your unit, in the charcoal you buy, and belongs in a full product footprint."
+      ]
+    },
+    {
+      "h": "Where the energy goes down",
+      "p": [
+        "Melting takes about 60 MJ per kg of product. A redesigned melting furnace could save 20 to 30%, and a simple temperature indicator stops the melt being held 200 C hotter than needed. A chimney and exhaust fan also clear the furnace room."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One 25 kg crucible unit, one year (estimate)",
+    "lines": [
+      "Output: 60 t from 8 units, so about 7.5 t each",
+      "Coal: 12 t x 1.76 = 21.1 t CO2; electricity: 6,300 kWh x 0.675 = 4.3 t",
+      "Fossil total 25.4 t / 7,500 kg = 3.4 kg CO2 per kg of brass",
+      "Charcoal: 12 t x 3.30 = 39.6 t biogenic CO2, reported separately",
+      "Whole cluster: 239 t coal and 117,000 kWh give about 500 t fossil CO2; 215 t charcoal gives about 710 t biogenic"
+    ],
+    "note": "Fuel and output from TERI's 2016 cluster profile. Coal at India's BUR-2 factor; charcoal at the IPCC default. Brass scrap and its own footprint are not included."
+  },
+  "senseible": "The calculators turn your coal and electricity into fossil CO2 in a minute; keep the charcoal tonnes beside it as the biogenic line.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Charcoal and kiln methane",
+      "to": "/answers/charcoal-kiln-methane-pig-iron-footprint"
+    },
+    {
+      "label": "Brass artware CO2 per kg",
+      "to": "/answers/brass-artware-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile report: Balakati brass industries (2016)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/balakati-brass-Odisha.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

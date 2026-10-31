@@ -1,0 +1,73 @@
+{
+  "slug": "ludhiana-brick-kilns-coal-energy-per-brick",
+  "q": "How much coal and energy per brick do Ludhiana brick kilns use?",
+  "title": "Ludhiana brick kilns: coal per brick",
+  "short": "About 140 g of coal per brick: 14 t per lakh in Ludhiana's fixed chimney kilns, or 1.27 MJ per kg of fired brick against 1.1 to 1.2 MJ for a well run kiln. At India's coal factor that is about 0.25 kg CO2 per brick; the coal's implied heat value points nearer 0.34 kg.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Brick kiln owners around Ludhiana",
+  "sections": [
+    {
+      "h": "A Ludhiana kiln's season",
+      "ul": [
+        "About 330 kilns, almost all fixed chimney Bull's trench kilns; a few have moved to zigzag firing.",
+        "A typical kiln fires about 40,000 bricks a day from January to June, about 80 lakh a year.",
+        "Bricks are 9 by 4 by 3 inches and weigh about 3 kg fired; 65 to 70% come out class one.",
+        "It burns about 1,120 t of coal a season; diesel only runs the water pumps."
+      ]
+    },
+    {
+      "h": "Which coal factor fits",
+      "p": [
+        "The profile puts a kiln at 728 toe for 1,120 t of coal, which works out to about 6,500 kcal per kg. That is far above typical Indian grades and closer to imported coal. Check the GCV and origin on your invoice: 1.76 t CO2 per tonne fits Indian coal, about 2.44 fits imported."
+      ]
+    },
+    {
+      "h": "Getting from 1.27 to 1.1 MJ",
+      "ul": [
+        "Crush coal below 10 mm and feed 750 g to 1 kg every 20 minutes, not big lots every 45 to 60.",
+        "Feed across at least three lines, not two, and open a new row only when the bottom glows red, about 650 C.",
+        "Keep the cooling zone near 150 to 170 feet; seal wickets and side flues; lay about 7 inches of ash on top.",
+        "Zigzag firing: about 10% less coal.",
+        "Perforated or hollow bricks save both clay and coal, and the saving grows with the share of perforation."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One kiln, one season (estimate)",
+    "lines": [
+      "80 lakh bricks on 1,120 t coal: 140 kg per 1,000 bricks",
+      "Indian coal factor: 1,120 t x 1.76 = 1,971 t CO2, 246 kg per 1,000 bricks",
+      "Imported coal factor: 1,120 t x 2.44 = 2,733 t CO2, 342 kg per 1,000 bricks",
+      "Zigzag saving of 10%: 112 t coal, 197 to 273 t CO2 a season",
+      "Cluster: 374,080 t coal, about 658,000 to 913,000 t CO2"
+    ],
+    "note": "Coal, output and energy from TERI's Ludhiana brick cluster energy profile. Which factor applies depends on the coal you buy."
+  },
+  "senseible": "Senseible reads coal invoices at 1.76 t CO2 per tonne for Indian coal and 2.44 for imported, so the origin printed on the invoice changes your number; bricks fired give the per brick figure.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Indian coal CO2 by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Zigzag conversion and credits",
+      "to": "/answers/zigzag-kiln-conversion-carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Ludhiana brick manufacturing cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/ludhiana-brick-cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

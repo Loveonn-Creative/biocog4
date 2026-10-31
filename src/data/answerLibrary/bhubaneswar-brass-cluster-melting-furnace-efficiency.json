@@ -1,0 +1,84 @@
+{
+  "slug": "bhubaneswar-brass-cluster-melting-furnace-efficiency",
+  "q": "Bhubaneswar brass units melt on hard coke at under 5% furnace efficiency: what does a better furnace save?",
+  "title": "Bhubaneswar brass: a better melting furnace",
+  "short": "About two thirds of the coke. BEE's audit found every melting furnace below 5% efficient. A redesigned 100 kg furnace with a recuperator, at about 15%, cuts the hard coke for three units' melting from 30,240 kg to 9,375 kg a year, about 63 t CO2 avoided.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Brass artisans in Balakati, Pratap Sasan, Rathijema and Bainchua, and anyone funding a shared furnace there",
+  "sections": [
+    {
+      "h": "The cluster BEE audited",
+      "ul": [
+        "About 200 household units, roughly 120 working, making thali (54%), lota, bati, bela and diya (38%) and handicrafts (8%).",
+        "Hard coke melts copper, zinc and brass scrap at about 950 C in pits 40 to 70 cm wide; a batch takes 5 to 6 hours, 2 to 4 times a week.",
+        "Charcoal reheats the castings at about 800 C for hammering. Reheating is 84% of the energy bill, melting about 15%.",
+        "TERI's later profile of Balakati records coal rather than hard coke in the melting pits, so check what your supplier bills."
+      ]
+    },
+    {
+      "h": "The unit the project report is built on",
+      "ul": [
+        "100 kg furnace, 144 batches a year, 14,400 kg of product.",
+        "10,080 kg of hard coke, 13,680 kg of charcoal and 432 kWh a year.",
+        "That is 0.7 kg of coke and 0.95 kg of charcoal per kg of brass."
+      ]
+    },
+    {
+      "h": "What the new furnace changes",
+      "ul": [
+        "A recuperator uses 550 C flue gas to preheat combustion air to about 200 C.",
+        "An insulated enclosure and a small electric blower replace the open pit and hand bellows, lifting efficiency to about 15%.",
+        "One owner installs it and rents time to two neighbours, who pay half their coke saving as rent. The report costs the project at about Rs 2 lakh.",
+        "It lasts about 15 years, with new refractory every 5 years."
+      ]
+    },
+    {
+      "h": "The bigger fuel is charcoal",
+      "p": [
+        "Since reheating takes most of the money, BEE prepared separate reports for efficient reheating furnaces and rice husk gasifiers. Charcoal's CO2 is biogenic and reported on its own line, but cutting it still saves cash."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Before and after (estimate)",
+    "lines": [
+      "Before, one unit: 10,080 kg coke x 3.02 = 30.4 t CO2, or 2.1 kg CO2 per kg of brass from melting",
+      "Three units: 30,240 kg coke falls to 9,375 kg, a saving of 20,865 kg",
+      "CO2 avoided: 20,865 kg x 3.02 = 63 t a year",
+      "After, per kg of brass: 3,125 kg x 3.02 / 14,400 = 0.66 kg CO2",
+      "The blower adds about 1,300 kWh across the three units, under 1 t CO2"
+    ],
+    "note": "Fuel and output from BEE's detailed project report for this cluster; coke at the IPCC default for coke oven coke. Costs are as the report states them, at its prices."
+  },
+  "senseible": "The green loan check shows what a lender will ask before funding a shared furnace; Senseible reads the electricity bills and fuel invoices behind the before and after figures into dated records.",
+  "links": [
+    {
+      "label": "Green loan check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Counting Balakati's coal and charcoal",
+      "to": "/answers/balakati-brass-bell-metal-cluster-coal-charcoal"
+    },
+    {
+      "label": "Brass melting furnace options",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, DPR: energy efficient melting furnace (100 kg), Bhubaneswar brass cluster",
+      "url": "https://sameeeksha.org/pdf/Bhubaneshwar_brass_cluster/DPR_on_Energy_Efficient_Melting_Furncae_100kg.pdf"
+    },
+    {
+      "label": "TERI, Cluster profile report: Balakati brass industries (2016)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/balakati-brass-Odisha.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

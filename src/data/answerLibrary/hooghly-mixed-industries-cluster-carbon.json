@@ -1,0 +1,89 @@
+{
+  "slug": "hooghly-mixed-industries-cluster-carbon",
+  "q": "What does the Hooghly mixed industries cluster use in energy?",
+  "title": "Hooghly mixed cluster: energy and CO2",
+  "short": "About 105,800 toe a year in 2022-23: 853 million kWh of electricity and 46,300 t of coal, furnace oil, LDO and LSHS, across 950 MSMEs and 50 large units. At today's grid factor the electricity alone is about 576,000 t CO2, so for most Hooghly units the power bill sets the footprint.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Foundries, rolling mills, engineering and chemical units in Konnagar, Serampore, Dankuni, Bhadreswar and Chandannagar",
+  "sections": [
+    {
+      "h": "Four trades along the highways",
+      "ul": [
+        "Foundries for engineering, railway and auto buyers; rolling mills making billets, pipes, tubes and coils.",
+        "Engineering units making tractor and auto parts, farm and industrial machinery, and jewellery.",
+        "Chemical units making rubber, resin, FRP and antioxidants.",
+        "By contract demand: 850 units below 300 kVA, 100 at 300 to 1,500 kVA, 50 above."
+      ]
+    },
+    {
+      "h": "Typical units",
+      "ul": [
+        "Micro and small: about 302,500 kWh and almost no fuel.",
+        "Medium: about 1.55 million kWh and 1,471 t of fuel.",
+        "Large: about 8.8 million kWh and 1,637 t of fuel."
+      ]
+    },
+    {
+      "h": "Per tonne, by process",
+      "ul": [
+        "Induction melting: 600 to 770 kWh per tonne, in crucibles of 500 kg to 5 t.",
+        "Forging furnaces: 100 to 180 litres of oil per tonne; heat treatment 100 to 150.",
+        "Reheating furnaces for rolling run on pulverised coal and LDO at 1,100 to 1,200 C, often with the fuel control bypassed.",
+        "Chemical unit boilers burn coal, wood or rice husk at about 55% efficiency, mostly without economisers."
+      ]
+    },
+    {
+      "h": "Cheap fixes first",
+      "ul": [
+        "A lid on the induction crucible: open crucibles lose 4 to 6% of input as radiation; a lid saves up to 3% and pays back within months.",
+        "IE3 motors on lathes, presses and drills.",
+        "Plug compressed air leaks at joints and valves."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The cluster and two units (estimate)",
+    "lines": [
+      "Electricity: 853 million kWh x 0.675 = about 575,800 t CO2",
+      "Fuel: 46,300 t at 1.76 (all Indian coal) = 81,500 t, or at 3.13 (all furnace oil) = 144,900 t",
+      "Medium unit: 1.55 million kWh = 1,048 t, plus 1,471 t of fuel = 2,590 to 4,600 t",
+      "One tonne melted in an induction furnace at 700 kWh: 473 kg CO2"
+    ],
+    "note": "Energy from TERI's 2022-23 energy profile of the cluster. The fuel is a mix the profile does not split, so its CO2 is shown as a range; your own fuel bills fix it."
+  },
+  "senseible": "Senseible reads your electricity bills and coal, furnace oil and diesel invoices into dated records with their CO2, so a medium unit sees its power and fuel lines side by side.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Induction furnace kWh per tonne",
+      "to": "/answers/induction-furnace-kwh-per-tonne-benchmark"
+    },
+    {
+      "label": "Forging furnace fuel benchmark",
+      "to": "/answers/forging-furnace-fuel-per-tonne-benchmark"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Hooghly mixed cluster (2022-23)",
+      "url": "https://sameeeksha.org/pdf/Hooghly%20mixed%20cluster.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Hooghly mixed cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=309&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "mehsana-plastics-engineering-cluster-carbon",
+  "q": "What does the Mehsana mixed industries cluster use in energy, and what should a plastics unit record?",
+  "title": "Mehsana plastics units: energy and records",
+  "short": "Mostly grid electricity: 31.3 million kWh of the cluster's 3,400 toe in 2016, plus wood in box makers' boilers and gas in micron powder heaters. A Mehsana plastics unit averages about 273,000 kWh a year, roughly 0.36 t CO2 per tonne of pipe, film or granules at today's grid factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plastic pipe, film and granule units in Mehsana and the nearby GIDC estates",
+  "sections": [
+    {
+      "h": "Four trades in one cluster",
+      "ul": [
+        "Plastics: 40 units, 20,400 t a year of pipes and fittings, carry bags, sheets and granules.",
+        "Road construction equipment: 32 units, 13,920 t of asphalt plants, drum mixers, bitumen sprayers and sweepers.",
+        "Micron powder from Rajasthan dolomite and calcite: 11 units, 12,000 t. Corrugated boxes: 17 units, 21,000 t.",
+        "About 4,000 jobs and Rs 700 crore of turnover."
+      ]
+    },
+    {
+      "h": "Who uses the energy",
+      "ul": [
+        "Micron powder: 1,656 toe, in ball mills and gas fired thermic fluid heaters.",
+        "Plastics: 940 toe, all electricity, with barrel heating among the largest loads.",
+        "Corrugated boxes: 729 toe, mostly wood in steam boilers. Road equipment: 76 toe, over half of it welding.",
+        "Cluster: electricity 79%, wood 17% (1,680 t), natural gas 4% (144,000 scm)."
+      ]
+    },
+    {
+      "h": "What a plastics unit should record",
+      "ol": [
+        "kWh from each month's bill, and from sub-meters on each extruder or blown film line if you have them.",
+        "Tonnes produced per line in the same month.",
+        "Polymer bought by grade (HDPE, LDPE, LLDPE, PP, PVC) and tonnes of in-house regrind reused.",
+        "DG diesel, even if small.",
+        "Rejects reground, so they are not counted as output twice."
+      ]
+    },
+    {
+      "h": "Cutting the kWh",
+      "ul": [
+        "Radiant barrel heater bands with thyristor control and proper insulation: 20 to 30% less barrel heating energy.",
+        "A VFD on the extruder screw motor: up to 20%.",
+        "VFDs on ball mills and thermic fluid pumps for the powder units."
+      ]
+    },
+    {
+      "h": "The bigger number upstream",
+      "p": [
+        "In a product footprint, the polymer you buy usually outweighs your own power. That figure comes from the resin supplier or a named database, reported as Scope 3 purchased goods."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One plastics unit and the cluster (estimate)",
+    "lines": [
+      "Average plastics unit: 940 toe / 40 = 23.5 toe = about 273,300 kWh",
+      "CO2: 273,300 x 0.675 = 184 t a year",
+      "Output: 20,400 t / 40 = 510 t, so 536 kWh and 0.36 t CO2 per tonne",
+      "Cluster: 31.3 million kWh = 21,100 t; 144,000 scm gas x 2.05 kg = 295 t; 1,680 t wood reported as biogenic"
+    ],
+    "note": "Energy and output from TERI's cluster profile (2016). Electricity at the CEA FY 2025-26 factor; the profile itself used an older one."
+  },
+  "senseible": "The calculators give a plastics unit its CO2 per tonne from kWh and output; for a running monthly record, Senseible reads the electricity bills directly.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Polymer resin emission factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "PVC pipe CO2 per kg",
+      "to": "/answers/pvc-pipe-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Mixed industries cluster, Mehsana",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Mehsana-Mixed-Industries-Gujarat.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Mixed industries, Mehsana cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=242&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

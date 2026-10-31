@@ -1,0 +1,90 @@
+{
+  "slug": "vellore-rice-mill-cluster-boiler-fuels",
+  "q": "What fuels do Vellore rice mill boilers burn, and what is the cluster's footprint?",
+  "title": "Vellore rice mills: boiler fuels and CO2",
+  "short": "Firewood first, then groundnut shell and rice husk, all biogenic, so the fossil footprint is mostly the power bill: about 79 million kWh, roughly 53,500 t CO2 a year across some 340 mills. The boilers burning that biomass run at only 25 to 40% efficiency.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Ponni rice mills in Vellore, Arcot and Arni",
+  "sections": [
+    {
+      "h": "Ponni, steam and hot air",
+      "ul": [
+        "About 340 mills: 125 below 15 t a day, 215 above.",
+        "Ponni rice leaves the mill at 8.5 to 9% moisture, against 12 to 13% in most other states.",
+        "Boilers raise steam at 1 to 2 kg per cm2 to cook paddy; hot air and bed dryers do the drying.",
+        "Energy is only 4 to 5% of the cost of processing paddy."
+      ]
+    },
+    {
+      "h": "The cluster's fuel in a year",
+      "ul": [
+        "Firewood: 181,979 t, 55% of the energy.",
+        "Groundnut shell: 77,900 t, 27%.",
+        "Rice husk: 27,200 t, 12%.",
+        "Electricity: about 79.3 million kWh, 6% of the energy but almost all of the fossil CO2."
+      ]
+    },
+    {
+      "h": "Same paddy, twice the power",
+      "p": [
+        "BEE's three study mills each processed 4,950 t of paddy. One used 228,576 kWh, another 482,880. Wood ran at 0.12 to 0.13 kg per kg of paddy in all three, but groundnut shell ranged from 0.05 to 0.11. Compare your own kWh and fuel per tonne against these before buying anything."
+      ]
+    },
+    {
+      "h": "The boiler fix",
+      "p": [
+        "The study found single pass, locally built boilers at 25 to 40% efficiency and recommended three pass boilers at about 72%. Across 295 mills it put the saving at 54,967 t of biomass a year, with payback under a year. Less wood also means less methane and nitrous oxide, which do count in Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One study mill, one year (estimate)",
+    "lines": [
+      "Paddy: 4,950 t; electricity 228,576 kWh; wood 660 t; groundnut shell 264 t",
+      "Electricity: 228,576 x 0.675 = 154 t CO2, or 31 kg per tonne of paddy",
+      "Methane and nitrous oxide from the wood alone: about 10.3 TJ x 1.9 t = about 20 t CO2e, in Scope 1",
+      "Wood CO2: 660 t x 1.75 = about 1,155 t, reported separately as biogenic",
+      "Cluster: 79.3 million kWh x 0.675 = about 53,500 t fossil CO2"
+    ],
+    "note": "Fuel, power and paddy from BEE's energy conservation manual for the Vellore cluster. Wood at the IPCC default heat value and factors; groundnut shell and husk add to both biogenic lines."
+  },
+  "senseible": "Use the calculators for the electricity part of your figure; Senseible can read each month's power bill into a dated record so the kWh per tonne trend is on file.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Biomass boilers: CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Rice mill CO2 per tonne of paddy",
+      "to": "/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, Manual on energy conservation measures in rice mills cluster, Vellore",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Vellore_Rice_Millling.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Vellore rice mills cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=152&Itemid=502"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}

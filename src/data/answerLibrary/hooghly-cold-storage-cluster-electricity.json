@@ -1,0 +1,81 @@
+{
+  "slug": "hooghly-cold-storage-cluster-electricity",
+  "q": "How much power does the Hooghly cold storage cluster use?",
+  "title": "Hooghly cold stores: power per tonne",
+  "short": "About 110.9 million kWh and 0.5 million litres of diesel a year across some 150 potato cold stores, 10,073 toe in 2022-23, or roughly 76,000 t CO2. Bigger stores use less per tonne held: about 89 kWh per tonne of capacity below 10,000 t, 46 kWh above 20,000 t.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Potato cold store owners in Hooghly district",
+  "sections": [
+    {
+      "h": "The stores",
+      "ul": [
+        "62 stores below 10,000 t (average 6,237 t), 70 at 10,000 to 20,000 t (average 13,704 t), 18 above 20,000 t (average 23,522 t).",
+        "Table potatoes are held at 2 to 4 C for up to 6 to 8 months; potatoes for processing at 10 to 12 C.",
+        "Chambers rise 4 to 5 floors, 50 to 60 feet.",
+        "DG sets, and in some stores diesel engines on the compressors, cover power cuts."
+      ]
+    },
+    {
+      "h": "Where the units go",
+      "ul": [
+        "Compressors 70%, pumps 13%, fans 12%, lights 5%.",
+        "Most systems are reciprocating ammonia compressors, run flat out with manual control, on rewound standard motors.",
+        "Ammonia has no global warming potential, so top-ups add nothing; the footprint is power and diesel."
+      ]
+    },
+    {
+      "h": "Fixes with a payback",
+      "ul": [
+        "Re-pipe stores built before 2005 if the pressure drop from evaporator to condenser is over 0.2 bar: each 0.1 bar costs about 7% more power.",
+        "Re-insulate pipes and valves that frost: 5 to 8% less power, payback within a year.",
+        "Controls and VFDs on evaporator fans: about Rs 10 to 12 lakh for a 5,000 t store, payback 18 to 24 months.",
+        "Strip or air curtains on chamber doors; none of the surveyed stores had them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "CO2 per tonne of capacity, by size (estimate)",
+    "lines": [
+      "Below 10,000 t: 554,182 kWh x 0.675 = 374 t + 4,700 L diesel x 2.645 = 12 t; 386 t / 6,237 t = 62 kg per tonne",
+      "10,000 to 20,000 t: 548 t + 6 t = 554 t / 13,704 t = 40 kg per tonne",
+      "Above 20,000 t: 738 t + 8 t = 746 t / 23,522 t = 32 kg per tonne",
+      "Cluster: 110.9 million kWh = 74,860 t; 0.5 million L diesel = 1,320 t; about 76,200 t"
+    ],
+    "note": "Power, diesel and capacity from TERI's 2022-23 energy profile of the cluster; per tonne of rated capacity, not tonnes actually stored."
+  },
+  "senseible": "Enter a season's kWh and diesel in the calculators for CO2 per tonne stored; Senseible can read the WBSEDCL bills and diesel slips into monthly records.",
+  "links": [
+    {
+      "label": "Carbon calculators",
+      "to": "/calculators"
+    },
+    {
+      "label": "Ammonia vs HFC refrigerant",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    },
+    {
+      "label": "Potato cold store power per bag",
+      "to": "/answers/potato-cold-storage-electricity-per-bag"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Hooghly cold storage cluster (2022-23)",
+      "url": "https://sameeeksha.org/pdf/Hooghly%20Cold%20Storage%20Cluster%20Profile.pdf"
+    },
+    {
+      "label": "SAMEEEKSHA, Hooghly cold storage cluster summary",
+      "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=310&Itemid=502"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector (grid factor 0.675 kg CO2 per kWh, FY 2025-26)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-31"
+}
