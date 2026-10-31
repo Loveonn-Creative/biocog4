@@ -196,6 +196,28 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://www.ireda.in/IredaWebPortal/loan-products/faq
 - https://www.ireda.in/IredaWebPortal/loan-products/sectors/energy-efficiency
 - https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12940&Mode=0
+- https://annualreport2025.volkswagen-group.com/sustainability-report/social-information/sustainability-in-the-supplychain.html
+- https://catena-x.net/wp-content/uploads/2025/10/Catena-X-Product-Carbon-Footprint-Rulebook_v4-with-line-numbers.pdf
+- https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-V2-Criteria.pdf
+- https://ghgprotocol.org/sites/default/files/2022-12/Chapter1.pdf
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=126&Itemid=499
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=144&Itemid=502
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=304&Itemid=502
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=318&Itemid=502
+- https://sameeeksha.org/index.php?option=com_content&view=article&id=319&Itemid=502
+- https://sameeeksha.org/pdf/clusterprofile/Footwear_Agra_Uttar_Pradesh.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Jagadhri_Brass_&_Aluminium_Industries.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Jaipur%20glass%20cluster.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Karnal-Rice-Mill.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Kochi_See_Food_Processing.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Kochi_seafood_processing_cluster.pdf
+- https://sameeeksha.org/pdf/clusterprofile/ODISHA_SPONGE_IRON_CLUSTER.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Surendranagar-Ceramic-Cluster.pdf
+- https://sameeeksha.org/pdf/clusterprofile/Virudhachalam-Ceramics-Refractories-TamilNadu.pdf
+- https://sameeeksha.org/pdf/clusterprofile/rajkot-bearing.pdf
+- https://sameeeksha.org/pdf/dpr/Muzaffarnagar_Paper.pdf
+- https://supplier.gsk.com/SupplierCollaboation
+
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org
 - https://ghgprotocol.org

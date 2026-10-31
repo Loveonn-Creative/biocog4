@@ -1,0 +1,67 @@
+{
+  "slug": "pcf-include-transport-to-buyer",
+  "q": "Should my product carbon footprint include transport to the buyer?",
+  "title": "Should a PCF include transport to the buyer?",
+  "short": "Not inside the cradle-to-gate figure. Under the Catena-X PCF Rulebook, version 4, your footprint ends at your outbound gate, whoever pays the freight. If you contract or run the delivery, report its emissions separately, next to the PCF. If the buyer arranges it, the buyer counts it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian component and material suppliers sending product footprints to buyers",
+  "sections": [
+    {
+      "h": "Where your footprint starts and stops",
+      "ul": [
+        "Included: every upstream transport leg that brought your raw materials and bought-in parts to you.",
+        "Included: in-house logistics, such as moving parts between your own shops, unless a cut-off rule lets you leave it out.",
+        "Included: moving goods from your plant to your own distribution centre. The rulebook treats this as in-house logistics, so the distribution centre becomes your shipping point.",
+        "Excluded: the leg from your shipping point to the buyer. The boundary stays at your outbound gate even if you pay for or run the trucks."
+      ]
+    },
+    {
+      "h": "Who reports the delivery leg",
+      "ul": [
+        "Buyer contracts or runs the transport (for example, its own milk-run trucks): the buyer calculates those emissions. You send nothing extra.",
+        "You contract or run the transport: you report those emissions to the buyer separately, in addition to the PCF.",
+        "One truck carries several products or drops at several sites: share the transport emissions between products by mass."
+      ]
+    },
+    {
+      "h": "Why mixing them causes double counting",
+      "p": [
+        "In the buyer's own inventory, the GHG Protocol puts your cradle-to-gate footprint in Scope 3 Category 1, purchased goods, and transport from you to them, in vehicles they do not own or control, in Category 4. A delivery leg folded into your PCF can land in Category 1 while the buyer also counts it from the freight bill in Category 4. A separate line lets the buyer place it once."
+      ]
+    },
+    {
+      "h": "What to send",
+      "ol": [
+        "The PCF per declared unit, cradle-to-gate, with the reference period.",
+        "A separate transport line, only if you arrange the delivery: kg CO2e per unit, mode, route and how you calculated it.",
+        "One sentence saying who contracts the freight, so the buyer knows which case applies."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a forging supplier that books the truck",
+    "lines": [
+      "PCF of one 2.4 kg flange, cradle-to-gate: 6.1 kg CO2e (your calculation)",
+      "Delivery truck: 380 litres of diesel for a full load of 9,000 identical flanges",
+      "Transport emissions: 380 x 2.645 = 1,005 kg CO2",
+      "Per flange: 1,005 / 9,000 = about 0.11 kg CO2",
+      "Send: PCF 6.1 kg CO2e, plus a separate line of 0.11 kg CO2 per flange for delivery"
+    ],
+    "note": "Example figures; the diesel factor is the IPCC-based 2.645 kg CO2 per litre. With mixed loads, split by mass. If the buyer's truck collects, send only the 6.1."
+  },
+  "senseible": "Senseible reads fuel slips and freight invoices into dated transport records next to your plant's fuel and electricity, so you can show the delivery figure from its source document. It does not certify a PCF against the Catena-X rules.",
+  "links": [
+    { "label": "Footprint and emission calculators", "to": "/calculators" },
+    { "label": "Answer a Catena-X PCF request", "to": "/answers/answer-a-catena-x-pcf-request-auto-parts" },
+    { "label": "Cradle-to-gate or cradle-to-grave", "to": "/answers/cradle-to-gate-or-cradle-to-grave" },
+    { "label": "ISO 14083 for transport emissions", "to": "/answers/iso-14083-transport-emissions-standard" }
+  ],
+  "sources": [
+    { "label": "Catena-X, Product Carbon Footprint Rulebook, version 4 (September 2025), section 5.2.3 Emissions from transportation, Table 2", "url": "https://catena-x.net/wp-content/uploads/2025/10/Catena-X-Product-Carbon-Footprint-Rulebook_v4-with-line-numbers.pdf" },
+    { "label": "GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions, Category 1: Purchased Goods and Services", "url": "https://ghgprotocol.org/sites/default/files/2022-12/Chapter1.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Catena-X extended its transition period for SMEs to the end of 2027; re-check for a rulebook version 5."
+}

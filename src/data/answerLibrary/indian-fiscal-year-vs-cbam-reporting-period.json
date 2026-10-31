@@ -25,7 +25,7 @@
     {
       "h": "Two periods, one set of meter readings",
       "p": [
-        "The verification guidance uses exactly this case as its example: CBAM runs January to December while another system runs April to March. A gas meter read only on 1 April, or a coal pile counted only at the March close, leaves a hole in the CBAM year. Read the meters and take stock on both 1 January and 1 April, and monthly if you can, so no month has to be guessed."
+        "The verification guidance uses exactly this case as its example: CBAM runs January to December while another system runs April to March. A gas meter read only on 1 April, or a coal pile counted only at the March close, leaves a hole in the CBAM year. Read the meters and take stock on both 1 January and 1 April, and monthly if you can, so no month has to be guessed. If your plant is also under another carbon pricing scheme with overlapping fuels and sources, the guidance allows one monitoring plan for both, where that other scheme allows it. The plan must then meet the minimum rules of both and assign every emission to the right period in each."
       ]
     },
     {

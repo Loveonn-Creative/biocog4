@@ -1,0 +1,68 @@
+{
+  "slug": "virudhachalam-ceramic-refractory-kiln-fuel-carbon",
+  "q": "Virudhachalam ceramic and refractory kilns burn firewood, coal, petcoke and RPO: what is the cluster's footprint?",
+  "title": "Virudhachalam kilns: four fuels, one footprint",
+  "short": "Firewood is the biggest, then imported coal, petcoke and rubber process oil. About 300 small and micro units near Virudhachalam made about 60,000 t a year on 10,079 toe in 2015, 99% of it kiln fuel. Fossil CO2 comes to roughly 23,000 t, about 0.39 t per tonne, with wood CO2 reported separately.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Ceramic, terracotta and refractory units and kiln owners in the Virudhachalam (Vriddhachalam) cluster, Cuddalore district, Tamil Nadu",
+  "sections": [
+    {
+      "h": "Each kiln type has its own fuel",
+      "ul": [
+        "Tunnel kilns, 5: three fire ceramics on RPO or LDO at about 7.5 tpd; two fire high alumina refractory bricks on petcoke and imported coal dust at about 20 tpd.",
+        "Shuttle kilns, 20: batch firing of toys and art ware on RPO.",
+        "Rotary kilns, 10: pulverised imported coal.",
+        "Downdraft kilns, about 100 built, about 20 still firing: wood, mainly for the bottom boring sets steel plants buy."
+      ]
+    },
+    {
+      "h": "Heat per kg tells you which kiln to fix",
+      "ul": [
+        "Downdraft: 4,200 kcal per kg",
+        "Shuttle: 3,779 kcal per kg",
+        "Tunnel: 1,740 kcal per kg",
+        "Rotary: 1,413 kcal per kg"
+      ]
+    },
+    {
+      "h": "The cluster's fuel bill",
+      "p": [
+        "Firewood 18,000 t (4,140 toe), imported coal 4,800 t (3,360 toe), petcoke 1,440 t (1,267 toe), RPO 1,316 kL (1,211 toe) and 1.18 million kWh of TANGEDCO power (102 toe). Downdraft kilns took 41% of the energy and rotary kilns 34%. Energy was about half of production cost. A refractory tunnel kiln unit used about 644 toe a year; a shuttle kiln toy unit about 41."
+      ]
+    },
+    {
+      "h": "What cuts fuel, and by how much",
+      "ul": [
+        "Lighter tunnel kiln cars with hollow ceramic pipes, fibre blankets and cordierite blocks: about 3% of heat input, 52 toe a year across the cluster.",
+        "Automatic air to fuel control and better burners on tunnel and shuttle kilns: about 3%, 178 toe.",
+        "Combustion air preheating from shuttle kiln flue gas at 900 to 1,000 °C: about 7%, 57 toe.",
+        "Moving downdraft work into continuous kilns is the big step: a downdraft kiln uses about 2.4 times the heat per kg of a tunnel kiln."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: cluster CO2 by fuel",
+    "lines": [
+      "Imported coal: 3,360 toe x 41.868 GJ x 94.6 kg CO2 per GJ = about 13,300 t",
+      "Petcoke: 1,267 toe x 41.868 x 97.5 = about 5,200 t",
+      "RPO, taken as fuel oil: 1,211 toe x 41.868 x 77.4 = about 3,900 t",
+      "Power: 1.18 million kWh x 0.675 = about 800 t; fossil total about 23,200 t, or 0.39 t per tonne of 60,000 t",
+      "Firewood, biogenic and reported separately: 4,140 toe x 41.868 x 112 = about 19,400 t"
+    ],
+    "note": "An estimate using IPCC 2006 default factors and the CEA FY 2025-26 grid factor; RPO has no IPCC default of its own. Use your own fuel invoices and test reports."
+  },
+  "senseible": "Senseible reads RPO, coal, petcoke and wood purchase invoices and TANGEDCO bills into a monthly record for your unit, keeping wood as biogenic, so you have your own figure per tonne when a steel plant or exporter asks.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Refractory kiln CO2 per tonne", "to": "/answers/asansol-refractory-plant-kiln-co2-per-tonne" },
+    { "label": "Are refractories covered by CBAM?", "to": "/answers/are-refractories-covered-by-cbam" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Vriddhachalam ceramics and refractory industries (2015)", "url": "https://sameeeksha.org/pdf/clusterprofile/Virudhachalam-Ceramics-Refractories-TamilNadu.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "Data are TERI's 2015 estimates. Fuel mix shifts with prices (RPO was replacing LDO then); re-check against a newer profile if one appears."
+}

@@ -267,6 +267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "agra-footwear-components-cluster-carbon",
+  "q": "What does Agra's footwear component cluster use in energy, and which product uses most?",
+  "title": "Agra footwear components: energy and CO2",
+  "short": "Plastic soles: 5,429 of the 8,624 toe that Agra's 205 or so component units used in 2014-15, by TERI's count, about 63%. The cluster drew 59 million kWh of power, 2,880 kL of diesel and 1.2 million scm of gas, roughly 50,000 t CO2 a year on today's factors, mostly from electricity.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "agra-footwear-unit-diesel-genset-scope-1",
   "q": "Is diesel for an Agra footwear unit's generator Scope 1?",
   "title": "Agra footwear units: generator diesel",
@@ -4281,6 +4289,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The CBAM benchmark sets the free allocation deducted per tonne. For default-value imports, rebar and wire rod on the blast furnace route use 1.364 t CO2e per tonne, grey clinker 0.666, unwrought primary aluminium 1.423, anhydrous ammonia 1.522 and hydrogen 5.089.",
   "topic": "regulation",
   "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-biomass-fuel-zero-rating-proof",
+  "q": "We burn biomass or rice husk. What does the CBAM verifier need to zero-rate it?",
+  "title": "Biomass fuel in CBAM: proof to zero-rate it",
+  "short": "Biomass burnt as fuel counts at zero only if it meets the EU Renewable Energy Directive's sustainability and greenhouse gas savings criteria. Your monitoring plan needs a written procedure showing how, and the verifier looks for Proofs of Sustainability from a RED II certification scheme the Commission recognises. Without them, the CO2 counts in full.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "cbam-carbon-price-paid-what-proof-is-needed",
@@ -14835,6 +14851,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "jagadhri-brass-aluminium-cluster-wood-coke-carbon",
+  "q": "Jagadhri brass and aluminium units burn wood, coke and furnace oil: what is the cluster footprint?",
+  "title": "Jagadhri brass and aluminium: fuels and CO2",
+  "short": "Wood leads by energy, but the fossil CO2, roughly 58,000 t a year, comes from furnace oil, coke and power. BEE counted about 175 units, 100 brass and 75 aluminium, using 32,090 toe: wood 18,880, furnace oil 6,500, imported coke 4,560 and 25 GWh of power. Aluminium sheet and circles fall under CBAM; utensils and brass do not.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "jagadhri-utensil-unit-melting-furnace-co2",
   "q": "How does a utensil maker in Jagadhri work out CO2 per kg?",
   "title": "Jagadhri utensil unit: CO2 per kg",
@@ -14881,6 +14905,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually the workshop's Scope 1 and 2 emissions and a figure per piece or per gram for what they buy. Precious metal dominates the footprint, so buyers care most about where gold and silver come from and whether recycled content is backed by supplier documents.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "jaipur-toughened-glass-units-electricity-carbon",
+  "q": "Jaipur toughened and laminated glass units run on electricity: what carbon data can they give builders?",
+  "title": "Jaipur toughened glass: power and CO2 data",
+  "short": "Jaipur's 19 operating safety glass MSMEs processed about 31,098 t in 2019-20 using 1,185 toe, almost all grid power. A typical toughening unit used about 1.09 million kWh for 2,275 t: about 480 kWh and 325 kg CO2 per tonne. Builders also need the float glass maker's figure, which you pass on.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "jakarta-data-centre-coal-grid-scope-2",
@@ -15267,6 +15299,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "karnal-basmati-rice-mills-husk-carbon",
+  "q": "Karnal rice mills burn their own husk: what does the cluster use, and what goes in a rice buyer's figure?",
+  "title": "Karnal rice mills: husk, power and CO2",
+  "short": "Mostly husk, and its CO2 is biogenic, so it stays out of the fossil figure. About 178 mills around Karnal milled 4.45 million tonnes of paddy in 2017-18, and husk gave 241,936 of their 268,921 toe. A rice buyer's fossil figure comes mainly from the cluster's 313 million kWh of grid power.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "karnataka-green-tariff-bescom-factories",
   "q": "Can a factory on BESCOM or another Karnataka discom buy power at the green tariff, and what does it add to the bill?",
   "title": "Karnataka green tariff for factories",
@@ -15473,6 +15513,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Cement is one of the goods where CBAM counts indirect emissions. Multiply the electricity used to make each tonne of clinker and cement by the emission factor the CBAM rules allow, usually the default for the country's grid, then add it to direct emissions from calcination and kiln fuel.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "kochi-seafood-processors-freezer-energy-carbon",
+  "q": "Compressors carry most of the load in Kochi seafood plants: what is the cluster's carbon footprint?",
+  "title": "Kochi seafood plants: freezer power and CO2",
+  "short": "Kochi's 35 or so seafood processors run almost entirely on grid power: about 30,000 MWh a year, 2,574 toe. Refrigeration compressors are 73% of connected load and freezing about 75% of electricity. At today's grid factor that is roughly 20,000 t CO2 a year, or 0.25 to 0.57 t per tonne of product.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "kolhapur-foundry-castings-buyer-carbon-data",
@@ -17355,6 +17403,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "muzaffarnagar-paper-mills-steam-power-benchmark",
+  "q": "How far are Muzaffarnagar paper mills from the energy benchmark, and what does closing the gap do to carbon?",
+  "title": "Muzaffarnagar paper mills vs the benchmark",
+  "short": "Some by a long way. BEE measured 10.1 to 18.2 GJ of fuel and 550 to 1,080 kWh per tonne of paper across about 29 mills, against IPPTA kraft norms of about 9.9 to 17.6 GJ of steam and 550 to 650 kWh. Its 15 projects would save about 22,800 t CO2 a year.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "mvr-evaporator-vs-steam-evaporator-co2",
   "q": "Does an MVR evaporator cut emissions compared with a steam evaporator?",
   "title": "MVR evaporator vs steam evaporator",
@@ -17769,6 +17825,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not for the CBAM charge on aluminium. Power from a captive coal plant is indirect emissions under the CBAM Regulation, and Annex II lists aluminium for direct emissions only. Anode consumption and perfluorocarbons from anode effects do count, and the captive plant's emissions still matter for buyers counting Scope 3.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "odisha-sponge-iron-cluster-coal-kiln-carbon",
+  "q": "Odisha's sponge iron units: how much coal do they burn, and what CBAM data do their buyers need?",
+  "title": "Odisha sponge iron cluster: coal and CO2",
+  "short": "About 9.5 million tonnes of coal a year, across roughly 107 coal-based units, most in Sundargarh and Keonjhar, by BEE's count. In the 30 plants audited, coal was 99.8% of energy, about 1.6 t per tonne of DRI. For CBAM, a steel buyer needs your mass balance figure, not a coal invoice total.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "office-ac-replacement-co2-savings",
@@ -18433,6 +18497,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add three parts per board: the components, where integrated circuits usually dominate, from supplier data or a licensed database; the bare board by area and layer count; and your assembly energy, plant kWh and DG diesel per board times their factors. Assembly is usually a small share, so component data decides the result.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "pcf-include-transport-to-buyer",
+  "q": "Should my product carbon footprint include transport to the buyer?",
+  "title": "Should a PCF include transport to the buyer?",
+  "short": "Not inside the cradle-to-gate figure. Under the Catena-X PCF Rulebook, version 4, your footprint ends at your outbound gate, whoever pays the freight. If you contract or run the delivery, report its emissions separately, next to the PCF. If the buyer arranges it, the buyer counts it.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "peanut-butter-carbon-footprint-per-kg",
@@ -19835,6 +19907,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-30"
  },
  {
+  "slug": "rajkot-bearing-cluster-electricity-carbon",
+  "q": "How much energy and CO2 do Rajkot bearing makers use, and which stage uses most?",
+  "title": "Rajkot bearing cluster: power and CO2",
+  "short": "Grinding and assembly. Rajkot's 150 or so bearing units, 90 assembly, 35 rolling element and 25 cage makers, used 3,903 toe a year in TERI's profile, 91% of it 41.3 million kWh of electricity. Assembly units took about 53%, rolling elements 34%. On today's grid factor that is roughly 28,800 t CO2 a year.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "rajkot-engine-parts-exporter-cbam-check",
   "q": "Do engine parts exported from Rajkot fall under EU CBAM?",
   "title": "Rajkot engine parts and CBAM",
@@ -21043,6 +21123,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "sbti-net-zero-standard-v2-suppliers",
+  "q": "What does SBTi's Corporate Net-Zero Standard V2 mean for suppliers?",
+  "title": "SBTi Net-Zero Standard V2: supplier impact",
+  "short": "Version 2.0 was released in June 2026 and applies from 1 February 2027. It lets your large customers meet their Scope 3 target by raising the share of tier 1 suppliers, measured by emissions or spend, that are in transition or net-zero aligned. Expect them to ask where you stand, every year.",
+  "topic": "markets",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "sbti-sme-route-eligibility",
   "q": "Is my company eligible for the SBTi SME target route?",
   "title": "Who qualifies for the SBTi SME route?",
@@ -21289,6 +21377,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Sedex's Environment Self-Assessment Questionnaire, launched in August 2024, asks for your environmental commitments, legal compliance, permits, management systems, Scope 1, 2 and 3 greenhouse gas emissions, and how you manage energy, waste, chemicals, air, water, biodiversity and deforestation. Answer the carbon part from twelve months of fuel and electricity bills.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
+ },
+ {
+  "slug": "sedex-membership-who-pays-per-site",
+  "q": "My buyer asked us to join Sedex. Who pays, and is it per factory?",
+  "title": "Sedex membership: who pays, per factory?",
+  "short": "Supplier membership is your own subscription, priced per site and billed annually. It lasts 12 months from the day you join. There are two supplier tiers, Standard and Supplier Plus; buyers have separate plans. Once a site is on Sedex, you can share its data with any number of customers at no extra cost.",
+  "topic": "product",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "sedex-smeta-environment-carbon-questions",
@@ -23219,6 +23315,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "surendranagar-ceramic-units-gas-and-co2-per-tonne",
+  "q": "How much gas and CO2 per tonne do Surendranagar's ceramic units use?",
+  "title": "Surendranagar ceramics: gas and CO2 per tonne",
+  "short": "TERI's 2017-18 profile of 26 Wadhwan and Joravarnagar units, mostly electrical porcelain, found 4.26 million scm of gas and 4.14 million kWh a year, 0.128 to 0.176 toe per tonne. On today's factors that is about 11,500 t CO2, roughly 0.42 t per tonne of product. Gas is about three quarters of it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "surgical-gloves-carbon-footprint-per-1000",
   "q": "How do I calculate the carbon footprint of latex or nitrile gloves?",
   "title": "Glove carbon footprint per 1,000",
@@ -24555,6 +24659,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "vadodara-glass-cluster-toughened-and-blown-glass-carbon",
+  "q": "What do Vadodara's toughened glass and glass blowing units use in energy, and what is CO2 per tonne?",
+  "title": "Vadodara glass units: energy and CO2 per tonne",
+  "short": "Electricity is 56% of the energy but about three quarters of the CO2. Vadodara's 33 glass MSMEs, 15 toughening and 18 glass blowing, processed 42,670 t on 3,377 toe in 2020-21, the rest being LPG and diesel. That is roughly 18,800 to 19,500 t CO2, about 0.44 to 0.46 t per tonne.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "vanderbijlpark-coated-steel-zinc-cbam",
   "q": "Does the zinc on Vanderbijlpark galvanised sheet count in CBAM?",
   "title": "Galvanised sheet: does zinc count in CBAM?",
@@ -24963,6 +25075,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "virudhachalam-ceramic-refractory-kiln-fuel-carbon",
+  "q": "Virudhachalam ceramic and refractory kilns burn firewood, coal, petcoke and RPO: what is the cluster's footprint?",
+  "title": "Virudhachalam kilns: four fuels, one footprint",
+  "short": "Firewood is the biggest, then imported coal, petcoke and rubber process oil. About 300 small and micro units near Virudhachalam made about 60,000 t a year on 10,079 toe in 2015, 99% of it kiln fuel. Fossil CO2 comes to roughly 23,000 t, about 0.39 t per tonne, with wood CO2 reported separately.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "viscose-fabric-carbon-footprint-per-metre",
   "q": "How do I calculate the carbon footprint of viscose fabric?",
   "title": "Viscose fabric carbon footprint per metre",
@@ -25011,6 +25131,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "volkswagen-s-rating-supplier",
+  "q": "What is Volkswagen's S-Rating, and how does it affect an Indian supplier?",
+  "title": "Volkswagen S-Rating for Indian suppliers",
+  "short": "The S-Rating is how Volkswagen checks that a direct supplier meets its sustainability requirements. Since the 2025 revision it is either positive or negative. A negative rating means evidence is missing or a requirement is breached, and in principle it makes you ineligible for new contracts.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
+ },
+ {
   "slug": "voltage-optimiser-servo-stabiliser-savings",
   "q": "Do voltage optimisers or servo stabilisers really cut electricity and emissions?",
   "title": "Voltage optimisers: real savings?",
@@ -25049,6 +25177,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "You report goals and results for actions that cut or avoid emissions, grouped under areas such as energy, packaging, waste and transportation, through Walmart's Sustainability Hub. Walmart's calculators turn your activity data, such as kWh saved or solar kWh generated, into avoided emissions. It is a reduction report, not a full inventory.",
   "topic": "regulation",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "wankaner-refractory-tunnel-kiln-petcoke-carbon",
+  "q": "Wankaner refractory units fire petcoke in tunnel kilns: what is the cluster's carbon footprint?",
+  "title": "Wankaner refractories: petcoke and CO2",
+  "short": "Almost all of it is the kiln. Wankaner's 36 refractory MSMEs used 18,089 toe in 2020-21 to make about 198,600 t: 18,014 toe of kiln heat, mainly petcoke, and only 75 toe of electricity. That is roughly 74,000 t CO2 a year, about 0.37 t per tonne, over 99% of it from the kiln.",
+  "topic": "accounting",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "wardha-steel-galvanising-unit-cbam-figure",
@@ -25809,6 +25945,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Dyeing and finishing is usually the largest stage, followed by yarn preparation (spinning), then fibre production. Quantis's Measuring Fashion study put dyeing and finishing at about 36% of apparel's climate impact. In India, coal-fired boilers at dye houses and a coal-heavy grid can push the processing share higher still.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "which-year-cbam-verification-report-for-imported-goods",
+  "q": "Which year's verification report does the EU importer use for our goods?",
+  "title": "Which year's CBAM report covers an import",
+  "short": "The report for the year your goods were made. By default that is presumed to be the year they clear EU customs. With evidence of the real production date, your buyer may use the earlier year instead. For anything imported in 2026, the year is 2026 by law, whenever it was made.",
+  "topic": "regulation",
+  "reviewed": "2026-10-31"
  },
  {
   "slug": "white-label-products-who-reports-emissions",

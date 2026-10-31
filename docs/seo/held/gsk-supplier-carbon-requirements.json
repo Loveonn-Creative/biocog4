@@ -1,0 +1,80 @@
+{
+  "slug": "gsk-supplier-carbon-requirements",
+  "q": "What does GSK ask its suppliers to do on carbon?",
+  "title": "What GSK asks suppliers on carbon",
+  "short": "If GSK's impact assessment has picked you out, it asks for four things: report Scope 1, 2 and 3 emissions allocated to GSK every year, set near and long-term 1.5 C targets validated by SBTi, run all plants and offices on renewable electricity by 2030, and cut heat emissions where heat is a large share.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Indian API, intermediate, excipient and packaging suppliers to GSK",
+  "sections": [
+    {
+      "h": "Why the asks are this specific",
+      "p": [
+        "GSK has committed to an 80% absolute cut in emissions across all scopes by 2030 from a 2019 baseline, and net zero across its value chain by 2045 with a 90% cut. Those targets cover all scopes, so your emissions count against them. The asks apply to targeted suppliers, chosen by impact assessment, not to every vendor."
+      ]
+    },
+    {
+      "h": "The four required actions",
+      "ul": [
+        "Disclose: report Scope 1, 2 and 3 emissions allocated to GSK every year, and commit to product or service-level reporting as soon as reasonably practicable.",
+        "Targets: set near and long-term carbon targets on a 1.5 C pathway, validated by SBTi.",
+        "Electricity: switch every plant and office to renewable electricity by 2030.",
+        "Heat: where heat is a significant part of your emissions, improve heat efficiency and look at switching to renewable heat through electrification or renewable fuels."
+      ]
+    },
+    {
+      "h": "The questions GSK puts to you",
+      "ol": [
+        "Does your organisation track carbon emissions now?",
+        "Can you share GSK-apportioned Scope 1, 2 and 3 data every year?",
+        "Do you have a science-based reduction target?",
+        "What share of renewable electricity are you targeting by 2030?",
+        "Is heat decarbonisation in your plans, and how will you drive it?"
+      ],
+      "p": [
+        "Have a one-line answer and a document behind each before the call."
+      ]
+    },
+    {
+      "h": "Help GSK points suppliers to",
+      "ul": [
+        "Energize, which GSK co-founded, for group purchases of renewable electricity in pharma and healthcare.",
+        "Activate, of which GSK is a founding member, aimed at emissions from making active pharmaceutical ingredients.",
+        "PSCI, the pharmaceutical and healthcare supply chain association GSK belongs to."
+      ]
+    },
+    {
+      "h": "Beyond carbon",
+      "p": [
+        "Suppliers in water-stressed locations are asked to complete a GSK water stewardship assessment and agree a water efficiency target. Packaging and natural-material suppliers face sourcing rules: secondary paper packaging from FSC or PEFC certified sources, or more than 50% recycled content, by the end of 2025, and core palm oil derivatives certified under RSPO by the end of 2025."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an API plant's figure for GSK",
+    "lines": [
+      "Grid electricity, FY 2025-26: 4,200,000 kWh x 0.675 = 2,835 t CO2 (Scope 2)",
+      "Furnace oil for the boiler: 180,000 litres x 2.97 = 534.6 t CO2 (Scope 1)",
+      "Plant total: 2,835 + 534.6 = 3,369.6 t CO2",
+      "GSK took 12 t of the plant's 80 t of output: 12 / 80 = 15%",
+      "Allocated to GSK: 3,369.6 x 15% = about 505 t CO2",
+      "Heat share: 534.6 / 3,369.6 = about 16% of the plant's Scope 1 and 2"
+    ],
+    "note": "Example plant. Allocating by output mass works when products use similar energy per tonne; if GSK's product needs far more reactor or drying time, allocate by machine hours and say so. Scope 3 is extra and is usually reported as a separate, wider estimate."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source document for each line, so the plant total and the share you allocate to GSK can be traced. It does not set or validate SBTi targets.",
+  "links": [
+    { "label": "Supplier evidence for Scope 3 requests", "to": "/scope-3-supplier-evidence" },
+    { "label": "Energize renewable electricity programme", "to": "/answers/energize-pharma-supplier-renewable-electricity" },
+    { "label": "PSCI questionnaire emissions questions", "to": "/answers/psci-questionnaire-pharma-supplier-emissions" },
+    { "label": "Allocating emissions to one customer", "to": "/answers/cdp-allocate-emissions-to-customer-question" },
+    { "label": "Customer asks you to set an SBTi target", "to": "/answers/sbti-supplier-engagement-target-for-suppliers" }
+  ],
+  "sources": [
+    { "label": "GSK Supplier, Sustainability and supplier collaboration: required actions on climate and nature", "url": "https://supplier.gsk.com/SupplierCollaboation" },
+    { "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-31",
+  "reviewNote": "GSK's 2025 packaging and palm oil deadlines have passed; re-check the supplier page for updated targets."
+}

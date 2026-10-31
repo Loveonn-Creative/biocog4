@@ -288,6 +288,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does Agra's footwear component cluster use in energy, and which product uses most?",
+  "text": "Plastic soles: 5,429 of the 8,624 toe that Agra's 205 or so component units used in 2014-15, by TERI's count, about 63%. The cluster drew 59 million kWh of power, 2,880 kL of diesel and 1.2 million scm of gas, roughly 50,000 t CO2 a year on today's factors, mostly from electricity.",
+  "url": "https://senseible.earth/answers/agra-footwear-components-cluster-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "Is diesel for an Agra footwear unit's generator Scope 1?",
   "text": "Yes. Diesel burned in a generator you own or control is Scope 1. Take litres from the fuel bills and multiply by 2.68 kg CO2 per litre, the IPCC 2006 default for diesel. The grid units on your electricity bill stay in Scope 2.",
   "url": "https://senseible.earth/answers/agra-footwear-unit-diesel-genset-scope-1"
@@ -3297,6 +3303,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What are the CBAM benchmark values for steel, cement, aluminium and fertilisers?",
   "text": "The CBAM benchmark sets the free allocation deducted per tonne. For default-value imports, rebar and wire rod on the blast furnace route use 1.364 t CO2e per tonne, grey clinker 0.666, unwrought primary aluminium 1.423, anhydrous ammonia 1.522 and hydrogen 5.089.",
   "url": "https://senseible.earth/answers/cbam-benchmark-values-steel-cement-aluminium"
+ },
+ {
+  "kind": "answer",
+  "title": "We burn biomass or rice husk. What does the CBAM verifier need to zero-rate it?",
+  "text": "Biomass burnt as fuel counts at zero only if it meets the EU Renewable Energy Directive's sustainability and greenhouse gas savings criteria. Your monitoring plan needs a written procedure showing how, and the verifier looks for Proofs of Sustainability from a RED II certification scheme the Commission recognises. Without them, the CO2 counts in full.",
+  "url": "https://senseible.earth/answers/cbam-biomass-fuel-zero-rating-proof"
  },
  {
   "kind": "answer",
@@ -11214,6 +11226,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Jagadhri brass and aluminium units burn wood, coke and furnace oil: what is the cluster footprint?",
+  "text": "Wood leads by energy, but the fossil CO2, roughly 58,000 t a year, comes from furnace oil, coke and power. BEE counted about 175 units, 100 brass and 75 aluminium, using 32,090 toe: wood 18,880, furnace oil 6,500, imported coke 4,560 and 25 GWh of power. Aluminium sheet and circles fall under CBAM; utensils and brass do not.",
+  "url": "https://senseible.earth/answers/jagadhri-brass-aluminium-cluster-wood-coke-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "How does a utensil maker in Jagadhri work out CO2 per kg?",
   "text": "Add fuel for melting and annealing furnaces and electricity for presses and polishing, divided by kg of utensils made. Oil or coal crucible furnaces usually emit more than induction melting. Most utensils are outside CBAM today, but export buyers still ask for a figure per kg.",
   "url": "https://senseible.earth/answers/jagadhri-utensil-unit-melting-furnace-co2"
@@ -11247,6 +11265,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What carbon data do EU buyers want from a Jaipur jewellery exporter?",
   "text": "Usually the workshop's Scope 1 and 2 emissions and a figure per piece or per gram for what they buy. Precious metal dominates the footprint, so buyers care most about where gold and silver come from and whether recycled content is backed by supplier documents.",
   "url": "https://senseible.earth/answers/jaipur-jewellery-exporter-eu-buyer-data"
+ },
+ {
+  "kind": "answer",
+  "title": "Jaipur toughened and laminated glass units run on electricity: what carbon data can they give builders?",
+  "text": "Jaipur's 19 operating safety glass MSMEs processed about 31,098 t in 2019-20 using 1,185 toe, almost all grid power. A typical toughening unit used about 1.09 million kWh for 2,275 t: about 480 kWh and 325 kg CO2 per tonne. Builders also need the float glass maker's figure, which you pass on.",
+  "url": "https://senseible.earth/answers/jaipur-toughened-glass-units-electricity-carbon"
  },
  {
   "kind": "answer",
@@ -11538,6 +11562,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Karnal rice mills burn their own husk: what does the cluster use, and what goes in a rice buyer's figure?",
+  "text": "Mostly husk, and its CO2 is biogenic, so it stays out of the fossil figure. About 178 mills around Karnal milled 4.45 million tonnes of paddy in 2017-18, and husk gave 241,936 of their 268,921 toe. A rice buyer's fossil figure comes mainly from the cluster's 313 million kWh of grid power.",
+  "url": "https://senseible.earth/answers/karnal-basmati-rice-mills-husk-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "Can a factory on BESCOM or another Karnataka discom buy power at the green tariff, and what does it add to the bill?",
   "text": "Yes, if you are an HT industrial or HT commercial consumer. KERC lets HT consumers of BESCOM, MESCOM, HESCOM, GESCOM and CESC opt for green power at an extra charge per kWh over the normal tariff, 50 paise in its orders up to FY2024-25. The extra cost is green units times that charge.",
   "url": "https://senseible.earth/answers/karnataka-green-tariff-bescom-factories"
@@ -11691,6 +11721,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Kocaeli cement plant count electricity in its CBAM embedded emissions?",
   "text": "Cement is one of the goods where CBAM counts indirect emissions. Multiply the electricity used to make each tonne of clinker and cement by the emission factor the CBAM rules allow, usually the default for the country's grid, then add it to direct emissions from calcination and kiln fuel.",
   "url": "https://senseible.earth/answers/kocaeli-cement-plant-electricity-in-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "Compressors carry most of the load in Kochi seafood plants: what is the cluster's carbon footprint?",
+  "text": "Kochi's 35 or so seafood processors run almost entirely on grid power: about 30,000 MWh a year, 2,574 toe. Refrigeration compressors are 73% of connected load and freezing about 75% of electricity. At today's grid factor that is roughly 20,000 t CO2 a year, or 0.25 to 0.57 t per tonne of product.",
+  "url": "https://senseible.earth/answers/kochi-seafood-processors-freezer-energy-carbon"
  },
  {
   "kind": "answer",
@@ -13104,6 +13140,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How far are Muzaffarnagar paper mills from the energy benchmark, and what does closing the gap do to carbon?",
+  "text": "Some by a long way. BEE measured 10.1 to 18.2 GJ of fuel and 550 to 1,080 kWh per tonne of paper across about 29 mills, against IPPTA kraft norms of about 9.9 to 17.6 GJ of steam and 550 to 650 kWh. Its 15 projects would save about 22,800 t CO2 a year.",
+  "url": "https://senseible.earth/answers/muzaffarnagar-paper-mills-steam-power-benchmark"
+ },
+ {
+  "kind": "answer",
   "title": "Does an MVR evaporator cut emissions compared with a steam evaporator?",
   "text": "It replaces most of the steam with electricity: a compressor reuses the evaporated vapour as the heating medium. Scope 1 falls and Scope 2 rises. With India's grid at 0.710 kg CO2 per kWh, check the net change with your own steam and power figures before claiming a cut.",
   "url": "https://senseible.earth/answers/mvr-evaporator-vs-steam-evaporator-co2"
@@ -13413,6 +13455,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does an Odisha aluminium smelter's captive coal power count in its CBAM figure?",
   "text": "Not for the CBAM charge on aluminium. Power from a captive coal plant is indirect emissions under the CBAM Regulation, and Annex II lists aluminium for direct emissions only. Anode consumption and perfluorocarbons from anode effects do count, and the captive plant's emissions still matter for buyers counting Scope 3.",
   "url": "https://senseible.earth/answers/odisha-smelter-captive-coal-power-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "Odisha's sponge iron units: how much coal do they burn, and what CBAM data do their buyers need?",
+  "text": "About 9.5 million tonnes of coal a year, across roughly 107 coal-based units, most in Sundargarh and Keonjhar, by BEE's count. In the 30 plants audited, coal was 99.8% of energy, about 1.6 t per tonne of DRI. For CBAM, a steel buyer needs your mass balance figure, not a coal invoice total.",
+  "url": "https://senseible.earth/answers/odisha-sponge-iron-cluster-coal-kiln-carbon"
  },
  {
   "kind": "answer",
@@ -13911,6 +13959,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of an assembled PCB for an electronics buyer?",
   "text": "Add three parts per board: the components, where integrated circuits usually dominate, from supplier data or a licensed database; the bare board by area and layer count; and your assembly energy, plant kWh and DG diesel per board times their factors. Assembly is usually a small share, so component data decides the result.",
   "url": "https://senseible.earth/answers/pcb-assembly-carbon-footprint-per-board"
+ },
+ {
+  "kind": "answer",
+  "title": "Should my product carbon footprint include transport to the buyer?",
+  "text": "Not inside the cradle-to-gate figure. Under the Catena-X PCF Rulebook, version 4, your footprint ends at your outbound gate, whoever pays the freight. If you contract or run the delivery, report its emissions separately, next to the PCF. If the buyer arranges it, the buyer counts it.",
+  "url": "https://senseible.earth/answers/pcf-include-transport-to-buyer"
  },
  {
   "kind": "answer",
@@ -14964,6 +15018,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much energy and CO2 do Rajkot bearing makers use, and which stage uses most?",
+  "text": "Grinding and assembly. Rajkot's 150 or so bearing units, 90 assembly, 35 rolling element and 25 cage makers, used 3,903 toe a year in TERI's profile, 91% of it 41.3 million kWh of electricity. Assembly units took about 53%, rolling elements 34%. On today's grid factor that is roughly 28,800 t CO2 a year.",
+  "url": "https://senseible.earth/answers/rajkot-bearing-cluster-electricity-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "Do engine parts exported from Rajkot fall under EU CBAM?",
   "text": "Usually not. CBAM covers iron and steel goods in chapters 72 and 73 of the EU tariff, plus aluminium, cement, fertilisers, hydrogen and electricity. Finished engine parts classed in chapter 84 are outside it, but a plain casting or forging in chapter 73 may be in.",
   "url": "https://senseible.earth/answers/rajkot-engine-parts-exporter-cbam-check"
@@ -15870,6 +15930,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does SBTi's Corporate Net-Zero Standard V2 mean for suppliers?",
+  "text": "Version 2.0 was released in June 2026 and applies from 1 February 2027. It lets your large customers meet their Scope 3 target by raising the share of tier 1 suppliers, measured by emissions or spend, that are in transition or net-zero aligned. Expect them to ask where you stand, every year.",
+  "url": "https://senseible.earth/answers/sbti-net-zero-standard-v2-suppliers"
+ },
+ {
+  "kind": "answer",
   "title": "Is my company eligible for the SBTi SME target route?",
   "text": "You qualify only if you meet every point of the SBTi's current SME definition: limits on employees, turnover and total assets, independence from any larger group, and not being a financial institution or oil and gas company. Check the exact limits on the SBTi site before applying.",
   "url": "https://senseible.earth/answers/sbti-sme-route-eligibility"
@@ -16053,6 +16119,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What does the Sedex environment self-assessment questionnaire ask about emissions?",
   "text": "Sedex's Environment Self-Assessment Questionnaire, launched in August 2024, asks for your environmental commitments, legal compliance, permits, management systems, Scope 1, 2 and 3 greenhouse gas emissions, and how you manage energy, waste, chemicals, air, water, biodiversity and deforestation. Answer the carbon part from twelve months of fuel and electricity bills.",
   "url": "https://senseible.earth/answers/sedex-environment-saq-ghg-questions"
+ },
+ {
+  "kind": "answer",
+  "title": "My buyer asked us to join Sedex. Who pays, and is it per factory?",
+  "text": "Supplier membership is your own subscription, priced per site and billed annually. It lasts 12 months from the day you join. There are two supplier tiers, Standard and Supplier Plus; buyers have separate plans. Once a site is on Sedex, you can share its data with any number of customers at no extra cost.",
+  "url": "https://senseible.earth/answers/sedex-membership-who-pays-per-site"
  },
  {
   "kind": "answer",
@@ -17502,6 +17574,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much gas and CO2 per tonne do Surendranagar's ceramic units use?",
+  "text": "TERI's 2017-18 profile of 26 Wadhwan and Joravarnagar units, mostly electrical porcelain, found 4.26 million scm of gas and 4.14 million kWh a year, 0.128 to 0.176 toe per tonne. On today's factors that is about 11,500 t CO2, roughly 0.42 t per tonne of product. Gas is about three quarters of it.",
+  "url": "https://senseible.earth/answers/surendranagar-ceramic-units-gas-and-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of latex or nitrile gloves?",
   "text": "Multiply the latex or nitrile compound per 1,000 gloves by its factor, add the dipping line's heating fuel and electricity, chlorination or polymer coating, and boxes. Divide by thousands of gloves passed. Dipping lines run hot ovens continuously, so fuel is a large plant line.",
   "url": "https://senseible.earth/answers/surgical-gloves-carbon-footprint-per-1000"
@@ -18504,6 +18582,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What do Vadodara's toughened glass and glass blowing units use in energy, and what is CO2 per tonne?",
+  "text": "Electricity is 56% of the energy but about three quarters of the CO2. Vadodara's 33 glass MSMEs, 15 toughening and 18 glass blowing, processed 42,670 t on 3,377 toe in 2020-21, the rest being LPG and diesel. That is roughly 18,800 to 19,500 t CO2, about 0.44 to 0.46 t per tonne.",
+  "url": "https://senseible.earth/answers/vadodara-glass-cluster-toughened-and-blown-glass-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "Does the zinc on Vanderbijlpark galvanised sheet count in CBAM?",
   "text": "No. Zinc is not a CBAM good, so it carries no embedded emissions into the figure. Coated flat steel under CN 7210 is covered, though, so its figure is the substrate coil's embedded emissions plus the coating line's own direct emissions, such as gas for annealing and pot heating.",
   "url": "https://senseible.earth/answers/vanderbijlpark-coated-steel-zinc-cbam"
@@ -18810,6 +18894,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Virudhachalam ceramic and refractory kilns burn firewood, coal, petcoke and RPO: what is the cluster's footprint?",
+  "text": "Firewood is the biggest, then imported coal, petcoke and rubber process oil. About 300 small and micro units near Virudhachalam made about 60,000 t a year on 10,079 toe in 2015, 99% of it kiln fuel. Fossil CO2 comes to roughly 23,000 t, about 0.39 t per tonne, with wood CO2 reported separately.",
+  "url": "https://senseible.earth/answers/virudhachalam-ceramic-refractory-kiln-fuel-carbon"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of viscose fabric?",
   "text": "Start with the viscose yarn per metre of fabric and the fibre and spinning suppliers' figures. Add weaving or knitting and wet processing energy, especially steam for dyeing and finishing, then divide by metres produced.",
   "url": "https://senseible.earth/answers/viscose-fabric-carbon-footprint-per-metre"
@@ -18846,6 +18936,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is Volkswagen's S-Rating, and how does it affect an Indian supplier?",
+  "text": "The S-Rating is how Volkswagen checks that a direct supplier meets its sustainability requirements. Since the 2025 revision it is either positive or negative. A negative rating means evidence is missing or a requirement is breached, and in principle it makes you ineligible for new contracts.",
+  "url": "https://senseible.earth/answers/volkswagen-s-rating-supplier"
+ },
+ {
+  "kind": "answer",
   "title": "Do voltage optimisers or servo stabilisers really cut electricity and emissions?",
   "text": "Only for loads that use less power at lower voltage, such as some lighting and resistive heaters. Motors on drives, LED drivers and electronics often save little. A stabiliser also has its own losses. Measure kWh with the unit bypassed and in service before counting any saving.",
   "url": "https://senseible.earth/answers/voltage-optimiser-servo-stabiliser-savings"
@@ -18873,6 +18969,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What does a supplier report to Walmart under Project Gigaton?",
   "text": "You report goals and results for actions that cut or avoid emissions, grouped under areas such as energy, packaging, waste and transportation, through Walmart's Sustainability Hub. Walmart's calculators turn your activity data, such as kWh saved or solar kWh generated, into avoided emissions. It is a reduction report, not a full inventory.",
   "url": "https://senseible.earth/answers/walmart-project-gigaton-supplier-reporting"
+ },
+ {
+  "kind": "answer",
+  "title": "Wankaner refractory units fire petcoke in tunnel kilns: what is the cluster's carbon footprint?",
+  "text": "Almost all of it is the kiln. Wankaner's 36 refractory MSMEs used 18,089 toe in 2020-21 to make about 198,600 t: 18,014 toe of kiln heat, mainly petcoke, and only 75 toe of electricity. That is roughly 74,000 t CO2 a year, about 0.37 t per tonne, over 99% of it from the kiln.",
+  "url": "https://senseible.earth/answers/wankaner-refractory-tunnel-kiln-petcoke-carbon"
  },
  {
   "kind": "answer",
@@ -19443,6 +19545,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Which stage of the textile supply chain has the most emissions: fibre, spinning, weaving or dyeing?",
   "text": "Dyeing and finishing is usually the largest stage, followed by yarn preparation (spinning), then fibre production. Quantis's Measuring Fashion study put dyeing and finishing at about 36% of apparel's climate impact. In India, coal-fired boilers at dye houses and a coal-heavy grid can push the processing share higher still.",
   "url": "https://senseible.earth/answers/which-textile-tier-has-most-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Which year's verification report does the EU importer use for our goods?",
+  "text": "The report for the year your goods were made. By default that is presumed to be the year they clear EU customs. With evidence of the real production date, your buyer may use the earlier year instead. For anything imported in 2026, the year is 2026 by law, whenever it was made.",
+  "url": "https://senseible.earth/answers/which-year-cbam-verification-report-for-imported-goods"
  },
  {
   "kind": "answer",
