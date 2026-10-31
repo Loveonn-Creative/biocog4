@@ -13,7 +13,10 @@ import { useEffect, useRef, useState } from "react";
  *   for 24 hours (src/lib/guestResults.ts, supabase/functions/_shared/guestScan.ts)
  * - request links are stored only as hashes; every bill gets a SHA-256
  *   fingerprint; logs do not record document contents
- * - encrypted in transit and at rest (Privacy Policy)
+ * - encrypted in transit and at rest: TLS and encrypted disks on the managed
+ *   Supabase infrastructure (the Privacy Policy says "managed cloud
+ *   infrastructure ... private document storage"; /enterprise/pricing already
+ *   says "Encrypted storage and transfer")
  */
 
 export const prefersReducedMotion = () =>
@@ -99,12 +102,12 @@ export const BillArt = ({ className, ...pos }: ArtProps) => (
   </svg>
 );
 
-/** The one thing that may leave: a computed total, never the bill behind it. */
-export const TOTAL_LABEL = "4.2 tCO2e";
+/** The one thing that may leave: computed totals, never the bill behind them. No made-up figure. */
+export const TOTAL_LABEL = "Totals";
 
 export const TotalArt = ({ className, ...pos }: ArtProps) => (
   <svg viewBox="0 0 96 32" className={className} {...pos} aria-hidden="true">
     <rect x="1" y="1" width="94" height="30" rx="15" className="fill-primary" />
-    <text x="48" y="20.5" textAnchor="middle" className="fill-primary-foreground" style={{ font: "600 12px ui-monospace, SFMono-Regular, Menlo, monospace" }}>{TOTAL_LABEL}</text>
+    <text x="48" y="20.5" textAnchor="middle" className="fill-primary-foreground" style={{ fontSize: 14, fontWeight: 600 }}>{TOTAL_LABEL}</text>
   </svg>
 );
