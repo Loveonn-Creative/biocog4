@@ -316,7 +316,7 @@ async function main() {
 <meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="${R.canonicalUrl(rd.to.split('#')[0])}" />
 <meta http-equiv="refresh" content="0; url=${target}" />
-<script>location.replace(${JSON.stringify(rd.to)})</script>
+<script src="/moved.js" data-to="${rd.to.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"></script>
 </head><body><p>This page has moved to <a href="${target}">${target}</a>.</p></body></html>
 `;
     writeFile(path.join(DIST_DIR, `${rd.from}.html`), html);

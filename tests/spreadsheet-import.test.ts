@@ -264,6 +264,28 @@ describe('Excel files', () => {
     const r = checkSheet(rows, NOW);
     expect(r.ok && r.result.counts.ready).toBe(1);
   });
+  test('only zip-based .xlsx bytes reach the parser; HTML, XML and SYLK are refused', () => {
+    const enc = (s: string) => new TextEncoder().encode(s);
+    for (const bytes of [enc('<html><table><tr><td>1</td></tr></table></html>'), enc('<?xml version="1.0"?><Workbook/>'), enc('ID;PWXL\nC;Y1;X1;K1\nE'), new Uint8Array([0xd0, 0xcf, 0x11, 0xe0]), new Uint8Array()]) {
+      expect(() => readWorkbookRows(XLSX, bytes)).toThrow();
+    }
+  });
+  test('formulas are read as their saved values, not parsed', () => {
+    const ws = XLSX.utils.aoa_to_sheet([['a', 'b'], [1, 2]]);
+    ws['C2'] = { t: 'n', v: 3, f: 'A2+B2' };
+    ws['!ref'] = 'A1:C2';
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'S');
+    const buf = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    expect(readWorkbookRows(XLSX, new Uint8Array(buf))[1]).toEqual(['1', '2', '3']);
+  });
+  test('Excel parsing runs in a worker with a hard time limit', async () => {
+    const fs = await import('fs');
+    const src = fs.readFileSync('src/lib/import/readFile.ts', 'utf8');
+    expect(src).toContain("new Worker(new URL('./xlsxWorker.ts', import.meta.url)");
+    expect(src).toContain('XLSX_PARSE_TIMEOUT_MS = 10_000');
+    expect(src).toContain('worker.terminate()');
+  });
 });
 
 describe('fixing a row in place', () => {
